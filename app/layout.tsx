@@ -5,6 +5,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { PortfolioSidebar } from "@/components/portfolio-sidebar"
 import { SidebarProvider } from "@/components/ui/sidebar"
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -30,6 +31,7 @@ export default function RootLayout({
             </div>
           </SidebarProvider>
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   )
