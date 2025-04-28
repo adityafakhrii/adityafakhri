@@ -23,8 +23,8 @@ A minimal and dynamic personal portfolio built with **Next.js** and **React.js**
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/yourusername/notion-style-portfolio.git
-cd notion-style-portfolio
+git clone [https://github.com/yourusername/notion-style-portfolio.git](https://github.com/adityafakhrii/notion-porto.git)
+cd notion-porto
 npm install
 npm run dev
 ```
