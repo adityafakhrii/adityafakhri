@@ -6,6 +6,9 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { PortfolioSidebar } from "@/components/portfolio-sidebar"
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
+
+
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -32,6 +35,7 @@ export default function RootLayout({
           </SidebarProvider>
         </ThemeProvider>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   )
