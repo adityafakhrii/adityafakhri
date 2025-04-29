@@ -67,7 +67,7 @@ export function PortfolioSidebar() {
         <SidebarHeader className="border-b pb-4">
           <div className="flex flex-col items-center space-y-2 px-2 pt-4">
             <Avatar className="h-20 w-20">
-              <AvatarImage src="/placeholder.svg?height=80&width=80" alt="Aditya Fakhri Riansyah" />
+              <AvatarImage alt="Aditya Fakhri Riansyah" />
               <AvatarFallback>AFR</AvatarFallback>
             </Avatar>
             <div className="text-center">

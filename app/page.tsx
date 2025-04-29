@@ -30,7 +30,7 @@ export default function Home() {
           <div className="w-full md:w-1/3 flex justify-center">
             <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-primary/10">
               <Image
-                src="/placeholder.svg?height=256&width=256"
+                src="https://i.ibb.co.com/G43QDGTX/profile1.jpg"
                 alt="Aditya Fakhri Riansyah"
                 fill
                 className="object-cover"
