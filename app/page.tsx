@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ChevronRight, Code, Lightbulb, Mic, Sparkles, ExternalLink } from "lucide-react"
+import { ChevronRight, Code, Lightbulb, Mic, Sparkles, ExternalLink, SquareCode } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { ContentBlock } from "@/components/content-block"
@@ -43,9 +43,7 @@ export default function Home() {
       <ContentBlock>
         <div className="text-lg text-muted-foreground">
           <p>
-            Saya membangun aplikasi web dan mobile modern dengan fokus pada pengalaman pengguna, performa, dan
-            aksesibilitas. Saya bersemangat dalam integrasi AI, mentoring, dan berbagi pengetahuan melalui konten
-            edukatif.
+            Saya membangun aplikasi web dan mobile modern dengan fokus utama pada pengalaman pengguna, performa optimal, dan aksesibilitas. Saya juga aktif mengeksplorasi integrasi AI, membimbing melalui mentoring, dan berbagi pengetahuan lewat konten edukatif.
           </p>
         </div>
       </ContentBlock>
@@ -74,35 +72,37 @@ export default function Home() {
 
       <ContentBlock title="✨ Keahlian Utama" className="mt-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Card>
+            <Card>
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-primary/10 p-2 rounded-md">
-                  <Code className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-medium">Web Development</h3>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    React, Next.js, TypeScript, Tailwind CSS, Node.js
-                  </p>
-                </div>
+              <div className="bg-primary/10 p-2 rounded-md">
+                <Code className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <h3 className="font-medium">Front-End Development</h3>
+                <p className="text-sm text-muted-foreground mt-1">
+                React, Next.js, TypeScript, Tailwind CSS
+                </p>
+              </div>
               </div>
             </CardContent>
-          </Card>
+            </Card>
 
-          <Card>
+            <Card>
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-primary/10 p-2 rounded-md">
-                  <Sparkles className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-medium">AI Integration</h3>
-                  <p className="text-sm text-muted-foreground mt-1">LLM APIs, AI-powered features, Automation</p>
-                </div>
+              <div className="bg-primary/10 p-2 rounded-md">
+                <SquareCode className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <h3 className="font-medium">Back-End Development</h3>
+                <p className="text-sm text-muted-foreground mt-1">
+                Node.js, PHP, Laravel, JavaScript
+                </p>
+              </div>
               </div>
             </CardContent>
-          </Card>
+            </Card>
 
           <Card>
             <CardContent className="p-6">
@@ -112,9 +112,9 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-medium">Mentoring</h3>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Technical guidance, Career development, Code reviews
-                  </p>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      Bimbingan teknis, Pengembangan karier, Code reviews, dan Workshop interaktif
+                    </p>
                 </div>
               </div>
             </CardContent>
@@ -129,7 +129,7 @@ export default function Home() {
                 <div>
                   <h3 className="font-medium">Content Creation</h3>
                   <p className="text-sm text-muted-foreground mt-1">
-                    Technical articles, Tutorials, Social media content
+                    Artikel teknis, Tutorial, Konten media sosial teknologi/pemrograman
                   </p>
                 </div>
               </div>
