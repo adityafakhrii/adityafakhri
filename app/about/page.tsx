@@ -21,7 +21,7 @@ export default function AboutPage() {
           </div>
         </ContentBlock>
 
-        <ContentBlock title="🎯 Misi">
+        {/* <ContentBlock title="🎯 Misi">
           <p>
             Membantu bisnis dan individu memanfaatkan teknologi modern untuk mencapai tujuan mereka melalui solusi
             digital yang inovatif, efisien, dan berpusat pada pengguna.
@@ -33,7 +33,7 @@ export default function AboutPage() {
             Menjadi pionir dalam pengembangan aplikasi web yang mengintegrasikan AI secara etis dan efektif, serta
             membangun komunitas developer yang kolaboratif dan inklusif.
           </p>
-        </ContentBlock>
+        </ContentBlock> */}
 
         <ContentBlock title="🧠 Filosofi">
           <ul className="list-disc list-inside space-y-2">
