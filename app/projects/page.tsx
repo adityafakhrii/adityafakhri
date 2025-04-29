@@ -13,7 +13,7 @@ const projects = [
     category: "web",
   },
   {
-    id: "herza",
+    id: "herya",
     title: "Company Profile Herza",
     description: "Website profil perusahaan dengan desain modern dan responsif.",
     imageSrc: "/placeholder.svg?height=200&width=400",

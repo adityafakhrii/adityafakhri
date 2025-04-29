@@ -50,23 +50,33 @@ export default function Home() {
 
       <ContentBlock title="🤝 Kolaborasi" className="mt-12">
         <div className="grid grid-cols-5 gap-6">
-          {[
-            { name: "Google", src: "https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" },
-            { name: "Company 2", src: "/placeholder.svg?height=60&width=120&text=Company 2" },
-            { name: "Company 3", src: "/placeholder.svg?height=60&width=120&text=Company 3" },
-            { name: "Company 4", src: "/placeholder.svg?height=60&width=120&text=Company 4" },
-            { name: "Company 5", src: "/placeholder.svg?height=60&width=120&text=Company 5" },
-          ].map((company, i) => (
+            {[
+            { name: "Google", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" },
+            { name: "CodePolitan", src: "https://mustopa28121992.github.io/projectt/img/press-codepolitan--md5--c6cd986bfb1be889708b672e982814e0.png" },
+            { name: "Dicoding", src: "https://landing-page-dicoding.vercel.app/img/dicoding-header-logo.png" },
+            { name: "ITBOX", src: "https://itbox.id/wp-content/uploads/2022/10/ITbox-Logo.png" },
+            { name: "Gamelab Indonesia", src: "https://www.gamelab.id/img/logo-gamelab/display/Logo_GameLab_Landscape1.png?v=3.10?v=3.1" },
+            { name: "Algobash", src: "https://www.algobash.com/wp-content/uploads/2024/03/algo-black.png" },
+            { name: "Progate", src: "https://gengigih.demopreview.link/assets/logo-partners/progate-logo.png" },
+            { name: "Staditek", src: "https://www.staditek.id/wp-content/uploads/2022/06/StadiTek-logo.png" },
+            { name: "Coding Studio", src: "https://codingstudio.id/wp-content/uploads/2025/02/Vector-150x150.png" },
+            { name: "AICO Community", src: "https://static.tiptip.id/user/header-image/2a8b2eae-a4c4-42db-aad8-73771364c107.png" },
+            { name: "Innovate Edutech", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg6KyS6WrO3v-QpI1PAKxNwVT4bt01-yiNIA&s" },
+            { name: "Merdeka Siber", src: "https://scontent.fbdo9-1.fna.fbcdn.net/v/t39.30808-6/451865525_402219932836509_4421732481946305727_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHCd43HzB2LBUTvssEG_N7bcbndtoKtldtxud22gq2V262j10U2FFUFuqZCNDlSR6zOkE8i-CldxR_HiFcH1MNH&_nc_ohc=l_mR9wxI2HgQ7kNvwEHO8V7&_nc_oc=Adm8VZ0ZD0flFlTsVqF7wZQjNSNqM3TqiOx2C123vHxiCUh7xrohyrB23MrMlivJSs8&_nc_zt=23&_nc_ht=scontent.fbdo9-1.fna&_nc_gid=O40bqhZFvpmLmc2KiRI7cg&oh=00_AfGfMopYGIsTwZRl09zDUlmtqy9kq_shGqfdo0RgJP1coQ&oe=68167404" },
+            { name: "Devcode AI", src: "https://i.ibb.co.com/RTxBnVBW/Devcode-AI.jpg" },
+            { name: "Codemasters", src: "https://i.ibb.co.com/hnPWzZ6/416432286-1356985004947217-6764481526990047168-n.jpg" },
+            { name: "Studpal", src: "https://media.cakeresume.com/image/upload/v1672292026/z3rqxffqfwsmi0ifsqvn.png" },
+            ].map((company, i) => (
             <div key={i} className="flex items-center justify-center p-4 bg-muted rounded-lg h-24">
               <Image
-          src={company.src}
-          alt={company.name}
-          width={120}
-          height={60}
-          className="max-h-12 w-auto"
+              src={company.src}
+              alt={company.name}
+              width={120}
+              height={60}
+              className="max-h-12 w-auto"
               />
             </div>
-          ))}
+            ))}
         </div>
       </ContentBlock>
 
@@ -142,33 +152,33 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <ProjectCard
             title="SIACTA"
-            description="Sistem Informasi Akademik Terpadu untuk manajemen perkuliahan dan nilai."
+            description="System Information Accounting & Tax: aplikasi web untuk membantu mengelola informasi akuntansi dan pajak"
             imageSrc="/placeholder.svg?height=200&width=400"
-            tags={["Next.js", "TypeScript", "Prisma"]}
+            tags={["Laravel", "JavaScript", "MySQL", "Bootstrap"]}
             href="/projects/siacta"
           />
 
           <ProjectCard
-            title="Company Profile Herza"
-            description="Website profil perusahaan dengan desain modern dan responsif."
+            title="Company Profile PT Herya Wood Furniture"
+            description="Website profil perusahaan untuk menampilkan produk dan layanan PT Herya Wood Furniture"
             imageSrc="/placeholder.svg?height=200&width=400"
-            tags={["React", "Tailwind CSS", "Framer Motion"]}
-            href="/projects/herza"
+            tags={["Laravel", "JavaScript", "MySQL", "Bootstrap"]}
+            href="/projects/herya"
           />
 
           <ProjectCard
             title="MedFluffy"
-            description="Aplikasi kesehatan hewan peliharaan dengan fitur AI untuk diagnosis awal."
+            description="Aplikasi mobile untuk prediksi dini penyakit mata pada anjing hanya lewat foto dan rekomendasi pertolongan pertama."
             imageSrc="/placeholder.svg?height=200&width=400"
-            tags={["React Native", "Firebase", "TensorFlow"]}
+            tags={["Kotlin", "Material", "TensorFlow", "Firebase"]}
             href="/projects/medfluffy"
           />
 
           <ProjectCard
             title="Restoranku"
-            description="Sistem manajemen restoran dengan fitur pemesanan online dan analitik."
+            description="Sistem manajemen restoran dengan fitur pemesanan via QR dan pembayaran QRIS via Midtrans."
             imageSrc="/placeholder.svg?height=200&width=400"
-            tags={["Vue.js", "Node.js", "MongoDB"]}
+            tags={["Laravel", "JavaScript", "MySQL", "Bootstrap"]}
             href="/projects/restoranku"
           />
         </div>
