@@ -10,13 +10,13 @@ export default function AboutPage() {
         <ContentBlock>
           <div className="space-y-4">
             <p className="text-lg">
-              Saya adalah seorang Web Developer dengan fokus pada pengembangan aplikasi modern yang didukung teknologi
-              AI. Dengan pengalaman lebih dari 5 tahun di industri teknologi, saya telah membangun berbagai solusi
-              digital untuk klien dari berbagai sektor.
-            </p>
+            Bergairah dalam membangun solusi digital yang berdampak dan membuat pengetahuan teknologi dapat diakses oleh semua orang. Terampil dalam pengembangan web full-stack dengan JavaScript & Laravel dengan pola pikir pemecahan masalah yang kuat.          </p>
             <p className="text-lg">
               Selain mengembangkan aplikasi, saya juga aktif sebagai mentor dan content creator di bidang teknologi.
               Saya percaya bahwa berbagi pengetahuan adalah cara terbaik untuk terus belajar dan berkembang.
+            </p>
+            <p className="text-lg">
+            Selalu terbuka untuk berkolaborasi, berbagi pengetahuan, atau sekadar minum kopi dan mengobrol tentang teknologi! Jangan ragu untuk terhubung di adityafakhri03@gmail.com. 🚀☕
             </p>
           </div>
         </ContentBlock>

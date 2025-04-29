@@ -192,7 +192,7 @@ export default function Home() {
         </div>
       </ContentBlock>
 
-      <ContentBlock title="💬 Testimoni" className="mt-12">
+      {/* <ContentBlock title="💬 Testimoni" className="mt-12">
         <Card>
           <CardContent className="p-6">
             <blockquote className="border-l-4 border-primary pl-4 italic">
@@ -202,7 +202,7 @@ export default function Home() {
             <div className="mt-4 text-sm text-muted-foreground">— Sarah Johnson, CTO at TechCorp</div>
           </CardContent>
         </Card>
-      </ContentBlock>
+      </ContentBlock> */}
 
       <ContentBlock title="📚 Blog Terbaru" className="mt-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
