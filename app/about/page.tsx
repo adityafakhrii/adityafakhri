@@ -10,7 +10,7 @@ export default function AboutPage() {
         <ContentBlock>
           <div className="space-y-4">
             <p className="text-lg">
-            Bergairah dalam membangun solusi digital yang berdampak dan membuat pengetahuan teknologi dapat diakses oleh semua orang. Terampil dalam pengembangan web full-stack dengan JavaScript & Laravel dengan pola pikir pemecahan masalah yang kuat.          </p>
+            Memiliki passion dalam membangun solusi digital yang berdampak dan membuat pengetahuan teknologi dapat diakses oleh semua orang. Terampil dalam pengembangan web full-stack dengan JavaScript & Laravel dengan pola pikir pemecahan masalah yang kuat.          </p>
             <p className="text-lg">
               Selain mengembangkan aplikasi, saya juga aktif sebagai mentor dan content creator di bidang teknologi.
               Saya percaya bahwa berbagi pengetahuan adalah cara terbaik untuk terus belajar dan berkembang.
@@ -82,24 +82,24 @@ export default function AboutPage() {
             </div>
             <div className="p-4 border rounded-lg">
               <h3 className="font-medium mb-2">🏃‍♂️ Olahraga</h3>
-              <p className="text-sm text-muted-foreground">Lari, bersepeda, dan hiking di akhir pekan.</p>
+              <p className="text-sm text-muted-foreground">Sepakbola, Futsal, Lari, dan Bulu Tangkis.</p>
             </div>
             <div className="p-4 border rounded-lg">
               <h3 className="font-medium mb-2">🎮 Gaming</h3>
-              <p className="text-sm text-muted-foreground">Game strategi dan RPG untuk melatih pemecahan masalah.</p>
+              <p className="text-sm text-muted-foreground">Game strategi dan open world untuk melatih pemecahan masalah.</p>
             </div>
-            <div className="p-4 border rounded-lg">
+            {/* <div className="p-4 border rounded-lg">
               <h3 className="font-medium mb-2">🎸 Musik</h3>
               <p className="text-sm text-muted-foreground">Bermain gitar dan mendengarkan berbagai genre musik.</p>
             </div>
             <div className="p-4 border rounded-lg">
               <h3 className="font-medium mb-2">✈️ Traveling</h3>
               <p className="text-sm text-muted-foreground">Mengeksplorasi tempat baru dan budaya berbeda.</p>
-            </div>
+            </div>k
             <div className="p-4 border rounded-lg">
               <h3 className="font-medium mb-2">👨‍🍳 Memasak</h3>
               <p className="text-sm text-muted-foreground">Eksperimen dengan resep baru dan fusion cuisine.</p>
-            </div>
+            </div> */}
           </div>
         </ContentBlock>
       </div>
