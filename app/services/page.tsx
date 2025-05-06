@@ -78,7 +78,7 @@ export default function ServicesPage() {
                       <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
                       <div>
                         <p className="font-medium">Carousel</p>
-                        <p className="text-sm text-muted-foreground">Multiple gambar dalam satu post</p>
+                        <p className="text-sm text-muted-foreground">10 slide gambar dalam satu post</p>
                       </div>
                     </div>
                     <Badge className="text-lg font-semibold">159K</Badge>
@@ -88,8 +88,8 @@ export default function ServicesPage() {
                     <div className="flex items-start">
                       <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
                       <div>
-                        <p className="font-medium">Single Post + Re-story</p>
-                        <p className="text-sm text-muted-foreground">Post feed dengan tambahan story</p>
+                        <p className="font-medium">Single Post + Repost Story</p>
+                        <p className="text-sm text-muted-foreground">1 gambar dengan tambahan story</p>
                       </div>
                     </div>
                     <Badge className="text-lg font-semibold">149K</Badge>
@@ -99,8 +99,8 @@ export default function ServicesPage() {
                     <div className="flex items-start">
                       <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
                       <div>
-                        <p className="font-medium">Carousel + Re-story</p>
-                        <p className="text-sm text-muted-foreground">Post carousel dengan tambahan story</p>
+                        <p className="font-medium">Carousel + Repost Story</p>
+                        <p className="text-sm text-muted-foreground">10 slide gambar dengan tambahan story</p>
                       </div>
                     </div>
                     <Badge className="text-lg font-semibold">169K</Badge>
@@ -122,7 +122,7 @@ export default function ServicesPage() {
                         <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
                         <div>
                           <p className="font-medium">IG Reels</p>
-                          <p className="text-sm text-muted-foreground">Video pendek format vertikal</p>
+                          <p className="text-sm text-muted-foreground">Video maksimal 90 detik dengan format 9:16</p>
                         </div>
                       </div>
                       <Badge className="text-lg font-semibold">229K</Badge>
@@ -133,7 +133,7 @@ export default function ServicesPage() {
                         <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
                         <div>
                           <p className="font-medium">IG Reels + Repost Story</p>
-                          <p className="text-sm text-muted-foreground">Video reels dengan tambahan story</p>
+                          <p className="text-sm text-muted-foreground">Video reels dengan tambahan repost story</p>
                         </div>
                       </div>
                       <Badge className="text-lg font-semibold">239K</Badge>
@@ -146,7 +146,7 @@ export default function ServicesPage() {
                         <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
                         <div>
                           <p className="font-medium">IG Reels + Mirror TikTok</p>
-                          <p className="text-sm text-muted-foreground">Video untuk Instagram dan TikTok</p>
+                          <p className="text-sm text-muted-foreground">Video untuk Instagram dan TikTok dengan durasi maksimal 90 detik</p>
                         </div>
                       </div>
                       <Badge className="text-lg font-semibold">279K</Badge>
@@ -180,34 +180,39 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card className="overflow-hidden border-2 hover:border-primary/50 transition-all duration-200">
               <div className="bg-primary/10 p-4 text-center">
-                <h3 className="font-medium text-lg">Paket Starter</h3>
-                <p className="text-sm text-muted-foreground">Untuk bisnis kecil</p>
+                <h3 className="font-medium text-lg">Paket Lite</h3>
+                <p className="text-sm text-muted-foreground">Naik Level, Gak Ribet</p>
               </div>
               <CardContent className="p-6">
+                <div className="text-center">
+                  <span className="text-sm text-muted-foreground line-through mr-2">268k</span>
+                </div>
                 <div className="text-center mb-4">
-                  <span className="text-3xl font-bold">499K</span>
-                  <span className="text-muted-foreground">/bulan</span>
+                  <span className="text-3xl font-bold">219k</span>
+                  <p className="text-sm text-primary font-medium italic">Hemat 49k</p>
+                  {/* <span className="text-muted-foreground">/bulan</span> */}
                 </div>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                    <span className="text-sm">4 IG Feed Posts</span>
+                    <span className="text-sm">1x IG Feed (Carousel + Repost Story)</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                    <span className="text-sm">4 IG Stories</span>
+                    <span className="text-sm">1x IG Story Video</span>
                   </li>
-                  <li className="flex items-start">
+            
+                    <li className="flex items-start">
                     <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                    <span className="text-sm">1 IG Reels</span>
-                  </li>
-                  <li className="flex items-start">
+                    <span className="text-sm"><strong>FREE Basic Carousel Design</strong></span>
+                    </li>
+                    <li className="flex items-start">
                     <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                    <span className="text-sm">Caption & Hashtag</span>
-                  </li>
+                    <span className="text-sm"><strong>FREE Caption & Hashtag</strong></span>
+                    </li>
                 </ul>
                 <Button className="w-full" asChild>
-                  <Link href="/contact">Hubungi Saya</Link>
+                  <Link href="http://wa.me/62895808860080" target="_blank">Hubungi via WhatsApp</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -215,41 +220,46 @@ export default function ServicesPage() {
             <Card className="overflow-hidden border-2 border-primary transition-all duration-200 shadow-md">
               <div className="bg-primary p-4 text-center text-primary-foreground">
                 <h3 className="font-medium text-lg">Paket Growth</h3>
-                <p className="text-sm opacity-90">Paling Populer</p>
+                <p className="text-sm opacity-90">Most Value! Naikin Awareness!</p>
               </div>
               <CardContent className="p-6">
+                <div className="text-center">
+                  <span className="text-sm text-muted-foreground line-through mr-2">443k</span>
+                </div>
                 <div className="text-center mb-4">
-                  <span className="text-3xl font-bold">899K</span>
-                  <span className="text-muted-foreground">/bulan</span>
+                  <span className="text-3xl font-bold">329k</span>
+                  <p className="text-sm text-primary font-medium italic">Hemat 114k</p>
+                  {/* <span className="text-muted-foreground">/bulan</span> */}
                 </div>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                    <span className="text-sm">8 IG Feed Posts</span>
+                    <span className="text-sm">1x IG Reels + Repost Story</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                    <span className="text-sm">8 IG Stories</span>
+                    <span className="text-sm">1x IG Feed Carousel + Repost Story</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                    <span className="text-sm">2 IG Reels</span>
+                    <span className="text-sm"><strong>FREE 1x IG Story Image</strong></span>
                   </li>
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                    <span className="text-sm">Caption & Hashtag</span>
+                    <span className="text-sm"><strong>FREE Copywriting</strong></span>
                   </li>
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                    <span className="text-sm">Content Calendar</span>
+                    <span className="text-sm"><strong>FREE  Carousel Design</strong></span>
                   </li>
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                    <span className="text-sm">Basic Analytics</span>
+                    <span className="text-sm"><strong>FREE Caption & Hashtag</strong></span>
                   </li>
+                  
                 </ul>
                 <Button className="w-full" asChild>
-                  <Link href="/contact">Hubungi Saya</Link>
+                  <Link href="http://wa.me/62895808860080" target="_blank">Hubungi via WhatsApp</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -257,45 +267,50 @@ export default function ServicesPage() {
             <Card className="overflow-hidden border-2 hover:border-primary/50 transition-all duration-200">
               <div className="bg-primary/10 p-4 text-center">
                 <h3 className="font-medium text-lg">Paket Premium</h3>
-                <p className="text-sm text-muted-foreground">Untuk bisnis serius</p>
+                <p className="text-sm text-muted-foreground">Full Attack Buat Closing Maksimal!</p>
               </div>
               <CardContent className="p-6">
+                <div className="text-center">
+                    <span className="text-sm text-muted-foreground line-through mr-2">636k</span>
+                </div>
                 <div className="text-center mb-4">
-                  <span className="text-3xl font-bold">1.499K</span>
-                  <span className="text-muted-foreground">/bulan</span>
+                    <span className="text-3xl font-bold">449k</span>
+                    <p className="text-sm text-primary font-medium italic">Hemat 187k</p>
+                  {/* <span className="text-muted-foreground">/bulan</span> */}
                 </div>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                    <span className="text-sm">12 IG Feed Posts</span>
+                    <span className="text-sm">1x IG Reels + Mirror Tiktok + Repost Story</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                    <span className="text-sm">15 IG Stories</span>
+                    <span className="text-sm">1x IG Feed Carousel + Repost Story</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                    <span className="text-sm">4 IG Reels</span>
+                    <span className="text-sm">1x IG Story Video</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                    <span className="text-sm">Caption & Hashtag</span>
+                    <span className="text-sm"><strong>FREE 2x IG Story Image</strong></span>
                   </li>
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                    <span className="text-sm">Content Calendar</span>
+                    <span className="text-sm"><strong>FREE Copywriting</strong></span>
                   </li>
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                    <span className="text-sm">Advanced Analytics</span>
+                    <span className="text-sm"><strong>FREE  Carousel Design</strong></span>
                   </li>
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                    <span className="text-sm">Competitor Analysis</span>
+                    <span className="text-sm"><strong>FREE Caption & Hashtag</strong></span>
                   </li>
+                  
                 </ul>
                 <Button className="w-full" asChild>
-                  <Link href="/contact">Hubungi Saya</Link>
+                  <Link href="http://wa.me/62895808860080" target="_blank">Hubungi via WhatsApp</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -350,7 +365,7 @@ export default function ServicesPage() {
                 <Link href="/contact">Hubungi Saya</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link href="/projects">Lihat Portfolio</Link>
+                <Link href="https://www.instagram.com/adityafakhrii/" target="_blank">Lihat Portfolio</Link>
               </Button>
             </div>
           </div>
