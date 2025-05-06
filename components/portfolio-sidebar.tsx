@@ -18,6 +18,7 @@ import {
   Users,
   Mic,
   Lightbulb,
+  DollarSign,
 } from "lucide-react"
 import { useTheme } from "next-themes"
 import Link from "next/link"
@@ -100,6 +101,14 @@ export function PortfolioSidebar() {
                 <Link href="/skills">
                   <Lightbulb className="mr-2 h-4 w-4" />
                   <span>Skills</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton asChild isActive={pathname === "/services"}>
+                <Link href="/services">
+                  <DollarSign className="mr-2 h-4 w-4" />
+                  <span>Services & Rates</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
