@@ -149,7 +149,7 @@ export default function ContactPage() {
                   <h3 className="font-medium">Email</h3>
                   <p className="text-sm text-muted-foreground mt-1">
                     <a href="mailto:aditya@example.com" className="hover:underline">
-                      aditya@example.com
+                      adityafakhri03@gmail.com
                     </a>
                   </p>
                 </div>
@@ -158,10 +158,10 @@ export default function ContactPage() {
               <div className="flex items-start">
                 <Phone className="h-5 w-5 mr-3 text-primary mt-0.5" />
                 <div>
-                  <h3 className="font-medium">Telepon</h3>
+                  <h3 className="font-medium">WhatsApp</h3>
                   <p className="text-sm text-muted-foreground mt-1">
-                    <a href="tel:+6281234567890" className="hover:underline">
-                      +62 812 3456 7890
+                    <a href="http://wa.me/62895808860080" className="hover:underline">
+                      +62 895 8088 60080
                     </a>
                   </p>
                 </div>
@@ -171,7 +171,7 @@ export default function ContactPage() {
                 <MapPin className="h-5 w-5 mr-3 text-primary mt-0.5" />
                 <div>
                   <h3 className="font-medium">Lokasi</h3>
-                  <p className="text-sm text-muted-foreground mt-1">Jakarta, Indonesia</p>
+                  <p className="text-sm text-muted-foreground mt-1">Bandung, Indonesia</p>
                 </div>
               </div>
             </div>
@@ -181,22 +181,22 @@ export default function ContactPage() {
             <div className="space-y-2">
               <div className="flex justify-between">
                 <span>Senin - Jumat</span>
-                <span>09:00 - 17:00</span>
+                <span>17:00 - 22:00</span>
               </div>
               <div className="flex justify-between">
-                <span>Sabtu</span>
-                <span>10:00 - 14:00</span>
+                <span>Sabtu - Minggu</span>
+                <span>08:00 - 20:00</span>
               </div>
-              <div className="flex justify-between">
+              {/* <div className="flex justify-between">
                 <span>Minggu</span>
                 <span>Tutup</span>
-              </div>
+              </div> */}
             </div>
           </ContentBlock>
 
           <ContentBlock title="💬 Respons">
             <p className="text-sm">
-              Saya biasanya merespons pesan dalam waktu 24 jam pada hari kerja. Untuk pertanyaan mendesak, silakan
+              Saya biasanya merespons pesan dalam waktu 1 jam. Untuk pertanyaan mendesak, silakan
               hubungi melalui telepon.
             </p>
           </ContentBlock>
