@@ -86,7 +86,7 @@ export default function AboutPage() {
             </div>
             <div className="p-4 border rounded-lg">
               <h3 className="font-medium mb-2">🎮 Gaming</h3>
-              <p className="text-sm text-muted-foreground">Game strategi dan open world untuk melatih pemecahan masalah.</p>
+              <p className="text-sm text-muted-foreground">Game strategi dan open world untuk melatih pemecahan masalah. Tak lupa menyusun taktik dalam game Sepakbola</p>
             </div>
             {/* <div className="p-4 border rounded-lg">
               <h3 className="font-medium mb-2">🎸 Musik</h3>
