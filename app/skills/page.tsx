@@ -16,147 +16,74 @@ export default function SkillsPage() {
               <CardContent className="p-6">
                 <h3 className="font-medium text-lg mb-4">Frontend Development</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=React"
-                        alt="React"
-                        fill
-                        className="object-contain"
-                      />
+                  {[
+                    { name: "React" },
+                    { name: "Next.js" },
+                    { name: "TypeScript" },
+                    { name: "Bootstrap" },
+                    { name: "Tailwind CSS" },
+                    { name: "HTML/CSS" },
+                  ].map((skill) => (
+                    <div key={skill.name} className="flex flex-col items-center p-3 border rounded-lg">
+                      <div className="h-12 w-12 flex items-center justify-center mb-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="lucide lucide-code-xml-icon lucide-code-xml"
+                        >
+                          <path d="m18 16 4-4-4-4" />
+                          <path d="m6 8-4 4 4 4" />
+                          <path d="m14.5 4-5 16" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-center">{skill.name}</span>
                     </div>
-                    <span className="text-sm font-medium">React</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=Next.js"
-                        alt="Next.js"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">Next.js</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=TS"
-                        alt="TypeScript"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">TypeScript</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=Vue"
-                        alt="Vue.js"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">Vue.js</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=TW"
-                        alt="Tailwind CSS"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">Tailwind CSS</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=HTML/CSS"
-                        alt="HTML/CSS"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">HTML/CSS</span>
-                  </div>
+                  ))}
                 </div>
               </CardContent>
             </Card>
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-medium text-lg mb-4">Backend Development</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=Node"
-                        alt="Node.js"
-                        fill
-                        className="object-contain"
-                      />
+              <h3 className="font-medium text-lg mb-4">Backend Development</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {[
+                  { name: "PHP" },
+                  { name: "Laravel" },
+                  { name: "RESTful APIs" },
+                  { name: "Node.js" },
+                  { name: "JavaScript" },
+                  { name: "Python" },
+                ].map((skill) => (
+                  <div key={skill.name} className="flex flex-col items-center p-3 border rounded-lg">
+                    <div className="h-12 w-12 flex items-center justify-center mb-2">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={24}
+                        height={24}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-braces-icon lucide-braces"
+                        >
+                        <path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/>
+                        <path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/>
+                        </svg>
                     </div>
-                    <span className="text-sm font-medium">Node.js</span>
+                    <span className="text-sm font-medium text-center">{skill.name}</span>
                   </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=Express"
-                        alt="Express"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">Express</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=Prisma"
-                        alt="Prisma"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">Prisma</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=PHP"
-                        alt="PHP"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">PHP/Laravel</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=REST"
-                        alt="RESTful APIs"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">RESTful APIs</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=GraphQL"
-                        alt="GraphQL"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">GraphQL</span>
-                  </div>
-                </div>
+                ))}
+              </div>
               </CardContent>
             </Card>
 
@@ -164,135 +91,36 @@ export default function SkillsPage() {
               <CardContent className="p-6">
                 <h3 className="font-medium text-lg mb-4">Mobile Development</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=RN"
-                        alt="React Native"
-                        fill
-                        className="object-contain"
-                      />
+                  {[
+                    { name: "Kotlin" },
+                    { name: "Jetpack Compose" },
+                    { name: "Material Design" },
+                    { name: "Android Studio" },
+                    { name: "Flutter" },
+                    { name: "Mobile UI/UX" },
+                  ].map((skill) => (
+                    <div key={skill.name} className="flex flex-col items-center p-3 border rounded-lg">
+                      <div className="h-12 w-12 flex items-center justify-center mb-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={24}
+                          height={24}
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="lucide lucide-tablet-smartphone"
+                        >
+                          <rect width="10" height="14" x="3" y="8" rx="2" />
+                          <path d="M5 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2h-2.4" />
+                          <path d="M8 18h.01" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-center">{skill.name}</span>
                     </div>
-                    <span className="text-sm font-medium">React Native</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=Flutter"
-                        alt="Flutter"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">Flutter</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=Android"
-                        alt="Android"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">Android</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=iOS"
-                        alt="iOS"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">iOS</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=UI/UX"
-                        alt="Mobile UI/UX"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">Mobile UI/UX</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="font-medium text-lg mb-4">Database & Cloud</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=PostgreSQL"
-                        alt="PostgreSQL"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">PostgreSQL</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=MongoDB"
-                        alt="MongoDB"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">MongoDB</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=Firebase"
-                        alt="Firebase"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">Firebase</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=AWS"
-                        alt="AWS"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">AWS</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=Vercel"
-                        alt="Vercel"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">Vercel</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=Netlify"
-                        alt="Netlify"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">Netlify</span>
-                  </div>
+                  ))}
                 </div>
               </CardContent>
             </Card>
@@ -301,161 +129,149 @@ export default function SkillsPage() {
               <CardContent className="p-6">
                 <h3 className="font-medium text-lg mb-4">UI/UX Design</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=Figma"
-                        alt="Figma"
-                        fill
-                        className="object-contain"
-                      />
+                  {[
+                  { name: "Figma" },
+                  { name: "Responsive Design" },
+                  { name: "Wireframing" },
+                  { name: "Prototyping" },
+                  { name: "Design Thinking" },
+                  { name: "User Research" },
+                  ].map((skill) => (
+                  <div key={skill.name} className="flex flex-col items-center p-3 border rounded-lg">
+                    <div className="h-12 w-12 flex items-center justify-center mb-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-palette-icon lucide-palette"
+                    >
+                      <path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/>
+                      <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+                      <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+                      <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+                      <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+                    </svg>
                     </div>
-                    <span className="text-sm font-medium">Figma</span>
+                    <span className="text-sm font-medium text-center">{skill.name}</span>
                   </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=XD"
-                        alt="Adobe XD"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">Adobe XD</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=RD"
-                        alt="Responsive Design"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">Responsive Design</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=WF"
-                        alt="Wireframing"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">Wireframing</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=Proto"
-                        alt="Prototyping"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">Prototyping</span>
-                  </div>
+                  ))}
                 </div>
               </CardContent>
             </Card>
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-medium text-lg mb-4">AI & Machine Learning</h3>
+                <h3 className="font-medium text-lg mb-4">Database & Cloud</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=OpenAI"
-                        alt="OpenAI API"
-                        fill
-                        className="object-contain"
-                      />
+                  {[
+                  "PostgreSQL",
+                  "MySQL",
+                  "Firebase",
+                  "Google Cloud",
+                  "Vercel",
+                  "Netlify",
+                  ].map((skill) => (
+                  <div key={skill} className="flex flex-col items-center p-3 border rounded-lg">
+                    <div className="h-12 w-12 flex items-center justify-center mb-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-database-icon lucide-database"
+                    >
+                      <ellipse cx="12" cy="5" rx="9" ry="3" />
+                      <path d="M3 5V19A9 3 0 0 0 21 19V5" />
+                      <path d="M3 12A9 3 0 0 0 21 12" />
+                    </svg>
                     </div>
-                    <span className="text-sm font-medium">OpenAI API</span>
+                    <span className="text-sm font-medium">{skill}</span>
                   </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=TF.js"
-                        alt="TensorFlow.js"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">TensorFlow.js</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=ML"
-                        alt="ML Models"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">ML Models</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=CV"
-                        alt="Computer Vision"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">Computer Vision</span>
-                  </div>
-                  <div className="flex flex-col items-center p-3 border rounded-lg">
-                    <div className="h-12 w-12 relative mb-2">
-                      <Image
-                        src="/placeholder.svg?height=48&width=48&text=NLP"
-                        alt="NLP"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">NLP</span>
-                  </div>
+                  ))}
                 </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+              <h3 className="font-medium text-lg mb-4">AI & Machine Learning</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {[
+                  { name: "TensorFlow" },
+                  { name: "Python" },
+                  { name: "CNN" },
+                ].map((skill) => (
+                  <div key={skill.name} className="flex flex-col items-center p-3 border rounded-lg">
+                    <div className="h-12 w-12 flex items-center justify-center mb-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-brain-circuit-icon lucide-brain-circuit"
+                      >
+                        <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+                        <path d="M9 13a4.5 4.5 0 0 0 3-4"/>
+                        <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/>
+                        <path d="M3.477 10.896a4 4 0 0 1 .585-.396"/>
+                        <path d="M6 18a4 4 0 0 1-1.967-.516"/>
+                        <path d="M12 13h4"/>
+                        <path d="M12 18h6a2 2 0 0 1 2 2v1"/>
+                        <path d="M12 8h8"/>
+                        <path d="M16 8V5a2 2 0 0 1 2-2"/>
+                        <circle cx="16" cy="13" r=".5"/>
+                        <circle cx="18" cy="3" r=".5"/>
+                        <circle cx="20" cy="21" r=".5"/>
+                        <circle cx="20" cy="8" r=".5"/>
+                      </svg>
+                    </div>
+                    <span className="text-sm font-medium text-center">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
               </CardContent>
             </Card>
           </div>
         </ContentBlock>
 
-        <ContentBlock title="🔧 Tools & Technologies">
+        <ContentBlock title="🔧 Other Tools & Technologies">
           <div className="flex flex-wrap gap-2">
             {[
               "Git",
               "GitHub",
+              "Co-Pilot",
               "VS Code",
-              "Docker",
-              "Webpack",
-              "Vite",
-              "Jest",
-              "Cypress",
-              "CI/CD",
-              "Jenkins",
-              "GitHub Actions",
-              "Jira",
-              "Notion",
-              "Slack",
+              "Android Studio",
+              "Google Colab",
+              "Laragon",
+              "NPM",
               "Postman",
-              "npm/yarn",
-              "Babel",
+              "Docker",
+              "Vite",
               "ESLint",
               "Prettier",
-              "Redux",
-              "Zustand",
-              "React Query",
-              "Storybook",
-              "Framer Motion",
-              "GSAP",
-              "Three.js",
-              "D3.js",
-              "Chart.js",
+              "Notion",
+              "Bolt.new",
+              "v0",
+              "ChatGPT",
+              "Claude",
+              "Gemini",
             ].map((tool) => (
               <Badge key={tool} variant="secondary">
                 {tool}
@@ -551,7 +367,7 @@ export default function SkillsPage() {
         </ContentBlock>
 
         <ContentBlock title="🌐 Languages">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-4 border rounded-lg">
               <h3 className="font-medium">Bahasa Indonesia</h3>
               <p className="text-sm text-muted-foreground">Native</p>
@@ -559,10 +375,6 @@ export default function SkillsPage() {
             <div className="p-4 border rounded-lg">
               <h3 className="font-medium">English</h3>
               <p className="text-sm text-muted-foreground">Professional Proficiency</p>
-            </div>
-            <div className="p-4 border rounded-lg">
-              <h3 className="font-medium">日本語 (Japanese)</h3>
-              <p className="text-sm text-muted-foreground">Basic</p>
             </div>
           </div>
         </ContentBlock>
