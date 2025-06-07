@@ -91,7 +91,7 @@ export default function Home() {
               <div>
                 <h3 className="font-medium">Front-End Development</h3>
                 <p className="text-sm text-muted-foreground mt-1">
-                React, Next.js, TypeScript, Tailwind CSS
+                React, Next.js, Tailwind CSS, Bootstrap, HTML/CSS
                 </p>
               </div>
               </div>
@@ -107,7 +107,7 @@ export default function Home() {
               <div>
                 <h3 className="font-medium">Back-End Development</h3>
                 <p className="text-sm text-muted-foreground mt-1">
-                Node.js, PHP, Laravel, JavaScript
+                PHP, Laravel, JavaScript, MySQL
                 </p>
               </div>
               </div>
@@ -155,23 +155,7 @@ export default function Home() {
             description="System Information Accounting & Tax: aplikasi web untuk membantu mengelola informasi akuntansi dan pajak"
             imageSrc="/placeholder.svg?height=200&width=400"
             tags={["Laravel", "JavaScript", "MySQL", "Bootstrap"]}
-            href="/projects/siacta"
-          />
-
-          <ProjectCard
-            title="Company Profile PT Herya Wood Furniture"
-            description="Website profil perusahaan untuk menampilkan produk dan layanan PT Herya Wood Furniture"
-            imageSrc="/placeholder.svg?height=200&width=400"
-            tags={["Laravel", "JavaScript", "MySQL", "Bootstrap"]}
-            href="/projects/herya"
-          />
-
-          <ProjectCard
-            title="MedFluffy"
-            description="Aplikasi mobile untuk prediksi dini penyakit mata pada anjing hanya lewat foto dan rekomendasi pertolongan pertama."
-            imageSrc="/placeholder.svg?height=200&width=400"
-            tags={["Kotlin", "Material", "TensorFlow", "Firebase"]}
-            href="/projects/medfluffy"
+            href="https://github.com/adityafakhrii/siacta"
           />
 
           <ProjectCard
@@ -180,6 +164,22 @@ export default function Home() {
             imageSrc="/placeholder.svg?height=200&width=400"
             tags={["Laravel", "JavaScript", "MySQL", "Bootstrap"]}
             href="/projects/restoranku"
+          />
+
+           <ProjectCard
+            title="MedFluffy"
+            description="Aplikasi mobile untuk prediksi dini penyakit mata pada anjing hanya lewat foto dan rekomendasi pertolongan pertama."
+            imageSrc="/placeholder.svg?height=200&width=400"
+            tags={["Kotlin", "Material", "TensorFlow", "Firebase"]}
+            href="https://github.com/MedFluffy"
+          />
+          
+          <ProjectCard
+            title="Company Profile PT Herya Wood Furniture"
+            description="Website profil perusahaan untuk menampilkan produk dan layanan PT Herya Wood Furniture"
+            imageSrc="/placeholder.svg?height=200&width=400"
+            tags={["Laravel", "JavaScript", "MySQL", "Bootstrap"]}
+            href="https://heryawf.co.id/"
           />
         </div>
         <div className="mt-6 text-center">
