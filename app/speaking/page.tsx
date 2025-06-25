@@ -227,39 +227,39 @@ export default function SpeakingPage() {
         <ContentBlock title="📝 Topik yang Saya Bicarakan">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-4 border rounded-lg">
-              <h3 className="font-medium mb-2">Web Development</h3>
+              <h3 className="font-medium mb-2">Fullstack Web Development with AI</h3>
               <ul className="text-sm space-y-1 list-disc list-inside">
-                <li>Modern React & Next.js</li>
-                <li>Performance Optimization</li>
-                <li>State Management Strategies</li>
-                <li>Serverless Architecture</li>
+                <li>Laravel Framework & Ecosystem</li>
+                <li>React.js & Next.js Development</li>
+                <li>Tailwind CSS & Bootstrap</li>
+                <li>Fullstack Development Best Practices</li>
               </ul>
             </div>
             <div className="p-4 border rounded-lg">
-              <h3 className="font-medium mb-2">AI Integration</h3>
+              <h3 className="font-medium mb-2">AI for Developers</h3>
               <ul className="text-sm space-y-1 list-disc list-inside">
-                <li>LLM APIs in Web Applications</li>
-                <li>Computer Vision for Mobile Apps</li>
-                <li>Ethical AI Implementation</li>
-                <li>AI-Enhanced UX</li>
+                <li>AI Tools for Development</li>
+                <li>Ethics in AI Development</li>
+                <li>AI Integration Best Practices</li>
+                <li>Prompt Engineering for Devs</li>
               </ul>
             </div>
             <div className="p-4 border rounded-lg">
-              <h3 className="font-medium mb-2">Mobile Development</h3>
+              <h3 className="font-medium mb-2">Android Development</h3>
               <ul className="text-sm space-y-1 list-disc list-inside">
-                <li>React Native Best Practices</li>
-                <li>Cross-Platform Development</li>
-                <li>Native Module Integration</li>
-                <li>Mobile App Performance</li>
+                <li>Kotlin Android Development</li>
+                <li>Android Architecture Patterns</li>
+                <li>Kotlin Coroutines & Flow</li>
+                <li>Android App Performance</li>
               </ul>
             </div>
             <div className="p-4 border rounded-lg">
-              <h3 className="font-medium mb-2">Career & Mentorship</h3>
+              <h3 className="font-medium mb-2">Softskill for Developer</h3>
               <ul className="text-sm space-y-1 list-disc list-inside">
-                <li>Breaking into Tech</li>
-                <li>Effective Mentorship</li>
-                <li>Building a Personal Brand</li>
-                <li>Continuous Learning Strategies</li>
+                <li>Career Development & Planning</li>
+                <li>Personal Branding for Devs</li>
+                <li>Technical Communication</li>
+                <li>Time & Project Management</li>
               </ul>
             </div>
           </div>
