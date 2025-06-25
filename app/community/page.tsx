@@ -28,15 +28,18 @@ export default function CommunityPage() {
                     <Users className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Mentor di CodeCamp</h3>
+                    <h3 className="font-medium">Front of House (FOH)</h3>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Membimbing peserta bootcamp dalam pengembangan web dan mobile. Mengadakan sesi mentoring mingguan
-                      dan code review untuk membantu peserta mengembangkan keterampilan teknis mereka.
+                      Google Developer Groups (GDG) Bandung - Bandung, Indonesia<br />
+                      Agustus 2023 - Sekarang
+                    </p>
+                    <p className="text-sm mt-2">
+                      GDG Bandung adalah komunitas pengembang Google di Bandung. Sebagai Front of House (FOH), saya mengatur presentasi, stage, dan sistem suara saat acara komunitas.
                     </p>
                     <div className="flex flex-wrap gap-2 mt-3">
-                      <Badge variant="outline">2020 - Sekarang</Badge>
-                      <Badge variant="outline">Mentoring</Badge>
-                      <Badge variant="outline">Code Review</Badge>
+                      <Badge variant="outline">Agustus 2023 - Sekarang</Badge>
+                      <Badge variant="outline">Community</Badge>
+                      <Badge variant="outline">Event Organizer</Badge>
                     </div>
                   </div>
                 </div>
@@ -50,15 +53,18 @@ export default function CommunityPage() {
                     <Heart className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Volunteer di TechForGood</h3>
+                    <h3 className="font-medium">Lead</h3>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Mengembangkan aplikasi web dan mobile untuk organisasi non-profit. Membantu organisasi sosial
-                      memanfaatkan teknologi untuk meningkatkan dampak positif mereka.
+                      Google Developer Student Clubs (GDSC) Widyatama University - Bandung, Indonesia<br />
+                      Agustus 2023 - Juli 2024
+                    </p>
+                    <p className="text-sm mt-2">
+                      Google Developer Student Clubs (GDSC) adalah komunitas mahasiswa yang berfokus pada pengembangan keterampilan teknologi, kolaborasi, dan inovasi melalui berbagai pelatihan serta proyek. Sebagai Lead, saya memimpin tim, mengoordinasikan kegiatan, dan membimbing anggota dalam pengembangan proyek serta penguatan jejaring komunitas.
                     </p>
                     <div className="flex flex-wrap gap-2 mt-3">
-                      <Badge variant="outline">2019 - Sekarang</Badge>
-                      <Badge variant="outline">Web Development</Badge>
-                      <Badge variant="outline">Social Impact</Badge>
+                      <Badge variant="outline">Agustus 2023 - Juli 2024</Badge>
+                      <Badge variant="outline">Leadership</Badge>
+                      <Badge variant="outline">Mentoring</Badge>
                     </div>
                   </div>
                 </div>
@@ -72,15 +78,18 @@ export default function CommunityPage() {
                     <Globe className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Anggota Komunitas Developer Indonesia</h3>
+                    <h3 className="font-medium">Public Relations</h3>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Aktif dalam forum diskusi dan kegiatan komunitas developer lokal. Berpartisipasi dalam hackathon
-                      dan coding challenge untuk membangun jaringan dan berbagi pengetahuan.
+                      Google Developer Student Clubs (GDSC) Indonesia<br />
+                      November 2023 - Februari 2024
+                    </p>
+                    <p className="text-sm mt-2">
+                      Dalam peran ini, saya bertanggung jawab mengundang pakar industri sebagai pembicara dan mentor untuk acara hackathon "HackFest 2024". Selain itu, saya juga mengelola komunikasi dengan peserta melalui Instagram serta memberikan bantuan dan dukungan selama acara berlangsung.
                     </p>
                     <div className="flex flex-wrap gap-2 mt-3">
-                      <Badge variant="outline">2018 - Sekarang</Badge>
-                      <Badge variant="outline">Networking</Badge>
-                      <Badge variant="outline">Knowledge Sharing</Badge>
+                      <Badge variant="outline">Nov 2023 - Feb 2024</Badge>
+                      <Badge variant="outline">Public Relations</Badge>
+                      <Badge variant="outline">Event Support</Badge>
                     </div>
                   </div>
                 </div>
@@ -94,15 +103,18 @@ export default function CommunityPage() {
                     <Code className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Kontributor Open Source</h3>
+                    <h3 className="font-medium">Section Leader</h3>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Berkontribusi pada proyek open source untuk meningkatkan ekosistem pengembangan. Aktif dalam
-                      komunitas GitHub dan forum diskusi teknis.
+                      Himpunan Mahasiswa Teknik Informatika Universitas Widyatama<br />
+                      2022 - 2023
+                    </p>
+                    <p className="text-sm mt-2">
+                      Sebagai Section Leader, saya memimpin dan mengoordinasikan berbagai kegiatan kemahasiswaan di bidang informatika, seperti seminar, pelatihan, dan lomba teknologi. Saya juga aktif dalam membangun kolaborasi antar anggota serta mendorong pengembangan soft skill dan hard skill mahasiswa melalui program kerja yang inovatif dan inklusif.
                     </p>
                     <div className="flex flex-wrap gap-2 mt-3">
-                      <Badge variant="outline">2017 - Sekarang</Badge>
-                      <Badge variant="outline">Open Source</Badge>
-                      <Badge variant="outline">GitHub</Badge>
+                      <Badge variant="outline">2022 - 2023</Badge>
+                      <Badge variant="outline">Leadership</Badge>
+                      <Badge variant="outline">Organization</Badge>
                     </div>
                   </div>
                 </div>
@@ -111,7 +123,7 @@ export default function CommunityPage() {
           </div>
         </ContentBlock>
 
-        <ContentBlock title="🌟 Proyek Komunitas">
+        {/* <ContentBlock title="🌟 Proyek Komunitas">
           <div className="space-y-6">
             <div className="border rounded-lg overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-3">
@@ -192,7 +204,7 @@ export default function CommunityPage() {
               </p>
             </div>
           </div>
-        </ContentBlock>
+        </ContentBlock> */}
       </div>
     </div>
   )

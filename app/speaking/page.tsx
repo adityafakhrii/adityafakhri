@@ -15,33 +15,11 @@ export default function SpeakingPage() {
       <div className="mt-8 space-y-8">
         <ContentBlock title="🎙️ Upcoming Events">
           <div className="space-y-4">
-            <div className="p-4 border rounded-lg">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div>
-                  <h3 className="font-medium">Indonesia Developer Summit 2024</h3>
-                  <p className="text-sm text-muted-foreground">
-                    <span className="flex items-center mt-1">
-                      <Calendar className="h-4 w-4 mr-1" />
-                      15 Januari 2024
-                    </span>
-                  </p>
-                </div>
-                <Badge>Confirmed</Badge>
-              </div>
-            </div>
-            <div className="p-4 border rounded-lg">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div>
-                  <h3 className="font-medium">AI in Web Development Workshop</h3>
-                  <p className="text-sm text-muted-foreground">
-                    <span className="flex items-center mt-1">
-                      <Calendar className="h-4 w-4 mr-1" />
-                      28 Februari 2024
-                    </span>
-                  </p>
-                </div>
-                <Badge variant="outline">Tentative</Badge>
-              </div>
+            <div className="p-4 border rounded-lg text-center">
+              <h3 className="font-medium text-lg mb-2">Coming Soon</h3>
+              <p className="text-muted-foreground text-sm">
+          Belum ada event yang dijadwalkan. Pantau halaman ini untuk update selanjutnya!
+              </p>
             </div>
           </div>
         </ContentBlock>
@@ -55,143 +33,145 @@ export default function SpeakingPage() {
           <div className="space-y-6">
             <Card>
               <CardContent className="p-0">
-                <div className="grid grid-cols-1 md:grid-cols-3">
-                  <div className="relative h-48 md:h-auto">
-                    <Image
-                      src="/placeholder.svg?height=300&width=300&text=TechConf+2023"
-                      alt="TechConf 2023"
-                      fill
-                      className="object-cover"
-                    />
+              <div className="grid grid-cols-1 md:grid-cols-3">
+                <div className="relative h-48 md:h-auto">
+                <Image
+                  src="/placeholder.svg?height=300&width=300&text=Laravel+12"
+                  alt="Workshop Laravel 12"
+                  fill
+                  className="object-cover"
+                />
+                </div>
+                <div className="md:col-span-2 p-6">
+                <div className="flex flex-wrap gap-2 mb-2">
+                  <Badge>Workshop</Badge>
+                  <Badge variant="outline">Laravel 12</Badge>
+                  <Badge variant="outline">Web Development</Badge>
+                </div>
+                <h3 className="font-medium text-xl">Workshop Laravel 12</h3>
+                <h4 className="text-lg text-muted-foreground">Laravel 12 untuk Pemula + Studi Kasus</h4>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-2 text-sm text-muted-foreground">
+                  <div className="flex items-center">
+                  <Calendar className="h-4 w-4 mr-1" />
+                  04 Juni 2025
                   </div>
-                  <div className="md:col-span-2 p-6">
-                    <div className="flex flex-wrap gap-2 mb-2">
-                      <Badge>Conference</Badge>
-                      <Badge variant="outline">AI</Badge>
-                      <Badge variant="outline">Web Development</Badge>
-                    </div>
-                    <h3 className="font-medium text-xl">TechConf 2023</h3>
-                    <h4 className="text-lg text-muted-foreground">Mengintegrasikan AI dalam Aplikasi Web Modern</h4>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-2 text-sm text-muted-foreground">
-                      <div className="flex items-center">
-                        <Calendar className="h-4 w-4 mr-1" />
-                        15 Oktober 2023
-                      </div>
-                      <div className="hidden sm:block">•</div>
-                      <div className="flex items-center">
-                        <MapPin className="h-4 w-4 mr-1" />
-                        Jakarta Convention Center
-                      </div>
-                    </div>
-                    <p className="mt-4 text-sm">
-                      Presentasi tentang cara mengintegrasikan model AI seperti GPT dan teknologi computer vision ke
-                      dalam aplikasi web modern. Membahas best practices, pertimbangan etis, dan demo implementasi
-                      praktis.
-                    </p>
-                    <div className="mt-4">
-                      <Button variant="outline" size="sm" asChild>
-                        <Link href="#">
-                          Lihat Slide
-                          <ExternalLink className="ml-2 h-3 w-3" />
-                        </Link>
-                      </Button>
-                    </div>
+                  <div className="hidden sm:block">•</div>
+                  <div className="flex items-center">
+                  <MapPin className="h-4 w-4 mr-1" />
+                  Universitas Pendidikan Indonesia, Bandung
                   </div>
                 </div>
+                <p className="mt-4 text-sm">
+                  Pelatihan intensif untuk pemula yang ingin mempelajari dasar-dasar Laravel 12. Peserta akan mempraktikkan pembuatan aplikasi web sederhana melalui studi kasus nyata, mulai dari instalasi hingga deployment.
+                </p>
+                <div className="mt-4">
+                  <Button variant="outline" size="sm" asChild>
+                  <Link href="#">
+                    Lihat Materi
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </Link>
+                  </Button>
+                </div>
+                </div>
+              </div>
               </CardContent>
             </Card>
 
             <Card>
               <CardContent className="p-0">
-                <div className="grid grid-cols-1 md:grid-cols-3">
-                  <div className="relative h-48 md:h-auto">
-                    <Image
-                      src="/placeholder.svg?height=300&width=300&text=DevFest+2023"
-                      alt="DevFest 2023"
-                      fill
-                      className="object-cover"
-                    />
+              <div className="grid grid-cols-1 md:grid-cols-3">
+                <div className="relative h-48 md:h-auto">
+                <Image
+                  src="/placeholder.svg?height=300&width=300&text=TailwindCSS"
+                  alt="Kelas Fullstack Tailwind"
+                  fill
+                  className="object-cover"
+                />
+                </div>
+                <div className="md:col-span-2 p-6">
+                <div className="flex flex-wrap gap-2 mb-2">
+                  <Badge>Workshop</Badge>
+                  <Badge variant="outline">Fullstack</Badge>
+                  <Badge variant="outline">Tailwind CSS</Badge>
+                </div>
+                <h3 className="font-medium text-xl">Kelas Fullstack by CODEPOLITAN</h3>
+                <h4 className="text-lg text-muted-foreground">Styling Website Dengan Tailwind dari Nol</h4>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-2 text-sm text-muted-foreground">
+                  <div className="flex items-center">
+                  <Calendar className="h-4 w-4 mr-1" />
+                  Jumat, 16 Mei 2025
                   </div>
-                  <div className="md:col-span-2 p-6">
-                    <div className="flex flex-wrap gap-2 mb-2">
-                      <Badge>Workshop</Badge>
-                      <Badge variant="outline">React</Badge>
-                      <Badge variant="outline">Performance</Badge>
-                    </div>
-                    <h3 className="font-medium text-xl">DevFest 2023</h3>
-                    <h4 className="text-lg text-muted-foreground">Optimasi Performa Aplikasi React</h4>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-2 text-sm text-muted-foreground">
-                      <div className="flex items-center">
-                        <Calendar className="h-4 w-4 mr-1" />5 Agustus 2023
-                      </div>
-                      <div className="hidden sm:block">•</div>
-                      <div className="flex items-center">
-                        <MapPin className="h-4 w-4 mr-1" />
-                        Bandung Digital Valley
-                      </div>
-                    </div>
-                    <p className="mt-4 text-sm">
-                      Workshop hands-on tentang teknik optimasi performa untuk aplikasi React. Peserta belajar tentang
-                      memoization, code splitting, lazy loading, dan penggunaan profiler untuk mengidentifikasi
-                      bottleneck.
-                    </p>
-                    <div className="mt-4">
-                      <Button variant="outline" size="sm" asChild>
-                        <Link href="#">
-                          Lihat Materi
-                          <ExternalLink className="ml-2 h-3 w-3" />
-                        </Link>
-                      </Button>
-                    </div>
+                  <div className="hidden sm:block">•</div>
+                  <div className="flex items-center">
+                  <MapPin className="h-4 w-4 mr-1" />
+                  Zoom Meeting
                   </div>
                 </div>
+                <p className="mt-4 text-sm">
+                  Workshop interaktif membahas dasar-dasar penggunaan Tailwind CSS untuk styling website modern. Peserta akan belajar mulai dari instalasi, konsep utility-first, hingga praktik membangun tampilan responsif secara langsung.
+                </p>
+                <div className="mt-4">
+                  <Button variant="outline" size="sm" asChild>
+                  <Link href="https://pay.codepolitan.com/?slug=program-fullstack-web-development-lifetime&coupon=ADITYAFAKHRI" target="_blank">
+                    Join Kelas Fullstack
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </Link>
+                  </Button>
+                </div>
+                </div>
+              </div>
               </CardContent>
             </Card>
 
             <Card>
               <CardContent className="p-0">
-                <div className="grid grid-cols-1 md:grid-cols-3">
-                  <div className="relative h-48 md:h-auto">
-                    <Image
-                      src="/placeholder.svg?height=300&width=300&text=WebinarSeries"
-                      alt="Webinar Series"
-                      fill
-                      className="object-cover"
-                    />
+              <div className="grid grid-cols-1 md:grid-cols-3">
+                <div className="relative h-48 md:h-auto">
+                <Image
+                  src="/placeholder.svg?height=300&width=300&text=Chayon+Masterclass"
+                  alt="Chayon Masterclass"
+                  fill
+                  className="object-cover"
+                />
+                </div>
+                <div className="md:col-span-2 p-6">
+                <div className="flex flex-wrap gap-2 mb-2">
+                  <Badge>Masterclass</Badge>
+                  <Badge variant="outline">Roadmap</Badge>
+                  <Badge variant="outline">Career</Badge>
+                </div>
+                <h3 className="font-medium text-xl">Chayon Masterclass</h3>
+                <h4 className="text-lg text-muted-foreground">Roadmap Menjadi Programmer Profesional: Dari Nol Sampai Pro</h4>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-2 text-sm text-muted-foreground">
+                  <div className="flex items-center">
+                  <Calendar className="h-4 w-4 mr-1" />
+                  03 Mei 2025
                   </div>
-                  <div className="md:col-span-2 p-6">
-                    <div className="flex flex-wrap gap-2 mb-2">
-                      <Badge>Webinar</Badge>
-                      <Badge variant="outline">Next.js</Badge>
-                      <Badge variant="outline">Serverless</Badge>
-                    </div>
-                    <h3 className="font-medium text-xl">TechTalk Webinar Series</h3>
-                    <h4 className="text-lg text-muted-foreground">Membangun Aplikasi Serverless dengan Next.js</h4>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-2 text-sm text-muted-foreground">
-                      <div className="flex items-center">
-                        <Calendar className="h-4 w-4 mr-1" />
-                        20 Juni 2023
-                      </div>
-                      <div className="hidden sm:block">•</div>
-                      <div className="flex items-center">
-                        <MapPin className="h-4 w-4 mr-1" />
-                        Online (Zoom)
-                      </div>
-                    </div>
-                    <p className="mt-4 text-sm">
-                      Webinar tentang pengembangan aplikasi serverless menggunakan Next.js dan Vercel. Membahas
-                      keuntungan arsitektur serverless, implementasi API routes, dan strategi deployment yang efisien.
-                    </p>
-                    <div className="mt-4">
-                      <Button variant="outline" size="sm" asChild>
-                        <Link href="#">
-                          Tonton Rekaman
-                          <ExternalLink className="ml-2 h-3 w-3" />
-                        </Link>
-                      </Button>
-                    </div>
+                  <div className="hidden sm:block">•</div>
+                  <div className="flex items-center">
+                  <MapPin className="h-4 w-4 mr-1" />
+                  Zoom Meeting
                   </div>
                 </div>
+                <p className="mt-4 text-sm">
+                  Sesi masterclass membahas langkah-langkah praktis dan roadmap lengkap untuk menjadi programmer profesional, mulai dari dasar hingga siap kerja di industri. Cocok untuk pemula maupun yang ingin memperkuat fondasi karier di bidang teknologi.
+                </p>
+                <div className="mt-4 flex gap-2">
+                  <Button variant="outline" size="sm" asChild>
+                  <Link href="https://youtu.be/7TAWMT56fxA?si=6nbY-4FbdskktfcV" target="_blank">
+                    Tonton Rekaman
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild>
+                  <Link href="https://docs.google.com/presentation/d/1tbQUYvYjsHN5Sl7NyPcjjBTnY4NZjYat3yasWCuw29o/edit?usp=sharing" target="_blank">
+                    Lihat Materi
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </Link>
+                  </Button>
+                </div>
+                </div>
+              </div>
               </CardContent>
             </Card>
 
