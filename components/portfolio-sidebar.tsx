@@ -4,6 +4,7 @@ import {
   Home,
   User,
   Briefcase,
+  BriefcaseBusiness,
   FileText,
   MessageSquare,
   Moon,
@@ -19,6 +20,7 @@ import {
   Mic,
   Lightbulb,
   DollarSign,
+  Folder
 } from "lucide-react"
 import { useTheme } from "next-themes"
 import Link from "next/link"
@@ -105,17 +107,17 @@ export function PortfolioSidebar() {
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive={pathname === "/services"}>
-                <Link href="/services">
-                  <DollarSign className="mr-2 h-4 w-4" />
-                  <span>Services & Rates</span>
+              <SidebarMenuButton asChild isActive={pathname === "/speaking"}>
+                <Link href="/speaking">
+                  <Mic className="mr-2 h-4 w-4" />
+                  <span>Speaking & Events</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton asChild isActive={pathname.startsWith("/projects")}>
                 <Link href="/projects">
-                  <Briefcase className="mr-2 h-4 w-4" />
+                  <Folder className="mr-2 h-4 w-4" />
                   <span>Projects</span>
                 </Link>
               </SidebarMenuButton>
@@ -123,7 +125,7 @@ export function PortfolioSidebar() {
             <SidebarMenuItem>
               <SidebarMenuButton asChild isActive={pathname === "/experience"}>
                 <Link href="/experience">
-                  <Briefcase className="mr-2 h-4 w-4" />
+                  <BriefcaseBusiness className="mr-2 h-4 w-4" />
                   <span>Experience</span>
                 </Link>
               </SidebarMenuButton>
@@ -145,10 +147,10 @@ export function PortfolioSidebar() {
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive={pathname === "/speaking"}>
-                <Link href="/speaking">
-                  <Mic className="mr-2 h-4 w-4" />
-                  <span>Speaking</span>
+              <SidebarMenuButton asChild isActive={pathname === "/services"}>
+                <Link href="/services">
+                  <DollarSign className="mr-2 h-4 w-4" />
+                  <span>Services & Rates</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
