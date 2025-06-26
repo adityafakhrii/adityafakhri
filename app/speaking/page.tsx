@@ -116,9 +116,9 @@ export default function SpeakingPage() {
                   Universitas Pendidikan Indonesia, Bandung
                   </div>
                 </div>
-                <p className="mt-4 text-sm">
+                <div className="mt-4 text-sm">
                   Pelatihan intensif untuk pemula yang ingin mempelajari dasar-dasar Laravel 12. Peserta akan mempraktikkan pembuatan aplikasi web sederhana melalui studi kasus nyata, mulai dari instalasi hingga deployment.
-                </p>
+                </div>
                 <div className="mt-4">
                   <Button variant="outline" size="sm" asChild>
                   <Link href="#">
@@ -165,10 +165,16 @@ export default function SpeakingPage() {
                   Zoom Meeting
                   </div>
                 </div>
-                <p className="mt-4 text-sm">
+                <div className="mt-4 text-sm">
                   Workshop interaktif membahas dasar-dasar penggunaan Tailwind CSS untuk styling website modern. Peserta akan belajar mulai dari instalasi, konsep utility-first, hingga praktik membangun tampilan responsif secara langsung.
-                </p>
+                </div>
                 <div className="mt-4 flex gap-2">
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href="https://pay.codepolitan.com/?slug=program-fullstack-web-development-lifetime&coupon=ADITYAFAKHRI" target="_blank">
+                      Join Kelas Fullstack
+                      <ExternalLink className="ml-2 h-3 w-3" />
+                    </Link>
+                  </Button>
                   <Button variant="outline" size="sm" asChild>
                     <Link href="https://www.codepolitan.com/course/intro/tailwind-dasar-desain-web-kilat-jaman-sekarang/" target="_blank">
                       Tonton Rekaman
@@ -176,8 +182,8 @@ export default function SpeakingPage() {
                     </Link>
                   </Button>
                   <Button variant="outline" size="sm" asChild>
-                    <Link href="https://pay.codepolitan.com/?slug=program-fullstack-web-development-lifetime&coupon=ADITYAFAKHRI" target="_blank">
-                      Join Kelas Fullstack
+                    <Link href="https://docs.google.com/presentation/d/1nGqXbBuwlhv9QoQYRzyEyz4wBaRWhOcxdYu-Kfr4p1k/edit?usp=sharing" target="_blank">
+                      Lihat Materi
                       <ExternalLink className="ml-2 h-3 w-3" />
                     </Link>
                   </Button>
@@ -220,9 +226,9 @@ export default function SpeakingPage() {
                   Zoom Meeting
                   </div>
                 </div>
-                <p className="mt-4 text-sm">
+                <div className="mt-4 text-sm">
                   Sesi masterclass membahas langkah-langkah praktis dan roadmap lengkap untuk menjadi programmer profesional, mulai dari dasar hingga siap kerja di industri. Cocok untuk pemula maupun yang ingin memperkuat fondasi karier di bidang teknologi.
-                </p>
+                </div>
                 <div className="mt-4 flex gap-2">
                   <Button variant="outline" size="sm" asChild>
                   <Link href="https://youtu.be/7TAWMT56fxA?si=6nbY-4FbdskktfcV" target="_blank">
@@ -284,12 +290,20 @@ export default function SpeakingPage() {
                       Demo langsung penggunaan AI untuk membangun website dengan tools seperti v0.dev dan Bolt. Mengenalkan AI-driven development untuk developer pemula dan praktisi industri kreatif.
                     </p>
                     <div className="mt-4">
-                      <Button variant="outline" size="sm" asChild>
-                        <Link href="https://drive.google.com/file/d/1-aftW3xwVdJX0ZXjFJyc1ajnWAfsMOL5/view?usp=sharing" target="_blank">
-                          Tonton Rekaman
-                          <ExternalLink className="ml-2 h-3 w-3" />
-                        </Link>
-                      </Button>
+                      <div className="flex gap-2">
+                        <Button variant="outline" size="sm" asChild>
+                          <Link href="https://drive.google.com/file/d/1-aftW3xwVdJX0ZXjFJyc1ajnWAfsMOL5/view?usp=sharing" target="_blank">
+                            Tonton Rekaman
+                            <ExternalLink className="ml-2 h-3 w-3" />
+                          </Link>
+                        </Button>
+                        <Button variant="outline" size="sm" asChild>
+                          <Link href="https://docs.google.com/presentation/d/1lQkzTt7UvrDlQ86SdeCHz7kPOEFEGSDgPAxLT78BqC4/edit?usp=sharing" target="_blank">
+                            Lihat Materi
+                            <ExternalLink className="ml-2 h-3 w-3" />
+                          </Link>
+                        </Button>
+                      </div>
                     </div>
                     <div className="mt-4 text-sm text-muted-foreground">
                       Diselenggarakan oleh: AICO Community
@@ -339,8 +353,8 @@ export default function SpeakingPage() {
                     </p>
                     <div className="mt-4">
                       <Button variant="outline" size="sm" asChild>
-                        <Link href="https://gdgbandung.com/bsb9" target="_blank">
-                          Daftar Sekarang
+                        <Link href="https://docs.google.com/presentation/d/1Om-ZNp9IzvwMjB4Zn8-wQPB2e2AJwQiNElNrudJXoYc/edit?usp=sharing" target="_blank">
+                          Lihat Materi
                           <ExternalLink className="ml-2 h-3 w-3" />
                         </Link>
                       </Button>
@@ -383,21 +397,29 @@ export default function SpeakingPage() {
                         Universitas Muhammadiyah Surakarta
                       </div>
                     </div>
-                    <p className="mt-4 text-sm">
+                    <div className="mt-4 text-sm">
                       Seminar nasional membahas etika teknologi dan dampaknya terhadap masyarakat, mencakup:
                       <ul className="list-disc list-inside mt-1">
                         <li>Etika penggunaan teknologi di ranah publik</li>
                         <li>Dampak sosial dari digitalisasi dan kecerdasan buatan</li>
                         <li>Peran developer dalam membentuk ekosistem digital yang sehat</li>
                       </ul>
-                    </p>
+                    </div>
                     <div className="mt-4">
-                      <Button variant="outline" size="sm" asChild>
-                        <Link href="#" target="_blank">
-                          Daftar Sekarang
-                          <ExternalLink className="ml-2 h-3 w-3" />
-                        </Link>
-                      </Button>
+                      <div className="flex gap-2">
+                        <Button variant="outline" size="sm" asChild>
+                          <Link href="https://drive.google.com/drive/folders/1SA8gdYKN51MhnAiS4Jw2b7KMaErUXPVQ" target="_blank">
+                            Lihat Dokumentasi
+                            <ExternalLink className="ml-2 h-3 w-3" />
+                          </Link>
+                        </Button>
+                        <Button variant="outline" size="sm" asChild>
+                          <Link href="https://docs.google.com/presentation/d/1nGqXbBuwlhv9QoQYRzyEyz4wBaRWhOcxdYu-Kfr4p1k/edit?usp=sharing" target="_blank">
+                            Lihat Materi
+                            <ExternalLink className="ml-2 h-3 w-3" />
+                          </Link>
+                        </Button>
+                      </div>
                     </div>
                     <div className="mt-4 text-sm text-muted-foreground">
                       Diselenggarakan oleh: HIMATIF Universitas Muhammadiyah Surakarta
@@ -405,7 +427,128 @@ export default function SpeakingPage() {
                   </div>
                 </div>
               </CardContent>
+            </Card>            
+
+            <Card>
+              <CardContent className="p-0">
+                <div className="grid grid-cols-1 md:grid-cols-3">
+                  <div className="relative h-48 md:h-auto">
+                    <Image
+                      src="https://i.ibb.co/WWh3SdLz/gdgoc.jpg"
+                      alt="GDGOC Info Session"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="md:col-span-2 p-6">
+                    <div className="flex flex-wrap gap-2 mb-2">
+                      <Badge>Info Session</Badge>
+                      <Badge variant="outline">Community</Badge>
+                      <Badge variant="outline">Career Development</Badge>
+                    </div>
+                    <h3 className="font-medium text-xl">Empowering Your Tech Future: Discover Google Developer on Campus Widyatama!</h3>
+                    <h4 className="text-lg text-muted-foreground">GDGOC Info Session</h4>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-2 text-sm text-muted-foreground">
+                      <div className="flex items-center">
+                        <Calendar className="h-4 w-4 mr-1" />
+                        24 November 2024
+                      </div>
+                      <div className="hidden sm:block">•</div>
+                      <div className="flex items-center">
+                        <Clock className="h-4 w-4 mr-1" />
+                        19.00-21.00 WIB
+                      </div>
+                      <div className="hidden sm:block">•</div>
+                      <div className="flex items-center">
+                        <MapPin className="h-4 w-4 mr-1" />
+                        Google Meet
+                      </div>
+                    </div>
+                    <div className="mt-4 text-sm">
+                      Sebagai Former Lead GDSC '23, membagikan pengalaman seputar:
+                      <ul className="list-disc list-inside mt-1">
+                        <li>Kepemimpinan dan kontribusi dalam komunitas teknologi</li>
+                        <li>Insight membangun karir teknologi lewat ekosistem Google Developer</li>
+                        <li>Tips berkontribusi aktif di komunitas teknologi</li>
+                      </ul>
+                    </div>
+                    <div className="mt-4">
+                      <Button variant="outline" size="sm" asChild>
+                        <Link href="https://docs.google.com/presentation/d/14cD8JzY5NyWRxGwIjLzPlVmn1ZJyNRpt0KpUfOKSJbU/edit?usp=sharing" target="_blank">
+                          Lihat Materi
+                          <ExternalLink className="ml-2 h-3 w-3" />
+                        </Link>
+                      </Button>
+                    </div>
+                    <div className="mt-4 text-sm text-muted-foreground">
+                      Diselenggarakan oleh: GDGoC – Universitas Widyatama
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
             </Card>
+
+            <Card>
+              <CardContent className="p-0">
+                <div className="grid grid-cols-1 md:grid-cols-3">
+                  <div className="relative h-48 md:h-auto">
+                    <Image
+                      src="https://i.ibb.co/hxSftwcg/gamelab.jpg"
+                      alt="GLOW#240 Softskill Event"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="md:col-span-2 p-6">
+                    <div className="flex flex-wrap gap-2 mb-2">
+                      <Badge>Webinar</Badge>
+                      <Badge variant="outline">Softskill</Badge>
+                      <Badge variant="outline">Career Development</Badge>
+                      <Badge variant="outline">AI</Badge>
+                    </div>
+                    <h3 className="font-medium text-xl">GLOW#240 – Softskill untuk Raih Karier Software Engineer di Era AI</h3>
+                    <h4 className="text-lg text-muted-foreground">Pengembangan Softskill untuk Software Engineer Modern</h4>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-2 text-sm text-muted-foreground">
+                      <div className="flex items-center">
+                        <Calendar className="h-4 w-4 mr-1" />
+                        14 Juni 2024
+                      </div>
+                      <div className="hidden sm:block">•</div>
+                      <div className="flex items-center">
+                        <Clock className="h-4 w-4 mr-1" />
+                        15.30-16.30 WIB
+                      </div>
+                      <div className="hidden sm:block">•</div>
+                      <div className="flex items-center">
+                        <MapPin className="h-4 w-4 mr-1" />
+                        Online - Gamelab Platform
+                      </div>
+                    </div>
+                    <div className="mt-4 text-sm">
+                      Sesi khusus membahas pengembangan softskill untuk software engineer:
+                      <ul className="list-disc list-inside mt-1">
+                        <li>Pentingnya softskill untuk menunjang karier di bidang pemrograman</li>
+                        <li>Keterampilan komunikasi, problem solving, dan teamwork</li>
+                        <li>Tantangan menjadi software engineer di era AI</li>
+                        <li>Tips praktis untuk mengembangkan diri sebagai developer modern</li>
+                      </ul>
+                    </div>
+                    <div className="mt-4">
+                      <Button variant="outline" size="sm" asChild>
+                        <Link href="https://docs.google.com/presentation/d/1SYh7nEgnVJApEeqOf3yB68rOlgR24qvOk2b1tjLGm3o/edit?usp=sharing" target="_blank">
+                          Lihat Materi
+                          <ExternalLink className="ml-2 h-3 w-3" />
+                        </Link>
+                      </Button>
+                    </div>
+                    <div className="mt-4 text-sm text-muted-foreground">
+                      Diselenggarakan oleh: GAMELAB Indonesia
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
         </div>
       </ContentBlock>
           
