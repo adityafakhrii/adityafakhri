@@ -904,7 +904,7 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
               Project Goals
             </h2>
             <ul className="space-y-2">
-              {project.goals.map((goal, index) => (
+              {(project.goals || []).map((goal, index) => (
                 <li key={index} className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                   <span>{goal}</span>
@@ -917,7 +917,7 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
           <ContentBlock>
             <h2 className="text-2xl font-bold mb-4">✨ Key Features</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {project.features.map((feature, index) => (
+              {(project.features || []).map((feature, index) => (
                 <div key={index} className="flex items-start p-3 border rounded-lg">
                   <CheckCircle className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
                   <span className="text-sm">{feature}</span>
@@ -933,7 +933,7 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
               Challenges & Solutions
             </h2>
             <div className="space-y-6">
-              {project.challenges.map((item, index) => (
+              {(project.challenges || []).map((item, index) => (
                 <div key={index} className="border rounded-lg p-4">
                   <div className="mb-3">
                     <h3 className="font-medium text-red-600 mb-2">🚧 Challenge:</h3>
@@ -952,7 +952,7 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
           <ContentBlock>
             <h2 className="text-2xl font-bold mb-4">🎯 Project Outcomes</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {project.outcomes.map((outcome, index) => (
+              {(project.outcomes || []).map((outcome, index) => (
                 <div key={index} className="p-4 bg-green-50 border border-green-200 rounded-lg">
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
@@ -967,7 +967,7 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
           <ContentBlock>
             <h2 className="text-2xl font-bold mb-4">🛠️ Technologies Used</h2>
             <div className="space-y-4">
-              {Object.entries(project.technologies).map(([category, techs]) => (
+              {Object.entries(project.technologies || {}).map(([category, techs]) => (
                 <div key={category}>
                   <h3 className="font-medium mb-2">{category}:</h3>
                   <div className="flex flex-wrap gap-2">
@@ -1073,7 +1073,7 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
           <ContentBlock>
             <h3 className="font-bold mb-4">🏷️ Tags</h3>
             <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
+              {(project.tags || []).map((tag) => (
                 <Badge key={tag} variant="secondary" className="text-xs">
                   {tag}
                 </Badge>
