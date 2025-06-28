@@ -21,6 +21,7 @@ export const translations = {
     viewAll: "Lihat Semua",
     getInTouch: "Hubungi Saya",
     contactMe: "Hubungi Saya",
+    language: "id",
     
     // Home page
     heroTitle: "Aditya Fakhri Riansyah",
@@ -196,6 +197,7 @@ export const translations = {
     viewAll: "View All",
     getInTouch: "Get In Touch",
     contactMe: "Contact Me",
+    language: "en",
     
     // Home page
     heroTitle: "Aditya Fakhri Riansyah",

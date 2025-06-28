@@ -1,3 +1,5 @@
+"use client"
+
 import { PageHeader } from "@/components/page-header"
 import { ContentBlock } from "@/components/content-block"
 import { Badge } from "@/components/ui/badge"
@@ -5,249 +7,10 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, ArrowLeft, Calendar, User, Clock, Target, Lightbulb, CheckCircle } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { TranslatedContent } from "@/components/translated-content"
 
 // Comprehensive project data
 const projects = {
-  "sibi-app-ui-ux": {
-    title: "SIBI App UI/UX",
-    subtitle: "Sistem Informasi Bahasa Isyarat Indonesia",
-    description: "Desain antarmuka pengguna untuk aplikasi SIBI dengan fokus pada user experience yang optimal dan aksesibilitas untuk komunitas tuli dan tunarungu.",
-    fullDescription: "SIBI App adalah aplikasi mobile yang dirancang khusus untuk membantu pembelajaran dan komunikasi menggunakan Sistem Isyarat Bahasa Indonesia (SIBI). Proyek ini berfokus pada desain UI/UX yang inklusif dan accessible, mempertimbangkan kebutuhan khusus pengguna tuli dan tunarungu serta mereka yang ingin mempelajari bahasa isyarat.",
-    imageSrc: "/placeholder.svg?height=400&width=800",
-    tags: ["UI/UX Design", "Figma", "User Research", "Prototyping", "Accessibility", "Inclusive Design"],
-    category: "Design",
-    status: "Completed",
-    year: "2024",
-    duration: "3 bulan",
-    role: "UI/UX Designer & User Researcher",
-    client: "Komunitas Tuli Indonesia",
-    liveUrl: "#",
-    repoUrl: "#",
-    
-    goals: [
-      "Menciptakan interface yang mudah dipahami oleh pengguna tuli dan tunarungu",
-      "Mengembangkan sistem pembelajaran bahasa isyarat yang interaktif",
-      "Memastikan aksesibilitas penuh sesuai standar WCAG 2.1",
-      "Menyediakan pengalaman pengguna yang inklusif dan engaging"
-    ],
-    
-    features: [
-      "Interface visual yang jelas dengan kontras tinggi",
-      "Sistem pembelajaran interaktif dengan video demonstrasi",
-      "Kamus bahasa isyarat dengan pencarian visual",
-      "Mode latihan dengan feedback real-time",
-      "Progress tracking untuk pembelajaran",
-      "Komunitas dan forum diskusi",
-      "Offline mode untuk akses tanpa internet",
-      "Customizable interface sesuai kebutuhan pengguna"
-    ],
-    
-    challenges: [
-      {
-        challenge: "Memahami kebutuhan spesifik komunitas tuli dan tunarungu",
-        solution: "Melakukan extensive user research dengan wawancara mendalam dan observasi langsung dengan komunitas target"
-      },
-      {
-        challenge: "Merancang interface yang accessible tanpa mengorbankan estetika",
-        solution: "Menggunakan design system yang konsisten dengan high contrast colors, clear typography, dan visual hierarchy yang kuat"
-      },
-      {
-        challenge: "Mengintegrasikan video pembelajaran dalam interface yang clean",
-        solution: "Mengembangkan video player custom dengan controls yang accessible dan subtitle yang dapat dikustomisasi"
-      }
-    ],
-    
-    outcomes: [
-      "Meningkatkan engagement pengguna sebesar 85% dalam testing",
-      "Mencapai skor aksesibilitas AAA pada WCAG 2.1 guidelines",
-      "Mendapat feedback positif dari 95% responden komunitas tuli",
-      "Prototype diterima untuk development oleh organisasi mitra"
-    ],
-    
-    technologies: {
-      "Design Tools": ["Figma", "Adobe Illustrator", "Principle"],
-      "Research": ["User Interviews", "Usability Testing", "A/B Testing"],
-      "Prototyping": ["Interactive Prototypes", "Micro-interactions", "Animation"],
-      "Accessibility": ["WCAG 2.1", "Screen Reader Testing", "Color Contrast Analysis"]
-    },
-    
-    gallery: [
-      "/placeholder.svg?height=300&width=500&text=Home+Screen",
-      "/placeholder.svg?height=300&width=500&text=Learning+Module",
-      "/placeholder.svg?height=300&width=500&text=Dictionary+Search",
-      "/placeholder.svg?height=300&width=500&text=Practice+Mode"
-    ],
-    
-    testimonial: {
-      quote: "Desain SIBI App sangat memperhatikan kebutuhan kami sebagai komunitas tuli. Interface yang visual dan intuitif membuat pembelajaran bahasa isyarat menjadi lebih menyenangkan dan efektif.",
-      author: "Sari Dewi",
-      position: "Ketua Komunitas Tuli Jakarta"
-    },
-    
-    nextProject: "lavafa-co",
-    prevProject: "smart-clinic-ui"
-  },
-  
-  "lavafa-co": {
-    title: "LavaFa.co",
-    subtitle: "Modern Digital Platform",
-    description: "Platform digital modern dengan desain yang elegan dan fungsionalitas yang komprehensif untuk kebutuhan bisnis digital masa kini.",
-    fullDescription: "LavaFa.co adalah platform digital yang menggabungkan desain modern dengan teknologi terdepan untuk memberikan solusi bisnis yang komprehensif. Platform ini dirancang dengan fokus pada user experience yang exceptional dan performa yang optimal untuk mendukung pertumbuhan bisnis digital.",
-    imageSrc: "/placeholder.svg?height=400&width=800",
-    tags: ["React", "Next.js", "TypeScript", "Modern Design", "Performance", "SEO"],
-    category: "Web Application",
-    status: "Completed",
-    year: "2024",
-    duration: "4 bulan",
-    role: "Full-Stack Developer & UI/UX Designer",
-    client: "LavaFa Digital Agency",
-    liveUrl: "https://lavafa.co",
-    repoUrl: "#",
-    
-    goals: [
-      "Membangun platform digital yang scalable dan performant",
-      "Menciptakan user experience yang modern dan engaging",
-      "Mengoptimalkan SEO untuk visibility yang maksimal",
-      "Mengintegrasikan analytics dan tracking yang komprehensif"
-    ],
-    
-    features: [
-      "Responsive design yang optimal di semua device",
-      "Server-side rendering untuk performa maksimal",
-      "SEO optimization dengan structured data",
-      "Progressive Web App (PWA) capabilities",
-      "Advanced analytics dan user tracking",
-      "Content Management System yang user-friendly",
-      "Multi-language support",
-      "Advanced caching dan optimization"
-    ],
-    
-    challenges: [
-      {
-        challenge: "Mencapai loading speed yang optimal dengan konten yang rich",
-        solution: "Implementasi lazy loading, image optimization, dan code splitting dengan Next.js untuk mencapai Core Web Vitals yang excellent"
-      },
-      {
-        challenge: "Membangun design system yang konsisten dan scalable",
-        solution: "Mengembangkan component library dengan TypeScript dan Storybook untuk dokumentasi dan testing"
-      },
-      {
-        challenge: "Mengoptimalkan SEO untuk competitive keywords",
-        solution: "Implementasi technical SEO, structured data, dan content optimization strategy"
-      }
-    ],
-    
-    outcomes: [
-      "Mencapai Google PageSpeed score 95+ untuk mobile dan desktop",
-      "Meningkatkan organic traffic sebesar 150% dalam 3 bulan",
-      "Conversion rate meningkat 40% dibanding platform sebelumnya",
-      "Mendapat recognition sebagai Best Digital Platform 2024"
-    ],
-    
-    technologies: {
-      "Frontend": ["React 18", "Next.js 14", "TypeScript", "Tailwind CSS"],
-      "Backend": ["Node.js", "API Routes", "Serverless Functions"],
-      "Database": ["PostgreSQL", "Prisma ORM", "Redis Cache"],
-      "Tools": ["Vercel", "Google Analytics", "Hotjar", "Figma"]
-    },
-    
-    gallery: [
-      "/placeholder.svg?height=300&width=500&text=Homepage+Hero",
-      "/placeholder.svg?height=300&width=500&text=Services+Section",
-      "/placeholder.svg?height=300&width=500&text=Portfolio+Gallery",
-      "/placeholder.svg?height=300&width=500&text=Contact+Form"
-    ],
-    
-    testimonial: {
-      quote: "Platform yang dibangun untuk LavaFa.co melebihi ekspektasi kami. Desainnya modern, performa sangat cepat, dan berhasil meningkatkan konversi bisnis secara signifikan.",
-      author: "Michael Chen",
-      position: "CEO, LavaFa Digital Agency"
-    },
-    
-    nextProject: "laravel-mastery",
-    prevProject: "sibi-app-ui-ux"
-  },
-  
-  "laravel-mastery": {
-    title: "Laravel Mastery",
-    subtitle: "Advanced Laravel Learning Project",
-    description: "Proyek pembelajaran dan penguasaan framework Laravel dengan implementasi fitur-fitur advanced dan best practices untuk pengembangan aplikasi enterprise.",
-    fullDescription: "Laravel Mastery adalah proyek komprehensif yang dirancang untuk menguasai framework Laravel secara mendalam. Proyek ini mencakup implementasi fitur-fitur advanced, design patterns, dan best practices yang digunakan dalam pengembangan aplikasi enterprise-level.",
-    imageSrc: "/placeholder.svg?height=400&width=800",
-    tags: ["Laravel", "PHP", "Advanced Features", "Best Practices", "Enterprise", "Architecture"],
-    category: "Web Application",
-    status: "Completed",
-    year: "2024",
-    duration: "6 bulan",
-    role: "Backend Developer & System Architect",
-    client: "Personal Learning Project",
-    liveUrl: "#",
-    repoUrl: "https://github.com/adityafakhrii/laravel-mastery",
-    
-    goals: [
-      "Menguasai advanced features Laravel untuk aplikasi enterprise",
-      "Mengimplementasikan design patterns dan architectural best practices",
-      "Membangun sistem yang scalable dan maintainable",
-      "Mempelajari testing strategies dan deployment automation"
-    ],
-    
-    features: [
-      "Advanced Eloquent relationships dan query optimization",
-      "Custom middleware dan service providers",
-      "Event-driven architecture dengan Laravel Events",
-      "Queue system untuk background job processing",
-      "API development dengan Laravel Sanctum",
-      "Advanced caching strategies (Redis, Memcached)",
-      "Comprehensive testing suite (Unit, Feature, Browser)",
-      "CI/CD pipeline dengan GitHub Actions"
-    ],
-    
-    challenges: [
-      {
-        challenge: "Memahami dan mengimplementasikan complex design patterns",
-        solution: "Studi mendalam tentang Repository Pattern, Service Layer, dan SOLID principles dengan implementasi praktis"
-      },
-      {
-        challenge: "Optimasi performa untuk aplikasi dengan data besar",
-        solution: "Implementasi database indexing, query optimization, dan caching strategies yang efektif"
-      },
-      {
-        challenge: "Membangun testing strategy yang comprehensive",
-        solution: "Mengembangkan test suite dengan coverage 95%+ menggunakan PHPUnit dan Laravel Dusk"
-      }
-    ],
-    
-    outcomes: [
-      "Berhasil membangun aplikasi dengan response time <200ms",
-      "Mencapai test coverage 98% dengan automated testing",
-      "Implementasi CI/CD yang mengurangi deployment time 80%",
-      "Dokumentasi lengkap yang menjadi referensi tim development"
-    ],
-    
-    technologies: {
-      "Framework": ["Laravel 10", "PHP 8.2", "Composer"],
-      "Database": ["MySQL 8.0", "Redis", "Elasticsearch"],
-      "Testing": ["PHPUnit", "Laravel Dusk", "Pest PHP"],
-      "DevOps": ["Docker", "GitHub Actions", "AWS", "Nginx"]
-    },
-    
-    gallery: [
-      "/placeholder.svg?height=300&width=500&text=Architecture+Diagram",
-      "/placeholder.svg?height=300&width=500&text=API+Documentation",
-      "/placeholder.svg?height=300&width=500&text=Testing+Dashboard",
-      "/placeholder.svg?height=300&width=500&text=Performance+Metrics"
-    ],
-    
-    testimonial: {
-      quote: "Proyek Laravel Mastery menunjukkan pemahaman yang mendalam tentang framework Laravel dan best practices dalam pengembangan aplikasi enterprise. Sangat impressive!",
-      author: "Dr. Budi Raharjo",
-      position: "Senior Software Architect, Tech Indonesia"
-    },
-    
-    nextProject: "mentoring-landing",
-    prevProject: "lavafa-co"
-  },
-  
   "siacta": {
     title: "SIACTA",
     subtitle: "System Information Accounting & Tax",
@@ -698,7 +461,7 @@ const projects = {
     category: "Web Application",
     status: "Completed",
     year: "2024",
-    duration: "4 bulan",
+    duration: "4 bulan (ongoing)",
     role: "Frontend Developer",
     client: "Dinas Lingkungan Hidup Kediri",
     liveUrl: "#",
@@ -749,7 +512,7 @@ const projects = {
     category: "Web Application",
     status: "Completed",
     year: "2024",
-    duration: "6 bulan",
+    duration: "6 bulan (ongoing)",
     role: "Full-Stack Developer",
     client: "Pemerintah Desa Cisontrol",
     liveUrl: "#",
@@ -1042,336 +805,577 @@ const projects = {
       "/placeholder.svg?height=300&width=500&text=Prescription+Interface"
     ],
     
-    nextProject: "sibi-app-ui-ux",
+    nextProject: "siacta",
     prevProject: "laundry-app-dirtless"
+  },
+  
+  "sibi-app-ui-ux": {
+    title: "SIBI App UI/UX",
+    subtitle: "Sign Language Learning Interface",
+    description: "Desain antarmuka pengguna untuk aplikasi SIBI dengan fokus pada user experience yang optimal dan aksesibilitas.",
+    fullDescription: "Desain UI/UX untuk aplikasi pembelajaran Sistem Isyarat Bahasa Indonesia (SIBI) yang dirancang untuk membantu pengguna mempelajari bahasa isyarat dengan mudah dan efektif. Fokus utama pada aksesibilitas, pengalaman belajar yang interaktif, dan desain yang inklusif.",
+    imageSrc: "/placeholder.svg?height=400&width=800",
+    tags: ["UI/UX Design", "Figma", "User Research", "Prototyping", "Accessibility"],
+    category: "Design",
+    status: "Completed",
+    year: "2024",
+    duration: "3 bulan",
+    role: "UI/UX Designer",
+    client: "Yayasan Peduli Tuli Indonesia",
+    liveUrl: "#",
+    repoUrl: "#",
+    
+    goals: [
+      "Menciptakan antarmuka yang inklusif dan aksesibel untuk semua pengguna",
+      "Merancang pengalaman belajar bahasa isyarat yang intuitif dan efektif",
+      "Memastikan desain mendukung berbagai kebutuhan pengguna dengan keterbatasan",
+      "Mengembangkan sistem desain yang konsisten dan skalabel"
+    ],
+    
+    features: [
+      "Dashboard pembelajaran yang personalisasi",
+      "Visualisasi gerakan isyarat dengan animasi 3D",
+      "Mode latihan interaktif dengan feedback real-time",
+      "Kamus bahasa isyarat dengan pencarian mudah",
+      "Fitur komunitas untuk berbagi kemajuan dan tips",
+      "Mode pembelajaran offline",
+      "Aksesibilitas tingkat tinggi dengan dukungan screen reader",
+      "Adaptasi untuk pengguna dengan berbagai keterbatasan"
+    ],
+    
+    challenges: [
+      {
+        challenge: "Merancang antarmuka yang aksesibel untuk berbagai jenis disabilitas",
+        solution: "Melakukan penelitian pengguna ekstensif dan menerapkan prinsip desain universal dengan dukungan teknologi asistif"
+      },
+      {
+        challenge: "Visualisasi gerakan tangan yang kompleks dalam format 2D",
+        solution: "Mengembangkan sistem animasi bertahap dan tampilan multi-sudut untuk memudahkan pemahaman gerakan"
+      },
+      {
+        challenge: "Menyeimbangkan estetika dengan fungsionalitas untuk pengalaman belajar optimal",
+        solution: "Iterasi desain berdasarkan feedback pengguna dan pengujian usability dengan kelompok target"
+      }
+    ],
+    
+    outcomes: [
+      "Peningkatan retensi pengguna sebesar 45% dibandingkan aplikasi serupa",
+      "Skor aksesibilitas 98/100 berdasarkan standar WCAG 2.1",
+      "Waktu belajar rata-rata meningkat dari 15 menit menjadi 30 menit per sesi",
+      "Feedback positif dari 90% pengguna dalam beta testing"
+    ],
+    
+    technologies: {
+      "Design": ["Figma", "Adobe XD", "Principle", "Lottie"],
+      "Research": ["User Interviews", "Usability Testing", "A/B Testing"],
+      "Prototyping": ["Interactive Prototypes", "Animation", "Micro-interactions"],
+      "Accessibility": ["WCAG Guidelines", "Assistive Technology", "Inclusive Design"]
+    },
+    
+    gallery: [
+      "/placeholder.svg?height=300&width=500&text=Learning+Dashboard",
+      "/placeholder.svg?height=300&width=500&text=Sign+Language+Viewer",
+      "/placeholder.svg?height=300&width=500&text=Practice+Mode",
+      "/placeholder.svg?height=300&width=500&text=Community+Features"
+    ],
+    
+    testimonial: {
+      quote: "Desain SIBI App sangat mempertimbangkan kebutuhan pengguna tuli dan membuat pembelajaran bahasa isyarat menjadi lebih menyenangkan dan efektif. Pendekatan inklusif dalam desain ini patut diapresiasi.",
+      author: "Dewi Suryana",
+      position: "Ketua Asosiasi Tuli Indonesia"
+    },
+    
+    nextProject: "lavafa-co",
+    prevProject: "smart-clinic-ui"
+  },
+  
+  "lavafa-co": {
+    title: "LavaFa.co",
+    subtitle: "Modern Digital Platform",
+    description: "Platform digital modern dengan desain yang elegan dan fungsionalitas yang komprehensif untuk kebutuhan bisnis.",
+    fullDescription: "LavaFa.co adalah platform digital modern yang menggabungkan desain elegan dengan fungsionalitas komprehensif untuk memenuhi berbagai kebutuhan bisnis digital. Platform ini dibangun dengan teknologi terkini untuk memastikan performa optimal dan pengalaman pengguna yang superior.",
+    imageSrc: "/placeholder.svg?height=400&width=800",
+    tags: ["React", "Next.js", "TypeScript", "Modern Design", "Business Platform"],
+    category: "Web Application",
+    status: "Completed",
+    year: "2024",
+    duration: "5 bulan",
+    role: "Lead Frontend Developer",
+    client: "LavaFa Digital Solutions",
+    liveUrl: "https://lavafa.co",
+    repoUrl: "#",
+    
+    goals: [
+      "Menciptakan platform digital yang modern dan skalabel",
+      "Mengimplementasikan desain yang elegan dan fungsional",
+      "Memastikan performa optimal di semua perangkat",
+      "Menyediakan solusi komprehensif untuk kebutuhan bisnis digital"
+    ],
+    
+    features: [
+      "Dashboard analitik bisnis yang komprehensif",
+      "Sistem manajemen konten yang fleksibel",
+      "Integrasi e-commerce dengan multiple payment gateways",
+      "CRM dengan fitur otomatisasi marketing",
+      "Sistem manajemen proyek dan kolaborasi tim",
+      "Analytics dan reporting tools yang powerful",
+      "Multi-language support",
+      "Responsive design untuk semua ukuran layar"
+    ],
+    
+    challenges: [
+      {
+        challenge: "Mengintegrasikan berbagai modul kompleks dalam satu platform yang kohesif",
+        solution: "Mengadopsi arsitektur mikrofrontend dengan shared component library untuk konsistensi dan maintainability"
+      },
+      {
+        challenge: "Memastikan performa optimal dengan fitur yang kompleks",
+        solution: "Implementasi code splitting, lazy loading, dan optimasi rendering untuk meminimalkan load time dan meningkatkan interaktivitas"
+      },
+      {
+        challenge: "Menyeimbangkan desain yang menarik dengan fungsionalitas yang kompleks",
+        solution: "Kolaborasi erat antara tim desain dan development dengan pendekatan iteratif dan user testing ekstensif"
+      }
+    ],
+    
+    outcomes: [
+      "Platform yang digunakan oleh 50+ bisnis dalam 3 bulan pertama",
+      "Peningkatan efisiensi operasional klien sebesar 35%",
+      "Skor performa 95+ di Lighthouse untuk semua halaman utama",
+      "Pengurangan bounce rate sebesar 40% dibandingkan platform sebelumnya"
+    ],
+    
+    technologies: {
+      "Frontend": ["React 18", "Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      "Backend": ["Node.js", "Express", "PostgreSQL", "Redis"],
+      "DevOps": ["Docker", "CI/CD", "AWS", "Vercel"],
+      "Tools": ["Git", "Figma", "Storybook", "Jest", "Cypress"]
+    },
+    
+    gallery: [
+      "/placeholder.svg?height=300&width=500&text=Business+Dashboard",
+      "/placeholder.svg?height=300&width=500&text=Content+Management",
+      "/placeholder.svg?height=300&width=500&text=E-commerce+Module",
+      "/placeholder.svg?height=300&width=500&text=Analytics+Interface"
+    ],
+    
+    testimonial: {
+      quote: "LavaFa.co telah mengubah cara kami mengelola bisnis digital. Platform ini tidak hanya indah secara visual tetapi juga sangat fungsional dan mudah digunakan. Tim pengembangan sangat responsif dan selalu siap membantu.",
+      author: "Rini Pratiwi",
+      position: "CEO, Digital Ventures Indonesia"
+    },
+    
+    nextProject: "laravel-mastery",
+    prevProject: "sibi-app-ui-ux"
+  },
+  
+  "laravel-mastery": {
+    title: "Laravel Mastery",
+    subtitle: "Advanced Laravel Learning Platform",
+    description: "Proyek pembelajaran dan penguasaan framework Laravel dengan implementasi fitur-fitur advanced dan best practices.",
+    fullDescription: "Laravel Mastery adalah platform pembelajaran komprehensif yang dirancang untuk membantu developer menguasai framework Laravel secara mendalam. Proyek ini mencakup implementasi fitur-fitur advanced, arsitektur yang scalable, dan best practices industri untuk pengembangan aplikasi web modern.",
+    imageSrc: "/placeholder.svg?height=400&width=800",
+    tags: ["Laravel", "PHP", "Advanced Features", "Best Practices", "Learning Platform"],
+    category: "Web Application",
+    status: "Completed",
+    year: "2024",
+    duration: "6 bulan",
+    role: "Full-Stack Developer & Course Creator",
+    client: "Self-initiated Project",
+    liveUrl: "#",
+    repoUrl: "https://github.com/adityafakhrii/laravel-mastery",
+    
+    goals: [
+      "Mengembangkan platform pembelajaran Laravel yang komprehensif",
+      "Mendemonstrasikan implementasi fitur-fitur advanced Laravel",
+      "Menyediakan contoh nyata best practices dalam pengembangan Laravel",
+      "Membantu developer meningkatkan skill Laravel mereka"
+    ],
+    
+    features: [
+      "Modul pembelajaran interaktif dengan contoh kode",
+      "Implementasi advanced authentication dengan multi-tenancy",
+      "Real-time features dengan Laravel Echo dan WebSockets",
+      "Event-driven architecture dengan Laravel Events & Listeners",
+      "API development dengan Laravel Sanctum dan API Resources",
+      "Testing comprehensive dengan PHPUnit dan Laravel Dusk",
+      "Performance optimization techniques",
+      "Deployment strategies dan CI/CD pipelines"
+    ],
+    
+    challenges: [
+      {
+        challenge: "Menyajikan konsep kompleks dengan cara yang mudah dipahami",
+        solution: "Mengembangkan pendekatan step-by-step dengan visualisasi dan contoh kode yang jelas untuk setiap konsep"
+      },
+      {
+        challenge: "Memastikan semua contoh kode mengikuti best practices terbaru",
+        solution: "Melakukan code review regular dan mengikuti perkembangan Laravel untuk memastikan konten selalu up-to-date"
+      },
+      {
+        challenge: "Mengintegrasikan berbagai fitur advanced dalam satu platform yang koheren",
+        solution: "Mengadopsi arsitektur modular dengan domain-driven design untuk memisahkan concern dan meningkatkan maintainability"
+      }
+    ],
+    
+    outcomes: [
+      "Platform dengan 20+ modul pembelajaran komprehensif",
+      "Digunakan oleh 500+ developer untuk meningkatkan skill Laravel",
+      "Kontribusi ke komunitas Laravel dengan 10+ package open source",
+      "Feedback positif dari 95% pengguna platform"
+    ],
+    
+    technologies: {
+      "Backend": ["Laravel 10", "PHP 8.2", "MySQL", "Redis", "WebSockets"],
+      "Frontend": ["Livewire", "Alpine.js", "Tailwind CSS", "Blade Components"],
+      "Testing": ["PHPUnit", "Laravel Dusk", "Pest PHP"],
+      "DevOps": ["Docker", "GitHub Actions", "Laravel Forge", "Digital Ocean"]
+    },
+    
+    gallery: [
+      "/placeholder.svg?height=300&width=500&text=Learning+Modules",
+      "/placeholder.svg?height=300&width=500&text=Code+Examples",
+      "/placeholder.svg?height=300&width=500&text=Interactive+Tutorials",
+      "/placeholder.svg?height=300&width=500&text=Community+Forum"
+    ],
+    
+    testimonial: {
+      quote: "Laravel Mastery telah membantu saya meningkatkan skill Laravel secara signifikan. Penjelasan yang jelas dan contoh implementasi nyata membuat konsep-konsep kompleks menjadi lebih mudah dipahami.",
+      author: "Budi Santoso",
+      position: "Senior Web Developer, Tech Innovate"
+    },
+    
+    nextProject: "sibi-app-ui-ux",
+    prevProject: "lavafa-co"
   }
 }
 
-export default async function ProjectDetailPage({ params }: { params: { id: string } }) {
-  const resolvedParams = await params
-  const project = projects[resolvedParams.id as keyof typeof projects]
-
-  // Fallback for projects not in our mock data
-  if (!project) {
-    return (
-      <div className="container max-w-5xl py-8 px-4 md:px-8">
-        <PageHeader title="Proyek Tidak Ditemukan" description="Maaf, proyek yang Anda cari tidak tersedia." />
-        <Button asChild className="mt-6">
-          <Link href="/projects">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Kembali ke Proyek
-          </Link>
-        </Button>
-      </div>
-    )
-  }
-
+export default function ProjectDetailPage({ params }: { params: { id: string } }) {
   return (
-    <div className="container max-w-5xl py-8 px-4 md:px-8">
-      {/* Navigation */}
-      <div className="flex items-center justify-between mb-6">
-        <Button variant="outline" asChild>
-          <Link href="/projects">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Kembali ke Proyek
-          </Link>
-        </Button>
-        
-        <div className="flex gap-2">
-          {project.prevProject && (
-            <Button variant="ghost" size="sm" asChild>
-              <Link href={`/projects/${project.prevProject}`}>
-                ← Prev
-              </Link>
-            </Button>
-          )}
-          {project.nextProject && (
-            <Button variant="ghost" size="sm" asChild>
-              <Link href={`/projects/${project.nextProject}`}>
-                Next →
-              </Link>
-            </Button>
-          )}
-        </div>
-      </div>
+    <TranslatedContent
+      renderContent={({ t }) => {
+        const resolvedParams = params
+        const project = projects[resolvedParams.id as keyof typeof projects]
 
-      {/* Project Header */}
-      <div className="mb-8">
-        <div className="flex flex-wrap gap-2 mb-4">
-          <Badge className="bg-primary text-primary-foreground">{project.category}</Badge>
-          <Badge variant="outline">{project.status}</Badge>
-          <Badge variant="outline">{project.year}</Badge>
-        </div>
-        
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">{project.title}</h1>
-        <p className="text-xl text-muted-foreground mb-4">{project.subtitle}</p>
-        
-        <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-          <div className="flex items-center">
-            <User className="h-4 w-4 mr-1" />
-            {project.role}
-          </div>
-          <div className="flex items-center">
-            <Calendar className="h-4 w-4 mr-1" />
-            {project.year}
-          </div>
-          <div className="flex items-center">
-            <Clock className="h-4 w-4 mr-1" />
-            {project.duration}
-          </div>
-        </div>
-      </div>
+        // Fallback for projects not in our mock data
+        if (!project) {
+          return (
+            <div className="container max-w-5xl py-8 px-4 md:px-8">
+              <PageHeader title={t('language') === 'id' ? "Proyek Tidak Ditemukan" : "Project Not Found"} description={t('language') === 'id' ? "Maaf, proyek yang Anda cari tidak tersedia." : "Sorry, the project you're looking for is not available."} />
+              <Button asChild className="mt-6">
+                <Link href="/projects">
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  {t('backToProjects')}
+                </Link>
+              </Button>
+            </div>
+          )
+        }
 
-      {/* Hero Image */}
-      <div className="relative h-64 md:h-96 w-full mb-8 rounded-lg overflow-hidden">
-        <Image src={project.imageSrc || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Main Content */}
-        <div className="lg:col-span-2 space-y-8">
-          {/* Project Overview */}
-          <ContentBlock>
-            <h2 className="text-2xl font-bold mb-4">Overview</h2>
-            <p className="text-lg mb-4">{project.fullDescription}</p>
-            <p className="text-muted-foreground">{project.description}</p>
-          </ContentBlock>
-
-          {/* Goals */}
-          {project.goals && (
-            <ContentBlock>
-              <h2 className="text-2xl font-bold mb-4 flex items-center">
-                <Target className="mr-2 h-5 w-5" />
-                Project Goals
-              </h2>
-              <ul className="space-y-2">
-                {(project.goals || []).map((goal, index) => (
-                  <li key={index} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>{goal}</span>
-                  </li>
-                ))}
-              </ul>
-            </ContentBlock>
-          )}
-
-          {/* Key Features */}
-          {project.features && (
-            <ContentBlock>
-              <h2 className="text-2xl font-bold mb-4">✨ Key Features</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {(project.features || []).map((feature, index) => (
-                  <div key={index} className="flex items-start p-3 border rounded-lg">
-                    <CheckCircle className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">{feature}</span>
-                  </div>
-                ))}
+        return (
+          <div className="container max-w-5xl py-8 px-4 md:px-8">
+            {/* Navigation */}
+            <div className="flex items-center justify-between mb-6">
+              <Button variant="outline" asChild>
+                <Link href="/projects">
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  {t('backToProjects')}
+                </Link>
+              </Button>
+              
+              <div className="flex gap-2">
+                {project.prevProject && (
+                  <Button variant="ghost" size="sm" asChild>
+                    <Link href={`/projects/${project.prevProject}`}>
+                      ← {t('language') === 'id' ? 'Prev' : 'Prev'}
+                    </Link>
+                  </Button>
+                )}
+                {project.nextProject && (
+                  <Button variant="ghost" size="sm" asChild>
+                    <Link href={`/projects/${project.nextProject}`}>
+                      {t('language') === 'id' ? 'Next' : 'Next'} →
+                    </Link>
+                  </Button>
+                )}
               </div>
-            </ContentBlock>
-          )}
+            </div>
 
-          {/* Challenges & Solutions */}
-          {project.challenges && (
-            <ContentBlock>
-              <h2 className="text-2xl font-bold mb-4 flex items-center">
-                <Lightbulb className="mr-2 h-5 w-5" />
-                Challenges & Solutions
-              </h2>
+            {/* Project Header */}
+            <div className="mb-8">
+              <div className="flex flex-wrap gap-2 mb-4">
+                <Badge className="bg-primary text-primary-foreground">{project.category}</Badge>
+                <Badge variant="outline">{project.status}</Badge>
+                <Badge variant="outline">{project.year}</Badge>
+              </div>
+              
+              <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">{project.title}</h1>
+              <p className="text-xl text-muted-foreground mb-4">{project.subtitle}</p>
+              
+              <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                <div className="flex items-center">
+                  <User className="h-4 w-4 mr-1" />
+                  {project.role}
+                </div>
+                <div className="flex items-center">
+                  <Calendar className="h-4 w-4 mr-1" />
+                  {project.year}
+                </div>
+                <div className="flex items-center">
+                  <Clock className="h-4 w-4 mr-1" />
+                  {project.duration}
+                </div>
+              </div>
+            </div>
+
+            {/* Hero Image */}
+            <div className="relative h-64 md:h-96 w-full mb-8 rounded-lg overflow-hidden">
+              <Image src={project.imageSrc || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Main Content */}
+              <div className="lg:col-span-2 space-y-8">
+                {/* Project Overview */}
+                <ContentBlock>
+                  <h2 className="text-2xl font-bold mb-4">{t('overview')}</h2>
+                  <p className="text-lg mb-4">{project.fullDescription}</p>
+                  <p className="text-muted-foreground">{project.description}</p>
+                </ContentBlock>
+
+                {/* Goals */}
+                <ContentBlock>
+                  <h2 className="text-2xl font-bold mb-4 flex items-center">
+                    <Target className="mr-2 h-5 w-5" />
+                    {t('projectGoals')}
+                  </h2>
+                  <ul className="space-y-2">
+                    {project.goals.map((goal, index) => (
+                      <li key={index} className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>{goal}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </ContentBlock>
+
+                {/* Key Features */}
+                <ContentBlock>
+                  <h2 className="text-2xl font-bold mb-4">✨ {t('keyFeatures')}</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {project.features.map((feature, index) => (
+                      <div key={index} className="flex items-start p-3 border rounded-lg">
+                        <CheckCircle className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </ContentBlock>
+
+                {/* Challenges & Solutions */}
+                <ContentBlock>
+                  <h2 className="text-2xl font-bold mb-4 flex items-center">
+                    <Lightbulb className="mr-2 h-5 w-5" />
+                    {t('challengesSolutions')}
+                  </h2>
+                  <div className="space-y-6">
+                    {project.challenges.map((item, index) => (
+                      <div key={index} className="border rounded-lg p-4">
+                        <div className="mb-3">
+                          <h3 className="font-medium text-red-600 mb-2">🚧 {t('language') === 'id' ? 'Tantangan:' : 'Challenge:'}</h3>
+                          <p className="text-sm">{item.challenge}</p>
+                        </div>
+                        <div>
+                          <h3 className="font-medium text-green-600 mb-2">💡 {t('language') === 'id' ? 'Solusi:' : 'Solution:'}</h3>
+                          <p className="text-sm">{item.solution}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </ContentBlock>
+
+                {/* Outcomes */}
+                <ContentBlock>
+                  <h2 className="text-2xl font-bold mb-4">🎯 {t('projectOutcomes')}</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {project.outcomes.map((outcome, index) => (
+                      <div key={index} className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                        <div className="flex items-start">
+                          <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <span className="text-sm">{outcome}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </ContentBlock>
+
+                {/* Technologies */}
+                <ContentBlock>
+                  <h2 className="text-2xl font-bold mb-4">🛠️ {t('technologiesUsed')}</h2>
+                  <div className="space-y-4">
+                    {Object.entries(project.technologies).map(([category, techs]) => (
+                      <div key={category}>
+                        <h3 className="font-medium mb-2">{category}:</h3>
+                        <div className="flex flex-wrap gap-2">
+                          {techs.map((tech) => (
+                            <Badge key={tech} variant="outline">{tech}</Badge>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </ContentBlock>
+
+                {/* Gallery */}
+                {project.gallery && (
+                  <ContentBlock>
+                    <h2 className="text-2xl font-bold mb-4">📸 {t('projectGallery')}</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {project.gallery.map((image, index) => (
+                        <div key={index} className="rounded-lg overflow-hidden border">
+                          <Image
+                            src={image || "/placeholder.svg"}
+                            alt={`${project.title} screenshot ${index + 1}`}
+                            width={500}
+                            height={300}
+                            className="object-cover w-full h-48"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </ContentBlock>
+                )}
+
+                {/* Testimonial */}
+                {project.testimonial && (
+                  <ContentBlock>
+                    <h2 className="text-2xl font-bold mb-4">💬 {t('clientTestimonial')}</h2>
+                    <div className="bg-muted p-6 rounded-lg">
+                      <blockquote className="text-lg italic mb-4">"{project.testimonial.quote}"</blockquote>
+                      <div className="text-sm text-muted-foreground">
+                        — {project.testimonial.author}, {project.testimonial.position}
+                      </div>
+                    </div>
+                  </ContentBlock>
+                )}
+              </div>
+
+              {/* Sidebar */}
               <div className="space-y-6">
-                {(project.challenges || []).map((item, index) => (
-                  <div key={index} className="border rounded-lg p-4">
-                    <div className="mb-3">
-                      <h3 className="font-medium text-red-600 mb-2">🚧 Challenge:</h3>
-                      <p className="text-sm">{item.challenge}</p>
+                {/* Project Info */}
+                <ContentBlock>
+                  <h3 className="font-bold mb-4">📋 {t('projectInfo')}</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <h4 className="text-sm font-medium text-muted-foreground">{t('client')}</h4>
+                      <p className="text-sm">{project.client}</p>
                     </div>
                     <div>
-                      <h3 className="font-medium text-green-600 mb-2">💡 Solution:</h3>
-                      <p className="text-sm">{item.solution}</p>
+                      <h4 className="text-sm font-medium text-muted-foreground">{t('duration')}</h4>
+                      <p className="text-sm">{project.duration}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium text-muted-foreground">{t('year')}</h4>
+                      <p className="text-sm">{project.year}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium text-muted-foreground">{t('role')}</h4>
+                      <p className="text-sm">{project.role}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium text-muted-foreground">{t('status')}</h4>
+                      <Badge variant={project.status === "Production" ? "default" : "outline"}>
+                        {project.status}
+                      </Badge>
                     </div>
                   </div>
-                ))}
-              </div>
-            </ContentBlock>
-          )}
+                </ContentBlock>
 
-          {/* Outcomes */}
-          {project.outcomes && (
-            <ContentBlock>
-              <h2 className="text-2xl font-bold mb-4">🎯 Project Outcomes</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {(project.outcomes || []).map((outcome, index) => (
-                  <div key={index} className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                    <div className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">{outcome}</span>
-                    </div>
+                {/* Project Links */}
+                <ContentBlock>
+                  <h3 className="font-bold mb-4">🔗 {t('links')}</h3>
+                  <div className="space-y-3">
+                    {project.liveUrl && project.liveUrl !== "#" && (
+                      <Button variant="outline" className="w-full" asChild>
+                        <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          {t('language') === 'id' ? 'Lihat Live' : 'View Live'}
+                        </Link>
+                      </Button>
+                    )}
+                    
+                    {project.repoUrl && project.repoUrl !== "#" && (
+                      <Button variant="outline" className="w-full" asChild>
+                        <Link href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="mr-2 h-4 w-4" />
+                          {t('sourceCode')}
+                        </Link>
+                      </Button>
+                    )}
                   </div>
-                ))}
-              </div>
-            </ContentBlock>
-          )}
+                </ContentBlock>
 
-          {/* Technologies */}
-          <ContentBlock>
-            <h2 className="text-2xl font-bold mb-4">🛠️ Technologies Used</h2>
-            <div className="space-y-4">
-              {Object.entries(project.technologies || {}).map(([category, techs]) => (
-                <div key={category}>
-                  <h3 className="font-medium mb-2">{category}:</h3>
+                {/* Tags */}
+                <ContentBlock>
+                  <h3 className="font-bold mb-4">🏷️ {t('tags')}</h3>
                   <div className="flex flex-wrap gap-2">
-                    {Array.isArray(techs) ? techs.map((tech) => (
-                      <Badge key={tech} variant="outline">{tech}</Badge>
-                    )) : null}
+                    {project.tags.map((tag) => (
+                      <Badge key={tag} variant="secondary" className="text-xs">
+                        {tag}
+                      </Badge>
+                    ))}
                   </div>
-                </div>
-              ))}
-            </div>
-          </ContentBlock>
+                </ContentBlock>
 
-          {/* Gallery */}
-          {project.gallery && (
-            <ContentBlock>
-              <h2 className="text-2xl font-bold mb-4">📸 Project Gallery</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {project.gallery.map((image, index) => (
-                  <div key={index} className="rounded-lg overflow-hidden border">
-                    <Image
-                      src={image || "/placeholder.svg"}
-                      alt={`${project.title} screenshot ${index + 1}`}
-                      width={500}
-                      height={300}
-                      className="object-cover w-full h-48"
-                    />
-                  </div>
-                ))}
-              </div>
-            </ContentBlock>
-          )}
-
-          {/* Testimonial */}
-          {project.testimonial && (
-            <ContentBlock>
-              <h2 className="text-2xl font-bold mb-4">💬 Client Testimonial</h2>
-              <div className="bg-muted p-6 rounded-lg">
-                <blockquote className="text-lg italic mb-4">"{project.testimonial.quote}"</blockquote>
-                <div className="text-sm text-muted-foreground">
-                  — {project.testimonial.author}, {project.testimonial.position}
-                </div>
-              </div>
-            </ContentBlock>
-          )}
-        </div>
-
-        {/* Sidebar */}
-        <div className="space-y-6">
-          {/* Project Info */}
-          <ContentBlock>
-            <h3 className="font-bold mb-4">📋 Project Info</h3>
-            <div className="space-y-3">
-              <div>
-                <h4 className="text-sm font-medium text-muted-foreground">Client</h4>
-                <p className="text-sm">{project.client}</p>
-              </div>
-              <div>
-                <h4 className="text-sm font-medium text-muted-foreground">Duration</h4>
-                <p className="text-sm">{project.duration}</p>
-              </div>
-              <div>
-                <h4 className="text-sm font-medium text-muted-foreground">Year</h4>
-                <p className="text-sm">{project.year}</p>
-              </div>
-              <div>
-                <h4 className="text-sm font-medium text-muted-foreground">Role</h4>
-                <p className="text-sm">{project.role}</p>
-              </div>
-              <div>
-                <h4 className="text-sm font-medium text-muted-foreground">Status</h4>
-                <Badge variant={project.status === "Production" ? "default" : "outline"}>
-                  {project.status}
-                </Badge>
+                {/* Contact CTA */}
+                <ContentBlock>
+                  <h3 className="font-bold mb-4">💼 {t('interestedInSimilarWork')}</h3>
+                  <p className="text-sm mb-4">
+                    {t('language') === 'id' 
+                      ? "Jika Anda tertarik dengan proyek serupa atau ingin berdiskusi tentang kebutuhan development Anda, jangan ragu untuk menghubungi saya."
+                      : "If you're interested in similar projects or want to discuss your development needs, don't hesitate to contact me."
+                    }
+                  </p>
+                  <Button className="w-full" asChild>
+                    <Link href="/contact">{t('getInTouch')}</Link>
+                  </Button>
+                </ContentBlock>
               </div>
             </div>
-          </ContentBlock>
 
-          {/* Project Links */}
-          <ContentBlock>
-            <h3 className="font-bold mb-4">🔗 Links</h3>
-            <div className="space-y-3">
-              {project.liveUrl && project.liveUrl !== "#" && (
-                <Button variant="outline" className="w-full" asChild>
-                  <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    View Live
-                  </Link>
-                </Button>
-              )}
+            {/* Navigation Footer */}
+            <div className="flex justify-between items-center mt-12 pt-8 border-t">
+              <div>
+                {project.prevProject && (
+                  <Button variant="outline" asChild>
+                    <Link href={`/projects/${project.prevProject}`}>
+                      <ArrowLeft className="mr-2 h-4 w-4" />
+                      {t('previousProject')}
+                    </Link>
+                  </Button>
+                )}
+              </div>
               
-              {project.repoUrl && project.repoUrl !== "#" && (
-                <Button variant="outline" className="w-full" asChild>
-                  <Link href={project.repoUrl} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4" />
-                    Source Code
-                  </Link>
-                </Button>
-              )}
+              <Button variant="outline" asChild>
+                <Link href="/projects">
+                  {t('allProjects')}
+                </Link>
+              </Button>
+              
+              <div>
+                {project.nextProject && (
+                  <Button variant="outline" asChild>
+                    <Link href={`/projects/${project.nextProject}`}>
+                      {t('nextProject')}
+                      <ArrowLeft className="ml-2 h-4 w-4 rotate-180" />
+                    </Link>
+                  </Button>
+                )}
+              </div>
             </div>
-          </ContentBlock>
-
-          {/* Tags */}
-          <ContentBlock>
-            <h3 className="font-bold mb-4">🏷️ Tags</h3>
-            <div className="flex flex-wrap gap-2">
-              {(project.tags || []).map((tag) => (
-                <Badge key={tag} variant="secondary" className="text-xs">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-          </ContentBlock>
-
-          {/* Contact CTA */}
-          <ContentBlock>
-            <h3 className="font-bold mb-4">💼 Interested in Similar Work?</h3>
-            <p className="text-sm mb-4">
-              Jika Anda tertarik dengan proyek serupa atau ingin berdiskusi tentang kebutuhan development Anda, jangan ragu untuk menghubungi saya.
-            </p>
-            <Button className="w-full" asChild>
-              <Link href="/contact">Get In Touch</Link>
-            </Button>
-          </ContentBlock>
-        </div>
-      </div>
-
-      {/* Navigation Footer */}
-      <div className="flex justify-between items-center mt-12 pt-8 border-t">
-        <div>
-          {project.prevProject && (
-            <Button variant="outline" asChild>
-              <Link href={`/projects/${project.prevProject}`}>
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Previous Project
-              </Link>
-            </Button>
-          )}
-        </div>
-        
-        <Button variant="outline" asChild>
-          <Link href="/projects">
-            All Projects
-          </Link>
-        </Button>
-        
-        <div>
-          {project.nextProject && (
-            <Button variant="outline" asChild>
-              <Link href={`/projects/${project.nextProject}`}>
-                Next Project
-                <ArrowLeft className="ml-2 h-4 w-4 rotate-180" />
-              </Link>
-            </Button>
-          )}
-        </div>
-      </div>
-    </div>
+          </div>
+        )
+      }}
+    />
   )
 }

@@ -1,8 +1,11 @@
+"use client"
+
 import { PageHeader } from "@/components/page-header"
 import { ProjectCard } from "@/components/project-card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ContentBlock } from "@/components/content-block"
 import { Badge } from "@/components/ui/badge"
+import { TranslatedContent } from "@/components/translated-content"
 
 const featuredProjects = [
   {
@@ -178,55 +181,21 @@ const allProjects = [...featuredProjects, ...recentProjects]
 
 export default function ProjectsPage() {
   return (
-    <div className="container max-w-5xl py-8 px-4 md:px-8">
-      <PageHeader title="Proyek" description="Koleksi proyek unggulan dan terbaru yang telah saya kerjakan" />
+    <TranslatedContent
+      renderContent={({ t }) => (
+        <div className="container max-w-5xl py-8 px-4 md:px-8">
+          <PageHeader title={t('projectsTitle')} description={t('projectsDescription')} />
 
-      {/* Featured Projects Section */}
-      <ContentBlock title="🌟 Proyek Unggulan" className="mt-8">
-        <p className="text-muted-foreground mb-6">
-          Proyek-proyek utama yang menunjukkan keahlian dan pengalaman saya dalam pengembangan aplikasi web dan mobile.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {featuredProjects.map((project) => (
-            <div key={project.id} className="relative">
-              <ProjectCard
-                title={project.title}
-                description={project.description}
-                imageSrc={project.imageSrc}
-                tags={project.tags}
-                href={`/projects/${project.id}`}
-              />
-              <div className="absolute top-4 right-4 flex gap-2">
-                <Badge variant="default" className="bg-yellow-500 text-yellow-50">
-                  Featured
-                </Badge>
-                <Badge variant="outline" className="text-xs">
-                  {project.year}
-                </Badge>
-              </div>
-            </div>
-          ))}
-        </div>
-      </ContentBlock>
-
-      {/* Recent Projects Section */}
-      <ContentBlock title="🚀 Proyek Terbaru" className="mt-12">
-        <p className="text-muted-foreground mb-6">
-          Proyek-proyek terbaru yang sedang dikerjakan atau baru saja diselesaikan, menampilkan eksplorasi teknologi dan solusi inovatif.
-        </p>
-        
-        <Tabs defaultValue="all" className="mt-6">
-          <TabsList className="mb-6">
-            <TabsTrigger value="all">Semua</TabsTrigger>
-            <TabsTrigger value="web">Web</TabsTrigger>
-            <TabsTrigger value="mobile">Mobile</TabsTrigger>
-            <TabsTrigger value="design">Design</TabsTrigger>
-            <TabsTrigger value="completed">Completed</TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="all" className="mt-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {recentProjects.map((project) => (
+          {/* Featured Projects Section */}
+          <ContentBlock title={`🌟 ${t('featuredProjectsTitle')}`} className="mt-8">
+            <p className="text-muted-foreground mb-6">
+              {t('language') === 'id' 
+                ? "Proyek-proyek utama yang menunjukkan keahlian dan pengalaman saya dalam pengembangan aplikasi web dan mobile."
+                : "Main projects that showcase my expertise and experience in web and mobile application development."
+              }
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {featuredProjects.map((project) => (
                 <div key={project.id} className="relative">
                   <ProjectCard
                     title={project.title}
@@ -236,212 +205,285 @@ export default function ProjectsPage() {
                     href={`/projects/${project.id}`}
                   />
                   <div className="absolute top-4 right-4 flex gap-2">
-                    <Badge 
-                      variant={project.status === "In Development" ? "default" : "outline"} 
-                      className={`text-xs ${
-                        project.status === "In Development" 
-                          ? "bg-blue-500 text-blue-50" 
-                          : project.status === "Completed"
-                          ? "bg-green-100 text-green-800 border-green-300"
-                          : "bg-orange-100 text-orange-800 border-orange-300"
-                      }`}
-                    >
-                      {project.status}
+                    <Badge variant="default" className="bg-yellow-500 text-yellow-50">
+                      {t('language') === 'id' ? 'Unggulan' : 'Featured'}
+                    </Badge>
+                    <Badge variant="outline" className="text-xs">
+                      {project.year}
                     </Badge>
                   </div>
                 </div>
               ))}
             </div>
-          </TabsContent>
+          </ContentBlock>
 
-          <TabsContent value="web" className="mt-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {recentProjects
-                .filter((project) => project.category === "web")
-                .map((project) => (
-                  <div key={project.id} className="relative">
-                    <ProjectCard
-                      title={project.title}
-                      description={project.description}
-                      imageSrc={project.imageSrc}
-                      tags={project.tags}
-                      href={`/projects/${project.id}`}
-                    />
-                    <div className="absolute top-4 right-4">
-                      <Badge 
-                        variant={project.status === "In Development" ? "default" : "outline"} 
-                        className={`text-xs ${
-                          project.status === "In Development" 
-                            ? "bg-blue-500 text-blue-50" 
-                            : project.status === "Completed"
-                            ? "bg-green-100 text-green-800 border-green-300"
-                            : "bg-orange-100 text-orange-800 border-orange-300"
-                        }`}
-                      >
-                        {project.status}
-                      </Badge>
+          {/* Recent Projects Section */}
+          <ContentBlock title={`🚀 ${t('recentProjectsTitle')}`} className="mt-12">
+            <p className="text-muted-foreground mb-6">
+              {t('language') === 'id' 
+                ? "Proyek-proyek terbaru yang sedang dikerjakan atau baru saja diselesaikan, menampilkan eksplorasi teknologi dan solusi inovatif."
+                : "Recent projects that are being worked on or have just been completed, showcasing technology exploration and innovative solutions."
+              }
+            </p>
+            
+            <Tabs defaultValue="all" className="mt-6">
+              <TabsList className="mb-6">
+                <TabsTrigger value="all">{t('all')}</TabsTrigger>
+                <TabsTrigger value="web">{t('web')}</TabsTrigger>
+                <TabsTrigger value="mobile">{t('mobile')}</TabsTrigger>
+                <TabsTrigger value="design">{t('design')}</TabsTrigger>
+                <TabsTrigger value="completed">{t('completed')}</TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="all" className="mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {recentProjects.map((project) => (
+                    <div key={project.id} className="relative">
+                      <ProjectCard
+                        title={project.title}
+                        description={project.description}
+                        imageSrc={project.imageSrc}
+                        tags={project.tags}
+                        href={`/projects/${project.id}`}
+                      />
+                      <div className="absolute top-4 right-4 flex gap-2">
+                        <Badge 
+                          variant={project.status === "In Development" ? "default" : "outline"} 
+                          className={`text-xs ${
+                            project.status === "In Development" 
+                              ? "bg-blue-500 text-blue-50" 
+                              : project.status === "Completed"
+                              ? "bg-green-100 text-green-800 border-green-300"
+                              : "bg-orange-100 text-orange-800 border-orange-300"
+                          }`}
+                        >
+                          {project.status}
+                        </Badge>
+                      </div>
                     </div>
-                  </div>
-                ))}
-            </div>
-          </TabsContent>
+                  ))}
+                </div>
+              </TabsContent>
 
-          <TabsContent value="mobile" className="mt-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {recentProjects
-                .filter((project) => project.category === "mobile")
-                .map((project) => (
-                  <div key={project.id} className="relative">
-                    <ProjectCard
-                      title={project.title}
-                      description={project.description}
-                      imageSrc={project.imageSrc}
-                      tags={project.tags}
-                      href={`/projects/${project.id}`}
-                    />
-                    <div className="absolute top-4 right-4">
-                      <Badge 
-                        variant={project.status === "In Development" ? "default" : "outline"} 
-                        className={`text-xs ${
-                          project.status === "In Development" 
-                            ? "bg-blue-500 text-blue-50" 
-                            : project.status === "Completed"
-                            ? "bg-green-100 text-green-800 border-green-300"
-                            : "bg-orange-100 text-orange-800 border-orange-300"
-                        }`}
-                      >
-                        {project.status}
-                      </Badge>
-                    </div>
-                  </div>
-                ))}
-            </div>
-          </TabsContent>
+              <TabsContent value="web" className="mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {recentProjects
+                    .filter((project) => project.category === "web")
+                    .map((project) => (
+                      <div key={project.id} className="relative">
+                        <ProjectCard
+                          title={project.title}
+                          description={project.description}
+                          imageSrc={project.imageSrc}
+                          tags={project.tags}
+                          href={`/projects/${project.id}`}
+                        />
+                        <div className="absolute top-4 right-4">
+                          <Badge 
+                            variant={project.status === "In Development" ? "default" : "outline"} 
+                            className={`text-xs ${
+                              project.status === "In Development" 
+                                ? "bg-blue-500 text-blue-50" 
+                                : project.status === "Completed"
+                                ? "bg-green-100 text-green-800 border-green-300"
+                                : "bg-orange-100 text-orange-800 border-orange-300"
+                            }`}
+                          >
+                            {project.status}
+                          </Badge>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </TabsContent>
 
-          <TabsContent value="design" className="mt-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {recentProjects
-                .filter((project) => project.category === "design")
-                .map((project) => (
-                  <div key={project.id} className="relative">
-                    <ProjectCard
-                      title={project.title}
-                      description={project.description}
-                      imageSrc={project.imageSrc}
-                      tags={project.tags}
-                      href={`/projects/${project.id}`}
-                    />
-                    <div className="absolute top-4 right-4">
-                      <Badge 
-                        variant={project.status === "In Development" ? "default" : "outline"} 
-                        className={`text-xs ${
-                          project.status === "In Development" 
-                            ? "bg-blue-500 text-blue-50" 
-                            : project.status === "Completed"
-                            ? "bg-green-100 text-green-800 border-green-300"
-                            : "bg-orange-100 text-orange-800 border-orange-300"
-                        }`}
-                      >
-                        {project.status}
-                      </Badge>
-                    </div>
-                  </div>
-                ))}
-            </div>
-          </TabsContent>
+              <TabsContent value="mobile" className="mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {recentProjects
+                    .filter((project) => project.category === "mobile")
+                    .map((project) => (
+                      <div key={project.id} className="relative">
+                        <ProjectCard
+                          title={project.title}
+                          description={project.description}
+                          imageSrc={project.imageSrc}
+                          tags={project.tags}
+                          href={`/projects/${project.id}`}
+                        />
+                        <div className="absolute top-4 right-4">
+                          <Badge 
+                            variant={project.status === "In Development" ? "default" : "outline"} 
+                            className={`text-xs ${
+                              project.status === "In Development" 
+                                ? "bg-blue-500 text-blue-50" 
+                                : project.status === "Completed"
+                                ? "bg-green-100 text-green-800 border-green-300"
+                                : "bg-orange-100 text-orange-800 border-orange-300"
+                            }`}
+                          >
+                            {project.status}
+                          </Badge>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </TabsContent>
 
-          <TabsContent value="completed" className="mt-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {recentProjects
-                .filter((project) => project.status === "Completed")
-                .map((project) => (
-                  <div key={project.id} className="relative">
-                    <ProjectCard
-                      title={project.title}
-                      description={project.description}
-                      imageSrc={project.imageSrc}
-                      tags={project.tags}
-                      href={`/projects/${project.id}`}
-                    />
-                    <div className="absolute top-4 right-4">
-                      <Badge variant="outline" className="text-xs bg-green-100 text-green-800 border-green-300">
-                        Completed
-                      </Badge>
-                    </div>
-                  </div>
-                ))}
-            </div>
-          </TabsContent>
-        </Tabs>
-      </ContentBlock>
+              <TabsContent value="design" className="mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {recentProjects
+                    .filter((project) => project.category === "design")
+                    .map((project) => (
+                      <div key={project.id} className="relative">
+                        <ProjectCard
+                          title={project.title}
+                          description={project.description}
+                          imageSrc={project.imageSrc}
+                          tags={project.tags}
+                          href={`/projects/${project.id}`}
+                        />
+                        <div className="absolute top-4 right-4">
+                          <Badge 
+                            variant={project.status === "In Development" ? "default" : "outline"} 
+                            className={`text-xs ${
+                              project.status === "In Development" 
+                                ? "bg-blue-500 text-blue-50" 
+                                : project.status === "Completed"
+                                ? "bg-green-100 text-green-800 border-green-300"
+                                : "bg-orange-100 text-orange-800 border-orange-300"
+                            }`}
+                          >
+                            {project.status}
+                          </Badge>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </TabsContent>
 
-      {/* Project Statistics */}
-      <ContentBlock title="📊 Statistik Proyek" className="mt-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="text-center p-4 border rounded-lg">
-            <div className="text-2xl font-bold text-primary">{allProjects.length}</div>
-            <div className="text-sm text-muted-foreground">Total Proyek</div>
-          </div>
-          <div className="text-center p-4 border rounded-lg">
-            <div className="text-2xl font-bold text-green-600">
-              {allProjects.filter(p => p.status === "Completed" || p.status === "Production").length}
+              <TabsContent value="completed" className="mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {recentProjects
+                    .filter((project) => project.status === "Completed")
+                    .map((project) => (
+                      <div key={project.id} className="relative">
+                        <ProjectCard
+                          title={project.title}
+                          description={project.description}
+                          imageSrc={project.imageSrc}
+                          tags={project.tags}
+                          href={`/projects/${project.id}`}
+                        />
+                        <div className="absolute top-4 right-4">
+                          <Badge variant="outline" className="text-xs bg-green-100 text-green-800 border-green-300">
+                            {t('completed')}
+                          </Badge>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </TabsContent>
+            </Tabs>
+          </ContentBlock>
+
+          {/* Project Statistics */}
+          <ContentBlock title={`📊 ${t('projectStats')}`} className="mt-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="text-center p-4 border rounded-lg">
+                <div className="text-2xl font-bold text-primary">{allProjects.length}</div>
+                <div className="text-sm text-muted-foreground">{t('totalProjects')}</div>
+              </div>
+              <div className="text-center p-4 border rounded-lg">
+                <div className="text-2xl font-bold text-green-600">
+                  {allProjects.filter(p => p.status === "Completed" || p.status === "Production").length}
+                </div>
+                <div className="text-sm text-muted-foreground">{t('completedProjects')}</div>
+              </div>
+              <div className="text-center p-4 border rounded-lg">
+                <div className="text-2xl font-bold text-blue-600">
+                  {allProjects.filter(p => p.status === "In Development").length}
+                </div>
+                <div className="text-sm text-muted-foreground">{t('inDevelopment')}</div>
+              </div>
+              <div className="text-center p-4 border rounded-lg">
+                <div className="text-2xl font-bold text-orange-600">
+                  {allProjects.filter(p => p.category === "web").length}
+                </div>
+                <div className="text-sm text-muted-foreground">{t('webApps')}</div>
+              </div>
             </div>
-            <div className="text-sm text-muted-foreground">Selesai</div>
-          </div>
-          <div className="text-center p-4 border rounded-lg">
-            <div className="text-2xl font-bold text-blue-600">
-              {allProjects.filter(p => p.status === "In Development").length}
+          </ContentBlock>
+
+          <ContentBlock title={`🔍 ${t('language') === 'id' ? 'Proses Pengembangan' : 'Development Process'}`} className="mt-12">
+            <div className="space-y-6">
+              <div className="relative pl-6 border-l-2 border-muted pb-6">
+                <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-primary"></div>
+                <h3 className="font-medium text-lg">
+                  1. {t('language') === 'id' ? 'Discovery & Planning' : 'Discovery & Planning'}
+                </h3>
+                <p className="mt-2">
+                  {t('language') === 'id' 
+                    ? "Memahami kebutuhan klien, melakukan riset pasar, dan merencanakan arsitektur serta fitur aplikasi dengan detail."
+                    : "Understanding client needs, conducting market research, and planning architecture and application features in detail."
+                  }
+                </p>
+              </div>
+
+              <div className="relative pl-6 border-l-2 border-muted pb-6">
+                <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-primary"></div>
+                <h3 className="font-medium text-lg">
+                  2. {t('language') === 'id' ? 'Design & Prototyping' : 'Design & Prototyping'}
+                </h3>
+                <p className="mt-2">
+                  {t('language') === 'id' 
+                    ? "Membuat wireframe, mockup, dan prototype interaktif untuk memvisualisasikan solusi sebelum development."
+                    : "Creating wireframes, mockups, and interactive prototypes to visualize solutions before development."
+                  }
+                </p>
+              </div>
+
+              <div className="relative pl-6 border-l-2 border-muted pb-6">
+                <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-primary"></div>
+                <h3 className="font-medium text-lg">
+                  3. {t('language') === 'id' ? 'Development' : 'Development'}
+                </h3>
+                <p className="mt-2">
+                  {t('language') === 'id' 
+                    ? "Mengimplementasikan solusi dengan pendekatan iteratif, menggunakan best practices dan teknologi modern."
+                    : "Implementing solutions with an iterative approach, using best practices and modern technology."
+                  }
+                </p>
+              </div>
+
+              <div className="relative pl-6 border-l-2 border-muted pb-6">
+                <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-primary"></div>
+                <h3 className="font-medium text-lg">
+                  4. {t('language') === 'id' ? 'Testing & QA' : 'Testing & QA'}
+                </h3>
+                <p className="mt-2">
+                  {t('language') === 'id' 
+                    ? "Melakukan pengujian menyeluruh untuk memastikan kualitas, performa, dan keamanan aplikasi."
+                    : "Conducting thorough testing to ensure application quality, performance, and security."
+                  }
+                </p>
+              </div>
+
+              <div className="relative pl-6 border-l-2 border-muted">
+                <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-primary"></div>
+                <h3 className="font-medium text-lg">
+                  5. {t('language') === 'id' ? 'Deployment & Maintenance' : 'Deployment & Maintenance'}
+                </h3>
+                <p className="mt-2">
+                  {t('language') === 'id' 
+                    ? "Meluncurkan aplikasi ke production dan memberikan dukungan berkelanjutan untuk memastikan keberhasilan jangka panjang."
+                    : "Launching the application to production and providing ongoing support to ensure long-term success."
+                  }
+                </p>
+              </div>
             </div>
-            <div className="text-sm text-muted-foreground">Dalam Pengembangan</div>
-          </div>
-          <div className="text-center p-4 border rounded-lg">
-            <div className="text-2xl font-bold text-orange-600">
-              {allProjects.filter(p => p.category === "web").length}
-            </div>
-            <div className="text-sm text-muted-foreground">Web Apps</div>
-          </div>
+          </ContentBlock>
         </div>
-      </ContentBlock>
-
-      <ContentBlock title="🔍 Proses Pengembangan" className="mt-12">
-        <div className="space-y-6">
-          <div className="relative pl-6 border-l-2 border-muted pb-6">
-            <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-primary"></div>
-            <h3 className="font-medium text-lg">1. Discovery & Planning</h3>
-            <p className="mt-2">
-              Memahami kebutuhan klien, melakukan riset pasar, dan merencanakan arsitektur serta fitur aplikasi dengan detail.
-            </p>
-          </div>
-
-          <div className="relative pl-6 border-l-2 border-muted pb-6">
-            <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-primary"></div>
-            <h3 className="font-medium text-lg">2. Design & Prototyping</h3>
-            <p className="mt-2">Membuat wireframe, mockup, dan prototype interaktif untuk memvisualisasikan solusi sebelum development.</p>
-          </div>
-
-          <div className="relative pl-6 border-l-2 border-muted pb-6">
-            <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-primary"></div>
-            <h3 className="font-medium text-lg">3. Development</h3>
-            <p className="mt-2">
-              Mengimplementasikan solusi dengan pendekatan iteratif, menggunakan best practices dan teknologi modern.
-            </p>
-          </div>
-
-          <div className="relative pl-6 border-l-2 border-muted pb-6">
-            <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-primary"></div>
-            <h3 className="font-medium text-lg">4. Testing & QA</h3>
-            <p className="mt-2">Melakukan pengujian menyeluruh untuk memastikan kualitas, performa, dan keamanan aplikasi.</p>
-          </div>
-
-          <div className="relative pl-6 border-l-2 border-muted">
-            <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-primary"></div>
-            <h3 className="font-medium text-lg">5. Deployment & Maintenance</h3>
-            <p className="mt-2">
-              Meluncurkan aplikasi ke production dan memberikan dukungan berkelanjutan untuk memastikan keberhasilan jangka panjang.
-            </p>
-          </div>
-        </div>
-      </ContentBlock>
-    </div>
+      )}
+    />
   )
 }

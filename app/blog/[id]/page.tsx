@@ -1,3 +1,5 @@
+"use client"
+
 import { PageHeader } from "@/components/page-header"
 import { ContentBlock } from "@/components/content-block"
 import { Badge } from "@/components/ui/badge"
@@ -5,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, Calendar, Clock, User, Tag } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { TranslatedContent } from "@/components/translated-content"
 
 // This would typically come from a database or API
 const articles = {
@@ -657,96 +660,105 @@ async function getUser(id: string): Promise<User> {
 }
 
 export default function BlogPostPage({ params }: { params: { id: string } }) {
-  const post = articles[params.id as keyof typeof articles]
-
-  // Fallback for posts not in our mock data
-  if (!post) {
-    return (
-      <div className="container max-w-5xl py-8 px-4 md:px-8">
-        <PageHeader title="Artikel Tidak Ditemukan" description="Maaf, artikel yang Anda cari tidak tersedia." />
-        <Button asChild className="mt-6">
-          <Link href="/blog">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Kembali ke Blog
-          </Link>
-        </Button>
-      </div>
-    )
-  }
-
   return (
-    <div className="container max-w-5xl py-8 px-4 md:px-8">
-      <Button variant="outline" asChild className="mb-6">
-        <Link href="/blog">
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Kembali ke Blog
-        </Link>
-      </Button>
+    <TranslatedContent
+      renderContent={({ t }) => {
+        const post = articles[params.id as keyof typeof articles]
 
-      <div className="mb-8">
-        <Badge className="mb-4">{post.category}</Badge>
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">{post.title}</h1>
-        <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-          <div className="flex items-center">
-            <User className="h-4 w-4 mr-1" />
-            {post.author}
-          </div>
-          <div className="flex items-center">
-            <Calendar className="h-4 w-4 mr-1" />
-            {post.date}
-          </div>
-          <div className="flex items-center">
-            <Clock className="h-4 w-4 mr-1" />
-            {post.readTime}
-          </div>
-        </div>
-      </div>
+        // Fallback for posts not in our mock data
+        if (!post) {
+          return (
+            <div className="container max-w-5xl py-8 px-4 md:px-8">
+              <PageHeader 
+                title={t('language') === 'id' ? "Artikel Tidak Ditemukan" : "Article Not Found"} 
+                description={t('language') === 'id' ? "Maaf, artikel yang Anda cari tidak tersedia." : "Sorry, the article you're looking for is not available."} 
+              />
+              <Button asChild className="mt-6">
+                <Link href="/blog">
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  {t('language') === 'id' ? "Kembali ke Blog" : "Back to Blog"}
+                </Link>
+              </Button>
+            </div>
+          )
+        }
 
-      <div className="relative h-64 md:h-96 w-full mb-8 rounded-lg overflow-hidden">
-        <Image src={post.imageSrc || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
-      </div>
-
-      <ContentBlock>
-        <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
-      </ContentBlock>
-
-      <div className="mt-8 flex flex-wrap gap-2">
-        {post.tags.map((tag) => (
-          <Badge key={tag} variant="secondary">
-            <Tag className="h-3 w-3 mr-1" />
-            {tag}
-          </Badge>
-        ))}
-      </div>
-
-      <ContentBlock title="Artikel Terkait" className="mt-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {post.relatedPosts.map((relatedPostId) => {
-            const relatedPost = articles[relatedPostId as keyof typeof articles]
-            if (!relatedPost) return null
-
-            return (
-              <Link key={relatedPostId} href={`/blog/${relatedPostId}`} className="block group">
-                <div className="border rounded-lg overflow-hidden h-full transition-all duration-200 hover:shadow-md">
-                  <div className="relative h-40 w-full overflow-hidden">
-                    <Image
-                      src={relatedPost.imageSrc || "/placeholder.svg"}
-                      alt={relatedPost.title}
-                      fill
-                      className="object-cover transition-transform duration-200 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <Badge className="mb-2">{relatedPost.category}</Badge>
-                    <h3 className="font-medium text-lg line-clamp-2">{relatedPost.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{relatedPost.excerpt}</p>
-                  </div>
-                </div>
+        return (
+          <div className="container max-w-5xl py-8 px-4 md:px-8">
+            <Button variant="outline" asChild className="mb-6">
+              <Link href="/blog">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                {t('language') === 'id' ? "Kembali ke Blog" : "Back to Blog"}
               </Link>
-            )
-          })}
-        </div>
-      </ContentBlock>
-    </div>
+            </Button>
+
+            <div className="mb-8">
+              <Badge className="mb-4">{post.category}</Badge>
+              <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">{post.title}</h1>
+              <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                <div className="flex items-center">
+                  <User className="h-4 w-4 mr-1" />
+                  {post.author}
+                </div>
+                <div className="flex items-center">
+                  <Calendar className="h-4 w-4 mr-1" />
+                  {post.date}
+                </div>
+                <div className="flex items-center">
+                  <Clock className="h-4 w-4 mr-1" />
+                  {post.readTime}
+                </div>
+              </div>
+            </div>
+
+            <div className="relative h-64 md:h-96 w-full mb-8 rounded-lg overflow-hidden">
+              <Image src={post.imageSrc || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
+            </div>
+
+            <ContentBlock>
+              <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
+            </ContentBlock>
+
+            <div className="mt-8 flex flex-wrap gap-2">
+              {post.tags.map((tag) => (
+                <Badge key={tag} variant="secondary">
+                  <Tag className="h-3 w-3 mr-1" />
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+
+            <ContentBlock title={`${t('relatedArticles')}`} className="mt-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {post.relatedPosts.map((relatedPostId) => {
+                  const relatedPost = articles[relatedPostId as keyof typeof articles]
+                  if (!relatedPost) return null
+
+                  return (
+                    <Link key={relatedPostId} href={`/blog/${relatedPostId}`} className="block group">
+                      <div className="border rounded-lg overflow-hidden h-full transition-all duration-200 hover:shadow-md">
+                        <div className="relative h-40 w-full overflow-hidden">
+                          <Image
+                            src={relatedPost.imageSrc || "/placeholder.svg"}
+                            alt={relatedPost.title}
+                            fill
+                            className="object-cover transition-transform duration-200 group-hover:scale-105"
+                          />
+                        </div>
+                        <div className="p-4">
+                          <Badge className="mb-2">{relatedPost.category}</Badge>
+                          <h3 className="font-medium text-lg line-clamp-2">{relatedPost.title}</h3>
+                          <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{relatedPost.excerpt}</p>
+                        </div>
+                      </div>
+                    </Link>
+                  )
+                })}
+              </div>
+            </ContentBlock>
+          </div>
+        )
+      }}
+    />
   )
 }
