@@ -3,7 +3,7 @@ import { ContentBlock } from "@/components/content-block"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Check, Instagram, ImageIcon, Film } from "lucide-react"
+import { Check, Instagram, ImageIcon, Film, Mic } from "lucide-react"
 import Link from "next/link"
 
 export default function ServicesPage() {
@@ -174,6 +174,83 @@ export default function ServicesPage() {
               </CardContent>
             </Card>
           </div>
+        </ContentBlock>
+
+        <ContentBlock title="Speaking Engagement">
+          <div className="mb-6">
+            <p className="text-lg text-muted-foreground">
+              Layanan speaking engagement untuk berbagai acara teknologi, workshop, dan seminar dengan topik pengembangan web, AI, dan karir teknologi.
+            </p>
+          </div>
+
+          <Card className="overflow-hidden border-2 hover:border-primary/50 transition-all duration-200">
+            <div className="bg-primary/10 p-4 flex items-center">
+              <Mic className="h-5 w-5 mr-2 text-primary" />
+              <h3 className="font-medium text-lg">Speaking Services</h3>
+            </div>
+            <CardContent className="p-6">
+              <div className="space-y-6">
+                <div className="flex justify-between items-start">
+                  <div className="flex items-start">
+                    <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="font-medium">Workshop/Training</p>
+                      <p className="text-sm text-muted-foreground">Durasi 2-4 jam dengan hands-on practice</p>
+                    </div>
+                  </div>
+                  <Badge className="text-lg font-semibold">2.000.000 - 3.000.000</Badge>
+                </div>
+
+                <div className="flex justify-between items-start">
+                  <div className="flex items-start">
+                    <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="font-medium">Seminar/Conference Talk</p>
+                      <p className="text-sm text-muted-foreground">Durasi 1-2 jam dengan Q&A session</p>
+                    </div>
+                  </div>
+                  <Badge className="text-lg font-semibold">500.000 - 3.000.000</Badge>
+                </div>
+
+                <div className="flex justify-between items-start">
+                  <div className="flex items-start">
+                    <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="font-medium">Webinar/Online Talk</p>
+                      <p className="text-sm text-muted-foreground">Durasi 1-2 jam via platform online</p>
+                    </div>
+                  </div>
+                  <Badge className="text-lg font-semibold">350.000 - 2.000.000</Badge>
+                </div>
+
+                <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
+                  <h4 className="font-medium mb-3">Harga dapat disesuaikan berdasarkan:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                      <span className="text-sm">Lokasi event (dalam/luar kota)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                      <span className="text-sm">Durasi dan kompleksitas materi</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                      <span className="text-sm">Persiapan materi khusus</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                      <span className="text-sm">Jumlah peserta dan target audience</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                      <span className="text-sm">Jenis organisasi (komersial/non-profit/pendidikan)</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </ContentBlock>
 
         <ContentBlock title="Paket Bundling">

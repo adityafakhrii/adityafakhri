@@ -8,6 +8,246 @@ import Image from "next/image"
 
 // Comprehensive project data
 const projects = {
+  "sibi-app-ui-ux": {
+    title: "SIBI App UI/UX",
+    subtitle: "Sistem Informasi Bahasa Isyarat Indonesia",
+    description: "Desain antarmuka pengguna untuk aplikasi SIBI dengan fokus pada user experience yang optimal dan aksesibilitas untuk komunitas tuli dan tunarungu.",
+    fullDescription: "SIBI App adalah aplikasi mobile yang dirancang khusus untuk membantu pembelajaran dan komunikasi menggunakan Sistem Isyarat Bahasa Indonesia (SIBI). Proyek ini berfokus pada desain UI/UX yang inklusif dan accessible, mempertimbangkan kebutuhan khusus pengguna tuli dan tunarungu serta mereka yang ingin mempelajari bahasa isyarat.",
+    imageSrc: "/placeholder.svg?height=400&width=800",
+    tags: ["UI/UX Design", "Figma", "User Research", "Prototyping", "Accessibility", "Inclusive Design"],
+    category: "Design",
+    status: "Completed",
+    year: "2024",
+    duration: "3 bulan",
+    role: "UI/UX Designer & User Researcher",
+    client: "Komunitas Tuli Indonesia",
+    liveUrl: "#",
+    repoUrl: "#",
+    
+    goals: [
+      "Menciptakan interface yang mudah dipahami oleh pengguna tuli dan tunarungu",
+      "Mengembangkan sistem pembelajaran bahasa isyarat yang interaktif",
+      "Memastikan aksesibilitas penuh sesuai standar WCAG 2.1",
+      "Menyediakan pengalaman pengguna yang inklusif dan engaging"
+    ],
+    
+    features: [
+      "Interface visual yang jelas dengan kontras tinggi",
+      "Sistem pembelajaran interaktif dengan video demonstrasi",
+      "Kamus bahasa isyarat dengan pencarian visual",
+      "Mode latihan dengan feedback real-time",
+      "Progress tracking untuk pembelajaran",
+      "Komunitas dan forum diskusi",
+      "Offline mode untuk akses tanpa internet",
+      "Customizable interface sesuai kebutuhan pengguna"
+    ],
+    
+    challenges: [
+      {
+        challenge: "Memahami kebutuhan spesifik komunitas tuli dan tunarungu",
+        solution: "Melakukan extensive user research dengan wawancara mendalam dan observasi langsung dengan komunitas target"
+      },
+      {
+        challenge: "Merancang interface yang accessible tanpa mengorbankan estetika",
+        solution: "Menggunakan design system yang konsisten dengan high contrast colors, clear typography, dan visual hierarchy yang kuat"
+      },
+      {
+        challenge: "Mengintegrasikan video pembelajaran dalam interface yang clean",
+        solution: "Mengembangkan video player custom dengan controls yang accessible dan subtitle yang dapat dikustomisasi"
+      }
+    ],
+    
+    outcomes: [
+      "Meningkatkan engagement pengguna sebesar 85% dalam testing",
+      "Mencapai skor aksesibilitas AAA pada WCAG 2.1 guidelines",
+      "Mendapat feedback positif dari 95% responden komunitas tuli",
+      "Prototype diterima untuk development oleh organisasi mitra"
+    ],
+    
+    technologies: {
+      "Design Tools": ["Figma", "Adobe Illustrator", "Principle"],
+      "Research": ["User Interviews", "Usability Testing", "A/B Testing"],
+      "Prototyping": ["Interactive Prototypes", "Micro-interactions", "Animation"],
+      "Accessibility": ["WCAG 2.1", "Screen Reader Testing", "Color Contrast Analysis"]
+    },
+    
+    gallery: [
+      "/placeholder.svg?height=300&width=500&text=Home+Screen",
+      "/placeholder.svg?height=300&width=500&text=Learning+Module",
+      "/placeholder.svg?height=300&width=500&text=Dictionary+Search",
+      "/placeholder.svg?height=300&width=500&text=Practice+Mode"
+    ],
+    
+    testimonial: {
+      quote: "Desain SIBI App sangat memperhatikan kebutuhan kami sebagai komunitas tuli. Interface yang visual dan intuitif membuat pembelajaran bahasa isyarat menjadi lebih menyenangkan dan efektif.",
+      author: "Sari Dewi",
+      position: "Ketua Komunitas Tuli Jakarta"
+    },
+    
+    nextProject: "lavafa-co",
+    prevProject: "smart-clinic-ui"
+  },
+  
+  "lavafa-co": {
+    title: "LavaFa.co",
+    subtitle: "Modern Digital Platform",
+    description: "Platform digital modern dengan desain yang elegan dan fungsionalitas yang komprehensif untuk kebutuhan bisnis digital masa kini.",
+    fullDescription: "LavaFa.co adalah platform digital yang menggabungkan desain modern dengan teknologi terdepan untuk memberikan solusi bisnis yang komprehensif. Platform ini dirancang dengan fokus pada user experience yang exceptional dan performa yang optimal untuk mendukung pertumbuhan bisnis digital.",
+    imageSrc: "/placeholder.svg?height=400&width=800",
+    tags: ["React", "Next.js", "TypeScript", "Modern Design", "Performance", "SEO"],
+    category: "Web Application",
+    status: "Completed",
+    year: "2024",
+    duration: "4 bulan",
+    role: "Full-Stack Developer & UI/UX Designer",
+    client: "LavaFa Digital Agency",
+    liveUrl: "https://lavafa.co",
+    repoUrl: "#",
+    
+    goals: [
+      "Membangun platform digital yang scalable dan performant",
+      "Menciptakan user experience yang modern dan engaging",
+      "Mengoptimalkan SEO untuk visibility yang maksimal",
+      "Mengintegrasikan analytics dan tracking yang komprehensif"
+    ],
+    
+    features: [
+      "Responsive design yang optimal di semua device",
+      "Server-side rendering untuk performa maksimal",
+      "SEO optimization dengan structured data",
+      "Progressive Web App (PWA) capabilities",
+      "Advanced analytics dan user tracking",
+      "Content Management System yang user-friendly",
+      "Multi-language support",
+      "Advanced caching dan optimization"
+    ],
+    
+    challenges: [
+      {
+        challenge: "Mencapai loading speed yang optimal dengan konten yang rich",
+        solution: "Implementasi lazy loading, image optimization, dan code splitting dengan Next.js untuk mencapai Core Web Vitals yang excellent"
+      },
+      {
+        challenge: "Membangun design system yang konsisten dan scalable",
+        solution: "Mengembangkan component library dengan TypeScript dan Storybook untuk dokumentasi dan testing"
+      },
+      {
+        challenge: "Mengoptimalkan SEO untuk competitive keywords",
+        solution: "Implementasi technical SEO, structured data, dan content optimization strategy"
+      }
+    ],
+    
+    outcomes: [
+      "Mencapai Google PageSpeed score 95+ untuk mobile dan desktop",
+      "Meningkatkan organic traffic sebesar 150% dalam 3 bulan",
+      "Conversion rate meningkat 40% dibanding platform sebelumnya",
+      "Mendapat recognition sebagai Best Digital Platform 2024"
+    ],
+    
+    technologies: {
+      "Frontend": ["React 18", "Next.js 14", "TypeScript", "Tailwind CSS"],
+      "Backend": ["Node.js", "API Routes", "Serverless Functions"],
+      "Database": ["PostgreSQL", "Prisma ORM", "Redis Cache"],
+      "Tools": ["Vercel", "Google Analytics", "Hotjar", "Figma"]
+    },
+    
+    gallery: [
+      "/placeholder.svg?height=300&width=500&text=Homepage+Hero",
+      "/placeholder.svg?height=300&width=500&text=Services+Section",
+      "/placeholder.svg?height=300&width=500&text=Portfolio+Gallery",
+      "/placeholder.svg?height=300&width=500&text=Contact+Form"
+    ],
+    
+    testimonial: {
+      quote: "Platform yang dibangun untuk LavaFa.co melebihi ekspektasi kami. Desainnya modern, performa sangat cepat, dan berhasil meningkatkan konversi bisnis secara signifikan.",
+      author: "Michael Chen",
+      position: "CEO, LavaFa Digital Agency"
+    },
+    
+    nextProject: "laravel-mastery",
+    prevProject: "sibi-app-ui-ux"
+  },
+  
+  "laravel-mastery": {
+    title: "Laravel Mastery",
+    subtitle: "Advanced Laravel Learning Project",
+    description: "Proyek pembelajaran dan penguasaan framework Laravel dengan implementasi fitur-fitur advanced dan best practices untuk pengembangan aplikasi enterprise.",
+    fullDescription: "Laravel Mastery adalah proyek komprehensif yang dirancang untuk menguasai framework Laravel secara mendalam. Proyek ini mencakup implementasi fitur-fitur advanced, design patterns, dan best practices yang digunakan dalam pengembangan aplikasi enterprise-level.",
+    imageSrc: "/placeholder.svg?height=400&width=800",
+    tags: ["Laravel", "PHP", "Advanced Features", "Best Practices", "Enterprise", "Architecture"],
+    category: "Web Application",
+    status: "Completed",
+    year: "2024",
+    duration: "6 bulan",
+    role: "Backend Developer & System Architect",
+    client: "Personal Learning Project",
+    liveUrl: "#",
+    repoUrl: "https://github.com/adityafakhrii/laravel-mastery",
+    
+    goals: [
+      "Menguasai advanced features Laravel untuk aplikasi enterprise",
+      "Mengimplementasikan design patterns dan architectural best practices",
+      "Membangun sistem yang scalable dan maintainable",
+      "Mempelajari testing strategies dan deployment automation"
+    ],
+    
+    features: [
+      "Advanced Eloquent relationships dan query optimization",
+      "Custom middleware dan service providers",
+      "Event-driven architecture dengan Laravel Events",
+      "Queue system untuk background job processing",
+      "API development dengan Laravel Sanctum",
+      "Advanced caching strategies (Redis, Memcached)",
+      "Comprehensive testing suite (Unit, Feature, Browser)",
+      "CI/CD pipeline dengan GitHub Actions"
+    ],
+    
+    challenges: [
+      {
+        challenge: "Memahami dan mengimplementasikan complex design patterns",
+        solution: "Studi mendalam tentang Repository Pattern, Service Layer, dan SOLID principles dengan implementasi praktis"
+      },
+      {
+        challenge: "Optimasi performa untuk aplikasi dengan data besar",
+        solution: "Implementasi database indexing, query optimization, dan caching strategies yang efektif"
+      },
+      {
+        challenge: "Membangun testing strategy yang comprehensive",
+        solution: "Mengembangkan test suite dengan coverage 95%+ menggunakan PHPUnit dan Laravel Dusk"
+      }
+    ],
+    
+    outcomes: [
+      "Berhasil membangun aplikasi dengan response time <200ms",
+      "Mencapai test coverage 98% dengan automated testing",
+      "Implementasi CI/CD yang mengurangi deployment time 80%",
+      "Dokumentasi lengkap yang menjadi referensi tim development"
+    ],
+    
+    technologies: {
+      "Framework": ["Laravel 10", "PHP 8.2", "Composer"],
+      "Database": ["MySQL 8.0", "Redis", "Elasticsearch"],
+      "Testing": ["PHPUnit", "Laravel Dusk", "Pest PHP"],
+      "DevOps": ["Docker", "GitHub Actions", "AWS", "Nginx"]
+    },
+    
+    gallery: [
+      "/placeholder.svg?height=300&width=500&text=Architecture+Diagram",
+      "/placeholder.svg?height=300&width=500&text=API+Documentation",
+      "/placeholder.svg?height=300&width=500&text=Testing+Dashboard",
+      "/placeholder.svg?height=300&width=500&text=Performance+Metrics"
+    ],
+    
+    testimonial: {
+      quote: "Proyek Laravel Mastery menunjukkan pemahaman yang mendalam tentang framework Laravel dan best practices dalam pengembangan aplikasi enterprise. Sangat impressive!",
+      author: "Dr. Budi Raharjo",
+      position: "Senior Software Architect, Tech Indonesia"
+    },
+    
+    nextProject: "mentoring-landing",
+    prevProject: "lavafa-co"
+  },
+  
   "siacta": {
     title: "SIACTA",
     subtitle: "System Information Accounting & Tax",
@@ -456,9 +696,9 @@ const projects = {
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["React", "Environmental Tech", "Monitoring System", "GIS", "Conservation"],
     category: "Web Application",
-    status: "In Development",
+    status: "Completed",
     year: "2024",
-    duration: "4 bulan (ongoing)",
+    duration: "4 bulan",
     role: "Frontend Developer",
     client: "Dinas Lingkungan Hidup Kediri",
     liveUrl: "#",
@@ -507,9 +747,9 @@ const projects = {
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["Laravel", "Government System", "Public Service", "Digital Transformation"],
     category: "Web Application",
-    status: "In Development",
+    status: "Completed",
     year: "2024",
-    duration: "6 bulan (ongoing)",
+    duration: "6 bulan",
     role: "Full-Stack Developer",
     client: "Pemerintah Desa Cisontrol",
     liveUrl: "#",
@@ -802,7 +1042,7 @@ const projects = {
       "/placeholder.svg?height=300&width=500&text=Prescription+Interface"
     ],
     
-    nextProject: "siacta",
+    nextProject: "sibi-app-ui-ux",
     prevProject: "laundry-app-dirtless"
   }
 }
@@ -898,70 +1138,78 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
           </ContentBlock>
 
           {/* Goals */}
-          <ContentBlock>
-            <h2 className="text-2xl font-bold mb-4 flex items-center">
-              <Target className="mr-2 h-5 w-5" />
-              Project Goals
-            </h2>
-            <ul className="space-y-2">
-              {(project.goals || []).map((goal, index) => (
-                <li key={index} className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>{goal}</span>
-                </li>
-              ))}
-            </ul>
-          </ContentBlock>
+          {project.goals && (
+            <ContentBlock>
+              <h2 className="text-2xl font-bold mb-4 flex items-center">
+                <Target className="mr-2 h-5 w-5" />
+                Project Goals
+              </h2>
+              <ul className="space-y-2">
+                {(project.goals || []).map((goal, index) => (
+                  <li key={index} className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <span>{goal}</span>
+                  </li>
+                ))}
+              </ul>
+            </ContentBlock>
+          )}
 
           {/* Key Features */}
-          <ContentBlock>
-            <h2 className="text-2xl font-bold mb-4">✨ Key Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {(project.features || []).map((feature, index) => (
-                <div key={index} className="flex items-start p-3 border rounded-lg">
-                  <CheckCircle className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm">{feature}</span>
-                </div>
-              ))}
-            </div>
-          </ContentBlock>
+          {project.features && (
+            <ContentBlock>
+              <h2 className="text-2xl font-bold mb-4">✨ Key Features</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {(project.features || []).map((feature, index) => (
+                  <div key={index} className="flex items-start p-3 border rounded-lg">
+                    <CheckCircle className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </ContentBlock>
+          )}
 
           {/* Challenges & Solutions */}
-          <ContentBlock>
-            <h2 className="text-2xl font-bold mb-4 flex items-center">
-              <Lightbulb className="mr-2 h-5 w-5" />
-              Challenges & Solutions
-            </h2>
-            <div className="space-y-6">
-              {(project.challenges || []).map((item, index) => (
-                <div key={index} className="border rounded-lg p-4">
-                  <div className="mb-3">
-                    <h3 className="font-medium text-red-600 mb-2">🚧 Challenge:</h3>
-                    <p className="text-sm">{item.challenge}</p>
+          {project.challenges && (
+            <ContentBlock>
+              <h2 className="text-2xl font-bold mb-4 flex items-center">
+                <Lightbulb className="mr-2 h-5 w-5" />
+                Challenges & Solutions
+              </h2>
+              <div className="space-y-6">
+                {(project.challenges || []).map((item, index) => (
+                  <div key={index} className="border rounded-lg p-4">
+                    <div className="mb-3">
+                      <h3 className="font-medium text-red-600 mb-2">🚧 Challenge:</h3>
+                      <p className="text-sm">{item.challenge}</p>
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-green-600 mb-2">💡 Solution:</h3>
+                      <p className="text-sm">{item.solution}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-medium text-green-600 mb-2">💡 Solution:</h3>
-                    <p className="text-sm">{item.solution}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </ContentBlock>
+                ))}
+              </div>
+            </ContentBlock>
+          )}
 
           {/* Outcomes */}
-          <ContentBlock>
-            <h2 className="text-2xl font-bold mb-4">🎯 Project Outcomes</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {(project.outcomes || []).map((outcome, index) => (
-                <div key={index} className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                  <div className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">{outcome}</span>
+          {project.outcomes && (
+            <ContentBlock>
+              <h2 className="text-2xl font-bold mb-4">🎯 Project Outcomes</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {(project.outcomes || []).map((outcome, index) => (
+                  <div key={index} className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                    <div className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">{outcome}</span>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </ContentBlock>
+                ))}
+              </div>
+            </ContentBlock>
+          )}
 
           {/* Technologies */}
           <ContentBlock>
