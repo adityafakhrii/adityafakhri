@@ -53,6 +53,36 @@ const featuredProjects = [
 
 const recentProjects = [
   {
+    id: "sibi-app-ui-ux",
+    title: "SIBI App UI/UX",
+    description: "Desain antarmuka pengguna untuk aplikasi SIBI dengan fokus pada user experience yang optimal dan aksesibilitas.",
+    imageSrc: "/placeholder.svg?height=200&width=400",
+    tags: ["UI/UX Design", "Figma", "User Research", "Prototyping"],
+    category: "design",
+    status: "Completed",
+    year: "2024"
+  },
+  {
+    id: "lavafa-co",
+    title: "LavaFa.co",
+    description: "Platform digital modern dengan desain yang elegan dan fungsionalitas yang komprehensif untuk kebutuhan bisnis.",
+    imageSrc: "/placeholder.svg?height=200&width=400",
+    tags: ["React", "Next.js", "TypeScript", "Modern Design"],
+    category: "web",
+    status: "Completed",
+    year: "2024"
+  },
+  {
+    id: "laravel-mastery",
+    title: "Laravel Mastery",
+    description: "Proyek pembelajaran dan penguasaan framework Laravel dengan implementasi fitur-fitur advanced dan best practices.",
+    imageSrc: "/placeholder.svg?height=200&width=400",
+    tags: ["Laravel", "PHP", "Advanced Features", "Best Practices"],
+    category: "web",
+    status: "Completed",
+    year: "2024"
+  },
+  {
     id: "mentoring-landing",
     title: "Mentoring Landing Page",
     description: "Landing page modern dan responsif untuk Program Mentoring dengan desain yang clean dan user-friendly.",
@@ -79,7 +109,7 @@ const recentProjects = [
     imageSrc: "/placeholder.svg?height=200&width=400",
     tags: ["React", "Environmental Tech", "Monitoring System"],
     category: "web",
-    status: "In Development",
+    status: "Completed",
     year: "2024"
   },
   {
@@ -89,7 +119,7 @@ const recentProjects = [
     imageSrc: "/placeholder.svg?height=200&width=400",
     tags: ["Laravel", "Government System", "Public Service"],
     category: "web",
-    status: "In Development",
+    status: "Completed",
     year: "2024"
   },
   {
@@ -190,7 +220,8 @@ export default function ProjectsPage() {
             <TabsTrigger value="all">Semua</TabsTrigger>
             <TabsTrigger value="web">Web</TabsTrigger>
             <TabsTrigger value="mobile">Mobile</TabsTrigger>
-            <TabsTrigger value="in-development">In Development</TabsTrigger>
+            <TabsTrigger value="design">Design</TabsTrigger>
+            <TabsTrigger value="completed">Completed</TabsTrigger>
           </TabsList>
 
           <TabsContent value="all" className="mt-0">
@@ -287,10 +318,10 @@ export default function ProjectsPage() {
             </div>
           </TabsContent>
 
-          <TabsContent value="in-development" className="mt-0">
+          <TabsContent value="design" className="mt-0">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {recentProjects
-                .filter((project) => project.status === "In Development")
+                .filter((project) => project.category === "design")
                 .map((project) => (
                   <div key={project.id} className="relative">
                     <ProjectCard
@@ -301,8 +332,40 @@ export default function ProjectsPage() {
                       href={`/projects/${project.id}`}
                     />
                     <div className="absolute top-4 right-4">
-                      <Badge variant="default" className="text-xs bg-blue-500 text-blue-50">
-                        In Development
+                      <Badge 
+                        variant={project.status === "In Development" ? "default" : "outline"} 
+                        className={`text-xs ${
+                          project.status === "In Development" 
+                            ? "bg-blue-500 text-blue-50" 
+                            : project.status === "Completed"
+                            ? "bg-green-100 text-green-800 border-green-300"
+                            : "bg-orange-100 text-orange-800 border-orange-300"
+                        }`}
+                      >
+                        {project.status}
+                      </Badge>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="completed" className="mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {recentProjects
+                .filter((project) => project.status === "Completed")
+                .map((project) => (
+                  <div key={project.id} className="relative">
+                    <ProjectCard
+                      title={project.title}
+                      description={project.description}
+                      imageSrc={project.imageSrc}
+                      tags={project.tags}
+                      href={`/projects/${project.id}`}
+                    />
+                    <div className="absolute top-4 right-4">
+                      <Badge variant="outline" className="text-xs bg-green-100 text-green-800 border-green-300">
+                        Completed
                       </Badge>
                     </div>
                   </div>
