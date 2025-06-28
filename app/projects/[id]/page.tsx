@@ -971,9 +971,9 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
                 <div key={category}>
                   <h3 className="font-medium mb-2">{category}:</h3>
                   <div className="flex flex-wrap gap-2">
-                    {techs.map((tech) => (
+                    {Array.isArray(techs) ? techs.map((tech) => (
                       <Badge key={tech} variant="outline">{tech}</Badge>
-                    ))}
+                    )) : null}
                   </div>
                 </div>
               ))}
