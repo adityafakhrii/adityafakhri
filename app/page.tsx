@@ -11,8 +11,8 @@ import { TranslatedContent } from "@/components/translated-content"
 
 export default function Home() {
   return (
-    <TranslatedContent>
-      {({ t }) => (
+    <TranslatedContent
+      renderContent={({ t }) => (
         <div className="container max-w-5xl py-8 px-4 md:px-8">
           {/* Hero Section */}
           <section className="py-12 md:py-20">
@@ -253,6 +253,6 @@ export default function Home() {
           </ContentBlock>
         </div>
       )}
-    </TranslatedContent>
+    />
   )
 }

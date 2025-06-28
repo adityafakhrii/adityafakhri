@@ -4,11 +4,11 @@ import { useLanguage } from '@/contexts/language-context'
 import { TranslationKey } from '@/lib/translations'
 
 interface TranslatedContentProps {
-  children: ({ t }: { t: (key: TranslationKey) => string }) => React.ReactNode
+  renderContent: ({ t }: { t: (key: TranslationKey) => string }) => React.ReactNode
 }
 
-export function TranslatedContent({ children }: TranslatedContentProps) {
+export function TranslatedContent({ renderContent }: TranslatedContentProps) {
   const { t } = useLanguage()
   
-  return <>{children({ t })}</>
+  return <>{renderContent({ t })}</>
 }
