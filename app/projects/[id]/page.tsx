@@ -56,8 +56,9 @@ const projects = {
   // Other projects would be defined similarly
 }
 
-export default function ProjectDetailPage({ params }: { params: { id: string } }) {
-  const project = projects[params.id as keyof typeof projects]
+export default async function ProjectDetailPage({ params }: { params: { id: string } }) {
+  const resolvedParams = await params
+  const project = projects[resolvedParams.id as keyof typeof projects]
 
   // Fallback for projects not in our mock data
   if (!project) {
