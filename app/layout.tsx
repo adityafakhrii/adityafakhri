@@ -5,10 +5,9 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { PortfolioSidebar } from "@/components/portfolio-sidebar"
 import { SidebarProvider } from "@/components/ui/sidebar"
+import { LanguageProvider } from "@/contexts/language-context"
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
-
-
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -24,19 +23,21 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="id" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/adit.ico" />
       </head>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={false}>
-          <SidebarProvider>
-            <div className="flex min-h-screen">
-              <PortfolioSidebar />
-              <main className="flex-1 overflow-auto mx-auto">{children}</main>
-            </div>
-          </SidebarProvider>
-        </ThemeProvider>
+        <LanguageProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={false}>
+            <SidebarProvider>
+              <div className="flex min-h-screen">
+                <PortfolioSidebar />
+                <main className="flex-1 overflow-auto mx-auto">{children}</main>
+              </div>
+            </SidebarProvider>
+          </ThemeProvider>
+        </LanguageProvider>
         <SpeedInsights />
         <Analytics />
       </body>

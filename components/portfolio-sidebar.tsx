@@ -39,12 +39,15 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar"
 import { useEffect, useState } from "react"
+import { useLanguage } from "@/contexts/language-context"
+import { LanguageSwitcher } from "@/components/language-switcher"
 
 export function PortfolioSidebar() {
   const { setTheme, theme, resolvedTheme } = useTheme()
   const { isMobile } = useSidebar()
   const pathname = usePathname()
   const [mounted, setMounted] = useState(false)
+  const { t } = useLanguage()
 
   // Ensure theme toggle only renders client-side to avoid hydration mismatch
   useEffect(() => {
@@ -74,7 +77,7 @@ export function PortfolioSidebar() {
               <AvatarFallback>AFR</AvatarFallback>
             </Avatar>
             <div className="text-center">
-              <h1 className="text-xl font-bold">Aditya Fakhri Riansyah</h1>
+              <h1 className="text-xl font-bold">{t('heroTitle')}</h1>
               <p className="text-sm text-muted-foreground">AI-Driven Web Developer</p>
               <p className="text-sm text-muted-foreground">Mentor • Tech Content Creator</p>
             </div>
@@ -86,7 +89,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/"}>
                 <Link href="/">
                   <Home className="mr-2 h-4 w-4" />
-                  <span>Home</span>
+                  <span>{t('home')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -94,7 +97,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/about"}>
                 <Link href="/about">
                   <User className="mr-2 h-4 w-4" />
-                  <span>About</span>
+                  <span>{t('about')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -102,7 +105,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/skills"}>
                 <Link href="/skills">
                   <Lightbulb className="mr-2 h-4 w-4" />
-                  <span>Skills</span>
+                  <span>{t('skills')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -110,7 +113,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/speaking"}>
                 <Link href="/speaking">
                   <Mic className="mr-2 h-4 w-4" />
-                  <span>Speaking & Events</span>
+                  <span>{t('speaking')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -118,7 +121,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname.startsWith("/projects")}>
                 <Link href="/projects">
                   <Folder className="mr-2 h-4 w-4" />
-                  <span>Projects</span>
+                  <span>{t('projects')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -126,7 +129,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/experience"}>
                 <Link href="/experience">
                   <BriefcaseBusiness className="mr-2 h-4 w-4" />
-                  <span>Experience</span>
+                  <span>{t('experience')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -134,7 +137,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/education"}>
                 <Link href="/education">
                   <GraduationCap className="mr-2 h-4 w-4" />
-                  <span>Education</span>
+                  <span>{t('education')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -142,7 +145,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/community"}>
                 <Link href="/community">
                   <Users className="mr-2 h-4 w-4" />
-                  <span>Community</span>
+                  <span>{t('community')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -150,7 +153,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/services"}>
                 <Link href="/services">
                   <DollarSign className="mr-2 h-4 w-4" />
-                  <span>Services & Rates</span>
+                  <span>{t('services')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -158,7 +161,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname.startsWith("/blog")}>
                 <Link href="/blog">
                   <FileText className="mr-2 h-4 w-4" />
-                  <span>Blog</span>
+                  <span>{t('blog')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -166,7 +169,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/contact"}>
                 <Link href="/contact">
                   <MessageSquare className="mr-2 h-4 w-4" />
-                  <span>Contact</span>
+                  <span>{t('contact')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -174,6 +177,9 @@ export function PortfolioSidebar() {
         </SidebarContent>
         <SidebarFooter className="border-t pt-4">
           <div className="flex flex-col space-y-4 px-4">
+            <div className="flex justify-center">
+              <LanguageSwitcher />
+            </div>
             <div className="flex justify-center space-x-2">
               <Button variant="outline" size="icon" asChild>
                 <Link href="https://github.com/adityafakhrii" target="_blank" rel="noopener noreferrer">
@@ -207,7 +213,7 @@ export function PortfolioSidebar() {
                 rel="noopener noreferrer"
               >
                 <FileDown className="h-4 w-4" />
-                Download CV
+                {t('downloadCV')}
               </Link>
             </Button>
             {mounted && (
@@ -220,12 +226,12 @@ export function PortfolioSidebar() {
                 {currentTheme === "dark" ? (
                   <>
                     <Sun className="h-4 w-4" />
-                    <span>Light Mode</span>
+                    <span>{t('lightMode')}</span>
                   </>
                 ) : (
                   <>
                     <Moon className="h-4 w-4" />
-                    <span>Dark Mode</span>
+                    <span>{t('darkMode')}</span>
                   </>
                 )}
               </Button>
