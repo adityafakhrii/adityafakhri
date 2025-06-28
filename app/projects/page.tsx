@@ -2,123 +2,343 @@ import { PageHeader } from "@/components/page-header"
 import { ProjectCard } from "@/components/project-card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ContentBlock } from "@/components/content-block"
+import { Badge } from "@/components/ui/badge"
 
-const projects = [
+const featuredProjects = [
   {
     id: "siacta",
     title: "SIACTA",
-    description: "Sistem Informasi Akademik Terpadu untuk manajemen perkuliahan dan nilai.",
+    description: "System Information Accounting & Tax: aplikasi web komprehensif untuk mengelola operasi keuangan dan kepatuhan pajak dengan fitur lengkap untuk bisnis.",
     imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["Next.js", "TypeScript", "Prisma"],
+    tags: ["Laravel", "JavaScript", "MySQL", "Bootstrap", "Accounting"],
     category: "web",
-  },
-  {
-    id: "herya",
-    title: "Company Profile Herza",
-    description: "Website profil perusahaan dengan desain modern dan responsif.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["React", "Tailwind CSS", "Framer Motion"],
-    category: "web",
+    featured: true,
+    status: "Production",
+    year: "2024"
   },
   {
     id: "medfluffy",
     title: "MedFluffy",
-    description: "Aplikasi kesehatan hewan peliharaan dengan fitur AI untuk diagnosis awal.",
+    description: "Aplikasi Android untuk prediksi dini penyakit mata pada anjing menggunakan CNN. Dikembangkan sebagai Capstone Project Bangkit Academy 2023 dengan dedikasi 200 jam.",
     imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["React Native", "Firebase", "TensorFlow"],
+    tags: ["Kotlin", "TensorFlow", "CNN", "Firebase", "Material Design"],
     category: "mobile",
+    featured: true,
+    status: "Completed",
+    year: "2023"
   },
   {
     id: "restoranku",
     title: "Restoranku",
-    description: "Sistem manajemen restoran dengan fitur pemesanan online dan analitik.",
+    description: "Sistem manajemen restoran dengan fitur pemesanan via QR code, pembayaran QRIS melalui Midtrans, manajemen inventaris, dan pelaporan komprehensif.",
     imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["Vue.js", "Node.js", "MongoDB"],
+    tags: ["Laravel", "JavaScript", "MySQL", "Bootstrap", "Midtrans", "QR Code"],
     category: "web",
+    featured: true,
+    status: "Production",
+    year: "2024"
   },
   {
     id: "ramadhanjs",
     title: "RamadhanJS",
-    description:
-      "Aplikasi web untuk membantu umat Muslim selama bulan Ramadhan dengan fitur jadwal sholat dan reminder.",
+    description: "Aplikasi JavaScript untuk fitur dan utilitas terkait Ramadhan, termasuk kalkulasi waktu sholat, jadwal puasa, dan pengingat ibadah.",
     imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["JavaScript", "Express", "MongoDB"],
+    tags: ["JavaScript", "API Integration", "Islamic Calendar", "PWA"],
     category: "web",
-  },
-  {
-    id: "aiwriter",
-    title: "AI Writer",
-    description: "Tool pembuatan konten dengan bantuan AI untuk meningkatkan produktivitas penulis.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["React", "OpenAI API", "Node.js"],
-    category: "ai",
-  },
-  {
-    id: "smartgarden",
-    title: "Smart Garden",
-    description: "Sistem IoT untuk monitoring dan otomatisasi perawatan tanaman.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["Arduino", "React", "MQTT"],
-    category: "iot",
-  },
-  {
-    id: "eduquiz",
-    title: "EduQuiz",
-    description: "Platform pembelajaran interaktif dengan sistem kuis dan analitik kemajuan.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["React", "Firebase", "Redux"],
-    category: "web",
-  },
+    featured: true,
+    status: "Completed",
+    year: "2023"
+  }
 ]
+
+const recentProjects = [
+  {
+    id: "mentoring-landing",
+    title: "Mentoring Landing Page",
+    description: "Landing page modern dan responsif untuk Program Mentoring dengan desain yang clean dan user-friendly.",
+    imageSrc: "/placeholder.svg?height=200&width=400",
+    tags: ["TypeScript", "Next.js", "Tailwind CSS", "Responsive Design"],
+    category: "web",
+    status: "Completed",
+    year: "2024"
+  },
+  {
+    id: "laravel-upi-training",
+    title: "Laravel 12 UPI Training",
+    description: "Aplikasi manajemen mahasiswa dan program studi sederhana dengan operasi CRUD lengkap, dikembangkan untuk pelatihan Laravel 12 di UPI.",
+    imageSrc: "/placeholder.svg?height=200&width=400",
+    tags: ["Laravel 12", "PHP", "MySQL", "CRUD Operations"],
+    category: "web",
+    status: "Training Project",
+    year: "2024"
+  },
+  {
+    id: "mangrove-kedatim",
+    title: "Mangrove Kedatim",
+    description: "Aplikasi untuk monitoring dan pengelolaan ekosistem mangrove di wilayah Kedatim dengan fitur tracking dan reporting.",
+    imageSrc: "/placeholder.svg?height=200&width=400",
+    tags: ["React", "Environmental Tech", "Monitoring System"],
+    category: "web",
+    status: "In Development",
+    year: "2024"
+  },
+  {
+    id: "desa-cisontrol",
+    title: "Desa Cisontrol",
+    description: "Sistem informasi desa untuk pengelolaan administrasi dan layanan masyarakat desa Cisontrol.",
+    imageSrc: "/placeholder.svg?height=200&width=400",
+    tags: ["Laravel", "Government System", "Public Service"],
+    category: "web",
+    status: "In Development",
+    year: "2024"
+  },
+  {
+    id: "newyear-countdown",
+    title: "New Year Countdown",
+    description: "Aplikasi countdown interaktif untuk perayaan tahun baru dengan animasi dan efek visual yang menarik.",
+    imageSrc: "/placeholder.svg?height=200&width=400",
+    tags: ["JavaScript", "CSS Animations", "Interactive UI"],
+    category: "web",
+    status: "Completed",
+    year: "2024"
+  },
+  {
+    id: "sushi-webapp",
+    title: "Sushi Web App",
+    description: "Aplikasi web untuk restoran sushi dengan fitur menu interaktif, pemesanan online, dan sistem manajemen pesanan.",
+    imageSrc: "/placeholder.svg?height=200&width=400",
+    tags: ["React", "Food Service", "E-commerce"],
+    category: "web",
+    status: "Completed",
+    year: "2024"
+  },
+  {
+    id: "story-app",
+    title: "StoryApp",
+    description: "Aplikasi Android untuk berbagi cerita dengan fitur upload gambar, lokasi, dan timeline interaktif.",
+    imageSrc: "/placeholder.svg?height=200&width=400",
+    tags: ["Kotlin", "Android", "Social Media", "Location Services"],
+    category: "mobile",
+    status: "Completed",
+    year: "2023"
+  },
+  {
+    id: "laundry-app-dirtless",
+    title: "Laundry App - Dirtless",
+    description: "Aplikasi manajemen laundry dengan fitur tracking pesanan, notifikasi status, dan sistem pembayaran terintegrasi.",
+    imageSrc: "/placeholder.svg?height=200&width=400",
+    tags: ["React Native", "Business Management", "Payment Integration"],
+    category: "mobile",
+    status: "Completed",
+    year: "2023"
+  },
+  {
+    id: "smart-clinic-ui",
+    title: "Smart Clinic UI",
+    description: "Interface pengguna untuk sistem klinik pintar dengan desain modern dan user experience yang optimal untuk tenaga medis.",
+    imageSrc: "/placeholder.svg?height=200&width=400",
+    tags: ["React", "Healthcare UI", "Medical System", "UX Design"],
+    category: "web",
+    status: "Completed",
+    year: "2023"
+  }
+]
+
+const allProjects = [...featuredProjects, ...recentProjects]
 
 export default function ProjectsPage() {
   return (
     <div className="container max-w-5xl py-8 px-4 md:px-8">
-      <PageHeader title="Proyek" description="Koleksi proyek yang telah saya kerjakan" />
+      <PageHeader title="Proyek" description="Koleksi proyek unggulan dan terbaru yang telah saya kerjakan" />
 
-      <Tabs defaultValue="all" className="mt-8">
-        <TabsList className="mb-6">
-          <TabsTrigger value="all">Semua</TabsTrigger>
-          <TabsTrigger value="web">Web</TabsTrigger>
-          <TabsTrigger value="mobile">Mobile</TabsTrigger>
-          <TabsTrigger value="ai">AI</TabsTrigger>
-          <TabsTrigger value="iot">IoT</TabsTrigger>
-        </TabsList>
-
-        <TabsContent value="all" className="mt-0">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project) => (
+      {/* Featured Projects Section */}
+      <ContentBlock title="🌟 Proyek Unggulan" className="mt-8">
+        <p className="text-muted-foreground mb-6">
+          Proyek-proyek utama yang menunjukkan keahlian dan pengalaman saya dalam pengembangan aplikasi web dan mobile.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {featuredProjects.map((project) => (
+            <div key={project.id} className="relative">
               <ProjectCard
-                key={project.id}
                 title={project.title}
                 description={project.description}
                 imageSrc={project.imageSrc}
                 tags={project.tags}
                 href={`/projects/${project.id}`}
               />
-            ))}
-          </div>
-        </TabsContent>
+              <div className="absolute top-4 right-4 flex gap-2">
+                <Badge variant="default" className="bg-yellow-500 text-yellow-50">
+                  Featured
+                </Badge>
+                <Badge variant="outline" className="text-xs">
+                  {project.year}
+                </Badge>
+              </div>
+            </div>
+          ))}
+        </div>
+      </ContentBlock>
 
-        {["web", "mobile", "ai", "iot"].map((category) => (
-          <TabsContent key={category} value={category} className="mt-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {projects
-                .filter((project) => project.category === category)
-                .map((project) => (
+      {/* Recent Projects Section */}
+      <ContentBlock title="🚀 Proyek Terbaru" className="mt-12">
+        <p className="text-muted-foreground mb-6">
+          Proyek-proyek terbaru yang sedang dikerjakan atau baru saja diselesaikan, menampilkan eksplorasi teknologi dan solusi inovatif.
+        </p>
+        
+        <Tabs defaultValue="all" className="mt-6">
+          <TabsList className="mb-6">
+            <TabsTrigger value="all">Semua</TabsTrigger>
+            <TabsTrigger value="web">Web</TabsTrigger>
+            <TabsTrigger value="mobile">Mobile</TabsTrigger>
+            <TabsTrigger value="in-development">In Development</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="all" className="mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {recentProjects.map((project) => (
+                <div key={project.id} className="relative">
                   <ProjectCard
-                    key={project.id}
                     title={project.title}
                     description={project.description}
                     imageSrc={project.imageSrc}
                     tags={project.tags}
                     href={`/projects/${project.id}`}
                   />
+                  <div className="absolute top-4 right-4 flex gap-2">
+                    <Badge 
+                      variant={project.status === "In Development" ? "default" : "outline"} 
+                      className={`text-xs ${
+                        project.status === "In Development" 
+                          ? "bg-blue-500 text-blue-50" 
+                          : project.status === "Completed"
+                          ? "bg-green-100 text-green-800 border-green-300"
+                          : "bg-orange-100 text-orange-800 border-orange-300"
+                      }`}
+                    >
+                      {project.status}
+                    </Badge>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="web" className="mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {recentProjects
+                .filter((project) => project.category === "web")
+                .map((project) => (
+                  <div key={project.id} className="relative">
+                    <ProjectCard
+                      title={project.title}
+                      description={project.description}
+                      imageSrc={project.imageSrc}
+                      tags={project.tags}
+                      href={`/projects/${project.id}`}
+                    />
+                    <div className="absolute top-4 right-4">
+                      <Badge 
+                        variant={project.status === "In Development" ? "default" : "outline"} 
+                        className={`text-xs ${
+                          project.status === "In Development" 
+                            ? "bg-blue-500 text-blue-50" 
+                            : project.status === "Completed"
+                            ? "bg-green-100 text-green-800 border-green-300"
+                            : "bg-orange-100 text-orange-800 border-orange-300"
+                        }`}
+                      >
+                        {project.status}
+                      </Badge>
+                    </div>
+                  </div>
                 ))}
             </div>
           </TabsContent>
-        ))}
-      </Tabs>
+
+          <TabsContent value="mobile" className="mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {recentProjects
+                .filter((project) => project.category === "mobile")
+                .map((project) => (
+                  <div key={project.id} className="relative">
+                    <ProjectCard
+                      title={project.title}
+                      description={project.description}
+                      imageSrc={project.imageSrc}
+                      tags={project.tags}
+                      href={`/projects/${project.id}`}
+                    />
+                    <div className="absolute top-4 right-4">
+                      <Badge 
+                        variant={project.status === "In Development" ? "default" : "outline"} 
+                        className={`text-xs ${
+                          project.status === "In Development" 
+                            ? "bg-blue-500 text-blue-50" 
+                            : project.status === "Completed"
+                            ? "bg-green-100 text-green-800 border-green-300"
+                            : "bg-orange-100 text-orange-800 border-orange-300"
+                        }`}
+                      >
+                        {project.status}
+                      </Badge>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="in-development" className="mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {recentProjects
+                .filter((project) => project.status === "In Development")
+                .map((project) => (
+                  <div key={project.id} className="relative">
+                    <ProjectCard
+                      title={project.title}
+                      description={project.description}
+                      imageSrc={project.imageSrc}
+                      tags={project.tags}
+                      href={`/projects/${project.id}`}
+                    />
+                    <div className="absolute top-4 right-4">
+                      <Badge variant="default" className="text-xs bg-blue-500 text-blue-50">
+                        In Development
+                      </Badge>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </TabsContent>
+        </Tabs>
+      </ContentBlock>
+
+      {/* Project Statistics */}
+      <ContentBlock title="📊 Statistik Proyek" className="mt-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="text-center p-4 border rounded-lg">
+            <div className="text-2xl font-bold text-primary">{allProjects.length}</div>
+            <div className="text-sm text-muted-foreground">Total Proyek</div>
+          </div>
+          <div className="text-center p-4 border rounded-lg">
+            <div className="text-2xl font-bold text-green-600">
+              {allProjects.filter(p => p.status === "Completed" || p.status === "Production").length}
+            </div>
+            <div className="text-sm text-muted-foreground">Selesai</div>
+          </div>
+          <div className="text-center p-4 border rounded-lg">
+            <div className="text-2xl font-bold text-blue-600">
+              {allProjects.filter(p => p.status === "In Development").length}
+            </div>
+            <div className="text-sm text-muted-foreground">Dalam Pengembangan</div>
+          </div>
+          <div className="text-center p-4 border rounded-lg">
+            <div className="text-2xl font-bold text-orange-600">
+              {allProjects.filter(p => p.category === "web").length}
+            </div>
+            <div className="text-sm text-muted-foreground">Web Apps</div>
+          </div>
+        </div>
+      </ContentBlock>
 
       <ContentBlock title="🔍 Proses Pengembangan" className="mt-12">
         <div className="space-y-6">
@@ -126,35 +346,35 @@ export default function ProjectsPage() {
             <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-primary"></div>
             <h3 className="font-medium text-lg">1. Discovery & Planning</h3>
             <p className="mt-2">
-              Memahami kebutuhan klien, melakukan riset, dan merencanakan arsitektur serta fitur aplikasi.
+              Memahami kebutuhan klien, melakukan riset pasar, dan merencanakan arsitektur serta fitur aplikasi dengan detail.
             </p>
           </div>
 
           <div className="relative pl-6 border-l-2 border-muted pb-6">
             <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-primary"></div>
             <h3 className="font-medium text-lg">2. Design & Prototyping</h3>
-            <p className="mt-2">Membuat wireframe, mockup, dan prototype interaktif untuk memvisualisasikan solusi.</p>
+            <p className="mt-2">Membuat wireframe, mockup, dan prototype interaktif untuk memvisualisasikan solusi sebelum development.</p>
           </div>
 
           <div className="relative pl-6 border-l-2 border-muted pb-6">
             <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-primary"></div>
             <h3 className="font-medium text-lg">3. Development</h3>
             <p className="mt-2">
-              Mengimplementasikan solusi dengan pendekatan iteratif dan praktik pengembangan terbaik.
+              Mengimplementasikan solusi dengan pendekatan iteratif, menggunakan best practices dan teknologi modern.
             </p>
           </div>
 
           <div className="relative pl-6 border-l-2 border-muted pb-6">
             <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-primary"></div>
             <h3 className="font-medium text-lg">4. Testing & QA</h3>
-            <p className="mt-2">Melakukan pengujian menyeluruh untuk memastikan kualitas dan performa aplikasi.</p>
+            <p className="mt-2">Melakukan pengujian menyeluruh untuk memastikan kualitas, performa, dan keamanan aplikasi.</p>
           </div>
 
           <div className="relative pl-6 border-l-2 border-muted">
             <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-primary"></div>
             <h3 className="font-medium text-lg">5. Deployment & Maintenance</h3>
             <p className="mt-2">
-              Meluncurkan aplikasi dan memberikan dukungan berkelanjutan untuk memastikan keberhasilan jangka panjang.
+              Meluncurkan aplikasi ke production dan memberikan dukungan berkelanjutan untuk memastikan keberhasilan jangka panjang.
             </p>
           </div>
         </div>

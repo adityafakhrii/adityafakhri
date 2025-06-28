@@ -152,7 +152,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <ProjectCard
             title="SIACTA"
-            description="System Information Accounting & Tax: aplikasi web untuk membantu mengelola informasi akuntansi dan pajak"
+            description="System Information Accounting & Tax: aplikasi web komprehensif untuk mengelola operasi keuangan dan kepatuhan pajak"
             imageSrc="/placeholder.svg?height=200&width=400"
             tags={["Laravel", "JavaScript", "MySQL", "Bootstrap"]}
             href="https://github.com/adityafakhrii/siacta"
@@ -160,7 +160,7 @@ export default function Home() {
 
           <ProjectCard
             title="Restoranku"
-            description="Sistem manajemen restoran dengan fitur pemesanan via QR dan pembayaran QRIS via Midtrans."
+            description="Sistem manajemen restoran dengan fitur pemesanan via QR code dan pembayaran QRIS via Midtrans."
             imageSrc="/placeholder.svg?height=200&width=400"
             tags={["Laravel", "JavaScript", "MySQL", "Bootstrap"]}
             href="/projects/restoranku"
@@ -168,7 +168,7 @@ export default function Home() {
 
            <ProjectCard
             title="MedFluffy"
-            description="Aplikasi mobile untuk prediksi dini penyakit mata pada anjing hanya lewat foto dan rekomendasi pertolongan pertama."
+            description="Aplikasi mobile untuk prediksi dini penyakit mata pada anjing menggunakan CNN dan rekomendasi pertolongan pertama."
             imageSrc="/placeholder.svg?height=200&width=400"
             tags={["Kotlin", "Material", "TensorFlow", "Firebase"]}
             href="https://github.com/MedFluffy"
