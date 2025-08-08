@@ -75,7 +75,7 @@ export default function SpeakingPage() {
                             <li>
                               {t('language') === 'id' 
                                 ? "Membangun personal branding dan portofolio yang menarik"
-                                : "Building personal branding and attractive portfolio"
+                                : "Building personal branding and an attractive portfolio"
                               }
                             </li>
                             <li>
