@@ -66,7 +66,7 @@ export default function MentoringPage() {
           </section>
 
           {/* Apa yang Akan Dipelajari */}
-          <ContentBlock title="Apa yang Akan Dipelajari?" className="mt-12">
+          <ContentBlock title="🎯 Apa yang Akan Dipelajari?" className="mt-12">
             <p className="text-lg text-muted-foreground mb-6">
               Program komprehensif yang menggabungkan skill teknis dan soft skill untuk karir yang sukses
             </p>
@@ -122,7 +122,7 @@ export default function MentoringPage() {
           </ContentBlock>
 
           {/* Timeline */}
-          <ContentBlock title="Timeline Program" className="mt-12">
+          <ContentBlock title="📅 Timeline Program" className="mt-12">
             <p className="text-lg text-muted-foreground mb-6">
               4 sesi intensif yang akan mengubah karir kamu
             </p>
@@ -590,24 +590,6 @@ export default function MentoringPage() {
                 </Button>
               </div>
             </div>
-          </ContentBlock>
-        </div>
-      )}
-    />
-  )
-}
-
-                <Link href="http://wa.me/62895808860080" target="_blank">
-                  Daftar Sekarang
-                </Link>
-              </Button>
-            </div>
-          </ContentBlock>
-
-          {/* Testimoni */}
-              <p className="text-sm text-muted-foreground">
-                Proses pembayaran mudah dan aman melalui berbagai metode yang tersedia
-              </p>
           </ContentBlock>
         </div>
       )}
