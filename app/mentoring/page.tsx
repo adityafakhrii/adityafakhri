@@ -151,6 +151,8 @@ export default function MentoringPage() {
                     </p>
                   </CardContent>
                 </Card>
+              </div>
+            </div>
           </ContentBlock>
 
           {/* Target Peserta */}
