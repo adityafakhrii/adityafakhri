@@ -126,32 +126,30 @@ export default function MentoringPage() {
             <p className="text-lg text-muted-foreground mb-6">
               Jadwal mentoring yang sepenuhnya fleksibel sesuai ketersediaan kamu dan mentor
             </p>
-            <div className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="bg-primary/10 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Calendar className="h-8 w-8 text-primary" />
-                    </div>
-                    <h3 className="font-medium text-lg mb-2">Jadwal Fleksibel</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Tentukan sendiri waktu yang paling cocok untuk kamu
-                    </p>
-                  </CardContent>
-                </Card>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card>
+                <CardContent className="p-6 text-center">
+                  <div className="bg-primary/10 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Calendar className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="font-medium text-lg mb-2">Jadwal Fleksibel</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Tentukan sendiri waktu yang paling cocok untuk kamu
+                  </p>
+                </CardContent>
+              </Card>
 
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <div className="bg-primary/10 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Clock className="h-8 w-8 text-primary" />
-                    </div>
-                    <h3 className="font-medium text-lg mb-2">Durasi Sesi</h3>
-                    <p className="text-sm text-muted-foreground">
-                      60-90 menit per sesi, disesuaikan dengan kompleksitas topik
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
+              <Card>
+                <CardContent className="p-6 text-center">
+                  <div className="bg-primary/10 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Clock className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="font-medium text-lg mb-2">Durasi Sesi</h3>
+                  <p className="text-sm text-muted-foreground">
+                    60-90 menit per sesi, disesuaikan dengan kompleksitas topik
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </ContentBlock>
 
@@ -236,7 +234,7 @@ export default function MentoringPage() {
               Beberapa contoh topik yang bisa kita bahas dalam sesi mentoring
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <Card>
                 <CardContent className="p-6">
                   <h3 className="font-medium text-lg mb-4">Web Development</h3>
@@ -247,6 +245,34 @@ export default function MentoringPage() {
                     <li>• API development & integration</li>
                     <li>• Payment gateway integration</li>
                     <li>• Deployment & hosting setup</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="font-medium text-lg mb-4">Content Creation</h3>
+                  <ul className="space-y-2 text-sm">
+                    <li>• Personal branding strategy</li>
+                    <li>• Content planning & creation</li>
+                    <li>• Social media optimization</li>
+                    <li>• Video editing & production</li>
+                    <li>• Audience engagement techniques</li>
+                    <li>• Monetization strategies</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="font-medium text-lg mb-4">Soft Skills</h3>
+                  <ul className="space-y-2 text-sm">
+                    <li>• Communication & presentation</li>
+                    <li>• Time management & productivity</li>
+                    <li>• Leadership & teamwork</li>
+                    <li>• Problem solving mindset</li>
+                    <li>• Networking & relationship building</li>
+                    <li>• Career planning & goal setting</li>
                   </ul>
                 </CardContent>
               </Card>
