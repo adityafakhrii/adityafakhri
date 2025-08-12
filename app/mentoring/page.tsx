@@ -33,9 +33,6 @@ export default function MentoringPage() {
         <div className="container max-w-5xl py-8 px-4 md:px-8">
           {/* Hero Section */}
           <section className="py-12 md:py-20 text-center">
-            <Badge className="mb-4 bg-green-100 text-green-800 border-green-300">
-              Batch 1 - Pendaftaran Terbuka
-            </Badge>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
               Mentoring with Aditya
             </h1>
@@ -69,7 +66,7 @@ export default function MentoringPage() {
           </section>
 
           {/* Apa yang Akan Dipelajari */}
-          <ContentBlock title="🎯 Apa yang Akan Dipelajari?" className="mt-12">
+          <ContentBlock title="Apa yang Akan Dipelajari?" className="mt-12">
             <p className="text-lg text-muted-foreground mb-6">
               Program komprehensif yang menggabungkan skill teknis dan soft skill untuk karir yang sukses
             </p>
@@ -125,7 +122,7 @@ export default function MentoringPage() {
           </ContentBlock>
 
           {/* Timeline */}
-          <ContentBlock title="📅 Timeline Program" className="mt-12">
+          <ContentBlock title="Timeline Program" className="mt-12">
             <p className="text-lg text-muted-foreground mb-6">
               4 sesi intensif yang akan mengubah karir kamu
             </p>
@@ -222,15 +219,10 @@ export default function MentoringPage() {
                 </CardContent>
               </Card>
             </div>
-            <div className="mt-6 text-center">
-              <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-300">
-                Semua sesi direkam & bisa ditonton ulang!
-              </Badge>
-            </div>
           </ContentBlock>
 
           {/* Target Peserta */}
-          <ContentBlock title="🎯 Target Peserta" className="mt-12">
+          <ContentBlock title="Target Peserta" className="mt-12">
             <p className="text-lg text-muted-foreground mb-6">
               Siapa yang cocok mengikuti program ini?
             </p>
@@ -250,7 +242,7 @@ export default function MentoringPage() {
           </ContentBlock>
 
           {/* Benefits */}
-          <ContentBlock title="✨ Benefit Program" className="mt-12">
+          <ContentBlock title="Benefit Program" className="mt-12">
             <p className="text-lg text-muted-foreground mb-6">
               Apa yang kamu dapatkan dari program ini
             </p>
@@ -305,7 +297,7 @@ export default function MentoringPage() {
           </ContentBlock>
 
           {/* Studi Kasus Project */}
-          <ContentBlock title="💼 Studi Kasus: Laravel Guestbook App" className="mt-12">
+          <ContentBlock title="Studi Kasus: Laravel Guestbook App" className="mt-12">
             <p className="text-lg text-muted-foreground mb-6">
               Project nyata yang akan kamu bangun selama program
             </p>
@@ -330,16 +322,11 @@ export default function MentoringPage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                <p className="text-sm font-medium text-yellow-800">
-                  <strong>Bonus:</strong> Best practice Laravel, clean code, dan deployment tips
-                </p>
-              </div>
             </div>
           </ContentBlock>
 
           {/* Mentor */}
-          <ContentBlock title="👨‍🏫 Mentor" className="mt-12">
+          <ContentBlock title="Mentor" className="mt-12">
             <p className="text-lg text-muted-foreground mb-6">
               Belajar langsung dari praktisi berpengalaman
             </p>
@@ -377,35 +364,40 @@ export default function MentoringPage() {
           </ContentBlock>
 
           {/* Harga */}
-          <ContentBlock title="💰 Harga Program" className="mt-12">
+          <ContentBlock title="Harga Program" className="mt-12">
             <p className="text-lg text-muted-foreground mb-6 text-center">
               Pilih paket yang sesuai dengan kebutuhan kamu
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Early Bird */}
-              <Card className="relative border-2 border-yellow-300 shadow-lg">
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-yellow-500 text-yellow-50">Paling Populer</Badge>
-                </div>
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-bold mb-2">Early Bird</h3>
-                  <div className="mb-4">
-                    <span className="text-sm text-muted-foreground line-through mr-2">Rp149.000</span>
-                    <span className="text-3xl font-bold">Rp99.000</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {/* Per Sesi */}
+              <Card className="border-2 hover:border-primary/50 transition-all duration-200">
+                <CardContent className="p-8 text-center">
+                  <h3 className="text-2xl font-bold mb-4">Per Sesi</h3>
+                  <div className="mb-6">
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <span className="text-lg text-muted-foreground line-through">699k</span>
+                      <span className="text-4xl font-bold text-primary">149K</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">/ sesi</p>
                   </div>
-                  <p className="text-sm text-red-600 font-medium mb-4">Terbatas untuk 5 orang pertama</p>
                   
-                  <ul className="space-y-2 mb-6 text-left">
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-3 mb-6">
+                    <p className="text-sm font-medium text-green-800">
+                      Diskon 79% khusus harga early bird batch pertama — bisa naik setelah batch ini penuh
+                    </p>
+                  </div>
+                  
+                  <ul className="space-y-3 mb-8 text-left">
                     {[
-                      "Akses semua 4 sesi live mentoring",
-                      "Grup diskusi private",
-                      "File materi & rekaman",
-                      "Studi kasus project lengkap",
-                      "CV & portfolio review",
-                      "Sertifikat digital"
+                      "1 sesi private mentoring (60 menit)",
+                      "Topik sesuai kebutuhan kamu",
+                      "Flexible scheduling",
+                      "Personal guidance & feedback",
+                      "Materi & rekaman sesi",
+                      "Follow-up support via chat"
                     ].map((feature, index) => (
                       <li key={index} className="flex items-start">
-                        <CheckCircle className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
                         <span className="text-sm">{feature}</span>
                       </li>
                     ))}
@@ -419,65 +411,46 @@ export default function MentoringPage() {
                 </CardContent>
               </Card>
 
-              {/* Group Mentoring */}
-              <Card>
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-bold mb-2">Group Mentoring</h3>
-                  <div className="mb-4">
-                    <span className="text-3xl font-bold">Rp149.000</span>
+              {/* Paket 4x Sesi */}
+              <Card className="relative border-2 border-primary shadow-lg">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <Badge className="bg-primary text-primary-foreground">Paling Hemat</Badge>
+                </div>
+                <CardContent className="p-8 text-center">
+                  <h3 className="text-2xl font-bold mb-4">Paket 4x Sesi</h3>
+                  <div className="mb-6">
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <span className="text-lg text-muted-foreground line-through">2796k</span>
+                      <span className="text-4xl font-bold text-primary">500K</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">1 bulan mentoring</p>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-4">Akses semua sesi & materi</p>
                   
-                  <ul className="space-y-2 mb-6 text-left">
+                  <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 mb-6">
+                    <p className="text-sm font-medium text-primary">
+                      Hemat 2296K dari harga normal!
+                    </p>
+                  </div>
+                  
+                  <ul className="space-y-3 mb-8 text-left">
                     {[
-                      "Akses semua 4 sesi live mentoring",
+                      "4 sesi private mentoring (4 jam total)",
+                      "Build complete Laravel project",
+                      "CV & portfolio review mendalam",
+                      "Soft skill development session",
                       "Grup diskusi private",
-                      "File materi & rekaman",
-                      "Studi kasus project lengkap",
-                      "CV & portfolio review",
-                      "Sertifikat digital"
+                      "Semua materi & rekaman",
+                      "Sertifikat digital",
+                      "Lifetime support"
                     ].map((feature, index) => (
                       <li key={index} className="flex items-start">
-                        <CheckCircle className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
                         <span className="text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   
-                  <Button variant="outline" className="w-full" asChild>
-                    <Link href="http://wa.me/62895808860080" target="_blank">
-                      Pilih Paket Ini
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-
-              {/* Private 1:1 */}
-              <Card>
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-bold mb-2">Private 1:1</h3>
-                  <div className="mb-4">
-                    <span className="text-3xl font-bold">Rp149.000</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-4">2 sesi x 60 menit, topik fleksibel</p>
-                  
-                  <ul className="space-y-2 mb-6 text-left">
-                    {[
-                      "2 sesi private mentoring",
-                      "Topik sesuai kebutuhan",
-                      "Flexible scheduling",
-                      "Personal guidance",
-                      "Direct feedback",
-                      "Sertifikat digital"
-                    ].map((feature, index) => (
-                      <li key={index} className="flex items-start">
-                        <CheckCircle className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Button variant="outline" className="w-full" asChild>
+                  <Button className="w-full" asChild>
                     <Link href="http://wa.me/62895808860080" target="_blank">
                       Pilih Paket Ini
                     </Link>
@@ -486,20 +459,28 @@ export default function MentoringPage() {
               </Card>
             </div>
             
-            <div className="mt-8 text-center">
-              <p className="text-lg font-medium mb-4">
-                Daftar sekarang dan mulai transformasi karir kamu!
+            <div className="mt-8 text-center bg-muted/50 rounded-lg p-6">
+              <h4 className="font-medium text-lg mb-3">Metode Pembayaran</h4>
+              <p className="text-muted-foreground mb-4">
+                Bisa bayar via QRIS, Gopay, atau transfer bank
               </p>
-              <Button size="lg" asChild>
-                <Link href="http://wa.me/62895808860080" target="_blank">
-                  Daftar Sekarang
-                </Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" asChild>
+                  <Link href="http://wa.me/62895808860080" target="_blank">
+                    Daftar Sekarang
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <Link href="http://wa.me/62895808860080" target="_blank">
+                    Tanya Detail Program
+                  </Link>
+                </Button>
+              </div>
             </div>
           </ContentBlock>
 
           {/* Testimoni */}
-          <ContentBlock title="💬 Testimoni Alumni" className="mt-12">
+          <ContentBlock title="Testimoni Alumni" className="mt-12">
             <p className="text-lg text-muted-foreground mb-6">
               Apa kata mereka yang sudah mengikuti mentoring
             </p>
@@ -545,7 +526,7 @@ export default function MentoringPage() {
           </ContentBlock>
 
           {/* FAQ */}
-          <ContentBlock title="❓ Frequently Asked Questions" className="mt-12">
+          <ContentBlock title="Frequently Asked Questions" className="mt-12">
             <p className="text-lg text-muted-foreground mb-6">
               Pertanyaan yang sering ditanyakan tentang program ini
             </p>
@@ -609,6 +590,24 @@ export default function MentoringPage() {
                 </Button>
               </div>
             </div>
+          </ContentBlock>
+        </div>
+      )}
+    />
+  )
+}
+
+                <Link href="http://wa.me/62895808860080" target="_blank">
+                  Daftar Sekarang
+                </Link>
+              </Button>
+            </div>
+          </ContentBlock>
+
+          {/* Testimoni */}
+              <p className="text-sm text-muted-foreground">
+                Proses pembayaran mudah dan aman melalui berbagai metode yang tersedia
+              </p>
           </ContentBlock>
         </div>
       )}
