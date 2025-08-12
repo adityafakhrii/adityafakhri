@@ -449,7 +449,7 @@ export default function MentoringPage() {
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <Link href="https://forms.gle/BxPgHKrETedUfcfN7" target="_blank">
+                  <Link href="http://wa.me/62895808860080" target="_blank">
                     Tanya Detail Program
                   </Link>
                 </Button>
