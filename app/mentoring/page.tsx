@@ -45,12 +45,12 @@ export default function MentoringPage() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button size="lg" asChild>
-                <Link href="http://wa.me/62895808860080" target="_blank">
+                <Link href="https://forms.gle/BxPgHKrETedUfcfN7" target="_blank">
                   Daftar Sekarang
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link href="http://wa.me/62895808860080" target="_blank">
+                <Link href="https://forms.gle/BxPgHKrETedUfcfN7" target="_blank">
                   Tanya Mentor
                 </Link>
               </Button>
@@ -66,7 +66,7 @@ export default function MentoringPage() {
           </section>
 
           {/* Apa yang Akan Dipelajari */}
-          <ContentBlock title="🎯 Apa yang Akan Dipelajari?" className="mt-12">
+          <ContentBlock title="Apa yang Akan Dipelajari?" className="mt-12">
             <p className="text-lg text-muted-foreground mb-6">
               Program komprehensif yang menggabungkan skill teknis dan soft skill untuk karir yang sukses
             </p>
@@ -122,9 +122,9 @@ export default function MentoringPage() {
           </ContentBlock>
 
           {/* Timeline */}
-          <ContentBlock title="📅 Timeline Program" className="mt-12">
+          <ContentBlock title="Timeline Program" className="mt-12">
             <p className="text-lg text-muted-foreground mb-6">
-              4 sesi intensif yang akan mengubah karir kamu
+              4 sesi intensif dengan jadwal fleksibel yang ditentukan bersama
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card>
@@ -135,16 +135,9 @@ export default function MentoringPage() {
                     </div>
                     <div className="flex-1">
                       <h3 className="font-medium text-lg">Kickoff & Overview Proyek</h3>
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground mt-2">
-                        <div className="flex items-center">
-                          <Calendar className="h-4 w-4 mr-1" />
-                          Rabu, 25 Juni 2025
-                        </div>
-                        <div className="flex items-center">
-                          <Clock className="h-4 w-4 mr-1" />
-                          19.00 WIB
-                        </div>
-                      </div>
+                      <p className="text-sm text-muted-foreground mt-2">
+                        Pengenalan project dan setup environment
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -158,16 +151,9 @@ export default function MentoringPage() {
                     </div>
                     <div className="flex-1">
                       <h3 className="font-medium text-lg">CRUD + Midtrans</h3>
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground mt-2">
-                        <div className="flex items-center">
-                          <Calendar className="h-4 w-4 mr-1" />
-                          Minggu, 29 Juni 2025
-                        </div>
-                        <div className="flex items-center">
-                          <Clock className="h-4 w-4 mr-1" />
-                          16.00 WIB
-                        </div>
-                      </div>
+                      <p className="text-sm text-muted-foreground mt-2">
+                        Implementasi operasi database dan payment gateway
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -181,16 +167,9 @@ export default function MentoringPage() {
                     </div>
                     <div className="flex-1">
                       <h3 className="font-medium text-lg">Search, Kamera, Finalisasi</h3>
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground mt-2">
-                        <div className="flex items-center">
-                          <Calendar className="h-4 w-4 mr-1" />
-                          Rabu, 2 Juli 2025
-                        </div>
-                        <div className="flex items-center">
-                          <Clock className="h-4 w-4 mr-1" />
-                          19.00 WIB
-                        </div>
-                      </div>
+                      <p className="text-sm text-muted-foreground mt-2">
+                        Fitur pencarian, integrasi kamera, dan finishing touches
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -204,20 +183,19 @@ export default function MentoringPage() {
                     </div>
                     <div className="flex-1">
                       <h3 className="font-medium text-lg">Soft Skill & Portofolio</h3>
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground mt-2">
-                        <div className="flex items-center">
-                          <Calendar className="h-4 w-4 mr-1" />
-                          Minggu, 6 Juli 2025
-                        </div>
-                        <div className="flex items-center">
-                          <Clock className="h-4 w-4 mr-1" />
-                          16.00 WIB
-                        </div>
-                      </div>
+                      <p className="text-sm text-muted-foreground mt-2">
+                        CV review, portfolio optimization, dan career strategy
+                      </p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
+            </div>
+            
+            <div className="mt-6 text-center bg-muted/50 rounded-lg p-4">
+              <p className="text-muted-foreground">
+                <strong>Jadwal Fleksibel:</strong> Waktu sesi dapat disesuaikan dengan ketersediaan peserta dan mentor
+              </p>
             </div>
           </ContentBlock>
 
@@ -404,7 +382,7 @@ export default function MentoringPage() {
                   </ul>
                   
                   <Button className="w-full" asChild>
-                    <Link href="http://wa.me/62895808860080" target="_blank">
+                    <Link href="https://forms.gle/BxPgHKrETedUfcfN7" target="_blank">
                       Pilih Paket Ini
                     </Link>
                   </Button>
@@ -451,7 +429,7 @@ export default function MentoringPage() {
                   </ul>
                   
                   <Button className="w-full" asChild>
-                    <Link href="http://wa.me/62895808860080" target="_blank">
+                    <Link href="https://forms.gle/BxPgHKrETedUfcfN7" target="_blank">
                       Pilih Paket Ini
                     </Link>
                   </Button>
@@ -466,12 +444,12 @@ export default function MentoringPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild>
-                  <Link href="http://wa.me/62895808860080" target="_blank">
+                  <Link href="https://forms.gle/BxPgHKrETedUfcfN7" target="_blank">
                     Daftar Sekarang
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <Link href="http://wa.me/62895808860080" target="_blank">
+                  <Link href="https://forms.gle/BxPgHKrETedUfcfN7" target="_blank">
                     Tanya Detail Program
                   </Link>
                 </Button>
@@ -579,12 +557,12 @@ export default function MentoringPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild>
-                  <Link href="http://wa.me/62895808860080" target="_blank">
+                  <Link href="https://forms.gle/BxPgHKrETedUfcfN7" target="_blank">
                     Daftar Sekarang
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <Link href="http://wa.me/62895808860080" target="_blank">
+                  <Link href="https://forms.gle/BxPgHKrETedUfcfN7" target="_blank">
                     Tanya Mentor
                   </Link>
                 </Button>
