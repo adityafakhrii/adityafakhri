@@ -162,7 +162,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/mentoring"}>
                 <Link href="/mentoring">
                   <UserCheck className="mr-2 h-4 w-4" />
-                  <span>Mentoring</span>
+                  <span>Private Mentoring</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
