@@ -1,5 +1,6 @@
 "use client"
 
+import React from 'react'
 import { PageHeader } from "@/components/page-header"
 import { ContentBlock } from "@/components/content-block"
 import { Badge } from "@/components/ui/badge"
@@ -660,10 +661,12 @@ async function getUser(id: string): Promise<User> {
 }
 
 export default function BlogPostPage({ params }: { params: { id: string } }) {
+  const resolvedParams = React.use(params)
+
   return (
     <TranslatedContent
       renderContent={({ t }) => {
-        const post = articles[params.id as keyof typeof articles]
+        const post = articles[resolvedParams.id as keyof typeof articles]
 
         // Fallback for posts not in our mock data
         if (!post) {
