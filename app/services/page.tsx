@@ -215,7 +215,7 @@ export default function ServicesPage() {
               {/* Paket Lite */}
               <Card className="overflow-hidden border-2 hover:border-primary/50 transition-all duration-200">
                 <div className="bg-primary/10 p-4 text-center">
-                <h3 className="font-medium text-lg">Paket Lite – Awareness Kick</h3>
+                <h3 className="font-medium text-lg">Paket Lite</h3>
                 <p className="text-sm text-muted-foreground">Naik Level, Gak Ribet</p>
                 </div>
                 <CardContent className="p-6">
@@ -257,7 +257,7 @@ export default function ServicesPage() {
               {/* Paket Growth */}
               <Card className="overflow-hidden border-2 border-primary transition-all duration-200 shadow-md">
                 <div className="bg-primary p-4 text-center text-primary-foreground">
-                <h3 className="font-medium text-lg">Paket Growth – Reach Booster</h3>
+                <h3 className="font-medium text-lg">Paket Growth</h3>
                 <p className="text-sm opacity-90">Most Value! Naikin Awareness!</p>
                 </div>
                 <CardContent className="p-6">
@@ -303,7 +303,7 @@ export default function ServicesPage() {
               {/* Paket Premium */}
               <Card className="overflow-hidden border-2 hover:border-primary/50 transition-all duration-200">
                 <div className="bg-primary/10 p-4 text-center">
-                <h3 className="font-medium text-lg">Paket Premium – Full Funnel Domination</h3>
+                <h3 className="font-medium text-lg">Paket Premium</h3>
                 <p className="text-sm text-muted-foreground">Full Attack Buat Closing Maksimal!</p>
                 </div>
                 <CardContent className="p-6">
