@@ -30,325 +30,318 @@ export default function ServicesPage() {
                 </p>
               </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card className="overflow-hidden border-2 hover:border-primary/50 transition-all duration-200">
                   <div className="bg-primary/10 p-4 flex items-center">
-                  <Instagram className="h-5 w-5 mr-2 text-primary" />
-                  <h3 className="font-medium text-lg">{t('instagramStory')}</h3>
+                    <Instagram className="h-5 w-5 mr-2 text-primary" />
+                    <h3 className="font-medium text-lg">{t('instagramStory')}</h3>
                   </div>
                   <CardContent className="p-6">
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-start">
-                    <div className="flex items-start">
-                      <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                      <div>
-                      <p className="font-medium">IG Story Image</p>
-                      <p className="text-sm text-muted-foreground">
-                        {t('language') === 'id' ? 'Maksimal 2 story' : 'Maximum 2 stories'}
-                      </p>
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-start">
+                        <div className="flex items-start">
+                          <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                          <div>
+                            <p className="font-medium">IG Story Image</p>
+                            <p className="text-sm text-muted-foreground">
+                              {t('language') === 'id' ? 'Maksimal 2 story' : 'Maximum 2 stories'}
+                            </p>
+                          </div>
+                        </div>
+                        <Badge className="text-lg font-semibold">89K</Badge>
                       </div>
-                    </div>
-                    <Badge className="text-lg font-semibold">120K</Badge>
-                    </div>
 
-                    <div className="flex justify-between items-start">
-                    <div className="flex items-start">
-                      <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                      <div>
-                      <p className="font-medium">IG Story Video</p>
-                      <p className="text-sm text-muted-foreground">
-                        {t('language') === 'id' ? 'Maksimal 1 story' : 'Maximum 1 story'}
-                      </p>
+                      <div className="flex justify-between items-start">
+                        <div className="flex items-start">
+                          <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                          <div>
+                            <p className="font-medium">IG Story Video</p>
+                            <p className="text-sm text-muted-foreground">
+                              {t('language') === 'id' ? 'Maksimal 1 story' : 'Maximum 1 story'}
+                            </p>
+                          </div>
+                        </div>
+                        <Badge className="text-lg font-semibold">99K</Badge>
                       </div>
                     </div>
-                    <Badge className="text-lg font-semibold">150K</Badge>
-                    </div>
-                  </div>
                   </CardContent>
                 </Card>
 
                 <Card className="overflow-hidden border-2 hover:border-primary/50 transition-all duration-200">
                   <div className="bg-primary/10 p-4 flex items-center">
-                  <ImageIcon className="h-5 w-5 mr-2 text-primary" />
-                  <h3 className="font-medium text-lg">{t('instagramFeed')}</h3>
+                    <ImageIcon className="h-5 w-5 mr-2 text-primary" />
+                    <h3 className="font-medium text-lg">{t('instagramFeed')}</h3>
                   </div>
                   <CardContent className="p-6">
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-start">
-                    <div className="flex items-start">
-                      <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                      <div>
-                      <p className="font-medium">Single Post</p>
-                      <p className="text-sm text-muted-foreground">
-                        {t('language') === 'id' ? '1 gambar berkualitas tinggi' : '1 high quality image'}
-                      </p>
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-start">
+                        <div className="flex items-start">
+                          <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                          <div>
+                            <p className="font-medium">Single Post</p>
+                            <p className="text-sm text-muted-foreground">
+                              {t('language') === 'id' ? '1 gambar berkualitas tinggi' : '1 high quality image'}
+                            </p>
+                          </div>
+                        </div>
+                        <Badge className="text-lg font-semibold">139K</Badge>
                       </div>
-                    </div>
-                    <Badge className="text-lg font-semibold">200K</Badge>
-                    </div>
 
-                    <div className="flex justify-between items-start">
-                    <div className="flex items-start">
-                      <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                      <div>
-                      <p className="font-medium">Carousel</p>
-                      <p className="text-sm text-muted-foreground">
-                        {t('language') === 'id' ? '10 slide gambar dalam satu post' : '10 image slides in one post'}
-                      </p>
+                      <div className="flex justify-between items-start">
+                        <div className="flex items-start">
+                          <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                          <div>
+                            <p className="font-medium">Carousel</p>
+                            <p className="text-sm text-muted-foreground">
+                              {t('language') === 'id' ? '10 slide gambar dalam satu post' : '10 image slides in one post'}
+                            </p>
+                          </div>
+                        </div>
+                        <Badge className="text-lg font-semibold">159K</Badge>
                       </div>
-                    </div>
-                    <Badge className="text-lg font-semibold">300K</Badge>
-                    </div>
 
-                    <div className="flex justify-between items-start">
-                    <div className="flex items-start">
-                      <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                      <div>
-                      <p className="font-medium">Single Post + Repost Story</p>
-                      <p className="text-sm text-muted-foreground">
-                        {t('language') === 'id' ? '1 gambar dengan tambahan story' : '1 image with additional story'}
-                      </p>
+                      <div className="flex justify-between items-start">
+                        <div className="flex items-start">
+                          <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                          <div>
+                            <p className="font-medium">Single Post + Repost Story</p>
+                            <p className="text-sm text-muted-foreground">
+                              {t('language') === 'id' ? '1 gambar dengan tambahan story' : '1 image with additional story'}
+                            </p>
+                          </div>
+                        </div>
+                        <Badge className="text-lg font-semibold">149K</Badge>
                       </div>
-                    </div>
-                    <Badge className="text-lg font-semibold">220K</Badge>
-                    </div>
 
-                    <div className="flex justify-between items-start">
-                    <div className="flex items-start">
-                      <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                      <div>
-                      <p className="font-medium">Carousel + Repost Story</p>
-                      <p className="text-sm text-muted-foreground">
-                        {t('language') === 'id' ? '10 slide gambar dengan tambahan story' : '10 image slides with additional story'}
-                      </p>
+                      <div className="flex justify-between items-start">
+                        <div className="flex items-start">
+                          <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                          <div>
+                            <p className="font-medium">Carousel + Repost Story</p>
+                            <p className="text-sm text-muted-foreground">
+                              {t('language') === 'id' ? '10 slide gambar dengan tambahan story' : '10 image slides with additional story'}
+                            </p>
+                          </div>
+                        </div>
+                        <Badge className="text-lg font-semibold">169K</Badge>
                       </div>
                     </div>
-                    <Badge className="text-lg font-semibold">330K</Badge>
-                    </div>
-                  </div>
                   </CardContent>
                 </Card>
 
                 <Card className="overflow-hidden border-2 hover:border-primary/50 transition-all duration-200 md:col-span-2">
                   <div className="bg-primary/10 p-4 flex items-center">
-                  <Film className="h-5 w-5 mr-2 text-primary" />
-                  <h3 className="font-medium text-lg">{t('instagramReels')}</h3>
+                    <Film className="h-5 w-5 mr-2 text-primary" />
+                    <h3 className="font-medium text-lg">{t('instagramReels')}</h3>
                   </div>
                   <CardContent className="p-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-4">
-                    <div className="flex justify-between items-start">
-                      <div className="flex items-start">
-                      <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p className="font-medium">IG Reels</p>
-                        <p className="text-sm text-muted-foreground">
-                        {t('language') === 'id' ? 'Video maksimal 90 detik dengan format 9:16' : 'Maximum 90 second video with 9:16 format'}
-                        </p>
-                      </div>
-                      </div>
-                      <Badge className="text-lg font-semibold">350K</Badge>
-                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-4">
+                        <div className="flex justify-between items-start">
+                          <div className="flex items-start">
+                            <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                            <div>
+                              <p className="font-medium">IG Reels</p>
+                              <p className="text-sm text-muted-foreground">
+                                {t('language') === 'id' ? 'Video maksimal 90 detik dengan format 9:16' : 'Maximum 90 second video with 9:16 format'}
+                              </p>
+                            </div>
+                          </div>
+                          <Badge className="text-lg font-semibold">229K</Badge>
+                        </div>
 
-                    <div className="flex justify-between items-start">
-                      <div className="flex items-start">
-                      <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p className="font-medium">IG Reels + Repost Story</p>
-                        <p className="text-sm text-muted-foreground">
-                        {t('language') === 'id' ? 'Video reels dengan tambahan repost story' : 'Reels video with additional repost story'}
-                        </p>
+                        <div className="flex justify-between items-start">
+                          <div className="flex items-start">
+                            <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                            <div>
+                              <p className="font-medium">IG Reels + Repost Story</p>
+                              <p className="text-sm text-muted-foreground">
+                                {t('language') === 'id' ? 'Video reels dengan tambahan repost story' : 'Reels video with additional repost story'}
+                              </p>
+                            </div>
+                          </div>
+                          <Badge className="text-lg font-semibold">239K</Badge>
+                        </div>
                       </div>
-                      </div>
-                      <Badge className="text-lg font-semibold">380K</Badge>
-                    </div>
-                    </div>
 
-                    <div className="space-y-4">
-                    <div className="flex justify-between items-start">
-                      <div className="flex items-start">
-                      <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p className="font-medium">IG Reels + Mirror TikTok</p>
-                        <p className="text-sm text-muted-foreground">
-                        {t('language') === 'id' ? 'Video untuk Instagram dan TikTok dengan durasi maksimal 90 detik' : 'Video for Instagram and TikTok with maximum 90 second duration'}
-                        </p>
-                      </div>
-                      </div>
-                      <Badge className="text-lg font-semibold">600K</Badge>
-                    </div>
+                      <div className="space-y-4">
+                        <div className="flex justify-between items-start">
+                          <div className="flex items-start">
+                            <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                            <div>
+                              <p className="font-medium">IG Reels + Mirror TikTok</p>
+                              <p className="text-sm text-muted-foreground">
+                                {t('language') === 'id' ? 'Video untuk Instagram dan TikTok dengan durasi maksimal 90 detik' : 'Video for Instagram and TikTok with maximum 90 second duration'}
+                              </p>
+                            </div>
+                          </div>
+                          <Badge className="text-lg font-semibold">279K</Badge>
+                        </div>
 
-                    <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
-                      <h4 className="font-medium mb-2">
-                      {t('language') === 'id' ? 'Keuntungan Tambahan:' : 'Additional Benefits:'}
-                      </h4>
-                      <ul className="space-y-2">
-                      <li className="flex items-start">
-                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                        <span className="text-sm">
-                        {t('language') === 'id' ? 'Optimasi untuk algoritma platform' : 'Platform algorithm optimization'}
-                        </span>
-                      </li>
-                      <li className="flex items-start">
-                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                        <span className="text-sm">
-                        {t('language') === 'id' ? 'Musik dan efek yang trending' : 'Trending music and effects'}
-                        </span>
-                      </li>
-                      <li className="flex items-start">
-                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                        <span className="text-sm">
-                        {t('language') === 'id' ? 'Caption dan hashtag yang relevan' : 'Relevant captions and hashtags'}
-                        </span>
-                      </li>
-                      </ul>
+                        <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
+                          <h4 className="font-medium mb-2">
+                            {t('language') === 'id' ? 'Keuntungan Tambahan:' : 'Additional Benefits:'}
+                          </h4>
+                          <ul className="space-y-2">
+                            <li className="flex items-start">
+                              <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                              <span className="text-sm">
+                                {t('language') === 'id' ? 'Optimasi untuk algoritma platform' : 'Platform algorithm optimization'}
+                              </span>
+                            </li>
+                            <li className="flex items-start">
+                              <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                              <span className="text-sm">
+                                {t('language') === 'id' ? 'Musik dan efek yang trending' : 'Trending music and effects'}
+                              </span>
+                            </li>
+                            <li className="flex items-start">
+                              <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                              <span className="text-sm">
+                                {t('language') === 'id' ? 'Caption dan hashtag yang relevan' : 'Relevant captions and hashtags'}
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
-                    </div>
-                  </div>
                   </CardContent>
                 </Card>
-                </div>
+              </div>
             </ContentBlock>
 
             <ContentBlock title={t('bundlingPackages')}>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Paket Lite */}
-              <Card className="overflow-hidden border-2 hover:border-primary/50 transition-all duration-200">
-                <div className="bg-primary/10 p-4 text-center">
-                <h3 className="font-medium text-lg">Paket Lite</h3>
-                <p className="text-sm text-muted-foreground">Naik Level, Gak Ribet</p>
-                </div>
-                <CardContent className="p-6">
-                <div className="text-center">
-                  <span className="text-sm text-muted-foreground line-through mr-2">Rp450.000</span>
-                </div>
-                <div className="text-center mb-4">
-                  <span className="text-3xl font-bold">Rp299.000</span>
-                  <p className="text-sm text-primary font-medium italic">Hemat Rp151.000</p>
-                </div>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm">1x IG Feed Carousel + Repost Story</span>
-                  </li>
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm">1x IG Story Image</span>
-                  </li>
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm"><strong>FREE Copywriting</strong></span>
-                  </li>
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm"><strong>FREE Caption & Hashtag</strong></span>
-                  </li>
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm"><strong>FREE Basic Carousel Design</strong></span>
-                  </li>
-                </ul>
-                <Button className="w-full" asChild>
-                  <Link href="http://wa.me/62895808860080" target="_blank">Hubungi via WhatsApp</Link>
-                </Button>
-                </CardContent>
-              </Card>
+                <Card className="overflow-hidden border-2 hover:border-primary/50 transition-all duration-200">
+                  <div className="bg-primary/10 p-4 text-center">
+                    <h3 className="font-medium text-lg">Paket Lite</h3>
+                    <p className="text-sm text-muted-foreground">Naik Level, Gak Ribet</p>
+                  </div>
+                  <CardContent className="p-6">
+                    <div className="text-center">
+                      <span className="text-sm text-muted-foreground line-through mr-2">268k</span>
+                    </div>
+                    <div className="text-center mb-4">
+                      <span className="text-3xl font-bold">219k</span>
+                      <p className="text-sm text-primary font-medium italic">Hemat 49k</p>
+                    </div>
+                    <ul className="space-y-2 mb-6">
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <span className="text-sm">1x IG Feed (Carousel + Repost Story)</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <span className="text-sm">1x IG Story Video</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <span className="text-sm"><strong>FREE Basic Carousel Design</strong></span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <span className="text-sm"><strong>FREE Caption & Hashtag</strong></span>
+                      </li>
+                    </ul>
+                    <Button className="w-full" asChild>
+                      <Link href="http://wa.me/62895808860080" target="_blank">Hubungi via WhatsApp</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
 
-              {/* Paket Growth */}
-              <Card className="overflow-hidden border-2 border-primary transition-all duration-200 shadow-md">
-                <div className="bg-primary p-4 text-center text-primary-foreground">
-                <h3 className="font-medium text-lg">Paket Growth</h3>
-                <p className="text-sm opacity-90">Most Value! Naikin Awareness!</p>
-                </div>
-                <CardContent className="p-6">
-                <div className="text-center">
-                  <span className="text-sm text-muted-foreground line-through mr-2">Rp830.000</span>
-                </div>
-                <div className="text-center mb-4">
-                  <span className="text-3xl font-bold">Rp549.000</span>
-                  <p className="text-sm text-primary font-medium italic">Hemat Rp281.000</p>
-                </div>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm">1x IG Reels + Repost Story</span>
-                  </li>
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm">1x IG Feed Carousel + Repost Story</span>
-                  </li>
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm">1x IG Story Image</span>
-                  </li>
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm"><strong>FREE Copywriting</strong></span>
-                  </li>
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm"><strong>FREE Caption & Hashtag</strong></span>
-                  </li>
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm"><strong>FREE Carousel Design</strong></span>
-                  </li>
-                </ul>
-                <Button className="w-full" asChild>
-                  <Link href="http://wa.me/62895808860080" target="_blank">Hubungi via WhatsApp</Link>
-                </Button>
-                </CardContent>
-              </Card>
+                <Card className="overflow-hidden border-2 border-primary transition-all duration-200 shadow-md">
+                  <div className="bg-primary p-4 text-center text-primary-foreground">
+                    <h3 className="font-medium text-lg">Paket Growth</h3>
+                    <p className="text-sm opacity-90">Most Value! Naikin Awareness!</p>
+                  </div>
+                  <CardContent className="p-6">
+                    <div className="text-center">
+                      <span className="text-sm text-muted-foreground line-through mr-2">443k</span>
+                    </div>
+                    <div className="text-center mb-4">
+                      <span className="text-3xl font-bold">329k</span>
+                      <p className="text-sm text-primary font-medium italic">Hemat 114k</p>
+                    </div>
+                    <ul className="space-y-2 mb-6">
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <span className="text-sm">1x IG Reels + Repost Story</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <span className="text-sm">1x IG Feed Carousel + Repost Story</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <span className="text-sm"><strong>FREE 1x IG Story Image</strong></span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <span className="text-sm"><strong>FREE Copywriting</strong></span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <span className="text-sm"><strong>FREE Carousel Design</strong></span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <span className="text-sm"><strong>FREE Caption & Hashtag</strong></span>
+                      </li>
+                    </ul>
+                    <Button className="w-full" asChild>
+                      <Link href="http://wa.me/62895808860080" target="_blank">Hubungi via WhatsApp</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
 
-              {/* Paket Premium */}
-              <Card className="overflow-hidden border-2 hover:border-primary/50 transition-all duration-200">
-                <div className="bg-primary/10 p-4 text-center">
-                <h3 className="font-medium text-lg">Paket Premium</h3>
-                <p className="text-sm text-muted-foreground">Full Attack Buat Closing Maksimal!</p>
-                </div>
-                <CardContent className="p-6">
-                <div className="text-center">
-                  <span className="text-sm text-muted-foreground line-through mr-2">Rp1.200.000</span>
-                </div>
-                <div className="text-center mb-4">
-                  <span className="text-3xl font-bold">Rp799.000</span>
-                  <p className="text-sm text-primary font-medium italic">Hemat Rp401.000</p>
-                </div>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm">1x IG Reels + Mirror TikTok + Repost Story</span>
-                  </li>
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm">1x IG Feed Carousel + Repost Story</span>
-                  </li>
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm">1x IG Story Video</span>
-                  </li>
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm">1x IG Story Image</span>
-                  </li>
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm"><strong>FREE Copywriting</strong></span>
-                  </li>
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm"><strong>FREE Caption & Hashtag</strong></span>
-                  </li>
-                  <li className="flex items-start">
-                  <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                  <span className="text-sm"><strong>FREE Carousel Design</strong></span>
-                  </li>
-                </ul>
-                <Button className="w-full" asChild>
-                  <Link href="http://wa.me/62895808860080" target="_blank">Hubungi via WhatsApp</Link>
-                </Button>
-                </CardContent>
-              </Card>
+                <Card className="overflow-hidden border-2 hover:border-primary/50 transition-all duration-200">
+                  <div className="bg-primary/10 p-4 text-center">
+                    <h3 className="font-medium text-lg">Paket Premium</h3>
+                    <p className="text-sm text-muted-foreground">Full Attack Buat Closing Maksimal!</p>
+                  </div>
+                  <CardContent className="p-6">
+                    <div className="text-center">
+                      <span className="text-sm text-muted-foreground line-through mr-2">636k</span>
+                    </div>
+                    <div className="text-center mb-4">
+                      <span className="text-3xl font-bold">449k</span>
+                      <p className="text-sm text-primary font-medium italic">Hemat 187k</p>
+                    </div>
+                    <ul className="space-y-2 mb-6">
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <span className="text-sm">1x IG Reels + Mirror Tiktok + Repost Story</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <span className="text-sm">1x IG Feed Carousel + Repost Story</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <span className="text-sm">1x IG Story Video</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <span className="text-sm"><strong>FREE 2x IG Story Image</strong></span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <span className="text-sm"><strong>FREE Copywriting</strong></span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <span className="text-sm"><strong>FREE Carousel Design</strong></span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                        <span className="text-sm"><strong>FREE Caption & Hashtag</strong></span>
+                      </li>
+                    </ul>
+                    <Button className="w-full" asChild>
+                      <Link href="http://wa.me/62895808860080" target="_blank">Hubungi via WhatsApp</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
               </div>
             </ContentBlock>
 
