@@ -48,7 +48,7 @@ export default function ServicesPage() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">89K</Badge>
+                        <Badge className="text-lg font-semibold">120K</Badge>
                       </div>
 
                       <div className="flex justify-between items-start">
@@ -61,7 +61,7 @@ export default function ServicesPage() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">99K</Badge>
+                        <Badge className="text-lg font-semibold">150K</Badge>
                       </div>
                     </div>
                   </CardContent>
@@ -84,7 +84,7 @@ export default function ServicesPage() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">139K</Badge>
+                        <Badge className="text-lg font-semibold">200K</Badge>
                       </div>
 
                       <div className="flex justify-between items-start">
@@ -97,7 +97,7 @@ export default function ServicesPage() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">159K</Badge>
+                        <Badge className="text-lg font-semibold">300K</Badge>
                       </div>
 
                       <div className="flex justify-between items-start">
@@ -110,7 +110,7 @@ export default function ServicesPage() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">149K</Badge>
+                        <Badge className="text-lg font-semibold">220K</Badge>
                       </div>
 
                       <div className="flex justify-between items-start">
@@ -123,7 +123,7 @@ export default function ServicesPage() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">169K</Badge>
+                        <Badge className="text-lg font-semibold">330K</Badge>
                       </div>
                     </div>
                   </CardContent>
@@ -147,7 +147,7 @@ export default function ServicesPage() {
                               </p>
                             </div>
                           </div>
-                          <Badge className="text-lg font-semibold">229K</Badge>
+                          <Badge className="text-lg font-semibold">350K</Badge>
                         </div>
 
                         <div className="flex justify-between items-start">
@@ -160,7 +160,7 @@ export default function ServicesPage() {
                               </p>
                             </div>
                           </div>
-                          <Badge className="text-lg font-semibold">239K</Badge>
+                          <Badge className="text-lg font-semibold">380K</Badge>
                         </div>
                       </div>
 
@@ -175,7 +175,7 @@ export default function ServicesPage() {
                               </p>
                             </div>
                           </div>
-                          <Badge className="text-lg font-semibold">279K</Badge>
+                          <Badge className="text-lg font-semibold">600K</Badge>
                         </div>
 
                         <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
@@ -222,7 +222,7 @@ export default function ServicesPage() {
                       <span className="text-sm text-muted-foreground line-through mr-2">268k</span>
                     </div>
                     <div className="text-center mb-4">
-                      <span className="text-3xl font-bold">219k</span>
+                      <span className="text-3xl font-bold">299K</span>
                       <p className="text-sm text-primary font-medium italic">Hemat 49k</p>
                     </div>
                     <ul className="space-y-2 mb-6">
@@ -259,7 +259,7 @@ export default function ServicesPage() {
                       <span className="text-sm text-muted-foreground line-through mr-2">443k</span>
                     </div>
                     <div className="text-center mb-4">
-                      <span className="text-3xl font-bold">329k</span>
+                      <span className="text-3xl font-bold">549K</span>
                       <p className="text-sm text-primary font-medium italic">Hemat 114k</p>
                     </div>
                     <ul className="space-y-2 mb-6">
@@ -304,7 +304,7 @@ export default function ServicesPage() {
                       <span className="text-sm text-muted-foreground line-through mr-2">636k</span>
                     </div>
                     <div className="text-center mb-4">
-                      <span className="text-3xl font-bold">449k</span>
+                      <span className="text-3xl font-bold">799K</span>
                       <p className="text-sm text-primary font-medium italic">Hemat 187k</p>
                     </div>
                     <ul className="space-y-2 mb-6">
