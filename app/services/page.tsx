@@ -5,7 +5,7 @@ import { ContentBlock } from "@/components/content-block"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Check, Instagram, ImageIcon, Film, Mic } from "lucide-react"
+import { Check, Instagram, ImageIcon, Film, Mic, AlertTriangle } from "lucide-react"
 import Link from "next/link"
 import { TranslatedContent } from "@/components/translated-content"
 
@@ -208,6 +208,19 @@ export default function ServicesPage() {
                   </CardContent>
                 </Card>
               </div>
+              {/* Kartu info owning content */}
+              <Card className="overflow-hidden border-2 border-amber-300 bg-amber-50 hover:border-amber-400 hover:bg-amber-100 hover:shadow-lg transition-all duration-200">
+                <CardContent className="p-4 flex items-start gap-3">
+                  <AlertTriangle className="h-5 w-5 text-amber-600 mt-0.5" />
+                  <div>
+                    <p className="text-sm">
+                      {t('language') === 'id' 
+                        ? 'PENTING: Jika Anda ingin memiliki hak kepemilikan penuh atas konten (owning content), maka akan dikenakan biaya tambahan sebesar 2x lipat dari harga yang tertera di rate card. Hak kepemilikan ini memberikan Anda kebebasan penuh untuk menggunakan, memodifikasi, dan mendistribusikan konten tersebut.'
+                        : 'IMPORTANT: If you want full ownership rights over the content (owning content), an additional fee of 2x the listed rate card price will be charged. This ownership grants you complete freedom to use, modify, and distribute the content.'}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
             </ContentBlock>
 
             <ContentBlock title={t('bundlingPackages')}>
