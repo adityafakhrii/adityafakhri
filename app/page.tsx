@@ -35,10 +35,10 @@ export default function Home() {
               <div className="w-full md:w-1/3 flex justify-center">
                 <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-primary/10">
                   <Image
-                    src="https://i.ibb.co.com/G43QDGTX/profile1.jpg"
+                    src="https://i.ibb.co.com/ycGvkkbP/adit.jpg"
                     alt="Aditya Fakhri Riansyah"
                     fill
-                    className="object-cover"
+                    className="object-cover scale-125 translate-y-4"
                   />
                 </div>
               </div>
