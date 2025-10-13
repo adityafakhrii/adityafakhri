@@ -52,25 +52,31 @@ export default function Home() {
           </ContentBlock>
 
           <ContentBlock title={`🤝 ${t('collaboration')}`} className="mt-12">
-            <div className="grid grid-cols-5 gap-6">
-                {[
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
+              {[
                 { name: "Google", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" },
                 { name: "CodePolitan", src: "https://mustopa28121992.github.io/projectt/img/press-codepolitan--md5--c6cd986bfb1be889708b672e982814e0.png" },
                 { name: "Dicoding", src: "https://landing-page-dicoding.vercel.app/img/dicoding-header-logo.png" },
-                { name: "ITBOX", src: "https://itbox.id/wp-content/uploads/2022/10/ITbox-Logo.png" },
+                { name: "Logitech", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Logitech_logo.svg/1200px-Logitech_logo.svg.png" },
+                { name: "IDCamp", src: "https://i.ibb.co.com/xtqZw6MP/idcamp-2.png" },
+                { name: "Qwords", src: "https://qwords.co.id/wp-content/uploads/2025/03/logo.webp" },
                 { name: "Gamelab Indonesia", src: "https://www.gamelab.id/img/logo-gamelab/display/Logo_GameLab_Landscape1.png?v=3.10?v=3.1" },
+                { name: "IDWebhost", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_e-YU5wXFZcD_zgP7ejG2-OR7D-OnXqBaA&s" },
+                { name: "Dunia Coding", src: "https://apiku-v1.duniacoding.id/logo/logo-big.png" },
+                { name: "ITBOX", src: "https://itbox.id/wp-content/uploads/2022/10/ITbox-Logo.png" },
                 { name: "Algobash", src: "https://www.algobash.com/wp-content/uploads/2024/03/algo-black.png" },
+                { name: "Merdeka Siber", src: "https://merdekasiber.com/wp-content/uploads/2024/05/Frame-43193-1.png" },
                 { name: "Progate", src: "https://prog-8.com/assets/landing/primary_logo-4d1810538e410b4c6af84210420099ca1772e8cb39013fad8532e499bcdb136e.svg" },
                 { name: "Staditek", src: "https://www.staditek.id/wp-content/uploads/2022/06/StadiTek-logo.png" },
-                { name: "Coding Studio", src: "https://codingstudio.id/wp-content/uploads/2025/02/Vector-150x150.png" },
+                { name: "Coding Studio", src: "https://codingstudio.id/wp-content/uploads/2020/06/LOGO-MASTERFILE.png" },
                 { name: "AICO Community", src: "https://static.tiptip.id/user/header-image/2a8b2eae-a4c4-42db-aad8-73771364c107.png" },
-                { name: "Innovate Edutech", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg6KyS6WrO3v-QpI1PAKxNwVT4bt01-yiNIA&s" },
-                { name: "Merdeka Siber", src: "https://merdekasiber.com/wp-content/uploads/2024/05/Frame-43193-1.png" },
                 { name: "Devcode AI", src: "https://i.ibb.co.com/RTxBnVBW/Devcode-AI.jpg" },
                 { name: "Codemasters", src: "https://i.ibb.co.com/hnPWzZ6/416432286-1356985004947217-6764481526990047168-n.jpg" },
                 { name: "Studpal", src: "https://media.cakeresume.com/image/upload/v1672292026/z3rqxffqfwsmi0ifsqvn.png" },
+                { name: "Innovate Edutech", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg6KyS6WrO3v-QpI1PAKxNwVT4bt01-yiNIA&s" },
+                
                 ].map((company, i) => (
-                <div key={i} className="flex items-center justify-center p-4 bg-muted rounded-lg h-24">
+                  <div key={i} className="flex items-center justify-center p-4 bg-muted rounded-lg h-24">
                   <Image
                   src={company.src}
                   alt={company.name}
