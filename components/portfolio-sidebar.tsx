@@ -217,7 +217,7 @@ export function PortfolioSidebar() {
             </div>
             <Button variant="outline" className="w-full" asChild>
               <Link
-                href="https://drive.google.com/file/d/1JimeKDRCUP9nIYfo4yFXRMn69npFP-IP/view?usp=sharing"
+                href="https://drive.google.com/file/d/1SlPb0eHaFPKs37WK5Mk9eox6lvjih99W/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
               >
