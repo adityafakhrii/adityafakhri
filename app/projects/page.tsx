@@ -11,13 +11,13 @@ const featuredProjects = [
   {
     id: "siacta",
     title: "SIACTA",
-    description: "System Information Accounting & Tax: aplikasi web komprehensif untuk mengelola operasi keuangan dan kepatuhan pajak dengan fitur lengkap untuk bisnis.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["Laravel", "JavaScript", "MySQL", "Bootstrap", "Accounting"],
+    description: "System Information Accounting & Tax. Dibangun dengan Laravel 12 & PHP 8.4.",
+    imageSrc: "https://i.ibb.co.com/60ZXr4gG/Screenshot-2025-10-14-153626.png",
+    tags: ["Laravel 12", "PHP 8.4", "MySQL", "Bootstrap", "Accounting"],
     category: "web",
     featured: true,
     status: "Production",
-    year: "2024"
+    year: "2023"
   },
   {
     id: "medfluffy",
@@ -33,13 +33,13 @@ const featuredProjects = [
   {
     id: "restoranku",
     title: "Restoranku",
-    description: "Sistem manajemen restoran dengan fitur pemesanan via QR code, pembayaran QRIS melalui Midtrans, manajemen inventaris, dan pelaporan komprehensif.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["Laravel", "JavaScript", "MySQL", "Bootstrap", "Midtrans", "QR Code"],
+    description: "QR menu & Midtrans. Dibangun dengan Laravel 12 & PHP 8.4.",
+    imageSrc: "https://i.ibb.co.com/j970072V/Screenshot-2025-10-14-164926.png",
+    tags: ["Laravel 12", "PHP 8.4", "MySQL", "Bootstrap", "Midtrans", "QR Code"],
     category: "web",
     featured: true,
     status: "Production",
-    year: "2024"
+    year: "2025"
   },
   {
     id: "ramadhanjs",
@@ -51,6 +51,28 @@ const featuredProjects = [
     featured: true,
     status: "Completed",
     year: "2023"
+  },
+  {
+    id: "proquoteai",
+    title: "ProQuoteAI",
+    description: "SaaS untuk generate quotation/proposal proyek berbasis AI.",
+    imageSrc: "/placeholder.svg?height=200&width=400",
+    tags: ["SaaS", "AI", "Quotation", "Next.js"],
+    category: "web",
+    featured: true,
+    status: "Production",
+    year: "2025"
+  },
+  {
+    id: "patunganyuk",
+    title: "PatunganYuk",
+    description: "SaaS untuk split bill dengan AI scan struk belanja.",
+    imageSrc: "/placeholder.svg?height=200&width=400",
+    tags: ["SaaS", "AI", "Split Bill", "Next.js"],
+    category: "web",
+    featured: true,
+    status: "Production",
+    year: "2025"
   }
 ]
 

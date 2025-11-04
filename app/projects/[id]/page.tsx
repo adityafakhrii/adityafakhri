@@ -1179,7 +1179,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
                     {t('challengesSolutions')}
                   </h2>
                   <div className="space-y-6">
-                    {project.challenges.map((item, index) => (
+                    {'challenges' in project && project.challenges?.map((item, index) => (
                       <div key={index} className="border rounded-lg p-4">
                         <div className="mb-3">
                           <h3 className="font-medium text-red-600 mb-2">🚧 {t('language') === 'id' ? 'Tantangan:' : 'Challenge:'}</h3>
@@ -1198,7 +1198,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
                 <ContentBlock>
                   <h2 className="text-2xl font-bold mb-4">🎯 {t('projectOutcomes')}</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {project.outcomes.map((outcome, index) => (
+                    {'outcomes' in project && project.outcomes?.map((outcome, index) => (
                       <div key={index} className="p-4 bg-green-50 border border-green-200 rounded-lg">
                         <div className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
@@ -1247,7 +1247,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
                 )}
 
                 {/* Testimonial */}
-                {project.testimonial && (
+                {'testimonial' in project && project.testimonial && (
                   <ContentBlock>
                     <h2 className="text-2xl font-bold mb-4">💬 {t('clientTestimonial')}</h2>
                     <div className="bg-muted p-6 rounded-lg">
