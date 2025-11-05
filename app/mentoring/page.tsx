@@ -289,7 +289,7 @@ export default function MentoringPage() {
                 <div className="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6">
                   <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
                     <Image
-                      src="https://i.ibb.co.com/849G20Hn/profile-pic-9.png"
+                      src="https://i.ibb.co/849G20Hn/profile-pic-9.png"
                       alt="Aditya Fakhri Riansyah"
                       width={96}
                       height={96}

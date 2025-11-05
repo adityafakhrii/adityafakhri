@@ -28,12 +28,13 @@ export default function SpeakingPage() {
               <div className="space-y-4">
                 <Card>
                   <CardContent className="p-0">
-                    <div className="grid grid-cols-1 md:grid-cols-3">
-                      <div className="relative h-48 md:h-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                      <div className="relative aspect-[4/3] md:aspect-[16/9]">
                         <Image
                           src="https://i.ibb.co/YBYKVTHB/qwords.jpg"
                           alt="Qwords Digital Sprint"
                           fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
                           className="object-cover"
                         />
                       </div>
@@ -124,14 +125,15 @@ export default function SpeakingPage() {
               <div className="space-y-6">
                 <Card>
                   <CardContent className="p-0">
-                  <div className="grid grid-cols-1 md:grid-cols-3">
-                    <div className="relative h-48 md:h-auto">
-                    <Image
-                      src="https://i.ibb.co/0RPc0Tfc/upilaravel.jpg"
-                      alt="Workshop Laravel 12"
-                      fill
-                      className="object-cover object-bottom"
-                    />
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                    <div className="relative aspect-[4/3] md:aspect-[16/9]">
+                      <Image
+                        src="https://i.ibb.co/0RPc0Tfc/upilaravel.jpg"
+                        alt="Workshop Laravel 12"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover object-bottom"
+                      />
                     </div>
                     <div className="md:col-span-2 p-6">
                     <div className="flex flex-wrap gap-2 mb-2">

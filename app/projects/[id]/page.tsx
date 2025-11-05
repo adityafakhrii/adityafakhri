@@ -1129,8 +1129,14 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
             </div>
 
             {/* Hero Image */}
-            <div className="relative h-64 md:h-96 w-full mb-8 rounded-lg overflow-hidden">
-              <Image src={project.imageSrc || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
+            <div className="relative aspect-[4/3] md:aspect-[16/9] w-full mb-8 rounded-lg overflow-hidden">
+              <Image
+                src={project.imageSrc || "/placeholder.svg"}
+                alt={project.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 66vw"
+                className="object-cover"
+              />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
