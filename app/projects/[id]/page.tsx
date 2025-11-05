@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import { PageHeader } from "@/components/page-header"
 import { ContentBlock } from "@/components/content-block"
 import { Badge } from "@/components/ui/badge"
@@ -1050,25 +1051,22 @@ const projects = {
   }
 }
 
-export default function ProjectDetailPage({ params }: { params: { id: string } }) {
+export default function ProjectDetailPage({ params }: { params: Promise<{ id: string }> }) {
   return (
     <TranslatedContent
       renderContent={({ t }) => {
-        const resolvedParams = params
+        const resolvedParams = React.use(params)
         const project = projects[resolvedParams.id as keyof typeof projects]
 
-        // Fallback for projects not in our mock data
         if (!project) {
           return (
-            <div className="container max-w-5xl py-8 px-4 md:px-8">
-              <PageHeader title={t('language') === 'id' ? "Proyek Tidak Ditemukan" : "Project Not Found"} description={t('language') === 'id' ? "Maaf, proyek yang Anda cari tidak tersedia." : "Sorry, the project you're looking for is not available."} />
-              <Button asChild className="mt-6">
-                <Link href="/projects">
-                  <ArrowLeft className="mr-2 h-4 w-4" />
-                  {t('backToProjects')}
-                </Link>
-              </Button>
-            </div>
+            <main className="container max-w-5xl mx-auto px-4 md:px-8 py-10">
+              <h1 className="text-2xl md:text-3xl font-bold">Project tidak ditemukan</h1>
+              <p className="text-muted-foreground mt-2">ID: {resolvedParams.id}</p>
+              <Link href="/projects" className="inline-flex mt-6 items-center text-sm underline">
+                <ArrowLeft className="mr-2 h-4 w-4" /> Kembali ke daftar proyek
+              </Link>
+            </main>
           )
         }
 
