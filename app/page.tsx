@@ -73,7 +73,7 @@ export default function Home() {
                 { name: "AICO Community", src: "https://static.tiptip.id/user/header-image/2a8b2eae-a4c4-42db-aad8-73771364c107.png" },
                 { name: "Devcode AI", src: "https://i.ibb.co/RTxBnVBW/Devcode-AI.jpg" },
                 { name: "Codemasters", src: "https://i.ibb.co/hnPWzZ6/416432286-1356985004947217-6764481526990047168-n.jpg" },
-                { name: "Studpal", src: "https://media.cakeresume.com/image/upload/v1672292026/z3rqxffqfwsmi0ifsqvn.png" },
+                { name: "Schoters by Ruangguru", src: "https://cdn-web-2.ruangguru.com/landing-pages/assets/8a6fd960-7456-42b5-97d6-fc4a4c245f9a.png" },
                 { name: "Innovate Edutech", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg6KyS6WrO3v-QpI1PAKxNwVT4bt01-yiNIA&s" },
                 
                 ].map((company, i) => (
