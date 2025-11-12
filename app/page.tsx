@@ -6,7 +6,8 @@ import { ChevronRight, Code, Lightbulb, Mic, Sparkles, ExternalLink, SquareCode 
 import Link from "next/link"
 import Image from "next/image"
 import { ContentBlock } from "@/components/content-block"
-import { ProjectCard } from "@/components/project-card"
+import dynamic from "next/dynamic"
+const ProjectCard = dynamic(() => import("@/components/project-card").then(m => m.ProjectCard))
 import { TranslatedContent } from "@/components/translated-content"
 
 export default function Home() {
@@ -35,10 +36,11 @@ export default function Home() {
               <div className="w-full md:w-1/3 flex justify-center">
                 <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-primary/10">
                   <Image
-                    src="https://i.ibb.co/ycGvkkbP/adit.jpg"
+                    src="/aditya-fakhri.webp"
                     alt="Aditya Fakhri Riansyah"
                     fill
                     sizes="(max-width: 768px) 50vw, 256px"
+                    priority
                     className="object-cover scale-125 translate-y-4"
                   />
                 </div>
@@ -59,7 +61,7 @@ export default function Home() {
                 { name: "CodePolitan", src: "https://mustopa28121992.github.io/projectt/img/press-codepolitan--md5--c6cd986bfb1be889708b672e982814e0.png" },
                 { name: "Dicoding", src: "https://landing-page-dicoding.vercel.app/img/dicoding-header-logo.png" },
                 { name: "Logitech", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Logitech_logo.svg/1200px-Logitech_logo.svg.png" },
-                { name: "IDCamp", src: "https://i.ibb.co/xtqZw6MP/idcamp-2.png" },
+                { name: "IDCamp", src: "/idcamp.webp" },
                 { name: "Qwords", src: "https://qwords.co.id/wp-content/uploads/2025/03/logo.webp" },
                 { name: "Gamelab Indonesia", src: "https://www.gamelab.id/img/logo-gamelab/display/Logo_GameLab_Landscape1.png?v=3.10?v=3.1" },
                 { name: "IDWebhost", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_e-YU5wXFZcD_zgP7ejG2-OR7D-OnXqBaA&s" },
@@ -71,10 +73,12 @@ export default function Home() {
                 { name: "Staditek", src: "https://www.staditek.id/wp-content/uploads/2022/06/StadiTek-logo.png" },
                 { name: "Coding Studio", src: "https://codingstudio.id/wp-content/uploads/2020/06/LOGO-MASTERFILE.png" },
                 { name: "AICO Community", src: "https://static.tiptip.id/user/header-image/2a8b2eae-a4c4-42db-aad8-73771364c107.png" },
-                { name: "Devcode AI", src: "https://i.ibb.co/RTxBnVBW/Devcode-AI.jpg" },
-                { name: "Codemasters", src: "https://i.ibb.co/hnPWzZ6/416432286-1356985004947217-6764481526990047168-n.jpg" },
+                { name: "Devcode AI", src: "/devcode.webp" },
+                { name: "Codemasters", src: "/codemasters.webp" },
                 { name: "Schoters by Ruangguru", src: "https://cdn-web-2.ruangguru.com/landing-pages/assets/8a6fd960-7456-42b5-97d6-fc4a4c245f9a.png" },
                 { name: "Innovate Edutech", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg6KyS6WrO3v-QpI1PAKxNwVT4bt01-yiNIA&s" },
+                // { name: "Studpal", src: "https://media.cakeresume.com/image/upload/v1672292026/z3rqxffqfwsmi0ifsqvn.png" },
+
                 
                 ].map((company, i) => (
                   <div key={i} className="flex items-center justify-center p-4 bg-muted rounded-lg h-24">
