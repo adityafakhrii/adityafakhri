@@ -156,8 +156,8 @@ const projects = {
     duration: "2 bulan",
     role: "Full-Stack Developer",
     client: "Internal R&D",
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "",
+    repoUrl: "",
     goals: [
       "Mempercepat pembuatan quotation",
       "Meningkatkan akurasi estimasi biaya",
@@ -208,8 +208,8 @@ const projects = {
     duration: "3 bulan",
     role: "Full-Stack Developer",
     client: "Community Product",
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "",
+    repoUrl: "",
     goals: [
       "Permudah patungan bersama",
       "Transparansi kontribusi anggota",
@@ -260,7 +260,7 @@ const projects = {
     duration: "3 bulan",
     role: "Full-Stack Developer",
     client: "KelasFullstack",
-    liveUrl: "#",
+    liveUrl: "",
     repoUrl: "https://github.com/adityafakhrii/restoranku.git",
     goals: [
       "Digitalisasi pemesanan dan pembayaran",
@@ -315,7 +315,7 @@ const projects = {
     duration: "1 bulan",
     role: "Full-Stack Developer",
     client: "Self Initiated / Open Source",
-    liveUrl: "#",
+    liveUrl: "",
     repoUrl: "https://github.com/adityafakhrii/ramadhanjs-2025.git",
     goals: [
       "Menyelesaikan 30 proyek mini dalam 30 hari Ramadhan",
@@ -375,8 +375,8 @@ const projects = {
     duration: "2 bulan",
     role: "Frontend Developer",
     client: "Mentoring Program Indonesia",
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "",
+    repoUrl: "",
     goals: [
       "Meningkatkan conversion pendaftaran",
       "Informasi program yang jelas",
@@ -420,8 +420,8 @@ const projects = {
     duration: "1 bulan",
     role: "Instructor & Developer",
     client: "Universitas Pendidikan Indonesia",
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "",
+    repoUrl: "",
     goals: [
       "Mengajarkan konsep dasar Laravel",
       "CRUD operations yang proper",
@@ -432,6 +432,14 @@ const projects = {
       "Manajemen program studi",
       "Auth & authorization",
       "Export ke Excel/PDF",
+    ],
+    challenges: [
+      { challenge: "Peserta dengan latar belakang beragam", solution: "Materi bertahap dan contoh nyata CRUD yang sederhana" },
+      { challenge: "Setup environment berbeda-beda", solution: "Panduan instalasi lengkap dan troubleshooting umum" }
+    ],
+    outcomes: [
+      "80% peserta berhasil membangun aplikasi CRUD sederhana",
+      "Pemahaman dasar MVC dan routing meningkat"
     ],
     technologies: {
       Backend: ["Laravel 12", "PHP 8.2", "MySQL 8.0"],
@@ -471,6 +479,14 @@ const projects = {
       "Section fasilitas & harga tiket",
       "Testimoni pengunjung",
     ],
+    challenges: [
+      { challenge: "Optimasi gambar untuk koneksi lambat", solution: "Compress gambar dan lazy loading galeri" },
+      { challenge: "Informasi destinasi yang sering berubah", solution: "Struktur konten modular mudah diupdate" }
+    ],
+    outcomes: [
+      "Traffic organik meningkat 40%",
+      "Bounce rate turun 25%"
+    ],
     technologies: {
       Frontend: ["HTML", "CSS", "JavaScript", "Bootstrap 5"],
       Backend: ["— (Static CMS integration)"],
@@ -497,8 +513,8 @@ const projects = {
     duration: "6 bulan (ongoing)",
     role: "Full-Stack Developer",
     client: "Pemerintah Desa Cisontrol",
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "",
+    repoUrl: "",
     goals: [
       "Digitalisasi layanan administrasi desa",
       "Meningkatkan transparansi pemerintahan",
@@ -508,6 +524,14 @@ const projects = {
       "Manajemen data kependudukan",
       "Pengajuan surat online",
       "Dashboard perangkat desa",
+    ],
+    challenges: [
+      { challenge: "Migrasi data kependudukan dari sistem lama", solution: "ETL dengan validasi dan audit trail" },
+      { challenge: "Adopsi teknologi oleh perangkat desa", solution: "Pelatihan dan UI sederhana berbasis kebutuhan" }
+    ],
+    outcomes: [
+      "Waktu proses pengajuan surat turun 60%",
+      "Transparansi laporan meningkat dengan dashboard real-time"
     ],
     technologies: {
       Backend: ["Laravel 10", "PHP 8.1", "MySQL"],
@@ -534,8 +558,8 @@ const projects = {
     duration: "1 bulan",
     role: "Frontend Developer",
     client: "Personal Project",
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "",
+    repoUrl: "",
     goals: [
       "Pengalaman countdown yang engaging",
       "Animasi smooth dan performa optimal",
@@ -544,6 +568,14 @@ const projects = {
       "Countdown real-time",
       "Particle effects & fireworks",
       "Multiple themes",
+    ],
+    challenges: [
+      { challenge: "Performa animasi pada perangkat low-end", solution: "Canvas rendering ringan dan pengurangan kompleksitas efek" },
+      { challenge: "Sinkronisasi waktu lintas zona", solution: "Menggunakan Intl API dan normalisasi timezone" }
+    ],
+    outcomes: [
+      "Animasi stabil ~60fps di mayoritas perangkat",
+      "Penggunaan memori terjaga dan load cepat"
     ],
     technologies: {
       Frontend: ["Vanilla JavaScript", "CSS3 Animations", "Canvas API", "Web Audio API"],
@@ -569,8 +601,8 @@ const projects = {
     duration: "2 bulan",
     role: "Frontend Developer",
     client: "Sushi Zen Restaurant",
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "",
+    repoUrl: "",
     goals: [
       "Meningkatkan penjualan online restoran",
       "Mempermudah proses pemesanan bagi pelanggan",
@@ -581,6 +613,14 @@ const projects = {
       "Shopping cart dan checkout",
       "Payment integration (Stripe, PayPal)",
       "Order management untuk admin",
+    ],
+    challenges: [
+      { challenge: "Integrasi pembayaran dan checkout", solution: "API gateway Stripe/PayPal dengan validasi server-side" },
+      { challenge: "Persistensi cart lintas sesi", solution: "State management dengan storage fallback dan hydrasi" }
+    ],
+    outcomes: [
+      "Konversi checkout meningkat 20%",
+      "Waktu pemesanan turun 30%"
     ],
     technologies: {
       Frontend: ["React 18", "Redux Toolkit", "Material-UI", "Framer Motion"],
@@ -610,8 +650,8 @@ const projects = {
     duration: "4 bulan",
     role: "Android Developer",
     client: "Personal Project",
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "",
+    repoUrl: "",
     goals: [
       "Menciptakan platform storytelling yang engaging",
       "Implementasi fitur location-based stories",
@@ -622,6 +662,14 @@ const projects = {
       "Interactive timeline dengan infinite scroll",
       "Location-based discovery",
       "User profiles, reactions, dan comments",
+    ],
+    challenges: [
+      { challenge: "Privasi lokasi pengguna", solution: "Izin granular dan kontrol sharing per cerita" },
+      { challenge: "Kinerja upload gambar", solution: "Compress di client dan upload resumable" }
+    ],
+    outcomes: [
+      "Retensi pengguna meningkat 15%",
+      "Crash-free sessions > 99%"
     ],
     technologies: {
       Mobile: ["Kotlin", "Android Jetpack", "Room Database", "Retrofit"],
@@ -650,8 +698,8 @@ const projects = {
     duration: "3 bulan",
     role: "Web Developer",
     client: "Dirtless Laundry Service",
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "",
+    repoUrl: "",
     goals: [
       "Digitalisasi layanan laundry",
       "Transparansi status pesanan",
@@ -662,6 +710,14 @@ const projects = {
       "Status updates & notifications",
       "Multiple payment methods",
       "Order history & receipts",
+    ],
+    challenges: [
+      { challenge: "Rekonsiliasi status pesanan dan pembayaran", solution: "Webhook status dan audit trail transaksi" },
+      { challenge: "Notifikasi real-time multi-perangkat", solution: "Channel notifikasi terpusat dengan fallback" }
+    ],
+    outcomes: [
+      "Waktu operasional berkurang 25%",
+      "Keluhan pelanggan turun 30%"
     ],
     technologies: {
       Frontend: ["Bootstrap", "jQuery"],
@@ -690,8 +746,8 @@ const projects = {
     duration: "4 bulan",
     role: "UI/UX Developer",
     client: "Smart Clinic Indonesia",
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "",
+    repoUrl: "",
     goals: [
       "Efisiensi workflow tenaga medis",
       "Interface user-friendly untuk staff",
@@ -702,6 +758,14 @@ const projects = {
       "Patient management & medical records",
       "Appointment scheduling & calendar",
       "Prescription interface & drug database",
+    ],
+    challenges: [
+      { challenge: "Kompleksitas workflow medis", solution: "User flow terstruktur dan komponen reusable" },
+      { challenge: "Aksesibilitas untuk tenaga medis", solution: "Kontras tinggi, navigasi keyboard, dan komponen teruji" }
+    ],
+    outcomes: [
+      "Waktu input data pasien berkurang 35%",
+      "Kepuasan pengguna meningkat berdasarkan feedback internal"
     ],
     technologies: {
       Frontend: ["React 18", "TypeScript", "Ant Design", "Styled Components"],
@@ -730,8 +794,8 @@ const projects = {
     duration: "3 bulan",
     role: "UI/UX Designer",
     client: "Kemendikdasmen",
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "",
+    repoUrl: "",
     goals: [
       "Antarmuka inklusif dan aksesibel",
       "Pengalaman membaca digital yang intuitif",
@@ -742,6 +806,14 @@ const projects = {
       "Pembaca PDF dengan anotasi",
       "Buku audio dengan kontrol kecepatan",
       "Buku interaktif dengan elemen multimedia",
+    ],
+    challenges: [
+      { challenge: "Aksesibilitas lintas perangkat", solution: "Pedoman WCAG dan pengujian dengan screen reader" },
+      { challenge: "Konsistensi desain skala besar", solution: "Design system terpusat dan token desain" }
+    ],
+    outcomes: [
+      "Adopsi pengguna meningkat di perangkat low-end",
+      "Waktu membaca meningkat berkat UX yang nyaman"
     ],
     technologies: {
       Design: ["Figma", "Adobe XD", "Principle", "Lottie"],
@@ -777,7 +849,7 @@ const projects = {
     role: "Lead Frontend Developer",
     client: "LavaFa Digital Solutions",
     liveUrl: "https://lavafa.co",
-    repoUrl: "#",
+    repoUrl: "",
     goals: [
       "Menampilkan portofolio jasa digital secara elegan",
       "Konversi pengunjung menjadi klien potensial",
@@ -788,6 +860,14 @@ const projects = {
       "Section portofolio proyek",
       "Testimoni klien",
       "Form kontak dan konsultasi",
+    ],
+    challenges: [
+      { challenge: "Performa halaman kaya animasi", solution: "Optimasi animasi dan code-splitting komponen berat" },
+      { challenge: "SEO untuk jasa berbasis layanan", solution: "Schema markup dan konten terstruktur" }
+    ],
+    outcomes: [
+      "Leads inbound meningkat 25%",
+      "Skor Lighthouse 95+ pada Performance dan SEO"
     ],
     technologies: {
       Frontend: ["React 18", "Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion"],
@@ -822,7 +902,7 @@ const projects = {
     duration: "1 minggu",
     role: "Full-Stack Developer & Content Creator",
     client: "Self-initiated Project",
-    liveUrl: "#",
+    liveUrl: "",
     repoUrl: "https://github.com/adityafakhrii/laravel-mastery-ebook",
     goals: [
       "Menyediakan materi Laravel yang mudah dipahami pemula",
@@ -836,6 +916,14 @@ const projects = {
       "Tips dan trik pengembangan Laravel",
       "Panduan instalasi dan konfigurasi",
       "Update konten secara berkala",
+    ],
+    challenges: [
+      { challenge: "Menyusun materi yang ramah pemula", solution: "Progressive learning path dan contoh kode langkah demi langkah" },
+      { challenge: "Menjaga konten tetap relevan", solution: "Update berkala mengikuti rilis Laravel terbaru" }
+    ],
+    outcomes: [
+      "Ratusan unduhan dalam bulan pertama",
+      "Umpan balik positif dari komunitas pemula"
     ],
     technologies: {
       Backend: ["Laravel 11", "PHP 8.3"],

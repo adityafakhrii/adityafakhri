@@ -68,12 +68,12 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
               </div>
               
               <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">{project.title}</h1>
-              <p className="text-xl text-muted-foreground mb-4">{project.subtitle}</p>
+              <p className="text-xl text-muted-foreground mb-4">{project.subtitle || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
               
               <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center">
                   <User className="h-4 w-4 mr-1" />
-                  {project.role}
+                  {project.role || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}
                 </div>
                 <div className="flex items-center">
                   <Calendar className="h-4 w-4 mr-1" />
@@ -81,7 +81,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                 </div>
                 <div className="flex items-center">
                   <Clock className="h-4 w-4 mr-1" />
-                  {project.duration}
+                  {project.duration || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}
                 </div>
               </div>
             </div>
@@ -103,8 +103,8 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                 {/* Project Overview */}
                 <ContentBlock>
                   <h2 className="text-2xl font-bold mb-4">{t('overview')}</h2>
-                  <p className="text-lg mb-4">{project.fullDescription}</p>
-                  <p className="text-muted-foreground">{project.description}</p>
+                  <p className="text-lg mb-4">{project.fullDescription || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
+                  <p className="text-muted-foreground">{project.description || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
                 </ContentBlock>
 
                 {/* Goals */}
@@ -113,27 +113,35 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                     <Target className="mr-2 h-5 w-5" />
                     {t('projectGoals')}
                   </h2>
-                  <ul className="space-y-2">
-                    {project.goals.map((goal, index) => (
-                      <li key={index} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                        <span>{goal}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {project.goals && project.goals.length > 0 ? (
+                    <ul className="space-y-2">
+                      {project.goals.map((goal, index) => (
+                        <li key={index} className="flex items-start">
+                          <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <span>{goal}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Belum tersedia' : 'Not available'}</p>
+                  )}
                 </ContentBlock>
 
                 {/* Key Features */}
                 <ContentBlock>
                   <h2 className="text-2xl font-bold mb-4">{t('keyFeatures')}</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {project.features.map((feature, index) => (
-                      <div key={index} className="flex items-start p-3 border rounded-lg">
-                        <CheckCircle className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
+                  {project.features && project.features.length > 0 ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {project.features.map((feature, index) => (
+                        <div key={index} className="flex items-start p-3 border rounded-lg">
+                          <CheckCircle className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                          <span className="text-sm">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Belum tersedia' : 'Not available'}</p>
+                  )}
                 </ContentBlock>
 
                 {/* Challenges & Solutions */}
@@ -142,35 +150,43 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                     <Lightbulb className="mr-2 h-5 w-5" />
                     {t('challengesSolutions')}
                   </h2>
-                  <div className="space-y-6">
-                    {'challenges' in project && project.challenges?.map((item, index) => (
-                      <div key={index} className="border rounded-lg p-4">
-                        <div className="mb-3">
-                          <h3 className="font-medium text-red-600 mb-2">{t('language') === 'id' ? 'Tantangan:' : 'Challenge:'}</h3>
-                          <p className="text-sm">{item.challenge}</p>
+                  {('challenges' in project && project.challenges && project.challenges.length > 0) ? (
+                    <div className="space-y-6">
+                      {project.challenges!.map((item, index) => (
+                        <div key={index} className="border rounded-lg p-4">
+                          <div className="mb-3">
+                            <h3 className="font-medium text-red-600 mb-2">{t('language') === 'id' ? 'Tantangan:' : 'Challenge:'}</h3>
+                            <p className="text-sm">{item.challenge}</p>
+                          </div>
+                          <div>
+                            <h3 className="font-medium text-green-600 mb-2">{t('language') === 'id' ? 'Solusi:' : 'Solution:'}</h3>
+                            <p className="text-sm">{item.solution}</p>
+                          </div>
                         </div>
-                        <div>
-                          <h3 className="font-medium text-green-600 mb-2">{t('language') === 'id' ? 'Solusi:' : 'Solution:'}</h3>
-                          <p className="text-sm">{item.solution}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Belum tersedia' : 'Not available'}</p>
+                  )}
                 </ContentBlock>
 
                 {/* Outcomes */}
                 <ContentBlock>
                   <h2 className="text-2xl font-bold mb-4">{t('projectOutcomes')}</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {'outcomes' in project && project.outcomes?.map((outcome, index) => (
-                      <div key={index} className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                        <div className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm">{outcome}</span>
+                  {('outcomes' in project && project.outcomes && project.outcomes.length > 0) ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {project.outcomes!.map((outcome, index) => (
+                        <div key={index} className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                          <div className="flex items-start">
+                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm">{outcome}</span>
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Belum tersedia' : 'Not available'}</p>
+                  )}
                 </ContentBlock>
 
             {/* Technologies */}
@@ -196,9 +212,9 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
             </ContentBlock>
 
                 {/* Gallery */}
-                {project.gallery && (
-                  <ContentBlock>
-                    <h2 className="text-2xl font-bold mb-4">{t('projectGallery')}</h2>
+                <ContentBlock>
+                  <h2 className="text-2xl font-bold mb-4">{t('projectGallery')}</h2>
+                  {project.gallery && project.gallery.length > 0 ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {project.gallery.map((image, index) => (
                         <div key={index} className="rounded-lg overflow-hidden border">
@@ -212,21 +228,25 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                         </div>
                       ))}
                     </div>
-                  </ContentBlock>
-                )}
+                  ) : (
+                    <p className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Belum tersedia' : 'Not available'}</p>
+                  )}
+                </ContentBlock>
 
                 {/* Testimonial */}
-                {'testimonial' in project && project.testimonial && (
-                  <ContentBlock>
-                    <h2 className="text-2xl font-bold mb-4">{t('clientTestimonial')}</h2>
+                <ContentBlock>
+                  <h2 className="text-2xl font-bold mb-4">{t('clientTestimonial')}</h2>
+                  {"testimonial" in project && project.testimonial ? (
                     <div className="bg-muted p-6 rounded-lg">
                       <blockquote className="text-lg italic mb-4">&ldquo;{project.testimonial.quote}&rdquo;</blockquote>
                       <div className="text-sm text-muted-foreground">
                         — {project.testimonial.author}, {project.testimonial.position}
                       </div>
                     </div>
-                  </ContentBlock>
-                )}
+                  ) : (
+                    <p className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Belum tersedia' : 'Not available'}</p>
+                  )}
+                </ContentBlock>
               </div>
 
               {/* Sidebar */}
@@ -237,11 +257,11 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                   <div className="space-y-3">
                     <div>
                       <h4 className="text-sm font-medium text-muted-foreground">{t('client')}</h4>
-                      <p className="text-sm">{project.client}</p>
+                      <p className="text-sm">{project.client || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
                     </div>
                     <div>
                       <h4 className="text-sm font-medium text-muted-foreground">{t('duration')}</h4>
-                      <p className="text-sm">{project.duration}</p>
+                      <p className="text-sm">{project.duration || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
                     </div>
                     <div>
                       <h4 className="text-sm font-medium text-muted-foreground">{t('year')}</h4>
@@ -249,7 +269,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                     </div>
                     <div>
                       <h4 className="text-sm font-medium text-muted-foreground">{t('role')}</h4>
-                      <p className="text-sm">{project.role}</p>
+                      <p className="text-sm">{project.role || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
                     </div>
                     <div>
                       <h4 className="text-sm font-medium text-muted-foreground">{t('status')}</h4>
@@ -264,22 +284,26 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                 <ContentBlock>
                   <h3 className="font-bold mb-4">{t('links')}</h3>
                   <div className="space-y-3">
-                    {project.liveUrl && project.liveUrl !== "#" && (
+                    {project.liveUrl ? (
                       <Button variant="outline" className="w-full" asChild>
                         <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="mr-2 h-4 w-4" />
                           {t('language') === 'id' ? 'Lihat Live' : 'View Live'}
                         </Link>
                       </Button>
+                    ) : (
+                      <div className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Live: Belum tersedia' : 'Live: Not available'}</div>
                     )}
                     
-                    {project.repoUrl && project.repoUrl !== "#" && (
+                    {project.repoUrl ? (
                       <Button variant="outline" className="w-full" asChild>
                         <Link href={project.repoUrl} target="_blank" rel="noopener noreferrer">
                           <Github className="mr-2 h-4 w-4" />
                           {t('sourceCode')}
                         </Link>
                       </Button>
+                    ) : (
+                      <div className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Repository: Belum tersedia' : 'Repository: Not available'}</div>
                     )}
                   </div>
                 </ContentBlock>
@@ -287,13 +311,17 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                 {/* Tags */}
                 <ContentBlock>
                   <h3 className="font-bold mb-4">{t('tags')}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
+                  {project.tags && project.tags.length > 0 ? (
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <Badge key={tag} variant="secondary" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Belum tersedia' : 'Not available'}</p>
+                  )}
                 </ContentBlock>
 
                 {/* Contact CTA */}
