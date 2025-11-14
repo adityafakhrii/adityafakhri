@@ -7,7 +7,7 @@ import { ChevronDown, ChevronRight } from "lucide-react"
 import { useState } from "react"
 
 interface ContentBlockProps {
-  title?: string
+  title?: React.ReactNode
   children: React.ReactNode
   collapsible?: boolean
   defaultOpen?: boolean
@@ -27,6 +27,7 @@ export function ContentBlock({
     <div className={cn("rounded-lg border p-6", className)}>
       {title && (
       <div
+        suppressHydrationWarning
         className={cn(
         "flex items-center justify-center mb-4 font-medium text-lg",
         collapsible && "cursor-pointer"
@@ -38,7 +39,7 @@ export function ContentBlock({
           {isOpen ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
         </div>
         )}
-        <h2>{title}</h2>
+        <h2 suppressHydrationWarning>{title}</h2>
       </div>
       )}
       {(!collapsible || isOpen) && <div className="space-y-4">{children}</div>}

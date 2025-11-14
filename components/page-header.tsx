@@ -19,8 +19,8 @@ export function PageHeader({ title, description, className, translate = false }:
   
   return (
     <div className={cn("space-y-2 px-5 sm:px-0", className)}>
-      <h1 className="text-3xl font-bold tracking-tight">{displayTitle}</h1>
-      {displayDescription && <p className="text-lg text-muted-foreground">{displayDescription}</p>}
+      <h1 className="text-3xl font-bold tracking-tight" suppressHydrationWarning>{displayTitle}</h1>
+      {displayDescription && <p className="text-lg text-muted-foreground" suppressHydrationWarning>{displayDescription}</p>}
     </div>
   )
 }

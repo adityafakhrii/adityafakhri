@@ -39,7 +39,7 @@ import {
   SidebarTrigger,
   useSidebar,
 } from "@/components/ui/sidebar"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useLanguage } from "@/contexts/language-context"
 import { LanguageSwitcher } from "@/components/language-switcher"
 
@@ -47,19 +47,16 @@ export function PortfolioSidebar() {
   const { setTheme, theme, resolvedTheme } = useTheme()
   const { isMobile } = useSidebar()
   const pathname = usePathname()
-  const [mounted, setMounted] = useState(false)
   const { t } = useLanguage()
 
   // Ensure theme toggle only renders client-side to avoid hydration mismatch
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  useEffect(() => {}, [])
 
   const toggleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark")
   }
 
-  const currentTheme = mounted ? resolvedTheme : "light"
+  
 
   return (
     <>
@@ -225,26 +222,24 @@ export function PortfolioSidebar() {
                 {t('downloadCV')}
               </Link>
             </Button>
-            {mounted && (
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={toggleTheme}
-                className="w-full flex items-center justify-center gap-2"
-              >
-                {currentTheme === "dark" ? (
-                  <>
-                    <Sun className="h-4 w-4" />
-                    <span>{t('lightMode')}</span>
-                  </>
-                ) : (
-                  <>
-                    <Moon className="h-4 w-4" />
-                    <span>{t('darkMode')}</span>
-                  </>
-                )}
-              </Button>
-            )}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={toggleTheme}
+              className="w-full flex items-center justify-center gap-2"
+            >
+              {resolvedTheme === "dark" ? (
+                <>
+                  <Sun className="h-4 w-4" />
+                  <span>{t('lightMode')}</span>
+                </>
+              ) : (
+                <>
+                  <Moon className="h-4 w-4" />
+                  <span>{t('darkMode')}</span>
+                </>
+              )}
+            </Button>
           </div>
         </SidebarFooter>
       </Sidebar>
