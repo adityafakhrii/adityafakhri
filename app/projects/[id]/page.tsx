@@ -9,7 +9,7 @@ import { ExternalLink, Github, ArrowLeft, Calendar, User, Clock, Target, Lightbu
 import Link from "next/link"
 import Image from "next/image"
 import { TranslatedContent } from "@/components/translated-content"
-import projects from "@/mock-data/projects"
+import projects from "@/data/projects"
 
 export default function ProjectDetailPage({ params }: { params: Promise<{ id: string }> }) {
   return (
@@ -125,7 +125,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
 
                 {/* Key Features */}
                 <ContentBlock>
-                  <h2 className="text-2xl font-bold mb-4">✨ {t('keyFeatures')}</h2>
+                  <h2 className="text-2xl font-bold mb-4">{t('keyFeatures')}</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {project.features.map((feature, index) => (
                       <div key={index} className="flex items-start p-3 border rounded-lg">
@@ -146,11 +146,11 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                     {'challenges' in project && project.challenges?.map((item, index) => (
                       <div key={index} className="border rounded-lg p-4">
                         <div className="mb-3">
-                          <h3 className="font-medium text-red-600 mb-2">🚧 {t('language') === 'id' ? 'Tantangan:' : 'Challenge:'}</h3>
+                          <h3 className="font-medium text-red-600 mb-2">{t('language') === 'id' ? 'Tantangan:' : 'Challenge:'}</h3>
                           <p className="text-sm">{item.challenge}</p>
                         </div>
                         <div>
-                          <h3 className="font-medium text-green-600 mb-2">💡 {t('language') === 'id' ? 'Solusi:' : 'Solution:'}</h3>
+                          <h3 className="font-medium text-green-600 mb-2">{t('language') === 'id' ? 'Solusi:' : 'Solution:'}</h3>
                           <p className="text-sm">{item.solution}</p>
                         </div>
                       </div>
@@ -160,7 +160,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
 
                 {/* Outcomes */}
                 <ContentBlock>
-                  <h2 className="text-2xl font-bold mb-4">🎯 {t('projectOutcomes')}</h2>
+                  <h2 className="text-2xl font-bold mb-4">{t('projectOutcomes')}</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {'outcomes' in project && project.outcomes?.map((outcome, index) => (
                       <div key={index} className="p-4 bg-green-50 border border-green-200 rounded-lg">
@@ -173,27 +173,32 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                   </div>
                 </ContentBlock>
 
-                {/* Technologies */}
-                <ContentBlock>
-                  <h2 className="text-2xl font-bold mb-4">🛠️ {t('technologiesUsed')}</h2>
-                  <div className="space-y-4">
-                    {Object.entries(project.technologies).map(([category, techs]) => (
-                      <div key={category}>
-                        <h3 className="font-medium mb-2">{category}:</h3>
-                        <div className="flex flex-wrap gap-2">
-                          {techs.map((tech) => (
-                            <Badge key={tech} variant="outline">{tech}</Badge>
-                          ))}
-                        </div>
+            {/* Technologies */}
+            <ContentBlock>
+              <h2 className="text-2xl font-bold mb-4">{t('technologiesUsed')}</h2>
+              <div className="space-y-4">
+                {(() => {
+                  const techEntries: [string, readonly string[]][] = Object.entries(
+                    project.technologies as Record<string, readonly string[]>
+                  ) as [string, readonly string[]][]
+                  return techEntries.map(([category, techs]) => (
+                    <div key={category}>
+                      <h3 className="font-medium mb-2">{category}:</h3>
+                      <div className="flex flex-wrap gap-2">
+                        {techs.map((tech) => (
+                          <Badge key={tech} variant="outline">{tech}</Badge>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </ContentBlock>
+                    </div>
+                  ))
+                })()}
+              </div>
+            </ContentBlock>
 
                 {/* Gallery */}
                 {project.gallery && (
                   <ContentBlock>
-                    <h2 className="text-2xl font-bold mb-4">📸 {t('projectGallery')}</h2>
+                    <h2 className="text-2xl font-bold mb-4">{t('projectGallery')}</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {project.gallery.map((image, index) => (
                         <div key={index} className="rounded-lg overflow-hidden border">
@@ -213,9 +218,9 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                 {/* Testimonial */}
                 {'testimonial' in project && project.testimonial && (
                   <ContentBlock>
-                    <h2 className="text-2xl font-bold mb-4">💬 {t('clientTestimonial')}</h2>
+                    <h2 className="text-2xl font-bold mb-4">{t('clientTestimonial')}</h2>
                     <div className="bg-muted p-6 rounded-lg">
-                      <blockquote className="text-lg italic mb-4">"{project.testimonial.quote}"</blockquote>
+                      <blockquote className="text-lg italic mb-4">&ldquo;{project.testimonial.quote}&rdquo;</blockquote>
                       <div className="text-sm text-muted-foreground">
                         — {project.testimonial.author}, {project.testimonial.position}
                       </div>
@@ -228,7 +233,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
               <div className="space-y-6">
                 {/* Project Info */}
                 <ContentBlock>
-                  <h3 className="font-bold mb-4">📋 {t('projectInfo')}</h3>
+                  <h3 className="font-bold mb-4">{t('projectInfo')}</h3>
                   <div className="space-y-3">
                     <div>
                       <h4 className="text-sm font-medium text-muted-foreground">{t('client')}</h4>
@@ -257,7 +262,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
 
                 {/* Project Links */}
                 <ContentBlock>
-                  <h3 className="font-bold mb-4">🔗 {t('links')}</h3>
+                  <h3 className="font-bold mb-4">{t('links')}</h3>
                   <div className="space-y-3">
                     {project.liveUrl && project.liveUrl !== "#" && (
                       <Button variant="outline" className="w-full" asChild>
@@ -281,7 +286,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
 
                 {/* Tags */}
                 <ContentBlock>
-                  <h3 className="font-bold mb-4">🏷️ {t('tags')}</h3>
+                  <h3 className="font-bold mb-4">{t('tags')}</h3>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <Badge key={tag} variant="secondary" className="text-xs">
@@ -293,7 +298,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
 
                 {/* Contact CTA */}
                 <ContentBlock>
-                  <h3 className="font-bold mb-4">💼 {t('interestedInSimilarWork')}</h3>
+                  <h3 className="font-bold mb-4">{t('interestedInSimilarWork')}</h3>
                   <p className="text-sm mb-4">
                     {t('language') === 'id' 
                       ? "Jika Anda tertarik dengan proyek serupa atau ingin berdiskusi tentang kebutuhan development Anda, jangan ragu untuk menghubungi saya."

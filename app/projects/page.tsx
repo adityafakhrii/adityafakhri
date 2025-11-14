@@ -5,198 +5,70 @@ import { ProjectCard } from "@/components/project-card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ContentBlock } from "@/components/content-block"
 import { Badge } from "@/components/ui/badge"
-import { TranslatedContent } from "@/components/translated-content"
+  import { TranslatedContent } from "@/components/translated-content"
+import projects from "@/data/projects"
+
+const normalizeCategory = (c?: string) => {
+  if (!c) return "web"
+  const s = c.toLowerCase()
+  if (s.includes("mobile")) return "mobile"
+  if (s.includes("design") || s.includes("ui") || s.includes("ux")) return "design"
+  return "web"
+}
+
+const isDone = (s: (typeof featuredProjects)[number]["status"]) =>
+  s === "Completed" || s === "Production"
+
+const getStatusStyle = (s: (typeof featuredProjects)[number]["status"]) => {
+  switch (s) {
+    case "Completed":
+    case "Production":
+      return { variant: "outline" as const, className: "text-xs bg-green-100 text-green-800 border-green-300" }
+    case "Prototype":
+    case "Beta":
+    case "Training Project":
+      return { variant: "outline" as const, className: "text-xs bg-orange-100 text-orange-800 border-orange-300" }
+    default:
+      return { variant: "default" as const, className: "text-xs bg-blue-500 text-blue-50" }
+  }
+}
+
+const pick = (id: keyof typeof projects) => {
+  const p = projects[id]
+  return {
+    id,
+    title: p.title,
+    description: p.description,
+    imageSrc: p.imageSrc,
+    tags: p.tags,
+    category: normalizeCategory(p.category),
+    status: p.status,
+    year: p.year,
+  }
+}
 
 const featuredProjects = [
-  {
-    id: "siacta",
-    title: "SIACTA",
-    description: "System Information Accounting & Tax. Dibangun dengan Laravel 12 & PHP 8.4.",
-    imageSrc: "https://i.ibb.co/60ZXr4gG/Screenshot-2025-10-14-153626.png",
-    tags: ["Laravel 12", "PHP 8.4", "MySQL", "Bootstrap", "Accounting"],
-    category: "web",
-    featured: true,
-    status: "Production",
-    year: "2023"
-  },
-  {
-    id: "medfluffy",
-    title: "MedFluffy",
-    description: "Aplikasi Android untuk prediksi dini penyakit mata pada anjing menggunakan CNN. Dikembangkan sebagai Capstone Project Bangkit Academy 2023 dengan dedikasi 200 jam.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["Kotlin", "TensorFlow", "CNN", "Firebase", "Material Design"],
-    category: "mobile",
-    featured: true,
-    status: "Completed",
-    year: "2023"
-  },
-  {
-    id: "restoranku",
-    title: "Restoranku",
-    description: "QR menu & Midtrans. Dibangun dengan Laravel 12 & PHP 8.4.",
-    imageSrc: "https://i.ibb.co/j970072V/Screenshot-2025-10-14-164926.png",
-    tags: ["Laravel 12", "PHP 8.4", "MySQL", "Bootstrap", "Midtrans", "QR Code"],
-    category: "web",
-    featured: true,
-    status: "Production",
-    year: "2025"
-  },
-  {
-    id: "ramadhanjs",
-    title: "RamadhanJS",
-    description: "Aplikasi JavaScript untuk fitur dan utilitas terkait Ramadhan, termasuk kalkulasi waktu sholat, jadwal puasa, dan pengingat ibadah.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["JavaScript", "API Integration", "Islamic Calendar", "PWA"],
-    category: "web",
-    featured: true,
-    status: "Completed",
-    year: "2023"
-  },
-  {
-    id: "proquoteai",
-    title: "ProQuoteAI",
-    description: "SaaS untuk generate quotation/proposal proyek berbasis AI.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["SaaS", "AI", "Quotation", "Next.js"],
-    category: "web",
-    featured: true,
-    status: "Production",
-    year: "2025"
-  },
-  {
-    id: "patunganyuk",
-    title: "PatunganYuk",
-    description: "SaaS untuk split bill dengan AI scan struk belanja.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["SaaS", "AI", "Split Bill", "Next.js"],
-    category: "web",
-    featured: true,
-    status: "Production",
-    year: "2025"
-  }
+  pick("siacta"),
+  pick("medfluffy"),
+  pick("restoranku"),
+  pick("ramadhanjs"),
+  pick("proquoteai"),
+  pick("patunganyuk"),
 ]
 
 const recentProjects = [
-  {
-    id: "sibi-app-ui-ux",
-    title: "SIBI App UI/UX",
-    description: "Desain antarmuka pengguna untuk aplikasi SIBI dengan fokus pada user experience yang optimal dan aksesibilitas.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["UI/UX Design", "Figma", "User Research", "Prototyping"],
-    category: "design",
-    status: "Completed",
-    year: "2024"
-  },
-  {
-    id: "lavafa-co",
-    title: "LavaFa.co",
-    description: "Platform digital modern dengan desain yang elegan dan fungsionalitas yang komprehensif untuk kebutuhan bisnis.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["React", "Next.js", "TypeScript", "Modern Design"],
-    category: "web",
-    status: "Completed",
-    year: "2024"
-  },
-  {
-    id: "laravel-mastery",
-    title: "Laravel Mastery",
-    description: "Proyek pembelajaran dan penguasaan framework Laravel dengan implementasi fitur-fitur advanced dan best practices.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["Laravel", "PHP", "Advanced Features", "Best Practices"],
-    category: "web",
-    status: "Completed",
-    year: "2024"
-  },
-  {
-    id: "mentoring-landing",
-    title: "Mentoring Landing Page",
-    description: "Landing page modern dan responsif untuk Program Mentoring dengan desain yang clean dan user-friendly.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["TypeScript", "Next.js", "Tailwind CSS", "Responsive Design"],
-    category: "web",
-    status: "Completed",
-    year: "2024"
-  },
-  {
-    id: "laravel-upi-training",
-    title: "Laravel 12 UPI Training",
-    description: "Aplikasi manajemen mahasiswa dan program studi sederhana dengan operasi CRUD lengkap, dikembangkan untuk pelatihan Laravel 12 di UPI.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["Laravel 12", "PHP", "MySQL", "CRUD Operations"],
-    category: "web",
-    status: "Training Project",
-    year: "2024"
-  },
-  {
-    id: "mangrove-kedatim",
-    title: "Mangrove Kedatim",
-    description: "Aplikasi untuk monitoring dan pengelolaan ekosistem mangrove di wilayah Kedatim dengan fitur tracking dan reporting.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["React", "Environmental Tech", "Monitoring System"],
-    category: "web",
-    status: "Completed",
-    year: "2024"
-  },
-  {
-    id: "desa-cisontrol",
-    title: "Desa Cisontrol",
-    description: "Sistem informasi desa untuk pengelolaan administrasi dan layanan masyarakat desa Cisontrol.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["Laravel", "Government System", "Public Service"],
-    category: "web",
-    status: "Completed",
-    year: "2024"
-  },
-  {
-    id: "newyear-countdown",
-    title: "New Year Countdown",
-    description: "Aplikasi countdown interaktif untuk perayaan tahun baru dengan animasi dan efek visual yang menarik.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["JavaScript", "CSS Animations", "Interactive UI"],
-    category: "web",
-    status: "Completed",
-    year: "2024"
-  },
-  {
-    id: "sushi-webapp",
-    title: "Sushi Web App",
-    description: "Aplikasi web untuk restoran sushi dengan fitur menu interaktif, pemesanan online, dan sistem manajemen pesanan.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["React", "Food Service", "E-commerce"],
-    category: "web",
-    status: "Completed",
-    year: "2024"
-  },
-  {
-    id: "story-app",
-    title: "StoryApp",
-    description: "Aplikasi Android untuk berbagi cerita dengan fitur upload gambar, lokasi, dan timeline interaktif.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["Kotlin", "Android", "Social Media", "Location Services"],
-    category: "mobile",
-    status: "Completed",
-    year: "2023"
-  },
-  {
-    id: "laundry-app-dirtless",
-    title: "Laundry App - Dirtless",
-    description: "Aplikasi manajemen laundry dengan fitur tracking pesanan, notifikasi status, dan sistem pembayaran terintegrasi.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["React Native", "Business Management", "Payment Integration"],
-    category: "mobile",
-    status: "Completed",
-    year: "2023"
-  },
-  {
-    id: "smart-clinic-ui",
-    title: "Smart Clinic UI",
-    description: "Interface pengguna untuk sistem klinik pintar dengan desain modern dan user experience yang optimal untuk tenaga medis.",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-    tags: ["React", "Healthcare UI", "Medical System", "UX Design"],
-    category: "web",
-    status: "Completed",
-    year: "2023"
-  }
+  pick("sibi-app-ui-ux"),
+  pick("lavafa-co"),
+  pick("laravel-mastery"),
+  pick("mentoring-landing"),
+  pick("laravel-upi-training"),
+  pick("mangrove-kedatim"),
+  pick("desa-cisontrol"),
+  pick("newyear-countdown"),
+  pick("sushi-webapp"),
+  pick("story-app"),
+  pick("laundry-app-dirtless"),
+  pick("smart-clinic-ui"),
 ]
 
 const allProjects = [...featuredProjects, ...recentProjects]
@@ -209,7 +81,7 @@ export default function ProjectsPage() {
           <PageHeader title={t('projectsTitle')} description={t('projectsDescription')} />
 
           {/* Featured Projects Section */}
-          <ContentBlock title={`🌟 ${t('featuredProjectsTitle')}`} className="mt-8">
+          <ContentBlock title={t('featuredProjectsTitle')} className="mt-8">
             <p className="text-muted-foreground mb-6">
               {t('language') === 'id' 
                 ? "Proyek-proyek utama yang menunjukkan keahlian dan pengalaman saya dalam pengembangan aplikasi web dan mobile."
@@ -240,7 +112,7 @@ export default function ProjectsPage() {
           </ContentBlock>
 
           {/* Recent Projects Section */}
-          <ContentBlock title={`🚀 ${t('recentProjectsTitle')}`} className="mt-12">
+          <ContentBlock title={t('recentProjectsTitle')} className="mt-12">
             <p className="text-muted-foreground mb-6">
               {t('language') === 'id' 
                 ? "Proyek-proyek terbaru yang sedang dikerjakan atau baru saja diselesaikan, menampilkan eksplorasi teknologi dan solusi inovatif."
@@ -269,18 +141,11 @@ export default function ProjectsPage() {
                         href={`/projects/${project.id}`}
                       />
                       <div className="absolute top-4 right-4 flex gap-2">
-                        <Badge 
-                          variant={project.status === "In Development" ? "default" : "outline"} 
-                          className={`text-xs ${
-                            project.status === "In Development" 
-                              ? "bg-blue-500 text-blue-50" 
-                              : project.status === "Completed"
-                              ? "bg-green-100 text-green-800 border-green-300"
-                              : "bg-orange-100 text-orange-800 border-orange-300"
-                          }`}
-                        >
-                          {project.status}
-                        </Badge>
+                        {(() => { const s = getStatusStyle(project.status); return (
+                          <Badge variant={s.variant} className={s.className}>
+                            {project.status}
+                          </Badge>
+                        )})()}
                       </div>
                     </div>
                   ))}
@@ -300,19 +165,12 @@ export default function ProjectsPage() {
                           tags={project.tags}
                           href={`/projects/${project.id}`}
                         />
-                        <div className="absolute top-4 right-4">
-                          <Badge 
-                            variant={project.status === "In Development" ? "default" : "outline"} 
-                            className={`text-xs ${
-                              project.status === "In Development" 
-                                ? "bg-blue-500 text-blue-50" 
-                                : project.status === "Completed"
-                                ? "bg-green-100 text-green-800 border-green-300"
-                                : "bg-orange-100 text-orange-800 border-orange-300"
-                            }`}
-                          >
-                            {project.status}
-                          </Badge>
+                      <div className="absolute top-4 right-4">
+                          {(() => { const s = getStatusStyle(project.status); return (
+                            <Badge variant={s.variant} className={s.className}>
+                              {project.status}
+                            </Badge>
+                          )})()}
                         </div>
                       </div>
                     ))}
@@ -333,18 +191,11 @@ export default function ProjectsPage() {
                           href={`/projects/${project.id}`}
                         />
                         <div className="absolute top-4 right-4">
-                          <Badge 
-                            variant={project.status === "In Development" ? "default" : "outline"} 
-                            className={`text-xs ${
-                              project.status === "In Development" 
-                                ? "bg-blue-500 text-blue-50" 
-                                : project.status === "Completed"
-                                ? "bg-green-100 text-green-800 border-green-300"
-                                : "bg-orange-100 text-orange-800 border-orange-300"
-                            }`}
-                          >
-                            {project.status}
-                          </Badge>
+                          {(() => { const s = getStatusStyle(project.status); return (
+                            <Badge variant={s.variant} className={s.className}>
+                              {project.status}
+                            </Badge>
+                          )})()}
                         </div>
                       </div>
                     ))}
@@ -365,18 +216,11 @@ export default function ProjectsPage() {
                           href={`/projects/${project.id}`}
                         />
                         <div className="absolute top-4 right-4">
-                          <Badge 
-                            variant={project.status === "In Development" ? "default" : "outline"} 
-                            className={`text-xs ${
-                              project.status === "In Development" 
-                                ? "bg-blue-500 text-blue-50" 
-                                : project.status === "Completed"
-                                ? "bg-green-100 text-green-800 border-green-300"
-                                : "bg-orange-100 text-orange-800 border-orange-300"
-                            }`}
-                          >
-                            {project.status}
-                          </Badge>
+                          {(() => { const s = getStatusStyle(project.status); return (
+                            <Badge variant={s.variant} className={s.className}>
+                              {project.status}
+                            </Badge>
+                          )})()}
                         </div>
                       </div>
                     ))}
@@ -409,7 +253,7 @@ export default function ProjectsPage() {
           </ContentBlock>
 
           {/* Project Statistics */}
-          <ContentBlock title={`📊 ${t('projectStats')}`} className="mt-12">
+          <ContentBlock title={t('projectStats')} className="mt-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="text-center p-4 border rounded-lg">
                 <div className="text-2xl font-bold text-primary">{allProjects.length}</div>
@@ -423,7 +267,7 @@ export default function ProjectsPage() {
               </div>
               <div className="text-center p-4 border rounded-lg">
                 <div className="text-2xl font-bold text-blue-600">
-                  {allProjects.filter(p => p.status === "In Development").length}
+                  {allProjects.filter(p => !isDone(p.status)).length}
                 </div>
                 <div className="text-sm text-muted-foreground">{t('inDevelopment')}</div>
               </div>
@@ -436,7 +280,7 @@ export default function ProjectsPage() {
             </div>
           </ContentBlock>
 
-          <ContentBlock title={`🔍 ${t('language') === 'id' ? 'Proses Pengembangan' : 'Development Process'}`} className="mt-12">
+          <ContentBlock title={t('language') === 'id' ? 'Proses Pengembangan' : 'Development Process'} className="mt-12">
             <div className="space-y-6">
               <div className="relative pl-6 border-l-2 border-muted pb-6">
                 <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-primary"></div>

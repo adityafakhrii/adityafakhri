@@ -7,7 +7,7 @@ interface ProjectCardProps {
   title: string
   description: string
   imageSrc: string
-  tags: string[]
+  tags: readonly string[]
   href: string
 }
 
