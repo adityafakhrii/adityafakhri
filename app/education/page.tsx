@@ -13,7 +13,7 @@ export default function EducationPage() {
           <PageHeader title={t('educationTitle')} description={t('educationDescription')} />
 
           <div className="mt-8 space-y-8">
-            <ContentBlock title={`🎓 ${t('formalEducation')}`}>
+            <ContentBlock title={t('formalEducation')}>
               <div className="space-y-8">
                 {/* S1 */}
                 <div className="relative pl-6 border-l-2 border-muted pb-8">
@@ -135,7 +135,7 @@ export default function EducationPage() {
               </div>
             </ContentBlock>
 
-            <ContentBlock title={`🧠 ${t('nonFormalEducation')}`}>
+            <ContentBlock title={t('nonFormalEducation')}>
               <div className="space-y-8">
                 {/* Bangkit Academy */}
                 <div className="relative pl-6 border-l-2 border-muted pb-8">
@@ -178,7 +178,7 @@ export default function EducationPage() {
               </div>
             </ContentBlock>
 
-            <ContentBlock title={`🏆 ${t('certifications')}`}>
+            <ContentBlock title={t('certifications')}>
               <div className="space-y-4">
                 <div className="p-4 border rounded-lg">
                   <h3 className="font-medium">AWS Certified Developer - Associate</h3>
@@ -219,7 +219,7 @@ export default function EducationPage() {
               </div>
             </ContentBlock>
 
-            <ContentBlock title={`📚 ${t('continuousLearning')}`}>
+            <ContentBlock title={t('continuousLearning')}>
               <p className="mb-4">
                 {t('language') === 'id' 
                   ? "Saya percaya bahwa pembelajaran adalah proses seumur hidup. Berikut adalah beberapa platform dan sumber belajar yang saya gunakan untuk terus mengembangkan keterampilan:"
@@ -254,7 +254,7 @@ export default function EducationPage() {
                     {t('language') === 'id' ? 'Buku & Publikasi' : 'Books & Publications'}
                   </h3>
                   <ul className="text-sm space-y-1">
-                    <li>O'Reilly Media</li>
+                    <li>O&apos;Reilly Media</li>
                     <li>Manning Publications</li>
                     <li>Smashing Magazine</li>
                     <li>CSS-Tricks</li>

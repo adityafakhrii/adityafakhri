@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "Aditya Fakhri",
     images: [
       {
-        url: "https://i.ibb.co/ycGvkkbP/adit.jpg",
+        url: "/foto-adit.webp",
         width: 1200,
         height: 630,
         alt: "Aditya Fakhri Riansyah",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: "Aditya Fakhri Riansyah | AI-Driven Web Developer",
     description:
       "Portfolio Aditya Fakhri Riansyah — Web Developer berbasis AI, Mentor, dan Tech Content Creator.",
-    images: ["https://i.ibb.co/ycGvkkbP/adit.jpg"],
+    images: ["/foto-adit.webp"],
   },
   robots: {
     index: true,

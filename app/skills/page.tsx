@@ -14,7 +14,7 @@ export default function SkillsPage() {
           <PageHeader title={t('skills')} description={t('language') === 'id' ? "Hard skills dan soft skills yang saya kuasai" : "Hard skills and soft skills I master"} />
 
           <div className="mt-8 space-y-12">
-            <ContentBlock title={`💻 ${t('language') === 'id' ? 'Hard Skills' : 'Hard Skills'}`}>
+            <ContentBlock title={t('language') === 'id' ? 'Hard Skills' : 'Hard Skills'}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <Card>
                   <CardContent className="p-6">
@@ -254,7 +254,7 @@ export default function SkillsPage() {
               </div>
             </ContentBlock>
 
-            <ContentBlock title={`🔧 ${t('language') === 'id' ? 'Tools & Technologies Lainnya' : 'Other Tools & Technologies'}`}>
+            <ContentBlock title={t('language') === 'id' ? 'Tools & Technologies Lainnya' : 'Other Tools & Technologies'}>
               <div className="flex flex-wrap gap-2">
                 {[
                   "Git",
@@ -284,14 +284,13 @@ export default function SkillsPage() {
               </div>
             </ContentBlock>
 
-            <ContentBlock title={`🤝 ${t('language') === 'id' ? 'Soft Skills' : 'Soft Skills'}`}>
+            <ContentBlock title={t('language') === 'id' ? 'Soft Skills' : 'Soft Skills'}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card>
                   <CardContent className="p-6">
                     <h3 className="font-medium mb-4">{t('language') === 'id' ? 'Komunikasi & Kepemimpinan' : 'Communication & Leadership'}</h3>
                     <ul className="space-y-3">
                       <li className="flex items-center">
-                        <span className="mr-2">🎤</span>
                         <div>
                           <p className="font-medium">{t('language') === 'id' ? 'Public Speaking' : 'Public Speaking'}</p>
                           <p className="text-sm text-muted-foreground">
@@ -303,7 +302,6 @@ export default function SkillsPage() {
                         </div>
                       </li>
                       <li className="flex items-center">
-                        <span className="mr-2">👨‍🏫</span>
                         <div>
                           <p className="font-medium">{t('mentoring')}</p>
                           <p className="text-sm text-muted-foreground">
@@ -315,7 +313,6 @@ export default function SkillsPage() {
                         </div>
                       </li>
                       <li className="flex items-center">
-                        <span className="mr-2">👥</span>
                         <div>
                           <p className="font-medium">{t('language') === 'id' ? 'Kepemimpinan Tim' : 'Team Leadership'}</p>
                           <p className="text-sm text-muted-foreground">
@@ -327,7 +324,6 @@ export default function SkillsPage() {
                         </div>
                       </li>
                       <li className="flex items-center">
-                        <span className="mr-2">📝</span>
                         <div>
                           <p className="font-medium">{t('language') === 'id' ? 'Penulisan Teknis' : 'Technical Writing'}</p>
                           <p className="text-sm text-muted-foreground">
@@ -347,7 +343,6 @@ export default function SkillsPage() {
                     <h3 className="font-medium mb-4">{t('language') === 'id' ? 'Pemecahan Masalah & Adaptabilitas' : 'Problem Solving & Adaptability'}</h3>
                     <ul className="space-y-3">
                       <li className="flex items-center">
-                        <span className="mr-2">🧩</span>
                         <div>
                           <p className="font-medium">{t('language') === 'id' ? 'Pemecahan Masalah' : 'Problem Solving'}</p>
                           <p className="text-sm text-muted-foreground">
@@ -359,7 +354,6 @@ export default function SkillsPage() {
                         </div>
                       </li>
                       <li className="flex items-center">
-                        <span className="mr-2">🔄</span>
                         <div>
                           <p className="font-medium">{t('language') === 'id' ? 'Adaptabilitas' : 'Adaptability'}</p>
                           <p className="text-sm text-muted-foreground">
@@ -371,7 +365,6 @@ export default function SkillsPage() {
                         </div>
                       </li>
                       <li className="flex items-center">
-                        <span className="mr-2">⏱️</span>
                         <div>
                           <p className="font-medium">{t('language') === 'id' ? 'Manajemen Waktu' : 'Time Management'}</p>
                           <p className="text-sm text-muted-foreground">
@@ -383,7 +376,6 @@ export default function SkillsPage() {
                         </div>
                       </li>
                       <li className="flex items-center">
-                        <span className="mr-2">🔍</span>
                         <div>
                           <p className="font-medium">{t('language') === 'id' ? 'Perhatian pada Detail' : 'Attention to Detail'}</p>
                           <p className="text-sm text-muted-foreground">
@@ -400,7 +392,7 @@ export default function SkillsPage() {
               </div>
             </ContentBlock>
 
-            <ContentBlock title={`🌐 ${t('languages')}`}>
+            <ContentBlock title={t('languages')}> 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 border rounded-lg">
                   <h3 className="font-medium">Bahasa Indonesia</h3>

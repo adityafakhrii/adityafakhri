@@ -175,7 +175,7 @@ export default function BlogPage() {
             ))}
           </Tabs>
 
-          <ContentBlock title={`📬 ${t('language') === 'id' ? 'Berlangganan Newsletter' : 'Subscribe Newsletter'}`} className="mt-12">
+          <ContentBlock title={t('language') === 'id' ? 'Berlangganan Newsletter' : 'Subscribe Newsletter'} className="mt-12">
             <div className="text-center max-w-xl mx-auto">
               <p className="mb-4">
                 {t('language') === 'id' 

@@ -182,7 +182,7 @@ export default function ContactPage() {
                 </div>
               </ContentBlock>
 
-              <ContentBlock title={`⏱️ ${t('workingHours')}`}>
+              <ContentBlock title={t('workingHours')}>
                 <div className="space-y-2">
                   <div className="flex justify-between">
                     <span>{t('language') === 'id' ? 'Senin - Jumat' : 'Monday - Friday'}</span>
@@ -195,7 +195,7 @@ export default function ContactPage() {
                 </div>
               </ContentBlock>
 
-              <ContentBlock title={`💬 ${t('response')}`}>
+              <ContentBlock title={t('response')}>
                 <p className="text-sm">
                   {t('language') === 'id' 
                     ? "Saya biasanya merespons pesan dalam waktu 1 jam. Untuk pertanyaan mendesak, silakan hubungi melalui telepon."

@@ -289,7 +289,7 @@ export default function MentoringPage() {
                 <div className="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6">
                   <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
                     <Image
-                      src="https://i.ibb.co/849G20Hn/profile-pic-9.png"
+                      src="/foto-adit.webp"
                       alt="Aditya Fakhri Riansyah"
                       width={96}
                       height={96}
@@ -467,7 +467,7 @@ export default function MentoringPage() {
                         <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                       ))}
                     </div>
-                    <p className="text-sm mb-4 italic">"{testimonial.testimonial}"</p>
+                    <p className="text-sm mb-4 italic">&ldquo;{testimonial.testimonial}&rdquo;</p>
                     <div>
                       <p className="font-medium">{testimonial.name}</p>
                       <p className="text-sm text-muted-foreground">{testimonial.role}</p>

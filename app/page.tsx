@@ -54,7 +54,7 @@ export default function Home() {
             </div>
           </ContentBlock>
 
-          <ContentBlock title={`🤝 ${t('collaboration')}`} className="mt-12">
+          <ContentBlock title={t('collaboration')} className="mt-12">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
               {[
                 { name: "Google", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" },
@@ -94,7 +94,7 @@ export default function Home() {
             </div>
           </ContentBlock>
 
-          <ContentBlock title={`✨ ${t('mainSkills')}`} className="mt-12">
+          <ContentBlock title={t('mainSkills')} className="mt-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Card>
                 <CardContent className="p-6">
@@ -162,7 +162,7 @@ export default function Home() {
             </div>
           </ContentBlock>
 
-          <ContentBlock title={`📂 ${t('featuredProjects')}`} className="mt-12">
+          <ContentBlock title={t('featuredProjects')} className="mt-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <ProjectCard
                 title="SIACTA"
@@ -206,7 +206,7 @@ export default function Home() {
             </div>
           </ContentBlock>
 
-          <ContentBlock title={`📚 ${t('latestBlog')}`} className="mt-12">
+          <ContentBlock title={t('latestBlog')} className="mt-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card className="overflow-hidden h-full transition-all duration-200 hover:shadow-md">
                 <div className="relative h-48 w-full overflow-hidden">
@@ -252,7 +252,7 @@ export default function Home() {
             </div>
           </ContentBlock>
 
-          <ContentBlock title={`📞 ${t('contactMe')}`} className="mt-12">
+          <ContentBlock title={t('contactMe')} className="mt-12">
             <div className="text-center">
               <p className="text-lg mb-6">
                 Tertarik untuk berkolaborasi atau memiliki pertanyaan? Jangan ragu untuk menghubungi saya.

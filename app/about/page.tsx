@@ -28,14 +28,14 @@ export default function AboutPage() {
                 </p>
                 <p className="text-lg">
                   {t('language') === 'id'
-                    ? "Selalu terbuka untuk berkolaborasi, berbagi pengetahuan, atau sekadar minum kopi dan mengobrol tentang teknologi! Jangan ragu untuk terhubung di adityafakhri03@gmail.com. 🚀☕"
-                    : "Always open to collaborate, share knowledge, or just have coffee and chat about technology! Don't hesitate to connect at adityafakhri03@gmail.com. 🚀☕"
+                    ? "Selalu terbuka untuk berkolaborasi, berbagi pengetahuan, atau sekadar minum kopi dan mengobrol tentang teknologi! Jangan ragu untuk terhubung di adityafakhri03@gmail.com."
+                    : "Always open to collaborate, share knowledge, or just have coffee and chat about technology! Don't hesitate to connect at adityafakhri03@gmail.com."
                   }
                 </p>
               </div>
             </ContentBlock>
 
-            <ContentBlock title={`🧠 ${t('philosophy')}`}>
+            <ContentBlock title={t('philosophy')}>
               <ul className="list-disc list-inside space-y-2">
                 <li>{t('language') === 'id' ? "Teknologi harus mempermudah, bukan mempersulit" : "Technology should simplify, not complicate"}</li>
                 <li>{t('language') === 'id' ? "Kode yang baik adalah kode yang dapat dipahami" : "Good code is understandable code"}</li>
@@ -45,7 +45,7 @@ export default function AboutPage() {
               </ul>
             </ContentBlock>
 
-            <ContentBlock title={`🌟 ${t('values')}`}>
+            <ContentBlock title={t('values')}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 border rounded-lg">
                   <h3 className="font-medium mb-2">{t('language') === 'id' ? "Inovasi" : "Innovation"}</h3>
@@ -86,10 +86,10 @@ export default function AboutPage() {
               </div>
             </ContentBlock>
 
-            <ContentBlock title={`🌱 ${t('hobbies')}`}>
+            <ContentBlock title={t('hobbies')}>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="p-4 border rounded-lg">
-                  <h3 className="font-medium mb-2">📚 {t('language') === 'id' ? "Membaca" : "Reading"}</h3>
+                  <h3 className="font-medium mb-2">{t('language') === 'id' ? "Membaca" : "Reading"}</h3>
                   <p className="text-sm text-muted-foreground">
                     {t('language') === 'id' 
                       ? "Buku teknologi, fiksi ilmiah, dan pengembangan diri."
@@ -98,7 +98,7 @@ export default function AboutPage() {
                   </p>
                 </div>
                 <div className="p-4 border rounded-lg">
-                  <h3 className="font-medium mb-2">🏃‍♂️ {t('language') === 'id' ? "Olahraga" : "Sports"}</h3>
+                  <h3 className="font-medium mb-2">{t('language') === 'id' ? "Olahraga" : "Sports"}</h3>
                   <p className="text-sm text-muted-foreground">
                     {t('language') === 'id'
                       ? "Sepakbola, Futsal, Lari, dan Bulu Tangkis."
@@ -107,7 +107,7 @@ export default function AboutPage() {
                   </p>
                 </div>
                 <div className="p-4 border rounded-lg">
-                  <h3 className="font-medium mb-2">🎮 Gaming</h3>
+                  <h3 className="font-medium mb-2">Gaming</h3>
                   <p className="text-sm text-muted-foreground">
                     {t('language') === 'id'
                       ? "Game strategi dan open world untuk melatih pemecahan masalah. Tak lupa menyusun taktik dalam game Sepakbola"

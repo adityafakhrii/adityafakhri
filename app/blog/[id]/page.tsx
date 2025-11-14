@@ -660,7 +660,7 @@ async function getUser(id: string): Promise<User> {
   },
 }
 
-export default function BlogPostPage({ params }: { params: { id: string } }) {
+export default function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = React.use(params)
 
   return (
