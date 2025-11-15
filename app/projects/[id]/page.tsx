@@ -176,10 +176,10 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                   {('outcomes' in project && project.outcomes && project.outcomes.length > 0) ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {project.outcomes!.map((outcome, index) => (
-                        <div key={index} className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                        <div key={index} className="p-4 bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-800 rounded-lg">
                           <div className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                            <span className="text-sm">{outcome}</span>
+                            <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-green-800 dark:text-green-100">{outcome}</span>
                           </div>
                         </div>
                       ))}

@@ -335,8 +335,8 @@ export default function MentoringPage() {
                     <p className="text-sm text-muted-foreground">/ sesi</p>
                   </div>
                   
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-3 mb-6">
-                    <p className="text-sm font-medium text-green-800">
+                  <div className="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-800 rounded-lg p-3 mb-6">
+                    <p className="text-sm font-medium text-green-800 dark:text-green-100">
                       Diskon 79% khusus harga early bird batch pertama — bisa naik setelah batch ini penuh
                     </p>
                   </div>

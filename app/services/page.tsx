@@ -209,15 +209,15 @@ export default function ServicesPage() {
                 </Card>
               </div>
               {/* Kartu info owning content */}
-              <Card className="overflow-hidden border-2 border-amber-300 bg-amber-50 hover:border-amber-400 hover:bg-amber-100 hover:shadow-lg transition-all duration-200">
+              <Card className="overflow-hidden border-2 border-amber-300 bg-amber-50 hover:border-amber-400 hover:bg-amber-100 hover:shadow-lg transition-all duration-200 dark:border-amber-800 dark:bg-amber-900 dark:hover:border-amber-700 dark:hover:bg-amber-800">
                 <CardContent className="p-4 flex items-start gap-3">
-                  <AlertTriangle className="h-5 w-5 text-amber-600 mt-0.5" />
+                  <AlertTriangle className="h-5 w-5 text-amber-600 dark:text-amber-300 mt-0.5" />
                   <div>
                     <p className="text-sm">
                       {t('language') === 'id' 
                         ? 'PENTING: Jika Anda ingin memiliki hak kepemilikan penuh atas konten (owning content), maka akan dikenakan biaya tambahan sebesar 2x lipat dari harga yang tertera di rate card. Hak kepemilikan ini memberikan Anda kebebasan penuh untuk menggunakan, memodifikasi, dan mendistribusikan konten tersebut.'
                         : 'IMPORTANT: If you want full ownership rights over the content (owning content), an additional fee of 2x the listed rate card price will be charged. This ownership grants you complete freedom to use, modify, and distribute the content.'}
-                    </p>
+                  </p>
                   </div>
                 </CardContent>
               </Card>
