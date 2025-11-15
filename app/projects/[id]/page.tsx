@@ -68,12 +68,12 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
               </div>
               
               <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">{project.title}</h1>
-              <p className="text-xl text-muted-foreground mb-4">{project.subtitle || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
+              <p className="text-xl text-muted-foreground mb-4">{project.subtitle || t('notAvailable')}</p>
               
               <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center">
                   <User className="h-4 w-4 mr-1" />
-                  {project.role || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}
+                  {project.role || t('notAvailable')}
                 </div>
                 <div className="flex items-center">
                   <Calendar className="h-4 w-4 mr-1" />
@@ -81,7 +81,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                 </div>
                 <div className="flex items-center">
                   <Clock className="h-4 w-4 mr-1" />
-                  {project.duration || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}
+                  {project.duration || t('notAvailable')}
                 </div>
               </div>
             </div>
@@ -103,8 +103,8 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                 {/* Project Overview */}
                 <ContentBlock>
                   <h2 className="text-2xl font-bold mb-4">{t('overview')}</h2>
-                  <p className="text-lg mb-4">{project.fullDescription || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
-                  <p className="text-muted-foreground">{project.description || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
+                  <p className="text-lg mb-4">{project.fullDescription || t('notAvailable')}</p>
+                  <p className="text-muted-foreground">{project.description || t('notAvailable')}</p>
                 </ContentBlock>
 
                 {/* Goals */}
@@ -123,7 +123,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                       ))}
                     </ul>
                   ) : (
-                    <p className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Belum tersedia' : 'Not available'}</p>
+                    <p className="text-sm text-muted-foreground">{t('notAvailable')}</p>
                   )}
                 </ContentBlock>
 
@@ -140,7 +140,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                       ))}
                     </div>
                   ) : (
-                    <p className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Belum tersedia' : 'Not available'}</p>
+                    <p className="text-sm text-muted-foreground">{t('notAvailable')}</p>
                   )}
                 </ContentBlock>
 
@@ -166,7 +166,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                       ))}
                     </div>
                   ) : (
-                    <p className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Belum tersedia' : 'Not available'}</p>
+                    <p className="text-sm text-muted-foreground">{t('notAvailable')}</p>
                   )}
                 </ContentBlock>
 
@@ -185,7 +185,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                       ))}
                     </div>
                   ) : (
-                    <p className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Belum tersedia' : 'Not available'}</p>
+                    <p className="text-sm text-muted-foreground">{t('notAvailable')}</p>
                   )}
                 </ContentBlock>
 
@@ -229,7 +229,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                       ))}
                     </div>
                   ) : (
-                    <p className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Belum tersedia' : 'Not available'}</p>
+                    <p className="text-sm text-muted-foreground">{t('notAvailable')}</p>
                   )}
                 </ContentBlock>
 
@@ -292,7 +292,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                         </Link>
                       </Button>
                     ) : (
-                      <div className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Live: Belum tersedia' : 'Live: Not available'}</div>
+                      <div className="text-sm text-muted-foreground">{t('liveNotAvailable')}</div>
                     )}
                     
                     {project.repoUrl ? (
@@ -303,7 +303,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                         </Link>
                       </Button>
                     ) : (
-                      <div className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Repository: Belum tersedia' : 'Repository: Not available'}</div>
+                      <div className="text-sm text-muted-foreground">{t('repoNotAvailable')}</div>
                     )}
                   </div>
                 </ContentBlock>
@@ -320,7 +320,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                       ))}
                     </div>
                   ) : (
-                    <p className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Belum tersedia' : 'Not available'}</p>
+                    <p className="text-sm text-muted-foreground">{t('notAvailable')}</p>
                   )}
                 </ContentBlock>
 

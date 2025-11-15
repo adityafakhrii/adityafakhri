@@ -11,63 +11,17 @@ import { Search, Calendar, Clock } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { TranslatedContent } from "@/components/translated-content"
+import blogs from "@/data/blog"
 
-const articles = [
-  {
-    id: "ai-web-development",
-    title: "Mengintegrasikan AI dalam Pengembangan Web Modern",
-    excerpt: "Bagaimana AI dapat meningkatkan pengalaman pengguna dan efisiensi dalam pengembangan web.",
-    date: "12 Apr 2023",
-    readTime: "8 min",
-    category: "AI",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-  },
-  {
-    id: "nextjs-vs-react",
-    title: "Next.js vs React: Kapan Menggunakan Masing-masing?",
-    excerpt: "Perbandingan mendalam antara Next.js dan React untuk berbagai kasus penggunaan.",
-    date: "28 Mar 2023",
-    readTime: "6 min",
-    category: "Web Development",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-  },
-  {
-    id: "typescript-best-practices",
-    title: "Praktik Terbaik TypeScript untuk Proyek Skala Besar",
-    excerpt: "Tips dan trik untuk mengelola proyek TypeScript yang kompleks dan berskala besar.",
-    date: "15 Feb 2023",
-    readTime: "10 min",
-    category: "TypeScript",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-  },
-  {
-    id: "responsive-design-2023",
-    title: "Tren Desain Responsif di 2023",
-    excerpt: "Eksplorasi tren terbaru dalam desain responsif dan bagaimana menerapkannya.",
-    date: "03 Jan 2023",
-    readTime: "5 min",
-    category: "UI/UX",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-  },
-  {
-    id: "serverless-architecture",
-    title: "Memahami Arsitektur Serverless",
-    excerpt: "Panduan komprehensif tentang arsitektur serverless dan implementasinya.",
-    date: "19 Dec 2022",
-    readTime: "7 min",
-    category: "Backend",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-  },
-  {
-    id: "mentoring-junior-developers",
-    title: "Tips Mentoring untuk Developer Junior",
-    excerpt: "Strategi efektif untuk membimbing dan mengembangkan developer junior.",
-    date: "05 Nov 2022",
-    readTime: "6 min",
-    category: "Career",
-    imageSrc: "/placeholder.svg?height=200&width=400",
-  },
-]
+const articles = Object.entries(blogs).map(([id, p]) => ({
+  id,
+  title: p.title,
+  excerpt: p.excerpt,
+  date: p.date,
+  readTime: p.readTime,
+  category: p.category,
+  imageSrc: p.imageSrc || "/placeholder.svg?height=200&width=400",
+}))
 
 export default function BlogPage() {
   return (
@@ -108,7 +62,7 @@ export default function BlogPage() {
                         />
                       </div>
                       <CardContent className="p-4">
-                        <Badge className="mb-2">{article.category}</Badge>
+                        <Badge className="mb-2 bg-muted text-muted-foreground">{article.category}</Badge>
                         <h3 className="font-medium text-lg line-clamp-2">{article.title}</h3>
                         <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{article.excerpt}</p>
                       </CardContent>

@@ -23,13 +23,13 @@ const getStatusStyle = (s: (typeof featuredProjects)[number]["status"]) => {
   switch (s) {
     case "Completed":
     case "Production":
-      return { variant: "outline" as const, className: "text-xs bg-green-100 text-green-800 border-green-300" }
+      return { variant: "outline" as const, className: "text-xs bg-green-100 text-green-800 border-green-300 dark:bg-green-900 dark:text-green-100 dark:border-green-700" }
     case "Prototype":
     case "Beta":
     case "Training Project":
-      return { variant: "outline" as const, className: "text-xs bg-orange-100 text-orange-800 border-orange-300" }
+      return { variant: "outline" as const, className: "text-xs bg-orange-100 text-orange-800 border-orange-300 dark:bg-orange-900 dark:text-orange-100 dark:border-orange-700" }
     default:
-      return { variant: "default" as const, className: "text-xs bg-blue-500 text-blue-50" }
+      return { variant: "default" as const, className: "text-xs bg-blue-500 text-blue-50 dark:bg-blue-600 dark:text-blue-50" }
   }
 }
 
@@ -99,10 +99,10 @@ export default function ProjectsPage() {
                     href={`/projects/${project.id}`}
                   />
                   <div className="absolute top-4 right-4 flex gap-2">
-                    <Badge variant="default" className="bg-yellow-500 text-yellow-50">
+                    <Badge variant="default" className="bg-yellow-500 text-yellow-50 dark:bg-yellow-600">
                       {t('language') === 'id' ? 'Unggulan' : 'Featured'}
                     </Badge>
-                    <Badge variant="outline" className="text-xs">
+                    <Badge variant="outline" className="text-xs bg-muted text-muted-foreground border-border">
                       {project.year}
                     </Badge>
                   </div>
@@ -241,7 +241,7 @@ export default function ProjectsPage() {
                           href={`/projects/${project.id}`}
                         />
                         <div className="absolute top-4 right-4">
-                          <Badge variant="outline" className="text-xs bg-green-100 text-green-800 border-green-300">
+                          <Badge variant="outline" className="text-xs bg-green-100 text-green-800 border-green-300 dark:bg-green-900 dark:text-green-100 dark:border-green-700">
                             {t('completed')}
                           </Badge>
                         </div>
