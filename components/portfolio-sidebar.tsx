@@ -228,17 +228,13 @@ export function PortfolioSidebar() {
               onClick={toggleTheme}
               className="w-full flex items-center justify-center gap-2"
             >
-              {resolvedTheme === "dark" ? (
-                <>
-                  <Sun className="h-4 w-4" />
-                  <span>{t('lightMode')}</span>
-                </>
-              ) : (
-                <>
-                  <Moon className="h-4 w-4" />
-                  <span>{t('darkMode')}</span>
-                </>
-              )}
+              <span className="relative inline-block h-4 w-4">
+                <Sun className="h-4 w-4 dark:hidden" aria-hidden />
+                <Moon className="h-4 w-4 hidden dark:inline" aria-hidden />
+              </span>
+              <span suppressHydrationWarning>
+                {resolvedTheme === "dark" ? t('lightMode') : t('darkMode')}
+              </span>
             </Button>
           </div>
         </SidebarFooter>

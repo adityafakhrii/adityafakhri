@@ -45,7 +45,7 @@ export default function SpeakingPage() {
                             />
                           </div>
                           <div className="md:col-span-2 p-6">
-                            <div className="flex flex-wrap gap-2 mb-2">
+                            <div className="flex flex-wrap gap-2 mb-2" suppressHydrationWarning>
                               <Badge>{item.category}</Badge>
                               {item.tags.map((tag) => (
                                 <Badge key={tag} variant="outline">{tag}</Badge>
@@ -97,7 +97,7 @@ export default function SpeakingPage() {
                             )}
                             {item.links && item.links.length > 0 && (
                               <div className="mt-4">
-                                <div className="flex flex-wrap gap-2">
+                                <div className="flex flex-wrap gap-2" suppressHydrationWarning>
                                   {item.links.map((link) => (
                                     <Link
                                       key={link.href}
@@ -162,7 +162,7 @@ export default function SpeakingPage() {
                           />
                         </div>
                         <div className="md:col-span-2 p-6">
-                          <div className="flex flex-wrap gap-2 mb-2">
+                          <div className="flex flex-wrap gap-2 mb-2" suppressHydrationWarning>
                             <Badge>{item.category}</Badge>
                             {item.tags.map((tag) => (
                               <Badge key={tag} variant="outline">{tag}</Badge>
@@ -214,7 +214,7 @@ export default function SpeakingPage() {
                           )}
                           {item.links && item.links.length > 0 && (
                               <div className="mt-4">
-                              <div className="flex flex-wrap gap-2">
+                              <div className="flex flex-wrap gap-2" suppressHydrationWarning>
                                 {item.links.map((link) => (
                                   <Link
                                     key={link.href}
