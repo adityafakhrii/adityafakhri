@@ -9,8 +9,29 @@ import { ContentBlock } from "@/components/content-block"
 import dynamic from "next/dynamic"
 const ProjectCard = dynamic(() => import("@/components/project-card").then(m => m.ProjectCard))
 import { TranslatedContent } from "@/components/translated-content"
+import projects from "@/data/projects"
+import blogs from "@/data/blog"
+import { pastEvents } from "@/data/events"
 
 export default function Home() {
+  const pick = (id: keyof typeof projects) => {
+    const p = projects[id]
+    return { id, title: p.title, description: p.description, imageSrc: p.imageSrc, tags: p.tags }
+  }
+  const featuredProjects = [
+    pick("siacta"),
+    pick("medfluffy"),
+    pick("restoranku"),
+    pick("ramadhanjs"),
+    pick("proquoteai"),
+    pick("patunganyuk"),
+  ]
+  const featuredProjectsShow = featuredProjects.slice(0, 4)
+  const articles = Object.entries(blogs)
+    .map(([id, p]) => ({ id, title: p.title, excerpt: p.excerpt, date: p.date, readTime: p.readTime, imageSrc: p.imageSrc || "/placeholder.svg?height=200&width=400" }))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  const latestArticles = articles.slice(0, 4)
+  const recentEvents = pastEvents.slice(0, 4)
   return (
     <TranslatedContent
       renderContent={({ t }) => (
@@ -164,42 +185,50 @@ export default function Home() {
 
           <ContentBlock title={t('featuredProjects')} className="mt-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <ProjectCard
-                title="SIACTA"
-                description="System Information Accounting & Tax: aplikasi web komprehensif untuk mengelola operasi keuangan dan kepatuhan pajak"
-                imageSrc="/placeholder.svg?height=200&width=400"
-                tags={["Laravel", "JavaScript", "MySQL", "Bootstrap"]}
-                href="https://github.com/adityafakhrii/siacta"
-              />
-
-              <ProjectCard
-                title="Restoranku"
-                description="Sistem manajemen restoran dengan fitur pemesanan via QR code dan pembayaran QRIS via Midtrans."
-                imageSrc="/placeholder.svg?height=200&width=400"
-                tags={["Laravel", "JavaScript", "MySQL", "Bootstrap"]}
-                href="/projects/restoranku"
-              />
-
-               <ProjectCard
-                title="MedFluffy"
-                description="Aplikasi mobile untuk prediksi dini penyakit mata pada anjing menggunakan CNN dan rekomendasi pertolongan pertama."
-                imageSrc="/placeholder.svg?height=200&width=400"
-                tags={["Kotlin", "Material", "TensorFlow", "Firebase"]}
-                href="https://github.com/MedFluffy"
-              />
-              
-              <ProjectCard
-                title="Company Profile PT Herya Wood Furniture"
-                description="Website profil perusahaan untuk menampilkan produk dan layanan PT Herya Wood Furniture"
-                imageSrc="/placeholder.svg?height=200&width=400"
-                tags={["Laravel", "JavaScript", "MySQL", "Bootstrap"]}
-                href="https://heryawf.co.id/"
-              />
+              {featuredProjectsShow.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  title={project.title}
+                  description={project.description}
+                  imageSrc={project.imageSrc}
+                  tags={project.tags}
+                  href={`/projects/${project.id}`}
+                />
+              ))}
             </div>
             <div className="mt-6 text-center">
               <Button variant="outline" asChild>
                 <Link href="/projects">
-                  {t('viewAll')} Proyek
+                  {t('viewAll')}
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </ContentBlock>
+
+          <ContentBlock title={t('pastEvents')} className="mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {recentEvents.map((item) => (
+                <Card key={item.id} className="overflow-hidden h-full transition-all duration-200 hover:shadow-md">
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <Image src={item.imageSrc} alt={t('language') === 'id' ? item.title.id : item.title.en} fill className="object-cover" />
+                  </div>
+                  <CardContent className="p-4">
+                    <h3 className="font-medium text-lg line-clamp-2">{t('language') === 'id' ? item.title.id : item.title.en}</h3>
+                    <p className="text-sm text-muted-foreground mt-2">{(item.time ? item.time + " • " : "") + item.date} • {item.location}</p>
+                    <div className="mt-4">
+                      <Button variant="outline" size="sm" asChild>
+                        <Link href="/speaking">{t('learnMore')}</Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <div className="mt-6 text-center">
+              <Button variant="outline" asChild>
+                <Link href="/speaking">
+                  {t('viewAll')}
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -208,44 +237,27 @@ export default function Home() {
 
           <ContentBlock title={t('latestBlog')} className="mt-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="overflow-hidden h-full transition-all duration-200 hover:shadow-md">
-                <div className="relative h-48 w-full overflow-hidden">
-                  <Image src="/placeholder.svg?height=200&width=400" alt="Blog post" fill className="object-cover" />
-                </div>
-                <CardContent className="p-4">
-                  <h3 className="font-medium text-lg line-clamp-2">Mengintegrasikan AI dalam Pengembangan Web Modern</h3>
-                  <p className="text-sm text-muted-foreground mt-2 line-clamp-2">
-                    Bagaimana AI dapat meningkatkan pengalaman pengguna dan efisiensi dalam pengembangan web.
-                  </p>
-                  <div className="mt-4">
-                    <Button variant="outline" size="sm" asChild>
-                      <Link href="/blog/ai-web-development">{t('readMore')}</Link>
-                    </Button>
+              {latestArticles.map((article) => (
+                <Card key={article.id} className="overflow-hidden h-full transition-all duration-200 hover:shadow-md">
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <Image src={article.imageSrc} alt={article.title} fill className="object-cover" />
                   </div>
-                </CardContent>
-              </Card>
-
-              <Card className="overflow-hidden h-full transition-all duration-200 hover:shadow-md">
-                <div className="relative h-48 w-full overflow-hidden">
-                  <Image src="/placeholder.svg?height=200&width=400" alt="Blog post" fill className="object-cover" />
-                </div>
-                <CardContent className="p-4">
-                  <h3 className="font-medium text-lg line-clamp-2">Next.js vs React: Kapan Menggunakan Masing-masing?</h3>
-                  <p className="text-sm text-muted-foreground mt-2 line-clamp-2">
-                    Perbandingan mendalam antara Next.js dan React untuk berbagai kasus penggunaan.
-                  </p>
-                  <div className="mt-4">
-                    <Button variant="outline" size="sm" asChild>
-                      <Link href="/blog/nextjs-vs-react">{t('readMore')}</Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+                  <CardContent className="p-4">
+                    <h3 className="font-medium text-lg line-clamp-2">{article.title}</h3>
+                    <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{article.excerpt}</p>
+                    <div className="mt-4">
+                      <Button variant="outline" size="sm" asChild>
+                        <Link href={`/blog/${article.id}`}>{t('readMore')}</Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
             <div className="mt-6 text-center">
               <Button variant="outline" asChild>
                 <Link href="/blog">
-                  {t('viewAll')} Artikel
+                  {t('viewAll')}
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
