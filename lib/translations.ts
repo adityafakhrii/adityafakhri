@@ -111,6 +111,10 @@ export const translations = {
     sendMessage: "Kirim Pesan",
     workingHours: "Jam Kerja",
     response: "Respons",
+    contactSuccessTitle: "Pesan terkirim!",
+    contactSuccessDesc: "Terima kasih, email berhasil dikirim. Saya akan merespons maksimal dalam 1×24 jam.",
+    contactFailTitle: "Gagal mengirim pesan",
+    contactFailDesc: "Terjadi kesalahan saat mengirim email. Silakan coba lagi atau hubungi saya via WhatsApp.",
     
     // Speaking page
     speakingTitle: "Speaking & Events",
@@ -290,6 +294,10 @@ export const translations = {
     sendMessage: "Send Message",
     workingHours: "Working Hours",
     response: "Response",
+    contactSuccessTitle: "Message sent!",
+    contactSuccessDesc: "Thanks, your email has been sent. I will respond within 24 hours.",
+    contactFailTitle: "Failed to send message",
+    contactFailDesc: "An error occurred while sending. Please try again or reach me via WhatsApp.",
     
     // Speaking page
     speakingTitle: "Speaking & Events",

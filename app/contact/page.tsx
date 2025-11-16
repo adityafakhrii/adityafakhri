@@ -13,6 +13,7 @@ import { Mail, Phone, MapPin, Send } from "lucide-react"
 import { useState } from "react"
 import { useToast } from "@/hooks/use-toast"
 import { TranslatedContent } from "@/components/translated-content"
+import { useLanguage } from "@/contexts/language-context"
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -32,6 +33,7 @@ const formSchema = z.object({
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const { toast } = useToast()
+  const { t } = useLanguage()
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -43,20 +45,33 @@ export default function ContactPage() {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true)
-
-    // Simulate form submission
-    setTimeout(() => {
-      console.log(values)
-      setIsSubmitting(false)
-      form.reset()
-
-      toast({
-        title: "Pesan Terkirim!",
-        description: "Terima kasih telah menghubungi saya. Saya akan segera membalas pesan Anda.",
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
       })
-    }, 1500)
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        throw new Error(data?.error || 'Failed to send message')
+      }
+
+      form.reset()
+      toast({
+        title: t('contactSuccessTitle'),
+        description: t('contactSuccessDesc'),
+      })
+    } catch (err: any) {
+      toast({
+        title: t('contactFailTitle'),
+        description: t('contactFailDesc'),
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (

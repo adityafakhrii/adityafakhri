@@ -8,6 +8,7 @@ import { SidebarProvider } from "@/components/ui/sidebar"
 import { LanguageProvider } from "@/contexts/language-context"
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -124,7 +125,8 @@ export default function RootLayout({
               </div>
             </SidebarProvider>
           </ThemeProvider>
-        </LanguageProvider>
+          </LanguageProvider>
+        <Toaster />
         <SpeedInsights />
         <Analytics />
       </body>
