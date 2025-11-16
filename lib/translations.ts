@@ -115,8 +115,8 @@ export const translations = {
     // Speaking page
     speakingTitle: "Speaking & Events",
     speakingDescription: "Riwayat sebagai pembicara di acara dan konferensi teknologi",
-    upcomingEvents: "Upcoming Events",
-    pastEvents: "Past Events",
+    upcomingEvents: "Event Mendatang",
+    pastEvents: "Event Sebelumnya",
     topicsISpeak: "Topik yang Saya Bicarakan",
     
     // Footer
