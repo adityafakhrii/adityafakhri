@@ -16,9 +16,99 @@ export type EventItem = {
   organizer?: { id: string; en: string }
 }
 
-export const upcomingEvents: EventItem[] = []
+export const upcomingEvents: EventItem[] = [
+  {
+    id: "corner-talkshow-pakuan-2025",
+    category: "Talkshow",
+    tags: ["AI", "Prompt Engineering", "Productivity"],
+    imageSrc: "/placeholder.jpg",
+    title: {
+      id: "From Prompt to Productive Code",
+      en: "From Prompt to Productive Code",
+    },
+    subtitle: {
+      id: "Jadikan Prompt sebagai Solusi Nyata",
+      en: "Turn Prompts into Real Solutions",
+    },
+    date: "06 Desember 2025",
+    time: "08.00 - 14.00 WIB",
+    location: "Lt. 10 Graha Pakuan Siliwangi, Universitas Pakuan",
+    description: {
+      id: "Sesi talkshow praktis tentang pemanfaatan AI dan prompt engineering untuk meningkatkan produktivitas pengembangan perangkat lunak.",
+      en: "Practical talkshow on leveraging AI and prompt engineering to boost software development productivity.",
+    },
+    bullets: {
+      id: [
+        "Cara memanfaatkan AI untuk coding, debugging, dan analisis sistem secara efektif",
+        "Skill esensial agar tetap relevan dan siap beradaptasi di tengah perubahan teknologi",
+        "Prinsip etika dan regulasi AI yang perlu diketahui developer masa kini",
+        "Tips meningkatkan produktivitas dan belajar teknologi baru tanpa kewalahan",
+      ],
+      en: [
+        "How to use AI for coding, debugging, and system analysis effectively",
+        "Essential skills to stay relevant and adaptable amid rapid tech changes",
+        "AI ethics and regulations developers should know today",
+        "Tips to increase productivity and learn new tech without overwhelm",
+      ],
+    },
+    organizer: { id: "Diselenggarakan oleh: Corner Talkshow", en: "Organized by: Corner Talkshow" },
+    links: [
+      { labelId: "Daftar Gratis", labelEn: "Free Registration", href: "#" },
+    ],
+  },
+]
 
 export const pastEvents: EventItem[] = [
+  {
+    id: "it-fest-uho-2025",
+    category: "Seminar",
+    tags: ["AI", "Mindset", "Career Development"],
+    imageSrc: "/speaking/it-fest-uho-2025.webp",
+    title: {
+      id: "Skills, Mindset, dan AI untuk Masa Depan",
+      en: "Skills, Mindset, and AI for the Future",
+    },
+    subtitle: {
+      id: "IT Fest 18 UHO",
+      en: "IT Fest 18 UHO",
+    },
+    date: "29 November 2025",
+    time: "08.00-12.00 WITA",
+    location: "Kendari, Sulawesi Tenggara",
+    description: {
+      id: "Sesi ini membahas transformasi AI, skill & mindset era digital, serta masa depan & etika AI.",
+      en: "This session will cover AI transformation, digital era skills & mindset, and the future & ethics of AI.",
+    },
+    bullets: {
+      id: [
+        "Apa itu AI, jenisnya, dan contoh penerapan di berbagai bidang",
+        "Dampak AI terhadap cara kerja dan peluang karier",
+        "Skill kunci: literasi digital, data mindset, critical thinking, kreativitas",
+        "Pentingnya lifelong learning",
+        "Penggunaan AI yang beretika",
+        "Peran generasi muda dalam inovasi dan solusi berkelanjutan",
+      ],
+      en: [
+        "What AI is, its types, and application examples across various fields",
+        "Impact of AI on work methods and career opportunities",
+        "Key skills: digital literacy, data mindset, critical thinking, creativity",
+        "The importance of lifelong learning",
+        "Ethical use of AI",
+        "The role of the younger generation in innovation and sustainable solutions",
+      ],
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: IT Fest 18 UHO",
+      en: "Organized by: IT Fest 18 UHO",
+    },
+    links: [
+      {
+        labelId: "Lihat Materi",
+        labelEn: "View Materials",
+        href: "https://docs.google.com/presentation/d/1_D1U2UpX3d0hsDFUmXXs1z6Vd8bO-OR3Kh-wyCyolBk/edit?usp=sharing",
+      },
+    ],
+  },
   {
     id: "qwords-digital-sprint",
     category: "Workshop",
