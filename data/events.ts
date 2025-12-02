@@ -21,7 +21,7 @@ export const upcomingEvents: EventItem[] = [
     id: "corner-talkshow-pakuan-2025",
     category: "Talkshow",
     tags: ["AI", "Prompt Engineering", "Productivity"],
-    imageSrc: "/placeholder.jpg",
+    imageSrc: "/speaking/cornettalkshow-unpak-2025.webp",
     title: {
       id: "From Prompt to Productive Code",
       en: "From Prompt to Productive Code",
@@ -32,28 +32,28 @@ export const upcomingEvents: EventItem[] = [
     },
     date: "06 Desember 2025",
     time: "08.00 - 14.00 WIB",
-    location: "Lt. 10 Graha Pakuan Siliwangi, Universitas Pakuan",
+    location: "Universitas Pakuan, Bogor",
     description: {
       id: "Sesi talkshow praktis tentang pemanfaatan AI dan prompt engineering untuk meningkatkan produktivitas pengembangan perangkat lunak.",
       en: "Practical talkshow on leveraging AI and prompt engineering to boost software development productivity.",
     },
     bullets: {
       id: [
-        "Cara memanfaatkan AI untuk coding, debugging, dan analisis sistem secara efektif",
-        "Skill esensial agar tetap relevan dan siap beradaptasi di tengah perubahan teknologi",
-        "Prinsip etika dan regulasi AI yang perlu diketahui developer masa kini",
-        "Tips meningkatkan produktivitas dan belajar teknologi baru tanpa kewalahan",
+        "AI untuk coding, debugging, dan analisis sistem",
+        "Skill penting agar relevan & adaptif",
+        "Etika & regulasi AI untuk developer",
+        "Tips produktif belajar teknologi baru",
       ],
       en: [
-        "How to use AI for coding, debugging, and system analysis effectively",
-        "Essential skills to stay relevant and adaptable amid rapid tech changes",
-        "AI ethics and regulations developers should know today",
-        "Tips to increase productivity and learn new tech without overwhelm",
+        "AI for coding, debugging & system analysis",
+        "Key skills to stay relevant & adaptable",
+        "AI ethics & regulations for developers",
+        "Tips for productive tech learning",
       ],
     },
     organizer: { id: "Diselenggarakan oleh: Corner Talkshow", en: "Organized by: Corner Talkshow" },
     links: [
-      { labelId: "Daftar Gratis", labelEn: "Free Registration", href: "#" },
+      { labelId: "Daftar Gratis", labelEn: "Free Registration", href: "https://unpak.link/cts2025" },
     ],
   },
 ]
