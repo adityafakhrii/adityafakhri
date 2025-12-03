@@ -223,6 +223,8 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                             alt={`${project.title} screenshot ${index + 1}`}
                             width={500}
                             height={300}
+                            sizes="(max-width: 640px) 100vw, 500px"
+                            loading="lazy"
                             className="object-cover w-full h-48"
                           />
                         </div>

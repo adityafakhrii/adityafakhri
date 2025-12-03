@@ -6,8 +6,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { PortfolioSidebar } from "@/components/portfolio-sidebar"
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { LanguageProvider } from "@/contexts/language-context"
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Analytics } from '@vercel/analytics/next'
 import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] })

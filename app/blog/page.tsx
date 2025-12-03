@@ -58,6 +58,8 @@ export default function BlogPage() {
                           src={article.imageSrc || "/placeholder.svg"}
                           alt={article.title}
                           fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                          loading="lazy"
                           className="object-cover transition-transform duration-200 group-hover:scale-105"
                         />
                       </div>
@@ -103,6 +105,8 @@ export default function BlogPage() {
                               src={article.imageSrc || "/placeholder.svg"}
                               alt={article.title}
                               fill
+                              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                              loading="lazy"
                               className="object-cover transition-transform duration-200 group-hover:scale-105"
                             />
                           </div>

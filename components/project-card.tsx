@@ -20,6 +20,7 @@ export function ProjectCard({ title, description, imageSrc, tags, href }: Projec
             src={imageSrc || "/placeholder.svg"}
             alt={title}
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
             className="object-cover transition-transform duration-200 group-hover:scale-105"
           />
         </div>
