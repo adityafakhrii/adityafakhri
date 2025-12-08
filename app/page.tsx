@@ -52,6 +52,13 @@ export default function Home() {
                   <Button asChild variant="outline" size="lg">
                     <Link href="/projects">{t('viewProjects')}</Link>
                   </Button>
+                  <Button asChild variant="outline" size="lg">
+                    <Link href="/speaking">
+                      {t('viewEvents')}
+                      <ChevronRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+
                 </div>
               </div>
               <div className="w-full md:w-1/3 flex justify-center">
@@ -100,56 +107,56 @@ export default function Home() {
                 { name: "Innovate Edutech", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg6KyS6WrO3v-QpI1PAKxNwVT4bt01-yiNIA&s" },
                 // { name: "Studpal", src: "https://media.cakeresume.com/image/upload/v1672292026/z3rqxffqfwsmi0ifsqvn.png" },
 
-                
-                ].map((company, i) => (
-                  <div key={i} className="flex items-center justify-center p-4 bg-muted rounded-lg h-24">
+
+              ].map((company, i) => (
+                <div key={i} className="flex items-center justify-center p-4 bg-muted rounded-lg h-24">
                   <Image
-                  src={company.src}
-                  alt={company.name}
-                  width={120}
-                  height={60}
-                  sizes="120px"
-                  loading="lazy"
-                  className="max-h-12 w-auto"
+                    src={company.src}
+                    alt={company.name}
+                    width={120}
+                    height={60}
+                    sizes="120px"
+                    loading="lazy"
+                    className="max-h-12 w-auto"
                   />
                 </div>
-                ))}
+              ))}
             </div>
           </ContentBlock>
 
           <ContentBlock title={t('mainSkills')} className="mt-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Card>
+              <Card>
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                  <div className="bg-primary/10 p-2 rounded-md">
-                    <Code className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium">{t('frontendDev')}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">
-                    React, Next.js, Tailwind CSS, Bootstrap, HTML/CSS
-                    </p>
-                  </div>
+                    <div className="bg-primary/10 p-2 rounded-md">
+                      <Code className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium">{t('frontendDev')}</h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        React, Next.js, Tailwind CSS, Bootstrap, HTML/CSS
+                      </p>
+                    </div>
                   </div>
                 </CardContent>
-                </Card>
+              </Card>
 
-                <Card>
+              <Card>
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                  <div className="bg-primary/10 p-2 rounded-md">
-                    <SquareCode className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium">{t('backendDev')}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">
-                    PHP, Laravel, JavaScript, MySQL
-                    </p>
-                  </div>
+                    <div className="bg-primary/10 p-2 rounded-md">
+                      <SquareCode className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium">{t('backendDev')}</h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        PHP, Laravel, JavaScript, MySQL
+                      </p>
+                    </div>
                   </div>
                 </CardContent>
-                </Card>
+              </Card>
 
               <Card>
                 <CardContent className="p-6">
@@ -159,9 +166,9 @@ export default function Home() {
                     </div>
                     <div>
                       <h3 className="font-medium">{t('mentoring')}</h3>
-                        <p className="text-sm text-muted-foreground mt-1">
-                          Bimbingan teknis, Pengembangan karier, Code reviews, dan Workshop interaktif
-                        </p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Bimbingan teknis, Pengembangan karier, Code reviews, dan Workshop interaktif
+                      </p>
                     </div>
                   </div>
                 </CardContent>

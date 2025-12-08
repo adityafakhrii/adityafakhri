@@ -17,6 +17,51 @@ export type EventItem = {
 }
 
 export const upcomingEvents: EventItem[] = [
+
+]
+
+export const pastEvents: EventItem[] = [
+  {
+    id: "workshop-rai-dec-2025",
+    category: "Workshop",
+    tags: ["AI", "Finance", "Automation", "SaaS"],
+    imageSrc: "/speaking/workshop-rai.webp",
+    title: {
+      id: "Bangun Asisten Keuangan UMKM Otomatis via WhatsApp Pakai AI",
+      en: "Build Automated SME Finance Assistant via WhatsApp Using AI",
+    },
+    subtitle: {
+      id: "Workshop RuangAI",
+      en: "RuangAI Workshop",
+    },
+    date: "07 Desember 2025",
+    time: "10.00 - 13.00 WIB",
+    location: "Live on Zoom",
+    description: {
+      id: "Belajar membuat sistem asisten keuangan otomatis untuk UMKM yang terintegrasi dengan WhatsApp dan AI, lengkap dengan dashboard pelaporan.",
+      en: "Learn to build an automated financial assistant system for SMEs integrated with WhatsApp and AI, complete with a reporting dashboard.",
+    },
+    bullets: {
+      id: [
+        "Laporan otomatis harian, mingguan, dan bulanan",
+        "Dashboard web pemasukan, pengeluaran & profit",
+        "Export laporan ke PDF untuk presentasi",
+      ],
+      en: [
+        "Automated daily, weekly, and monthly reports",
+        "Web dashboard for income, expenses & profit",
+        "Export reports to PDF for presentation",
+      ],
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: RuangAI by CODEPOLITAN",
+      en: "Organized by: RuangAI by CODEPOLITAN",
+    },
+    links: [
+      { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/1LIHHaunjhWZhRKPbMze09VcHYyTYANv_F1xQCozKjp4/edit?usp=sharing" },
+      { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://youtu.be/eSfT3OJguvw" },
+    ],
+  },
   {
     id: "corner-talkshow-pakuan-2025",
     category: "Talkshow",
@@ -51,14 +96,11 @@ export const upcomingEvents: EventItem[] = [
         "Tips for productive tech learning",
       ],
     },
-    organizer: { id: "Diselenggarakan oleh: Corner Talkshow", en: "Organized by: Corner Talkshow" },
+    organizer: { id: "Diselenggarakan oleh: Corner Talkshow HIMAKOM UNPAK", en: "Organized by: Corner Talkshow HIMAKOM UNPAK" },
     links: [
-      { labelId: "Daftar Gratis", labelEn: "Free Registration", href: "https://unpak.link/cts2025" },
+      { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/1RTws1kV52FifDB5PPddJXdelZq6D-Z4KmeSvehnNBUY/edit?usp=sharing" },
     ],
   },
-]
-
-export const pastEvents: EventItem[] = [
   {
     id: "it-fest-uho-2025",
     category: "Seminar",
@@ -72,9 +114,9 @@ export const pastEvents: EventItem[] = [
       id: "IT Fest 18 UHO",
       en: "IT Fest 18 UHO",
     },
-    date: "29 November 2025",
-    time: "08.00-12.00 WITA",
-    location: "Kendari, Sulawesi Tenggara",
+    date: "29 Nov 2025",
+    time: "08.00 - 12.00 WITA",
+    location: "UHO, Kendari, Sulawesi Tenggara",
     description: {
       id: "Sesi ini membahas transformasi AI, skill & mindset era digital, serta masa depan & etika AI.",
       en: "This session will cover AI transformation, digital era skills & mindset, and the future & ethics of AI.",
@@ -110,6 +152,138 @@ export const pastEvents: EventItem[] = [
     ],
   },
   {
+    id: "kelasfullstack-uiux-dpr",
+    category: "Webinar",
+    tags: ["UI/UX", "Figma", "Redesign", "Web Design"],
+    imageSrc: "/speaking/uiux-dpr.webp",
+    title: {
+      id: "Belajar UI/UX Web Dengan Figma \"Re-Design Web DPR RI\"",
+      en: "Learn Web UI/UX With Figma \"DPR RI Web Re-Design\"",
+    },
+    subtitle: {
+      id: "Webinar KelasFullstack",
+      en: "KelasFullstack Webinar",
+    },
+    date: "20 September 2025",
+    time: "19.00 - 21.00 WIB",
+    location: "Live on Zoom",
+    description: {
+      id: "Webinar UI/UX eksklusif membahas proses redesign website DPR RI menggunakan Figma. Dipandu oleh Ahmad Oriza & Aditya Fakhri, mengupas teknik desain antarmuka pemerintahan yang modern.",
+      en: "Exclusive UI/UX webinar discussing the redesign process of the DPR RI website using Figma. Led by Ahmad Oriza & Aditya Fakhri, exploring modern government interface design techniques.",
+    },
+    bullets: {
+      id: [
+        "Studi kasus nyata: Transformasi tampilan Web DPR RI",
+        "Workflow desain profesional di Figma",
+        "Prinsip desain UI/UX untuk website instansi publik",
+        "Diskusi seputar karir dan skill UI/UX Designer",
+      ],
+      en: [
+        "Real case study: DPR RI Web interface transformation",
+        "Professional design workflow in Figma",
+        "UI/UX design principles for public agency websites",
+        "Discussion on UI/UX Designer careers and skills",
+      ],
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: KelasFullstack",
+      en: "Organized by: KelasFullstack",
+    },
+    links: [
+      { labelId: "Lihat Event", labelEn: "View Event", href: "https://www.codepolitan.com/events/belajar-uiux-web-dengan-figma-studi-kasus-redesign-web-dpr-ri/" },
+    ],
+  },
+  {
+    id: "road-to-devfest-bandung-2025",
+    category: "Seminar",
+    tags: ["Firebase", "AI", "Cloud", "Web Development"],
+    imageSrc: "/speaking/rtd1.webp",
+    title: {
+      id: "AI-Powered Web Dev: Build and Deploy with Firebase Studio",
+      en: "AI-Powered Web Dev: Build and Deploy with Firebase Studio",
+    },
+    subtitle: {
+      id: "Road to DevFest Bandung 2025",
+      en: "Road to DevFest Bandung 2025",
+    },
+    date: "23 Agustus 2025",
+    time: "13.00 - 16.00 WIB",
+    location: "Univ. Maranatha, Bandung",
+    description: {
+      id: "Membahas cara membangun dan men-deploy aplikasi web berbasis AI dengan lebih cepat menggunakan Firebase Studio. Berkolaborasi dengan M. Haidar Hanif & Didiet Agus P. dalam topik Web & Cloud.",
+      en: "Discussing how to build and deploy AI-based web applications faster using Firebase Studio. Collaborating with M. Haidar Hanif & Didiet Agus P. on Web & Cloud topics.",
+    },
+    bullets: {
+      id: [
+        "Eksplorasi fitur Firebase Studio untuk pengembangan Web AI",
+        "Demo live: Dari kode lokal ke deployment cloud global",
+        "Best practice arsitektur modern untuk skalabilitas",
+        "Diskusi panel tentang masa depan tools developer",
+      ],
+      en: [
+        "Exploring Firebase Studio features for AI Web development",
+        "Live demo: From local code to global cloud deployment",
+        "Modern architecture best practices for scalability",
+        "Panel discussion on the future of developer tools",
+      ],
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: GDG Bandung",
+      en: "Organized by: GDG Bandung",
+    },
+    links: [
+      { labelId: "Lihat Event", labelEn: "View Event", href: "https://gdgbandung.com/devfestbdg1" },
+      {
+        labelId: "Lihat Materi",
+        labelEn: "View Materials",
+        href: "https://docs.google.com/presentation/d/15mex0XAbWizYXZz9iA7qk8AQ6sppjD832s0mAN8I1mI/edit?usp=sharing",
+      },
+    ],
+  },
+  {
+    id: "kelasfullstack-mahasiswa-ti-ai",
+    category: "Webinar",
+    tags: ["Career", "AI", "Student", "Personal Branding"],
+    imageSrc: "/speaking/mahasiswa-ti.webp",
+    title: {
+      id: "Mahasiswa TI: Bertahan di Era AI? Hadapi Karir & Stand Out",
+      en: "IT Students: Surviving in AI Era? Career & Standing Out",
+    },
+    subtitle: {
+      id: "Webinar KelasFullstack",
+      en: "KelasFullstack Webinar",
+    },
+    date: "09 Agustus 2025",
+    time: "19.00 WIB - Selesai",
+    location: "Live on Zoom",
+    description: {
+      id: "Webinar eksklusif bareng praktisi industri yang akan membantu memahami arah karier di tengah gempuran teknologi. Diskusi seru tentang strategi bertahan dan cara 'stand out' di tengah keramaian talent.",
+      en: "Exclusive webinar with industry practitioners to help understand career directions amidst tech disruption. Exciting discussion on survival strategies and how to 'stand out' in the talent crowd.",
+    },
+    bullets: {
+      id: [
+        "Tips menghadapi ketidakpastian karir di era AI",
+        "Strategi personal branding untuk mahasiswa IT",
+        "Insight industri dari Ahmad Oriza, Safira, & Aditya Fakhri",
+        "Sesi tanya jawab seputar pengembangan diri",
+      ],
+      en: [
+        "Tips for facing career uncertainty in the AI era",
+        "Personal branding strategies for IT students",
+        "Industry insights from Ahmad Oriza, Safira, & Aditya Fakhri",
+        "Q&A session on self-development",
+      ],
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: KelasFullstack",
+      en: "Organized by: KelasFullstack",
+    },
+    links: [
+      { labelId: "Lihat Event", labelEn: "View Event", href: "https://www.codepolitan.com/events/mahasiswa-ti-bertahan-di-era-al-gimana-caranya-di-tengah-derasnya-perkembangan-teknologi/" },
+      { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://www.youtube.com/live/h6gUQZMTeEM?si=TElq259BGy79KrGz" },
+    ],
+  },
+  {
     id: "qwords-digital-sprint",
     category: "Workshop",
     tags: ["Personal Branding", "Career Development"],
@@ -121,8 +295,8 @@ export const pastEvents: EventItem[] = [
     },
     subtitle: { id: "Qwords Digital Sprint", en: "Qwords Digital Sprint" },
     date: "25 Juli 2025",
-    time: "19.00-21.00 WIB",
-    location: "Zoom Meeting",
+    time: "19.00 - 21.00 WIB",
+    location: "Live on Zoom",
     description: {
       id: "Sesi khusus membahas tentang pengembangan karir sebagai developer, meliputi:",
       en: "Special session discussing career development as a developer, including:",
@@ -144,7 +318,110 @@ export const pastEvents: EventItem[] = [
       en: "Organized by: Qwords Cloud Web Hosting Indonesia",
     },
     links: [
-      { labelId: "Daftar Sekarang", labelEn: "Register Now", href: "https://s.id/qdswebdev" },
+      { labelId: "Lihat Event", labelEn: "View Event", href: "https://s.id/qdswebdev" },
+      {
+        labelId: "Lihat Materi",
+        labelEn: "View Materials",
+        href: "https://docs.google.com/presentation/d/1da5uz69oyHXmcXYrkpo7Sifyz4NvPsrttZgCo_WvW-A/edit?usp=sharing",
+      },
+      { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://youtu.be/GOMbDAFmD-s" },
+    ],
+  },
+  {
+    id: "dunia-coding-react-workshop",
+    category: "Workshop",
+    tags: ["React JS", "Web Development", "Portfolio"],
+    imageSrc: "/speaking/workshop-react.webp",
+    title: {
+      id: "Workshop Basic React JS: Bangun Website Perpustakaan",
+      en: "Basic React JS Workshop: Build a Library Website",
+    },
+    subtitle: {
+      id: "Dunia Coding Academy Workshop",
+      en: "Dunia Coding Academy Workshop",
+    },
+    date: "18 - 19 Juli 2025",
+    time: "19.30 WIB - 21.30 WIB",
+    location: "Google Meet",
+    description: {
+      id: "Workshop intensif 2 hari belajar React JS dari dasar sekaligus membangun portofolio website perpustakaan. Cocok untuk pemula yang ingin terjun ke dunia Front-End Developer.",
+      en: "2-day intensive workshop learning React JS from scratch while building a library website portfolio. Suitable for beginners wanting to dive into Front-End Development.",
+    },
+    bullets: {
+      id: [
+        "Konsep dasar React JS (Components, Props, State)",
+        "Studi kasus: Membuat Website Perpustakaan",
+        "Source code & sertifikat",
+        "Sesi diskusi dan tanya jawab interaktif",
+      ],
+      en: [
+        "React JS basic concepts (Components, Props, State)",
+        "Case study: Building a Library Website",
+        "Source code & certificate",
+        "Interactive Q&A and discussion sessions",
+      ],
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: Dunia Coding Academy",
+      en: "Organized by: Dunia Coding Academy",
+    },
+    links: [
+      { labelId: "Lihat Event", labelEn: "View Event", href: "https://duniacoding.id/event/belajar-react-sekaligus-bikin-portofolio-yuk-bangun-website-perpustakaan-sendiri-2025" },
+      { labelId: "Materi Day 1", labelEn: "Material Day 1", href: "https://docs.google.com/presentation/d/1284ZvzWPA43_kpwd5D5tUm_WDj5r288dJ6e92Y5Fs1A/edit?usp=sharing" },
+      { labelId: "Materi Day 2", labelEn: "Material Day 2", href: "https://docs.google.com/presentation/d/1za7BJYLiuaFBY3I92u25O0P8Wxm_xlgIvVNkCnfaBhI/edit?usp=sharing" },
+      { labelId: "Rekaman Day 1", labelEn: "Recording Day 1", href: "https://youtu.be/B9XmU5tklrs" },
+      { labelId: "Rekaman Day 2", labelEn: "Recording Day 2", href: "https://youtu.be/1OGmf6ve5y0" },
+    ],
+  },
+  {
+    id: "kelasfullstack-landing-page-ai",
+    category: "Webinar",
+    tags: ["AI", "Web Development", "Landing Page", "No-Code"],
+    imageSrc: "/speaking/landing-page.webp",
+    title: {
+      id: "Membuat Landing Page Produk Pro dengan AI Assist Coding",
+      en: "Building Pro Product Landing Page with AI Assist Coding",
+    },
+    subtitle: {
+      id: "Live Class KelasFullstack",
+      en: "KelasFullstack Live Class",
+    },
+    date: "03 Juli 2025",
+    time: "15.00 WIB - Selesai",
+    location: "Live on Zoom",
+    description: {
+      id: "Belajar bikin landing page profesional siap jualan pakai AI tools! Mulai dari dasar, pakai builder kayak Bolt & V0, plus workflow coding dengan bantuan AI. Praktis, tanpa ribet ngoding dari nol!",
+      en: "Learn to build professional landing pages ready for sales using AI tools! Starting from basics, using builders like Bolt & V0, plus AI-assisted coding workflow. Practical, no complex coding from scratch!",
+    },
+    bullets: {
+      id: [
+        "Dasar pembuatan landing page profesional",
+        "Menggunakan AI tools (Bolt & V0)",
+        "Workflow coding dengan bantuan AI",
+        "Tanpa ribet ngoding dari nol",
+      ],
+      en: [
+        "Basics of professional landing page creation",
+        "Using AI tools (Bolt & V0)",
+        "AI-assisted coding workflow",
+        "Hassle-free, no coding from scratch",
+      ],
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: KelasFullstack",
+      en: "Organized by: KelasFullstack",
+    },
+    links: [
+      {
+        labelId: "Lihat Materi",
+        labelEn: "View Materials",
+        href: "https://www.canva.com/design/DAGr6N5jvG8/TEeme4vMbPU3pMBHyOdGOA/edit?utm_content=DAGr6N5jvG8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      },
+      {
+        labelId: "Tonton Rekaman",
+        labelEn: "Watch Recording",
+        href: "https://www.youtube.com/live/hfdJPrgO-zk?si=UxGPwdqgA7Y7kcpZ",
+      },
     ],
   },
   {
@@ -163,7 +440,8 @@ export const pastEvents: EventItem[] = [
       en: "Laravel 12 Training for Beginners + Case Study",
     },
     date: "04 Juni 2025",
-    location: "Universitas Pendidikan Indonesia, Bandung",
+    time: "09.00-17.00 WIB",
+    location: "Univ. Pendidikan Indonesia, Bandung",
     description: {
       id: "Pelatihan intensif untuk pemula yang ingin mempelajari dasar-dasar Laravel 12. Peserta akan mempraktikkan pembuatan aplikasi web sederhana melalui studi kasus nyata, mulai dari instalasi hingga deployment.",
       en: "Intensive training for beginners who want to learn the basics of Laravel 12. Participants will practice building simple web applications through real case studies, from installation to deployment.",
@@ -186,8 +464,9 @@ export const pastEvents: EventItem[] = [
       en: "Styling Websites With Tailwind from Scratch",
     },
     subtitle: { id: "Kelas Fullstack Live Class", en: "Fullstack Live Class" },
-    date: "Jumat, 16 Mei 2025",
-    location: "Zoom Meeting",
+    date: "16 Mei 2025",
+    time: "15.00 - 17.00 WIB",
+    location: "Live on Zoom",
     description: {
       id: "Workshop interaktif membahas dasar-dasar penggunaan Tailwind CSS untuk styling website modern. Peserta akan belajar mulai dari instalasi, konsep utility-first, hingga praktik membangun tampilan responsif secara langsung.",
       en: "Interactive workshop covering the basics of using Tailwind CSS for modern website styling. Participants will learn from installation, utility-first concepts, to hands-on practice building responsive layouts.",
@@ -197,7 +476,7 @@ export const pastEvents: EventItem[] = [
       { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://www.codepolitan.com/course/intro/tailwind-dasar-desain-web-kilat-jaman-sekarang/" },
       { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/1nGqXbBuwlhv9QoQYRzyEyz4wBaRWhOcxdYu-Kfr4p1k/edit?usp=sharing" },
     ],
-    organizer: { id: "Diselenggarakan oleh: CODEPOLITAN", en: "Organized by: CODEPOLITAN" },
+    organizer: { id: "Diselenggarakan oleh: KelasFullstack", en: "Organized by: KelasFullstack" },
   },
   {
     id: "chayon-masterclass",
@@ -210,13 +489,14 @@ export const pastEvents: EventItem[] = [
     },
     subtitle: { id: "Chayon Masterclass", en: "Chayon Masterclass" },
     date: "03 Mei 2025",
-    location: "Zoom Meeting",
+    time: "10.00 - 11.30 WIB",
+    location: "Live on Zoom",
     description: {
       id: "Sesi masterclass membahas langkah-langkah praktis dan roadmap lengkap untuk menjadi programmer profesional, mulai dari dasar hingga siap kerja di industri. Cocok untuk pemula maupun yang ingin memperkuat fondasi karier di bidang teknologi.",
       en: "Masterclass session discussing practical steps and complete roadmap to become a professional programmer, from basics to industry-ready. Suitable for beginners and those looking to strengthen their career foundation in technology.",
     },
     links: [
-      { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://youtu.be/7TAWMT56fxA?si=6nbY-4FbdskktfcV" },
+      { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://youtu.be/JDOhYebLaCw" },
       { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/1tbQUYvYjsHN5Sl7NyPcjjBTnY4NZjYat3yasWCuw29o/edit?usp=sharing" },
     ],
     organizer: { id: "Diselenggarakan oleh: Chayon Online Course", en: "Organized by: Chayon Online Course" },
@@ -236,13 +516,13 @@ export const pastEvents: EventItem[] = [
     },
     date: "25 April 2025",
     time: "19.00-20.00 WIB",
-    location: "Zoom Meeting",
+    location: "Live on Zoom",
     description: {
       id: "Demo langsung penggunaan AI untuk membangun website dengan tools seperti v0.dev dan Bolt. Mengenalkan AI-driven development untuk developer pemula dan praktisi industri kreatif.",
       en: "Live demo of using AI to build websites with tools like v0.dev and Bolt. Introducing AI-driven development for beginner developers and creative industry practitioners.",
     },
     links: [
-      { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://drive.google.com/file/d/1-aftW3xwVdJX0ZXjFJyc1ajnWAfsMOL5/view?usp=sharing" },
+      { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://youtu.be/jztfelvj8UM" },
       { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/1lQkzTt7UvrDlQ86SdeCHz7kPOEFEGSDgPAxLT78BqC4/edit?usp=sharing" },
     ],
     organizer: { id: "Diselenggarakan oleh: AICO Community", en: "Organized by: AICO Community" },
@@ -253,7 +533,7 @@ export const pastEvents: EventItem[] = [
     tags: ["Personal Branding", "Career Development"],
     imageSrc: "/speaking/bsb.webp",
     title: {
-      id: "Lebih dari Sekadar Kode: Membangun Personal Brand yang Kuat sebagai Developer",
+      id: "More Than Just Code: Build a Powerful Personal Brand as a Developer",
       en: "More Than Just Code: Build a Powerful Personal Brand as a Developer",
     },
     subtitle: {
@@ -261,8 +541,8 @@ export const pastEvents: EventItem[] = [
       en: "Building a Strong Personal Brand as a Developer",
     },
     date: "20 Maret 2025",
-    time: "15.00-16.00 WIB",
-    location: "Zoom Meeting",
+    time: "15.00 - 16.00 WIB",
+    location: "Live on Zoom",
     description: {
       id: "Sesi ini fokus pada personal branding developer. Membahas cara membangun reputasi melalui komunikasi efektif, berbagi pengetahuan, dan aktif di komunitas teknologi.",
       en: "This session focuses on developer personal branding. Discussing ways to build reputation through effective communication, knowledge sharing, and active participation in tech communities.",
@@ -310,18 +590,57 @@ export const pastEvents: EventItem[] = [
     organizer: { id: "Diselenggarakan oleh: HIMATIF Universitas Muhammadiyah Surakarta", en: "Organized by: HIMATIF Universitas Muhammadiyah Surakarta" },
   },
   {
+    id: "bangkit-widyatama-2023",
+    category: "Seminar",
+    tags: ["Career Development", "Bangkit", "Google"],
+    imageSrc: "/speaking/bangkit.webp",
+    title: {
+      id: "Sukses Karir IT Bersama Bangkit 2024",
+      en: "IT Career Success with Bangkit 2024",
+    },
+    subtitle: {
+      id: "by Bangkit Ambassador Universitas Widyatama",
+      en: "by Bangkit Ambassador Widyatama University",
+    },
+    date: "08 Desember 2023",
+    time: "13.00 - 16.00 WIB",
+    location: "Univ. Widyatama, Bandung",
+    description: {
+      id: "Sebagai Bangkit 2023 Distinction Graduate dan GDSC Lead Widyatama, berbagi pengalaman tentang perjalanan karir IT melalui program Bangkit dan ekosistem Google Developer Student Clubs.",
+      en: "As Bangkit 2023 Distinction Graduate and GDSC Lead Widyatama, sharing experiences about IT career journey through Bangkit program and Google Developer Student Clubs ecosystem.",
+    },
+    bullets: {
+      id: [
+        "Pengalaman mengikuti program Bangkit Academy",
+        "Tips sukses dalam program pembelajaran intensif",
+        "Peluang karir setelah lulus dari Bangkit",
+        "Peran komunitas dalam pengembangan karir teknologi",
+      ],
+      en: [
+        "Experience participating in Bangkit Academy program",
+        "Tips for success in intensive learning programs",
+        "Career opportunities after graduating from Bangkit",
+        "The role of community in technology career development",
+      ],
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: Bangkit Ambassador & GDSC Universitas Widyatama",
+      en: "Organized by: Bangkit Ambassador & GDSC Widyatama University",
+    },
+  },
+  {
     id: "gdgoc-info-session",
     category: "Info Session",
     tags: ["Community", "Career Development"],
     imageSrc: "/speaking/gdgoc.webp",
     title: {
-      id: "Memberdayakan Masa Depan Teknologimu: Temukan Google Developer on Campus Widyatama!",
+      id: "Empowering Your Tech Future: Discover Google Developer on Campus Widyatama!",
       en: "Empowering Your Tech Future: Discover Google Developer on Campus Widyatama!",
     },
     subtitle: { id: "GDGOC Info Session", en: "GDGOC Info Session" },
     date: "24 November 2024",
-    time: "19.00-21.00 WIB",
-    location: "Google Meet",
+    time: "19.00- 21.00 WIB",
+    location: "Live on Google Meet",
     description: {
       id: "Sebagai Former Lead GDSC '23, membagikan pengalaman seputar:",
       en: "As a Former GDSC Lead '23, sharing experiences about:",
@@ -344,6 +663,81 @@ export const pastEvents: EventItem[] = [
     organizer: { id: "Diselenggarakan oleh: GDGoC – Universitas Widyatama", en: "Organized by: GDGoC – Universitas Widyatama" },
   },
   {
+    id: "gdsc-info-session-2023",
+    category: "Info Session",
+    tags: ["Community", "Career Development", "GDSC"],
+    imageSrc: "/speaking/gdsc2023.webp",
+    title: {
+      id: "GDSC Info Session: Kickstart Your Tech Career with GDSC",
+      en: "GDSC Info Session: Kickstart Your Tech Career with GDSC",
+    },
+    subtitle: { id: "GDSC Widyatama Info Session", en: "GDSC Widyatama Info Session" },
+    date: "21 Oktober 2023",
+    time: "19.30 - 20.30 WIB",
+    location: "Live on Google Meet",
+    description: {
+      id: "Info session GDSC Widyatama yang membahas peluang dan manfaat bergabung dengan Google Developer Student Clubs. Dipandu oleh Hadian Rahmat (Former Lead GDSC Widyatama 2020) dan Aditya Fakhri Riansyah (Lead GDSC Widyatama 2023).",
+      en: "GDSC Widyatama info session discussing opportunities and benefits of joining Google Developer Student Clubs. Led by Hadian Rahmat (Former Lead GDSC Widyatama 2020) and Aditya Fakhri Riansyah (Lead GDSC Widyatama 2023).",
+    },
+    bullets: {
+      id: [
+        "Mengenal GDSC dan ekosistem Google Developer",
+        "Peluang belajar dan networking di komunitas teknologi",
+        "Pengalaman dari Former Lead dan Current Lead GDSC",
+        "Tips memaksimalkan manfaat dari komunitas teknologi",
+      ],
+      en: [
+        "Getting to know GDSC and Google Developer ecosystem",
+        "Learning and networking opportunities in tech communities",
+        "Experiences from Former Lead and Current Lead GDSC",
+        "Tips to maximize benefits from tech communities",
+      ],
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: GDSC Widyatama University",
+      en: "Organized by: GDSC Widyatama University",
+    },
+  },
+  {
+    id: "mezink-programming-101",
+    category: "Workshop",
+    tags: ["Programming", "Beginner", "Coding"],
+    imageSrc: "/speaking/mezink.webp",
+    title: {
+      id: "Programming 101: Exploring the Coding Universe",
+      en: "Programming 101: Exploring the Coding Universe",
+    },
+    subtitle: {
+      id: "Mezink Academy Live Workshop",
+      en: "Mezink Academy Live Workshop",
+    },
+    date: "25 Agustus",
+    time: "19.30 WIB",
+    location: "Live on Zoom",
+    description: {
+      id: "Workshop live interaktif untuk pemula yang ingin menjelajahi dunia pemrograman. Membahas dasar-dasar coding dan membangun fondasi yang kuat untuk perjalanan belajar programming.",
+      en: "Interactive live workshop for beginners who want to explore the programming world. Discussing coding basics and building a strong foundation for the programming learning journey.",
+    },
+    bullets: {
+      id: [
+        "Pengenalan dasar pemrograman dan coding universe",
+        "Memahami logika pemrograman untuk pemula",
+        "Tips memilih bahasa pemrograman pertama",
+        "Praktik langsung dengan mentor berpengalaman",
+      ],
+      en: [
+        "Introduction to programming basics and coding universe",
+        "Understanding programming logic for beginners",
+        "Tips for choosing your first programming language",
+        "Hands-on practice with experienced mentor",
+      ],
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: Mezink Academy",
+      en: "Organized by: Mezink Academy",
+    },
+  },
+  {
     id: "gamelab-glow-240",
     category: "Webinar",
     tags: ["Softskill", "Career Development", "AI"],
@@ -357,8 +751,8 @@ export const pastEvents: EventItem[] = [
       en: "Softskill Development for Modern Software Engineers",
     },
     date: "14 Juni 2024",
-    time: "15.30-16.30 WIB",
-    location: "Online - Gamelab Platform",
+    time: "15.30 - 16.30 WIB",
+    location: "Live on Zoom",
     description: {
       id: "Sesi khusus membahas pengembangan softskill untuk software engineer:",
       en: "Special session discussing softskill development for software engineers:",
@@ -381,5 +775,124 @@ export const pastEvents: EventItem[] = [
       { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/1SYh7nEgnVJApEeqOf3yB68rOlgR24qvOk2b1tjLGm3o/edit?usp=sharing" },
     ],
     organizer: { id: "Diselenggarakan oleh: GAMELAB Indonesia", en: "Organized by: GAMELAB Indonesia" },
+  },
+  {
+    id: "uiuxindo-mindo-talk-1",
+    category: "Talkshow",
+    tags: ["Front-End", "Career", "Self-Taught"],
+    imageSrc: "/speaking/uiuixindo.webp",
+    title: {
+      id: "Kiat Praktis Belajar Front-End Development Secara Otodidak Tanpa Modal",
+      en: "Practical Tips for Self-Taught Front-End Development Without Capital",
+    },
+    subtitle: {
+      id: "Mindo-Talk: TECHNOLOGY SERIES #1",
+      en: "Mindo-Talk: TECHNOLOGY SERIES #1",
+    },
+    date: "30 April 2024",
+    time: "19.00 - 20.00 WIB",
+    location: "Live via Discord!",
+    description: {
+      id: "Diskusi santai membahas strategi dan tips praktis belajar Front-End Development secara otodidak tanpa biaya, mulai dari roadmap belajar hingga tips mendapatkan pekerjaan.",
+      en: "Casual discussion on strategies and practical tips for self-taught Front-End Development without cost, covering learning roadmaps to job hunting tips.",
+    },
+    bullets: {
+      id: [
+        "Tips belajar coding otodidak yang efektif",
+        "Pemanfaatan sumber belajar gratis berkualitas",
+        "Membangun portofolio tanpa modal",
+        "Networking dan personal branding untuk pemula",
+      ],
+      en: [
+        "Effective self-taught coding tips",
+        "Leveraging high-quality free learning resources",
+        "Building a portfolio without capital",
+        "Networking and personal branding for beginners",
+      ],
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: UIUXINDO",
+      en: "Organized by: UIUXINDO",
+    },
+    links: [],
+  },
+  {
+    id: "gdsc-tech-ramadan-1",
+    category: "Webinar",
+    tags: ["IT Student", "Career", "Self-Development"],
+    imageSrc: "/speaking/tech-ramadan.webp",
+    title: {
+      id: "Unleashing Your Potential as an IT Student",
+      en: "Unleashing Your Potential as an IT Student",
+    },
+    subtitle: {
+      id: "#TechRamadanSeries1 GDSC Polines x GDSC Widyatama",
+      en: "#TechRamadanSeries1 GDSC Polines x GDSC Widyatama",
+    },
+    date: "22 Maret 2024",
+    time: "14.30 - 16.00 WIB",
+    location: "Live on Zoom",
+    description: {
+      id: "Sharing session santai ngabuburit membahas tips dan trik memaksimalkan potensi sebagai mahasiswa IT agar siap menghadapi dunia kerja.",
+      en: "Casual sharing session while waiting for iftar, discussing tips and tricks to maximize potential as an IT student to be ready for the professional world.",
+    },
+    bullets: {
+      id: [
+        "Menggali potensi diri di luar perkuliahan",
+        "Pentingnya komunitas untuk pertumbuhan karir",
+        "Tips menyeimbangkan akademik dan organisasi",
+        "Persiapan karir sejak masa kuliah",
+      ],
+      en: [
+        "Unlocking self-potential beyond lectures",
+        "Importance of communities for career growth",
+        "Tips for balancing academics and organizations",
+        "Career preparation since college days",
+      ],
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: GDSC Polines x GDSC Widyatama",
+      en: "Organized by: GDSC Polines x GDSC Widyatama",
+    },
+    links: [],
+  },
+  {
+    id: "dinotis-coding-pemula-2022",
+    category: "Webinar",
+    tags: ["Beginner", "Coding", "Career"],
+    imageSrc: "/speaking/dinotis.webp",
+    title: {
+      id: "Begini Langkah Pertama Belajar Coding Untuk Pemula",
+      en: "First Steps to Learn Coding for Beginners",
+    },
+    subtitle: {
+      id: "#DinotisEdu",
+      en: "#DinotisEdu",
+    },
+    date: "06 November 2022",
+    time: "19.45 - 21.00 WIB",
+    location: "Live on Dinotis",
+    description: {
+      id: "Sesi webinar untuk pemula yang ingin memulai perjalanan belajar coding. Membahas langkah-langkah praktis dan roadmap untuk memulai karir sebagai developer.",
+      en: "Webinar session for beginners who want to start their coding journey. Discussing practical steps and roadmap to start a career as a developer.",
+    },
+    bullets: {
+      id: [
+        "Langkah pertama memulai belajar coding",
+        "Memilih bahasa pemrograman yang tepat untuk pemula",
+        "Sumber belajar gratis dan berkualitas",
+        "Tips konsisten dalam belajar coding",
+      ],
+      en: [
+        "First steps to start learning coding",
+        "Choosing the right programming language for beginners",
+        "Free and quality learning resources",
+        "Tips for consistency in learning coding",
+      ],
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: Dinotis",
+      en: "Organized by: Dinotis",
+    },
   },
 ]

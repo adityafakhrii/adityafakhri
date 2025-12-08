@@ -12,17 +12,18 @@ export const translations = {
     services: "Layanan & Harga",
     blog: "Blog",
     contact: "Kontak",
-    
+
     // Common
     downloadCV: "Unduh CV",
     lightMode: "Mode Terang",
     darkMode: "Mode Gelap",
     readMore: "Baca Selengkapnya",
     viewAll: "Lihat Semua",
+    viewEvents: "Lihat Event",
     getInTouch: "Hubungi Saya",
     contactMe: "Hubungi Saya",
     language: "id",
-    
+
     // Home page
     heroTitle: "Aditya Fakhri Riansyah",
     heroSubtitle: "AI-Driven Web Developer, Mentor, Tech Content Creator",
@@ -32,7 +33,7 @@ export const translations = {
     mainSkills: "Keahlian Utama",
     featuredProjects: "Proyek Unggulan",
     latestBlog: "Blog Terbaru",
-    
+
     // Skills
     frontendDev: "Front-End Development",
     backendDev: "Back-End Development",
@@ -42,14 +43,14 @@ export const translations = {
     aiMl: "AI & Machine Learning",
     mentoring: "Mentoring",
     contentCreation: "Content Creation",
-    
+
     // About page
     aboutTitle: "Tentang Saya",
     aboutDescription: "Mengenal lebih dekat Aditya Fakhri Riansyah",
     philosophy: "Filosofi",
     values: "Nilai-Nilai",
     hobbies: "Hobi & Minat",
-    
+
     // Projects page
     projectsTitle: "Proyek",
     projectsDescription: "Koleksi proyek unggulan dan terbaru yang telah saya kerjakan",
@@ -65,12 +66,12 @@ export const translations = {
     completedProjects: "Selesai",
     inDevelopment: "Dalam Pengembangan",
     webApps: "Web Apps",
-    
+
     // Experience page
     experienceTitle: "Pengalaman Kerja",
     experienceDescription: "Riwayat karir dan pengalaman profesional",
     achievements: "Pencapaian",
-    
+
     // Education page
     educationTitle: "Pendidikan",
     educationDescription: "Latar belakang pendidikan dan sertifikasi",
@@ -79,11 +80,11 @@ export const translations = {
     certifications: "Sertifikasi",
     continuousLearning: "Pembelajaran Berkelanjutan",
     languages: "Bahasa",
-    
+
     // Community page
     communityTitle: "Komunitas & Volunteering",
     communityDescription: "Kontribusi dan keterlibatan dalam komunitas teknologi",
-    
+
     // Services page
     servicesTitle: "Layanan & Harga",
     servicesDescription: "Layanan konten berbayar untuk brand, produk, atau campaign Anda.",
@@ -93,14 +94,14 @@ export const translations = {
     bundlingPackages: "Paket Bundling",
     speakingEngagement: "Speaking Engagement",
     workProcess: "Proses Kerja",
-    
+
     // Blog page
     blogTitle: "Blog",
     blogDescription: "Artikel dan tutorial tentang pengembangan web, AI, dan teknologi",
     searchArticles: "Cari artikel...",
     search: "Cari",
     relatedArticles: "Artikel Terkait",
-    
+
     // Contact page
     contactTitle: "Kontak",
     contactDescription: "Hubungi saya untuk kolaborasi atau pertanyaan",
@@ -115,26 +116,26 @@ export const translations = {
     contactSuccessDesc: "Terima kasih, email berhasil dikirim. Saya akan merespons maksimal dalam 1×24 jam.",
     contactFailTitle: "Gagal mengirim pesan",
     contactFailDesc: "Terjadi kesalahan saat mengirim email. Silakan coba lagi atau hubungi saya via WhatsApp.",
-    
+
     // Speaking page
     speakingTitle: "Speaking & Events",
     speakingDescription: "Riwayat sebagai pembicara di acara dan konferensi teknologi",
     upcomingEvents: "Event Mendatang",
     pastEvents: "Event Sebelumnya",
     topicsISpeak: "Topik yang Saya Bicarakan",
-    
+
     // Footer
     indonesian: "Indonesia",
     english: "English",
-    
+
     // Status
     production: "Produksi",
     inProgress: "Dalam Pengembangan",
     trainingProject: "Proyek Pelatihan",
-    
+
     // Time
     present: "Sekarang",
-    
+
     // Common phrases
     learnMore: "Pelajari Lebih Lanjut",
     viewDemo: "Lihat Demo",
@@ -147,7 +148,7 @@ export const translations = {
     nextProject: "Proyek Selanjutnya",
     previousProject: "Proyek Sebelumnya",
     allProjects: "Semua Proyek",
-    
+
     // Project details
     overview: "Gambaran Umum",
     projectGoals: "Tujuan Proyek",
@@ -166,7 +167,7 @@ export const translations = {
     links: "Tautan",
     tags: "Tag",
     interestedInSimilarWork: "Tertarik dengan Pekerjaan Serupa?",
-    
+
     // Months
     january: "Januari",
     february: "Februari",
@@ -181,7 +182,7 @@ export const translations = {
     november: "November",
     december: "Desember",
   },
-  
+
   en: {
     // Navigation
     home: "Home",
@@ -195,17 +196,18 @@ export const translations = {
     services: "Services & Rates",
     blog: "Blog",
     contact: "Contact",
-    
+
     // Common
     downloadCV: "Download CV",
     lightMode: "Light Mode",
     darkMode: "Dark Mode",
     readMore: "Read More",
     viewAll: "View All",
+    viewEvents: "View Events",
     getInTouch: "Get In Touch",
     contactMe: "Contact Me",
     language: "en",
-    
+
     // Home page
     heroTitle: "Aditya Fakhri Riansyah",
     heroSubtitle: "AI-Driven Web Developer, Mentor, Tech Content Creator",
@@ -215,7 +217,7 @@ export const translations = {
     mainSkills: "Main Skills",
     featuredProjects: "Featured Projects",
     latestBlog: "Latest Blog",
-    
+
     // Skills
     frontendDev: "Front-End Development",
     backendDev: "Back-End Development",
@@ -225,14 +227,14 @@ export const translations = {
     aiMl: "AI & Machine Learning",
     mentoring: "Mentoring",
     contentCreation: "Content Creation",
-    
+
     // About page
     aboutTitle: "About Me",
     aboutDescription: "Getting to know Aditya Fakhri Riansyah better",
     philosophy: "Philosophy",
     values: "Values",
     hobbies: "Hobbies & Interests",
-    
+
     // Projects page
     projectsTitle: "Projects",
     projectsDescription: "Collection of featured and recent projects I've worked on",
@@ -248,12 +250,12 @@ export const translations = {
     completedProjects: "Completed",
     inDevelopment: "In Development",
     webApps: "Web Apps",
-    
+
     // Experience page
     experienceTitle: "Work Experience",
     experienceDescription: "Career history and professional experience",
     achievements: "Achievements",
-    
+
     // Education page
     educationTitle: "Education",
     educationDescription: "Educational background and certifications",
@@ -262,11 +264,11 @@ export const translations = {
     certifications: "Certifications",
     continuousLearning: "Continuous Learning",
     languages: "Languages",
-    
+
     // Community page
     communityTitle: "Community & Volunteering",
     communityDescription: "Contributions and involvement in technology communities",
-    
+
     // Services page
     servicesTitle: "Services & Rates",
     servicesDescription: "Paid content services for your brand, product, or campaign.",
@@ -276,14 +278,14 @@ export const translations = {
     bundlingPackages: "Bundling Packages",
     speakingEngagement: "Speaking Engagement",
     workProcess: "Work Process",
-    
+
     // Blog page
     blogTitle: "Blog",
     blogDescription: "Articles and tutorials about web development, AI, and technology",
     searchArticles: "Search articles...",
     search: "Search",
     relatedArticles: "Related Articles",
-    
+
     // Contact page
     contactTitle: "Contact",
     contactDescription: "Contact me for collaboration or questions",
@@ -298,26 +300,26 @@ export const translations = {
     contactSuccessDesc: "Thanks, your email has been sent. I will respond within 24 hours.",
     contactFailTitle: "Failed to send message",
     contactFailDesc: "An error occurred while sending. Please try again or reach me via WhatsApp.",
-    
+
     // Speaking page
     speakingTitle: "Speaking & Events",
     speakingDescription: "History as a speaker at technology events and conferences",
     upcomingEvents: "Upcoming Events",
     pastEvents: "Past Events",
     topicsISpeak: "Topics I Speak About",
-    
+
     // Footer
     indonesian: "Indonesia",
     english: "English",
-    
+
     // Status
     production: "Production",
     inProgress: "In Development",
     trainingProject: "Training Project",
-    
+
     // Time
     present: "Present",
-    
+
     // Common phrases
     learnMore: "Learn More",
     viewDemo: "View Demo",
@@ -330,7 +332,7 @@ export const translations = {
     nextProject: "Next Project",
     previousProject: "Previous Project",
     allProjects: "All Projects",
-    
+
     // Project details
     overview: "Overview",
     projectGoals: "Project Goals",
@@ -349,7 +351,7 @@ export const translations = {
     links: "Links",
     tags: "Tags",
     interestedInSimilarWork: "Interested in Similar Work?",
-    
+
     // Months
     january: "January",
     february: "February",
