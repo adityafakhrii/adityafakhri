@@ -17,7 +17,46 @@ export type EventItem = {
 }
 
 export const upcomingEvents: EventItem[] = [
-
+  {
+    id: "seminar-himatif-2025",
+    category: "Seminar",
+    tags: ["AI", "Frontend", "Backend", "Web Development"],
+    imageSrc: "/speaking/seminar-himatif.webp",
+    title: {
+      id: "Intelligent Project Delivery (Seminar Nasional)",
+      en: "Intelligent Project Delivery (National Seminar)",
+    },
+    subtitle: {
+      id: "Empowering Frontend-Backend Development with AI",
+      en: "Empowering Frontend-Backend Development with AI",
+    },
+    date: "13 Desember 2025",
+    time: "10.30 - 12.50 WIB",
+    location: "Live on Zoom",
+    description: {
+      id: "Membahas integrasi AI dalam pengembangan Front-end & Back-end serta strategi Intelligent Project Delivery.",
+      en: "Discussing AI integration in Front-end & Back-end development and Intelligent Project Delivery strategies.",
+    },
+    bullets: {
+      id: [
+        "Nambah Wawasan Baru tentang integrasi AI",
+        "Implementasi AI dalam project development",
+        "E-Certificate Nasional",
+      ],
+      en: [
+        "Gain new insights on AI integration",
+        "AI implementation in project development",
+        "National E-Certificate",
+      ],
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: HIMATIF UTAMA",
+      en: "Organized by: HIMATIF UTAMA",
+    },
+    links: [
+      { labelId: "Daftar Event", labelEn: "Register Event", href: "https://docs.google.com/forms/d/e/1FAIpQLSc09K8AaKayTt5k3VKyh3wekpMLikrNzrs977USI39P41CoTA/viewform" },
+    ],
+  },
 ]
 
 export const pastEvents: EventItem[] = [

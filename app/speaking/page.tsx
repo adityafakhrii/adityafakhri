@@ -22,6 +22,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { TranslatedContent } from "@/components/translated-content"
 import { pastEvents, upcomingEvents } from "@/data/events"
 
+// Re-exporting to force refresh
 export default function SpeakingPage() {
     const [selectedImage, setSelectedImage] = useState<{ src: string, alt: string } | null>(null)
 
