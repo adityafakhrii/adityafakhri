@@ -22,12 +22,18 @@ export default function ServicesPage() {
           <div className="mt-8 space-y-8">
             <ContentBlock>
               <div className="text-lg text-muted-foreground mb-6">
-                <p>
-                  {t('language') === 'id' 
+                <p className="mb-2">
+                  {t('language') === 'id'
                     ? "Menawarkan berbagai layanan content creation untuk Instagram dengan harga yang kompetitif. Semua layanan mencakup konsultasi awal, revisi, dan pengiriman file dalam format yang dibutuhkan."
                     : "Offering various content creation services for Instagram at competitive prices. All services include initial consultation, revisions, and file delivery in the required format."
                   }
                 </p>
+                <div className="flex items-center gap-2 text-base font-medium text-amber-600 dark:text-amber-500">
+                  <AlertTriangle className="h-4 w-4" />
+                  <p>
+                    {t('language') === 'id' ? 'Harga yang tertera belum termasuk pajak yang berlaku. (Jika ada)' : 'Please note that taxes are not included in the listed prices. (If applicable)'}
+                  </p>
+                </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -214,10 +220,10 @@ export default function ServicesPage() {
                   <AlertTriangle className="h-5 w-5 text-amber-600 dark:text-amber-300 mt-0.5" />
                   <div>
                     <p className="text-sm">
-                      {t('language') === 'id' 
+                      {t('language') === 'id'
                         ? 'PENTING: Jika Anda ingin memiliki hak kepemilikan penuh atas konten (owning content), maka akan dikenakan biaya tambahan sebesar 2x lipat dari harga yang tertera di rate card. Hak kepemilikan ini memberikan Anda kebebasan penuh untuk menggunakan, memodifikasi, dan mendistribusikan konten tersebut.'
                         : 'IMPORTANT: If you want full ownership rights over the content (owning content), an additional fee of 2x the listed rate card price will be charged. This ownership grants you complete freedom to use, modify, and distribute the content.'}
-                  </p>
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -360,8 +366,8 @@ export default function ServicesPage() {
 
             <ContentBlock title={t('speakingEngagement')}>
               <div className="mb-6">
-                <p className="text-lg text-muted-foreground">
-                  {t('language') === 'id' 
+                <p className="text-lg text-muted-foreground mb-2">
+                  {t('language') === 'id'
                     ? "Layanan speaking engagement untuk berbagai acara teknologi, workshop, dan seminar dengan topik pengembangan web, AI, dan karir teknologi."
                     : "Speaking engagement services for various technology events, workshops, and seminars with topics on web development, AI, and technology careers."
                   }
@@ -513,13 +519,13 @@ export default function ServicesPage() {
             <ContentBlock>
               <div className="text-center">
                 <h3 className="text-xl font-medium mb-4">
-                  {t('language') === 'id' 
+                  {t('language') === 'id'
                     ? "Siap bantu brand, produk, atau campaign Anda tampil standout di media sosial!"
                     : "Ready to help your brand, product, or campaign stand out on social media!"
                   }
                 </h3>
                 <p className="mb-6 max-w-2xl mx-auto">
-                  {t('language') === 'id' 
+                  {t('language') === 'id'
                     ? "Konten berkualitas tinggi adalah kunci untuk membangun brand awareness dan engagement di media sosial. Yuk, Hubungi saya sekarang untuk mendiskusikan kebutuhan konten Anda."
                     : "High-quality content is the key to building brand awareness and engagement on social media. Let's contact me now to discuss your content needs."
                   }
