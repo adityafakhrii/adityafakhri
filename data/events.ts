@@ -17,6 +17,10 @@ export type EventItem = {
 }
 
 export const upcomingEvents: EventItem[] = [
+  
+]
+
+export const pastEvents: EventItem[] = [
   {
     id: "seminar-himatif-2025",
     category: "Seminar",
@@ -32,7 +36,7 @@ export const upcomingEvents: EventItem[] = [
     },
     date: "13 Desember 2025",
     time: "10.30 - 12.50 WIB",
-    location: "Live on Zoom",
+    location: "Univ. Widyatama, Bandung",
     description: {
       id: "Membahas integrasi AI dalam pengembangan Front-end & Back-end serta strategi Intelligent Project Delivery.",
       en: "Discussing AI integration in Front-end & Back-end development and Intelligent Project Delivery strategies.",
@@ -55,11 +59,9 @@ export const upcomingEvents: EventItem[] = [
     },
     links: [
       { labelId: "Daftar Event", labelEn: "Register Event", href: "https://docs.google.com/forms/d/e/1FAIpQLSc09K8AaKayTt5k3VKyh3wekpMLikrNzrs977USI39P41CoTA/viewform" },
+      { labelId: "Lihat Dokumentasi", labelEn: "View Documentation", href: "https://drive.google.com/drive/folders/1rZGjyb3AQKkffg-a-bevu8K4JeOmyJMg?usp=drive_link" },
     ],
   },
-]
-
-export const pastEvents: EventItem[] = [
   {
     id: "workshop-rai-dec-2025",
     category: "Workshop",
@@ -103,16 +105,16 @@ export const pastEvents: EventItem[] = [
   },
   {
     id: "corner-talkshow-pakuan-2025",
-    category: "Talkshow",
+    category: "Seminar",
     tags: ["AI", "Prompt Engineering", "Productivity"],
     imageSrc: "/speaking/cornettalkshow-unpak-2025.webp",
     title: {
-      id: "From Prompt to Productive Code",
-      en: "From Prompt to Productive Code",
+      id: "From Prompt to Productive Code: Jadikan Prompt sebagai Solusi Nyata",
+      en: "From Prompt to Productive Code: Turn Prompts into Real Solutions",
     },
     subtitle: {
-      id: "Jadikan Prompt sebagai Solusi Nyata",
-      en: "Turn Prompts into Real Solutions",
+      id: "Corner Talkshow",
+      en: "Corner Talkshow",
     },
     date: "06 Desember 2025",
     time: "08.00 - 14.00 WIB",
@@ -138,6 +140,7 @@ export const pastEvents: EventItem[] = [
     organizer: { id: "Diselenggarakan oleh: Corner Talkshow HIMAKOM UNPAK", en: "Organized by: Corner Talkshow HIMAKOM UNPAK" },
     links: [
       { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/1RTws1kV52FifDB5PPddJXdelZq6D-Z4KmeSvehnNBUY/edit?usp=sharing" },
+      { labelId: "Lihat Dokumentasi", labelEn: "View Documentation", href: "https://drive.google.com/drive/folders/1Zd_67jFnc-wp4m_c8Z7DEmmdnjIq4_6Z" },
     ],
   },
   {
@@ -146,8 +149,8 @@ export const pastEvents: EventItem[] = [
     tags: ["AI", "Mindset", "Career Development"],
     imageSrc: "/speaking/it-fest-uho-2025.webp",
     title: {
-      id: "Skills, Mindset, dan AI untuk Masa Depan",
-      en: "Skills, Mindset, and AI for the Future",
+      id: "Unleashing The Infinite Potential: Skills, Mindset, and AI for The Future",
+      en: "Unleashing The Infinite Potential: Skills, Mindset, and AI for The Future",
     },
     subtitle: {
       id: "IT Fest 18 UHO",
@@ -187,6 +190,11 @@ export const pastEvents: EventItem[] = [
         labelId: "Lihat Materi",
         labelEn: "View Materials",
         href: "https://docs.google.com/presentation/d/1_D1U2UpX3d0hsDFUmXXs1z6Vd8bO-OR3Kh-wyCyolBk/edit?usp=sharing",
+      },
+      {
+        labelId: "Lihat Dokumentasi",
+        labelEn: "View Documentation",
+        href: "https://drive.google.com/drive/folders/1cKFjovFN90rQRn0e_RxPT5yPzHjsEWNF",
       },
     ],
   },
@@ -276,6 +284,11 @@ export const pastEvents: EventItem[] = [
         labelId: "Lihat Materi",
         labelEn: "View Materials",
         href: "https://docs.google.com/presentation/d/15mex0XAbWizYXZz9iA7qk8AQ6sppjD832s0mAN8I1mI/edit?usp=sharing",
+      },
+      {
+        labelId: "Lihat Dokumentasi",
+        labelEn: "View Documentation",
+        href: "https://drive.google.com/drive/folders/1BPs6G7ZFFIuHEtuh-re96brN_A4Ci_SY",
       },
     ],
   },
@@ -381,7 +394,7 @@ export const pastEvents: EventItem[] = [
     },
     date: "18 - 19 Juli 2025",
     time: "19.30 WIB - 21.30 WIB",
-    location: "Google Meet",
+    location: "Live on Google Meet",
     description: {
       id: "Workshop intensif 2 hari belajar React JS dari dasar sekaligus membangun portofolio website perpustakaan. Cocok untuk pemula yang ingin terjun ke dunia Front-End Developer.",
       en: "2-day intensive workshop learning React JS from scratch while building a library website portfolio. Suitable for beginners wanting to dive into Front-End Development.",
@@ -605,7 +618,7 @@ export const pastEvents: EventItem[] = [
       en: "Literacy and Ethics in the Technology Era",
     },
     date: "05 Oktober 2024",
-    location: "Universitas Muhammadiyah Surakarta",
+    location: "Universitas Muhammadiyah Surakarta, Jawa Tengah",
     description: {
       id: "Seminar nasional membahas etika teknologi dan dampaknya terhadap masyarakat, mencakup:",
       en: "National seminar discussing technology ethics and its impact on society, covering:",
@@ -830,7 +843,7 @@ export const pastEvents: EventItem[] = [
     },
     date: "30 April 2024",
     time: "19.00 - 20.00 WIB",
-    location: "Live via Discord!",
+    location: "Live on Discord",
     description: {
       id: "Diskusi santai membahas strategi dan tips praktis belajar Front-End Development secara otodidak tanpa biaya, mulai dari roadmap belajar hingga tips mendapatkan pekerjaan.",
       en: "Casual discussion on strategies and practical tips for self-taught Front-End Development without cost, covering learning roadmaps to job hunting tips.",
