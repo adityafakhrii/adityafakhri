@@ -5,8 +5,10 @@ import { ContentBlock } from "@/components/content-block"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Check, Instagram, ImageIcon, Film, Mic, AlertTriangle } from "lucide-react"
+import { Check, Instagram, ImageIcon, Film, Mic, AlertTriangle, MonitorPlay, Brain, Medal, Calendar, MapPin, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
+import { pastEvents } from "@/data/events"
 import { TranslatedContent } from "@/components/translated-content"
 
 export default function ServicesPage() {
@@ -374,94 +376,489 @@ export default function ServicesPage() {
                 </p>
               </div>
 
-              <Card className="overflow-hidden border-2 hover:border-primary/50 transition-all duration-200">
-                <div className="bg-primary/10 p-4 flex items-center">
-                  <Mic className="h-5 w-5 mr-2 text-primary" />
-                  <h3 className="font-medium text-lg">
-                    {t('language') === 'id' ? 'Layanan Speaking' : 'Speaking Services'}
-                  </h3>
+              {/* WEBINAR PACKAGE */}
+              <div className="mb-12">
+                <div className="flex items-center mb-6 bg-primary/5 p-3 rounded-lg border border-primary/10">
+                  <MonitorPlay className="h-6 w-6 mr-3 text-primary" />
+                  <h3 className="text-xl font-bold tracking-tight">WEBINAR PACKAGE (Online)</h3>
                 </div>
-                <CardContent className="p-6">
-                  <div className="space-y-6">
-                    <div className="flex justify-between items-start">
-                      <div className="flex items-start">
-                        <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                        <div>
-                          <p className="font-medium">Workshop/Training</p>
-                          <p className="text-sm text-muted-foreground">
-                            {t('language') === 'id' ? 'Durasi 2-4 jam dengan hands-on practice' : '2-4 hours duration with hands-on practice'}
-                          </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {/* Basic Webinar */}
+                  <Card className="flex flex-col h-full hover:border-primary/50 transition-all duration-200">
+                    <CardContent className="p-6 flex flex-col h-full">
+                      <div className="mb-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <h4 className="font-bold text-lg">Basic Webinar</h4>
                         </div>
+                        <div className="text-2xl font-bold text-primary">500.000</div>
                       </div>
-                      <Badge className="text-lg font-semibold">2.000.000 - 3.000.000</Badge>
-                    </div>
-
-                    <div className="flex justify-between items-start">
-                      <div className="flex items-start">
-                        <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                        <div>
-                          <p className="font-medium">Seminar/Conference Talk</p>
-                          <p className="text-sm text-muted-foreground">
-                            {t('language') === 'id' ? 'Durasi 1-2 jam dengan Q&A session' : '1-2 hours duration with Q&A session'}
-                          </p>
-                        </div>
-                      </div>
-                      <Badge className="text-lg font-semibold">500.000 - 3.000.000</Badge>
-                    </div>
-
-                    <div className="flex justify-between items-start">
-                      <div className="flex items-start">
-                        <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                        <div>
-                          <p className="font-medium">Webinar/Online Talk</p>
-                          <p className="text-sm text-muted-foreground">
-                            {t('language') === 'id' ? 'Durasi 1-2 jam via platform online' : '1-2 hours duration via online platform'}
-                          </p>
-                        </div>
-                      </div>
-                      <Badge className="text-lg font-semibold">350.000 - 2.000.000</Badge>
-                    </div>
-
-                    <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
-                      <h4 className="font-medium mb-3">
-                        {t('language') === 'id' ? 'Harga dapat disesuaikan berdasarkan:' : 'Prices can be adjusted based on:'}
-                      </h4>
-                      <ul className="space-y-2">
-                        <li className="flex items-start">
-                          <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                          <span className="text-sm">
-                            {t('language') === 'id' ? 'Lokasi event (dalam/luar kota)' : 'Event location (in/out of town)'}
-                          </span>
+                      <ul className="space-y-2 text-sm flex-grow">
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Durasi 45-60 menit' : 'Duration 45-60 minutes'}</span>
                         </li>
-                        <li className="flex items-start">
-                          <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                          <span className="text-sm">
-                            {t('language') === 'id' ? 'Durasi dan kompleksitas materi' : 'Duration and material complexity'}
-                          </span>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? '1 topik utama' : '1 main topic'}</span>
                         </li>
-                        <li className="flex items-start">
-                          <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                          <span className="text-sm">
-                            {t('language') === 'id' ? 'Persiapan materi khusus' : 'Special material preparation'}
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                          <span className="text-sm">
-                            {t('language') === 'id' ? 'Jumlah peserta dan target audience' : 'Number of participants and target audience'}
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
-                          <span className="text-sm">
-                            {t('language') === 'id' ? 'Jenis organisasi (komersial/non-profit/pendidikan)' : 'Type of organization (commercial/non-profit/education)'}
-                          </span>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Q&A 10–15 menit' : 'Q&A 10–15 minutes'}</span>
                         </li>
                       </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                    </CardContent>
+                  </Card>
+
+                  {/* Standard Webinar */}
+                  <Card className="flex flex-col h-full border-primary/50 shadow-sm hover:shadow-md transition-all duration-200 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs px-2 py-1 rounded-bl-lg font-medium">Popular</div>
+                    <CardContent className="p-6 flex flex-col h-full">
+                      <div className="mb-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <h4 className="font-bold text-lg">Standard Webinar</h4>
+                        </div>
+                        <div className="text-2xl font-bold text-primary">1.000.000</div>
+                      </div>
+                      <ul className="space-y-2 text-sm flex-grow">
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Durasi 60–90 menit' : 'Duration 60–90 minutes'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Custom materi sesuai target audience' : 'Custom material suited to target audience'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Q&A 20–30 menit' : 'Q&A 20–30 minutes'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Materi PDF/Link Slide</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>1x IG Story Event Promote</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  {/* Premium Webinar */}
+                  <Card className="flex flex-col h-full border-amber-400 dark:border-amber-600 bg-amber-50/30 dark:bg-amber-900/10 hover:shadow-lg transition-all duration-200">
+                    <CardContent className="p-6 flex flex-col h-full">
+                      <div className="mb-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <h4 className="font-bold text-lg">Premium Webinar</h4>
+                        </div>
+                        <div className="text-2xl font-bold text-primary">1.500.000</div>
+                      </div>
+                      <ul className="space-y-2 text-sm flex-grow">
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Durasi 60-120 menit' : 'Duration 60-120 minutes'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Custom materi + Studi kasus' : 'Custom material + Case study'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Q&A 30 menit' : 'Q&A 30 minutes'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Materi PDF + resource tambahan' : 'PDF Material + additional resources'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Follow-up Q&A via DM IG (3 hari)' : 'Follow-up Q&A via IG DM (3 days)'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>1x IG Story Event Promote</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>1x IG Reels + Tiktok Event Promote</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+
+              {/* SEMINAR / OFFLINE TALK */}
+              <div className="mb-12">
+                <div className="flex items-center mb-6 bg-primary/5 p-3 rounded-lg border border-primary/10">
+                  <Mic className="h-6 w-6 mr-3 text-primary" />
+                  <h3 className="text-xl font-bold tracking-tight">SEMINAR / OFFLINE TALK</h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {/* Basic Seminar */}
+                  <Card className="flex flex-col h-full hover:border-primary/50 transition-all duration-200">
+                    <CardContent className="p-6 flex flex-col h-full">
+                      <div className="mb-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <h4 className="font-bold text-lg">Basic Seminar</h4>
+                        </div>
+                        <div className="text-2xl font-bold text-primary">900.000</div>
+                      </div>
+                      <ul className="space-y-2 text-sm flex-grow">
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Durasi 45-60 menit' : 'Duration 45-60 minutes'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? '1 topik utama' : '1 main topic'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Q&A 10-15 Menit' : 'Q&A 10-15 Minutes'}</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  {/* Professional Seminar */}
+                  <Card className="flex flex-col h-full border-primary/50 shadow-sm hover:shadow-md transition-all duration-200 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs px-2 py-1 rounded-bl-lg font-medium">Popular</div>
+                    <CardContent className="p-6 flex flex-col h-full">
+                      <div className="mb-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <h4 className="font-bold text-lg">Professional Seminar</h4>
+                        </div>
+                        <div className="text-2xl font-bold text-primary">1.500.000</div>
+                      </div>
+                      <ul className="space-y-2 text-sm flex-grow">
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Durasi 60–90 menit' : 'Duration 60–90 minutes'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Custom materi sesuai request' : 'Custom material as requested'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Q&A 20-30 menit' : 'Q&A 20-30 minutes'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Networking session</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Materi PDF/Link Slide</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>1x IG Story Event Promote</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  {/* Signature Seminar */}
+                  <Card className="flex flex-col h-full border-amber-400 dark:border-amber-600 bg-amber-50/30 dark:bg-amber-900/10 hover:shadow-lg transition-all duration-200">
+                    <CardContent className="p-6 flex flex-col h-full">
+                      <div className="mb-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <h4 className="font-bold text-lg">Signature Seminar</h4>
+                        </div>
+                        <div className="text-2xl font-bold text-primary">2.200.000</div>
+                      </div>
+                      <ul className="space-y-2 text-sm flex-grow">
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Durasi 60–120 menit' : 'Duration 60–120 minutes'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Custom materi sesuai kebutuhan event' : 'Custom material suited to event needs'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Studi kasus relevan audience' : 'Relevant audience case study'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Q&A extended</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Networking session</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Soft workshop mini session</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Materi PDF/Link Slide</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Resource & template</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>1x IG Story Event Promote</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>1x IG Reels+tiktok Event Promote</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+
+              {/* WORKSHOP (Hands-On) */}
+              <div className="mb-12">
+                <div className="flex items-center mb-6 bg-primary/5 p-3 rounded-lg border border-primary/10">
+                  <Brain className="h-6 w-6 mr-3 text-primary" />
+                  <h3 className="text-xl font-bold tracking-tight">WORKSHOP (Hands-On)</h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {/* Basic Workshop */}
+                  <Card className="flex flex-col h-full hover:border-primary/50 transition-all duration-200">
+                    <CardContent className="p-6 flex flex-col h-full">
+                      <div className="mb-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <h4 className="font-bold text-lg">Basic Workshop</h4>
+                        </div>
+                        <div className="text-2xl font-bold text-primary">1.500.000</div>
+                      </div>
+                      <ul className="space-y-2 text-sm flex-grow">
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Durasi 60 Menit' : 'Duration 60 Minutes'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Hands-on basic</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Studi kasus sederhana' : 'Simple case study'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Tanpa source code kompleks' : 'No complex source code'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Tanpa support pasca event' : 'No post-event support'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? '1 topik utama' : '1 main topic'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Q&A 10–15 menit' : 'Q&A 10–15 minutes'}</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  {/* Intensive Workshop */}
+                  <Card className="flex flex-col h-full border-primary/50 shadow-sm hover:shadow-md transition-all duration-200 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs px-2 py-1 rounded-bl-lg font-medium">Popular</div>
+                    <CardContent className="p-6 flex flex-col h-full">
+                      <div className="mb-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <h4 className="font-bold text-lg">Intensive Workshop</h4>
+                        </div>
+                        <div className="text-2xl font-bold text-primary">2.500.000</div>
+                      </div>
+                      <ul className="space-y-2 text-sm flex-grow">
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Durasi 120–180 Menit' : 'Duration 120–180 Minutes'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Real project build</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Source code repository</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Slide + PDF</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? '3 hari post-event Q&A' : '3 days post-event Q&A'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Networking session</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Materi PDF/Link Slide</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>1x IG Story Event Promote</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  {/* Masterclass Workshop */}
+                  <Card className="flex flex-col h-full border-amber-400 dark:border-amber-600 bg-amber-50/30 dark:bg-amber-900/10 hover:shadow-lg transition-all duration-200">
+                    <CardContent className="p-6 flex flex-col h-full">
+                      <div className="mb-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <h4 className="font-bold text-lg">Masterclass Workshop</h4>
+                        </div>
+                        <div className="text-2xl font-bold text-primary">3.200.000</div>
+                      </div>
+                      <ul className="space-y-2 text-sm flex-grow">
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Full hands-on real case production</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Repo + template project reusable</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? '7 hari post-event support' : '7 days post-event support'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Bonus checklist & tools</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>{t('language') === 'id' ? 'Soft consultation 30 menit dengan panitia' : 'Soft consultation 30 mins with committee'}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Materi PDF/Link Slide</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Resource & template</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>1x IG Story Event Promote</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>1x IG Reels+tiktok Event Promote</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
+                <div className="mt-4 p-4 border-2 border-amber-300 bg-amber-50 rounded-lg text-sm flex gap-3 items-center dark:border-amber-800 dark:bg-amber-900">
+                  <AlertTriangle className="h-5 w-5 text-amber-600 dark:text-amber-300 flex-shrink-0" />
+                  <p>{t('language') === 'id' 
+                     ? 'Travel luar kota untuk sesi offline: transport PP + akomodasi ditanggung oleh penyelenggara'
+                     : 'Out of town travel: Round-trip transport + accommodation covered by organizer'}</p>
+                </div>
+              </div>
+
+              <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
+                <h4 className="font-medium mb-3">
+                  {t('language') === 'id' ? 'Harga dapat disesuaikan berdasarkan:' : 'Prices can be adjusted based on:'}
+                </h4>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                    <span className="text-sm">
+                      {t('language') === 'id' ? 'Lokasi event (dalam/luar kota)' : 'Event location (in/out of town)'}
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                    <span className="text-sm">
+                      {t('language') === 'id' ? 'Durasi dan kompleksitas materi' : 'Duration and material complexity'}
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                    <span className="text-sm">
+                      {t('language') === 'id' ? 'Persiapan materi khusus' : 'Special material preparation'}
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                    <span className="text-sm">
+                      {t('language') === 'id' ? 'Jumlah peserta dan target audience' : 'Number of participants and target audience'}
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                    <span className="text-sm">
+                      {t('language') === 'id' ? 'Jenis organisasi (komersial/non-profit/pendidikan)' : 'Type of organization (commercial/non-profit/education)'}
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Previous Events Social Proof */}
+              <div className="mt-12 pt-8 border-t border-primary/10">
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-xl font-bold tracking-tight">
+                    {t('language') === 'id' ? 'Event Sebelumnya' : 'Previous Events'}
+                  </h3>
+                  <Button variant="ghost" className="gap-2" asChild>
+                    <Link href="/speaking">
+                      {t('language') === 'id' ? 'Lihat Semua' : 'View All'} <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {pastEvents.slice(0, 3).map((event) => (
+                    <Card key={event.id} className="hover:border-primary/50 transition-all duration-200 overflow-hidden group">
+                      <CardContent className="p-0 h-full">
+                        <div className="flex flex-row h-full">
+                           <div className="relative w-24 md:w-28 flex-shrink-0 bg-muted">
+                              <Image 
+                                src={event.imageSrc} 
+                                alt={t('language') === 'id' ? event.title.id : event.title.en}
+                                fill
+                                className={`object-cover ${event.imageClassName || ''}`}
+                              />
+                           </div>
+                           
+                           <div className="flex-1 p-3 flex flex-col justify-center min-w-0">
+                              <div className="mb-2">
+                                <Badge variant="secondary" className="mb-1 text-[10px] px-1.5 py-0 h-5">{event.category}</Badge>
+                                <h4 className="font-bold line-clamp-2 text-xs md:text-sm leading-tight group-hover:text-primary transition-colors">
+                                  {t('language') === 'id' ? event.title.id : event.title.en}
+                                </h4>
+                              </div>
+                              <div className="space-y-1 text-[10px] md:text-xs text-muted-foreground">
+                                <div className="flex items-center gap-1.5">
+                                  <Calendar className="h-3 w-3 flex-shrink-0" />
+                                  <span>{event.date}</span>
+                                </div>
+                                <div className="flex items-center gap-1.5">
+                                  <MapPin className="h-3 w-3 flex-shrink-0" />
+                                  <span className="truncate">{event.location}</span>
+                                </div>
+                              </div>
+                           </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
             </ContentBlock>
 
             <ContentBlock title={t('workProcess')}>
