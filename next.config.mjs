@@ -18,6 +18,7 @@ const nextConfig = {
       { protocol: "https", hostname: "itbox.id" },
       { protocol: "https", hostname: "www.algobash.com" },
       { protocol: "https", hostname: "merdekasiber.com" },
+      { protocol: "https", hostname: "kmjodkwdcxenijqgxnhh.supabase.co" },
       { protocol: "https", hostname: "prog-8.com" },
       { protocol: "https", hostname: "www.staditek.id" },
       { protocol: "https", hostname: "codingstudio.id" },
