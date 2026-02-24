@@ -95,6 +95,14 @@ export const translations = {
     speakingEngagement: "Speaking Engagement",
     workProcess: "Proses Kerja",
 
+    // Links page
+    linksPageTitle: "Links",
+    linksPageDescription: "Rekomendasi produk IT pilihan gue",
+    linksPageBook: "Buku",
+    linksPageBookSIDesc: "Rekomendasi buku untuk memahami dasar-dasar Sistem Informasi",
+    linksPageMLDesc: "Rekomendasi produk untuk belajar Machine Learning",
+    linksPageMore: "Link lainnya segera hadir",
+
     // Blog page
     blogTitle: "Blog",
     blogDescription: "Artikel dan tutorial tentang pengembangan web, AI, dan teknologi",
@@ -278,6 +286,14 @@ export const translations = {
     bundlingPackages: "Bundling Packages",
     speakingEngagement: "Speaking Engagement",
     workProcess: "Work Process",
+
+    // Links page
+    linksPageTitle: "Links",
+    linksPageDescription: "My curated IT product recommendations",
+    linksPageBook: "Book",
+    linksPageBookSIDesc: "Recommended book to understand the fundamentals of Information Systems",
+    linksPageMLDesc: "Recommended product for learning Machine Learning",
+    linksPageMore: "More links coming soon",
 
     // Blog page
     blogTitle: "Blog",

@@ -21,7 +21,8 @@ import {
   Lightbulb,
   DollarSign,
   Folder,
-  UserCheck
+  UserCheck,
+  LinkIcon
 } from "lucide-react"
 import { useTheme } from "next-themes"
 import Link from "next/link"
@@ -50,13 +51,13 @@ export function PortfolioSidebar() {
   const { t } = useLanguage()
 
   // Ensure theme toggle only renders client-side to avoid hydration mismatch
-  useEffect(() => {}, [])
+  useEffect(() => { }, [])
 
   const toggleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark")
   }
 
-  
+
 
   return (
     <>
@@ -160,6 +161,14 @@ export function PortfolioSidebar() {
                 <Link href="/mentoring">
                   <UserCheck className="mr-2 h-4 w-4" />
                   <span>Private Mentoring</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton asChild isActive={pathname === "/links"}>
+                <Link href="/links">
+                  <LinkIcon className="mr-2 h-4 w-4" />
+                  <span>Links</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
