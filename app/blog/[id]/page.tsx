@@ -9,6 +9,7 @@ import { ArrowLeft, Calendar, Clock, User, Tag } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { TranslatedContent } from "@/components/translated-content"
+import { BlogShareButton } from "@/components/blog-share-buttons"
 import blogs from "@/data/blog"
 
 export default function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
@@ -26,9 +27,9 @@ export default function BlogPostPage({ params }: { params: Promise<{ id: string 
         if (!post) {
           return (
             <div className="container max-w-5xl py-8 px-4 md:px-8">
-              <PageHeader 
-                title={t('language') === 'id' ? "Artikel Tidak Ditemukan" : "Article Not Found"} 
-                description={t('language') === 'id' ? "Maaf, artikel yang Anda cari tidak tersedia." : "Sorry, the article you're looking for is not available."} 
+              <PageHeader
+                title={t('language') === 'id' ? "Artikel Tidak Ditemukan" : "Article Not Found"}
+                description={t('language') === 'id' ? "Maaf, artikel yang Anda cari tidak tersedia." : "Sorry, the article you're looking for is not available."}
               />
               <Button asChild variant="outline" className="mt-4">
                 <Link href="/blog">
@@ -50,7 +51,10 @@ export default function BlogPostPage({ params }: { params: Promise<{ id: string 
             </Button>
 
             <article className="mb-8" itemScope itemType="https://schema.org/Article">
-              <Badge className="mb-4">{post.category || t('notAvailable')}</Badge>
+              <div className="flex items-center justify-between mb-4">
+                <Badge>{post.category || t('notAvailable')}</Badge>
+                <BlogShareButton title={post.title} blogId={id} lang={t('language')} />
+              </div>
               <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">{post.title || t('notAvailable')}</h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center">
