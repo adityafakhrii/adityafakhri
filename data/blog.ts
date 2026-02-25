@@ -256,7 +256,7 @@ const blogs = {
     category: "AI",
     author: "Aditya Fakhri Riansyah",
     tags: ["AI", "Website Builder", "No Code", "Tools", "2026", "Web Development"],
-    imageSrc: "/placeholder.svg?height=400&width=800",
+    imageSrc: "https://kmjodkwdcxenijqgxnhh.supabase.co/storage/v1/object/public/shared-images/1771997631397-6vwuqy.webp",
     relatedPosts: ["ai-web-development"],
   },
   "ai-web-development": {
