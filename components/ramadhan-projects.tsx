@@ -19,9 +19,16 @@ const projects: ProjectData[] = [
         link: "http://sahuryuk.lovable.app/",
         isAvailable: true
     },
-    ...Array.from({ length: 29 }, (_, i) => ({
-        id: i + 2,
-        title: `Day ${i + 2}`,
+    {
+        id: 2,
+        title: "Ramadhan Time",
+        description: "Aplikasi jadwal imsakiyah dan countdown maghrib untuk Ramadhan. Dapatkan jadwal sholat real-time berdasarkan lokasi Anda.",
+        link: "https://ramadhantime.lovable.app/",
+        isAvailable: true
+    },
+    ...Array.from({ length: 28 }, (_, i) => ({
+        id: i + 3,
+        title: `Day ${i + 3}`,
         description: "Coming soon...",
         isAvailable: false
     }))
