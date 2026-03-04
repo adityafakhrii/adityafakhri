@@ -17,10 +17,51 @@ export type EventItem = {
 }
 
 export const upcomingEvents: EventItem[] = [
-  
+
 ]
 
 export const pastEvents: EventItem[] = [
+  {
+    id: "vibe-coding-101-antigravity",
+    category: "Workshop",
+    tags: ["AI", "Vibe Coding", "Lovable", "Antigravity"],
+    imageSrc: "https://kmjodkwdcxenijqgxnhh.supabase.co/storage/v1/object/public/shared-images/1772614312178-vznxaw.webp",
+    imageClassName: "object-contain bg-white",
+    title: {
+      id: "Vibe Coding 101: Membangun Aplikasi Berbasis AI Dengan Antigravity",
+      en: "Vibe Coding 101: Building AI-Based Applications With Antigravity",
+    },
+    subtitle: {
+      id: "Workshop RuangAI by CodePolitan",
+      en: "RuangAI Workshop by CodePolitan",
+    },
+    date: "04 Maret 2026",
+    time: "10.00 - 12.00 WIB",
+    location: "Online",
+    description: {
+      id: "Workshop hands-on membangun aplikasi berbasis AI menggunakan Lovable dan Antigravity, dengan studi kasus pembuatan Aplikasi \"Falaah\" - Smart Ibadah Tracker.",
+      en: "Hands-on workshop on building AI-based applications using Lovable and Antigravity, with a case study on creating the \"Falaah\" Application - Smart Ibadah Tracker.",
+    },
+    bullets: {
+      id: [
+        "Pengenalan Vibe Coding dan tools AI",
+        "Membangun aplikasi berbasis AI menggunakan Lovable dan Antigravity",
+        "Studi kasus: Smart Ibadah Tracker \"Falaah\"",
+      ],
+      en: [
+        "Introduction to Vibe Coding and AI tools",
+        "Building AI-based apps using Lovable and Antigravity",
+        "Case study: Smart Ibadah Tracker \"Falaah\"",
+      ],
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: RuangAI By CodePolitan",
+      en: "Organized by: RuangAI By CodePolitan",
+    },
+    links: [
+      { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/1oDUazVN5F4DTafOhilTx7Oji-M1EDvukRegnOIVIEnQ/edit?usp=sharing" },
+    ],
+  },
   {
     id: "seminar-himatif-2025",
     category: "Seminar",
@@ -58,7 +99,7 @@ export const pastEvents: EventItem[] = [
       en: "Organized by: HIMATIF UTAMA",
     },
     links: [
-      { labelId: "Daftar Event", labelEn: "Register Event", href: "https://docs.google.com/forms/d/e/1FAIpQLSc09K8AaKayTt5k3VKyh3wekpMLikrNzrs977USI39P41CoTA/viewform" },
+      { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/1WrNPxLq5lZxu7ajDjJ7La6rt3VYhVjv3QzFhDYf3JFU/edit?usp=sharing" },
       { labelId: "Lihat Dokumentasi", labelEn: "View Documentation", href: "https://drive.google.com/drive/folders/1rZGjyb3AQKkffg-a-bevu8K4JeOmyJMg?usp=drive_link" },
     ],
   },
