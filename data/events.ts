@@ -17,7 +17,34 @@ export type EventItem = {
 }
 
 export const upcomingEvents: EventItem[] = [
-
+  {
+    id: "bsb-vibe-coding-ramadhan-2026",
+    category: "Offline Event",
+    tags: ["Vibe Coding", "AI", "Ramadhan", "Charity"],
+    imageSrc: "https://kmjodkwdcxenijqgxnhh.supabase.co/storage/v1/object/public/shared-images/1772692127547-v5hyta.webp",
+    title: {
+      id: "Vibe Coding Ramadhan: Aplikasi AI Rekomendasi Menu Sahur & Buka Puasa",
+      en: "Vibe Coding Ramadhan: AI App for Sahur & Iftar Menu Recommendations"
+    },
+    subtitle: {
+      id: "Belajar Sambil Beramal Season 6 - TechTalk Vibe Coding",
+      en: "Learn While Donating Season 6 - TechTalk Vibe Coding"
+    },
+    date: "07 Maret 2026",
+    time: "14.00 - 19.30 WIB",
+    location: "Kota Bandung",
+    description: {
+      id: "Event offline Belajar Sambil Beramal Season 6. TechTalk Vibe Coding membahas pembuatan aplikasi AI rekomendasi menu sahur & buka puasa. Level Up Your Skill, Scale Up Your Charity.",
+      en: "Belajar Sambil Beramal Season 6 offline event. TechTalk Vibe Coding discussing the creation of an AI app for sahur & iftar menu recommendations. Level Up Your Skill, Scale Up Your Charity."
+    },
+    links: [
+      { labelId: "Registrasi Di Sini", labelEn: "Register Here", href: "https://gdgbandung.com/bsb-offline" }
+    ],
+    organizer: {
+      id: "Diselenggarakan oleh: GDG Bandung, Binary Nusantara, BandungDev, MX Perience Club",
+      en: "Organized by: GDG Bandung, Binary Nusantara, BandungDev, MX Perience Club"
+    }
+  }
 ]
 
 export const pastEvents: EventItem[] = [
@@ -32,8 +59,8 @@ export const pastEvents: EventItem[] = [
       en: "Vibe Coding 101: Building AI-Based Applications With Antigravity",
     },
     subtitle: {
-      id: "Workshop RuangAI by CodePolitan",
-      en: "RuangAI Workshop by CodePolitan",
+      id: "Workshop RuangAI by CODEPOLITAN",
+      en: "RuangAI Workshop by CODEPOLITAN",
     },
     date: "04 Maret 2026",
     time: "10.00 - 12.00 WIB",
@@ -55,12 +82,168 @@ export const pastEvents: EventItem[] = [
       ],
     },
     organizer: {
-      id: "Diselenggarakan oleh: RuangAI By CodePolitan",
-      en: "Organized by: RuangAI By CodePolitan",
+      id: "Diselenggarakan oleh: RuangAI By CODEPOLITAN",
+      en: "Organized by: RuangAI By CODEPOLITAN",
     },
     links: [
       { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/1oDUazVN5F4DTafOhilTx7Oji-M1EDvukRegnOIVIEnQ/edit?usp=sharing" },
+      { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://youtu.be/avHl5Pr2TIY" }
     ],
+  },
+  {
+    id: "devhandal-circle-offline-2026",
+    category: "Meet & Greet",
+    tags: ["DevHandal", "Networking", "Career"],
+    imageSrc: "https://kmjodkwdcxenijqgxnhh.supabase.co/storage/v1/object/public/shared-images/1772692127231-qpwkjg.webp",
+    title: {
+      id: "DevHandal Circle: Expert Meet & Greet Offline",
+      en: "DevHandal Circle: Expert Meet & Greet Offline"
+    },
+    subtitle: {
+      id: "Developer Handal x CODEPOLITAN x Tencent EdgeOne",
+      en: "Developer Handal x CODEPOLITAN x Tencent EdgeOne"
+    },
+    date: "15 Februari 2026",
+    time: "09.00 - 14.00 WIB",
+    location: "BLOCK71, Kota Bandung",
+    description: {
+      id: "Sesi offline eksklusif untuk graduated DevHandal 2026. Buka peluang terhubung ke para Expert, jalin relasi dan dapatkan doorprize menarik.",
+      en: "Exclusive offline session for graduated DevHandal 2026. Open opportunities to connect with Experts, build networks and get exciting doorprizes."
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: DevHandal, CODEPOLITAN & Tencent EdgeOne",
+      en: "Organized by: DevHandal, CODEPOLITAN & Tencent EdgeOne"
+    }
+  },
+  {
+    id: "idcamp-dicoding-ai-web-dev",
+    category: "Live Session",
+    tags: ["AI", "Web Dev", "Lovable", "Antigravity"],
+    imageSrc: "https://kmjodkwdcxenijqgxnhh.supabase.co/storage/v1/object/public/shared-images/1772692126933-1z0scs.webp",
+    title: {
+      id: "IDCamp x Dicoding Live: AI Web Dev - Build Real Apps with Lovable & Antigravity",
+      en: "IDCamp x Dicoding Live: AI Web Dev - Build Real Apps with Lovable & Antigravity"
+    },
+    subtitle: {
+      id: "AI Series by IDCamp x Dicoding",
+      en: "AI Series by IDCamp x Dicoding"
+    },
+    date: "10 Februari 2026",
+    time: "19.00 - 20.30 WIB",
+    location: "Live on YouTube",
+    description: {
+      id: "Sesi IDCamp x Dicoding Live membahas cara membangun aplikasi nyata menggunakan Lovable & Antigravity bersama Cantika Putri dan Aditya Fakhri Riansyah.",
+      en: "IDCamp x Dicoding Live session discussing how to build real apps using Lovable & Antigravity with Cantika Putri and Aditya Fakhri Riansyah."
+    },
+    links: [
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://dicoding.com/events/9539" },
+      { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/1-Zq0fb7ZpT3I0LSe9_YZu5R7kf6eH_cZJaRPOHcv-Lk/edit?usp=sharing" },
+      { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://www.youtube.com/live/YTh2zlwgmOc?si=MXL9lRwdu-TH-Xze" }
+    ],
+    organizer: {
+      id: "Diselenggarakan oleh: IDCamp & Dicoding",
+      en: "Organized by: IDCamp & Dicoding"
+    }
+  },
+  {
+    id: "ruangai-live-20-image-tools",
+    category: "Live Session",
+    tags: ["AI", "Vibe Coding", "Image Tools", "Productivity"],
+    imageSrc: "https://kmjodkwdcxenijqgxnhh.supabase.co/storage/v1/object/public/shared-images/1772699383774-gfd9zy.webp",
+    title: {
+      id: "Production-Ready Image Tools With Vibe Coding: Resize, Compress, Convert",
+      en: "Production-Ready Image Tools With Vibe Coding: Resize, Compress, Convert"
+    },
+    subtitle: {
+      id: "RuangAI Live Session - Pertemuan 20",
+      en: "RuangAI Live Session - Session 20"
+    },
+    date: "05 Februari 2026",
+    time: "10.00 - 11.30 WIB",
+    location: "Live on Zoom",
+    description: {
+      id: "Sesi live reguler RuangAI pertemuan ke-20 bersama Aji dan Aditya, membahas pembuatan Production-Ready Image Tools (Resize, Compress, Convert) dengan pendekatan Vibe Coding.",
+      en: "Regular RuangAI live session meeting 20 with Aji and Aditya, discussing the creation of Production-Ready Image Tools (Resize, Compress, Convert) using the Vibe Coding approach."
+    },
+    links: [
+      { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://drive.google.com/file/d/1F1b9nVj9fXna_rG_-EpKJ4Un4q7z9U3l/view?usp=sharing" },
+      { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://youtu.be/Et9-BGtFYqI" }
+    ],
+    organizer: {
+      id: "Diselenggarakan oleh: RuangAI by CODEPOLITAN",
+      en: "Organized by: RuangAI by CODEPOLITAN"
+    }
+  },
+  {
+    id: "live-session-unindra-2026",
+    category: "Live Session",
+    tags: ["AI", "SaaS Builder", "POS"],
+    imageSrc: "https://kmjodkwdcxenijqgxnhh.supabase.co/storage/v1/object/public/shared-images/1772692126590-x40don.webp",
+    title: {
+      id: "Spesial Live Session: Bangun POS Warung pakai Lovable & Antigravity",
+      en: "Special Live Session: Build a Warung POS with Lovable & Antigravity"
+    },
+    subtitle: {
+      id: "RuangAI by CODEPOLITAN",
+      en: "RuangAI by CODEPOLITAN"
+    },
+    date: "31 Januari 2026",
+    time: "09.00 - 11.30 WIB",
+    location: "Live on Zoom",
+    description: {
+      id: "Sesi live spesial bersama RuangAI dan Universitas Indraprasta PGRI membahas cara membangun aplikasi POS untuk warung menggunakan Lovable dan Antigravity bersama Aditya, Felisha, dan Adela.",
+      en: "Special live session with RuangAI and Indraprasta PGRI University discussing how to build a POS app for warung using Lovable and Antigravity with Aditya, Felisha, and Adela."
+    },
+    links: [
+      { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://www.canva.com/design/DAHDD81OVNs/t07610cbTQQex9cQlaZlIQ/edit?utm_content=DAHDD81OVNs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" },
+      { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://youtu.be/oMSvs1iWKgs" }
+    ],
+    organizer: {
+      id: "Diselenggarakan oleh: Universitas Indraprasta PGRI & RuangAI",
+      en: "Organized by: Indraprasta PGRI University & RuangAI"
+    }
+  },
+  {
+    id: "training-gen-ai-smkn2-sukabumi-2026",
+    category: "Training",
+    tags: ["AI", "Generative AI", "Coding Assist", "SaaS Builder"],
+    imageSrc: "https://kmjodkwdcxenijqgxnhh.supabase.co/storage/v1/object/public/shared-images/1772697046298-1afkze.webp",
+    title: {
+      id: "Siap Kerja di Era AI: Skill Digital yang Wajib Dimiliki Anak SMK",
+      en: "Ready to Work in the AI Era: Digital Skills Every SMK Student Must Have"
+    },
+    subtitle: {
+      id: "Training Generative AI Bagi Siswa SMKN 2 Sukabumi ",
+      en: "Generative AI Training for SMKN 2 Sukabumi Students"
+    },
+    date: "28 Januari 2026",
+    time: "09.00 - 12.00 WIB",
+    location: "SMKN 2 Sukabumi",
+    description: {
+      id: "Training Generative AI eksklusif untuk membekali siswa SMKN 2 Sukabumi dengan skill digital agar siap kerja di era AI.",
+      en: "Exclusive Generative AI Training to equip SMKN 2 Sukabumi students with digital skills to be ready for work in the AI era."
+    },
+    bullets: {
+      id: [
+        "Pengenalan dan literasi dasar AI untuk mempermudah pekerjaan",
+        "Mengenal berbagai AI Tools populer penunjang produktivitas",
+        "Persiapan masuk dunia kerja dengan mindset digital",
+        "Pembuatan CV terstruktur dan persiapan wawancara"
+      ],
+      en: [
+        "Introduction and basic AI literacy to simplify work",
+        "Get to know various popular AI Tools supporting productivity",
+        "Preparation to enter the workforce with a digital mindset",
+        "Structured CV creation and interview preparation"
+      ]
+    },
+    links: [
+      { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://www.canva.com/design/DAHDD7AgbVE/dCu4D8fzO70AzDxfRavfEQ/edit?utm_content=DAHDD7AgbVE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" }
+    ],
+    organizer: {
+      id: "Diselenggarakan oleh: RuangAI By CODEPOLITAN & SMKN 2 Sukabumi",
+      en: "Organized by: RuangAI By CODEPOLITAN & SMKN 2 Sukabumi"
+    }
   },
   {
     id: "seminar-himatif-2025",
