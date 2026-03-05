@@ -117,7 +117,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <LanguageProvider>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={false}>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange={false}>
             <SidebarProvider>
               <div className="flex min-h-screen">
                 <PortfolioSidebar />
@@ -125,7 +125,7 @@ export default function RootLayout({
               </div>
             </SidebarProvider>
           </ThemeProvider>
-          </LanguageProvider>
+        </LanguageProvider>
         <Toaster />
         <SpeedInsights />
         <Analytics />
