@@ -56,7 +56,7 @@ export default function ServicesPage() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">120K</Badge>
+                        <Badge className="text-lg font-semibold">170K</Badge>
                       </div>
 
                       <div className="flex justify-between items-start">
@@ -69,7 +69,7 @@ export default function ServicesPage() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">150K</Badge>
+                        <Badge className="text-lg font-semibold">200K</Badge>
                       </div>
                     </div>
                   </CardContent>
@@ -92,7 +92,7 @@ export default function ServicesPage() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">200K</Badge>
+                        <Badge className="text-lg font-semibold">250K</Badge>
                       </div>
 
                       <div className="flex justify-between items-start">
@@ -105,7 +105,7 @@ export default function ServicesPage() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">300K</Badge>
+                        <Badge className="text-lg font-semibold">350K</Badge>
                       </div>
 
                       <div className="flex justify-between items-start">
@@ -118,7 +118,7 @@ export default function ServicesPage() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">220K</Badge>
+                        <Badge className="text-lg font-semibold">270K</Badge>
                       </div>
 
                       <div className="flex justify-between items-start">
@@ -131,7 +131,7 @@ export default function ServicesPage() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">330K</Badge>
+                        <Badge className="text-lg font-semibold">380K</Badge>
                       </div>
                     </div>
                   </CardContent>
@@ -155,7 +155,7 @@ export default function ServicesPage() {
                               </p>
                             </div>
                           </div>
-                          <Badge className="text-lg font-semibold">350K</Badge>
+                          <Badge className="text-lg font-semibold">400K</Badge>
                         </div>
 
                         <div className="flex justify-between items-start">
@@ -168,7 +168,20 @@ export default function ServicesPage() {
                               </p>
                             </div>
                           </div>
-                          <Badge className="text-lg font-semibold">380K</Badge>
+                          <Badge className="text-lg font-semibold">430K</Badge>
+                        </div>
+
+                        <div className="flex justify-between items-start">
+                          <div className="flex items-start">
+                            <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                            <div>
+                              <p className="font-medium">TikTok Video</p>
+                              <p className="text-sm text-muted-foreground">
+                                {t('language') === 'id' ? 'Video vertikal maksimal 90 detik khusus TikTok' : 'Maximum 90 second vertical video for TikTok'}
+                              </p>
+                            </div>
+                          </div>
+                          <Badge className="text-lg font-semibold">300K</Badge>
                         </div>
                       </div>
 
@@ -183,7 +196,7 @@ export default function ServicesPage() {
                               </p>
                             </div>
                           </div>
-                          <Badge className="text-lg font-semibold">600K</Badge>
+                          <Badge className="text-lg font-semibold">650K</Badge>
                         </div>
 
                         <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
@@ -240,10 +253,10 @@ export default function ServicesPage() {
                   </div>
                   <CardContent className="p-6">
                     <div className="text-center">
-                      <span className="text-sm text-muted-foreground line-through mr-2">268k</span>
+                      <span className="text-sm text-muted-foreground line-through mr-2">318k</span>
                     </div>
                     <div className="text-center mb-4">
-                      <span className="text-3xl font-bold">299K</span>
+                      <span className="text-3xl font-bold">349K</span>
                       <p className="text-sm text-primary font-medium italic">Hemat 49k</p>
                     </div>
                     <ul className="space-y-2 mb-6">
@@ -277,10 +290,10 @@ export default function ServicesPage() {
                   </div>
                   <CardContent className="p-6">
                     <div className="text-center">
-                      <span className="text-sm text-muted-foreground line-through mr-2">443k</span>
+                      <span className="text-sm text-muted-foreground line-through mr-2">493k</span>
                     </div>
                     <div className="text-center mb-4">
-                      <span className="text-3xl font-bold">549K</span>
+                      <span className="text-3xl font-bold">599K</span>
                       <p className="text-sm text-primary font-medium italic">Hemat 114k</p>
                     </div>
                     <ul className="space-y-2 mb-6">
@@ -322,10 +335,10 @@ export default function ServicesPage() {
                   </div>
                   <CardContent className="p-6">
                     <div className="text-center">
-                      <span className="text-sm text-muted-foreground line-through mr-2">636k</span>
+                      <span className="text-sm text-muted-foreground line-through mr-2">686k</span>
                     </div>
                     <div className="text-center mb-4">
-                      <span className="text-3xl font-bold">799K</span>
+                      <span className="text-3xl font-bold">849K</span>
                       <p className="text-sm text-primary font-medium italic">Hemat 187k</p>
                     </div>
                     <ul className="space-y-2 mb-6">
