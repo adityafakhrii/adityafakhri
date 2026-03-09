@@ -18,6 +18,125 @@ export type EventItem = {
 
 export const upcomingEvents: EventItem[] = [
   {
+    id: "devcoach-229-laravel",
+    category: "Live Session",
+    tags: ["Laravel", "Framework", "Web"],
+    imageSrc: "https://kmjodkwdcxenijqgxnhh.supabase.co/storage/v1/object/public/shared-images/1773033055414-k39wo8.webp",
+    title: {
+      id: "DevCoach #230: Is Laravel dead?",
+      en: "DevCoach #230: Is Laravel dead?"
+    },
+    subtitle: {
+      id: "Dicoding Indonesia",
+      en: "Dicoding Indonesia"
+    },
+    date: "13 Maret 2026",
+    time: "16.00 - 17.00 WIB",
+    location: "Live on YouTube",
+    description: {
+      id: "Sesi DevCoach yang membedah framework Laravel, alasan industri menyukainya, serta demonstrasi live dari instalasi hingga aksi.",
+      en: "DevCoach session analyzing the Laravel framework, why the industry loves it, and a live demonstration from installation to action."
+    },
+    bullets: {
+      id: [
+        "Bedah framework Laravel",
+        "Why Industry Loves It?",
+        "Live Demo: From Install to Action!"
+      ],
+      en: [
+        "Dissecting the Laravel framework",
+        "Why Industry Loves It?",
+        "Live Demo: From Install to Action!"
+      ]
+    },
+    links: [
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://dicoding.id/devcoach" }
+    ],
+    organizer: {
+      id: "Diselenggarakan oleh: Dicoding Indonesia",
+      en: "Organized by: Dicoding Indonesia"
+    }
+  },
+  {
+    id: "ngabuburit-produktif-thr-digital",
+    category: "Workshop",
+    tags: ["Lovable", "Antigravity", "Vibe Coding", "AI"],
+    imageSrc: "https://kmjodkwdcxenijqgxnhh.supabase.co/storage/v1/object/public/shared-images/1773033054845-3xdk2m.webp",
+    title: {
+      id: "Ngabuburit Produktif: Bikin Aplikasi THR Kaget Digital dengan Vibe Coding",
+      en: "Productive Ngabuburit: Build a Digital THR Surprise App with Vibe Coding"
+    },
+    subtitle: {
+      id: "Dunia Coding Academy",
+      en: "Dunia Coding Academy"
+    },
+    date: "14 - 15 Maret 2026",
+    time: "15.30 WIB",
+    location: "Live on Google Meet",
+    description: {
+      id: "Workshop online membahas pembuatan aplikasi THR Digital menggunakan Lovable, Antigravity, dan AI.",
+      en: "Online workshop discussing the creation of a Digital THR application using Lovable, Antigravity, and AI."
+    },
+    bullets: {
+      id: [
+        "Mengenal konsep fitur THR Kaget pada aplikasi fintech",
+        "Pengenalan Vibe Coding dan best practice menggunakan AI untuk coding",
+        "Eksplorasi tools Lovable & Antigravity untuk membangun aplikasi",
+        "Membuat prototype aplikasi THR Digital dengan AI",
+        "Implementasi fitur Generate Link, Claim THR & Random Nominal",
+        "Integrasi project Lovable → GitHub → Local Development & Deploy",
+        "Output: Aplikasi THR Digital terdeploy + link project portfolio"
+      ],
+      en: [
+        "Introduction to the THR Surprise feature concept in fintech apps",
+        "Introduction to Vibe Coding and best practices using AI for coding",
+        "Exploring Lovable & Antigravity tools to build an application",
+        "Creating a Digital THR app prototype with AI",
+        "Implementing Generate Link, Claim THR & Random Nominal features",
+        "Lovable project integration → GitHub → Local Development & Deploy",
+        "Output: Deployed Digital THR App + project portfolio link"
+      ]
+    },
+    links: [
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://duniacoding.id/event" }
+    ],
+    organizer: {
+      id: "Diselenggarakan oleh: Dunia Coding Academy",
+      en: "Organized by: Dunia Coding Academy"
+    }
+  },
+  {
+    id: "workshop-webdev-polines-2026",
+    category: "Workshop",
+    tags: ["Web Development", "AI", "Workshop"],
+    imageSrc: "https://kmjodkwdcxenijqgxnhh.supabase.co/storage/v1/object/public/shared-images/1773035940630-2sznch.webp",
+    title: {
+      id: "Workshop Web Development: Build Your Own Website with AI",
+      en: "Web Development Workshop: Build Your Own Website with AI"
+    },
+    subtitle: {
+      id: "Techup Politeknik Negeri Semarang",
+      en: "Techup Politeknik Negeri Semarang"
+    },
+    date: "03 April 2026",
+    time: "07.00 WIB",
+    location: "Politeknik Negeri Semarang, Kota Semarang",
+    description: {
+      id: "Workshop offline di Politeknik Negeri Semarang membahas pembuatan website mandiri menggunakan teknologi AI bersama Aditya Fakhri Riansyah.",
+      en: "Offline workshop at Semarang State Polytechnic discussing independent website creation using AI technology with Aditya Fakhri Riansyah."
+    },
+    links: [
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://docs.google.com/forms/d/e/1FAIpQLSeU3cI15mTnQBoYyipuMKmWRSptgLYP81DRwMfURC4trlXAdQ/viewform" }
+    ],
+    organizer: {
+      id: "Diselenggarakan oleh: Techup Politeknik Negeri Semarang",
+      en: "Organized by: Techup Politeknik Negeri Semarang"
+    }
+  }
+]
+
+export const pastEvents: EventItem[] = [
+  {
     id: "bsb-vibe-coding-ramadhan-2026",
     category: "Offline Event",
     tags: ["Vibe Coding", "AI", "Ramadhan", "Charity"],
@@ -27,8 +146,8 @@ export const upcomingEvents: EventItem[] = [
       en: "Vibe Coding Ramadhan: AI App for Sahur & Iftar Menu Recommendations"
     },
     subtitle: {
-      id: "Belajar Sambil Beramal Season 6 - TechTalk Vibe Coding",
-      en: "Learn While Donating Season 6 - TechTalk Vibe Coding"
+      id: "Belajar Sambil Beramal Season 6 - GDG Bandung x Logitech",
+      en: "Learn While Donating Season 6 - GDG Bandung x Logitech"
     },
     date: "07 Maret 2026",
     time: "14.00 - 19.30 WIB",
@@ -38,16 +157,14 @@ export const upcomingEvents: EventItem[] = [
       en: "Belajar Sambil Beramal Season 6 offline event. TechTalk Vibe Coding discussing the creation of an AI app for sahur & iftar menu recommendations. Level Up Your Skill, Scale Up Your Charity."
     },
     links: [
-      { labelId: "Registrasi Di Sini", labelEn: "Register Here", href: "https://gdgbandung.com/bsb-offline" }
+      { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/13cl4wEL_bVjM9oekpiwiDqh0_pn3mIJzmG73fyFSsNE/edit?usp=sharing" },
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://gdg.community.dev/events/details/google-gdg-bandung-presents-offline-vibe-coding-to-production-building-ai-apps-for-ramadhan/" }
     ],
     organizer: {
       id: "Diselenggarakan oleh: GDG Bandung, Binary Nusantara, BandungDev, MX Perience Club",
       en: "Organized by: GDG Bandung, Binary Nusantara, BandungDev, MX Perience Club"
     }
-  }
-]
-
-export const pastEvents: EventItem[] = [
+  },
   {
     id: "vibe-coding-101-antigravity",
     category: "Workshop",
@@ -113,7 +230,10 @@ export const pastEvents: EventItem[] = [
     organizer: {
       id: "Diselenggarakan oleh: DevHandal, CODEPOLITAN & Tencent EdgeOne",
       en: "Organized by: DevHandal, CODEPOLITAN & Tencent EdgeOne"
-    }
+    },
+    links: [
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://luma.com/knyqhp0f" }
+    ],
   },
   {
     id: "idcamp-dicoding-ai-web-dev",
@@ -136,9 +256,9 @@ export const pastEvents: EventItem[] = [
       en: "IDCamp x Dicoding Live session discussing how to build real apps using Lovable & Antigravity with Cantika Putri and Aditya Fakhri Riansyah."
     },
     links: [
-      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://dicoding.com/events/9539" },
       { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/1-Zq0fb7ZpT3I0LSe9_YZu5R7kf6eH_cZJaRPOHcv-Lk/edit?usp=sharing" },
-      { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://www.youtube.com/live/YTh2zlwgmOc?si=MXL9lRwdu-TH-Xze" }
+      { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://www.youtube.com/live/YTh2zlwgmOc?si=MXL9lRwdu-TH-Xze" },
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://dicoding.com/events/9539" }
     ],
     organizer: {
       id: "Diselenggarakan oleh: IDCamp & Dicoding",
@@ -461,7 +581,7 @@ export const pastEvents: EventItem[] = [
       en: "Organized by: KelasFullstack",
     },
     links: [
-      { labelId: "Lihat Event", labelEn: "View Event", href: "https://www.codepolitan.com/events/belajar-uiux-web-dengan-figma-studi-kasus-redesign-web-dpr-ri/" },
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://www.codepolitan.com/events/belajar-uiux-web-dengan-figma-studi-kasus-redesign-web-dpr-ri/" },
     ],
   },
   {
@@ -503,7 +623,7 @@ export const pastEvents: EventItem[] = [
       en: "Organized by: GDG Bandung",
     },
     links: [
-      { labelId: "Lihat Event", labelEn: "View Event", href: "https://gdgbandung.com/devfestbdg1" },
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://gdgbandung.com/devfestbdg1" },
       {
         labelId: "Lihat Materi",
         labelEn: "View Materials",
@@ -555,7 +675,7 @@ export const pastEvents: EventItem[] = [
       en: "Organized by: KelasFullstack",
     },
     links: [
-      { labelId: "Lihat Event", labelEn: "View Event", href: "https://www.codepolitan.com/events/mahasiswa-ti-bertahan-di-era-al-gimana-caranya-di-tengah-derasnya-perkembangan-teknologi/" },
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://www.codepolitan.com/events/mahasiswa-ti-bertahan-di-era-al-gimana-caranya-di-tengah-derasnya-perkembangan-teknologi/" },
       { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://www.youtube.com/live/h6gUQZMTeEM?si=TElq259BGy79KrGz" },
     ],
   },
@@ -594,7 +714,7 @@ export const pastEvents: EventItem[] = [
       en: "Organized by: Qwords Cloud Web Hosting Indonesia",
     },
     links: [
-      { labelId: "Lihat Event", labelEn: "View Event", href: "https://s.id/qdswebdev" },
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://s.id/qdswebdev" },
       {
         labelId: "Lihat Materi",
         labelEn: "View Materials",
@@ -642,7 +762,7 @@ export const pastEvents: EventItem[] = [
       en: "Organized by: Dunia Coding Academy",
     },
     links: [
-      { labelId: "Lihat Event", labelEn: "View Event", href: "https://duniacoding.id/event/belajar-react-sekaligus-bikin-portofolio-yuk-bangun-website-perpustakaan-sendiri-2025" },
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://duniacoding.id/event/belajar-react-sekaligus-bikin-portofolio-yuk-bangun-website-perpustakaan-sendiri-2025" },
       { labelId: "Materi Day 1", labelEn: "Material Day 1", href: "https://docs.google.com/presentation/d/1284ZvzWPA43_kpwd5D5tUm_WDj5r288dJ6e92Y5Fs1A/edit?usp=sharing" },
       { labelId: "Materi Day 2", labelEn: "Material Day 2", href: "https://docs.google.com/presentation/d/1za7BJYLiuaFBY3I92u25O0P8Wxm_xlgIvVNkCnfaBhI/edit?usp=sharing" },
       { labelId: "Rekaman Day 1", labelEn: "Recording Day 1", href: "https://youtu.be/B9XmU5tklrs" },
@@ -748,7 +868,7 @@ export const pastEvents: EventItem[] = [
       en: "Interactive workshop covering the basics of using Tailwind CSS for modern website styling. Participants will learn from installation, utility-first concepts, to hands-on practice building responsive layouts.",
     },
     links: [
-      { labelId: "Join Kelas Fullstack", labelEn: "Join Fullstack Class", href: "https://pay.codepolitan.com/?slug=program-fullstack-web-development-lifetime&coupon=ADITYAFAKHRI" },
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://pay.codepolitan.com/?slug=program-fullstack-web-development-lifetime&coupon=ADITYAFAKHRI" },
       { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://www.codepolitan.com/course/intro/tailwind-dasar-desain-web-kilat-jaman-sekarang/" },
       { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/1nGqXbBuwlhv9QoQYRzyEyz4wBaRWhOcxdYu-Kfr4p1k/edit?usp=sharing" },
     ],
