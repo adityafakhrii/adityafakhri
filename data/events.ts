@@ -18,45 +18,36 @@ export type EventItem = {
 
 export const upcomingEvents: EventItem[] = [
   {
-    id: "devcoach-229-laravel",
-    category: "Live Session",
-    tags: ["Laravel", "Framework", "Web"],
-    imageSrc: "https://kmjodkwdcxenijqgxnhh.supabase.co/storage/v1/object/public/shared-images/1773033055414-k39wo8.webp",
+    id: "workshop-webdev-polines-2026",
+    category: "Workshop",
+    tags: ["Web Development", "AI", "Workshop"],
+    imageSrc: "https://kmjodkwdcxenijqgxnhh.supabase.co/storage/v1/object/public/shared-images/1773035940630-2sznch.webp",
     title: {
-      id: "DevCoach #230: Is Laravel dead?",
-      en: "DevCoach #230: Is Laravel dead?"
+      id: "Workshop Web Development: Build Your Own Website with AI",
+      en: "Web Development Workshop: Build Your Own Website with AI"
     },
     subtitle: {
-      id: "Dicoding Indonesia",
-      en: "Dicoding Indonesia"
+      id: "Techup Politeknik Negeri Semarang",
+      en: "Techup Politeknik Negeri Semarang"
     },
-    date: "13 Maret 2026",
-    time: "16.00 - 17.00 WIB",
-    location: "Live on YouTube",
+    date: "03 April 2026",
+    time: "07.00 WIB",
+    location: "Politeknik Negeri Semarang, Kota Semarang",
     description: {
-      id: "Sesi DevCoach yang membedah framework Laravel, alasan industri menyukainya, serta demonstrasi live dari instalasi hingga aksi.",
-      en: "DevCoach session analyzing the Laravel framework, why the industry loves it, and a live demonstration from installation to action."
-    },
-    bullets: {
-      id: [
-        "Bedah framework Laravel",
-        "Why Industry Loves It?",
-        "Live Demo: From Install to Action!"
-      ],
-      en: [
-        "Dissecting the Laravel framework",
-        "Why Industry Loves It?",
-        "Live Demo: From Install to Action!"
-      ]
+      id: "Workshop offline di Politeknik Negeri Semarang membahas pembuatan website mandiri menggunakan teknologi AI bersama Aditya Fakhri Riansyah.",
+      en: "Offline workshop at Semarang State Polytechnic discussing independent website creation using AI technology with Aditya Fakhri Riansyah."
     },
     links: [
-      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://dicoding.id/devcoach" }
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://docs.google.com/forms/d/e/1FAIpQLSeU3cI15mTnQBoYyipuMKmWRSptgLYP81DRwMfURC4trlXAdQ/viewform" }
     ],
     organizer: {
-      id: "Diselenggarakan oleh: Dicoding Indonesia",
-      en: "Organized by: Dicoding Indonesia"
+      id: "Diselenggarakan oleh: Techup Politeknik Negeri Semarang",
+      en: "Organized by: Techup Politeknik Negeri Semarang"
     }
-  },
+  }
+]
+
+export const pastEvents: EventItem[] = [
   {
     id: "ngabuburit-produktif-thr-digital",
     category: "Workshop",
@@ -98,6 +89,8 @@ export const upcomingEvents: EventItem[] = [
       ]
     },
     links: [
+      { labelId: "Materi Hari ke-1", labelEn: "Materials Day 1", href: "https://docs.google.com/presentation/d/1lAhjfmTmX4TnKUcXH8Bf3O_olbh6cZ3MIggczmszbJU/edit?usp=sharing" },
+      { labelId: "Materi Hari ke-2", labelEn: "Materials Day 2", href: "https://docs.google.com/presentation/d/1bFVOhZ1sBHSLiyslAb9fxI02T4uPbBp_Mo1kgraEntw/edit?usp=sharing" },
       { labelId: "Halaman Event", labelEn: "Event Page", href: "https://duniacoding.id/event" }
     ],
     organizer: {
@@ -106,36 +99,47 @@ export const upcomingEvents: EventItem[] = [
     }
   },
   {
-    id: "workshop-webdev-polines-2026",
-    category: "Workshop",
-    tags: ["Web Development", "AI", "Workshop"],
-    imageSrc: "https://kmjodkwdcxenijqgxnhh.supabase.co/storage/v1/object/public/shared-images/1773035940630-2sznch.webp",
+    id: "devcoach-229-laravel",
+    category: "Live Session",
+    tags: ["Laravel", "Framework", "Web"],
+    imageSrc: "https://kmjodkwdcxenijqgxnhh.supabase.co/storage/v1/object/public/shared-images/1773033055414-k39wo8.webp",
     title: {
-      id: "Workshop Web Development: Build Your Own Website with AI",
-      en: "Web Development Workshop: Build Your Own Website with AI"
+      id: "DevCoach #230: Is Laravel dead?",
+      en: "DevCoach #230: Is Laravel dead?"
     },
     subtitle: {
-      id: "Techup Politeknik Negeri Semarang",
-      en: "Techup Politeknik Negeri Semarang"
+      id: "Dicoding Indonesia",
+      en: "Dicoding Indonesia"
     },
-    date: "03 April 2026",
-    time: "07.00 WIB",
-    location: "Politeknik Negeri Semarang, Kota Semarang",
+    date: "13 Maret 2026",
+    time: "16.00 - 17.00 WIB",
+    location: "Live on YouTube",
     description: {
-      id: "Workshop offline di Politeknik Negeri Semarang membahas pembuatan website mandiri menggunakan teknologi AI bersama Aditya Fakhri Riansyah.",
-      en: "Offline workshop at Semarang State Polytechnic discussing independent website creation using AI technology with Aditya Fakhri Riansyah."
+      id: "Sesi DevCoach yang membedah framework Laravel, alasan industri menyukainya, serta demonstrasi live dari instalasi hingga aksi.",
+      en: "DevCoach session analyzing the Laravel framework, why the industry loves it, and a live demonstration from installation to action."
+    },
+    bullets: {
+      id: [
+        "Bedah framework Laravel",
+        "Why Industry Loves It?",
+        "Live Demo: From Install to Action!"
+      ],
+      en: [
+        "Dissecting the Laravel framework",
+        "Why Industry Loves It?",
+        "Live Demo: From Install to Action!"
+      ]
     },
     links: [
-      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://docs.google.com/forms/d/e/1FAIpQLSeU3cI15mTnQBoYyipuMKmWRSptgLYP81DRwMfURC4trlXAdQ/viewform" }
+      { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/1jRb1zD9c6doRmcxBpJ728I0EVm_QzayTKPpYoEPHoaY/edit?usp=sharing" },
+      { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://www.youtube.com/live/52H_TUqozb4" },
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://dicoding.id/devcoach" }
     ],
     organizer: {
-      id: "Diselenggarakan oleh: Techup Politeknik Negeri Semarang",
-      en: "Organized by: Techup Politeknik Negeri Semarang"
+      id: "Diselenggarakan oleh: Dicoding Indonesia",
+      en: "Organized by: Dicoding Indonesia"
     }
-  }
-]
-
-export const pastEvents: EventItem[] = [
+  },
   {
     id: "bsb-vibe-coding-ramadhan-2026",
     category: "Offline Event",
