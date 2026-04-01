@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
     `
 
     const apiKey = process.env.RESEND_API_KEY
-    const contactEmail = process.env.CONTACT_EMAIL
+    const contactEmail = process.env.CONTACT_EMAIL || "adityafakhri03@gmail.com"
 
     if (!apiKey || !contactEmail) {
       return NextResponse.json({ error: "Email provider not configured" }, { status: 500 })

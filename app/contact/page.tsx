@@ -9,7 +9,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { Mail, Phone, MapPin, Send, ArrowUpRight } from "lucide-react"
 import { useState } from "react"
 import { useToast } from "@/hooks/use-toast"
 import { TranslatedContent } from "@/components/translated-content"
@@ -161,31 +161,33 @@ export default function ContactPage() {
             <div className="space-y-6">
               <ContentBlock>
                 <div className="space-y-4">
-                  <div className="flex items-start">
+                  <a href="mailto:adityafakhri03@gmail.com" className="flex items-start group p-3 -mx-3 rounded-lg hover:bg-muted transition-colors">
                     <Mail className="h-5 w-5 mr-3 text-primary mt-0.5" />
-                    <div>
-                      <h3 className="font-medium">{t('email')}</h3>
+                    <div className="flex-1">
+                      <h3 className="font-medium flex items-center text-foreground">
+                        {t('email')}
+                        <ArrowUpRight className="ml-1 h-4 w-4 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-200 text-primary" />
+                      </h3>
                       <p className="text-sm text-muted-foreground mt-1">
-                        <a href="mailto:aditya@example.com" className="hover:underline">
-                          adityafakhri03@gmail.com
-                        </a>
+                        adityafakhri03@gmail.com
                       </p>
                     </div>
-                  </div>
+                  </a>
 
-                  <div className="flex items-start">
+                  <a href="http://wa.me/62895808860080" target="_blank" rel="noopener noreferrer" className="flex items-start group p-3 -mx-3 rounded-lg hover:bg-muted transition-colors">
                     <Phone className="h-5 w-5 mr-3 text-primary mt-0.5" />
-                    <div>
-                      <h3 className="font-medium">WhatsApp</h3>
+                    <div className="flex-1">
+                      <h3 className="font-medium flex items-center text-foreground">
+                        WhatsApp
+                        <ArrowUpRight className="ml-1 h-4 w-4 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-200 text-primary" />
+                      </h3>
                       <p className="text-sm text-muted-foreground mt-1">
-                        <a href="http://wa.me/62895808860080" className="hover:underline">
-                          +62 895 8088 60080
-                        </a>
+                        +62 895 8088 60080
                       </p>
                     </div>
-                  </div>
+                  </a>
 
-                  <div className="flex items-start">
+                  <div className="flex items-start p-3 -mx-3">
                     <MapPin className="h-5 w-5 mr-3 text-primary mt-0.5" />
                     <div>
                       <h3 className="font-medium">

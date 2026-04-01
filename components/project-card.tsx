@@ -1,17 +1,21 @@
+import { useLanguage } from "@/contexts/language-context"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import Link from "next/link"
+import { getLocalizedData, TranslatableString } from "@/data/projects"
 
 interface ProjectCardProps {
   title: string
-  description: string
+  description: TranslatableString | string
   imageSrc: string
   tags: readonly string[]
   href: string
 }
 
 export function ProjectCard({ title, description, imageSrc, tags, href }: ProjectCardProps) {
+  const { language } = useLanguage()
+
   return (
     <Link href={href} className="block group">
       <Card className="overflow-hidden transition-all duration-200 hover:shadow-md">
@@ -26,7 +30,7 @@ export function ProjectCard({ title, description, imageSrc, tags, href }: Projec
         </div> */}
         <CardContent className="p-4">
           <h3 className="font-medium text-lg">{title}</h3>
-          <p className="text-sm text-muted-foreground mt-1 line-clamp-2">{description}</p>
+          <p className="text-sm text-muted-foreground mt-1 line-clamp-2">{getLocalizedData(description, language)}</p>
           <div className="flex flex-wrap gap-2 mt-3">
             {tags.map((tag) => (
               <Badge key={tag} variant="secondary" className="font-normal">

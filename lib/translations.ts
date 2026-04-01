@@ -28,7 +28,7 @@ export const translations = {
     heroTitle: "Aditya Fakhri Riansyah",
     heroSubtitle: "AI-Driven Web Developer, Mentor, Tech Content Creator",
     heroDescription: "Saya membangun aplikasi web dan mobile modern dengan fokus utama pada pengalaman pengguna, performa optimal, dan aksesibilitas. Saya juga aktif mengeksplorasi integrasi AI, membimbing melalui mentoring, dan berbagi pengetahuan lewat konten edukatif.",
-    viewProjects: "Lihat Proyek",
+    viewProjects: "Lihat Portofolio",
     collaboration: "Aditya telah berkolaborasi dengan berbagai perusahaan teknologi",
     mainSkills: "Keahlian Utama",
     featuredProjects: "Proyek Unggulan",
@@ -189,6 +189,50 @@ export const translations = {
     october: "Oktober",
     november: "November",
     december: "Desember",
+
+    // Project Details
+    projectDetails: {
+      siacta: {
+        subtitle: "Sistem Informasi Akuntansi & Pajak",
+        description: "Aplikasi web komprehensif untuk mengelola operasi keuangan dan kepatuhan pajak dengan fitur lengkap untuk bisnis.",
+        fullDescription: "SIACTA adalah sistem informasi akuntansi dan pajak terpadu yang dirancang untuk membantu bisnis mengelola operasi keuangan mereka dengan lebih efisien. Sistem ini mengintegrasikan berbagai aspek akuntansi, mulai dari pencatatan transaksi hingga pelaporan pajak, dalam satu platform yang user-friendly dan powerful.",
+        duration: "6 bulan",
+        role: "Full-Stack Developer & Project Lead",
+        client: "PT. Solusi Bisnis Indonesia",
+        goals: [
+          "Mengotomatisasi proses akuntansi manual yang memakan waktu",
+          "Menyediakan sistem pelaporan pajak yang akurat dan real-time",
+          "Meningkatkan efisiensi operasional keuangan perusahaan",
+          "Memastikan kepatuhan terhadap regulasi perpajakan Indonesia",
+        ],
+        features: [
+          "Dashboard analitik keuangan real-time",
+          "Manajemen transaksi dan jurnal otomatis",
+          "Sistem pelaporan pajak terintegrasi",
+          "Multi-user access dengan role-based permissions",
+          "Export data ke berbagai format (PDF, Excel, CSV)",
+          "Backup dan restore data otomatis",
+          "Audit trail untuk tracking perubahan data",
+          "Notifikasi deadline pajak dan pembayaran",
+        ],
+        challenges: [
+          { challenge: "Kompleksitas regulasi perpajakan Indonesia yang sering berubah", solution: "Mengimplementasikan sistem konfigurasi yang fleksibel dan mudah diupdate sesuai perubahan regulasi terbaru" },
+          { challenge: "Integrasi dengan sistem akuntansi existing client", solution: "Membangun API yang robust dan sistem import/export data yang kompatibel dengan berbagai format" },
+          { challenge: "Keamanan data keuangan yang sensitif", solution: "Implementasi enkripsi end-to-end, audit logging, dan sistem backup multi-layer" },
+        ],
+        outcomes: [
+          "Mengurangi waktu proses akuntansi bulanan dari 5 hari menjadi 2 hari",
+          "Meningkatkan akurasi pelaporan pajak hingga 99.8%",
+          "Menghemat biaya operasional akuntansi sebesar 40%",
+          "Digunakan oleh 15+ perusahaan dengan total 200+ users aktif",
+        ],
+        testimonial: {
+          quote: "SIACTA telah mengubah cara kami mengelola keuangan perusahaan. Proses yang sebelumnya memakan waktu berhari-hari kini dapat diselesaikan dalam hitungan jam dengan akurasi yang sangat tinggi.",
+          author: "Budi Santoso",
+          position: "Finance Manager, PT. Solusi Bisnis Indonesia",
+        },
+      },
+    },
   },
 
   en: {
@@ -197,7 +241,7 @@ export const translations = {
     about: "About",
     skills: "Skills",
     speaking: "Speaking & Events",
-    projects: "Proyek & Portofolio",
+    projects: "Projects & Portfolio",
     experience: "Experience",
     education: "Education",
     community: "Community",
@@ -220,7 +264,7 @@ export const translations = {
     heroTitle: "Aditya Fakhri Riansyah",
     heroSubtitle: "AI-Driven Web Developer, Mentor, Tech Content Creator",
     heroDescription: "I build modern web and mobile applications with a primary focus on user experience, optimal performance, and accessibility. I'm also actively exploring AI integration, mentoring, and sharing knowledge through educational content.",
-    viewProjects: "View Projects",
+    viewProjects: "View Portfolio",
     collaboration: "Aditya has collaborated with various technology companies",
     mainSkills: "Main Skills",
     featuredProjects: "Featured Projects",
@@ -244,7 +288,7 @@ export const translations = {
     hobbies: "Hobbies & Interests",
 
     // Projects page
-    projectsTitle: "Proyek & Portofolio",
+    projectsTitle: "Projects & Portfolio",
     projectsDescription: "Collection of featured and recent projects I've worked on",
     featuredProjectsTitle: "Featured Projects",
     recentProjectsTitle: "Recent Projects",
@@ -381,6 +425,50 @@ export const translations = {
     october: "October",
     november: "November",
     december: "December",
+    
+    // Project Details
+    projectDetails: {
+      siacta: {
+        subtitle: "Accounting & Tax Information System",
+        description: "A comprehensive web application to manage financial operations and tax compliance with complete features for businesses.",
+        fullDescription: "SIACTA is an integrated accounting and tax information system designed to help businesses manage their financial operations more efficiently. This system integrates various accounting aspects, from transaction recording to tax reporting, in a single user-friendly and powerful platform.",
+        duration: "6 months",
+        role: "Full-Stack Developer & Project Lead",
+        client: "PT. Solusi Bisnis Indonesia",
+        goals: [
+          "Automate time-consuming manual accounting processes",
+          "Provide an accurate and real-time tax reporting system",
+          "Improve the company's financial operational efficiency",
+          "Ensure compliance with Indonesian tax regulations",
+        ],
+        features: [
+          "Real-time financial analytics dashboard",
+          "Automatic transaction and journal management",
+          "Integrated tax reporting system",
+          "Multi-user access with role-based permissions",
+          "Data export to various formats (PDF, Excel, CSV)",
+          "Automatic data backup and restore",
+          "Audit trail for tracking data changes",
+          "Tax deadline and payment notifications",
+        ],
+        challenges: [
+          { challenge: "The complexity of frequently changing Indonesian tax regulations", solution: "Implementing a flexible and easily updatable configuration system according to the latest regulatory changes" },
+          { challenge: "Integration with the client's existing accounting system", solution: "Building a robust API and a data import/export system compatible with various formats" },
+          { challenge: "Security of sensitive financial data", solution: "Implementation of end-to-end encryption, audit logging, and a multi-layer backup system" },
+        ],
+        outcomes: [
+          "Reduced monthly accounting process time from 5 days to 2 days",
+          "Increased tax reporting accuracy to 99.8%",
+          "Saved 40% in accounting operational costs",
+          "Used by 15+ companies with a total of 200+ active users",
+        ],
+        testimonial: {
+          quote: "SIACTA has transformed the way we manage our company's finances. Processes that previously took days can now be completed in hours with very high accuracy.",
+          author: "Budi Santoso",
+          position: "Finance Manager, PT. Solusi Bisnis Indonesia",
+        },
+      },
+    }
   }
 }
 

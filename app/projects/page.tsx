@@ -38,9 +38,9 @@ const pick = (id: keyof typeof projects) => {
   return {
     id,
     title: p.title,
-    description: p.description,
-    imageSrc: p.imageSrc,
-    tags: p.tags,
+    description: p.description || "",
+    imageSrc: p.imageSrc || "/placeholder.svg",
+    tags: p.tags || [],
     category: normalizeCategory(p.category),
     status: p.status,
     year: p.year,

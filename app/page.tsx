@@ -16,7 +16,7 @@ import { pastEvents } from "@/data/events"
 export default function Home() {
   const pick = (id: keyof typeof projects) => {
     const p = projects[id]
-    return { id, title: p.title, description: p.description, imageSrc: p.imageSrc, tags: p.tags }
+    return { id, title: p.title, description: p.description || "", imageSrc: p.imageSrc || "/placeholder.svg", tags: p.tags || [] }
   }
   const featuredProjects = [
     pick("gambaryuk"),
@@ -50,7 +50,10 @@ export default function Home() {
                     </Link>
                   </Button>
                   <Button asChild variant="outline" size="lg">
-                    <Link href="/projects">{t('viewProjects')}</Link>
+                    <Link href="/projects">
+                      {t('viewProjects')}
+                      <ChevronRight className="ml-2 h-4 w-4" />
+                    </Link>
                   </Button>
                   <Button asChild variant="outline" size="lg">
                     <Link href="/speaking">

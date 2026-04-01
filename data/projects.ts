@@ -1,25 +1,34 @@
+export type TranslatableString = { id: string; en: string } | string;
+export type TranslatableChallenge = { challenge: TranslatableString; solution: TranslatableString };
+
+export function getLocalizedData(data: TranslatableString | undefined, lang: string): string {
+  if (!data) return "";
+  if (typeof data === "string") return data;
+  return data[lang as "id" | "en"] || data.id;
+}
+
 export type ProjectItem = {
   title: string
-  subtitle?: string
-  description: string
-  fullDescription?: string
+  subtitle?: TranslatableString
+  description: TranslatableString
+  fullDescription?: TranslatableString
   imageSrc?: string
   tags: string[]
   category: string
   status: string
   year: string
-  duration?: string
-  role?: string
-  client?: string
+  duration?: TranslatableString
+  role?: TranslatableString
+  client?: TranslatableString
   liveUrl?: string
   repoUrl?: string
-  goals?: string[]
-  features?: string[]
-  challenges?: { challenge: string; solution: string }[]
-  outcomes?: string[]
+  goals?: TranslatableString[]
+  features?: TranslatableString[]
+  challenges?: TranslatableChallenge[]
+  outcomes?: TranslatableString[]
   technologies: Record<string, string[]>
   gallery?: string[]
-  testimonial?: { quote: string; author: string; position: string }
+  testimonial?: { quote: TranslatableString; author: string; position: TranslatableString }
   nextProject?: string
   prevProject?: string
 }
@@ -27,45 +36,54 @@ export type ProjectItem = {
 const projects = {
   "siacta": {
     title: "SIACTA",
-    subtitle: "System Information Accounting & Tax",
-    description: "Aplikasi web komprehensif untuk mengelola operasi keuangan dan kepatuhan pajak dengan fitur lengkap untuk bisnis.",
-    fullDescription: "SIACTA adalah sistem informasi akuntansi dan pajak terpadu yang dirancang untuk membantu bisnis mengelola operasi keuangan mereka dengan lebih efisien. Sistem ini mengintegrasikan berbagai aspek akuntansi, mulai dari pencatatan transaksi hingga pelaporan pajak, dalam satu platform yang user-friendly dan powerful.",
+    subtitle: { id: "Sistem Informasi Akuntansi & Pajak", en: "Accounting & Tax Information System" },
+    description: { id: "Aplikasi web komprehensif untuk mengelola operasi keuangan dan kepatuhan pajak dengan fitur lengkap untuk bisnis.", en: "A comprehensive web application to manage financial operations and tax compliance with complete features for businesses." },
+    fullDescription: { id: "SIACTA adalah sistem informasi akuntansi dan pajak terpadu yang dirancang untuk membantu bisnis mengelola operasi keuangan mereka dengan lebih efisien. Sistem ini mengintegrasikan berbagai aspek akuntansi, mulai dari pencatatan transaksi hingga pelaporan pajak, dalam satu platform yang user-friendly dan powerful.", en: "SIACTA is an integrated accounting and tax information system designed to help businesses manage their financial operations more efficiently. This system integrates various accounting aspects, from transaction recording to tax reporting, in a single user-friendly and powerful platform." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["Laravel", "JavaScript", "MySQL", "Bootstrap", "Accounting", "Tax Management"],
     category: "Web Application",
     status: "Production",
     year: "2024",
-    duration: "6 bulan",
-    role: "Full-Stack Developer & Project Lead",
-    client: "PT. Solusi Bisnis Indonesia",
+    duration: { id: "6 bulan", en: "6 months" },
+    role: { id: "Full-Stack Developer & Project Lead", en: "Full-Stack Developer & Project Lead" },
+    client: { id: "PT. Solusi Bisnis Indonesia", en: "PT. Solusi Bisnis Indonesia" },
     liveUrl: "https://github.com/adityafakhrii/siacta",
     repoUrl: "https://github.com/adityafakhrii/siacta",
     goals: [
-      "Mengotomatisasi proses akuntansi manual yang memakan waktu",
-      "Menyediakan sistem pelaporan pajak yang akurat dan real-time",
-      "Meningkatkan efisiensi operasional keuangan perusahaan",
-      "Memastikan kepatuhan terhadap regulasi perpajakan Indonesia",
+      { id: "Mengotomatisasi proses akuntansi manual yang memakan waktu", en: "Automate time-consuming manual accounting processes" },
+      { id: "Menyediakan sistem pelaporan pajak yang akurat dan real-time", en: "Provide an accurate and real-time tax reporting system" },
+      { id: "Meningkatkan efisiensi operasional keuangan perusahaan", en: "Improve the company's financial operational efficiency" },
+      { id: "Memastikan kepatuhan terhadap regulasi perpajakan Indonesia", en: "Ensure compliance with Indonesian tax regulations" },
     ],
     features: [
-      "Dashboard analitik keuangan real-time",
-      "Manajemen transaksi dan jurnal otomatis",
-      "Sistem pelaporan pajak terintegrasi",
-      "Multi-user access dengan role-based permissions",
-      "Export data ke berbagai format (PDF, Excel, CSV)",
-      "Backup dan restore data otomatis",
-      "Audit trail untuk tracking perubahan data",
-      "Notifikasi deadline pajak dan pembayaran",
+      { id: "Dashboard analitik keuangan real-time", en: "Real-time financial analytics dashboard" },
+      { id: "Manajemen transaksi dan jurnal otomatis", en: "Automatic transaction and journal management" },
+      { id: "Sistem pelaporan pajak terintegrasi", en: "Integrated tax reporting system" },
+      { id: "Multi-user access dengan role-based permissions", en: "Multi-user access with role-based permissions" },
+      { id: "Export data ke berbagai format (PDF, Excel, CSV)", en: "Data export to various formats (PDF, Excel, CSV)" },
+      { id: "Backup dan restore data otomatis", en: "Automatic data backup and restore" },
+      { id: "Audit trail untuk tracking perubahan data", en: "Audit trail for tracking data changes" },
+      { id: "Notifikasi deadline pajak dan pembayaran", en: "Tax deadline and payment notifications" },
     ],
     challenges: [
-      { challenge: "Kompleksitas regulasi perpajakan Indonesia yang sering berubah", solution: "Mengimplementasikan sistem konfigurasi yang fleksibel dan mudah diupdate sesuai perubahan regulasi terbaru" },
-      { challenge: "Integrasi dengan sistem akuntansi existing client", solution: "Membangun API yang robust dan sistem import/export data yang kompatibel dengan berbagai format" },
-      { challenge: "Keamanan data keuangan yang sensitif", solution: "Implementasi enkripsi end-to-end, audit logging, dan sistem backup multi-layer" },
+      { 
+        challenge: { id: "Kompleksitas regulasi perpajakan Indonesia yang sering berubah", en: "The complexity of frequently changing Indonesian tax regulations" }, 
+        solution: { id: "Mengimplementasikan sistem konfigurasi yang fleksibel dan mudah diupdate sesuai perubahan regulasi terbaru", en: "Implementing a flexible and easily updatable configuration system according to the latest regulatory changes" } 
+      },
+      { 
+        challenge: { id: "Integrasi dengan sistem akuntansi existing client", en: "Integration with the client's existing accounting system" }, 
+        solution: { id: "Membangun API yang robust dan sistem import/export data yang kompatibel dengan berbagai format", en: "Building a robust API and a data import/export system compatible with various formats" } 
+      },
+      { 
+        challenge: { id: "Keamanan data keuangan yang sensitif", en: "Security of sensitive financial data" }, 
+        solution: { id: "Implementasi enkripsi end-to-end, audit logging, dan sistem backup multi-layer", en: "Implementation of end-to-end encryption, audit logging, and a multi-layer backup system" } 
+      },
     ],
     outcomes: [
-      "Mengurangi waktu proses akuntansi bulanan dari 5 hari menjadi 2 hari",
-      "Meningkatkan akurasi pelaporan pajak hingga 99.8%",
-      "Menghemat biaya operasional akuntansi sebesar 40%",
-      "Digunakan oleh 15+ perusahaan dengan total 200+ users aktif",
+      { id: "Mengurangi waktu proses akuntansi bulanan dari 5 hari menjadi 2 hari", en: "Reduced monthly accounting process time from 5 days to 2 days" },
+      { id: "Meningkatkan akurasi pelaporan pajak hingga 99.8%", en: "Increased tax reporting accuracy to 99.8%" },
+      { id: "Menghemat biaya operasional akuntansi sebesar 40%", en: "Saved 40% in accounting operational costs" },
+      { id: "Digunakan oleh 15+ perusahaan dengan total 200+ users aktif", en: "Used by 15+ companies with a total of 200+ active users" },
     ],
     technologies: {
       Backend: ["Laravel 10", "PHP 8.1", "MySQL 8.0"],
@@ -80,48 +98,57 @@ const projects = {
       "/placeholder.svg?height=300&width=500&text=Analytics",
     ],
     testimonial: {
-      quote: "SIACTA telah mengubah cara kami mengelola keuangan perusahaan. Proses yang sebelumnya memakan waktu berhari-hari kini dapat diselesaikan dalam hitungan jam dengan akurasi yang sangat tinggi.",
+      quote: { id: "SIACTA telah mengubah cara kami mengelola keuangan perusahaan. Proses yang sebelumnya memakan waktu berhari-hari kini dapat diselesaikan dalam hitungan jam dengan akurasi yang sangat tinggi.", en: "SIACTA has transformed the way we manage our company's finances. Processes that previously took days can now be completed in hours with very high accuracy." },
       author: "Budi Santoso",
-      position: "Finance Manager, PT. Solusi Bisnis Indonesia",
+      position: { id: "Finance Manager, PT. Solusi Bisnis Indonesia", en: "Finance Manager, PT. Solusi Bisnis Indonesia" },
     },
     nextProject: "restoranku",
     prevProject: "smart-clinic-ui",
   },
   "medfluffy": {
     title: "MedFluffy",
-    subtitle: "AI-Powered Pet Eye Disease Detection",
-    description: "Aplikasi Android untuk prediksi dini penyakit mata pada anjing menggunakan CNN dan rekomendasi pertolongan pertama.",
-    fullDescription: "MedFluffy adalah aplikasi mobile berbasis AI yang dikembangkan sebagai Capstone Project Bangkit Academy 2023. Menggunakan CNN dan TensorFlow Lite untuk inference di perangkat mobile.",
+    subtitle: { id: "AI-Powered Pet Eye Disease Detection", en: "AI-Powered Pet Eye Disease Detection" },
+    description: { id: "Aplikasi Android untuk prediksi dini penyakit mata pada anjing menggunakan CNN dan rekomendasi pertolongan pertama.", en: "Android app for early prediction of dog eye diseases using CNN and first aid recommendations." },
+    fullDescription: { id: "MedFluffy adalah aplikasi mobile berbasis AI yang dikembangkan sebagai Capstone Project Bangkit Academy 2023. Menggunakan CNN dan TensorFlow Lite untuk inference di perangkat mobile.", en: "MedFluffy is an AI-based mobile application developed as a Bangkit Academy 2023 Capstone Project. It uses CNN and TensorFlow Lite for on-device inference." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["Kotlin", "TensorFlow", "CNN", "Firebase", "Material Design", "Computer Vision"],
     category: "Mobile Application",
     status: "Completed",
     year: "2023",
-    duration: "4 bulan (200 jam)",
-    role: "Mobile Developer & ML Engineer",
-    client: "Bangkit Academy Capstone Project",
+    duration: { id: "4 bulan (200 jam)", en: "4 months (200 hours)" },
+    role: { id: "Mobile Developer & ML Engineer", en: "Mobile Developer & ML Engineer" },
+    client: { id: "Bangkit Academy Capstone Project", en: "Bangkit Academy Capstone Project" },
     liveUrl: "https://github.com/MedFluffy",
     repoUrl: "https://github.com/MedFluffy",
     goals: [
-      "Deteksi dini penyakit mata anjing yang mudah diakses",
-      "Mengurangi biaya konsultasi untuk screening awal",
-      "Meningkatkan awareness kesehatan mata hewan peliharaan",
+      { id: "Deteksi dini penyakit mata anjing yang mudah diakses", en: "Easily accessible early detection of dog eye diseases" },
+      { id: "Mengurangi biaya konsultasi untuk screening awal", en: "Reduce consultation costs for early screening" },
+      { id: "Meningkatkan awareness kesehatan mata hewan peliharaan", en: "Increase awareness of pet eye health" },
     ],
     features: [
-      "Deteksi penyakit mata via kamera",
-      "AI model akurasi 85%+ untuk 5 penyakit",
-      "Rekomendasi pertolongan pertama",
-      "Riwayat pemeriksaan dan tracking kondisi",
+      { id: "Deteksi penyakit mata via kamera", en: "Eye disease detection via camera" },
+      { id: "AI model akurasi 85%+ untuk 5 penyakit", en: "85%+ accuracy AI model for 5 diseases" },
+      { id: "Rekomendasi pertolongan pertama", en: "First aid recommendations" },
+      { id: "Riwayat pemeriksaan dan tracking kondisi", en: "Examination history and condition tracking" },
     ],
     challenges: [
-      { challenge: "Dataset terbatas dan tidak seimbang", solution: "Data augmentation dan transfer learning" },
-      { challenge: "Optimasi model untuk mobile", solution: "TensorFlow Lite dan quantization" },
-      { challenge: "Variasi pencahayaan foto", solution: "Image preprocessing dan panduan pengambilan foto" },
+      { 
+        challenge: { id: "Dataset terbatas dan tidak seimbang", en: "Limited and imbalanced dataset" }, 
+        solution: { id: "Data augmentation dan transfer learning", en: "Data augmentation and transfer learning" } 
+      },
+      { 
+        challenge: { id: "Optimasi model untuk mobile", en: "Model optimization for mobile" }, 
+        solution: { id: "TensorFlow Lite dan quantization", en: "TensorFlow Lite and quantization" } 
+      },
+      { 
+        challenge: { id: "Variasi pencahayaan foto", en: "Photo lighting variations" }, 
+        solution: { id: "Image preprocessing dan panduan pengambilan foto", en: "Image preprocessing and photo capture guidelines" } 
+      },
     ],
     outcomes: [
-      "Akurasi model 87% pada test dataset",
-      "Ukuran aplikasi <50MB, response <3 detik",
-      "Top 10% Capstone Project Bangkit 2023",
+      { id: "Akurasi model 87% pada test dataset", en: "87% model accuracy on test dataset" },
+      { id: "Ukuran aplikasi <50MB, response <3 detik", en: "App size <50MB, response <3 seconds" },
+      { id: "Top 10% Capstone Project Bangkit 2023", en: "Top 10% Bangkit 2023 Capstone Project" },
     ],
     technologies: {
       Mobile: ["Kotlin", "Android SDK", "Jetpack Compose", "Material Design"],
@@ -136,46 +163,52 @@ const projects = {
       "/placeholder.svg?height=300&width=500&text=History+Tracking",
     ],
     testimonial: {
-      quote: "MedFluffy sangat membantu untuk screening awal kondisi mata hewan peliharaan. Mudah digunakan dan hasilnya akurat.",
-      author: "Dr. Sarah Veteriner",
-      position: "Veterinarian",
+      quote: { id: "MedFluffy sangat membantu untuk screening awal kondisi mata hewan peliharaan. Mudah digunakan dan hasilnya akurat.", en: "MedFluffy is very helpful for the early screening of pet eye conditions. It is easy to use and the results are accurate." },
+      author: "Dr. Sarah",
+      position: { id: "Veterinarian", en: "Veterinarian" },
     },
     nextProject: "story-app",
     prevProject: "siacta",
   },
   "proquoteai": {
     title: "ProQuoteAI",
-    subtitle: "AI-Powered Quotation & Estimation",
-    description: "Sistem AI untuk membuat quotation profesional dan estimasi biaya dengan cepat.",
-    fullDescription: "ProQuoteAI membantu tim sales dan project membuat quotation profesional dengan rekomendasi harga dan komponen otomatis menggunakan model AI.",
+    subtitle: { id: "AI-Powered Quotation & Estimation", en: "AI-Powered Quotation & Estimation" },
+    description: { id: "Sistem AI untuk membuat quotation profesional dan estimasi biaya dengan cepat.", en: "AI system to quickly create professional quotations and cost estimations." },
+    fullDescription: { id: "ProQuoteAI membantu tim sales dan project membuat quotation profesional dengan rekomendasi harga dan komponen otomatis menggunakan model AI.", en: "ProQuoteAI helps sales and project teams create professional quotations with automatic price and component recommendations using AI models." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["Next.js", "TypeScript", "OpenAI", "Tailwind", "Pricing Engine"],
     category: "Web Application",
     status: "Prototype",
     year: "2024",
-    duration: "2 bulan",
-    role: "Full-Stack Developer",
-    client: "Internal R&D",
+    duration: { id: "2 bulan", en: "2 months" },
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
+    client: { id: "Internal R&D", en: "Internal R&D" },
     liveUrl: "",
     repoUrl: "",
     goals: [
-      "Mempercepat pembuatan quotation",
-      "Meningkatkan akurasi estimasi biaya",
-      "Standarisasi format penawaran",
+      { id: "Mempercepat pembuatan quotation", en: "Accelerate quotation creation process" },
+      { id: "Meningkatkan akurasi estimasi biaya", en: "Improve cost estimation accuracy" },
+      { id: "Standarisasi format penawaran", en: "Standardize proposal formats" },
     ],
     features: [
-      "Template quotation dinamis",
-      "Rekomendasi harga berbasis AI",
-      "Export PDF dan kirim email",
-      "Approval workflow untuk tim",
+      { id: "Template quotation dinamis", en: "Dynamic quotation templates" },
+      { id: "Rekomendasi harga berbasis AI", en: "AI-based price recommendations" },
+      { id: "Export PDF dan kirim email", en: "PDF export and email integration" },
+      { id: "Approval workflow untuk tim", en: "Team approval workflow" },
     ],
     challenges: [
-      { challenge: "Model rekomendasi harga yang akurat", solution: "Kalibrasi berdasarkan historical data dan feedback loop" },
-      { challenge: "Standarisasi format lintas industri", solution: "Template modular dan konfigurasi kategori produk" },
+      { 
+        challenge: { id: "Model rekomendasi harga yang akurat", en: "Accurate price recommendation model" }, 
+        solution: { id: "Kalibrasi berdasarkan historical data dan feedback loop", en: "Calibration based on historical data and feedback loops" } 
+      },
+      { 
+        challenge: { id: "Standarisasi format lintas industri", en: "Format standardization across industries" }, 
+        solution: { id: "Template modular dan konfigurasi kategori produk", en: "Modular templates and product category configurations" } 
+      },
     ],
     outcomes: [
-      "Waktu pembuatan quotation turun 60%",
-      "Variasi harga antar sales lebih konsisten",
+      { id: "Waktu pembuatan quotation turun 60%", en: "Quotation creation time reduced by 60%" },
+      { id: "Variasi harga antar sales lebih konsisten", en: "Price variation among sales became more consistent" },
     ],
     technologies: {
       Frontend: ["Next.js 14", "TypeScript", "Tailwind CSS"],
@@ -188,46 +221,52 @@ const projects = {
       "/placeholder.svg?height=300&width=500&text=Price+Recommendation",
     ],
     testimonial: {
-      quote: "ProQuoteAI mempersingkat proses penawaran dan meningkatkan konsistensi harga.",
+      quote: { id: "ProQuoteAI mempersingkat proses penawaran dan meningkatkan konsistensi harga.", en: "ProQuoteAI shortens the proposal process and increases price consistency." },
       author: "Raka Setia",
-      position: "Head of Sales",
+      position: { id: "Head of Sales", en: "Head of Sales" },
     },
     nextProject: "patunganyuk",
     prevProject: "ramadhanjs",
   },
   "patunganyuk": {
     title: "PatunganYuk",
-    subtitle: "Group Payment & Split Bills",
-    description: "Aplikasi untuk patungan bersama—buat grup, tentukan target, dan split bills otomatis.",
-    fullDescription: "PatunganYuk memudahkan pengelolaan patungan barang/jasa, tracking kontribusi anggota, dan pembayaran digital.",
+    subtitle: { id: "Group Payment & Split Bills", en: "Group Payment & Split Bills" },
+    description: { id: "Aplikasi untuk patungan bersama—buat grup, tentukan target, dan split bills otomatis.", en: "Group payment application—create groups, set targets, and automatically split bills." },
+    fullDescription: { id: "PatunganYuk memudahkan pengelolaan patungan barang/jasa, tracking kontribusi anggota, dan pembayaran digital.", en: "PatunganYuk simplifies managing group payments, tracking member contributions, and processing digital payments." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["React", "Node.js", "MongoDB", "Payment", "Realtime"],
     category: "Web Application",
     status: "Beta",
     year: "2024",
-    duration: "3 bulan",
-    role: "Full-Stack Developer",
-    client: "Community Product",
+    duration: { id: "3 bulan", en: "3 months" },
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
+    client: { id: "Community Product", en: "Community Product" },
     liveUrl: "",
     repoUrl: "",
     goals: [
-      "Permudah patungan bersama",
-      "Transparansi kontribusi anggota",
-      "Pembayaran digital yang aman",
+      { id: "Permudah patungan bersama", en: "Simplify group payments" },
+      { id: "Transparansi kontribusi anggota", en: "Member contribution transparency" },
+      { id: "Pembayaran digital yang aman", en: "Secure digital payments" },
     ],
     features: [
-      "Grup patungan dengan target nominal",
-      "Split bills otomatis",
-      "Notifikasi status kontribusi",
-      "Export laporan patungan",
+      { id: "Grup patungan dengan target nominal", en: "Group payments with target amounts" },
+      { id: "Split bills otomatis", en: "Automatic split bills" },
+      { id: "Notifikasi status kontribusi", en: "Contribution status notifications" },
+      { id: "Export laporan patungan", en: "Export payment reports" },
     ],
     challenges: [
-      { challenge: "Rekonsiliasi pembayaran multi-metode", solution: "Webhook dan status tracking terstandarisasi" },
-      { challenge: "Transparansi kontribusi", solution: "Laporan real-time dan audit trail" },
+      { 
+        challenge: { id: "Rekonsiliasi pembayaran multi-metode", en: "Multi-method payment reconciliation" }, 
+        solution: { id: "Webhook dan status tracking terstandarisasi", en: "Standardized webhooks and status tracking" } 
+      },
+      { 
+        challenge: { id: "Transparansi kontribusi", en: "Contribution transparency" }, 
+        solution: { id: "Laporan real-time dan audit trail", en: "Real-time reporting and audit trails" } 
+      },
     ],
     outcomes: [
-      "500+ grup patungan aktif",
-      "Admin lebih mudah memonitor kontribusi",
+      { id: "500+ grup patungan aktif", en: "500+ active payment groups" },
+      { id: "Admin lebih mudah memonitor kontribusi", en: "Easier contribution monitoring for admins" },
     ],
     technologies: {
       Frontend: ["React 18", "TypeScript", "Tailwind CSS"],
@@ -240,47 +279,53 @@ const projects = {
       "/placeholder.svg?height=300&width=500&text=Split+Bills",
     ],
     testimonial: {
-      quote: "Pengelolaan patungan jadi rapi dan transparan.",
+      quote: { id: "Pengelolaan patungan jadi rapi dan transparan.", en: "Managing group bills has become cleaner and more transparent." },
       author: "Intan",
-      position: "Community Organizer",
+      position: { id: "Community Organizer", en: "Community Organizer" },
     },
     nextProject: "restoranku",
     prevProject: "proquoteai",
   },
   "restoranku": {
     title: "Restoranku",
-    subtitle: "Smart Restaurant Management System",
-    description: "Pemesanan via QR code, pembayaran QRIS (Midtrans), dan analytics komprehensif.",
-    fullDescription: "Restoranku mengintegrasikan QR untuk pemesanan, Midtrans untuk pembayaran digital, dan dashboard analytics real-time.",
+    subtitle: { id: "Smart Restaurant Management System", en: "Smart Restaurant Management System" },
+    description: { id: "Pemesanan via QR code, pembayaran QRIS (Midtrans), dan analytics komprehensif.", en: "QR code ordering, QRIS (Midtrans) payments, and comprehensive analytics." },
+    fullDescription: { id: "Restoranku mengintegrasikan QR untuk pemesanan, Midtrans untuk pembayaran digital, dan dashboard analytics real-time.", en: "Restoranku integrates QR for ordering, Midtrans for digital payments, and real-time analytics dashboards." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["Laravel", "JavaScript", "MySQL", "Bootstrap", "Midtrans", "QR Code", "Payment Gateway"],
     category: "Web Application",
     status: "Production",
     year: "2025",
-    duration: "3 bulan",
-    role: "Full-Stack Developer",
-    client: "KelasFullstack",
+    duration: { id: "3 bulan", en: "3 months" },
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
+    client: { id: "KelasFullstack", en: "KelasFullstack" },
     liveUrl: "",
     repoUrl: "https://github.com/adityafakhrii/restoranku.git",
     goals: [
-      "Digitalisasi pemesanan dan pembayaran",
-      "Analytics real-time untuk keputusan bisnis",
-      "Efisiensi operasional restoran",
+      { id: "Digitalisasi pemesanan dan pembayaran", en: "Digitizing ordering and payments" },
+      { id: "Analytics real-time untuk keputusan bisnis", en: "Real-time analytics for business decisions" },
+      { id: "Efisiensi operasional restoran", en: "Restaurant operational efficiency" },
     ],
     features: [
-      "QR Code menu & contactless order",
-      "Integrasi Midtrans: QRIS, VA, e-wallet",
-      "Dashboard analytics penjualan",
-      "Notifikasi pesanan kitchen & customer",
+      { id: "QR Code menu & contactless order", en: "QR Code menus & contactless ordering" },
+      { id: "Integrasi Midtrans: QRIS, VA, e-wallet", en: "Midtrans integration: QRIS, VA, e-wallets" },
+      { id: "Dashboard analytics penjualan", en: "Sales analytics dashboard" },
+      { id: "Notifikasi pesanan kitchen & customer", en: "Kitchen & customer order notifications" },
     ],
     challenges: [
-      { challenge: "Integrasi payment multi-metode", solution: "Midtrans SDK + webhook untuk status real-time" },
-      { challenge: "Sinkronisasi pesanan real-time", solution: "WebSocket & notification system" },
+      { 
+        challenge: { id: "Integrasi payment multi-metode", en: "Multi-method payment integration" }, 
+        solution: { id: "Midtrans SDK + webhook untuk status real-time", en: "Midtrans SDK + webhooks for real-time status" } 
+      },
+      { 
+        challenge: { id: "Sinkronisasi pesanan real-time", en: "Real-time order synchronization" }, 
+        solution: { id: "WebSocket & notification system", en: "WebSockets & notification systems" } 
+      },
     ],
     outcomes: [
-      "Waktu tunggu turun dari 15m ke 5m",
-      "Transaksi digital naik 80%",
-      "Error pesanan turun 95%",
+      { id: "Waktu tunggu turun dari 15m ke 5m", en: "Wait times dropped from 15m to 5m" },
+      { id: "Transaksi digital naik 80%", en: "Digital transactions increased by 80%" },
+      { id: "Error pesanan turun 95%", en: "Order errors decreased by 95%" },
     ],
     technologies: {
       Backend: ["Laravel 12", "PHP 8.4", "MySQL", "Redis"],
@@ -295,55 +340,61 @@ const projects = {
       "/placeholder.svg?height=300&width=500&text=Analytics+Dashboard",
     ],
     testimonial: {
-      quote: "Pelanggan lebih puas, operasional lebih efisien dengan dashboard analytics.",
+      quote: { id: "Pelanggan lebih puas, operasional lebih efisien dengan dashboard analytics.", en: "Customers are more satisfied, and operations are more efficient with the analytics dashboard." },
       author: "Ahmad Wijaya",
-      position: "Owner, Restoran Nusantara",
+      position: { id: "Owner, Restoran Nusantara", en: "Owner, Nusantara Restaurant" },
     },
     nextProject: "ramadhanjs",
     prevProject: "medfluffy",
   },
   "ramadhanjs": {
     title: "RamadhanJS",
-    subtitle: "30 Days JS Challenge – Ramadhan Edition",
-    description: "30 proyek mini selama Ramadhan: typing effect, countdown maghrib, tasbih counter, random ayat, dan lebih banyak lagi.",
-    fullDescription: "Self-initiated 30-day JavaScript challenge selama Ramadhan 2025. Setiap hari satu mini app baru (React/TS/Vite) untuk spiritual & skill-building: Countdown Maghrib, Tasbih Counter, Random Ayat, Umrah Planner, Mosque Finder, dll.",
+    subtitle: { id: "30 Days JS Challenge – Ramadhan Edition", en: "30 Days JS Challenge – Ramadan Edition" },
+    description: { id: "30 proyek mini selama Ramadhan: typing effect, countdown maghrib, tasbih counter, random ayat, dan lebih banyak lagi.", en: "30 mini-projects during Ramadan: typing effect, Maghrib countdown, tasbih counter, random verses, and more." },
+    fullDescription: { id: "Self-initiated 30-day JavaScript challenge selama Ramadhan 2025. Setiap hari satu mini app baru (React/TS/Vite) untuk spiritual & skill-building: Countdown Maghrib, Tasbih Counter, Random Ayat, Umrah Planner, Mosque Finder, dll.", en: "Self-initiated 30-day JavaScript challenge during Ramadan 2025. One new mini app daily (React/TS/Vite) for spiritual & skill-building: Maghrib Countdown, Tasbih Counter, Random Verses, Umrah Planner, Mosque Finder, etc." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["JavaScript", "TypeScript", "React", "Vite", "TailwindCSS", "30-Day Challenge"],
     category: "Web Application",
     status: "Completed",
     year: "2025",
-    duration: "1 bulan",
-    role: "Full-Stack Developer",
-    client: "Self Initiated / Open Source",
+    duration: { id: "1 bulan", en: "1 month" },
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
+    client: { id: "Self Initiated / Open Source", en: "Self Initiated / Open Source" },
     liveUrl: "",
     repoUrl: "https://github.com/adityafakhrii/ramadhanjs-2025.git",
     goals: [
-      "Menyelesaikan 30 proyek mini dalam 30 hari Ramadhan",
-      "Meningkatkan skill React, TypeScript & Vite",
-      "Menyediakan tools digital bermanfaat untuk umat",
+      { id: "Menyelesaikan 30 proyek mini dalam 30 hari Ramadhan", en: "Complete 30 mini-projects in 30 days of Ramadan" },
+      { id: "Meningkatkan skill React, TypeScript & Vite", en: "Improve React, TypeScript & Vite skills" },
+      { id: "Menyediakan tools digital bermanfaat untuk umat", en: "Provide useful digital tools for the community" },
     ],
     features: [
-      "Typing Effect (Hari 1)",
-      "Countdown Maghrib (Hari 2)",
-      "Ramadhan Quote (Hari 3)",
-      "Tasbih Counter (Hari 4)",
-      "Random Ayat (Hari 5)",
-      "Umrah Planner (Hari 6)",
-      "Mosque Finder (Hari 7)",
-      "What Weather (Hari 8)",
-      "Linktree Clone (Hari 9)",
-      "Kalender Ibadah (Hari 10)",
-      "Scroll Hadith (Hari 11)",
-      "Islamic History (Hari 12)",
-      "... dan proyek lainnya",
+      { id: "Typing Effect (Hari 1)", en: "Typing Effect (Day 1)" },
+      { id: "Countdown Maghrib (Hari 2)", en: "Maghrib Countdown (Day 2)" },
+      { id: "Ramadhan Quote (Hari 3)", en: "Ramadan Quote (Day 3)" },
+      { id: "Tasbih Counter (Hari 4)", en: "Tasbih Counter (Day 4)" },
+      { id: "Random Ayat (Hari 5)", en: "Random Verse (Day 5)" },
+      { id: "Umrah Planner (Hari 6)", en: "Umrah Planner (Day 6)" },
+      { id: "Mosque Finder (Hari 7)", en: "Mosque Finder (Day 7)" },
+      { id: "What Weather (Hari 8)", en: "What Weather (Day 8)" },
+      { id: "Linktree Clone (Hari 9)", en: "Linktree Clone (Day 9)" },
+      { id: "Kalender Ibadah (Hari 10)", en: "Worship Calendar (Day 10)" },
+      { id: "Scroll Hadith (Hari 11)", en: "Scroll Hadith (Day 11)" },
+      { id: "Islamic History (Hari 12)", en: "Islamic History (Day 12)" },
+      { id: "... dan proyek lainnya", en: "... and other projects" },
     ],
     challenges: [
-      { challenge: "Menjaga konsistensi coding setiap hari selama Ramadhan", solution: "Bangun boilerplate Vite-React-TS + Tailwind di hari 0, siapkan issue template & GitHub Actions biar tinggal code-push-deploy" },
-      { challenge: "Menghadirkan ide fitur yang tetap relevan & spiritual", solution: "Kumpulkan pain-point Ramadhan dari grup WhatsApp & Twitter, prioritaskan tools yang sehari-hari dipakai (countdown, tasbih, jadwal)" },
+      { 
+        challenge: { id: "Menjaga konsistensi coding setiap hari selama Ramadhan", en: "Maintaining coding consistency every day during Ramadan" }, 
+        solution: { id: "Bangun boilerplate Vite-React-TS + Tailwind di hari 0, siapkan issue template & GitHub Actions biar tinggal code-push-deploy", en: "Built Vite-React-TS + Tailwind boilerplate on day 0, prepared issue templates & GitHub Actions for easy code-push-deploy" } 
+      },
+      { 
+        challenge: { id: "Menghadirkan ide fitur yang tetap relevan & spiritual", en: "Coming up with relevant & spiritual feature ideas" }, 
+        solution: { id: "Kumpulkan pain-point Ramadhan dari grup WhatsApp & Twitter, prioritaskan tools yang sehari-hari dipakai (countdown, tasbih, jadwal)", en: "Gathered Ramadan pain-points from WhatsApp groups & Twitter, prioritized daily-use tools (countdown, tasbih, schedule)" } 
+      },
     ],
     outcomes: [
-      "30 repo GitHub aktif selesai tepat waktu",
-      "Portfolio skill React/TS meningkat drastis",
+      { id: "30 repo GitHub aktif selesai tepat waktu", en: "30 active GitHub repos completed on time" },
+      { id: "Portfolio skill React/TS meningkat drastis", en: "React/TS skill portfolio improved drastically" },
     ],
     technologies: {
       Frontend: ["React", "TypeScript", "Vite", "TailwindCSS", "HTML5", "CSS3"],
@@ -355,45 +406,48 @@ const projects = {
       "/placeholder.svg?height=300&width=500&text=Tasbih+Counter",
     ],
     testimonial: {
-      quote: "Ide 30 hari 30 app sangat inspiratif, saya turut belajar setiap repo-nya!",
+      quote: { id: "Ide 30 hari 30 app sangat inspiratif, saya turut belajar setiap repo-nya!", en: "The 30 days 30 apps idea is very inspiring, I learned along with every repo!" },
       author: "Ahmad Fauzi",
-      position: "Frontend Developer",
+      position: { id: "Frontend Developer", en: "Frontend Developer" },
     },
     nextProject: "mentoring-landing",
     prevProject: "restoranku",
   },
   "mentoring-landing": {
     title: "Mentoring Landing Page",
-    subtitle: "Modern Landing Page for Mentoring Program",
-    description: "Landing page modern dan responsif untuk program mentoring.",
-    fullDescription: "Landing page dengan fokus konversi dan UX: sekilas program, mentor profile, testimonial, FAQ, dan form kontak.",
+    subtitle: { id: "Modern Landing Page for Mentoring Program", en: "Modern Landing Page for Mentoring Program" },
+    description: { id: "Landing page modern dan responsif untuk program mentoring.", en: "Modern and responsive landing page for a mentoring program." },
+    fullDescription: { id: "Landing page dengan fokus konversi dan UX: sekilas program, mentor profile, testimonial, FAQ, dan form kontak.", en: "Conversion and UX-focused landing page: program overview, mentor profiles, testimonials, FAQs, and contact forms." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["TypeScript", "Next.js", "Tailwind CSS", "Responsive Design", "SEO"],
     category: "Web Application",
     status: "Completed",
     year: "2024",
-    duration: "2 bulan",
-    role: "Frontend Developer",
-    client: "Mentoring Program Indonesia",
+    duration: { id: "2 bulan", en: "2 months" },
+    role: { id: "Frontend Developer", en: "Frontend Developer" },
+    client: { id: "Mentoring Program Indonesia", en: "Mentoring Program Indonesia" },
     liveUrl: "",
     repoUrl: "",
     goals: [
-      "Meningkatkan conversion pendaftaran",
-      "Informasi program yang jelas",
-      "Optimasi SEO",
+      { id: "Meningkatkan conversion pendaftaran", en: "Increase registration conversions" },
+      { id: "Informasi program yang jelas", en: "Clear program information" },
+      { id: "Optimasi SEO", en: "SEO Optimization" },
     ],
     features: [
-      "Hero section dengan CTA",
-      "Program overview & timeline",
-      "Mentor profiles",
-      "Testimonial carousel & FAQ",
+      { id: "Hero section dengan CTA", en: "Hero section with CTA" },
+      { id: "Program overview & timeline", en: "Program overview & timeline" },
+      { id: "Mentor profiles", en: "Mentor profiles" },
+      { id: "Testimonial carousel & FAQ", en: "Testimonial carousel & FAQs" },
     ],
     challenges: [
-      { challenge: "Kecepatan loading & SEO", solution: "Code splitting, image optimization, dan meta lengkap" },
+      { 
+        challenge: { id: "Kecepatan loading & SEO", en: "Loading speed & SEO" }, 
+        solution: { id: "Code splitting, image optimization, dan meta lengkap", en: "Code splitting, image optimization, and complete meta tags" } 
+      },
     ],
     outcomes: [
-      "Conversion rate meningkat 35%",
-      "Skor Lighthouse SEO 95+",
+      { id: "Conversion rate meningkat 35%", en: "Conversion rate increased by 35%" },
+      { id: "Skor Lighthouse SEO 95+", en: "Lighthouse SEO score 95+" },
     ],
     technologies: {
       Frontend: ["Next.js 14", "TypeScript", "Tailwind CSS"],
@@ -409,37 +463,43 @@ const projects = {
   },
   "laravel-upi-training": {
     title: "Laravel 12 UPI Training",
-    subtitle: "Student Management System for Training",
-    description: "Aplikasi manajemen mahasiswa dan program studi sederhana untuk pelatihan Laravel 12.",
-    fullDescription: "CRUD mahasiswa, manajemen prodi, dan responsive UI.",
+    subtitle: { id: "Student Management System for Training", en: "Student Management System for Training" },
+    description: { id: "Aplikasi manajemen mahasiswa dan program studi sederhana untuk pelatihan Laravel 12.", en: "A simple student and study program management application for Laravel 12 training." },
+    fullDescription: { id: "CRUD mahasiswa, manajemen prodi, dan responsive UI.", en: "Student CRUD operations, program management, and responsive UI." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["Laravel 12", "PHP", "MySQL", "CRUD Operations", "Training Project"],
     category: "Web Application",
     status: "Training Project",
     year: "2024",
-    duration: "1 bulan",
-    role: "Instructor & Developer",
-    client: "Universitas Pendidikan Indonesia",
+    duration: { id: "1 bulan", en: "1 month" },
+    role: { id: "Instructor & Developer", en: "Instructor & Developer" },
+    client: { id: "Universitas Pendidikan Indonesia", en: "Universitas Pendidikan Indonesia" },
     liveUrl: "",
     repoUrl: "",
     goals: [
-      "Mengajarkan konsep dasar Laravel",
-      "CRUD operations yang proper",
-      "Hands-on dengan real project",
+      { id: "Mengajarkan konsep dasar Laravel", en: "Teach basic Laravel concepts" },
+      { id: "CRUD operations yang proper", en: "Proper CRUD operations" },
+      { id: "Hands-on dengan real project", en: "Hands-on experience with a real project" },
     ],
     features: [
-      "CRUD data mahasiswa",
-      "Manajemen program studi",
-      "Auth & authorization",
-      "Export ke Excel/PDF",
+      { id: "CRUD data mahasiswa", en: "Student data CRUD" },
+      { id: "Manajemen program studi", en: "Study program management" },
+      { id: "Auth & authorization", en: "Authentication & authorization" },
+      { id: "Export ke Excel/PDF", en: "Export to Excel/PDF" },
     ],
     challenges: [
-      { challenge: "Peserta dengan latar belakang beragam", solution: "Materi bertahap dan contoh nyata CRUD yang sederhana" },
-      { challenge: "Setup environment berbeda-beda", solution: "Panduan instalasi lengkap dan troubleshooting umum" }
+      { 
+        challenge: { id: "Peserta dengan latar belakang beragam", en: "Participants with diverse backgrounds" }, 
+        solution: { id: "Materi bertahap dan contoh nyata CRUD yang sederhana", en: "Gradual material and simple real-world CRUD examples" } 
+      },
+      { 
+        challenge: { id: "Setup environment berbeda-beda", en: "Different environment setups" }, 
+        solution: { id: "Panduan instalasi lengkap dan troubleshooting umum", en: "Complete installation guide and common troubleshooting" } 
+      }
     ],
     outcomes: [
-      "80% peserta berhasil membangun aplikasi CRUD sederhana",
-      "Pemahaman dasar MVC dan routing meningkat"
+      { id: "80% peserta berhasil membangun aplikasi CRUD sederhana", en: "80% of participants successfully built a simple CRUD application" },
+      { id: "Pemahaman dasar MVC dan routing meningkat", en: "Increased understanding of basic MVC and routing" }
     ],
     technologies: {
       Backend: ["Laravel 12", "PHP 8.2", "MySQL 8.0"],
@@ -455,37 +515,43 @@ const projects = {
   },
   "mangrove-kedatim": {
     title: "Mangrove Kedatim",
-    subtitle: "Eco-Tourism Landing Page",
-    description: "Kenalan dengan destinasi wisata Mangrove Kedatim: spot foto, spot outbound, dan informasi lengkapnya.",
-    fullDescription: "Landing page responsif untuk memperkenalkan kawasan wisata Mangrove Kedatim, lengkap dengan galeri foto, peta lokasi, fasilitas, jam operasional, dan kontak pengelola.",
+    subtitle: { id: "Eco-Tourism Landing Page", en: "Eco-Tourism Landing Page" },
+    description: { id: "Kenalan dengan destinasi wisata Mangrove Kedatim: spot foto, spot outbound, dan informasi lengkapnya.", en: "Get to know the Mangrove Kedatim tourist destination: photo spots, outbound areas, and complete information." },
+    fullDescription: { id: "Landing page responsif untuk memperkenalkan kawasan wisata Mangrove Kedatim, lengkap dengan galeri foto, peta lokasi, fasilitas, jam operasional, dan kontak pengelola.", en: "A responsive landing page to introduce the Mangrove Kedatim tourist area, featuring a photo gallery, location map, facilities, operating hours, and management contacts." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["Bootstrap 5", "Eco-Tourism", "Landing Page"],
     category: "Landing Page",
     status: "Completed",
     year: "2024",
-    duration: "2 minggu",
-    role: "Frontend Developer",
-    client: "Pengelola Wisata Mangrove Kedatim",
+    duration: { id: "2 minggu", en: "2 weeks" },
+    role: { id: "Frontend Developer", en: "Frontend Developer" },
+    client: { id: "Pengelola Wisata Mangrove Kedatim", en: "Mangrove Kedatim Tourism Management" },
     liveUrl: "https://mangrovekedatimsumenep.netlify.app/",
     repoUrl: "https://github.com/adityafakhrii/mangrovekedatim.git",
     goals: [
-      "Meningkatkan kunjungan wisata lokal",
-      "Menyediakan informasi destinasi secara digital",
+      { id: "Meningkatkan kunjungan wisata lokal", en: "Increase local tourism visits" },
+      { id: "Menyediakan informasi destinasi secara digital", en: "Provide digital destination information" },
     ],
     features: [
-      "Hero section dengan video background",
-      "Galeri foto interaktif",
-      "Peta lokasi & rute perjalanan",
-      "Section fasilitas & harga tiket",
-      "Testimoni pengunjung",
+      { id: "Hero section dengan video background", en: "Hero section with video background" },
+      { id: "Galeri foto interaktif", en: "Interactive photo gallery" },
+      { id: "Peta lokasi & rute perjalanan", en: "Location map & travel routes" },
+      { id: "Section fasilitas & harga tiket", en: "Facilities & ticket price section" },
+      { id: "Testimoni pengunjung", en: "Visitor testimonials" },
     ],
     challenges: [
-      { challenge: "Optimasi gambar untuk koneksi lambat", solution: "Compress gambar dan lazy loading galeri" },
-      { challenge: "Informasi destinasi yang sering berubah", solution: "Struktur konten modular mudah diupdate" }
+      { 
+        challenge: { id: "Optimasi gambar untuk koneksi lambat", en: "Image optimization for slow connections" }, 
+        solution: { id: "Compress gambar dan lazy loading galeri", en: "Image compression and lazy loading for the gallery" } 
+      },
+      { 
+        challenge: { id: "Informasi destinasi yang sering berubah", en: "Frequently changing destination information" }, 
+        solution: { id: "Struktur konten modular mudah diupdate", en: "Modular content structure for easy updates" } 
+      }
     ],
     outcomes: [
-      "Traffic organik meningkat 40%",
-      "Bounce rate turun 25%"
+      { id: "Traffic organik meningkat 40%", en: "Organic traffic increased by 40%" },
+      { id: "Bounce rate turun 25%", en: "Bounce rate decreased by 25%" }
     ],
     technologies: {
       Frontend: ["HTML", "CSS", "JavaScript", "Bootstrap 5"],
@@ -502,36 +568,42 @@ const projects = {
   },
   "desa-cisontrol": {
     title: "Desa Cisontrol",
-    subtitle: "Village Information System",
-    description: "Digitalisasi layanan administrasi dan pengelolaan data desa.",
-    fullDescription: "Portal layanan online, manajemen kependudukan, sistem pengajuan surat, dan transparansi keuangan desa.",
+    subtitle: { id: "Village Information System", en: "Village Information System" },
+    description: { id: "Digitalisasi layanan administrasi dan pengelolaan data desa.", en: "Digitization of village administration services and data management." },
+    fullDescription: { id: "Portal layanan online, manajemen kependudukan, sistem pengajuan surat, dan transparansi keuangan desa.", en: "Online service portal, population management, letter application system, and village financial transparency." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["Laravel", "Government System", "Public Service", "Digital Transformation"],
     category: "Web Application",
     status: "Completed",
     year: "2024",
-    duration: "6 bulan (ongoing)",
-    role: "Full-Stack Developer",
-    client: "Pemerintah Desa Cisontrol",
+    duration: { id: "6 bulan (ongoing)", en: "6 months (ongoing)" },
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
+    client: { id: "Pemerintah Desa Cisontrol", en: "Cisontrol Village Government" },
     liveUrl: "",
     repoUrl: "",
     goals: [
-      "Digitalisasi layanan administrasi desa",
-      "Meningkatkan transparansi pemerintahan",
+      { id: "Digitalisasi layanan administrasi desa", en: "Digitize village administration services" },
+      { id: "Meningkatkan transparansi pemerintahan", en: "Increase government transparency" },
     ],
     features: [
-      "Portal layanan warga",
-      "Manajemen data kependudukan",
-      "Pengajuan surat online",
-      "Dashboard perangkat desa",
+      { id: "Portal layanan warga", en: "Citizen service portal" },
+      { id: "Manajemen data kependudukan", en: "Population data management" },
+      { id: "Pengajuan surat online", en: "Online document requests" },
+      { id: "Dashboard perangkat desa", en: "Village apparatus dashboard" },
     ],
     challenges: [
-      { challenge: "Migrasi data kependudukan dari sistem lama", solution: "ETL dengan validasi dan audit trail" },
-      { challenge: "Adopsi teknologi oleh perangkat desa", solution: "Pelatihan dan UI sederhana berbasis kebutuhan" }
+      { 
+        challenge: { id: "Migrasi data kependudukan dari sistem lama", en: "Population data migration from legacy system" }, 
+        solution: { id: "ETL dengan validasi dan audit trail", en: "ETL with validation and audit trails" } 
+      },
+      { 
+        challenge: { id: "Adopsi teknologi oleh perangkat desa", en: "Technology adoption by village officials" }, 
+        solution: { id: "Pelatihan dan UI sederhana berbasis kebutuhan", en: "Training and simple needs-based UI" } 
+      }
     ],
     outcomes: [
-      "Waktu proses pengajuan surat turun 60%",
-      "Transparansi laporan meningkat dengan dashboard real-time"
+      { id: "Waktu proses pengajuan surat turun 60%", en: "Document processing time cut by 60%" },
+      { id: "Transparansi laporan meningkat dengan dashboard real-time", en: "Increased report transparency with real-time dashboards" }
     ],
     technologies: {
       Backend: ["Laravel 10", "PHP 8.1", "MySQL"],
@@ -547,35 +619,41 @@ const projects = {
   },
   "newyear-countdown": {
     title: "New Year Countdown",
-    subtitle: "Interactive Countdown Application",
-    description: "Aplikasi countdown interaktif untuk tahun baru dengan animasi.",
-    fullDescription: "Countdown dengan particle effects, tema, musik latar, dan mode fullscreen.",
+    subtitle: { id: "Interactive Countdown Application", en: "Interactive Countdown Application" },
+    description: { id: "Aplikasi countdown interaktif untuk tahun baru dengan animasi.", en: "Interactive countdown application for the New Year with beautiful animations." },
+    fullDescription: { id: "Countdown dengan particle effects, tema, musik latar, dan mode fullscreen.", en: "Countdown featuring particle effects, themes, background music, and fullscreen mode." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["JavaScript", "CSS Animations", "Interactive UI", "Canvas API"],
     category: "Web Application",
     status: "Completed",
     year: "2024",
-    duration: "1 bulan",
-    role: "Frontend Developer",
-    client: "Personal Project",
+    duration: { id: "1 bulan", en: "1 month" },
+    role: { id: "Frontend Developer", en: "Frontend Developer" },
+    client: { id: "Personal Project", en: "Personal Project" },
     liveUrl: "",
     repoUrl: "",
     goals: [
-      "Pengalaman countdown yang engaging",
-      "Animasi smooth dan performa optimal",
+      { id: "Pengalaman countdown yang engaging", en: "Engaging countdown experience" },
+      { id: "Animasi smooth dan performa optimal", en: "Smooth animations and optimal performance" },
     ],
     features: [
-      "Countdown real-time",
-      "Particle effects & fireworks",
-      "Multiple themes",
+      { id: "Countdown real-time", en: "Real-time countdown" },
+      { id: "Particle effects & fireworks", en: "Particle effects & fireworks" },
+      { id: "Multiple themes", en: "Multiple themes" },
     ],
     challenges: [
-      { challenge: "Performa animasi pada perangkat low-end", solution: "Canvas rendering ringan dan pengurangan kompleksitas efek" },
-      { challenge: "Sinkronisasi waktu lintas zona", solution: "Menggunakan Intl API dan normalisasi timezone" }
+      { 
+        challenge: { id: "Performa animasi pada perangkat low-end", en: "Animation performance on low-end devices" }, 
+        solution: { id: "Canvas rendering ringan dan pengurangan kompleksitas efek", en: "Lightweight canvas rendering and reduced effect complexity" } 
+      },
+      { 
+        challenge: { id: "Sinkronisasi waktu lintas zona", en: "Time synchronization across timezones" }, 
+        solution: { id: "Menggunakan Intl API dan normalisasi timezone", en: "Utilizing the Intl API and timezone normalization" } 
+      }
     ],
     outcomes: [
-      "Animasi stabil ~60fps di mayoritas perangkat",
-      "Penggunaan memori terjaga dan load cepat"
+      { id: "Animasi stabil ~60fps di mayoritas perangkat", en: "Stable ~60fps animation on most devices" },
+      { id: "Penggunaan memori terjaga dan load cepat", en: "Stable memory usage and fast loading" }
     ],
     technologies: {
       Frontend: ["Vanilla JavaScript", "CSS3 Animations", "Canvas API", "Web Audio API"],
@@ -590,37 +668,43 @@ const projects = {
   },
   "sushi-webapp": {
     title: "Sushi Web App",
-    subtitle: "Online Ordering & Restaurant App",
-    description: "Aplikasi web restoran sushi: menu interaktif, pemesanan online, dan sistem manajemen pesanan.",
-    fullDescription: "Aplikasi web untuk restoran sushi yang menyediakan pengalaman pemesanan online yang seamless. Dengan design yang menarik dan user experience yang optimal, aplikasi ini membantu restoran meningkatkan penjualan online.",
+    subtitle: { id: "Online Ordering & Restaurant App", en: "Online Ordering & Restaurant App" },
+    description: { id: "Aplikasi web restoran sushi: menu interaktif, pemesanan online, dan sistem manajemen pesanan.", en: "Sushi restaurant web app: interactive menus, online ordering, and order management system." },
+    fullDescription: { id: "Aplikasi web untuk restoran sushi yang menyediakan pengalaman pemesanan online yang seamless. Dengan design yang menarik dan user experience yang optimal, aplikasi ini membantu restoran meningkatkan penjualan online.", en: "A sushi restaurant web application providing a seamless online ordering experience. With an attractive design and optimal user experience, this app helps the restaurant increase online sales." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["React", "Redux Toolkit", "Material-UI", "Framer Motion", "Restaurant"],
     category: "Web Application",
     status: "Completed",
     year: "2024",
-    duration: "2 bulan",
-    role: "Frontend Developer",
-    client: "Sushi Zen Restaurant",
+    duration: { id: "2 bulan", en: "2 months" },
+    role: { id: "Frontend Developer", en: "Frontend Developer" },
+    client: { id: "Sushi Zen Restaurant", en: "Sushi Zen Restaurant" },
     liveUrl: "",
     repoUrl: "",
     goals: [
-      "Meningkatkan penjualan online restoran",
-      "Mempermudah proses pemesanan bagi pelanggan",
-      "Optimasi UI/UX untuk konversi lebih tinggi",
+      { id: "Meningkatkan penjualan online restoran", en: "Increase online restaurant sales" },
+      { id: "Mempermudah proses pemesanan bagi pelanggan", en: "Simplify the ordering process for customers" },
+      { id: "Optimasi UI/UX untuk konversi lebih tinggi", en: "Optimize UI/UX for higher conversions" },
     ],
     features: [
-      "Menu interaktif dengan kategori dan filter",
-      "Shopping cart dan checkout",
-      "Payment integration (Stripe, PayPal)",
-      "Order management untuk admin",
+      { id: "Menu interaktif dengan kategori dan filter", en: "Interactive menu with categories and filters" },
+      { id: "Shopping cart dan checkout", en: "Shopping cart and checkout" },
+      { id: "Payment integration (Stripe, PayPal)", en: "Payment integration (Stripe, PayPal)" },
+      { id: "Order management untuk admin", en: "Order management for administrators" },
     ],
     challenges: [
-      { challenge: "Integrasi pembayaran dan checkout", solution: "API gateway Stripe/PayPal dengan validasi server-side" },
-      { challenge: "Persistensi cart lintas sesi", solution: "State management dengan storage fallback dan hydrasi" }
+      { 
+        challenge: { id: "Integrasi pembayaran dan checkout", en: "Payment and checkout integration" }, 
+        solution: { id: "API gateway Stripe/PayPal dengan validasi server-side", en: "Stripe/PayPal API gateways with server-side validation" } 
+      },
+      { 
+        challenge: { id: "Persistensi cart lintas sesi", en: "Cross-session cart persistence" }, 
+        solution: { id: "State management dengan storage fallback dan hydrasi", en: "State management with storage fallbacks and hydration" } 
+      }
     ],
     outcomes: [
-      "Konversi checkout meningkat 20%",
-      "Waktu pemesanan turun 30%"
+      { id: "Konversi checkout meningkat 20%", en: "Checkout conversion increased by 20%" },
+      { id: "Waktu pemesanan turun 30%", en: "Ordering time reduced by 30%" }
     ],
     technologies: {
       Frontend: ["React 18", "Redux Toolkit", "Material-UI", "Framer Motion"],
@@ -639,37 +723,43 @@ const projects = {
   },
   "story-app": {
     title: "StoryApp",
-    subtitle: "Social Media Storytelling Platform",
-    description: "Aplikasi Android untuk berbagi cerita dengan upload gambar, lokasi, dan timeline interaktif.",
-    fullDescription: "Aplikasi mobile social media yang fokus pada storytelling dengan fitur location sharing, image upload, dan interactive timeline menggunakan best practices Android development.",
+    subtitle: { id: "Social Media Storytelling Platform", en: "Social Media Storytelling Platform" },
+    description: { id: "Aplikasi Android untuk berbagi cerita dengan upload gambar, lokasi, dan timeline interaktif.", en: "Android app for sharing stories with image uploads, locations, and interactive timelines." },
+    fullDescription: { id: "Aplikasi mobile social media yang fokus pada storytelling dengan fitur location sharing, image upload, dan interactive timeline menggunakan best practices Android development.", en: "A social media mobile app focused on storytelling, featuring location sharing, image uploads, and interactive timelines using Android development best practices." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["Kotlin", "Android", "Social Media", "Location Services", "Camera API"],
     category: "Mobile Application",
     status: "Completed",
     year: "2023",
-    duration: "4 bulan",
-    role: "Android Developer",
-    client: "Personal Project",
+    duration: { id: "4 bulan", en: "4 months" },
+    role: { id: "Android Developer", en: "Android Developer" },
+    client: { id: "Personal Project", en: "Personal Project" },
     liveUrl: "",
     repoUrl: "",
     goals: [
-      "Menciptakan platform storytelling yang engaging",
-      "Implementasi fitur location-based stories",
-      "UX yang smooth di perangkat mobile",
+      { id: "Menciptakan platform storytelling yang engaging", en: "Create an engaging storytelling platform" },
+      { id: "Implementasi fitur location-based stories", en: "Implement location-based stories" },
+      { id: "UX yang smooth di perangkat mobile", en: "Smooth UX on mobile devices" },
     ],
     features: [
-      "Story creation (text, image, location)",
-      "Interactive timeline dengan infinite scroll",
-      "Location-based discovery",
-      "User profiles, reactions, dan comments",
+      { id: "Story creation (text, image, location)", en: "Story creation (text, image, location)" },
+      { id: "Interactive timeline dengan infinite scroll", en: "Interactive timeline with infinite scroll" },
+      { id: "Location-based discovery", en: "Location-based discovery" },
+      { id: "User profiles, reactions, dan comments", en: "User profiles, reactions, and comments" },
     ],
     challenges: [
-      { challenge: "Privasi lokasi pengguna", solution: "Izin granular dan kontrol sharing per cerita" },
-      { challenge: "Kinerja upload gambar", solution: "Compress di client dan upload resumable" }
+      { 
+        challenge: { id: "Privasi lokasi pengguna", en: "User location privacy" }, 
+        solution: { id: "Izin granular dan kontrol sharing per cerita", en: "Granular permissions and per-story sharing controls" } 
+      },
+      { 
+        challenge: { id: "Kinerja upload gambar", en: "Image upload performance" }, 
+        solution: { id: "Compress di client dan upload resumable", en: "Client-side compression and resumable uploads" } 
+      }
     ],
     outcomes: [
-      "Retensi pengguna meningkat 15%",
-      "Crash-free sessions > 99%"
+      { id: "Retensi pengguna meningkat 15%", en: "User retention increased by 15%" },
+      { id: "Crash-free sessions > 99%", en: "Crash-free sessions > 99%" }
     ],
     technologies: {
       Mobile: ["Kotlin", "Android Jetpack", "Room Database", "Retrofit"],
@@ -687,37 +777,43 @@ const projects = {
   },
   "laundry-app-dirtless": {
     title: "Laundry App - Dirtless",
-    subtitle: "Laundry Service Management System",
-    description: "Aplikasi manajemen laundry: tracking pesanan, notifikasi status, dan pembayaran terintegrasi.",
-    fullDescription: "Aplikasi web untuk layanan laundry end-to-end dari pemesanan hingga pengambilan, dengan tracking real-time dan payment integration.",
+    subtitle: { id: "Laundry Service Management System", en: "Laundry Service Management System" },
+    description: { id: "Aplikasi manajemen laundry: tracking pesanan, notifikasi status, dan pembayaran terintegrasi.", en: "Laundry management app: order tracking, status notifications, and integrated payments." },
+    fullDescription: { id: "Aplikasi web untuk layanan laundry end-to-end dari pemesanan hingga pengambilan, dengan tracking real-time dan payment integration.", en: "Web application for end-to-end laundry services from order placement to pickup, with real-time tracking and payment integration." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["Laravel", "Laundry", "MySQL", "Bootstrap"],
     category: "Web Application",
     status: "Completed",
     year: "2023",
-    duration: "3 bulan",
-    role: "Web Developer",
-    client: "Dirtless Laundry Service",
+    duration: { id: "3 bulan", en: "3 months" },
+    role: { id: "Web Developer", en: "Web Developer" },
+    client: { id: "Dirtless Laundry Service", en: "Dirtless Laundry Service" },
     liveUrl: "",
     repoUrl: "",
     goals: [
-      "Digitalisasi layanan laundry",
-      "Transparansi status pesanan",
-      "Pembayaran online yang aman",
+      { id: "Digitalisasi layanan laundry", en: "Digitizing laundry services" },
+      { id: "Transparansi status pesanan", en: "Order status transparency" },
+      { id: "Pembayaran online yang aman", en: "Secure online payments" },
     ],
     features: [
-      "Order placement & tracking",
-      "Status updates & notifications",
-      "Multiple payment methods",
-      "Order history & receipts",
+      { id: "Order placement & tracking", en: "Order placement & tracking" },
+      { id: "Status updates & notifications", en: "Status updates & notifications" },
+      { id: "Multiple payment methods", en: "Multiple payment methods" },
+      { id: "Order history & receipts", en: "Order history & receipts" },
     ],
     challenges: [
-      { challenge: "Rekonsiliasi status pesanan dan pembayaran", solution: "Webhook status dan audit trail transaksi" },
-      { challenge: "Notifikasi real-time multi-perangkat", solution: "Channel notifikasi terpusat dengan fallback" }
+      { 
+        challenge: { id: "Rekonsiliasi status pesanan dan pembayaran", en: "Order status and payment reconciliation" }, 
+        solution: { id: "Webhook status dan audit trail transaksi", en: "Status webhooks and transaction audit trails" } 
+      },
+      { 
+        challenge: { id: "Notifikasi real-time multi-perangkat", en: "Real-time multi-device notifications" }, 
+        solution: { id: "Channel notifikasi terpusat dengan fallback", en: "Centralized notification channels with fallbacks" } 
+      }
     ],
     outcomes: [
-      "Waktu operasional berkurang 25%",
-      "Keluhan pelanggan turun 30%"
+      { id: "Waktu operasional berkurang 25%", en: "Operational time reduced by 25%" },
+      { id: "Keluhan pelanggan turun 30%", en: "Customer complaints fell by 30%" }
     ],
     technologies: {
       Frontend: ["Bootstrap", "jQuery"],
@@ -735,37 +831,43 @@ const projects = {
   },
   "smart-clinic-ui": {
     title: "Smart Clinic UI",
-    subtitle: "Healthcare Interface Design System",
-    description: "Interface klinik pintar dengan desain modern dan UX optimal untuk tenaga medis.",
-    fullDescription: "Antarmuka pengguna untuk klinik modern dengan fokus pada efisiensi workflow tenaga medis dan patient experience. UI/UX clean dan intuitive untuk operasional klinik optimal.",
+    subtitle: { id: "Healthcare Interface Design System", en: "Healthcare Interface Design System" },
+    description: { id: "Interface klinik pintar dengan desain modern dan UX optimal untuk tenaga medis.", en: "Smart clinic interface with modern design and optimal UX for medical personnel." },
+    fullDescription: { id: "Antarmuka pengguna untuk klinik modern dengan fokus pada efisiensi workflow tenaga medis dan patient experience. UI/UX clean dan intuitive untuk operasional klinik optimal.", en: "User interface for a modern clinic focused on the efficiency of medical workflows and patient experience. Clean and intuitive UI/UX for optimal clinic operations." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["React", "Healthcare UI", "Medical System", "UX Design", "Design System"],
     category: "Web Application",
     status: "Completed",
     year: "2023",
-    duration: "4 bulan",
-    role: "UI/UX Developer",
-    client: "Smart Clinic Indonesia",
+    duration: { id: "4 bulan", en: "4 months" },
+    role: { id: "UI/UX Developer", en: "UI/UX Developer" },
+    client: { id: "Smart Clinic Indonesia", en: "Smart Clinic Indonesia" },
     liveUrl: "",
     repoUrl: "",
     goals: [
-      "Efisiensi workflow tenaga medis",
-      "Interface user-friendly untuk staff",
-      "Design system yang konsisten",
+      { id: "Efisiensi workflow tenaga medis", en: "Medical workflow efficiency" },
+      { id: "Interface user-friendly untuk staff", en: "User-friendly interface for staff" },
+      { id: "Design system yang konsisten", en: "Consistent design system" },
     ],
     features: [
-      "Dashboard dokter & staff",
-      "Patient management & medical records",
-      "Appointment scheduling & calendar",
-      "Prescription interface & drug database",
+      { id: "Dashboard dokter & staff", en: "Doctor & staff dashboard" },
+      { id: "Patient management & medical records", en: "Patient management & medical records" },
+      { id: "Appointment scheduling & calendar", en: "Appointment scheduling & calendar" },
+      { id: "Prescription interface & drug database", en: "Prescription interface & drug database" },
     ],
     challenges: [
-      { challenge: "Kompleksitas workflow medis", solution: "User flow terstruktur dan komponen reusable" },
-      { challenge: "Aksesibilitas untuk tenaga medis", solution: "Kontras tinggi, navigasi keyboard, dan komponen teruji" }
+      { 
+        challenge: { id: "Kompleksitas workflow medis", en: "Complexity of medical workflows" }, 
+        solution: { id: "User flow terstruktur dan komponen reusable", en: "Structured user flows and reusable components" } 
+      },
+      { 
+        challenge: { id: "Aksesibilitas untuk tenaga medis", en: "Accessibility for medical staff" }, 
+        solution: { id: "Kontras tinggi, navigasi keyboard, dan komponen teruji", en: "High contrast, keyboard navigation, and tested components" } 
+      }
     ],
     outcomes: [
-      "Waktu input data pasien berkurang 35%",
-      "Kepuasan pengguna meningkat berdasarkan feedback internal"
+      { id: "Waktu input data pasien berkurang 35%", en: "Patient data input time reduced by 35%" },
+      { id: "Kepuasan pengguna meningkat berdasarkan feedback internal", en: "Increased user satisfaction based on internal feedback" }
     ],
     technologies: {
       Frontend: ["React 18", "TypeScript", "Ant Design", "Styled Components"],
@@ -783,37 +885,43 @@ const projects = {
   },
   "sibi-app-ui-ux": {
     title: "SIBI App UI/UX",
-    subtitle: "Sistem Informasi Perbukuan Indonesia",
-    description: "Desain UI/UX Sistem Informasi Perbukuan Indonesia dengan fokus aksesibilitas dan pengalaman membaca digital.",
-    fullDescription: "Desain untuk perpustakaan buku digital berisi buku teks pelajaran sekolah dalam format PDF, Audio, dan Interaktif, produksi resmi Pusat Perbukuan untuk mendukung kegiatan belajar.",
+    subtitle: { id: "Sistem Informasi Perbukuan Indonesia", en: "Indonesian Book Information System" },
+    description: { id: "Desain UI/UX Sistem Informasi Perbukuan Indonesia dengan fokus aksesibilitas dan pengalaman membaca digital.", en: "UI/UX design of the Indonesian Book Information System focusing on accessibility and digital reading experience." },
+    fullDescription: { id: "Desain untuk perpustakaan buku digital berisi buku teks pelajaran sekolah dalam format PDF, Audio, dan Interaktif, produksi resmi Pusat Perbukuan untuk mendukung kegiatan belajar.", en: "Design for a digital book library containing school textbooks in PDF, Audio, and Interactive formats, officially produced by the Book Center to support learning activities." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["UI/UX Design", "Figma", "User Research", "Prototyping", "Accessibility"],
     category: "Design",
     status: "Completed",
     year: "2025",
-    duration: "3 bulan",
-    role: "UI/UX Designer",
-    client: "Kemendikdasmen",
+    duration: { id: "3 bulan", en: "3 months" },
+    role: { id: "UI/UX Designer", en: "UI/UX Designer" },
+    client: { id: "Kemendikdasmen", en: "Ministry of Basic and Secondary Education" },
     liveUrl: "",
     repoUrl: "",
     goals: [
-      "Antarmuka inklusif dan aksesibel",
-      "Pengalaman membaca digital yang intuitif",
-      "Sistem desain konsisten dan skalabel",
+      { id: "Antarmuka inklusif dan aksesibel", en: "Inclusive and accessible interfaces" },
+      { id: "Pengalaman membaca digital yang intuitif", en: "Intuitive digital reading experience" },
+      { id: "Sistem desain konsisten dan skalabel", en: "Consistent and scalable design system" },
     ],
     features: [
-      "Dashboard pembelajaran personal",
-      "Pembaca PDF dengan anotasi",
-      "Buku audio dengan kontrol kecepatan",
-      "Buku interaktif dengan elemen multimedia",
+      { id: "Dashboard pembelajaran personal", en: "Personalized learning dashboard" },
+      { id: "Pembaca PDF dengan anotasi", en: "PDF reader with annotations" },
+      { id: "Buku audio dengan kontrol kecepatan", en: "Audiobooks with speed controls" },
+      { id: "Buku interaktif dengan elemen multimedia", en: "Interactive books with multimedia elements" },
     ],
     challenges: [
-      { challenge: "Aksesibilitas lintas perangkat", solution: "Pedoman WCAG dan pengujian dengan screen reader" },
-      { challenge: "Konsistensi desain skala besar", solution: "Design system terpusat dan token desain" }
+      { 
+        challenge: { id: "Aksesibilitas lintas perangkat", en: "Cross-device accessibility" }, 
+        solution: { id: "Pedoman WCAG dan pengujian dengan screen reader", en: "WCAG guidelines and screen reader testing" } 
+      },
+      { 
+        challenge: { id: "Konsistensi desain skala besar", en: "Large-scale design consistency" }, 
+        solution: { id: "Design system terpusat dan token desain", en: "Centralized design system and design tokens" } 
+      }
     ],
     outcomes: [
-      "Adopsi pengguna meningkat di perangkat low-end",
-      "Waktu membaca meningkat berkat UX yang nyaman"
+      { id: "Adopsi pengguna meningkat di perangkat low-end", en: "Increased user adoption on low-end devices" },
+      { id: "Waktu membaca meningkat berkat UX yang nyaman", en: "Reading time increased due to comfortable UX" }
     ],
     technologies: {
       Design: ["Figma", "Adobe XD", "Principle", "Lottie"],
@@ -828,46 +936,52 @@ const projects = {
       "/placeholder.svg?height=300&width=500&text=Interactive+Book",
     ],
     testimonial: {
-      quote: "Desain SIBI sangat inklusif dan efektif untuk mendukung pembelajaran digital.",
+      quote: { id: "Desain SIBI sangat inklusif dan efektif untuk mendukung pembelajaran digital.", en: "The SIBI design is very inclusive and effective in supporting digital learning." },
       author: "Dewi Suryana",
-      position: "Kepala Pusat Perbukuan Kemendikdasmen",
+      position: { id: "Kepala Pusat Perbukuan Kemendikdasmen", en: "Head of Book Center, Ministry of Education" },
     },
     nextProject: "lavafa-co",
     prevProject: "smart-clinic-ui",
   },
   "lavafa-co": {
     title: "LavaFa.co",
-    subtitle: "Creative Agency Landing Page",
-    description: "Landing page agensi kreatif yang menyediakan jasa pengembangan website, aplikasi mobile, dan desain UI/UX oleh developer berpengalaman 5+ tahun.",
-    fullDescription: "Platform landing page untuk agensi kreatif yang menghadirkan solusi digital komprehensif: pengembangan website modern, aplikasi mobile native, serta desain UI/UX yang dikembangkan oleh tim developer berpengalaman lebih dari 5 tahun di industri digital.",
+    subtitle: { id: "Creative Agency Landing Page", en: "Creative Agency Landing Page" },
+    description: { id: "Landing page agensi kreatif yang menyediakan jasa pengembangan website, aplikasi mobile, dan desain UI/UX oleh developer berpengalaman 5+ tahun.", en: "Creative agency landing page providing website development, mobile app, and UI/UX design services by developers with 5+ years of experience." },
+    fullDescription: { id: "Platform landing page untuk agensi kreatif yang menghadirkan solusi digital komprehensif: pengembangan website modern, aplikasi mobile native, serta desain UI/UX yang dikembangkan oleh tim developer berpengalaman lebih dari 5 tahun di industri digital.", en: "A landing page platform for a creative agency offering comprehensive digital solutions: modern website development, native mobile apps, and UI/UX design developed by a team of developers with over 5 years of experience in the digital industry." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["React", "Next.js", "TypeScript", "Creative Agency", "Landing Page"],
     category: "Landing Page",
     status: "Completed",
     year: "2025",
-    duration: "1 bulan",
-    role: "Lead Frontend Developer",
-    client: "LavaFa Digital Solutions",
+    duration: { id: "1 bulan", en: "1 month" },
+    role: { id: "Lead Frontend Developer", en: "Lead Frontend Developer" },
+    client: { id: "LavaFa Digital Solutions", en: "LavaFa Digital Solutions" },
     liveUrl: "https://lavafa.co",
     repoUrl: "",
     goals: [
-      "Menampilkan portofolio jasa digital secara elegan",
-      "Konversi pengunjung menjadi klien potensial",
-      "Performa cepat dan SEO-friendly",
+      { id: "Menampilkan portofolio jasa digital secara elegan", en: "Elegantly display the digital service portfolio" },
+      { id: "Konversi pengunjung menjadi klien potensial", en: "Convert visitors into potential clients" },
+      { id: "Performa cepat dan SEO-friendly", en: "Fast performance and SEO-friendly" },
     ],
     features: [
-      "Hero section dengan animasi interaktif",
-      "Section portofolio proyek",
-      "Testimoni klien",
-      "Form kontak dan konsultasi",
+      { id: "Hero section dengan animasi interaktif", en: "Hero section with interactive animations" },
+      { id: "Section portofolio proyek", en: "Project portfolio section" },
+      { id: "Testimoni klien", en: "Client testimonials" },
+      { id: "Form kontak dan konsultasi", en: "Contact and consultation form" },
     ],
     challenges: [
-      { challenge: "Performa halaman kaya animasi", solution: "Optimasi animasi dan code-splitting komponen berat" },
-      { challenge: "SEO untuk jasa berbasis layanan", solution: "Schema markup dan konten terstruktur" }
+      { 
+        challenge: { id: "Performa halaman kaya animasi", en: "Performance of an animation-rich page" }, 
+        solution: { id: "Optimasi animasi dan code-splitting komponen berat", en: "Animation optimization and code-splitting for heavy components" } 
+      },
+      { 
+        challenge: { id: "SEO untuk jasa berbasis layanan", en: "SEO for service-based offerings" }, 
+        solution: { id: "Schema markup dan konten terstruktur", en: "Schema markup and structured content" } 
+      }
     ],
     outcomes: [
-      "Leads inbound meningkat 25%",
-      "Skor Lighthouse 95+ pada Performance dan SEO"
+      { id: "Leads inbound meningkat 25%", en: "Inbound leads increased by 25%" },
+      { id: "Skor Lighthouse 95+ pada Performance dan SEO", en: "Lighthouse score of 95+ for Performance and SEO" }
     ],
     technologies: {
       Frontend: ["React 18", "Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion"],
@@ -882,48 +996,54 @@ const projects = {
       "/placeholder.svg?height=300&width=500&text=Contact+Form",
     ],
     testimonial: {
-      quote: "Tim LavaFa membantu kami mendapatkan klien baru melalui landing page yang elegan dan cepat.",
+      quote: { id: "Tim LavaFa membantu kami mendapatkan klien baru melalui landing page yang elegan dan cepat.", en: "The LavaFa team helped us acquire new clients through an elegant and fast landing page." },
       author: "Rini Pratiwi",
-      position: "CEO, Digital Ventures Indonesia",
+      position: { id: "CEO, Digital Ventures Indonesia", en: "CEO, Digital Ventures Indonesia" },
     },
     nextProject: "laravel-mastery",
     prevProject: "sibi-app-ui-ux",
   },
   "laravel-mastery": {
     title: "Laravel Mastery",
-    subtitle: "E-Book Belajar Laravel untuk Pemula",
-    description: "E-Book praktis belajar Laravel dari nol hingga mahir, cocok untuk pemula yang ingin memulai pengembangan web modern.",
-    fullDescription: "Panduan lengkap Laravel dengan penjelasan sederhana, contoh kode, dan studi kasus nyata untuk membangun aplikasi web profesional dari awal.",
+    subtitle: { id: "E-Book Belajar Laravel untuk Pemula", en: "Laravel Learning E-Book for Beginners" },
+    description: { id: "E-Book praktis belajar Laravel dari nol hingga mahir, cocok untuk pemula yang ingin memulai pengembangan web modern.", en: "A practical e-book for learning Laravel from scratch to mastery, perfect for beginners wanting to start modern web development." },
+    fullDescription: { id: "Panduan lengkap Laravel dengan penjelasan sederhana, contoh kode, dan studi kasus nyata untuk membangun aplikasi web profesional dari awal.", en: "A comprehensive Laravel guide with simple explanations, code examples, and real-world case studies to build a professional web application from scratch." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["Laravel", "PHP", "E-Book", "Pemula", "Belajar"],
     category: "Landing Page",
     status: "Completed",
     year: "2025",
-    duration: "1 minggu",
-    role: "Full-Stack Developer & Content Creator",
-    client: "Self-initiated Project",
+    duration: { id: "1 minggu", en: "1 week" },
+    role: { id: "Full-Stack Developer & Content Creator", en: "Full-Stack Developer & Content Creator" },
+    client: { id: "Self-initiated Project", en: "Self-initiated Project" },
     liveUrl: "",
     repoUrl: "https://github.com/adityafakhrii/laravel-mastery-ebook",
     goals: [
-      "Menyediakan materi Laravel yang mudah dipahami pemula",
-      "Meningkatkan minat belajar pengembangan web",
-      "Menyediakan panduan praktis dengan studi kasus",
+      { id: "Menyediakan materi Laravel yang mudah dipahami pemula", en: "Provide easily understandable Laravel materials for beginners" },
+      { id: "Meningkatkan minat belajar pengembangan web", en: "Increase interest in learning web development" },
+      { id: "Menyediakan panduan praktis dengan studi kasus", en: "Provide practical guides with case studies" },
     ],
     features: [
-      "Penjelasan konsep Laravel dari dasar",
-      "Contoh kode lengkap dan runnable",
-      "Studi kasus membangun aplikasi nyata",
-      "Tips dan trik pengembangan Laravel",
-      "Panduan instalasi dan konfigurasi",
-      "Update konten secara berkala",
+      { id: "Penjelasan konsep Laravel dari dasar", en: "Explanation of basic Laravel concepts" },
+      { id: "Contoh kode lengkap dan runnable", en: "Complete and runnable code examples" },
+      { id: "Studi kasus membangun aplikasi nyata", en: "Case study of building a real application" },
+      { id: "Tips dan trik pengembangan Laravel", en: "Laravel development tips and tricks" },
+      { id: "Panduan instalasi dan konfigurasi", en: "Installation and configuration guide" },
+      { id: "Update konten secara berkala", en: "Regular content updates" },
     ],
     challenges: [
-      { challenge: "Menyusun materi yang ramah pemula", solution: "Progressive learning path dan contoh kode langkah demi langkah" },
-      { challenge: "Menjaga konten tetap relevan", solution: "Update berkala mengikuti rilis Laravel terbaru" }
+      { 
+        challenge: { id: "Menyusun materi yang ramah pemula", en: "Arranging beginner-friendly material" }, 
+        solution: { id: "Progressive learning path dan contoh kode langkah demi langkah", en: "Progressive learning path and step-by-step code examples" } 
+      },
+      { 
+        challenge: { id: "Menjaga konten tetap relevan", en: "Keeping content relevant" }, 
+        solution: { id: "Update berkala mengikuti rilis Laravel terbaru", en: "Regular updates following the latest Laravel releases" } 
+      }
     ],
     outcomes: [
-      "Ratusan unduhan dalam bulan pertama",
-      "Umpan balik positif dari komunitas pemula"
+      { id: "Ratusan unduhan dalam bulan pertama", en: "Hundreds of downloads in the first month" },
+      { id: "Umpan balik positif dari komunitas pemula", en: "Positive feedback from the beginner community" }
     ],
     technologies: {
       Backend: ["Laravel 11", "PHP 8.3"],
@@ -937,24 +1057,24 @@ const projects = {
       "/placeholder.svg?height=300&width=500&text=Studi+Kasus",
     ],
     testimonial: {
-      quote: "E-Book ini sangat membantu saya memahami Laravel dengan mudah dan cepat.",
+      quote: { id: "E-Book ini sangat membantu saya memahami Laravel dengan mudah dan cepat.", en: "This E-Book really helped me understand Laravel easily and quickly." },
       author: "Siti Nurhaliza",
-      position: "Mahasiswa Teknik Informatika",
+      position: { id: "Mahasiswa Teknik Informatika", en: "Informatics Engineering Student" },
     },
     nextProject: "sibi-app-ui-ux",
     prevProject: "lavafa-co",
   },
   "gambaryuk": {
     title: "GambarYuk",
-    subtitle: "Modern Image Processing Tool",
-    description: "Alat pengolahan gambar modern dengan fitur manipulasi gambar berbasis web.",
-    fullDescription: "GambarYuk adalah aplikasi web untuk mengolah gambar secara instan, mulai dari resize, crop, hingga filter canggih.",
+    subtitle: { id: "Modern Image Processing Tool", en: "Modern Image Processing Tool" },
+    description: { id: "Alat pengolahan gambar modern dengan fitur manipulasi gambar berbasis web.", en: "Modern image processing tool with web-based image manipulation features." },
+    fullDescription: { id: "GambarYuk adalah aplikasi web untuk mengolah gambar secara instan, mulai dari resize, crop, hingga filter canggih.", en: "GambarYuk is a web application for instant image processing, ranging from resizing and cropping to advanced filters." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["TypeScript", "Next.js", "Canvas API", "Image Processing"],
     category: "Web Application",
     status: "Production",
     year: "2026",
-    role: "Full-Stack Developer",
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
     liveUrl: "https://gambaryuk.adityafakhri.com/",
     repoUrl: "https://github.com/adityafakhrii/gambaryuk",
     technologies: {
@@ -964,15 +1084,15 @@ const projects = {
   },
   "invoiceyuk": {
     title: "InvoiceYuk",
-    subtitle: "Simple Invoicing for Freelancers",
-    description: "Solusi pembuatan invoice cepat dan profesional untuk freelancer dan UMKM.",
-    fullDescription: "InvoiceYuk memudahkan proses billing dengan template profesional dan tracking status pembayaran.",
+    subtitle: { id: "Simple Invoicing for Freelancers", en: "Simple Invoicing for Freelancers" },
+    description: { id: "Solusi pembuatan invoice cepat dan profesional untuk freelancer dan UMKM.", en: "Fast and professional invoice creation solution for freelancers and SMEs." },
+    fullDescription: { id: "InvoiceYuk memudahkan proses billing dengan template profesional dan tracking status pembayaran.", en: "InvoiceYuk simplifies the billing process with professional templates and payment status tracking." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["TypeScript", "Next.js", "Prisma", "PostgreSQL"],
     category: "Web Application",
     status: "Production",
     year: "2026",
-    role: "Full-Stack Developer",
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
     liveUrl: "https://invoiceyuk.vercel.app/",
     repoUrl: "https://github.com/adityafakhrii/invoiceyuk",
     technologies: {
@@ -982,15 +1102,15 @@ const projects = {
   },
   "sahur-buka-ai-chef": {
     title: "Sahur Buka AI Chef",
-    subtitle: "AI-Powered Ramadan Meal Planner",
-    description: "Asisten AI untuk merekomendasikan menu sahur dan buka puasa berdasarkan bahan yang ada.",
-    fullDescription: "Membantu umat Muslim merencanakan menu makan selama bulan Ramadan dengan bantuan kecerdasan buatan.",
+    subtitle: { id: "AI-Powered Ramadan Meal Planner", en: "AI-Powered Ramadan Meal Planner" },
+    description: { id: "Asisten AI untuk merekomendasikan menu sahur dan buka puasa berdasarkan bahan yang ada.", en: "AI assistant to recommend suhoor and iftar menus based on available ingredients." },
+    fullDescription: { id: "Membantu umat Muslim merencanakan menu makan selama bulan Ramadan dengan bantuan kecerdasan buatan.", en: "Helping Muslims plan their meals during Ramadan with the help of artificial intelligence." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["TypeScript", "Next.js", "OpenAI", "Ramadan"],
     category: "Web Application",
     status: "Production",
     year: "2026",
-    role: "Full-Stack Developer",
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
     technologies: {
       Frontend: ["Next.js", "TypeScript"],
       AI: ["OpenAI API", "GPT-4o"],
@@ -998,15 +1118,15 @@ const projects = {
   },
   "ruangai-prompt-hub": {
     title: "RuangAI Prompt Hub",
-    subtitle: "Curated AI Prompts Marketplace",
-    description: "Platform untuk berbagi dan menemukan prompt AI terbaik untuk berbagai kebutuhan.",
-    fullDescription: "RuangAI Prompt Hub adalah komunitas untuk para AI enthusiast dalam mengoptimalkan penggunaan LLM.",
+    subtitle: { id: "Curated AI Prompts Marketplace", en: "Curated AI Prompts Marketplace" },
+    description: { id: "Platform untuk berbagi dan menemukan prompt AI terbaik untuk berbagai kebutuhan.", en: "A platform for sharing and discovering the best AI prompts for various needs." },
+    fullDescription: { id: "RuangAI Prompt Hub adalah komunitas untuk para AI enthusiast dalam mengoptimalkan penggunaan LLM.", en: "RuangAI Prompt Hub is a community for AI enthusiasts to optimize their LLM usage." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["TypeScript", "Next.js", "AI Prompts", "Community"],
     category: "Web Application",
     status: "Production",
     year: "2026",
-    role: "Full-Stack Developer",
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
     liveUrl: "https://prompt.ruangai.id/",
     repoUrl: "https://github.com/adityafakhrii/ruangai-prompt-hub",
     technologies: {
@@ -1016,15 +1136,15 @@ const projects = {
   },
   "dompetyuk": {
     title: "DompetYuk",
-    subtitle: "Personal Finance Tracker",
-    description: "Aplikasi pencatatan keuangan pribadi yang simpel dan efektif.",
-    fullDescription: "DompetYuk membantu Anda melacak pengeluaran dan pemasukan harian dengan grafik yang mudah dipahami.",
+    subtitle: { id: "Personal Finance Tracker", en: "Personal Finance Tracker" },
+    description: { id: "Aplikasi pencatatan keuangan pribadi yang simpel dan efektif.", en: "A simple and effective personal finance tracking app." },
+    fullDescription: { id: "DompetYuk membantu Anda melacak pengeluaran dan pemasukan harian dengan grafik yang mudah dipahami.", en: "DompetYuk helps you track daily income and expenses with easy-to-understand charts." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["TypeScript", "React", "State Management", "Finance"],
     category: "Web Application",
     status: "Production",
     year: "2026",
-    role: "Full-Stack Developer",
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
     technologies: {
       Frontend: ["React", "TypeScript", "Zustand"],
       Backend: ["Supabase"],
@@ -1032,30 +1152,30 @@ const projects = {
   },
   "vibe-code-landing": {
     title: "Vibe Code Landing",
-    subtitle: "High-Performance Agency Landing Page",
-    description: "Landing page modern dengan desain 'vibe' yang kuat untuk agensi digital.",
-    fullDescription: "Landing page dengan animasi halus dan fokus pada estetika serta konversi.",
+    subtitle: { id: "High-Performance Agency Landing Page", en: "High-Performance Agency Landing Page" },
+    description: { id: "Landing page modern dengan desain 'vibe' yang kuat untuk agensi digital.", en: "A modern landing page with a strong 'vibe' design for a digital agency." },
+    fullDescription: { id: "Landing page dengan animasi halus dan fokus pada estetika serta konversi.", en: "A landing page with smooth animations, focusing on aesthetics and conversions." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["TypeScript", "Next.js", "Framer Motion", "UI/UX"],
     category: "Landing Page",
     status: "Production",
     year: "2026",
-    role: "Frontend Developer",
+    role: { id: "Frontend Developer", en: "Frontend Developer" },
     technologies: {
       Frontend: ["Next.js", "Framer Motion", "Tailwind CSS"],
     },
   },
   "thrkaget": {
     title: "THR Kaget",
-    subtitle: "Viral Seasonal App",
-    description: "Aplikasi viral untuk bagi-bagi THR dengan cara yang seru dan interaktif.",
-    fullDescription: "THR Kaget adalah platform yang memungkinkan pengguna untuk membuat link bagi-bagi THR secara digital dengan elemen gamifikasi yang menarik.",
+    subtitle: { id: "Viral Seasonal App", en: "Viral Seasonal App" },
+    description: { id: "Aplikasi viral untuk bagi-bagi THR dengan cara yang seru dan interaktif.", en: "A viral app for distributing Eid money (THR) in a fun and interactive way." },
+    fullDescription: { id: "THR Kaget adalah platform yang memungkinkan pengguna untuk membuat link bagi-bagi THR secara digital dengan elemen gamifikasi yang menarik.", en: "THR Kaget is a platform allowing users to create digital links for distributing Eid money (THR) with engaging gamification elements." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["TypeScript", "Next.js", "Realtime", "Gamification"],
     category: "Web Application",
     status: "Production",
     year: "2026",
-    role: "Full-Stack Developer",
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
     repoUrl: "https://github.com/adityafakhrii/thrkaget",
     technologies: {
       Frontend: ["Next.js", "Tailwind CSS", "Framer Motion"],
@@ -1064,15 +1184,15 @@ const projects = {
   },
   "falaah-your-spiritual-guide": {
     title: "Falaah",
-    subtitle: "AI Spiritual Guide",
-    description: "Asisten spiritual berbasis AI yang membantu menjawab pertanyaan seputar agama dengan referensi terpercaya.",
-    fullDescription: "Falaah menggunakan LLM yang dikhususkan untuk menjawab pertanyaan spiritual dan keagamaan dengan pendekatan yang modern dan relevan.",
+    subtitle: { id: "AI Spiritual Guide", en: "AI Spiritual Guide" },
+    description: { id: "Asisten spiritual berbasis AI yang membantu menjawab pertanyaan seputar agama dengan referensi terpercaya.", en: "An AI-based spiritual assistant that helps answer religious questions with reliable references." },
+    fullDescription: { id: "Falaah menggunakan LLM yang dikhususkan untuk menjawab pertanyaan spiritual dan keagamaan dengan pendekatan yang modern dan relevan.", en: "Falaah uses a specialized LLM to answer spiritual and religious questions with a modern and relevant approach." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["TypeScript", "AI", "LLM", "Religious Tech"],
     category: "Web Application",
     status: "Production",
     year: "2026",
-    role: "Full-Stack Developer",
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
     technologies: {
       Frontend: ["Next.js", "TypeScript"],
       AI: ["OpenAI", "LangChain"],
@@ -1080,15 +1200,15 @@ const projects = {
   },
   "ai-task-master": {
     title: "AI Task Master",
-    subtitle: "Smart Productivity Tool",
-    description: "Sistem manajemen tugas otomatis yang menggunakan AI untuk prioritas dan estimasi waktu.",
-    fullDescription: "AI Task Master membantu tim mengelola workflow mereka dengan fitur cerdas yang menyarankan urutan pengerjaan tugas berdasarkan urgensi dan kapasitas.",
+    subtitle: { id: "Smart Productivity Tool", en: "Smart Productivity Tool" },
+    description: { id: "Sistem manajemen tugas otomatis yang menggunakan AI untuk prioritas dan estimasi waktu.", en: "An automated task management system using AI for prioritization and time estimation." },
+    fullDescription: { id: "AI Task Master membantu tim mengelola workflow mereka dengan fitur cerdas yang menyarankan urutan pengerjaan tugas berdasarkan urgensi dan kapasitas.", en: "AI Task Master helps teams manage their workflow with smart features that suggest task execution order based on urgency and capacity." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["TypeScript", "Next.js", "AI", "Productivity"],
     category: "Web Application",
     status: "Production",
     year: "2026",
-    role: "Full-Stack Developer",
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
     repoUrl: "https://github.com/adityafakhrii/ai-task-master",
     technologies: {
       Frontend: ["Next.js", "Tailwind CSS"],
@@ -1098,15 +1218,15 @@ const projects = {
   },
   "yukaccess": {
     title: "YukAccess",
-    subtitle: "All in One SaaS Tools",
-    description: "Aplikasi yang menyediakan semua tools SaaS dalam satu platform",
-    fullDescription: "YukAccess menyediakan berbagai tools SaaS untuk memudahkan pekerjaan digital.",
+    subtitle: { id: "All in One SaaS Tools", en: "All in One SaaS Tools" },
+    description: { id: "Aplikasi yang menyediakan semua tools SaaS dalam satu platform", en: "An application providing all SaaS tools in a single platform." },
+    fullDescription: { id: "YukAccess menyediakan berbagai tools SaaS untuk memudahkan pekerjaan digital.", en: "YukAccess provides various SaaS tools to simplify digital work." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["TypeScript", "SaaS", "Auth", "IAM"],
     category: "Web Application",
     status: "Production",
     year: "2026",
-    role: "Full-Stack Developer",
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
     technologies: {
       Frontend: ["React", "TypeScript"],
       Backend: ["Node.js", "Auth0", "Redis"],
@@ -1114,15 +1234,15 @@ const projects = {
   },
   "warung-go-digital-pos": {
     title: "Warung Go Digital POS",
-    subtitle: "Smart POS for UMKM",
-    description: "Sistem kasir pintar untuk membantu warung dan UMKM beralih ke transaksi digital.",
-    fullDescription: "Aplikasi POS yang ringan namun powerful, mendukung pembayaran digital, manajemen stok, dan laporan keuangan harian secara otomatis.",
+    subtitle: { id: "Smart POS for UMKM", en: "Smart POS for UMKM" },
+    description: { id: "Sistem kasir pintar untuk membantu warung dan UMKM beralih ke transaksi digital.", en: "A smart POS system to help local shops and SMEs transition to digital transactions." },
+    fullDescription: { id: "Aplikasi POS yang ringan namun powerful, mendukung pembayaran digital, manajemen stok, dan laporan keuangan harian secara otomatis.", en: "A lightweight yet powerful POS app supporting digital payments, inventory management, and automated daily financial reporting." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["TypeScript", "FinTech", "POS", "UMKM"],
     category: "Web Application",
     status: "Production",
     year: "2026",
-    role: "Lead Developer",
+    role: { id: "Lead Developer", en: "Lead Developer" },
     technologies: {
       Frontend: ["Next.js", "Tailwind CSS"],
       Backend: ["Firebase", "Midtrans Payment"],
@@ -1130,15 +1250,15 @@ const projects = {
   },
   "umkm-insight-ai": {
     title: "UMKM Insight AI",
-    subtitle: "AI Analytics for Small Businesses",
-    description: "Platform analitik bisnis yang memberikan saran strategi berdasarkan data penjualan menggunakan AI.",
-    fullDescription: "Membantu pengusaha kecil memahami tren pasar dan perilaku pelanggan melalui visualisasi data dan insight cerdas dari model AI.",
+    subtitle: { id: "AI Analytics for Small Businesses", en: "AI Analytics for Small Businesses" },
+    description: { id: "Platform analitik bisnis yang memberikan saran strategi berdasarkan data penjualan menggunakan AI.", en: "A business analytics platform providing AI-based strategic advice from sales data." },
+    fullDescription: { id: "Membantu pengusaha kecil memahami tren pasar dan perilaku pelanggan melalui visualisasi data dan insight cerdas dari model AI.", en: "Helps small business owners understand market trends and customer behavior through data visualization and smart insights from AI models." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["TypeScript", "AI", "Business Intelligence", "Analytics"],
     category: "Web Application",
     status: "Production",
     year: "2026",
-    role: "Data & AI Engineer",
+    role: { id: "Data & AI Engineer", en: "Data & AI Engineer" },
     technologies: {
       Frontend: ["Next.js", "Chart.js"],
       AI: ["OpenAI API", "Python (Data Processing)"],
@@ -1147,15 +1267,15 @@ const projects = {
   },
   "kfs-course-agent": {
     title: "KFS Course Agent",
-    subtitle: "AI Learning Assistant",
-    description: "Asisten pembelajaran otomatis untuk membantu siswa dalam kursus online memahami materi lebih cepat.",
-    fullDescription: "Course Agent ini mampu menjawab pertanyaan spesifik tentang kurikulum, memberikan ringkasan materi, dan membuat kuis latihan otomatis.",
+    subtitle: { id: "AI Learning Assistant", en: "AI Learning Assistant" },
+    description: { id: "Asisten pembelajaran otomatis untuk membantu siswa dalam kursus online memahami materi lebih cepat.", en: "An automated learning assistant to help online course students grasp material faster." },
+    fullDescription: { id: "Course Agent ini mampu menjawab pertanyaan spesifik tentang kurikulum, memberikan ringkasan materi, dan membuat kuis latihan otomatis.", en: "This Course Agent can answer curriculum-specific questions, provide material summaries, and generate automated practice quizzes." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["Python", "AI", "EdTech", "Automation"],
     category: "Web Application",
     status: "Production",
     year: "2025",
-    role: "Backend & AI Developer",
+    role: { id: "Backend & AI Developer", en: "Backend & AI Developer" },
     repoUrl: "https://github.com/adityafakhrii/kfs_course_agent",
     technologies: {
       Backend: ["Python", "FastAPI"],
@@ -1165,15 +1285,15 @@ const projects = {
   },
   "careermate": {
     title: "CareerMate",
-    subtitle: "AI Career Coaching Platform",
-    description: "Platform bimbingan karir yang membantu optimasi CV dan persiapan interview berbasis AI.",
-    fullDescription: "CareerMate menggunakan teknologi AI untuk memberikan feedback instan pada CV pengguna dan mensimulasikan sesi interview teknis.",
+    subtitle: { id: "AI Career Coaching Platform", en: "AI Career Coaching Platform" },
+    description: { id: "Platform bimbingan karir yang membantu optimasi CV dan persiapan interview berbasis AI.", en: "A career coaching platform assisting with CV optimization and AI-based interview preparation." },
+    fullDescription: { id: "CareerMate menggunakan teknologi AI untuk memberikan feedback instan pada CV pengguna dan mensimulasikan sesi interview teknis.", en: "CareerMate uses AI technology to provide instant feedback on user CVs and simulate technical interview sessions." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["TypeScript", "AI", "HR Tech", "Next.js"],
     category: "Web Application",
     status: "Production",
     year: "2025",
-    role: "Full-Stack Developer",
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
     repoUrl: "https://github.com/adityafakhrii/careermate",
     technologies: {
       Frontend: ["Next.js", "Tailwind CSS"],
@@ -1182,15 +1302,15 @@ const projects = {
   },
   "ruangai-event": {
     title: "RuangAI Event Management",
-    subtitle: "Enterprise Event Solution",
-    description: "Sistem manajemen event terpadu untuk skala besar dengan fitur ticketing dan manajemen peserta.",
-    fullDescription: "RuangAI Event mempermudah penyelenggara mengelola pendaftaran, absensi berbasis QR, dan distribusi sertifikat secara otomatis.",
+    subtitle: { id: "Enterprise Event Solution", en: "Enterprise Event Solution" },
+    description: { id: "Sistem manajemen event terpadu untuk skala besar dengan fitur ticketing dan manajemen peserta.", en: "An integrated large-scale event management system featuring ticketing and attendee management." },
+    fullDescription: { id: "RuangAI Event mempermudah penyelenggara mengelola pendaftaran, absensi berbasis QR, dan distribusi sertifikat secara otomatis.", en: "RuangAI Event simplifies registration management, QR-based attendance, and automated certificate distribution for organizers." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["TypeScript", "Next.js", "Event Management", "Enterprise"],
     category: "Web Application",
     status: "Production",
     year: "2026",
-    role: "Full-Stack Developer",
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
     technologies: {
       Frontend: ["Next.js", "TypeScript"],
       Backend: ["Supabase", "Resend (Email)"],
@@ -1198,15 +1318,15 @@ const projects = {
   },
   "kas-harian-kantor": {
     title: "Kas Harian Kantor",
-    subtitle: "Internal Cash Tracking System",
-    description: "Aplikasi internal untuk mengelola dan melacak arus kas kecil di lingkungan kantor.",
-    fullDescription: "Sistem ini membantu tim operasional mencatat pengeluaran rutin kantor dengan transparansi tinggi dan sistem approval berjenjang.",
+    subtitle: { id: "Internal Cash Tracking System", en: "Internal Cash Tracking System" },
+    description: { id: "Aplikasi internal untuk mengelola dan melacak arus kas kecil di lingkungan kantor.", en: "An internal app to manage and track petty cash flow in an office environment." },
+    fullDescription: { id: "Sistem ini membantu tim operasional mencatat pengeluaran rutin kantor dengan transparansi tinggi dan sistem approval berjenjang.", en: "This system helps the operations team record routine office expenses with high transparency and a tiered approval system." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["TypeScript", "Finance", "Internal Tool", "ERP"],
     category: "Web Application",
     status: "Production",
     year: "2026",
-    role: "Full-Stack Developer",
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
     technologies: {
       Frontend: ["React", "TypeScript"],
       Backend: ["Node.js", "PostgreSQL"],
@@ -1214,22 +1334,22 @@ const projects = {
   },
   "resepsi-tamu-digital": {
     title: "Resepsi Tamu Digital",
-    subtitle: "Modern Guest Management",
-    description: "Solusi digital untuk menggantikan buku tamu konvensional dengan sistem QR code.",
-    fullDescription: "Resepsi Tamu Digital memberikan pengalaman check-in yang elegan bagi tamu undangan di acara formal maupun kantor.",
+    subtitle: { id: "Modern Guest Management", en: "Modern Guest Management" },
+    description: { id: "Solusi digital untuk menggantikan buku tamu konvensional dengan sistem QR code.", en: "A digital solution replacing conventional guestbooks with a QR code system." },
+    fullDescription: { id: "Resepsi Tamu Digital memberikan pengalaman check-in yang elegan bagi tamu undangan di acara formal maupun kantor.", en: "Resepsi Tamu Digital offers an elegant check-in experience for invited guests at formal events or offices." },
     imageSrc: "/placeholder.svg?height=400&width=800",
     tags: ["TypeScript", "QR Code", "Guest Management"],
     category: "Web Application",
     status: "Production",
     year: "2025",
-    role: "Full-Stack Developer",
+    role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
     repoUrl: "https://github.com/adityafakhrii/resepsi-tamu-digital",
     technologies: {
       Frontend: ["Next.js", "TypeScript"],
       Backend: ["Firebase"],
     },
   },
-} as const
+} satisfies Record<string, ProjectItem>
 
 export type ProjectId = keyof typeof projects
 export default projects

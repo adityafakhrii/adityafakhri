@@ -9,7 +9,7 @@ import { ExternalLink, Github, ArrowLeft, Calendar, User, Clock, Target, Lightbu
 import Link from "next/link"
 import Image from "next/image"
 import { TranslatedContent } from "@/components/translated-content"
-import projects from "@/data/projects"
+import projects, { getLocalizedData } from "@/data/projects"
 
 export default function ProjectDetailPage({ params }: { params: Promise<{ id: string }> }) {
   return (
@@ -68,12 +68,12 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
               </div>
               
               <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">{project.title}</h1>
-              <p className="text-xl text-muted-foreground mb-4">{project.subtitle || t('notAvailable')}</p>
+              <p className="text-xl text-muted-foreground mb-4">{getLocalizedData(project.subtitle, t('language')) || t('notAvailable')}</p>
               
               <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center">
                   <User className="h-4 w-4 mr-1" />
-                  {project.role || t('notAvailable')}
+                  {getLocalizedData(project.role, t('language')) || t('notAvailable')}
                 </div>
                 <div className="flex items-center">
                   <Calendar className="h-4 w-4 mr-1" />
@@ -81,7 +81,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                 </div>
                 <div className="flex items-center">
                   <Clock className="h-4 w-4 mr-1" />
-                  {project.duration || t('notAvailable')}
+                  {getLocalizedData(project.duration, t('language')) || t('notAvailable')}
                 </div>
               </div>
             </div>
@@ -103,8 +103,8 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                 {/* Project Overview */}
                 <ContentBlock>
                   <h2 className="text-2xl font-bold mb-4">{t('overview')}</h2>
-                  <p className="text-lg mb-4">{project.fullDescription || t('notAvailable')}</p>
-                  <p className="text-muted-foreground">{project.description || t('notAvailable')}</p>
+                  <p className="text-lg mb-4">{getLocalizedData(project.fullDescription, t('language')) || t('notAvailable')}</p>
+                  <p className="text-muted-foreground">{getLocalizedData(project.description, t('language')) || t('notAvailable')}</p>
                 </ContentBlock>
 
                 {/* Goals */}
@@ -118,7 +118,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                       {project.goals.map((goal, index) => (
                         <li key={index} className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                          <span>{goal}</span>
+                          <span>{getLocalizedData(goal, t('language'))}</span>
                         </li>
                       ))}
                     </ul>
@@ -135,7 +135,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                       {project.features.map((feature, index) => (
                         <div key={index} className="flex items-start p-3 border rounded-lg">
                           <CheckCircle className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm">{feature}</span>
+                          <span className="text-sm">{getLocalizedData(feature, t('language'))}</span>
                         </div>
                       ))}
                     </div>
@@ -156,11 +156,11 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                         <div key={index} className="border rounded-lg p-4">
                           <div className="mb-3">
                             <h3 className="font-medium text-red-600 mb-2">{t('language') === 'id' ? 'Tantangan:' : 'Challenge:'}</h3>
-                            <p className="text-sm">{item.challenge}</p>
+                            <p className="text-sm">{getLocalizedData(item.challenge, t('language'))}</p>
                           </div>
                           <div>
                             <h3 className="font-medium text-green-600 mb-2">{t('language') === 'id' ? 'Solusi:' : 'Solution:'}</h3>
-                            <p className="text-sm">{item.solution}</p>
+                            <p className="text-sm">{getLocalizedData(item.solution, t('language'))}</p>
                           </div>
                         </div>
                       ))}
@@ -179,7 +179,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                         <div key={index} className="p-4 bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-800 rounded-lg">
                           <div className="flex items-start">
                             <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                            <span className="text-sm text-green-800 dark:text-green-100">{outcome}</span>
+                            <span className="text-sm text-green-800 dark:text-green-100">{getLocalizedData(outcome, t('language'))}</span>
                           </div>
                         </div>
                       ))}
@@ -240,9 +240,9 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                   <h2 className="text-2xl font-bold mb-4">{t('clientTestimonial')}</h2>
                   {"testimonial" in project && project.testimonial ? (
                     <div className="bg-muted p-6 rounded-lg">
-                      <blockquote className="text-lg italic mb-4">&ldquo;{project.testimonial.quote}&rdquo;</blockquote>
+                      <blockquote className="text-lg italic mb-4">&ldquo;{getLocalizedData(project.testimonial.quote, t('language'))}&rdquo;</blockquote>
                       <div className="text-sm text-muted-foreground">
-                        — {project.testimonial.author}, {project.testimonial.position}
+                        — {project.testimonial.author}, {getLocalizedData(project.testimonial.position, t('language'))}
                       </div>
                     </div>
                   ) : (
@@ -259,11 +259,11 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                   <div className="space-y-3">
                     <div>
                       <h4 className="text-sm font-medium text-muted-foreground">{t('client')}</h4>
-                      <p className="text-sm">{project.client || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
+                      <p className="text-sm">{getLocalizedData(project.client, t('language')) || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
                     </div>
                     <div>
                       <h4 className="text-sm font-medium text-muted-foreground">{t('duration')}</h4>
-                      <p className="text-sm">{project.duration || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
+                      <p className="text-sm">{getLocalizedData(project.duration, t('language')) || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
                     </div>
                     <div>
                       <h4 className="text-sm font-medium text-muted-foreground">{t('year')}</h4>
@@ -271,7 +271,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                     </div>
                     <div>
                       <h4 className="text-sm font-medium text-muted-foreground">{t('role')}</h4>
-                      <p className="text-sm">{project.role || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
+                      <p className="text-sm">{getLocalizedData(project.role, t('language')) || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
                     </div>
                     <div>
                       <h4 className="text-sm font-medium text-muted-foreground">{t('status')}</h4>
@@ -286,7 +286,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                 <ContentBlock>
                   <h3 className="font-bold mb-4">{t('links')}</h3>
                   <div className="space-y-3">
-                    {project.liveUrl ? (
+                    {('liveUrl' in project && project.liveUrl) ? (
                       <Button variant="outline" className="w-full" asChild>
                         <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="mr-2 h-4 w-4" />
@@ -297,7 +297,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                       <div className="text-sm text-muted-foreground">{t('liveNotAvailable')}</div>
                     )}
                     
-                    {project.repoUrl ? (
+                    {('repoUrl' in project && project.repoUrl) ? (
                       <Button variant="outline" className="w-full" asChild>
                         <Link href={project.repoUrl} target="_blank" rel="noopener noreferrer">
                           <Github className="mr-2 h-4 w-4" />
@@ -345,7 +345,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
             {/* Navigation Footer */}
             <div className="flex justify-between items-center mt-12 pt-8 border-t">
               <div>
-                {project.prevProject && (
+                {('prevProject' in project && project.prevProject) && (
                   <Button variant="outline" asChild>
                     <Link href={`/projects/${project.prevProject}`}>
                       <ArrowLeft className="mr-2 h-4 w-4" />
@@ -362,7 +362,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
               </Button>
               
               <div>
-                {project.nextProject && (
+                {('nextProject' in project && project.nextProject) && (
                   <Button variant="outline" asChild>
                     <Link href={`/projects/${project.nextProject}`}>
                       {t('nextProject')}
