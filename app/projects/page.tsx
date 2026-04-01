@@ -48,15 +48,34 @@ const pick = (id: keyof typeof projects) => {
 }
 
 const featuredProjects = [
+  pick("gambaryuk"),
+  pick("invoiceyuk"),
+  pick("sahur-buka-ai-chef"),
+  pick("ruangai-prompt-hub"),
+  pick("dompetyuk"),
+  pick("vibe-code-landing"),
+]
+
+const recentProjects = [
+  pick("thrkaget"),
+  pick("falaah-your-spiritual-guide"),
+  pick("ai-task-master"),
+  pick("yukaccess"),
+  pick("trae-skills"),
+  pick("ruangai-event"),
+  pick("warung-go-digital-pos"),
+  pick("kas-harian-kantor"),
+  pick("umkm-insight-ai"),
+  pick("resepsi-tamu-digital"),
+  pick("kfs-course-agent"),
+  pick("careermate"),
+  pick("it-footwear2"),
   pick("siacta"),
   pick("medfluffy"),
   pick("restoranku"),
   pick("ramadhanjs"),
   pick("proquoteai"),
   pick("patunganyuk"),
-]
-
-const recentProjects = [
   pick("sibi-app-ui-ux"),
   pick("lavafa-co"),
   pick("laravel-mastery"),

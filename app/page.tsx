@@ -19,14 +19,14 @@ export default function Home() {
     return { id, title: p.title, description: p.description, imageSrc: p.imageSrc, tags: p.tags }
   }
   const featuredProjects = [
-    pick("siacta"),
-    pick("medfluffy"),
-    pick("restoranku"),
-    pick("ramadhanjs"),
-    pick("proquoteai"),
-    pick("patunganyuk"),
+    pick("gambaryuk"),
+    pick("invoiceyuk"),
+    pick("sahur-buka-ai-chef"),
+    pick("ruangai-prompt-hub"),
+    pick("dompetyuk"),
+    pick("vibe-code-landing"),
   ]
-  const featuredProjectsShow = featuredProjects.slice(0, 4)
+  const featuredProjectsShow = featuredProjects.slice(0, 6)
   const articles = Object.entries(blogs)
     .map(([id, p]) => ({ id, title: p.title, excerpt: p.excerpt, date: p.date, readTime: p.readTime, imageSrc: p.imageSrc || "/placeholder.svg?height=200&width=400" }))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())

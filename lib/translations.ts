@@ -5,7 +5,7 @@ export const translations = {
     about: "Tentang",
     skills: "Keahlian",
     speaking: "Speaking & Events",
-    projects: "Proyek",
+    projects: "Proyek & Portofolio",
     experience: "Pengalaman",
     education: "Pendidikan",
     community: "Komunitas",
@@ -52,7 +52,7 @@ export const translations = {
     hobbies: "Hobi & Minat",
 
     // Projects page
-    projectsTitle: "Proyek",
+    projectsTitle: "Proyek & Portofolio",
     projectsDescription: "Koleksi proyek unggulan dan terbaru yang telah saya kerjakan",
     featuredProjectsTitle: "Proyek Unggulan",
     recentProjectsTitle: "Proyek Terbaru",
@@ -197,7 +197,7 @@ export const translations = {
     about: "About",
     skills: "Skills",
     speaking: "Speaking & Events",
-    projects: "Projects",
+    projects: "Proyek & Portofolio",
     experience: "Experience",
     education: "Education",
     community: "Community",
@@ -244,7 +244,7 @@ export const translations = {
     hobbies: "Hobbies & Interests",
 
     // Projects page
-    projectsTitle: "Projects",
+    projectsTitle: "Proyek & Portofolio",
     projectsDescription: "Collection of featured and recent projects I've worked on",
     featuredProjectsTitle: "Featured Projects",
     recentProjectsTitle: "Recent Projects",
