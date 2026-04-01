@@ -955,6 +955,7 @@ const projects = {
     status: "Production",
     year: "2026",
     role: "Full-Stack Developer",
+    liveUrl: "https://gambaryuk.adityafakhri.com/",
     repoUrl: "https://github.com/adityafakhrii/gambaryuk",
     technologies: {
       Frontend: ["Next.js", "TypeScript", "Tailwind CSS"],
@@ -972,6 +973,7 @@ const projects = {
     status: "Production",
     year: "2026",
     role: "Full-Stack Developer",
+    liveUrl: "https://invoiceyuk.vercel.app/",
     repoUrl: "https://github.com/adityafakhrii/invoiceyuk",
     technologies: {
       Frontend: ["Next.js", "TypeScript", "Tailwind CSS"],
@@ -1005,6 +1007,7 @@ const projects = {
     status: "Production",
     year: "2026",
     role: "Full-Stack Developer",
+    liveUrl: "https://prompt.ruangai.id/",
     repoUrl: "https://github.com/adityafakhrii/ruangai-prompt-hub",
     technologies: {
       Frontend: ["Next.js", "TypeScript", "Tailwind CSS"],

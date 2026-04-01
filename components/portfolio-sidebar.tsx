@@ -40,7 +40,7 @@ import {
   SidebarTrigger,
   useSidebar,
 } from "@/components/ui/sidebar"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useLanguage } from "@/contexts/language-context"
 import { LanguageSwitcher } from "@/components/language-switcher"
 
@@ -49,9 +49,11 @@ export function PortfolioSidebar() {
   const { isMobile } = useSidebar()
   const pathname = usePathname()
   const { t } = useLanguage()
+  const [isClient, setIsClient] = useState(false)
 
-  // Ensure theme toggle only renders client-side to avoid hydration mismatch
-  useEffect(() => { }, [])
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   const toggleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark")
@@ -76,7 +78,7 @@ export function PortfolioSidebar() {
               <AvatarFallback>AFR</AvatarFallback>
             </Avatar>
             <div className="text-center">
-              <h1 className="text-xl font-bold">{t('heroTitle')}</h1>
+              <h1 className="text-xl font-bold">{isClient ? t('heroTitle') : 'Aditya Fakhri Riansyah'}</h1>
               <p className="text-sm text-muted-foreground">AI-Driven Web Developer</p>
               <p className="text-sm text-muted-foreground">Mentor • Tech Content Creator</p>
             </div>
@@ -88,7 +90,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/"}>
                 <Link href="/">
                   <Home className="mr-2 h-4 w-4" />
-                  <span>{t('home')}</span>
+                  <span>{isClient ? t('home') : 'Home'}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -96,7 +98,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/about"}>
                 <Link href="/about">
                   <User className="mr-2 h-4 w-4" />
-                  <span>{t('about')}</span>
+                  <span>{isClient ? t('about') : 'About'}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -104,7 +106,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/skills"}>
                 <Link href="/skills">
                   <Lightbulb className="mr-2 h-4 w-4" />
-                  <span>{t('skills')}</span>
+                  <span>{isClient ? t('skills') : 'Skills'}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -112,7 +114,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/speaking"}>
                 <Link href="/speaking">
                   <Mic className="mr-2 h-4 w-4" />
-                  <span>{t('speaking')}</span>
+                  <span>{isClient ? t('speaking') : 'Speaking & Events'}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -120,7 +122,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname.startsWith("/projects")}>
                 <Link href="/projects">
                   <Folder className="mr-2 h-4 w-4" />
-                  <span>{t('projects')}</span>
+                  <span>{isClient ? t('projects') : 'Projects & Portfolio'}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -128,7 +130,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/experience"}>
                 <Link href="/experience">
                   <BriefcaseBusiness className="mr-2 h-4 w-4" />
-                  <span>{t('experience')}</span>
+                  <span>{isClient ? t('experience') : 'Experience'}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -136,7 +138,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/education"}>
                 <Link href="/education">
                   <GraduationCap className="mr-2 h-4 w-4" />
-                  <span>{t('education')}</span>
+                  <span>{isClient ? t('education') : 'Education'}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -144,7 +146,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/community"}>
                 <Link href="/community">
                   <Users className="mr-2 h-4 w-4" />
-                  <span>{t('community')}</span>
+                  <span>{isClient ? t('community') : 'Community'}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -152,7 +154,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/services"}>
                 <Link href="/services">
                   <DollarSign className="mr-2 h-4 w-4" />
-                  <span>{t('services')}</span>
+                  <span>{isClient ? t('services') : 'Services & Pricing'}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -176,7 +178,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname.startsWith("/blog")}>
                 <Link href="/blog">
                   <FileText className="mr-2 h-4 w-4" />
-                  <span>{t('blog')}</span>
+                  <span>{isClient ? t('blog') : 'Blog'}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -184,7 +186,7 @@ export function PortfolioSidebar() {
               <SidebarMenuButton asChild isActive={pathname === "/contact"}>
                 <Link href="/contact">
                   <MessageSquare className="mr-2 h-4 w-4" />
-                  <span>{t('contact')}</span>
+                  <span>{isClient ? t('contact') : 'Contact'}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>

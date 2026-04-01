@@ -15,7 +15,7 @@ export function ProjectCard({ title, description, imageSrc, tags, href }: Projec
   return (
     <Link href={href} className="block group">
       <Card className="overflow-hidden transition-all duration-200 hover:shadow-md">
-        <div className="relative h-48 w-full overflow-hidden">
+        {/* <div className="relative h-48 w-full overflow-hidden">
           <Image
             src={imageSrc || "/placeholder.svg"}
             alt={title}
@@ -23,7 +23,7 @@ export function ProjectCard({ title, description, imageSrc, tags, href }: Projec
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
             className="object-cover transition-transform duration-200 group-hover:scale-105"
           />
-        </div>
+        </div> */}
         <CardContent className="p-4">
           <h3 className="font-medium text-lg">{title}</h3>
           <p className="text-sm text-muted-foreground mt-1 line-clamp-2">{description}</p>

@@ -21,10 +21,10 @@ export default function Home() {
   const featuredProjects = [
     pick("gambaryuk"),
     pick("invoiceyuk"),
-    pick("sahur-buka-ai-chef"),
+    pick("siacta"),
     pick("ruangai-prompt-hub"),
-    pick("dompetyuk"),
-    pick("vibe-code-landing"),
+    pick("proquoteai"),
+    pick("restoranku"),
   ]
   const featuredProjectsShow = featuredProjects.slice(0, 6)
   const articles = Object.entries(blogs)

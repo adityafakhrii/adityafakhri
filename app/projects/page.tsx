@@ -50,10 +50,10 @@ const pick = (id: keyof typeof projects) => {
 const featuredProjects = [
   pick("gambaryuk"),
   pick("invoiceyuk"),
-  pick("sahur-buka-ai-chef"),
+  pick("siacta"),
   pick("ruangai-prompt-hub"),
-  pick("dompetyuk"),
-  pick("vibe-code-landing"),
+  pick("proquoteai"),
+  pick("restoranku"),
 ]
 
 const recentProjects = [
@@ -68,6 +68,9 @@ const recentProjects = [
   pick("resepsi-tamu-digital"),
   pick("kfs-course-agent"),
   pick("careermate"),
+  pick("sahur-buka-ai-chef"),
+  pick("dompetyuk"),
+  pick("vibe-code-landing"),
   pick("siacta"),
   pick("medfluffy"),
   pick("restoranku"),
