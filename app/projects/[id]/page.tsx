@@ -7,16 +7,15 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, ArrowLeft, Calendar, User, Clock, Target, Lightbulb, CheckCircle } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 import { TranslatedContent } from "@/components/translated-content"
-import projects, { getLocalizedData } from "@/data/projects"
+import projects, { getLocalizedData, type ProjectItem, type TranslatableString } from "@/data/projects"
 
 export default function ProjectDetailPage({ params }: { params: Promise<{ id: string }> }) {
   return (
     <TranslatedContent
       renderContent={({ t }) => {
         const resolvedParams = React.use(params)
-        const project = projects[resolvedParams.id as keyof typeof projects]
+        const project = projects[resolvedParams.id as keyof typeof projects] as ProjectItem
 
         if (!project) {
           return (
@@ -86,16 +85,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
               </div>
             </div>
 
-            {/* Hero Image */}
-            <div className="relative aspect-[4/3] md:aspect-[16/9] w-full mb-8 rounded-lg overflow-hidden">
-              <Image
-                src={project.imageSrc || "/placeholder.svg"}
-                alt={project.title}
-                fill
-                sizes="(max-width: 768px) 100vw, 66vw"
-                className="object-cover"
-              />
-            </div>
+
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Main Content */}
@@ -211,29 +201,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
               </div>
             </ContentBlock>
 
-                {/* Gallery */}
-                <ContentBlock>
-                  <h2 className="text-2xl font-bold mb-4">{t('projectGallery')}</h2>
-                  {project.gallery && project.gallery.length > 0 ? (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {project.gallery.map((image, index) => (
-                        <div key={index} className="rounded-lg overflow-hidden border">
-                          <Image
-                            src={image || "/placeholder.svg"}
-                            alt={`${project.title} screenshot ${index + 1}`}
-                            width={500}
-                            height={300}
-                            sizes="(max-width: 640px) 100vw, 500px"
-                            loading="lazy"
-                            className="object-cover w-full h-48"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <p className="text-sm text-muted-foreground">{t('notAvailable')}</p>
-                  )}
-                </ContentBlock>
+
 
                 {/* Testimonial */}
                 <ContentBlock>
