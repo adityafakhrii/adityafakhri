@@ -223,7 +223,7 @@ export function PortfolioSidebar() {
                 </Link>
               </Button>
             </div>
-            <Button variant="outline" className="w-full" asChild>
+            <Button variant="default" className="w-full" asChild>
               <Link
                 href="https://drive.google.com/file/d/1FXmMA4dP0lz1gS-lz2EFLWWqabonUHxZ/view?usp=sharing"
                 target="_blank"
