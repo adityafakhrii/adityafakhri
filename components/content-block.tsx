@@ -24,7 +24,7 @@ export function ContentBlock({
   const [isOpen, setIsOpen] = useState(defaultOpen)
 
   return (
-    <div className={cn("rounded-lg border p-6 [content-visibility:auto] [contain-intrinsic-size:1px_500px]", className)}>
+    <div className={cn("animate-in fade-in slide-in-from-bottom-4 duration-700 rounded-lg border p-6 [content-visibility:auto] [contain-intrinsic-size:1px_500px]", className)}>
       {title && (
       <div
         suppressHydrationWarning

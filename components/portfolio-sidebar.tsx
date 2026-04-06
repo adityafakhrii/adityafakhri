@@ -38,6 +38,9 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
   SidebarTrigger,
+  SidebarGroup,
+  SidebarGroupLabel,
+  SidebarGroupContent,
   useSidebar,
 } from "@/components/ui/sidebar"
 import { useEffect, useState } from "react"
@@ -48,7 +51,7 @@ export function PortfolioSidebar() {
   const { setTheme, theme, resolvedTheme } = useTheme()
   const { isMobile } = useSidebar()
   const pathname = usePathname()
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
@@ -85,112 +88,133 @@ export function PortfolioSidebar() {
           </div>
         </SidebarHeader>
         <SidebarContent>
-          <SidebarMenu className="mx-6 my-4">
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive={pathname === "/"}>
-                <Link href="/">
-                  <Home className="mr-2 h-4 w-4" />
-                  <span>{isClient ? t('home') : 'Home'}</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive={pathname === "/about"}>
-                <Link href="/about">
-                  <User className="mr-2 h-4 w-4" />
-                  <span>{isClient ? t('about') : 'About'}</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive={pathname === "/skills"}>
-                <Link href="/skills">
-                  <Lightbulb className="mr-2 h-4 w-4" />
-                  <span>{isClient ? t('skills') : 'Skills'}</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive={pathname === "/speaking"}>
-                <Link href="/speaking">
-                  <Mic className="mr-2 h-4 w-4" />
-                  <span>{isClient ? t('speaking') : 'Speaking & Events'}</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive={pathname.startsWith("/projects")}>
-                <Link href="/projects">
-                  <Folder className="mr-2 h-4 w-4" />
-                  <span>{isClient ? t('projects') : 'Projects & Portfolio'}</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive={pathname === "/experience"}>
-                <Link href="/experience">
-                  <BriefcaseBusiness className="mr-2 h-4 w-4" />
-                  <span>{isClient ? t('experience') : 'Experience'}</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive={pathname === "/education"}>
-                <Link href="/education">
-                  <GraduationCap className="mr-2 h-4 w-4" />
-                  <span>{isClient ? t('education') : 'Education'}</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive={pathname === "/community"}>
-                <Link href="/community">
-                  <Users className="mr-2 h-4 w-4" />
-                  <span>{isClient ? t('community') : 'Community'}</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive={pathname === "/services"}>
-                <Link href="/services">
-                  <DollarSign className="mr-2 h-4 w-4" />
-                  <span>{isClient ? t('services') : 'Services & Pricing'}</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive={pathname === "/mentoring"}>
-                <Link href="/mentoring">
-                  <UserCheck className="mr-2 h-4 w-4" />
-                  <span>Private Mentoring</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive={pathname === "/links"}>
-                <Link href="/links">
-                  <LinkIcon className="mr-2 h-4 w-4" />
-                  <span>Links</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive={pathname.startsWith("/blog")}>
-                <Link href="/blog">
-                  <FileText className="mr-2 h-4 w-4" />
-                  <span>{isClient ? t('blog') : 'Blog'}</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive={pathname === "/contact"}>
-                <Link href="/contact">
-                  <MessageSquare className="mr-2 h-4 w-4" />
-                  <span>{isClient ? t('contact') : 'Contact'}</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-          </SidebarMenu>
+          <SidebarGroup>
+            <SidebarGroupLabel>{isClient ? (language === 'id' ? 'Utama' : 'Main') : 'Main'}</SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild isActive={pathname === "/"}>
+                    <Link href="/">
+                      <Home className="mr-2 h-4 w-4" />
+                      <span>{isClient ? t('home') : 'Home'}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild isActive={pathname === "/about"}>
+                    <Link href="/about">
+                      <User className="mr-2 h-4 w-4" />
+                      <span>{isClient ? t('about') : 'About'}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild isActive={pathname === "/contact"}>
+                    <Link href="/contact">
+                      <MessageSquare className="mr-2 h-4 w-4" />
+                      <span>{isClient ? t('contact') : 'Contact'}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+
+          <SidebarGroup>
+            <SidebarGroupLabel>Portfolio</SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild isActive={pathname.startsWith("/projects")}>
+                    <Link href="/projects">
+                      <Folder className="mr-2 h-4 w-4" />
+                      <span>{isClient ? t('projects') : 'Projects & Portfolio'}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild isActive={pathname === "/speaking"}>
+                    <Link href="/speaking">
+                      <Mic className="mr-2 h-4 w-4" />
+                      <span>{isClient ? t('speaking') : 'Speaking & Events'}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild isActive={pathname === "/community"}>
+                    <Link href="/community">
+                      <Users className="mr-2 h-4 w-4" />
+                      <span>{isClient ? t('community') : 'Community'}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild isActive={pathname.startsWith("/blog")}>
+                    <Link href="/blog">
+                      <FileText className="mr-2 h-4 w-4" />
+                      <span>{isClient ? t('blog') : 'Blog'}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+
+          <SidebarGroup>
+            <SidebarGroupLabel>Professional</SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild isActive={pathname === "/experience"}>
+                    <Link href="/experience">
+                      <BriefcaseBusiness className="mr-2 h-4 w-4" />
+                      <span>{isClient ? t('experience') : 'Experience'}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild isActive={pathname === "/education"}>
+                    <Link href="/education">
+                      <GraduationCap className="mr-2 h-4 w-4" />
+                      <span>{isClient ? t('education') : 'Education'}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild isActive={pathname === "/skills"}>
+                    <Link href="/skills">
+                      <Lightbulb className="mr-2 h-4 w-4" />
+                      <span>{isClient ? t('skills') : 'Skills'}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild isActive={pathname === "/services"}>
+                    <Link href="/services">
+                      <DollarSign className="mr-2 h-4 w-4" />
+                      <span>{isClient ? t('services') : 'Services & Pricing'}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild isActive={pathname === "/mentoring"}>
+                    <Link href="/mentoring">
+                      <UserCheck className="mr-2 h-4 w-4" />
+                      <span>Private Mentoring</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild isActive={pathname === "/links"}>
+                    <Link href="/links">
+                      <LinkIcon className="mr-2 h-4 w-4" />
+                      <span>Links</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
         </SidebarContent>
         <SidebarFooter className="border-t pt-4">
           <div className="flex flex-col space-y-4 px-4">
@@ -217,7 +241,7 @@ export function PortfolioSidebar() {
                 </Link>
               </Button>
               <Button variant="outline" size="icon" asChild>
-                <Link href="https://twitter.com/adityafakhrii" target="_blank" rel="noopener noreferrer">
+                <Link href="https://x.com/adityafakhrii" target="_blank" rel="noopener noreferrer">
                   <Twitter className="h-4 w-4" />
                   <span className="sr-only">X</span>
                 </Link>

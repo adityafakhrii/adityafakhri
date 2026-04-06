@@ -9,6 +9,7 @@ import { LanguageProvider } from "@/contexts/language-context"
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from '@vercel/analytics/next'
 import { Toaster } from "@/components/ui/toaster"
+import { ScrollToTop } from "@/components/scroll-to-top"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -126,6 +127,7 @@ export default function RootLayout({
             </SidebarProvider>
           </ThemeProvider>
         </LanguageProvider>
+        <ScrollToTop />
         <Toaster />
         <SpeedInsights />
         <Analytics />

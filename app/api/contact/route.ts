@@ -8,8 +8,41 @@ const contactSchema = z.object({
   message: z.string().min(10),
 })
 
+const RATE_LIMIT_MAP = new Map<string, { count: number; expiresAt: number }>()
+const MAX_REQUESTS_PER_MINUTE = 3
+const RATE_LIMIT_WINDOW = 60 * 1000 // 1 minute
+
+// Helper to cleanup expired entries
+function cleanupRateLimitMap() {
+  const now = Date.now()
+  for (const [ip, data] of RATE_LIMIT_MAP.entries()) {
+    if (data.expiresAt < now) {
+      RATE_LIMIT_MAP.delete(ip)
+    }
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
+    const ip = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "unknown"
+    if (ip !== "unknown") {
+      cleanupRateLimitMap()
+      const now = Date.now()
+      const limitData = RATE_LIMIT_MAP.get(ip)
+
+      if (limitData && limitData.expiresAt > now) {
+        if (limitData.count >= MAX_REQUESTS_PER_MINUTE) {
+          return NextResponse.json(
+            { error: "Too many requests. Please try again later." },
+            { status: 429 }
+          )
+        }
+        limitData.count += 1
+      } else {
+        RATE_LIMIT_MAP.set(ip, { count: 1, expiresAt: now + RATE_LIMIT_WINDOW })
+      }
+    }
+
     const json = await req.json()
     const parsed = contactSchema.safeParse(json)
     if (!parsed.success) {
