@@ -17,6 +17,10 @@ export type EventItem = {
 }
 
 export const upcomingEvents: EventItem[] = [
+  //
+]
+
+export const pastEvents: EventItem[] = [
   {
     id: "workshop-webdev-polines-2026",
     category: "Workshop",
@@ -44,10 +48,7 @@ export const upcomingEvents: EventItem[] = [
       id: "Diselenggarakan oleh: Techup Politeknik Negeri Semarang",
       en: "Organized by: Techup Politeknik Negeri Semarang"
     }
-  }
-]
-
-export const pastEvents: EventItem[] = [
+  },
   {
     id: "ngabuburit-produktif-thr-digital",
     category: "Workshop",
