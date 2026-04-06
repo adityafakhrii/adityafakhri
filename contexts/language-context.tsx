@@ -32,7 +32,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }
 
   const t = (key: TranslationKey): string => {
-    return translations[language][key] || translations.id[key] || key
+    return (translations[language] as any)[key] || (translations.id as any)[key] || key
   }
 
   return (

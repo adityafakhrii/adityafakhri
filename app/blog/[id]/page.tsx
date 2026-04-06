@@ -28,13 +28,13 @@ export default function BlogPostPage({ params }: { params: Promise<{ id: string 
           return (
             <div className="container max-w-5xl py-8 px-4 md:px-8">
               <PageHeader
-                title={t('language') === 'id' ? "Artikel Tidak Ditemukan" : "Article Not Found"}
-                description={t('language') === 'id' ? "Maaf, artikel yang Anda cari tidak tersedia." : "Sorry, the article you're looking for is not available."}
+                title={t('k_1114e997')}
+                description={t('k_063549d5')}
               />
               <Button asChild variant="outline" className="mt-4">
                 <Link href="/blog">
                   <ArrowLeft className="h-4 w-4 mr-2" />
-                  {t('language') === 'id' ? 'Kembali ke Blog' : 'Back to Blog'}
+                  {t('k_cd5f5976')}
                 </Link>
               </Button>
             </div>
@@ -46,7 +46,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ id: string 
             <Button asChild variant="ghost" className="mb-6">
               <Link href="/blog">
                 <ArrowLeft className="h-4 w-4 mr-2" />
-                {t('language') === 'id' ? 'Kembali' : 'Back'}
+                {t('k_0557fa92')}
               </Link>
             </Button>
 

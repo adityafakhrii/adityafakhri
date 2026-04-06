@@ -44,14 +44,14 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                 {project.prevProject && (
                   <Button variant="ghost" size="sm" asChild>
                     <Link href={`/projects/${project.prevProject}`}>
-                      ← {t('language') === 'id' ? 'Prev' : 'Prev'}
+                      ← {t('k_14230d11')}
                     </Link>
                   </Button>
                 )}
                 {project.nextProject && (
                   <Button variant="ghost" size="sm" asChild>
                     <Link href={`/projects/${project.nextProject}`}>
-                      {t('language') === 'id' ? 'Next' : 'Next'} →
+                      {t('k_10ac3d04')} →
                     </Link>
                   </Button>
                 )}
@@ -145,11 +145,11 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                       {project.challenges!.map((item, index) => (
                         <div key={index} className="border rounded-lg p-4">
                           <div className="mb-3">
-                            <h3 className="font-medium text-red-600 mb-2">{t('language') === 'id' ? 'Tantangan:' : 'Challenge:'}</h3>
+                            <h3 className="font-medium text-red-600 mb-2">{t('k_4c0d4ffb')}</h3>
                             <p className="text-sm">{getLocalizedData(item.challenge, t('language'))}</p>
                           </div>
                           <div>
-                            <h3 className="font-medium text-green-600 mb-2">{t('language') === 'id' ? 'Solusi:' : 'Solution:'}</h3>
+                            <h3 className="font-medium text-green-600 mb-2">{t('k_21b0855b')}</h3>
                             <p className="text-sm">{getLocalizedData(item.solution, t('language'))}</p>
                           </div>
                         </div>
@@ -214,7 +214,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                       </div>
                     </div>
                   ) : (
-                    <p className="text-sm text-muted-foreground">{t('language') === 'id' ? 'Belum tersedia' : 'Not available'}</p>
+                    <p className="text-sm text-muted-foreground">{t('k_2d25c72c')}</p>
                   )}
                 </ContentBlock>
               </div>
@@ -227,11 +227,11 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                   <div className="space-y-3">
                     <div>
                       <h4 className="text-sm font-medium text-muted-foreground">{t('client')}</h4>
-                      <p className="text-sm">{getLocalizedData(project.client, t('language')) || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
+                      <p className="text-sm">{getLocalizedData(project.client, t('language')) || (t('k_2d25c72c'))}</p>
                     </div>
                     <div>
                       <h4 className="text-sm font-medium text-muted-foreground">{t('duration')}</h4>
-                      <p className="text-sm">{getLocalizedData(project.duration, t('language')) || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
+                      <p className="text-sm">{getLocalizedData(project.duration, t('language')) || (t('k_2d25c72c'))}</p>
                     </div>
                     <div>
                       <h4 className="text-sm font-medium text-muted-foreground">{t('year')}</h4>
@@ -239,7 +239,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                     </div>
                     <div>
                       <h4 className="text-sm font-medium text-muted-foreground">{t('role')}</h4>
-                      <p className="text-sm">{getLocalizedData(project.role, t('language')) || (t('language') === 'id' ? 'Belum tersedia' : 'Not available')}</p>
+                      <p className="text-sm">{getLocalizedData(project.role, t('language')) || (t('k_2d25c72c'))}</p>
                     </div>
                     <div>
                       <h4 className="text-sm font-medium text-muted-foreground">{t('status')}</h4>
@@ -258,7 +258,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                       <Button variant="outline" className="w-full" asChild>
                         <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="mr-2 h-4 w-4" />
-                          {t('language') === 'id' ? 'Lihat Live' : 'View Live'}
+                          {t('k_01987274')}
                         </Link>
                       </Button>
                     ) : (
@@ -298,9 +298,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                 <ContentBlock>
                   <h3 className="font-bold mb-4">{t('interestedInSimilarWork')}</h3>
                   <p className="text-sm mb-4">
-                    {t('language') === 'id' 
-                      ? "Jika Anda tertarik dengan proyek serupa atau ingin berdiskusi tentang kebutuhan development Anda, jangan ragu untuk menghubungi saya."
-                      : "If you're interested in similar projects or want to discuss your development needs, don't hesitate to contact me."
+                    {t('k_f6b0ed6a')
                     }
                   </p>
                   <Button className="w-full" asChild>

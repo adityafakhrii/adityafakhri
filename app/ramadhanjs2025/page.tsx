@@ -12,6 +12,7 @@ import {
   Github
 } from "lucide-react"
 import Link from "next/link"
+import { Metadata } from "next"
 import { RamadhanGallery } from "@/components/ramadhan-gallery"
 import { FinancialReportTable } from "@/components/financial-report-table"
 
