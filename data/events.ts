@@ -42,6 +42,7 @@ export const pastEvents: EventItem[] = [
       en: "Offline workshop at Semarang State Polytechnic discussing independent website creation using AI technology with Aditya Fakhri Riansyah."
     },
     links: [
+      { labelId: "Materi", labelEn: "Materials", href: "https://docs.google.com/presentation/d/1KWuRbB6Sjmp3NAgixXyuOgX0D_cVs67lUGsj7bvuF2M/edit?usp=sharing" },
       { labelId: "Halaman Event", labelEn: "Event Page", href: "https://docs.google.com/forms/d/e/1FAIpQLSeU3cI15mTnQBoYyipuMKmWRSptgLYP81DRwMfURC4trlXAdQ/viewform" }
     ],
     organizer: {
