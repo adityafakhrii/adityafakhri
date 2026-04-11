@@ -22,6 +22,53 @@ export const upcomingEvents: EventItem[] = [
 
 export const pastEvents: EventItem[] = [
   {
+    id: "techtalk-web-2-gdg-uinjkt-2026",
+    category: "TechTalk",
+    tags: ["Web Development", "AI", "Vibe Coding", "Career"],
+    imageSrc: "https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1775883164742-faw4s3.webp",
+    title: {
+      id: "From Idea to Industry: Web Development in the Age of AI",
+      en: "From Idea to Industry: Web Development in the Age of AI"
+    },
+    subtitle: {
+      id: "TechTalk Web Development 2.0",
+      en: "TechTalk Web Development 2.0"
+    },
+    date: "11 April 2026",
+    time: "09.00 - 12.00 WIB",
+    location: "Live on Zoom",
+    description: {
+      id: "TechTalk tentang Web Development di era AI. Membahas cara mengubah AI menjadi asisten pribadi untuk ideasi & design yang lebih tajam, coding & debugging secepat kilat, dan career roadmap (Frontend, Backend, atau Fullstack). Bukan sekadar teori, tapi curhat industri dari pengalaman nyata.",
+      en: "TechTalk about Web Development in the AI era. Discussing how to turn AI into a personal assistant for sharper ideation & design, lightning-fast coding & debugging, and career roadmap (Frontend, Backend, or Fullstack). Not just theory, but real industry insights from practical experience."
+    },
+    bullets: {
+      id: [
+        "Workflow Modern: Idea → Design → Development → Deploy → Improve",
+        "Ideasi & Design yang lebih tajam dengan AI",
+        "Coding & Debugging secepat kilat",
+        "Career Roadmap: Frontend, Backend, atau Fullstack",
+        "Curhat industri: cara dapat pekerjaan pertama & tanggung jawab nyata di perusahaan",
+        "Sesi Deep Q&A"
+      ],
+      en: [
+        "Modern Workflow: Idea → Design → Development → Deploy → Improve",
+        "Sharper Ideation & Design with AI",
+        "Lightning-fast Coding & Debugging",
+        "Career Roadmap: Frontend, Backend, or Fullstack",
+        "Industry insights: how to land your first job & real responsibilities at companies",
+        "Deep Q&A Session"
+      ]
+    },
+    links: [
+      { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/1ysNyWPMYqrI4aTFqh7DOuPYMwqvrAjkfJ_0fIHj7Z60/edit?usp=sharing" },
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://bit.ly/OpenRegistrationTechTalkWeb2-2526" }
+    ],
+    organizer: {
+      id: "Diselenggarakan oleh: Google Developer Group On Campus UIN Syarif Hidayatullah Jakarta",
+      en: "Organized by: Google Developer Group On Campus UIN Syarif Hidayatullah Jakarta"
+    }
+  },
+  {
     id: "workshop-webdev-polines-2026",
     category: "Workshop",
     tags: ["Web Development", "AI", "Workshop"],
