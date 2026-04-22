@@ -13,22 +13,22 @@ export type BlogPost = {
 
 const blogs = {
   "ai-website-builder-2026": {
-    title: "10 AI Website Builder Terbaik 2026 — Bikin Web Tanpa Ngoding!",
-    excerpt: "Kumpulan AI website builder terbaik di 2026 yang bisa bantu lo bikin website, app, bahkan portfolio — tanpa nulis satu baris kode pun.",
+    title: "30 AI Website Builder Terbaik 2026 — Bikin Web Tanpa Ngoding!",
+    excerpt: "Kumpulan 30 AI website builder terbaik di 2026 yang bisa bantu lo bikin website, app, bahkan portfolio — tanpa nulis satu baris kode pun.",
     content: `
       <style>
         .ai-builder-list {
-          display: flex;
-          flex-direction: column;
-          gap: 1.5rem;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1.25rem;
           padding: 0;
           list-style: none;
           margin: 2rem 0;
         }
         .ai-builder-card {
           display: flex;
-          gap: 1.25rem;
-          padding: 1.5rem;
+          gap: 1rem;
+          padding: 1.25rem;
           border-radius: 1rem;
           border: 1px solid hsl(var(--border));
           background: hsl(var(--card));
@@ -41,8 +41,8 @@ const blogs = {
         }
         .ai-builder-number {
           flex-shrink: 0;
-          width: 3rem;
-          height: 3rem;
+          width: 2.5rem;
+          height: 2.5rem;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -50,7 +50,7 @@ const blogs = {
           background: hsl(var(--primary));
           color: hsl(var(--primary-foreground));
           font-weight: 700;
-          font-size: 1.125rem;
+          font-size: 1rem;
         }
         .ai-builder-body {
           flex: 1;
@@ -58,7 +58,7 @@ const blogs = {
         }
         .ai-builder-body h3 {
           margin: 0 0 0.25rem 0;
-          font-size: 1.125rem;
+          font-size: 1rem;
           font-weight: 600;
           color: hsl(var(--foreground));
         }
@@ -66,15 +66,15 @@ const blogs = {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          padding: 0.5rem 1.1rem;
+          padding: 0.4rem 0.9rem;
           border-radius: 0.5rem;
           border: none;
           background: #1a1a1a;
           color: #fff;
-          font-size: 0.85rem;
+          font-size: 0.8rem;
           font-weight: 500;
           text-decoration: none;
-          margin-top: 0.75rem;
+          margin-top: 0.6rem;
           transition: opacity 0.2s, transform 0.15s;
           cursor: pointer;
         }
@@ -83,8 +83,8 @@ const blogs = {
           transform: translateX(2px);
         }
         .ai-builder-btn svg {
-          width: 14px;
-          height: 14px;
+          width: 12px;
+          height: 12px;
           flex-shrink: 0;
           stroke: #fff;
           transition: transform 0.2s;
@@ -93,8 +93,8 @@ const blogs = {
           transform: translateX(3px);
         }
         .ai-builder-desc {
-          font-size: 0.95rem;
-          line-height: 1.6;
+          font-size: 0.88rem;
+          line-height: 1.5;
           color: hsl(var(--muted-foreground));
           margin: 0;
         }
@@ -129,24 +129,128 @@ const blogs = {
           transform: scale(1.05);
           box-shadow: 0 4px 16px rgba(0,0,0,0.2);
         }
+        @media (max-width: 768px) {
+          .ai-builder-list {
+            grid-template-columns: 1fr;
+          }
+        }
         @media (max-width: 480px) {
           .ai-builder-card {
             flex-direction: column;
             gap: 0.75rem;
-            padding: 1.25rem;
+            padding: 1rem;
           }
           .ai-builder-number {
-            width: 2.5rem;
-            height: 2.5rem;
-            font-size: 1rem;
+            width: 2.25rem;
+            height: 2.25rem;
+            font-size: 0.9rem;
           }
           .ai-builder-cta {
             padding: 1.5rem 1rem;
           }
         }
+        .ai-top3-section {
+          margin: 2rem 0 2.5rem 0;
+        }
+        .ai-top3-title {
+          font-size: 1.35rem;
+          font-weight: 700;
+          color: hsl(var(--foreground));
+          margin-bottom: 1.25rem;
+        }
+        .ai-top3-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1rem;
+        }
+        .ai-top3-card {
+          position: relative;
+          padding: 1.5rem;
+          border-radius: 1rem;
+          background: hsl(var(--card));
+          border: 2px solid transparent;
+          background-clip: padding-box;
+          overflow: hidden;
+          transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .ai-top3-card::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: 1rem;
+          padding: 2px;
+          background: linear-gradient(135deg, hsl(280 70% 55%), hsl(340 80% 55%), hsl(30 90% 55%));
+          mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+          mask-composite: exclude;
+          -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          pointer-events: none;
+        }
+        .ai-top3-card:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .ai-top3-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.35rem;
+          font-size: 0.75rem;
+          font-weight: 600;
+          padding: 0.25rem 0.65rem;
+          border-radius: 9999px;
+          background: linear-gradient(135deg, hsl(280 70% 55%), hsl(340 80% 55%));
+          color: #fff;
+          margin-bottom: 0.75rem;
+        }
+        .ai-top3-card h3 {
+          font-size: 1.1rem;
+          font-weight: 700;
+          margin: 0 0 0.4rem 0;
+          color: hsl(var(--foreground));
+        }
+        .ai-top3-card .ai-builder-desc {
+          font-size: 0.88rem;
+          margin-bottom: 0;
+        }
+        .ai-top3-card .ai-builder-btn {
+          margin-top: 0.75rem;
+        }
+        @media (max-width: 768px) {
+          .ai-top3-grid {
+            grid-template-columns: 1fr;
+          }
+        }
       </style>
 
-      <p>Di era 2026, bikin website nggak harus ribet. Cukup deskripsiin ide lo ke AI, dan boom — website langsung jadi. Nah, berikut ini <strong>10 AI Website Builder terbaik</strong> yang wajib lo coba!</p>
+      <p>Di era 2026, bikin website nggak harus ribet. Cukup deskripsiin ide lo ke AI, dan boom — website langsung jadi. Nah, berikut ini <strong>30 AI Website Builder terbaik</strong> yang wajib lo coba!</p>
+
+      <div class="ai-top3-section">
+        <div class="ai-top3-title">Top 3 Rekomendasi Pribadi</div>
+        <div class="ai-top3-grid">
+
+          <div class="ai-top3-card">
+            <div class="ai-top3-badge">#1 Pick</div>
+            <h3>Lovable</h3>
+            <p class="ai-builder-desc">Tulis ide → langsung jadi web app. Cocok buat MVP & startup yang butuh cepet launch.</p>
+            <a class="ai-builder-btn" href="https://lovable.dev" target="_blank" rel="noopener noreferrer">lovable.dev <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+
+          <div class="ai-top3-card">
+            <div class="ai-top3-badge">#2 Pick</div>
+            <h3>V0.dev</h3>
+            <p class="ai-builder-desc">Bikin landing page dalam hitungan menit. Fokus ke design clean + conversion tinggi.</p>
+            <a class="ai-builder-btn" href="https://v0.dev" target="_blank" rel="noopener noreferrer">v0.dev <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+
+          <div class="ai-top3-card">
+            <div class="ai-top3-badge">#3 Pick</div>
+            <h3>Bolt.new</h3>
+            <p class="ai-builder-desc">Dari frontend sampai backend, semua bisa. Cocok buat lo yang mau build app tanpa ribet setup.</p>
+            <a class="ai-builder-btn" href="https://bolt.new" target="_blank" rel="noopener noreferrer">bolt.new <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+
+        </div>
+      </div>
 
       <div class="ai-builder-list">
 
@@ -240,6 +344,186 @@ const blogs = {
           </div>
         </div>
 
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">11</div>
+          <div class="ai-builder-body">
+            <h3>Tempo Labs – AI React Builder</h3>
+            <p class="ai-builder-desc">Buat lo yang main React dan mau lebih sat-set. Frontend presisi + AI assist dalam satu tempat.</p>
+            <a class="ai-builder-btn" href="https://tempo.new" target="_blank" rel="noopener noreferrer">tempo.new <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">12</div>
+          <div class="ai-builder-body">
+            <h3>Stunning – AI Landing Page</h3>
+            <p class="ai-builder-desc">Landing page jadi dalam hitungan menit. Cocok buat validate ide atau jualan cepet.</p>
+            <a class="ai-builder-btn" href="https://stunning.so" target="_blank" rel="noopener noreferrer">stunning.so <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">13</div>
+          <div class="ai-builder-body">
+            <h3>Base44 – Full-Stack Web App Builder</h3>
+            <p class="ai-builder-desc">Bikin web app lengkap sama database bawaan. Tanpa setup backend ribet.</p>
+            <a class="ai-builder-btn" href="https://base44.com" target="_blank" rel="noopener noreferrer">base44.com <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">14</div>
+          <div class="ai-builder-body">
+            <h3>Dora AI – Interactive Website Builder</h3>
+            <p class="ai-builder-desc">Website interaktif & animatif tanpa coding. Design yang beda dari template biasa.</p>
+            <a class="ai-builder-btn" href="https://dora.run/ai" target="_blank" rel="noopener noreferrer">dora.run/ai <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">15</div>
+          <div class="ai-builder-body">
+            <h3>Trickle – AI All-in-One Builder</h3>
+            <p class="ai-builder-desc">Website, AI app, sampai form builder. Drag-drop tapi tetap powerful.</p>
+            <a class="ai-builder-btn" href="https://trickle.so" target="_blank" rel="noopener noreferrer">trickle.so <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">16</div>
+          <div class="ai-builder-body">
+            <h3>Lindo AI – Instan Website Builder</h3>
+            <p class="ai-builder-desc">Small business mau go online cepat? Ini bisa jadi solusi instan tanpa dev team.</p>
+            <a class="ai-builder-btn" href="https://lindo.ai" target="_blank" rel="noopener noreferrer">lindo.ai <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">17</div>
+          <div class="ai-builder-body">
+            <h3>CodeDesign – AI Website Generator</h3>
+            <p class="ai-builder-desc">Generate website profesional dalam menit. Simple tapi tetap clean & scalable.</p>
+            <a class="ai-builder-btn" href="https://codedesign.ai" target="_blank" rel="noopener noreferrer">codedesign.ai <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">18</div>
+          <div class="ai-builder-body">
+            <h3>Wegic AI – Template + AI Automation</h3>
+            <p class="ai-builder-desc">Template + AI automation bikin semuanya lebih cepat. Cocok buat yang nggak mau ribet.</p>
+            <a class="ai-builder-btn" href="https://wegic.ai" target="_blank" rel="noopener noreferrer">wegic.ai <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">19</div>
+          <div class="ai-builder-body">
+            <h3>TheSys – AI-Driven Interface Builder</h3>
+            <p class="ai-builder-desc">Kayak Figma + AI dalam satu tool. Buat lo yang bikin AI-driven interface.</p>
+            <a class="ai-builder-btn" href="https://thesys.dev" target="_blank" rel="noopener noreferrer">thesys.dev <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">20</div>
+          <div class="ai-builder-body">
+            <h3>Brizy – Drag & Drop + AI Builder</h3>
+            <p class="ai-builder-desc">Drag-drop klasik tapi udah dibantu AI. Beginner friendly, hasil tetap profesional.</p>
+            <a class="ai-builder-btn" href="https://brizy.io" target="_blank" rel="noopener noreferrer">brizy.io <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">21</div>
+          <div class="ai-builder-body">
+            <h3>Lovable – AI Web App Builder</h3>
+            <p class="ai-builder-desc">Tulis ide → langsung jadi web app. Cocok buat MVP & startup yang butuh cepet launch.</p>
+            <a class="ai-builder-btn" href="https://lovable.dev" target="_blank" rel="noopener noreferrer">lovable.dev <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">22</div>
+          <div class="ai-builder-body">
+            <h3>V0.dev – AI Landing Page Builder</h3>
+            <p class="ai-builder-desc">Bikin landing page dalam hitungan menit. Fokus ke design clean + conversion tinggi.</p>
+            <a class="ai-builder-btn" href="https://v0.dev" target="_blank" rel="noopener noreferrer">v0.dev <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">23</div>
+          <div class="ai-builder-body">
+            <h3>Bolt.new – Fullstack AI Builder</h3>
+            <p class="ai-builder-desc">Dari frontend sampai backend, semua bisa. Cocok buat lo yang mau build app tanpa ribet setup.</p>
+            <a class="ai-builder-btn" href="https://bolt.new" target="_blank" rel="noopener noreferrer">bolt.new <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">24</div>
+          <div class="ai-builder-body">
+            <h3>Framer AI – Website Builder Modern</h3>
+            <p class="ai-builder-desc">Design aesthetic + AI assist. Perfect buat portfolio & website profesional.</p>
+            <a class="ai-builder-btn" href="https://framer.com" target="_blank" rel="noopener noreferrer">framer.com <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">25</div>
+          <div class="ai-builder-body">
+            <h3>Loopple – AI Website Builder</h3>
+            <p class="ai-builder-desc">Generate website cepat dengan template modern. Simple, clean, dan gak bikin pusing.</p>
+            <a class="ai-builder-btn" href="https://loopple.com" target="_blank" rel="noopener noreferrer">loopple.com <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">26</div>
+          <div class="ai-builder-body">
+            <h3>Uizard – AI Website Designer</h3>
+            <p class="ai-builder-desc">Dari wireframe langsung jadi website. Cocok buat lo yang mulai dari ide kasar.</p>
+            <a class="ai-builder-btn" href="https://uizard.io" target="_blank" rel="noopener noreferrer">uizard.io <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">27</div>
+          <div class="ai-builder-body">
+            <h3>Durable – Website Instan dengan AI</h3>
+            <p class="ai-builder-desc">1 klik langsung jadi website bisnis. Cepet banget buat landing sederhana.</p>
+            <a class="ai-builder-btn" href="https://durable.co" target="_blank" rel="noopener noreferrer">durable.co <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">28</div>
+          <div class="ai-builder-body">
+            <h3>Renderforest – AI Website + Media</h3>
+            <p class="ai-builder-desc">Website + media asset dalam satu platform. Cocok buat branding & bisnis kecil.</p>
+            <a class="ai-builder-btn" href="https://renderforest.com" target="_blank" rel="noopener noreferrer">renderforest.com <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">29</div>
+          <div class="ai-builder-body">
+            <h3>10Web – AI WordPress Builder</h3>
+            <p class="ai-builder-desc">WordPress + AI automation. Build, optimize, dan manage website sekaligus.</p>
+            <a class="ai-builder-btn" href="https://10web.io" target="_blank" rel="noopener noreferrer">10web.io <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">30</div>
+          <div class="ai-builder-body">
+            <h3>Dorik – AI Website Builder Simpel</h3>
+            <p class="ai-builder-desc">No-code + UI clean. Enak buat bikin website cepat tanpa ribet.</p>
+            <a class="ai-builder-btn" href="https://dorik.com" target="_blank" rel="noopener noreferrer">dorik.com <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
       </div>
 
       <h2>Kesimpulan</h2>
@@ -252,7 +536,7 @@ const blogs = {
       </div>
     `,
     date: "25 Feb 2026",
-    readTime: "5 min",
+    readTime: "12 min",
     category: "AI",
     author: "Aditya Fakhri Riansyah",
     tags: ["AI", "Website Builder", "No Code", "Tools", "2026", "Web Development"],
