@@ -8,7 +8,7 @@ const nextConfig = {
       { protocol: "https", hostname: "upload.wikimedia.org" },
       { protocol: "https", hostname: "mustopa28121992.github.io" },
       { protocol: "https", hostname: "landing-page-dicoding.vercel.app" },
-      { protocol: "https", hostname: "qwords.co.id" },
+      { protocol: "https", hostname: "events.wordpress.org" },
       { protocol: "https", hostname: "www.gamelab.id" },
       { protocol: "https", hostname: "encrypted-tbn0.gstatic.com" },
       { protocol: "https", hostname: "apiku-v1.duniacoding.id" },

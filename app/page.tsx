@@ -88,12 +88,12 @@ export default function Home() {
           <ContentBlock title={t('collaboration')} className="mt-12">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
               {[
-                { name: "Google", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" },
+                { name: "Google", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/3840px-Google_2015_logo.svg.png" },
                 { name: "CodePolitan", src: "https://mustopa28121992.github.io/projectt/img/press-codepolitan--md5--c6cd986bfb1be889708b672e982814e0.png" },
                 { name: "Dicoding", src: "https://landing-page-dicoding.vercel.app/img/dicoding-header-logo.png" },
-                { name: "Logitech", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Logitech_logo.svg/1200px-Logitech_logo.svg.png" },
+                { name: "Logitech", src: "https://upload.wikimedia.org/wikipedia/commons/1/17/Logitech_logo.svg" },
                 { name: "IDCamp", src: "/idcamp.webp" },
-                { name: "Qwords", src: "https://qwords.co.id/wp-content/uploads/2025/03/logo.webp" },
+                { name: "Qwords", src: "https://events.wordpress.org/jakarta/2024/web-challenge/files/2024/01/logo-qwords.webp" },
                 { name: "Gamelab Indonesia", src: "https://www.gamelab.id/img/logo-gamelab/display/Logo_GameLab_Landscape1.png?v=3.10?v=3.1" },
                 { name: "IDWebhost", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_e-YU5wXFZcD_zgP7ejG2-OR7D-OnXqBaA&s" },
                 { name: "Dunia Coding", src: "https://apiku-v1.duniacoding.id/logo/logo-big.png" },
