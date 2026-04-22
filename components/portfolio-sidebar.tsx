@@ -188,6 +188,7 @@ export function PortfolioSidebar() {
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
+                {/* Services & Pricing - hidden
                 <SidebarMenuItem>
                   <SidebarMenuButton asChild isActive={pathname === "/services"}>
                     <Link href="/services">
@@ -196,6 +197,7 @@ export function PortfolioSidebar() {
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
+                */}
                 <SidebarMenuItem>
                   <SidebarMenuButton asChild isActive={pathname === "/mentoring"}>
                     <Link href="/mentoring">
