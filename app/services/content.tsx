@@ -249,11 +249,11 @@ export function ServicesContent() {
                   </div>
                   <CardContent className="p-6">
                     <div className="text-center">
-                      <span className="text-sm text-muted-foreground line-through mr-2">398K</span>
+                      <span className="text-sm text-muted-foreground line-through mr-2">580K</span>
                     </div>
                     <div className="text-center mb-4">
                       <span className="text-3xl font-bold">349K</span>
-                      <p className="text-sm text-primary font-medium italic">Hemat 49k</p>
+                      <p className="text-sm text-primary font-medium italic">Hemat 231k</p>
                     </div>
                     <ul className="space-y-2 mb-6">
                       <li className="flex items-start">
@@ -286,11 +286,11 @@ export function ServicesContent() {
                   </div>
                   <CardContent className="p-6">
                     <div className="text-center">
-                      <span className="text-sm text-muted-foreground line-through mr-2">713K</span>
+                      <span className="text-sm text-muted-foreground line-through mr-2">980K</span>
                     </div>
                     <div className="text-center mb-4">
                       <span className="text-3xl font-bold">599K</span>
-                      <p className="text-sm text-primary font-medium italic">Hemat 114k</p>
+                      <p className="text-sm text-primary font-medium italic">Hemat 381k</p>
                     </div>
                     <ul className="space-y-2 mb-6">
                       <li className="flex items-start">
@@ -331,11 +331,11 @@ export function ServicesContent() {
                   </div>
                   <CardContent className="p-6">
                     <div className="text-center">
-                      <span className="text-sm text-muted-foreground line-through mr-2">1.036K</span>
+                      <span className="text-sm text-muted-foreground line-through mr-2">1.600K</span>
                     </div>
                     <div className="text-center mb-4">
                       <span className="text-3xl font-bold">849K</span>
-                      <p className="text-sm text-primary font-medium italic">Hemat 187k</p>
+                      <p className="text-sm text-primary font-medium italic">Hemat 751k</p>
                     </div>
                     <ul className="space-y-2 mb-6">
                       <li className="flex items-start">
