@@ -22,6 +22,44 @@ export const upcomingEvents: EventItem[] = [
 
 export const pastEvents: EventItem[] = [
   {
+    id: "workshop-pertamina-patra-niaga-2026",
+    category: "Workshop",
+    tags: ["AI", "Data Visualization", "Vibe Coding", "Productivity"],
+    imageSrc: "https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1776851454220-0ulc08.webp",
+    title: {
+      id: "Workshop Internal Perusahaan: AI untuk Produktivitas Kerja di Pertamina",
+      en: "Internal Company Workshop: AI for Work Productivity at Pertamina"
+    },
+    subtitle: {
+      id: "Pertamina Patra Niaga",
+      en: "Pertamina Patra Niaga"
+    },
+    date: "15 April 2026",
+    location: "25hours Hotel Jakarta The Oddbird",
+    description: {
+      id: "Workshop internal bersama Pertamina Patra Niaga membahas pemanfaatan AI untuk meningkatkan produktivitas kerja, mulai dari visualisasi data, pengambilan keputusan, pembuatan notulensi meeting, hingga pembuatan website/tools dengan AI.",
+      en: "Internal workshop with Pertamina Patra Niaga discussing the use of AI to improve work productivity, from data visualization, decision making, meeting minutes creation, to building websites/tools with AI."
+    },
+    bullets: {
+      id: [
+        "Visualisasi data dan pengambilan keputusan menggunakan AI",
+        "Membuat notulensi meeting dengan AI",
+        "Membuat SOP & manual book dengan AI",
+        "Membuat website/tools dengan AI (Vibe Coding)"
+      ],
+      en: [
+        "Data visualization and decision making using AI",
+        "Creating meeting minutes with AI",
+        "Creating SOP & manual books with AI",
+        "Building websites/tools with AI (Vibe Coding)"
+      ]
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: Pertamina Patra Niaga",
+      en: "Organized by: Pertamina Patra Niaga"
+    }
+  },
+  {
     id: "techtalk-web-2-gdg-uinjkt-2026",
     category: "TechTalk",
     tags: ["Web Development", "AI", "Vibe Coding", "Career"],
