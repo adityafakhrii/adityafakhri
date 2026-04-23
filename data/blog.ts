@@ -12,6 +12,275 @@ export type BlogPost = {
 }
 
 const blogs = {
+  "prompt-portfolio-website-2026": {
+    title: "5 Prompt Website Portofolio Keren 🚀",
+    excerpt: "Kumpulan 5 prompt AI untuk bikin website portofolio keren — dari dark hacker aesthetic sampai creative experimental. Tinggal copas, hasilnya Dribbble-ready!",
+    content: `
+      <style>
+        .prompt-portfolio-list {
+          display: flex;
+          flex-direction: column;
+          gap: 2.5rem;
+          margin: 2rem 0;
+        }
+        .prompt-portfolio-card {
+          border-radius: 1.25rem;
+          overflow: hidden;
+          border: 1px solid hsl(var(--border));
+          background: hsl(var(--card));
+          transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .prompt-portfolio-card:hover {
+          box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+          transform: translateY(-3px);
+        }
+        .prompt-portfolio-img {
+          width: 100%;
+          aspect-ratio: 16/9;
+          object-fit: cover;
+          display: block;
+        }
+        .prompt-portfolio-body {
+          padding: 1.75rem;
+        }
+        .prompt-portfolio-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.35rem;
+          font-size: 0.75rem;
+          font-weight: 700;
+          padding: 0.3rem 0.75rem;
+          border-radius: 9999px;
+          color: #fff;
+          margin-bottom: 0.75rem;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+        }
+        .prompt-portfolio-badge.badge-1 { background: linear-gradient(135deg, #0F172A, #1E293B); }
+        .prompt-portfolio-badge.badge-2 { background: linear-gradient(135deg, #0F172A, #22C55E); }
+        .prompt-portfolio-badge.badge-3 { background: linear-gradient(135deg, #14A7A0, #F76B8A); }
+        .prompt-portfolio-badge.badge-4 { background: linear-gradient(135deg, #1E293B, #3B82F6); }
+        .prompt-portfolio-badge.badge-5 { background: linear-gradient(135deg, #7C3AED, #EC4899); }
+        .prompt-portfolio-body h3 {
+          font-size: 1.25rem;
+          font-weight: 700;
+          margin: 0 0 0.5rem 0;
+          color: hsl(var(--foreground));
+        }
+        .prompt-portfolio-desc {
+          font-size: 0.92rem;
+          line-height: 1.65;
+          color: hsl(var(--muted-foreground));
+          margin: 0 0 1.25rem 0;
+        }
+        .prompt-portfolio-prompt-wrapper {
+          margin-top: 0.25rem;
+        }
+        .prompt-portfolio-prompt-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 0.5rem;
+        }
+        .prompt-portfolio-prompt-label {
+          display: inline-block;
+          font-size: 0.75rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: hsl(var(--primary));
+          font-family: inherit;
+        }
+        .prompt-portfolio-copy-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          padding: 0.4rem 0.85rem;
+          border-radius: 0.5rem;
+          border: 1px solid hsl(var(--border));
+          background: hsl(var(--card));
+          color: hsl(var(--foreground));
+          font-size: 0.78rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s;
+          font-family: inherit;
+        }
+        .prompt-portfolio-copy-btn:hover {
+          background: hsl(var(--primary));
+          color: hsl(var(--primary-foreground));
+          border-color: hsl(var(--primary));
+        }
+        .prompt-portfolio-copy-btn.copied {
+          background: #22C55E;
+          color: #fff;
+          border-color: #22C55E;
+        }
+        .prompt-portfolio-prompt {
+          position: relative;
+          background: hsl(var(--muted));
+          border: 1px solid hsl(var(--border));
+          border-radius: 0.75rem;
+          padding: 1.25rem;
+          font-size: 0.82rem;
+          line-height: 1.7;
+          color: hsl(var(--foreground));
+          font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+          white-space: pre-wrap;
+          word-break: break-word;
+        }
+        .prompt-portfolio-cta {
+          margin-top: 3rem;
+          padding: 2.5rem 2rem;
+          border-radius: 1.25rem;
+          background: linear-gradient(135deg, #7C3AED, #3B82F6, #14B8A6);
+          text-align: center;
+          color: #fff;
+        }
+        .prompt-portfolio-cta h2 {
+          color: #fff !important;
+          margin-top: 0 !important;
+          font-size: 1.5rem;
+        }
+        .prompt-portfolio-cta p {
+          color: rgba(255,255,255,0.9);
+          margin-bottom: 1.25rem;
+          font-size: 1rem;
+        }
+        .prompt-portfolio-cta a {
+          display: inline-block;
+          padding: 0.75rem 2rem;
+          border-radius: 9999px;
+          background: #fff;
+          color: #7C3AED;
+          font-weight: 700;
+          text-decoration: none;
+          transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .prompt-portfolio-cta a:hover {
+          transform: scale(1.05);
+          box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+        }
+        @media (max-width: 480px) {
+          .prompt-portfolio-body { padding: 1.25rem; }
+          .prompt-portfolio-prompt { font-size: 0.75rem; padding: 1rem; }
+          .prompt-portfolio-copy-btn { font-size: 0.72rem; padding: 0.35rem 0.7rem; }
+        }
+      </style>
+
+      <p>Bikin website portofolio itu kadang yang paling ribet bukan codingnya — tapi <strong>nentuin konsep desainnya</strong>. Mau clean tapi beda, mau gelap tapi nggak norak, mau kreatif tapi tetep rapi.</p>
+
+      <p>Nah, buat lo yang lagi butuh inspirasi atau mau langsung pake AI tools (kayak <strong>v0.dev</strong>, <strong>Lovable</strong>, <strong>Bolt</strong>, dll) buat generate website portofolio, gue udah siapin <strong>5 prompt siap pakai</strong> yang bisa langsung lo copas. Masing-masing punya vibe dan tema yang beda — dari hacker aesthetic sampai Gen Z playful. Let's go! 🚀</p>
+
+      <div class="prompt-portfolio-list">
+
+        <div class="prompt-portfolio-card">
+          <img class="prompt-portfolio-img" src="https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1776937092158-pmhcqv.webp" alt="Mysterious Clean Hacker Portfolio" loading="lazy" />
+          <div class="prompt-portfolio-body">
+            <div class="prompt-portfolio-badge badge-1">🖤 #1 — Mysterious Clean Hacker</div>
+            <h3>Dark Minimal with Stealth-Tech Feel</h3>
+            <p class="prompt-portfolio-desc">Buat lo yang suka vibes gelap, clean, dan mysterious. Desain ini terinspirasi dari terminal dan hacker aesthetic — tapi tanpa berlebihan ala cyberpunk. Cocok buat developer backend, security engineer, atau siapa aja yang mau keliatan <em>elite</em>.</p>
+            <div class="prompt-portfolio-prompt-wrapper">
+              <div class="prompt-portfolio-prompt-header">
+                <div class="prompt-portfolio-prompt-label">📋 Prompt</div>
+                <button class="prompt-portfolio-copy-btn">📄 Copy Prompt</button>
+              </div>
+              <div class="prompt-portfolio-prompt">Create a clean, mysterious, high-end portfolio UI for "Aditya Fakhri" with a modern hacker aesthetic (minimal, no neon, no cyberpunk cliché). Use dark tones (#000103, #0F172A, #51596B) with subtle cyan/green accents.
+
+Present as a Dribbble-ready layout in two screens: the first shows a minimal hero with a cryptic headline and structured project cards styled like system panels, the second shows case studies, skills, and services arranged like data modules with a sharp CTA. Use precise typography, strong hierarchy, and subtle terminal-style micro-interactions to create a premium, stealth-tech feel.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prompt-portfolio-card">
+          <img class="prompt-portfolio-img" src="https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1776937095546-znstzy.webp" alt="Dark Elite Portfolio" loading="lazy" />
+          <div class="prompt-portfolio-body">
+            <div class="prompt-portfolio-badge badge-2">💚 #2 — Dark Elite</div>
+            <h3>Premium Minimalist with Apple-Level Elegance</h3>
+            <p class="prompt-portfolio-desc">Inspirasi dari desain Apple dan Stripe — gelap, elegan, dan calm. Cocok buat lo yang mau tampil profesional tanpa perlu rame. Spacing yang lega dan kontras yang kuat bikin portofolio ini keliatan mahal tanpa effort lebih.</p>
+            <div class="prompt-portfolio-prompt-wrapper">
+              <div class="prompt-portfolio-prompt-header">
+                <div class="prompt-portfolio-prompt-label">📋 Prompt</div>
+                <button class="prompt-portfolio-copy-btn" onclick="copyPrompt(this)">📄 Copy Prompt</button>
+              </div>
+              <div class="prompt-portfolio-prompt">Create a premium, dark-themed portfolio UI for "Aditya Fakhri" with a minimalist and high-end aesthetic, designed for Dribbble presentation in two clean screens. Use a deep dark background (#0F172A) with subtle green accent (#22C55E), refined typography, and elegant spacing inspired by Apple and Stripe design language.
+
+The first screen should present a minimal hero section with a strong statement and a refined introduction, followed by selected projects displayed in a sophisticated card layout. The second screen should focus on detailed case studies, technical expertise, and a selective contact call-to-action. The overall design must feel calm, exclusive, and premium, relying on spacing, contrast, and subtle motion cues rather than visual noise.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prompt-portfolio-card">
+          <img class="prompt-portfolio-img" src="https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1776937096054-j1gv4w.webp" alt="Gen Z Personal Brand Portfolio" loading="lazy" />
+          <div class="prompt-portfolio-body">
+            <div class="prompt-portfolio-badge badge-3">🩷 #3 — Gen Z Personal Brand</div>
+            <h3>Playful, Colorful, and Social-Media Friendly</h3>
+            <p class="prompt-portfolio-desc">Kalau lo pengen portofolio yang fun, relatable, dan berasa kayak feed socmed yang rapih — ini dia. Warna-warna cerah tapi tetep terkontrol, copywriting yang relate sama anak muda, dan layout yang mobile-first banget.</p>
+            <div class="prompt-portfolio-prompt-wrapper">
+              <div class="prompt-portfolio-prompt-header">
+                <div class="prompt-portfolio-prompt-label">📋 Prompt</div>
+                <button class="prompt-portfolio-copy-btn" onclick="copyPrompt(this)">📄 Copy Prompt</button>
+              </div>
+              <div class="prompt-portfolio-prompt">Create a playful and modern personal branding portfolio UI for "Aditya Fakhri" targeting Gen Z developers, formatted as a two-screen Dribbble showcase. Use bright but controlled colors like teal (#14A7A0) and pink (#F76B8A), inspired by social media UI patterns but still clean and structured.
+
+The first screen should focus on an engaging hero section with relatable Indonesian Gen Z copywriting, followed by social proof and a visually engaging content preview section. The second screen should present free resources, a simplified project showcase, and a mentoring call-to-action. The layout should feel like a modern app feed but organized into a polished portfolio format, ensuring strong visual appeal and mobile-first friendliness while remaining clean enough for design showcase.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prompt-portfolio-card">
+          <img class="prompt-portfolio-img" src="https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1776937090341-jp3k6t.webp" alt="Minimal Tech Portfolio" loading="lazy" />
+          <div class="prompt-portfolio-body">
+            <div class="prompt-portfolio-badge badge-4">💙 #4 — Minimal Tech</div>
+            <h3>Clean Developer Look Inspired by Notion & Vercel</h3>
+            <p class="prompt-portfolio-desc">Minimalis tapi tetep aesthetic. Inspirasi dari Notion, Linear, dan Vercel — layout yang rapi, tipografi yang kuat, dan white space yang generous. Cocok buat fullstack developer atau AI mentor yang mau tampil clean dan trustworthy.</p>
+            <div class="prompt-portfolio-prompt-wrapper">
+              <div class="prompt-portfolio-prompt-header">
+                <div class="prompt-portfolio-prompt-label">📋 Prompt</div>
+                <button class="prompt-portfolio-copy-btn" onclick="copyPrompt(this)">📄 Copy Prompt</button>
+              </div>
+              <div class="prompt-portfolio-prompt">Create a clean and modern portfolio UI design for "Aditya Fakhri" as a Fullstack Developer and AI Mentor, presented as a Dribbble-ready layout split into two screens instead of one long page. The design should follow a minimal aesthetic inspired by Notion, Linear, and Vercel, using a monochrome base with subtle blue accents (#3B82F6), strong typography, and generous white space.
+
+The first screen should focus on the hero section with a strong headline, short description, primary call-to-action, and a compact introduction with profile and key skills, followed by a neatly structured featured projects grid with clean cards. The second screen should continue with services, testimonials, content or education highlights, and a strong closing call-to-action. The layout must feel balanced, visually aesthetic, and optimized for presentation, with consistent spacing, rounded components, and a premium developer look suitable for Dribbble showcase.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prompt-portfolio-card">
+          <img class="prompt-portfolio-img" src="https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1776937094612-sq19ek.webp" alt="Creative Experimental Portfolio" loading="lazy" />
+          <div class="prompt-portfolio-body">
+            <div class="prompt-portfolio-badge badge-5">🔮 #5 — Creative Experimental</div>
+            <h3>Bold, Asymmetrical, and Unconventional</h3>
+            <p class="prompt-portfolio-desc">Buat lo yang nggak mau mainstream. Layout asimetris, tipografi bold, dan campuran light-dark section bikin portofolio ini beda dari yang lain. Cocok buat creative developer atau designer yang mau nunjukin sisi eksploratifnya.</p>
+            <div class="prompt-portfolio-prompt-wrapper">
+              <div class="prompt-portfolio-prompt-header">
+                <div class="prompt-portfolio-prompt-label">📋 Prompt</div>
+                <button class="prompt-portfolio-copy-btn" onclick="copyPrompt(this)">📄 Copy Prompt</button>
+              </div>
+              <div class="prompt-portfolio-prompt">Create a highly creative and experimental portfolio website for "Aditya Fakhri" using an asymmetrical layout, bold typography, and a mix of light and dark sections to create a unique and standout visual identity. The design should feel like a fusion between a designer portfolio and a developer playground, with a dynamic hero section, an interactive project grid with hover effects, a visual skills section using icons and motion, and a dedicated playground area for AI experiments or creative builds. The layout should intentionally break conventional structure but remain usable and responsive, especially on mobile. The tone should be bold, expressive, and unconventional while still maintaining clarity and usability.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <h2>Cara Pakenya Gimana?</h2>
+      <p>Gampang banget! Tinggal copas prompt di atas ke AI tools favorit lo — bisa pake <strong>v0.dev</strong>, <strong>Lovable</strong>, <strong>Bolt.new</strong>, atau tool AI lainnya. Ganti nama "Aditya Fakhri" jadi nama lo, dan sesuaiin detail project/skill sesuai kebutuhan. Dalam hitungan menit, portofolio lo udah jadi dan siap dipamerin! ✨</p>
+
+      <div class="prompt-portfolio-cta">
+        <h2>Suka Konten Kayak Gini? 🔥</h2>
+        <p>Follow Instagram gue buat dapet update terbaru seputar AI, prompt engineering, web dev, dan tips bikin portofolio keren!</p>
+        <a href="https://www.instagram.com/adityafakhrii/" target="_blank" rel="noopener noreferrer">Follow @adityafakhrii</a>
+      </div>
+    `,
+    date: "23 Apr 2026",
+    readTime: "7 min",
+    category: "AI",
+    author: "Aditya Fakhri Riansyah",
+    tags: ["AI", "Portfolio", "Prompt", "Web Design", "Vibe Coding", "2026"],
+    imageSrc: "https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1776937092158-pmhcqv.webp",
+    relatedPosts: ["ai-website-builder-2026"],
+  },
   "ai-website-builder-2026": {
     title: "30 AI Website Builder Terbaik 2026 — Bikin Web Tanpa Ngoding!",
     excerpt: "Kumpulan 30 AI website builder terbaik di 2026 yang bisa bantu lo bikin website, app, bahkan portfolio — tanpa nulis satu baris kode pun.",
@@ -541,7 +810,7 @@ const blogs = {
     author: "Aditya Fakhri Riansyah",
     tags: ["AI", "Website Builder", "No Code", "Tools", "2026", "Web Development"],
     imageSrc: "https://kmjodkwdcxenijqgxnhh.supabase.co/storage/v1/object/public/shared-images/1771997631397-6vwuqy.webp",
-    relatedPosts: ["ai-web-development"],
+    relatedPosts: ["prompt-portfolio-website-2026", "ai-web-development"],
   },
   "ai-web-development": {
     title: "Mengintegrasikan AI dalam Pengembangan Web Modern",

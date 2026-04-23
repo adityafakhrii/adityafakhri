@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { PageHeader } from "@/components/page-header"
 import { ContentBlock } from "@/components/content-block"
 import { Badge } from "@/components/ui/badge"
@@ -18,6 +18,30 @@ export default function BlogPostPage({ params }: { params: Promise<{ id: string 
   const normId = normalize(resolvedParams.id)
   const entry = Object.entries(blogs).find(([key]) => normalize(key) === normId)
   const id = entry ? entry[0] : resolvedParams.id
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = contentRef.current;
+    if (!container) return;
+    const handleClick = (e: MouseEvent) => {
+      const btn = (e.target as HTMLElement).closest('.prompt-portfolio-copy-btn') as HTMLButtonElement | null;
+      if (!btn) return;
+      const wrapper = btn.closest('.prompt-portfolio-prompt-wrapper');
+      const promptEl = wrapper?.querySelector('.prompt-portfolio-prompt');
+      if (!promptEl) return;
+      const text = promptEl.textContent?.trim() || '';
+      navigator.clipboard.writeText(text).then(() => {
+        btn.classList.add('copied');
+        btn.innerHTML = '✅ Copied!';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = '📄 Copy Prompt';
+        }, 2000);
+      });
+    };
+    container.addEventListener('click', handleClick);
+    return () => container.removeEventListener('click', handleClick);
+  }, []);
 
   return (
     <TranslatedContent
@@ -86,7 +110,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ id: string 
 
             <ContentBlock>
               {post.content ? (
-                <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
+                <div ref={contentRef} className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
               ) : (
                 <p className="text-sm text-muted-foreground">{t('notAvailable')}</p>
               )}
