@@ -13,6 +13,406 @@ export type BlogPost = {
 
 const blogs = {
 
+  "prompt-engineering-guide-2026": {
+    title: "Rahasia Prompt Engineering 2026: Rumus, Teknik, dan Template yang Bikin AI Nurut Sama Lo",
+    excerpt: "Panduan lengkap prompt engineering — dari rumus dasar sampai teknik advanced. Pelajari cara bikin prompt yang presisi biar output AI 10x lebih bagus. Cocok buat pemula maupun profesional.",
+    content: `
+      <style>
+        .pe-hero { padding: 2.5rem 2rem; border-radius: 1.25rem; background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; }
+        .pe-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.5rem; margin: 0 0 0.75rem 0; }
+        .pe-hero p { color: hsl(var(--muted-foreground)); font-size: 1rem; line-height: 1.7; margin: 0; }
+        .pe-section-title { font-size: 1.25rem; font-weight: 700; margin: 2.5rem 0 1rem 0; color: hsl(var(--foreground)); }
+        .pe-formula-box { padding: 1.75rem; border-radius: 1rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); margin: 1.5rem 0; }
+        .pe-formula-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: hsl(var(--muted-foreground)); margin-bottom: 0.75rem; }
+        .pe-formula-text { font-size: 1.1rem; font-weight: 700; color: hsl(var(--foreground)); font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace; line-height: 1.8; padding: 1rem; background: hsl(var(--muted)); border-radius: 0.5rem; margin-bottom: 1rem; }
+        .pe-formula-desc { font-size: 0.88rem; line-height: 1.7; color: hsl(var(--muted-foreground)); margin: 0; }
+        .pe-example { margin: 1.5rem 0; border-radius: 0.75rem; border: 1px solid hsl(var(--border)); overflow: hidden; }
+        .pe-example-header { padding: 0.75rem 1.25rem; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: hsl(var(--muted-foreground)); background: hsl(var(--muted)); border-bottom: 1px solid hsl(var(--border)); }
+        .pe-example-bad, .pe-example-good { padding: 1rem 1.25rem; font-size: 0.88rem; line-height: 1.7; }
+        .pe-example-bad { color: hsl(var(--muted-foreground)); border-bottom: 1px solid hsl(var(--border)); }
+        .pe-example-good { color: hsl(var(--foreground)); }
+        .pe-example-bad::before { content: 'Kurang Baik'; display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 0.1rem 0.5rem; border-radius: 0.25rem; background: hsl(var(--muted)); color: hsl(var(--muted-foreground)); border: 1px solid hsl(var(--border)); margin-right: 0.5rem; margin-bottom: 0.35rem; }
+        .pe-example-good::before { content: 'Lebih Baik'; display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 0.1rem 0.5rem; border-radius: 0.25rem; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); margin-right: 0.5rem; margin-bottom: 0.35rem; }
+        .pe-tip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+        .pe-tip-card { padding: 1.25rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); position: relative; }
+        .pe-tip-card h4 { font-size: 0.95rem; font-weight: 700; margin: 0 0 0.35rem 0; color: hsl(var(--foreground)); }
+        .pe-tip-card p { font-size: 0.85rem; line-height: 1.6; color: hsl(var(--muted-foreground)); margin: 0 0 2.5rem 0; }
+        .pe-copy-btn { position: absolute; bottom: 1rem; right: 1rem; display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.85rem; border-radius: 0.5rem; border: 1px solid hsl(var(--border)); background: hsl(var(--muted)); color: hsl(var(--muted-foreground)); font-size: 0.72rem; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: inherit; }
+        .pe-copy-btn:hover { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); border-color: hsl(var(--primary)); }
+        .pe-copy-btn svg { width: 12px; height: 12px; }
+        .pe-prompt-block { background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; padding: 1.25rem; font-size: 0.85rem; line-height: 1.8; color: hsl(var(--foreground)); font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace; white-space: pre-wrap; word-break: break-word; margin: 1rem 0; overflow-x: auto; }
+        .pe-prompt-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: hsl(var(--muted-foreground)); margin-bottom: 0.5rem; }
+        .pe-callout { padding: 1.5rem; border-radius: 1rem; border-left: 4px solid hsl(var(--primary)); background: hsl(var(--muted)); margin: 2rem 0; }
+        .pe-callout p { margin: 0; font-size: 0.95rem; line-height: 1.7; color: hsl(var(--foreground)); }
+        .pe-callout strong { color: hsl(var(--foreground)); }
+        .pe-table-wrap { overflow-x: auto; margin: 1.5rem 0; border-radius: 1rem; border: 1px solid hsl(var(--border)); }
+        .pe-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+        .pe-table thead { background: hsl(var(--muted)); }
+        .pe-table th { padding: 0.85rem 1rem; text-align: left; font-weight: 700; color: hsl(var(--foreground)); border-bottom: 1px solid hsl(var(--border)); }
+        .pe-table td { padding: 0.75rem 1rem; color: hsl(var(--muted-foreground)); border-bottom: 1px solid hsl(var(--border)); line-height: 1.6; }
+        .pe-table tr:last-child td { border-bottom: none; }
+        .pe-technique-list { display: flex; flex-direction: column; gap: 1.5rem; margin: 1.5rem 0; }
+        .pe-technique { padding: 1.5rem; border-radius: 1rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+        .pe-technique h3 { font-size: 1.05rem; font-weight: 700; margin: 0 0 0.5rem 0; color: hsl(var(--foreground)); }
+        .pe-technique p { font-size: 0.9rem; line-height: 1.7; color: hsl(var(--muted-foreground)); margin: 0 0 0.75rem 0; }
+        .pe-technique p:last-child { margin-bottom: 0; }
+        .pe-cta { margin-top: 3rem; padding: 2.5rem 2rem; border-radius: 1.25rem; background: hsl(var(--primary)); text-align: center; color: hsl(var(--primary-foreground)); }
+        .pe-cta h2 { color: hsl(var(--primary-foreground)) !important; margin-top: 0 !important; font-size: 1.5rem; }
+        .pe-cta p { color: hsl(var(--primary-foreground) / 0.8); margin-bottom: 1.25rem; font-size: 1rem; }
+        .pe-cta a { display: inline-block; padding: 0.75rem 2rem; border-radius: 9999px; background: hsl(var(--primary-foreground)); color: hsl(var(--primary)); font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+        .pe-cta a:hover { transform: scale(1.05); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+        .pe-numbered-list { counter-reset: pe-counter; list-style: none; padding: 0; margin: 1.5rem 0; }
+        .pe-numbered-list li { counter-increment: pe-counter; padding: 1rem 1.25rem 1rem 3.5rem; position: relative; margin-bottom: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; font-size: 0.9rem; line-height: 1.7; color: hsl(var(--muted-foreground)); }
+        .pe-numbered-list li::before { content: counter(pe-counter); position: absolute; left: 1.25rem; top: 1rem; font-size: 0.85rem; font-weight: 800; color: hsl(var(--foreground)); }
+        .pe-numbered-list li strong { color: hsl(var(--foreground)); }
+        @media (max-width: 768px) {
+          .pe-tip-grid { grid-template-columns: 1fr; }
+          .pe-hero { padding: 1.75rem 1.25rem; }
+        }
+      </style>
+
+      <div class="pe-hero">
+        <h2>Prompt Engineering — Skill Paling Underrated di 2026</h2>
+        <p>Lo bisa punya akses ke AI paling canggih sedunia, tapi kalau prompt-nya jelek, hasilnya juga jelek. Prompt engineering adalah seni dan sains berkomunikasi dengan AI. Artikel ini bakal kasih lo rumus, teknik, dan contoh nyata biar output AI lo 10x lebih bagus — whether lo pakai ChatGPT, Claude, Gemini, atau tools lainnya.</p>
+      </div>
+
+      <p>Pernah nggak lo nanya ke ChatGPT dan jawabannya generik banget? Atau minta bantuan coding tapi hasilnya nggak sesuai harapan? <strong>Masalahnya bukan di AI-nya — masalahnya di prompt lo.</strong></p>
+
+      <p>Prompt engineering itu kayak belajar ngomong bahasa baru. Bahasa yang dimengerti AI. Dan kabar baiknya, ada <strong>rumus dan framework</strong> yang bisa lo ikutin. Lo nggak perlu jadi jenius — cukup paham polanya, dan AI bakal jadi asisten yang jauh lebih berguna.</p>
+
+      <div class="pe-section-title">Kenapa Prompt Engineering Penting?</div>
+
+      <p>Di 2026, hampir semua pekerjaan digital melibatkan AI. Tapi ada gap besar antara orang yang <em>pakai AI</em> dan orang yang <em>jago pakai AI</em>. Perbedaannya? Kualitas prompt. Ini data yang membuktikan:</p>
+
+      <div class="pe-table-wrap">
+        <table class="pe-table">
+          <thead>
+            <tr>
+              <th>Aspek</th>
+              <th>Prompt Asal-asalan</th>
+              <th>Prompt Terstruktur</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Output quality</strong></td>
+              <td>Generik, butuh banyak revisi</td>
+              <td>Spesifik, langsung bisa dipakai</td>
+            </tr>
+            <tr>
+              <td><strong>Waktu yang dihabiskan</strong></td>
+              <td>30-60 menit bolak-balik revisi</td>
+              <td>5-10 menit, langsung jadi</td>
+            </tr>
+            <tr>
+              <td><strong>Konsistensi</strong></td>
+              <td>Hasil berubah-ubah</td>
+              <td>Stabil dan predictable</td>
+            </tr>
+            <tr>
+              <td><strong>Kepuasan user</strong></td>
+              <td>"AI gini doang?"</td>
+              <td>"Gila, ini bagus banget!"</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pe-section-title">5 Rumus Prompt Engineering yang Wajib Lo Hafal</div>
+
+      <p>Ini bukan teori — ini <strong>framework yang udah terbukti</strong>. Masing-masing punya use case yang berbeda. Pilih yang paling cocok buat kebutuhan lo.</p>
+
+      <div class="pe-formula-box">
+        <div class="pe-formula-label">Rumus #1 — R-T-F (Role + Task + Format)</div>
+        <div class="pe-formula-text">[Role] + [Task] + [Format]</div>
+        <div class="pe-formula-desc">Rumus paling dasar dan paling sering dipakai. Kasih AI sebuah peran, jelaskan tugasnya, lalu tentukan format output-nya. Simple tapi powerful.</div>
+      </div>
+
+      <div class="pe-example">
+        <div class="pe-example-header">Contoh penerapan R-T-F</div>
+        <div class="pe-example-bad">"buatin caption instagram"</div>
+        <div class="pe-example-good">"Lo adalah seorang social media strategist berpengalaman 5 tahun di industri F&B. Buatkan 5 caption Instagram untuk promo menu baru kedai kopi — nada casual, target anak muda Jakarta 18-25 tahun. Format: setiap caption max 150 karakter, include 3 hashtag relevan, dan 1 CTA."</div>
+      </div>
+
+      <div class="pe-formula-box">
+        <div class="pe-formula-label">Rumus #2 — C-R-E-A-T-E</div>
+        <div class="pe-formula-text">Character + Request + Examples + Adjustments + Type of output + Extras</div>
+        <div class="pe-formula-desc">Framework 6 elemen untuk prompt yang sangat detail. Cocok buat konten yang butuh kualitas tinggi — artikel blog, proposal, presentasi.</div>
+      </div>
+
+      <div class="pe-prompt-label">Contoh prompt dengan rumus C-R-E-A-T-E:</div>
+      <div class="pe-prompt-block">Character: Lo adalah content writer berpengalaman yang ahli nulis artikel SEO dalam bahasa Indonesia casual.
+
+Request: Tulis artikel blog tentang "cara memilih laptop untuk programming" dengan target audience mahasiswa informatika.
+
+Examples: Gaya penulisan mirip Tech in Asia atau DailySocial — informatif tapi santai, ada opini personal.
+
+Adjustments: Fokus pada laptop budget 5-15 juta. Jangan rekomendasikan MacBook (di luar budget target). Gunakan bahasa lo-gue.
+
+Type of output: Artikel 1500 kata dengan heading, subheading, bullet points, dan kesimpulan.
+
+Extras: Tambahkan tabel perbandingan 5 laptop rekomendasi dengan kolom: nama, harga, prosesor, RAM, dan skor rating.</div>
+
+      <div class="pe-formula-box">
+        <div class="pe-formula-label">Rumus #3 — T-A-G (Task + Action + Goal)</div>
+        <div class="pe-formula-text">[Task] + [Action] + [Goal]</div>
+        <div class="pe-formula-desc">Rumus simpel buat instruksi yang action-oriented. Cocok buat tugas teknis: coding, analisis data, debugging.</div>
+      </div>
+
+      <div class="pe-example">
+        <div class="pe-example-header">Contoh penerapan T-A-G</div>
+        <div class="pe-example-bad">"fix kode ini"</div>
+        <div class="pe-example-good">"Task: Ada bug di fungsi login — user selalu redirect ke halaman 404 setelah submit form. Action: Analisis kode di bawah, identifikasi root cause, dan berikan fix beserta penjelasan. Goal: User bisa login dan redirect ke dashboard tanpa error."</div>
+      </div>
+
+      <div class="pe-formula-box">
+        <div class="pe-formula-label">Rumus #4 — B-A-B (Before + After + Bridge)</div>
+        <div class="pe-formula-text">[Before: situasi saat ini] + [After: hasil yang diinginkan] + [Bridge: bagaimana AI bisa bantu]</div>
+        <div class="pe-formula-desc">Framework storytelling. Sangat efektif buat copywriting, proposal, dan komunikasi persuasif.</div>
+      </div>
+
+      <div class="pe-prompt-label">Contoh prompt dengan rumus B-A-B:</div>
+      <div class="pe-prompt-block">Before: Toko online gue cuma dapet 50 visitors per hari dan conversion rate 0.5%. Revenue stuck di 2 juta/bulan.
+
+After: Gue mau dapet 500 visitors per hari dengan conversion rate 3%, targetin revenue 20 juta/bulan dalam 3 bulan.
+
+Bridge: Buatkan strategi digital marketing lengkap yang mencakup SEO, social media, dan email marketing — dengan timeline mingguan dan KPI yang terukur.</div>
+
+      <div class="pe-formula-box">
+        <div class="pe-formula-label">Rumus #5 — R-I-S-E (Role + Input + Steps + Expectation)</div>
+        <div class="pe-formula-text">[Role] + [Input/Context] + [Steps] + [Expectation]</div>
+        <div class="pe-formula-desc">Framework terbaik buat tugas multi-step yang kompleks. AI nggak cuma dapet goal-nya, tapi juga tahu langkah-langkah yang lo harapkan.</div>
+      </div>
+
+      <div class="pe-prompt-label">Contoh prompt dengan rumus R-I-S-E:</div>
+      <div class="pe-prompt-block">Role: Lo adalah senior full-stack developer yang expert di React dan Next.js.
+
+Input: Gue punya app e-commerce yang dibangun dengan Next.js 14 + Supabase. Saat ini halaman produk loading lambat (3.5 detik) dan skor Lighthouse cuma 45.
+
+Steps:
+1. Analisis kemungkinan penyebab performa buruk
+2. Prioritaskan masalah dari yg paling impactful
+3. Berikan solusi spesifik untuk setiap masalah
+4. Tulis kode implementasi untuk top 3 solusi
+
+Expectation: Halaman produk loading di bawah 1 detik, skor Lighthouse minimal 90. Setiap solusi disertai penjelasan kenapa dan kode yang siap pakai.</div>
+
+      <div class="pe-section-title">7 Teknik Advanced Prompt Engineering</div>
+
+      <p>Setelah lo paham rumusnya, saatnya level up ke teknik-teknik yang bikin output AI makin presisi dan reliable.</p>
+
+      <div class="pe-technique-list">
+        <div class="pe-technique">
+          <h3>1. Chain of Thought (CoT) Prompting</h3>
+          <p>Minta AI untuk berpikir step-by-step sebelum memberi jawaban final. Teknik ini terbukti meningkatkan akurasi terutama untuk problem-solving dan reasoning.</p>
+          <div class="pe-prompt-label">Contoh:</div>
+          <div class="pe-prompt-block">"Analisis apakah startup ini layak didanai. Pikirkan langkah demi langkah:
+1. Evaluasi market size dan growth potential
+2. Analisis competitive landscape
+3. Review business model dan unit economics
+4. Assess tim dan execution capability
+Baru setelah itu, berikan rekomendasi final beserta confidence score."</div>
+        </div>
+
+        <div class="pe-technique">
+          <h3>2. Few-Shot Prompting</h3>
+          <p>Kasih AI beberapa contoh input-output yang lo harapkan. AI akan mengenali pola dan mengikuti format yang lo tentukan.</p>
+          <div class="pe-prompt-label">Contoh:</div>
+          <div class="pe-prompt-block">"Ubah kalimat formal menjadi casual bahasa anak muda Jakarta.
+
+Contoh 1:
+Formal: "Kami mengucapkan terima kasih atas dukungan Anda."
+Casual: "Thanks banget buat support-nya, gengs!"
+
+Contoh 2:
+Formal: "Silakan hubungi kami untuk informasi lebih lanjut."
+Casual: "Ada yang mau ditanyain? DM aja langsung, santai."
+
+Formal: "Kami informasikan bahwa jadwal meeting telah diubah."
+Casual: ???"</div>
+        </div>
+
+        <div class="pe-technique">
+          <h3>3. Role Stacking</h3>
+          <p>Bukan cuma satu role — kasih AI multiple roles atau perspectives untuk jawaban yang lebih komprehensif.</p>
+          <div class="pe-prompt-label">Contoh:</div>
+          <div class="pe-prompt-block">"Evaluasi landing page ini dari 3 perspektif:
+1. Sebagai UX designer: analisis user flow, clarity, dan friction points
+2. Sebagai copywriter: evaluasi headline, CTA, dan persuasive elements
+3. Sebagai growth marketer: cek conversion optimization dan A/B test opportunities
+
+Berikan skor 1-10 dari setiap perspektif dan 3 actionable improvements."</div>
+        </div>
+
+        <div class="pe-technique">
+          <h3>4. Constraint Prompting</h3>
+          <p>Batasi output AI dengan constraint yang spesifik. Semakin jelas batasannya, semakin fokus dan useful hasilnya.</p>
+          <div class="pe-prompt-label">Constraints yang bisa lo pakai:</div>
+          <div class="pe-prompt-block">- Panjang: "Jawab dalam maksimal 200 kata"
+- Format: "Gunakan bullet points, bukan paragraf"
+- Bahasa: "Pakai bahasa Indonesia casual, lo-gue"
+- Larangan: "Jangan pakai jargon teknis"
+- Scope: "Fokus hanya pada solusi yang bisa dilakukan tanpa budget"
+- Tone: "Nada profesional tapi approachable"
+- Audience: "Jelaskan seperti ke anak SMA kelas 10"</div>
+        </div>
+
+        <div class="pe-technique">
+          <h3>5. Self-Reflection Prompting</h3>
+          <p>Minta AI untuk mengevaluasi dan memperbaiki output-nya sendiri. Ini bikin kualitas naik signifikan.</p>
+          <div class="pe-prompt-label">Contoh:</div>
+          <div class="pe-prompt-block">"Tulis email follow-up ke klien yang belum bayar invoice.
+
+Setelah selesai, evaluasi email tersebut:
+- Apakah tone-nya terlalu agresif atau terlalu lembek?  
+- Ada nggak yang bisa bikin klien tersinggung?
+- Apakah CTA-nya jelas?
+
+Kalau ada yang kurang, revisi ulang dan berikan versi final."</div>
+        </div>
+
+        <div class="pe-technique">
+          <h3>6. Template Prompting</h3>
+          <p>Kasih AI template output yang harus diikuti. Ini memastikan output selalu konsisten dan sesuai format yang lo butuhkan.</p>
+          <div class="pe-prompt-label">Contoh:</div>
+          <div class="pe-prompt-block">"Review produk ini. Gunakan template berikut:
+
+**Nama Produk:** [nama]
+**Rating:** [X/10]
+**Kelebihan:**
+- [point 1]
+- [point 2]
+- [point 3]
+**Kekurangan:**
+- [point 1]
+- [point 2]
+**Cocok Untuk:** [target user]
+**Verdict:** [1 kalimat kesimpulan]"</div>
+        </div>
+
+        <div class="pe-technique">
+          <h3>7. Iterative Refinement</h3>
+          <p>Jangan expect hasil sempurna di prompt pertama. Treat AI seperti kolaborator — kasih feedback dan minta perbaikan secara bertahap.</p>
+          <div class="pe-prompt-label">Contoh flow:</div>
+          <div class="pe-prompt-block">Prompt 1: "Tulis outline buat artikel tentang investasi saham buat pemula"
+→ Review outline, lalu...
+
+Prompt 2: "Bagus. Sekarang expand section 3 tentang analisis fundamental. Tambahkan contoh saham Indonesia yang real."
+→ Review lagi...
+
+Prompt 3: "Tambahin disclaimer dan risk warning di akhir. Juga perbaiki paragraf 2 — terlalu teknis buat pemula."</div>
+        </div>
+      </div>
+
+      <div class="pe-section-title">Template Prompt Siap Pakai</div>
+
+      <p>Simpan template-template ini. Tinggal ganti bagian dalam kurung [] sesuai kebutuhan lo.</p>
+
+      <div class="pe-tip-grid">
+        <div class="pe-tip-card">
+          <h4>Bikin Konten</h4>
+          <p>"Tulis [jenis konten] tentang [topik] untuk [target audience]. Gunakan tone [formal/casual/fun]. Panjang [X] kata. Include [elemen khusus: CTA, data statistik, quotes, dll]."</p>
+          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Tulis [jenis konten] tentang [topik] untuk [target audience]. Gunakan tone [formal/casual/fun]. Panjang [X] kata. Include [elemen khusus: CTA, data statistik, quotes, dll].');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
+        </div>
+        <div class="pe-tip-card">
+          <h4>Debug Kode</h4>
+          <p>"Kode ini menghasilkan error [error message]. Stack: [tech stack]. Yang diharapkan: [expected behavior]. Yang terjadi: [actual behavior]. Tolong identifikasi bug dan berikan fix beserta penjelasan."</p>
+          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Kode ini menghasilkan error [error message]. Stack: [tech stack]. Yang diharapkan: [expected behavior]. Yang terjadi: [actual behavior]. Tolong identifikasi bug dan berikan fix beserta penjelasan.');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
+        </div>
+        <div class="pe-tip-card">
+          <h4>Analisis Data</h4>
+          <p>"Analisis data [jenis data] berikut. Identifikasi [X] insight utama, trends, dan anomali. Presentasikan dalam format [tabel/bullet points/executive summary]. Fokus pada [metrik spesifik]."</p>
+          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Analisis data [jenis data] berikut. Identifikasi [X] insight utama, trends, dan anomali. Presentasikan dalam format [tabel/bullet points/executive summary]. Fokus pada [metrik spesifik].');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
+        </div>
+        <div class="pe-tip-card">
+          <h4>Email Profesional</h4>
+          <p>"Tulis email [tujuan: follow-up/proposal/complaint] ke [siapa] tentang [topik]. Tone [formal/semi-formal]. Max [X] paragraf. Include [data pendukung/deadline/CTA spesifik]."</p>
+          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Tulis email [tujuan: follow-up/proposal/complaint] ke [siapa] tentang [topik]. Tone [formal/semi-formal]. Max [X] paragraf. Include [data pendukung/deadline/CTA spesifik].');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
+        </div>
+        <div class="pe-tip-card">
+          <h4>Brainstorming</h4>
+          <p>"Generate [X] ide untuk [topik/project]. Untuk setiap ide, jelaskan: konsep singkat, target market, estimasi effort (low/med/high), dan potential impact. Rank dari yang paling menjanjikan."</p>
+          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Generate [X] ide untuk [topik/project]. Untuk setiap ide, jelaskan: konsep singkat, target market, estimasi effort (low/med/high), dan potential impact. Rank dari yang paling menjanjikan.');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
+        </div>
+        <div class="pe-tip-card">
+          <h4>Belajar Konsep Baru</h4>
+          <p>"Jelaskan [konsep] seperti mengajar [level: anak 10 tahun/mahasiswa/profesional]. Gunakan [X] analogi dari kehidupan sehari-hari. Berikan [X] contoh nyata. Di akhir, buat quiz singkat 3 pertanyaan."</p>
+          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Jelaskan [konsep] seperti mengajar [level: anak 10 tahun/mahasiswa/profesional]. Gunakan [X] analogi dari kehidupan sehari-hari. Berikan [X] contoh nyata. Di akhir, buat quiz singkat 3 pertanyaan.');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
+        </div>
+      </div>
+
+      <div class="pe-section-title">Kesalahan Umum yang Harus Dihindari</div>
+
+      <ol class="pe-numbered-list">
+        <li><strong>Terlalu vague</strong> — "buatin sesuatu yang bagus" nggak ngasih AI info yang cukup. Selalu spesifik tentang apa, untuk siapa, dan format apa.</li>
+        <li><strong>Terlalu panjang tanpa struktur</strong> — prompt panjang boleh, tapi harus terstruktur. Gunakan numbering, dash, atau section headers.</li>
+        <li><strong>Nggak kasih konteks</strong> — AI nggak tahu background lo. Selalu kasih konteks: siapa audience-nya, apa tujuannya, apa constraint-nya.</li>
+        <li><strong>Expect perfect di percobaan pertama</strong> — treat AI kayak kolaborator. Iterasi itu normal dan bahkan direkomendasikan.</li>
+        <li><strong>Copy-paste output tanpa review</strong> — AI bisa hallucinate. Selalu fact-check output-nya, terutama untuk data, kode, dan klaim faktual.</li>
+        <li><strong>Nggak nge-set format output</strong> — kalau lo nggak bilang formatnya, AI bakal milih sendiri. Mungkin hasilnya terlalu panjang, terlalu pendek, atau salah format.</li>
+        <li><strong>Lupa kasih contoh</strong> — few-shot prompting (kasih 2-3 contoh) drastis meningkatkan kualitas. Kalau bisa kasih contoh, kasih.</li>
+      </ol>
+
+      <div class="pe-section-title">Prompt Engineering untuk Coding</div>
+
+      <p>Buat developer, prompt engineering itu game changer. Ini beberapa pattern yang terbukti efektif buat ngoding pakai AI:</p>
+
+      <div class="pe-tip-grid">
+        <div class="pe-tip-card">
+          <h4>Jelaskan Stack & Konteks</h4>
+          <p>Selalu mention tech stack (React, Next.js, Python, dll), versi yang dipakai, dan structure project lo. Semakin jelas konteksnya, semakin akurat kodenya.</p>
+        </div>
+        <div class="pe-tip-card">
+          <h4>Berikan Error Message Lengkap</h4>
+          <p>Copy-paste full error message dan stack trace — jangan cuma bilang "ada error". AI butuh info spesifik buat diagnosa masalah.</p>
+        </div>
+        <div class="pe-tip-card">
+          <h4>Minta Penjelasan, Bukan Cuma Kode</h4>
+          <p>Tambahkan "jelaskan setiap langkah" atau "tambahkan komentar di kode". Ini membantu lo belajar dan verifikasi logikanya.</p>
+        </div>
+        <div class="pe-tip-card">
+          <h4>Set Batasan yang Jelas</h4>
+          <p>"Jangan pakai library eksternal", "gunakan TypeScript strict mode", "ikuti pattern yang sudah ada di codebase". Constraint = output lebih realistis.</p>
+        </div>
+      </div>
+
+      <div class="pe-callout">
+        <p><strong>Pro Tip:</strong> Untuk coding, coba teknik "Rubber Duck Prompting" — jelaskan dulu masalah lo ke AI sedetail mungkin, seolah-olah lo lagi menjelaskan ke teman. Sering kali, proses menjelaskan ini sendiri udah bantu lo menemukan solusinya. Dan kalau belum ketemu, AI punya konteks yang cukup buat kasih jawaban yang akurat.</p>
+      </div>
+
+      <div class="pe-section-title">Masa Depan Prompt Engineering</div>
+
+      <p>Banyak yang bilang "prompt engineering bakal mati karena AI makin pintar." Ini <strong>sebagian benar, sebagian salah</strong>.</p>
+
+      <p>Benar, AI di masa depan bakal makin bagus dalam memahami prompt yang ambiguous. Tapi kemampuan berkomunikasi dengan AI secara presisi akan selalu jadi <strong>competitive advantage</strong>. Sama kayak Google Search — semua orang bisa googling, tapi ada orang-orang yang bisa menemukan informasi 10x lebih cepat karena tahu cara search yang efektif.</p>
+
+      <p>Prompt engineering bukan cuma tentang "nulis prompt" — ini tentang <strong>critical thinking, problem decomposition, dan komunikasi yang efektif</strong>. Skill ini transferable ke mana aja, even kalau tools AI berubah.</p>
+
+      <div class="pe-section-title">Kesimpulan</div>
+
+      <p>Prompt engineering bukan rocket science, tapi butuh latihan dan pemahaman. Dengan 5 rumus (R-T-F, C-R-E-A-T-E, T-A-G, B-A-B, R-I-S-E) dan 7 teknik advanced dalam artikel ini, lo udah punya toolkit lengkap buat bikin AI bekerja jauh lebih efektif.</p>
+
+      <p>Key takeaway: <strong>Kualitas output AI = kualitas prompt lo.</strong> Investasi 5 menit extra buat nulis prompt yang bagus bisa hemat 1 jam kerja. That's a 12x return on time. Worth it? Absolutely.</p>
+
+      <div class="pe-callout">
+        <p><strong>Challenge:</strong> Ambil salah satu rumus dari artikel ini, terapkan ke kerjaan lo hari ini. Bandingkan hasilnya dengan cara lo prompt biasanya. Lo pasti bakal notice perbedaannya.</p>
+      </div>
+
+      <div class="pe-cta">
+        <h2>Mau Tips Prompt Engineering Tiap Minggu?</h2>
+        <p>Follow Instagram gue buat dapet template prompt, tips AI, dan tutorial yang actionable!</p>
+        <a href="https://www.instagram.com/adityafakhrii/" target="_blank" rel="noopener noreferrer">Follow @adityafakhrii</a>
+      </div>
+    `,
+    date: "27 Apr 2026",
+    readTime: "18 min",
+    category: "AI",
+    author: "Aditya Fakhri Riansyah",
+    tags: ["Prompt Engineering", "AI", "ChatGPT", "Claude", "Tutorial", "2026", "Productivity"],
+    imageSrc: "https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1777265912351-xkoe1z.webp",
+    relatedPosts: ["ai-vs-developer-2026", "cuan-dari-ai-2026", "ai-website-builder-2026"],
+  },
+
   "ai-vs-developer-2026": {
     title: "AI vs Developer: Apakah Programmer Bakal Digantiin di 2026?",
     excerpt: "Debat panas soal masa depan programmer di era AI. Apakah developer bakal punah, atau justru makin dibutuhkan? Simak analisis lengkapnya.",
@@ -418,7 +818,6 @@ const blogs = {
     imageSrc: "https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1777263911754-sykv6h.webp",
     relatedPosts: ["ai-vs-developer-2026", "ai-website-builder-2026"],
   },
-
   "prompt-portfolio-website-2026": {
     title: "5 Prompt Website Portofolio Keren!",
     excerpt: "Kumpulan 5 prompt AI untuk bikin website portofolio keren — dari dark hacker aesthetic sampai creative experimental. Tinggal copas, hasilnya Dribbble-ready!",
@@ -685,7 +1084,7 @@ The first screen should focus on the hero section with a strong headline, short 
     category: "AI",
     author: "Aditya Fakhri Riansyah",
     tags: ["AI", "Portfolio", "Prompt", "Web Design", "Vibe Coding", "2026"],
-    imageSrc: "https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1776937092158-pmhcqv.webp",
+    imageSrc: "https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1777265651186-frztzo.webp",
     relatedPosts: ["ai-website-builder-2026"],
   },
   "ai-website-builder-2026": {
