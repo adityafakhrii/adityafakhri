@@ -129,7 +129,7 @@ export default function RootLayout({
             <SidebarProvider>
               <div className="flex min-h-screen">
                 <PortfolioSidebar />
-                <main className="flex-1 overflow-auto mx-auto">{children}</main>
+                <main className="flex-1 min-w-0 overflow-y-auto overflow-x-hidden mx-auto">{children}</main>
               </div>
             </SidebarProvider>
           </ThemeProvider>

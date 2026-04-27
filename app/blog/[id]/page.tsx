@@ -96,7 +96,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ id: string 
                 <Badge>{post.category || t('notAvailable')}</Badge>
                 <BlogShareButton title={post.title} blogId={id} lang={t('language')} />
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">{post.title || t('notAvailable')}</h1>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-[1.3] tracking-tight mb-5 break-words">{post.title || t('notAvailable')}</h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center">
                   <User className="h-4 w-4 mr-1" />
