@@ -24,7 +24,7 @@ export async function generateMetadata(
         openGraph: {
             title: post.title,
             description: post.excerpt || post.title,
-            images: post.imageSrc ? [post.imageSrc, ...previousImages] : previousImages,
+            images: post.imageSrc ? [post.imageSrc] : previousImages,
             type: "article",
             publishedTime: post.date,
             authors: [post.author || "Aditya Fakhri Riansyah"],

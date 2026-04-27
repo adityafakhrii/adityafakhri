@@ -23,7 +23,7 @@ export async function generateMetadata(
         openGraph: {
             title: project.title,
             description: description,
-            images: project.imageSrc ? [project.imageSrc, ...previousImages] : previousImages,
+            images: project.imageSrc ? [project.imageSrc] : previousImages,
             type: "article",
         },
         twitter: {
