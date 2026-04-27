@@ -415,12 +415,12 @@ const blogs = {
     category: "AI",
     author: "Aditya Fakhri Riansyah",
     tags: ["AI", "Side Hustle", "Freelance", "Monetisasi", "2026", "Career"],
-    imageSrc: "/placeholder.svg?height=400&width=800",
+    imageSrc: "https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1777263911754-sykv6h.webp",
     relatedPosts: ["ai-vs-developer-2026", "ai-website-builder-2026"],
   },
 
   "prompt-portfolio-website-2026": {
-    title: "5 Prompt Website Portofolio Keren 🚀",
+    title: "5 Prompt Website Portofolio Keren!",
     excerpt: "Kumpulan 5 prompt AI untuk bikin website portofolio keren — dari dark hacker aesthetic sampai creative experimental. Tinggal copas, hasilnya Dribbble-ready!",
     content: `
       <style>
@@ -1220,34 +1220,412 @@ The first screen should focus on the hero section with a strong headline, short 
     relatedPosts: ["prompt-portfolio-website-2026", "ai-web-development"],
   },
   "nextjs-vs-react": {
-    title: "Next.js vs React: Kapan Menggunakan Masing-masing?",
-    excerpt: "Perbandingan fitur, performa, dan use-case Next.js vs React.",
+    title: "Next.js vs React di 2026: Panduan Lengkap Memilih Framework yang Tepat",
+    excerpt: "Perbandingan mendalam antara Next.js dan React — dari rendering, routing, performa, sampai kapan harus pakai yang mana. Panduan lengkap untuk developer Indonesia.",
     content: `
-      <p>React adalah library UI fleksibel, sementara Next.js adalah framework di atas React yang menyediakan SSR/SSG, routing, dan optimasi bawaan. Memilih keduanya bergantung pada kebutuhan SEO, performa, dan skala aplikasi.</p>
-      <h2>React</h2>
-      <ul>
-        <li>Fleksibel, minimal opini</li>
-        <li>Butuh setup tambahan untuk SSR/SEO</li>
-      </ul>
-      <h2>Next.js</h2>
-      <ul>
-        <li>SSR/SSG/ISR built-in</li>
-        <li>File-based routing, image optimization</li>
-      </ul>
-      <h2>Rekomendasi</h2>
-      <ul>
-        <li>Blog/E-commerce: Next.js</li>
-        <li>Dashboard internal SPA: React</li>
-      </ul>
-      <p>Untuk sebagian besar web modern, Next.js menjadi sweet spot berkat fitur produksi siap pakai.</p>
+      <style>
+        .nvr-hero { padding: 2.5rem 2rem; border-radius: 1.25rem; background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; }
+        .nvr-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.5rem; margin: 0 0 0.75rem 0; }
+        .nvr-hero p { color: hsl(var(--muted-foreground)); font-size: 1rem; line-height: 1.7; margin: 0; }
+        .nvr-section-title { font-size: 1.25rem; font-weight: 700; margin: 2.5rem 0 1rem 0; color: hsl(var(--foreground)); display: flex; align-items: center; gap: 0.5rem; }
+        .nvr-compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0; }
+        .nvr-compare-card { padding: 1.5rem; border-radius: 1rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); }
+        .nvr-compare-card h3 { font-size: 1.1rem; font-weight: 700; margin: 0 0 0.75rem 0; color: hsl(var(--foreground)); padding-bottom: 0.75rem; border-bottom: 2px solid hsl(var(--border)); }
+        .nvr-compare-card ul { margin: 0; padding-left: 1.25rem; }
+        .nvr-compare-card li { font-size: 0.92rem; line-height: 1.7; color: hsl(var(--muted-foreground)); margin-bottom: 0.4rem; }
+        .nvr-table-wrap { overflow-x: auto; margin: 1.5rem 0; border-radius: 1rem; border: 1px solid hsl(var(--border)); }
+        .nvr-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        .nvr-table thead { background: hsl(var(--muted)); }
+        .nvr-table th { padding: 0.85rem 1rem; text-align: left; font-weight: 700; color: hsl(var(--foreground)); border-bottom: 1px solid hsl(var(--border)); }
+        .nvr-table td { padding: 0.75rem 1rem; color: hsl(var(--muted-foreground)); border-bottom: 1px solid hsl(var(--border)); line-height: 1.5; }
+        .nvr-table tr:last-child td { border-bottom: none; }
+        .nvr-table tr:hover td { background: hsl(var(--muted) / 0.5); }
+        .nvr-callout { padding: 1.5rem; border-radius: 1rem; border-left: 4px solid hsl(var(--primary)); background: hsl(var(--muted)); margin: 2rem 0; }
+        .nvr-callout p { margin: 0; font-size: 0.95rem; line-height: 1.7; color: hsl(var(--foreground)); }
+        .nvr-callout strong { color: hsl(var(--foreground)); }
+        .nvr-use-case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+        .nvr-use-case { padding: 1.25rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+        .nvr-use-case h4 { font-size: 0.95rem; font-weight: 700; margin: 0 0 0.35rem 0; color: hsl(var(--foreground)); }
+        .nvr-use-case p { font-size: 0.85rem; line-height: 1.6; color: hsl(var(--muted-foreground)); margin: 0; }
+        .nvr-use-case .nvr-tag { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 9999px; background: hsl(var(--muted)); color: hsl(var(--muted-foreground)); border: 1px solid hsl(var(--border)); margin-top: 0.5rem; }
+        .nvr-code-block { background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; padding: 1.25rem; font-size: 0.82rem; line-height: 1.7; color: hsl(var(--foreground)); font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace; white-space: pre-wrap; word-break: break-word; margin: 1rem 0; overflow-x: auto; }
+        .nvr-code-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: hsl(var(--muted-foreground)); margin-bottom: 0.5rem; }
+        .nvr-verdict { padding: 2rem; border-radius: 1.25rem; background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); margin: 2rem 0; }
+        .nvr-verdict h3 { font-size: 1.1rem; font-weight: 700; margin: 0 0 1rem 0; color: hsl(var(--foreground)); }
+        .nvr-verdict-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .nvr-verdict-item { padding: 1rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+        .nvr-verdict-item h4 { font-size: 0.9rem; font-weight: 700; margin: 0 0 0.25rem 0; color: hsl(var(--foreground)); }
+        .nvr-verdict-item p { font-size: 0.85rem; line-height: 1.5; color: hsl(var(--muted-foreground)); margin: 0; }
+        .nvr-cta { margin-top: 3rem; padding: 2.5rem 2rem; border-radius: 1.25rem; background: hsl(var(--primary)); text-align: center; color: hsl(var(--primary-foreground)); }
+        .nvr-cta h2 { color: hsl(var(--primary-foreground)) !important; margin-top: 0 !important; font-size: 1.5rem; }
+        .nvr-cta p { color: hsl(var(--primary-foreground) / 0.8); margin-bottom: 1.25rem; font-size: 1rem; }
+        .nvr-cta a { display: inline-block; padding: 0.75rem 2rem; border-radius: 9999px; background: hsl(var(--primary-foreground)); color: hsl(var(--primary)); font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+        .nvr-cta a:hover { transform: scale(1.05); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+        .nvr-faq { margin: 2rem 0; }
+        .nvr-faq-item { border: 1px solid hsl(var(--border)); border-radius: 0.75rem; margin-bottom: 0.75rem; overflow: hidden; }
+        .nvr-faq-q { padding: 1rem 1.25rem; font-weight: 700; font-size: 0.95rem; color: hsl(var(--foreground)); background: hsl(var(--card)); }
+        .nvr-faq-a { padding: 0 1.25rem 1rem 1.25rem; font-size: 0.88rem; line-height: 1.7; color: hsl(var(--muted-foreground)); }
+        @media (max-width: 768px) {
+          .nvr-compare-grid, .nvr-use-case-grid, .nvr-verdict-row { grid-template-columns: 1fr; }
+          .nvr-hero { padding: 1.75rem 1.25rem; }
+        }
+      </style>
+
+      <div class="nvr-hero">
+        <h2>Next.js vs React — Mana yang Harus Lo Pilih?</h2>
+        <p>Ini pertanyaan klasik yang sering banget muncul di komunitas developer Indonesia. Tapi jawabannya nggak sesederhana "Next.js lebih bagus" atau "React aja cukup". Semuanya tergantung pada apa yang lo bangun, siapa audience-nya, dan seberapa kompleks project-nya. Artikel ini bakal bantu lo memahami perbedaan mendasar dan membuat keputusan yang tepat.</p>
+      </div>
+
+      <p>Sebelum kita masuk ke perbandingan mendalam, ada satu hal penting yang perlu diluruskan: <strong>Next.js itu bukan pengganti React</strong>. Next.js adalah framework yang dibangun <em>di atas</em> React. Jadi kalau lo pakai Next.js, lo tetap nulis React — cuma dengan tambahan fitur-fitur production-ready yang bikin hidup lebih gampang.</p>
+
+      <p>Analoginya gini: React itu kayak <strong>mesin mobil</strong>. Powerful, fleksibel, bisa lo pasang di mobil apa aja. Sementara Next.js itu kayak <strong>mobil utuh</strong> — mesinnya udah ada (React), plus udah ada transmisi, suspensi, AC, dan semua yang lo butuhin buat langsung jalan di jalan raya.</p>
+
+      <div class="nvr-section-title">Apa Itu React?</div>
+
+      <p>React adalah <strong>library JavaScript</strong> buatan Meta (Facebook) yang fokus pada pembuatan user interface (UI). Dirilis pertama kali tahun 2013, React udah jadi standar industri buat membangun web app modern.</p>
+
+      <p>Kekuatan utama React ada di konsep <strong>component-based architecture</strong> dan <strong>virtual DOM</strong>. Lo bisa bikin UI yang kompleks dari komponen-komponen kecil yang reusable, dan React akan secara efisien mengupdate hanya bagian yang berubah — tanpa perlu reload seluruh halaman.</p>
+
+      <div class="nvr-code-label">Contoh komponen React sederhana:</div>
+      <div class="nvr-code-block">function ProductCard({ name, price, image }) {
+  return (
+    &lt;div className="product-card"&gt;
+      &lt;img src={image} alt={name} /&gt;
+      &lt;h3&gt;{name}&lt;/h3&gt;
+      &lt;p&gt;Rp {price.toLocaleString()}&lt;/p&gt;
+      &lt;button&gt;Tambah ke Keranjang&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}</div>
+
+      <p>React secara default menggunakan <strong>Client-Side Rendering (CSR)</strong> — artinya semua rendering terjadi di browser pengguna. Ini bagus buat interaktivitas, tapi kurang ideal buat SEO karena search engine mungkin kesulitan membaca konten yang di-render di client.</p>
+
+      <div class="nvr-section-title">Apa Itu Next.js?</div>
+
+      <p>Next.js adalah <strong>React framework</strong> buatan Vercel yang menambahkan fitur-fitur krusial di atas React: server-side rendering (SSR), static site generation (SSG), file-based routing, API routes, image optimization, dan banyak lagi — semuanya sudah built-in tanpa perlu konfigurasi manual.</p>
+
+      <p>Kalau React memberi lo kebebasan total (tapi juga tanggung jawab setup), Next.js memberi lo <strong>opinionated structure</strong> yang langsung production-ready. Lo bisa fokus bikin fitur, bukan konfigurasi webpack.</p>
+
+      <div class="nvr-code-label">Contoh page di Next.js App Router:</div>
+      <div class="nvr-code-block">// app/products/page.tsx
+export default async function ProductsPage() {
+  const products = await fetch('https://api.example.com/products')
+    .then(res =&gt; res.json());
+
+  return (
+    &lt;main&gt;
+      &lt;h1&gt;Produk Kami&lt;/h1&gt;
+      {products.map(p =&gt; (
+        &lt;ProductCard key={p.id} {...p} /&gt;
+      ))}
+    &lt;/main&gt;
+  );
+}
+// Data di-fetch di server — SEO friendly, cepat, secure</div>
+
+      <div class="nvr-section-title">Perbandingan Fitur Head-to-Head</div>
+
+      <div class="nvr-table-wrap">
+        <table class="nvr-table">
+          <thead>
+            <tr>
+              <th>Fitur</th>
+              <th>React (CRA / Vite)</th>
+              <th>Next.js</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Rendering</strong></td>
+              <td>Client-Side Rendering (CSR)</td>
+              <td>SSR, SSG, ISR, CSR — semua tersedia</td>
+            </tr>
+            <tr>
+              <td><strong>Routing</strong></td>
+              <td>Perlu install React Router</td>
+              <td>File-based routing (built-in)</td>
+            </tr>
+            <tr>
+              <td><strong>SEO</strong></td>
+              <td>Kurang optimal tanpa setup SSR</td>
+              <td>SEO-friendly by default</td>
+            </tr>
+            <tr>
+              <td><strong>API Backend</strong></td>
+              <td>Butuh backend terpisah</td>
+              <td>API Routes / Server Actions built-in</td>
+            </tr>
+            <tr>
+              <td><strong>Image Optimization</strong></td>
+              <td>Manual / library pihak ketiga</td>
+              <td>next/image component (built-in)</td>
+            </tr>
+            <tr>
+              <td><strong>Performance</strong></td>
+              <td>Good (tergantung optimasi manual)</td>
+              <td>Excellent (code splitting, lazy loading otomatis)</td>
+            </tr>
+            <tr>
+              <td><strong>Learning Curve</strong></td>
+              <td>Lebih rendah (fokus UI saja)</td>
+              <td>Sedikit lebih tinggi (perlu paham SSR/SSG)</td>
+            </tr>
+            <tr>
+              <td><strong>Deployment</strong></td>
+              <td>Static hosting (Netlify, dsb)</td>
+              <td>Vercel, AWS, self-hosted, static export</td>
+            </tr>
+            <tr>
+              <td><strong>Bundle Size</strong></td>
+              <td>Lebih kecil (hanya yang lo pakai)</td>
+              <td>Sedikit lebih besar (tapi auto-optimized)</td>
+            </tr>
+            <tr>
+              <td><strong>Ekosistem</strong></td>
+              <td>Masif, freedom memilih library</td>
+              <td>Masif + optimasi bawaan Vercel</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="nvr-section-title">Kapan Pakai React (Tanpa Next.js)?</div>
+
+      <p>React tanpa framework cocok buat project yang <strong>nggak butuh SEO</strong>, fokus pada interaktivitas client-side, dan biasanya bersifat internal atau behind-login.</p>
+
+      <div class="nvr-use-case-grid">
+        <div class="nvr-use-case">
+          <h4>Dashboard & Admin Panel</h4>
+          <p>Internal tools yang nggak perlu diindex Google. Fokus pada data visualization, CRUD operations, dan real-time updates.</p>
+          <span class="nvr-tag">React + Vite</span>
+        </div>
+        <div class="nvr-use-case">
+          <h4>Single Page Application (SPA)</h4>
+          <p>App yang behavior-nya mirip native app — smooth transitions, no page reload, semua terjadi di client.</p>
+          <span class="nvr-tag">React + React Router</span>
+        </div>
+        <div class="nvr-use-case">
+          <h4>Widget / Embeddable Component</h4>
+          <p>Lo bikin component yang bakal di-embed ke website lain. Butuh library yang ringan dan self-contained.</p>
+          <span class="nvr-tag">React + Vite Library Mode</span>
+        </div>
+        <div class="nvr-use-case">
+          <h4>Prototype & Eksperimen</h4>
+          <p>Mau cepet bikin proof of concept tanpa setup framework berat? React + Vite bisa jalan dalam hitungan detik.</p>
+          <span class="nvr-tag">React + Vite</span>
+        </div>
+      </div>
+
+      <div class="nvr-section-title">Kapan Pakai Next.js?</div>
+
+      <p>Next.js cocok buat hampir semua web yang <strong>public-facing</strong>, butuh SEO, performa tinggi, dan scalability. Ini pilihan default buat kebanyakan project profesional di 2026.</p>
+
+      <div class="nvr-use-case-grid">
+        <div class="nvr-use-case">
+          <h4>Website & Landing Page</h4>
+          <p>SSG bikin page loading super cepat. SEO metadata gampang di-set per halaman. Perfect buat company profile dan marketing site.</p>
+          <span class="nvr-tag">Next.js SSG</span>
+        </div>
+        <div class="nvr-use-case">
+          <h4>Blog & Content Platform</h4>
+          <p>MDX support, ISR buat update konten tanpa rebuild, dan image optimization built-in. Lo lagi baca artikel ini pakai Next.js.</p>
+          <span class="nvr-tag">Next.js ISR</span>
+        </div>
+        <div class="nvr-use-case">
+          <h4>E-Commerce</h4>
+          <p>Product pages perlu SEO, checkout butuh security (server-side). Next.js handle keduanya dengan SSR + Server Actions.</p>
+          <span class="nvr-tag">Next.js SSR</span>
+        </div>
+        <div class="nvr-use-case">
+          <h4>Full-Stack Web Application</h4>
+          <p>API Routes + Server Components bikin lo bisa handle frontend dan backend dalam satu codebase. Database queries langsung di server component.</p>
+          <span class="nvr-tag">Next.js App Router</span>
+        </div>
+      </div>
+
+      <div class="nvr-section-title">Rendering Strategies Explained</div>
+
+      <p>Salah satu keunggulan terbesar Next.js adalah fleksibilitas rendering. Lo bisa pilih strategy yang berbeda untuk setiap halaman — bahkan untuk setiap komponen. Ini yang bikin Next.js sangat versatile.</p>
+
+      <div class="nvr-compare-grid">
+        <div class="nvr-compare-card">
+          <h3>SSG (Static Site Generation)</h3>
+          <ul>
+            <li>HTML di-generate saat <strong>build time</strong></li>
+            <li>Paling cepat karena serve file statis</li>
+            <li>Cocok buat konten yang jarang berubah</li>
+            <li>Contoh: blog posts, dokumentasi, landing page</li>
+          </ul>
+        </div>
+        <div class="nvr-compare-card">
+          <h3>SSR (Server-Side Rendering)</h3>
+          <ul>
+            <li>HTML di-generate saat <strong>setiap request</strong></li>
+            <li>Konten selalu fresh dan up-to-date</li>
+            <li>Cocok buat data yang sering berubah</li>
+            <li>Contoh: feed social media, dashboard real-time</li>
+          </ul>
+        </div>
+        <div class="nvr-compare-card">
+          <h3>ISR (Incremental Static Regeneration)</h3>
+          <ul>
+            <li>Gabungan SSG + SSR: static page yang <strong>auto-update</strong></li>
+            <li>Set revalidation interval (misal: tiap 60 detik)</li>
+            <li>Best of both worlds: cepat + fresh</li>
+            <li>Contoh: halaman produk, berita, pricing</li>
+          </ul>
+        </div>
+        <div class="nvr-compare-card">
+          <h3>CSR (Client-Side Rendering)</h3>
+          <ul>
+            <li>Rendering terjadi di <strong>browser client</strong></li>
+            <li>Interaktivitas tinggi, UX mirip native app</li>
+            <li>Kurang ideal buat SEO</li>
+            <li>Contoh: dashboard, form wizard, chat app</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="nvr-callout">
+        <p><strong>Key Insight:</strong> Di Next.js App Router (2026), default-nya adalah Server Components. Artinya komponen lo di-render di server kecuali lo spesifik menambahkan "use client" di atas file. Ini fundamental shift dari React tradisional yang semuanya client-side.</p>
+      </div>
+
+      <div class="nvr-section-title">Performa & SEO</div>
+
+      <p>Buat website public-facing, performa dan SEO itu krusial. Google menggunakan Core Web Vitals sebagai ranking factor — dan di sinilah Next.js punya keunggulan signifikan:</p>
+
+      <div class="nvr-compare-grid">
+        <div class="nvr-compare-card">
+          <h3>React (CSR)</h3>
+          <ul>
+            <li>Initial load bisa lambat (download JS dulu, baru render)</li>
+            <li>Google bisa crawl, tapi kurang reliable dibanding SSR</li>
+            <li>FCP (First Contentful Paint) cenderung lebih lambat</li>
+            <li>Butuh manual optimization: code splitting, lazy loading</li>
+          </ul>
+        </div>
+        <div class="nvr-compare-card">
+          <h3>Next.js (SSR/SSG)</h3>
+          <ul>
+            <li>HTML langsung tersedia — FCP sangat cepat</li>
+            <li>Fully crawlable oleh semua search engine</li>
+            <li>Automatic code splitting per route</li>
+            <li>Built-in image optimization (WebP, lazy loading, srcset)</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>Kalau lo bikin website yang targetnya ranking di Google — blog, e-commerce, company profile — <strong>Next.js jelas lebih unggul</strong> tanpa butuh konfigurasi tambahan. Meta tags, Open Graph, sitemap, robots.txt — semuanya gampang di-setup di Next.js.</p>
+
+      <div class="nvr-section-title">Developer Experience (DX)</div>
+
+      <p>Ini aspek yang sering diabaikan tapi sangat ngaruh ke produktivitas sehari-hari:</p>
+
+      <div class="nvr-table-wrap">
+        <table class="nvr-table">
+          <thead>
+            <tr>
+              <th>Aspek DX</th>
+              <th>React</th>
+              <th>Next.js</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Setup project</strong></td>
+              <td>Vite: cepat dan minimal</td>
+              <td>create-next-app: lengkap tapi lebih banyak file</td>
+            </tr>
+            <tr>
+              <td><strong>Hot reload</strong></td>
+              <td>Vite HMR: sangat cepat</td>
+              <td>Fast Refresh: cepat (Turbopack di 2026)</td>
+            </tr>
+            <tr>
+              <td><strong>Error messages</strong></td>
+              <td>Standar React errors</td>
+              <td>Enhanced error overlay + suggestions</td>
+            </tr>
+            <tr>
+              <td><strong>TypeScript</strong></td>
+              <td>Perlu setup manual</td>
+              <td>First-class support, auto-configured</td>
+            </tr>
+            <tr>
+              <td><strong>Testing</strong></td>
+              <td>Jest/Vitest + setup manual</td>
+              <td>Built-in testing support</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="nvr-section-title">Verdict: Kapan Pakai Apa?</div>
+
+      <div class="nvr-verdict">
+        <h3>Rekomendasi berdasarkan project type:</h3>
+        <div class="nvr-verdict-row">
+          <div class="nvr-verdict-item">
+            <h4>Pilih React (Vite)</h4>
+            <p>Dashboard internal, admin panel, prototype/MVP sederhana, embeddable widget, SPA behind auth, project yang butuh freedom maksimal dalam arsitektur.</p>
+          </div>
+          <div class="nvr-verdict-item">
+            <h4>Pilih Next.js</h4>
+            <p>Website public-facing, blog, e-commerce, SaaS product, landing page, full-stack app, project yang butuh SEO, project yang mau langsung production-ready.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="nvr-callout">
+        <p><strong>Pro Tip:</strong> Kalau lo masih pemula dan bingung mulai dari mana, mulai belajar <strong>React dulu</strong>. Pahami konsep component, state, props, hooks. Setelah itu, transisi ke Next.js akan terasa natural — karena Next.js itu React + fitur tambahan. Lo nggak bisa pakai Next.js tanpa paham React, tapi lo bisa pakai React tanpa Next.js.</p>
+      </div>
+
+      <div class="nvr-section-title">FAQ (Pertanyaan yang Sering Muncul)</div>
+
+      <div class="nvr-faq">
+        <div class="nvr-faq-item">
+          <div class="nvr-faq-q">Apakah Next.js menggantikan React?</div>
+          <div class="nvr-faq-a">Tidak. Next.js dibangun di atas React. Kalau lo pakai Next.js, lo tetap menulis React code. Next.js menambahkan fitur-fitur framework (routing, SSR, API) yang React sendiri tidak sediakan.</div>
+        </div>
+        <div class="nvr-faq-item">
+          <div class="nvr-faq-q">Apakah saya harus belajar React dulu sebelum Next.js?</div>
+          <div class="nvr-faq-a">Sangat direkomendasikan. Pahami dulu konsep dasar React (components, state, props, hooks, context) sebelum belajar Next.js. Ini akan membuat proses belajar jauh lebih smooth.</div>
+        </div>
+        <div class="nvr-faq-item">
+          <div class="nvr-faq-q">Apakah Next.js gratis?</div>
+          <div class="nvr-faq-a">Ya, Next.js sepenuhnya open-source dan gratis. Lo bisa deploy di mana saja (Vercel, AWS, VPS, dll). Vercel menyediakan free tier yang cukup generous untuk project personal dan small business.</div>
+        </div>
+        <div class="nvr-faq-item">
+          <div class="nvr-faq-q">Mana yang lebih cepat, React atau Next.js?</div>
+          <div class="nvr-faq-a">Tergantung konteksnya. Untuk initial page load, Next.js (SSG/SSR) lebih cepat karena HTML langsung siap. Untuk interaktivitas setelah load, keduanya sama — karena Next.js menggunakan React untuk client-side hydration.</div>
+        </div>
+        <div class="nvr-faq-item">
+          <div class="nvr-faq-q">Bagaimana dengan Remix, Astro, dan framework lain?</div>
+          <div class="nvr-faq-a">Framework lain seperti Remix (sekarang React Router v7) dan Astro juga opciones yang bagus. Tapi untuk ekosistem React di 2026, Next.js masih jadi pilihan paling mainstream dan paling banyak didukung — baik dari sisi komunitas, dokumentasi, maupun lapangan kerja.</div>
+        </div>
+      </div>
+
+      <div class="nvr-section-title">Kesimpulan</div>
+
+      <p>Di 2026, baik React maupun Next.js tetap jadi pilihan solid untuk web development. Yang penting adalah <strong>pilih berdasarkan kebutuhan project, bukan hype</strong>.</p>
+
+      <p>Kalau lo bikin website yang perlu tampil di Google, butuh performa tinggi, dan mau langsung production-ready — <strong>Next.js adalah pilihan yang tepat</strong>. Tapi kalau lo bikin internal dashboard, prototype cepat, atau widget yang ringan — <strong>React + Vite sudah lebih dari cukup</strong>.</p>
+
+      <p>Yang paling penting: <strong>pahami fundamentalnya</strong>. React adalah fondasinya. Next.js adalah bangunan di atasnya. Kuasai keduanya, dan lo bakal jadi developer yang sangat versatile di pasar kerja 2026.</p>
+
+      <div class="nvr-cta">
+        <h2>Mau Belajar Web Development Lebih Dalam?</h2>
+        <p>Follow Instagram gue buat tips React, Next.js, AI tools, dan career advice buat developer Indonesia!</p>
+        <a href="https://www.instagram.com/adityafakhrii/" target="_blank" rel="noopener noreferrer">Follow @adityafakhrii</a>
+      </div>
     `,
-    date: "28 Mar 2023",
-    readTime: "6 min",
+    date: "27 Apr 2026",
+    readTime: "15 min",
     category: "Web Development",
     author: "Aditya Fakhri Riansyah",
-    tags: ["React", "Next.js", "Frontend", "JavaScript", "Framework"],
-    imageSrc: "/placeholder.svg?height=400&width=800",
-    relatedPosts: ["ai-web-development", "typescript-best-practices"],
+    tags: ["React", "Next.js", "Frontend", "JavaScript", "Framework", "SSR", "SSG", "Web Development", "2026"],
+    imageSrc: "https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1777264199759-yt0c54.webp",
+    relatedPosts: ["ai-vs-developer-2026", "ai-website-builder-2026"],
   }
 } as const
 
