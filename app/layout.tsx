@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Aditya Fakhri Riansyah",
   },
   description:
-    "Portfolio Aditya Fakhri Riansyah — Web Developer berbasis AI, Mentor, dan Tech Content Creator.",
+    "Portfolio Aditya Fakhri Riansyah — Web Developer berbasis AI, Mentor Pemrograman, Pembicara IT (Speaker), dan Tech Content Creator.",
   generator: "v0.dev",
   keywords: [
     "Web Developer",
@@ -30,6 +30,13 @@ export const metadata: Metadata = {
     "Mentor Pemrograman",
     "Portfolio Teknologi",
     "Pengembangan Web",
+    "Pembicara AI",
+    "IT Speaker Indonesia",
+    "Speaker Web Developer",
+    "Narasumber Teknologi",
+    "Fullstack Developer",
+    "Pembicara IT Bandung",
+    "Pembicara IT Sukabumi"
   ],
   authors: [{ name: "Aditya Fakhri Riansyah", url: "https://adityafakhri.com" }],
   alternates: {

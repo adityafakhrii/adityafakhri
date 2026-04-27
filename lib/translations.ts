@@ -219,8 +219,8 @@ export const translations = {
 
     // Home page
     heroTitle: "Aditya Fakhri Riansyah",
-    heroSubtitle: "AI-Driven Web Developer, Mentor, Tech Content Creator",
-    heroDescription: "Saya membangun aplikasi web dan mobile modern dengan fokus utama pada pengalaman pengguna, performa optimal, dan aksesibilitas. Saya juga aktif mengeksplorasi integrasi AI, membimbing melalui mentoring, dan berbagi pengetahuan lewat konten edukatif.",
+    heroSubtitle: "AI-Driven Web Developer, IT Mentor & Tech Speaker",
+    heroDescription: "Saya membangun aplikasi web dan mobile modern dengan fokus pada performa dan pengalaman pengguna. Selain itu, saya aktif membagikan wawasan mengenai Kecerdasan Buatan (AI) sebagai Pembicara IT / Narasumber Teknologi, membimbing calon talenta digital melalui mentoring pemrograman, dan menjadi speaker di berbagai konferensi web developer.",
     viewProjects: "Lihat Portofolio",
     collaboration: "Aditya telah berkolaborasi dengan berbagai perusahaan teknologi",
     mainSkills: "Keahlian Utama",
@@ -319,8 +319,8 @@ export const translations = {
     contactFailDesc: "Terjadi kesalahan saat mengirim email. Silakan coba lagi atau hubungi saya via WhatsApp.",
 
     // Speaking page
-    speakingTitle: "Speaking & Events",
-    speakingDescription: "Riwayat sebagai pembicara di acara dan konferensi teknologi",
+    speakingTitle: "IT Speaker & Mentoring",
+    speakingDescription: "Portofolio sesi berbicara sebagai Pembicara AI, Mentor Web Developer, dan Narasumber IT di berbagai workshop dan konferensi teknologi, khususnya di Bandung dan Sukabumi.",
     upcomingEvents: "Event Mendatang",
     pastEvents: "Event Sebelumnya",
     topicsISpeak: "Topik yang Saya Bicarakan",
@@ -648,8 +648,8 @@ export const translations = {
 
     // Home page
     heroTitle: "Aditya Fakhri Riansyah",
-    heroSubtitle: "AI-Driven Web Developer, Mentor, Tech Content Creator",
-    heroDescription: "I build modern web and mobile applications with a primary focus on user experience, optimal performance, and accessibility. I'm also actively exploring AI integration, mentoring, and sharing knowledge through educational content.",
+    heroSubtitle: "AI-Driven Web Developer, IT Mentor & Tech Speaker",
+    heroDescription: "I build modern web and mobile applications focusing on performance and user experience. Furthermore, I actively share AI insights as a Tech Speaker, guide future digital talents through programming mentoring, and speak at various web developer conferences.",
     viewProjects: "View Portfolio",
     collaboration: "Aditya has collaborated with various technology companies",
     mainSkills: "Main Skills",
@@ -748,8 +748,8 @@ export const translations = {
     contactFailDesc: "An error occurred while sending. Please try again or reach me via WhatsApp.",
 
     // Speaking page
-    speakingTitle: "Speaking & Events",
-    speakingDescription: "History as a speaker at technology events and conferences",
+    speakingTitle: "IT Speaker & Mentoring",
+    speakingDescription: "Portfolio of speaking engagements as an AI Speaker, Web Developer Mentor, and IT Resource Person at various tech workshops and conferences, especially in Bandung and Sukabumi.",
     upcomingEvents: "Upcoming Events",
     pastEvents: "Past Events",
     topicsISpeak: "Topics I Speak About",
@@ -811,7 +811,7 @@ export const translations = {
     october: "October",
     november: "November",
     december: "December",
-    
+
     // Project Details
     projectDetails: {
       siacta: {
