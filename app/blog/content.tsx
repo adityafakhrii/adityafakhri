@@ -37,32 +37,30 @@ export function BlogContent() {
           <div className="flex flex-col sm:flex-row gap-4 mt-8 mb-6">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-              <Input 
-                placeholder={t('searchArticles')} 
-                className="pl-10" 
+              <Input
+                placeholder={t('searchArticles')}
+                className="pl-10"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
             <Button>{t('search')}</Button>
           </div>
-          
-          { /* Removed Newsletter at user's request */ }
+
+          { /* Removed Newsletter at user's request */}
 
           <Tabs defaultValue="all">
-            <TabsList className="mb-6">
+            <TabsList className="mb-6 flex-wrap h-auto gap-1">
               <TabsTrigger value="all">{t('all')}</TabsTrigger>
-              <TabsTrigger value="web">{t('web')}</TabsTrigger>
-              <TabsTrigger value="ai">AI</TabsTrigger>
-              <TabsTrigger value="career">
-                {t('k_99e732de')}
-              </TabsTrigger>
+              {Array.from(new Set(articles.map((a) => a.category))).filter(Boolean).sort().map((category) => (
+                <TabsTrigger key={category} value={category}>{category}</TabsTrigger>
+              ))}
             </TabsList>
 
             <TabsContent value="all" className="mt-0">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {articles.filter((article) => 
-                  article.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                {articles.filter((article) =>
+                  article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                   article.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
                 ).map((article) => (
                   <Link key={article.id} href={`/blog/${article.id}`} className="block group">
@@ -98,21 +96,13 @@ export function BlogContent() {
               </div>
             </TabsContent>
 
-            {["web", "ai", "career"].map((category) => (
+            {Array.from(new Set(articles.map((a) => a.category))).filter(Boolean).sort().map((category) => (
               <TabsContent key={category} value={category} className="mt-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {articles
+                    .filter((article) => article.category === category)
                     .filter((article) =>
-                      category === "web"
-                        ? article.category === "Web Development" ||
-                          article.category === "TypeScript" ||
-                          article.category === "Backend"
-                        : category === "ai"
-                          ? article.category === "AI"
-                          : article.category === "Career" || article.category === "UI/UX",
-                    )
-                    .filter((article) => 
-                      article.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                      article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                       article.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
                     )
                     .map((article) => (
@@ -140,7 +130,7 @@ export function BlogContent() {
                             </div>
                             <div className="flex items-center ml-4">
                               <Clock className="h-3.5 w-3.5 mr-1" />
-                                {article.readTime}
+                              {article.readTime}
                             </div>
                           </CardFooter>
                         </Card>
