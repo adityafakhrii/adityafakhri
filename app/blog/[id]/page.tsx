@@ -75,6 +75,23 @@ export default function BlogPostPage({ params }: { params: Promise<{ id: string 
             </Button>
 
             <article className="mb-8" itemScope itemType="https://schema.org/Article">
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "BlogPosting",
+                    "headline": post.title || "Not Available",
+                    "image": post.imageSrc ? [new URL(post.imageSrc, "https://adityafakhri.com").toString()] : undefined,
+                    "datePublished": post.date || "Not Available",
+                    "author": [{
+                      "@type": "Person",
+                      "name": post.author || "Aditya Fakhri Riansyah",
+                      "url": "https://adityafakhri.com"
+                    }]
+                  })
+                }}
+              />
               <div className="flex items-center justify-between mb-4">
                 <Badge>{post.category || t('notAvailable')}</Badge>
                 <BlogShareButton title={post.title} blogId={id} lang={t('language')} />

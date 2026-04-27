@@ -115,7 +115,7 @@ export default function Home() {
                 <div key={i} className="flex items-center justify-center p-4 bg-muted rounded-lg h-24">
                   <Image
                     src={company.src}
-                    alt={company.name}
+                    alt={"Logo " + company.name + " - Partner Aditya Fakhri"}
                     width={120}
                     height={60}
                     sizes="120px"

@@ -1,103 +1,43 @@
-import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, ResolvingMetadata } from "next"
 import blogs from "@/data/blog"
 
-const normalize = (s: string) =>
-    decodeURIComponent(s).trim().toLowerCase().replace(/[\s_]+/g, "-").replace(/-+/g, "-")
-
-export async function generateMetadata({
-    params,
-}: {
-    params: Promise<{ id: string }>
-}): Promise<Metadata> {
-    const { id: rawId } = await params
-    const baseUrl = "https://adityafakhri.com"
-    const normId = normalize(rawId)
+export async function generateMetadata(
+    { params }: { params: Promise<{ id: string }> },
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    const resolvedParams = await params
+    const normalize = (s: string) => decodeURIComponent(s).trim().toLowerCase().replace(/[\s_]+/g, "-").replace(/-+/g, "-")
+    const normId = normalize(resolvedParams.id)
     const entry = Object.entries(blogs).find(([key]) => normalize(key) === normId)
-    const id = entry ? entry[0] : rawId
-    const post = blogs[id as keyof typeof blogs]
+    const id = entry ? entry[0] : resolvedParams.id
+    const post = blogs[id as keyof typeof blogs] as any
 
     if (!post) {
-        return { title: "Blog" }
+        return { title: "Artikel Tidak Ditemukan" }
     }
 
-    const image = post.imageSrc ?? "/placeholder.svg"
-    const imageUrl = image.startsWith("http") ? image : `${baseUrl}${image}`
+    const previousImages = (await parent).openGraph?.images || []
 
     return {
         title: post.title,
-        description: post.excerpt,
-        alternates: {
-            canonical: `${baseUrl}/blog/${id}`,
-        },
+        description: post.excerpt || post.title,
         openGraph: {
-            type: "article",
-            url: `${baseUrl}/blog/${id}`,
             title: post.title,
-            description: post.excerpt,
-            images: [
-                {
-                    url: imageUrl,
-                    width: 1200,
-                    height: 630,
-                    alt: post.title,
-                },
-            ],
+            description: post.excerpt || post.title,
+            images: post.imageSrc ? [post.imageSrc, ...previousImages] : previousImages,
+            type: "article",
+            publishedTime: post.date,
+            authors: [post.author || "Aditya Fakhri Riansyah"],
         },
         twitter: {
             card: "summary_large_image",
             title: post.title,
-            description: post.excerpt,
-            images: [imageUrl],
-        },
+            description: post.excerpt || post.title,
+            images: post.imageSrc ? [post.imageSrc] : [],
+        }
     }
 }
 
-export default async function BlogPostLayout({
-    children,
-    params,
-}: {
-    children: React.ReactNode
-    params: Promise<{ id: string }>
-}) {
-    const { id: rawId } = await params
-    const baseUrl = "https://adityafakhri.com"
-    const normId = normalize(rawId)
-    const entry = Object.entries(blogs).find(([key]) => normalize(key) === normId)
-    const id = entry ? entry[0] : rawId
-    const post = blogs[id as keyof typeof blogs]
-
-    const image = post?.imageSrc ?? "/placeholder.svg"
-    const imageUrl = image.startsWith("http") ? image : `${baseUrl}${image}`
-
-    const jsonLd = post
-        ? {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            headline: post.title,
-            description: post.excerpt,
-            image: imageUrl,
-            datePublished: post.date,
-            author: {
-                "@type": "Person",
-                name: post.author ?? "Aditya Fakhri Riansyah",
-            },
-            mainEntityOfPage: {
-                "@type": "WebPage",
-                "@id": `${baseUrl}/blog/${id}`,
-            },
-        }
-        : null
-
-    return (
-        <>
-            {jsonLd && (
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-                />
-            )}
-            {children}
-        </>
-    )
+export default function BlogDetailLayout({ children }: { children: React.ReactNode }) {
+    return <>{children}</>
 }
