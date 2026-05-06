@@ -329,15 +329,15 @@ export function MentoringContent() {
                   <h3 className="text-2xl font-bold mb-4">Per Sesi</h3>
                   <div className="mb-6">
                     <div className="flex items-center justify-center gap-2 mb-2">
-                      <span className="text-lg text-muted-foreground line-through">699K</span>
-                      <span className="text-4xl font-bold text-primary">149K</span>
+                      <span className="text-lg text-muted-foreground line-through">799K</span>
+                      <span className="text-4xl font-bold text-primary">200K</span>
                     </div>
                     <p className="text-sm text-muted-foreground">/ sesi</p>
                   </div>
                   
                   <div className="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-800 rounded-lg p-3 mb-6">
                     <p className="text-sm font-medium text-green-800 dark:text-green-100">
-                      Diskon 79% khusus harga early bird batch pertama — bisa naik setelah batch ini penuh
+                      Diskon 75% khusus harga early bird batch pertama — bisa naik setelah batch ini penuh
                     </p>
                   </div>
                   
@@ -374,15 +374,15 @@ export function MentoringContent() {
                   <h3 className="text-2xl font-bold mb-4">Paket 4x Sesi</h3>
                   <div className="mb-6">
                     <div className="flex items-center justify-center gap-2 mb-2">
-                      <span className="text-lg text-muted-foreground line-through">2796K</span>
-                      <span className="text-4xl font-bold text-primary">500K</span>
+                      <span className="text-lg text-muted-foreground line-through">3196K</span>
+                      <span className="text-4xl font-bold text-primary">700K</span>
                     </div>
-                    <p className="text-sm text-muted-foreground">hemat 2296K</p>
+                    <p className="text-sm text-muted-foreground">hemat 2496K</p>
                   </div>
                   
                   <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 mb-6">
                     <p className="text-sm font-medium text-primary">
-                      Hemat 2296K dari harga normal! Cocok untuk learning path yang lebih komprehensif
+                      Hemat 2496K dari harga normal! Cocok untuk learning path yang lebih komprehensif
                     </p>
                   </div>
                   
