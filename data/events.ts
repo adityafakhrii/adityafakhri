@@ -22,6 +22,45 @@ export const upcomingEvents: EventItem[] = [
 
 export const pastEvents: EventItem[] = [
   {
+    id: "seminar-webinar-nasional-ai-usb-2026",
+    category: "Seminar & Webinar",
+    tags: ["AI", "Seminar", "Webinar", "Networking", "Career"],
+    imageSrc: "https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1778600218686-spabsb.webp",
+    title: {
+      id: "Advancing Artificial Intelligence: Empowering Innovation in the Intelligent Era",
+      en: "Advancing Artificial Intelligence: Empowering Innovation in the Intelligent Era"
+    },
+    subtitle: {
+      id: "Seminar & Webinar Nasional",
+      en: "National Seminar & Webinar"
+    },
+    date: "13 Mei 2026",
+    time: "09.00 - 12.00 WIB",
+    location: "Univ. Sangga Buana YPKP Bandung",
+    description: {
+      id: "Seminar & webinar nasional membahas bagaimana AI menjadi penggerak utama inovasi.",
+      en: "A national seminar & webinar on how AI becomes a primary driver of innovation."
+    },
+    bullets: {
+      id: [
+        "AI-driven innovation: otomatisasi menjadi pencipta nilai (value creator)",
+        "Area kunci inovasi: produk/layanan, model bisnis",
+        "Keunggulan kompetitif",
+        "Kolaborasi Human-AI, sinergi lintas sektor, dan peran Gen AI untuk kreativitas"
+      ],
+      en: [
+        "AI-driven innovation: shifting from automation to value creation",
+        "Key innovation areas: products/services, business models (AI-as-a-Service, data monetization), and accelerated R&D",
+        "Competitive advantage: blue ocean strategy, faster time-to-market, and predictive/prescriptive decision-making",
+        "Ecosystem & trends: Human-AI collaboration, cross-sector synergy, and Generative AI for creativity"
+      ]
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: Universitas Sangga Buana YPKP Bandung",
+      en: "Organized by: Sangga Buana University YPKP Bandung"
+    }
+  },
+  {
     id: "workshop-pertamina-patra-niaga-2026",
     category: "Workshop",
     tags: ["AI", "Data Visualization", "Vibe Coding", "Productivity"],
