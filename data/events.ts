@@ -41,6 +41,10 @@ export const pastEvents: EventItem[] = [
       id: "Seminar & webinar nasional membahas bagaimana AI menjadi penggerak utama inovasi.",
       en: "A national seminar & webinar on how AI becomes a primary driver of innovation."
     },
+    links: [
+      { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/19F7KXkTBhIH73KgkOnClUktQhm3XS5NblljjFSDtU3s/edit?usp=sharing" },
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://www.instagram.com/p/DYO3gaKD4O-/?img_index=2" }
+    ],
     bullets: {
       id: [
         "AI-driven innovation: otomatisasi menjadi pencipta nilai (value creator)",
