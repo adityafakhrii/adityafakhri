@@ -9,6 +9,7 @@ export type BlogPost = {
   tags: string[]
   imageSrc?: string
   relatedPosts?: string[]
+  isoDate?: string
 }
 
 const blogs = {
@@ -405,12 +406,13 @@ Prompt 3: "Tambahin disclaimer dan risk warning di akhir. Juga perbaiki paragraf
       </div>
     `,
     date: "27 Apr 2026",
+    isoDate: "2026-04-27",
     readTime: "18 min",
     category: "AI",
     author: "Aditya Fakhri Riansyah",
     tags: ["Prompt Engineering", "AI", "ChatGPT", "Claude", "Tutorial", "2026", "Productivity"],
     imageSrc: "https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1777265912351-xkoe1z.webp",
-    relatedPosts: ["ai-vs-developer-2026", "cuan-dari-ai-2026", "ai-website-builder-2026"],
+    relatedPosts: ["ai-vs-developer-2026", "cuan-dari-ai-2026", "laptop-programming-mahasiswa-2026"],
   },
 
   "ai-vs-developer-2026": {
@@ -587,6 +589,7 @@ Prompt 3: "Tambahin disclaimer dan risk warning di akhir. Juga perbaiki paragraf
       </div>
     `,
     date: "27 Apr 2026",
+    isoDate: "2026-04-27",
     readTime: "10 min",
     category: "AI",
     author: "Aditya Fakhri Riansyah",
@@ -811,6 +814,7 @@ Prompt 3: "Tambahin disclaimer dan risk warning di akhir. Juga perbaiki paragraf
       </div>
     `,
     date: "27 Apr 2026",
+    isoDate: "2026-04-27",
     readTime: "12 min",
     category: "AI",
     author: "Aditya Fakhri Riansyah",
@@ -1080,6 +1084,7 @@ The first screen should focus on the hero section with a strong headline, short 
       </div>
     `,
     date: "23 Apr 2026",
+    isoDate: "2026-04-23",
     readTime: "7 min",
     category: "AI",
     author: "Aditya Fakhri Riansyah",
@@ -1611,6 +1616,7 @@ The first screen should focus on the hero section with a strong headline, short 
       </div>
     `,
     date: "25 Feb 2026",
+    isoDate: "2026-02-25",
     readTime: "12 min",
     category: "AI",
     author: "Aditya Fakhri Riansyah",
@@ -2019,12 +2025,495 @@ export default async function ProductsPage() {
       </div>
     `,
     date: "27 Apr 2026",
+    isoDate: "2026-04-27",
     readTime: "15 min",
     category: "Web Development",
     author: "Aditya Fakhri Riansyah",
     tags: ["React", "Next.js", "Frontend", "JavaScript", "Framework", "SSR", "SSG", "Web Development", "2026"],
     imageSrc: "https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1777264199759-yt0c54.webp",
     relatedPosts: ["ai-vs-developer-2026", "ai-website-builder-2026"],
+  },
+  "laptop-programming-mahasiswa-2026": {
+    title: "Panduan Memilih Laptop Programming Terbaik buat Mahasiswa Informatika (Budget 5–15 Juta)",
+    excerpt: "Bingung milih laptop untuk kuliah informatika? Simak panduan spek minimal prosesor, RAM, SSD, GPU, serta rekomendasi laptop programming terbaik 2026.",
+    content: `
+      <style>
+        .lp-hero { padding: 2.5rem 2rem; border-radius: 1.25rem; background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; }
+        .lp-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.5rem; margin: 0 0 0.75rem 0; }
+        .lp-hero p { color: hsl(var(--muted-foreground)); font-size: 1rem; line-height: 1.7; margin: 0; }
+        .lp-section-title { font-size: 1.25rem; font-weight: 700; margin: 2.5rem 0 1rem 0; color: hsl(var(--foreground)); border-bottom: 2px solid hsl(var(--border)); padding-bottom: 0.5rem; }
+        .lp-spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .lp-spec-card { padding: 1.25rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); display: flex; flex-direction: column; gap: 0.5rem; }
+        .lp-spec-card h4 { font-size: 1rem; font-weight: 700; color: hsl(var(--foreground)); margin: 0; }
+        .lp-spec-card .lp-spec-val { font-size: 0.85rem; font-weight: 600; color: hsl(var(--primary)); background: hsl(var(--primary) / 0.1); padding: 0.2rem 0.5rem; border-radius: 0.25rem; width: fit-content; }
+        .lp-spec-card p { font-size: 0.85rem; line-height: 1.6; color: hsl(var(--muted-foreground)); margin: 0; }
+        .lp-tip-box { padding: 1.5rem; border-radius: 1rem; border-left: 4px solid hsl(var(--primary)); background: hsl(var(--muted)); margin: 2rem 0; }
+        .lp-tip-box p { margin: 0; font-size: 0.95rem; line-height: 1.7; color: hsl(var(--foreground)); }
+        .lp-table-wrap { overflow-x: auto; margin: 1.5rem 0; border-radius: 1rem; border: 1px solid hsl(var(--border)); }
+        .lp-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 600px; }
+        .lp-table thead { background: hsl(var(--muted)); }
+        .lp-table th { padding: 0.85rem 1rem; text-align: left; font-weight: 700; color: hsl(var(--foreground)); border-bottom: 1px solid hsl(var(--border)); }
+        .lp-table td { padding: 0.75rem 1rem; color: hsl(var(--muted-foreground)); border-bottom: 1px solid hsl(var(--border)); line-height: 1.6; }
+        .lp-table tr:last-child td { border-bottom: none; }
+        .lp-rec-list { display: flex; flex-direction: column; gap: 1.5rem; margin: 1.5rem 0; }
+        .lp-rec-item { padding: 1.5rem; border-radius: 1rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+        .lp-rec-item h3 { font-size: 1.1rem; font-weight: 700; margin: 0 0 0.5rem 0; color: hsl(var(--foreground)); }
+        .lp-rec-tags { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+        .lp-rec-tag { font-size: 0.75rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 0.25rem; background: hsl(var(--muted)); color: hsl(var(--muted-foreground)); border: 1px solid hsl(var(--border)); }
+        .lp-rec-tag.highlight { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); border-color: hsl(var(--primary)); }
+        .lp-rec-desc { font-size: 0.9rem; line-height: 1.7; color: hsl(var(--muted-foreground)); margin: 0 0 0.75rem 0; }
+        .lp-rec-specs { font-size: 0.85rem; background: hsl(var(--muted)); padding: 0.75rem 1rem; border-radius: 0.5rem; border: 1px solid hsl(var(--border)); color: hsl(var(--foreground)); }
+        .lp-faq { display: flex; flex-direction: column; gap: 1rem; margin: 2rem 0; }
+        .lp-faq-item { padding: 1.25rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+        .lp-faq-q { font-weight: 700; font-size: 0.95rem; color: hsl(var(--foreground)); margin-bottom: 0.5rem; }
+        .lp-faq-a { font-size: 0.9rem; line-height: 1.6; color: hsl(var(--muted-foreground)); }
+        .lp-cta { margin-top: 3rem; padding: 2.5rem 2rem; border-radius: 1.25rem; background: hsl(var(--primary)); text-align: center; color: hsl(var(--primary-foreground)); }
+        .lp-cta h2 { color: hsl(var(--primary-foreground)) !important; margin-top: 0 !important; font-size: 1.5rem; }
+        .lp-cta p { color: hsl(var(--primary-foreground) / 0.8); margin-bottom: 1.25rem; font-size: 1rem; }
+        .lp-cta a { display: inline-block; padding: 0.75rem 2rem; border-radius: 9999px; background: hsl(var(--primary-foreground)); color: hsl(var(--primary)); font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+        .lp-cta a:hover { transform: scale(1.05); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+        .lp-numbered-list { counter-reset: lp-counter; list-style: none; padding: 0; margin: 1.5rem 0; }
+        .lp-numbered-list li { counter-increment: lp-counter; padding: 1rem 1.25rem 1rem 3.5rem; position: relative; margin-bottom: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; font-size: 0.9rem; line-height: 1.7; color: hsl(var(--muted-foreground)); }
+        .lp-numbered-list li::before { content: counter(lp-counter); position: absolute; left: 1.25rem; top: 1rem; font-size: 0.85rem; font-weight: 800; color: hsl(var(--foreground)); }
+        .lp-numbered-list li strong { color: hsl(var(--foreground)); }
+        @media (max-width: 768px) {
+          .lp-hero { padding: 1.75rem 1.25rem; }
+        }
+      </style>
+
+      <div class="lp-hero">
+        <h2>Laptop: Workstation Utama Mahasiswa Informatika</h2>
+        <p>Masuk jurusan informatika tanpa laptop yang proper itu kayak masuk gym cuma buat foto depan kaca. Bisa sih, tapi bakal nyusahin diri sendiri. Laptop itu bukan sekadar alat catat materi kuliah, tapi workstation utama lo buat ngoding, buka puluhan tab browser, jalanin Docker, compile project, desain UI, hingga eksperimen tools AI.</p>
+      </div>
+
+      <p>Masalahnya, banyak mahasiswa baru salah fokus waktu beli laptop. Ada yang ngejar RGB gaming lebay padahal cuma buat ngoding web. Ada juga yang beli laptop murah banget terus 6 bulan kemudian nangis karena Android Studio bikin laptop ngelag kayak slideshow.</p>
+
+      <p>Biar proses belajar lo berjalan lancar dan gak bikin emosi, lo butuh perangkat yang andal. Yuk kita breakdown spek dasar yang masuk akal beserta rekomendasi laptop programming terbaik dengan budget Rp5–15 juta.</p>
+
+      <div class="lp-section-title">Pahami Kebutuhan Ngoding Lo</div>
+
+      <p>Kebutuhan spek hardware lo sangat bergantung pada fokus bidang pemrograman yang mau lo pelajari:</p>
+
+      <div class="lp-tip-box">
+        <p><strong>Pengembangan Ringan & Menengah:</strong> Kalau lo fokus di Web Development (Frontend & Backend Laravel/Node.js), desain UI/UX di Figma, data analyst dasar, atau mobile dev ringan, lo gak butuh laptop gaming tebal seberat 3 kilo. Ultrabook tipis dengan baterai awet jauh lebih ideal buat mobilitas kuliah lo.</p>
+      </div>
+
+      <div class="lp-tip-box">
+        <p><strong>Pengembangan Berat & Khusus:</strong> Kalau lo mau fokus ke Android Studio berat, Machine Learning/AI, game development (Unity/Unreal Engine), render 3D di Blender, atau jalanin beberapa Virtual Machine (VM), baru deh kartu grafis diskrit (GPU) dan pendinginan laptop yang optimal jadi krusial.</p>
+      </div>
+
+      <div class="lp-section-title">Spesifikasi Minimal Aman untuk Mahasiswa Informatika (Standar 2026)</div>
+
+      <p>Biar laptop lo bisa bertahan selama 4 hingga 6 tahun kuliah, ini spek aman yang wajib lo perhatikan:</p>
+
+      <div class="lp-spec-grid">
+        <div class="lp-spec-card">
+          <h4>Prosesor (CPU)</h4>
+          <span class="lp-spec-val">Ryzen 5 seri 7000+ / Intel Core i5 Gen 12+</span>
+          <p>Ini otak utama laptop lo. Hindari prosesor entry-level kayak Ryzen 3 atau Core i3 karena umur napasnya pendek buat multitasking programming modern yang makin berat.</p>
+        </div>
+        <div class="lp-spec-card">
+          <h4>Memori (RAM)</h4>
+          <span class="lp-spec-val">Minimal 8GB | Ideal 16GB</span>
+          <p>Chrome dan tools coding sekarang makan RAM brutal. Pilihlah laptop dengan RAM 16GB atau pastikan RAM-nya bisa di-upgrade di kemudian hari (hindari onboard mati).</p>
+        </div>
+        <div class="lp-spec-card">
+          <h4>Penyimpanan</h4>
+          <span class="lp-spec-val">Wajib SSD NVMe 512GB+</span>
+          <p>Jangan sekali-kali pakai HDD tradisional. SSD NVMe wajib hukumnya biar loading project kencang. Ukuran 512GB itu pas, karena folder node_modules, Android SDK, dan dataset itu gede banget.</p>
+        </div>
+        <div class="lp-spec-card">
+          <h4>Layar & Panel</h4>
+          <span class="lp-spec-val">Full HD | Panel IPS / OLED</span>
+          <p>Ngoding berjam-jam di layar jelek bikin mata capek. Cari yang minimal panel IPS/OLED. Layar dengan aspek rasio 16:10 juga lebih enak karena vertical workspace-nya lebih luas.</p>
+        </div>
+      </div>
+
+      <div class="lp-section-title">Dua Jebakan Utama yang Harus Lo Hindari</div>
+
+      <ol class="lp-numbered-list">
+        <li><strong>Terjebak Embel-Embel "Gaming" Tanpa Kebutuhan:</strong> Laptop gaming emang kencang, tapi ada trade-off baterai boros, berat, panas, charger gede, dan kipas bising kayak jet tempur. Pilihlah laptop gaming kalau lo emang butuh GPU-nya saja. Kalau enggak, ultrabook modern jauh lebih worth it.</li>
+        <li><strong>Tergiur Spek Tinggi Harga Terlalu Murah:</strong> Hati-hati jebakan marketplace. Spek di atas kertas keliatan bagus tapi build quality jelek, keyboard ampas, layar TN buram, dan aftersales gak jelas. Ingat, laptop ini investasi jangka panjang lo untuk belajar.</li>
+      </ol>
+
+      <div class="lp-section-title">5 Rekomendasi Laptop Programming Terbaik (Budget 5–15 Juta)</div>
+
+      <div class="lp-rec-list">
+        <div class="lp-rec-item">
+          <h3>1. ASUS Vivobook 14 (M1405) — Best Overall</h3>
+          <div class="lp-rec-tags">
+            <span class="lp-rec-tag highlight">Pilihan Utama</span>
+            <span class="lp-rec-tag">Fullstack & Mobile</span>
+            <span class="lp-rec-tag">Sangat Balance</span>
+          </div>
+          <p class="lp-rec-desc">Ini pilihan paling aman buat mayoritas mahasiswa. Performanya balance dengan Ryzen kencang, build quality oke, layar nyaman di mata, baterai decent, dan gak terlalu berat dibawa ke kampus.</p>
+          <div class="lp-rec-specs">
+            <strong>Spesifikasi Kunci:</strong> AMD Ryzen 5/7 Seri Modern | RAM 16GB (Upgradable) | 512GB SSD NVMe | Layar 14" WUXGA IPS
+          </div>
+        </div>
+
+        <div class="lp-rec-item">
+          <h3>2. ADVAN Workplus Heritage — Performa Brutal, Budget Ketat</h3>
+          <div class="lp-rec-tags">
+            <span class="lp-rec-tag">Budget King</span>
+            <span class="lp-rec-tag">Multitasking Murah</span>
+            <span class="lp-rec-tag">HS-Series Power</span>
+          </div>
+          <p class="lp-rec-desc">Dulu brand lokal sering diremehkan, tapi seri ini absurd banget buat harganya. Dengan prosesor Ryzen HS-series bertenaga tinggi dan RAM 16GB, lo bisa buka puluhan tab dan emulator tanpa hambatan.</p>
+          <div class="lp-rec-specs">
+            <strong>Spesifikasi Kunci:</strong> AMD Ryzen 5 7535HS | RAM 16GB LPDDR5 | 1TB SSD NVMe | Layar 14" WUXGA IPS 16:10
+          </div>
+        </div>
+
+        <div class="lp-rec-item">
+          <h3>3. Lenovo IdeaPad Slim 5 — Kenyamanan Ngetik & Portabilitas</h3>
+          <div class="lp-rec-tags">
+            <span class="lp-rec-tag highlight">Ergonomis</span>
+            <span class="lp-rec-tag">Layar OLED</span>
+            <span class="lp-rec-tag">Keyboard Juara</span>
+          </div>
+          <p class="lp-rec-desc">Lenovo terkenal dengan kualitas keyboard-nya yang paling enak buat ngetik berjam-jam. Ditambah dengan layar OLED super jernih dan prosesor bertenaga AI, laptop ini nyaman banget buat mobile coding.</p>
+          <div class="lp-rec-specs">
+            <strong>Spesifikasi Kunci:</strong> AMD Ryzen AI 7 350 | RAM 16GB | 1TB SSD NVMe | Layar 14" WUXGA OLED
+          </div>
+        </div>
+
+        <div class="lp-rec-item">
+          <h3>4. ASUS Vivobook Go 14 — Solusi Awet Budget Pelajar</h3>
+          <div class="lp-rec-tags">
+            <span class="lp-rec-tag">Hemat Budget</span>
+            <span class="lp-rec-tag">Belajar Coding</span>
+            <span class="lp-rec-tag">Ringan</span>
+          </div>
+          <p class="lp-rec-desc">Buat lo yang punya budget ketat tapi mau laptop awet dari brand besar. Cukup banget buat belajar ngoding web, algoritma dasar, Python, database ringan, tanpa bikin dompet bokek.</p>
+          <div class="lp-rec-specs">
+            <strong>Spesifikasi Kunci:</strong> AMD Ryzen 5 7520U | RAM 16GB LPDDR5 | 512GB SSD NVMe | Layar 14" FHD IPS
+          </div>
+        </div>
+
+        <div class="lp-rec-item">
+          <h3>5. HP Victus 15 (RTX 3050) — Kebutuhan Game Dev & AI Heavy</h3>
+          <div class="lp-rec-tags">
+            <span class="lp-rec-tag">NVIDIA RTX GPU</span>
+            <span class="lp-rec-tag">Machine Learning</span>
+            <span class="lp-rec-tag">Unreal & Unity</span>
+          </div>
+          <p class="lp-rec-desc">Kalau workflow lo berat ke TensorFlow, game engine Unity/Unreal, render 3D di Blender, GPU RTX 3050 di laptop ini bakal kepake banget buat akselerasi CUDA. Tapi inget, ini lebih berat dan baterainya boros.</p>
+          <div class="lp-rec-specs">
+            <strong>Spesifikasi Kunci:</strong> AMD Ryzen 5 5600H | NVIDIA GeForce RTX 3050 | RAM 16GB (Upgradable) | 512GB SSD
+          </div>
+        </div>
+      </div>
+
+      <div class="lp-section-title">Tabel Perbandingan Laptop Rekomendasi</div>
+
+      <div class="lp-table-wrap">
+        <table class="lp-table">
+          <thead>
+            <tr>
+              <th>Kategori / Model</th>
+              <th>Harga Estimasi</th>
+              <th>Prosesor</th>
+              <th>RAM & Storage</th>
+              <th>Cocok Buat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ASUS Vivobook 14 (M1405)</strong></td>
+              <td>± Rp11.8 Juta</td>
+              <td>AMD Ryzen 5/7</td>
+              <td>16GB / 512GB SSD</td>
+              <td>Fullstack & Mobile Dev (Sangat Recomended)</td>
+            </tr>
+            <tr>
+              <td><strong>ADVAN Workplus Heritage</strong></td>
+              <td>± Rp7.9 Juta</td>
+              <td>AMD Ryzen 5 7535HS</td>
+              <td>16GB / 1TB SSD</td>
+              <td>Multitasking kencang dengan harga bersahabat</td>
+            </tr>
+            <tr>
+              <td><strong>Lenovo IdeaPad Slim 5</strong></td>
+              <td>± Rp13.5 Juta</td>
+              <td>AMD Ryzen AI 7 350</td>
+              <td>16GB / 1TB SSD</td>
+              <td>Ngetik lama & visual layar OLED super tajam</td>
+            </tr>
+            <tr>
+              <td><strong>ASUS Vivobook Go 14</strong></td>
+              <td>± Rp8.8 Juta</td>
+              <td>AMD Ryzen 5 7520U</td>
+              <td>16GB / 512GB SSD</td>
+              <td>Belajar dasar pemrograman & logika dasar awal</td>
+            </tr>
+            <tr>
+              <td><strong>HP Victus 15 RTX 3050</strong></td>
+              <td>± Rp14.9 Juta</td>
+              <td>AMD Ryzen 5 5600H</td>
+              <td>16GB / 512GB SSD</td>
+              <td>AI, Machine Learning, & pengembangan game 3D</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="lp-section-title">FAQ (Tanya Jawab Seputar Laptop Programming)</div>
+
+      <div class="lp-faq">
+        <div class="lp-faq-item">
+          <div class="lp-faq-q">Apakah mahasiswa informatika harus beli laptop gaming?</div>
+          <div class="lp-faq-a">Gak wajib sama sekali. Laptop gaming cuma kepake kalau lo butuh performa GPU diskrit untuk Machine Learning berat atau game engine. Buat coding web, mobile, atau backend biasa, ultrabook tipis dengan Ryzen modern jauh lebih praktis dan nyaman dibawa ke kampus.</div>
+        </div>
+        <div class="lp-faq-item">
+          <div class="lp-faq-q">Kenapa RAM 16GB sangat disarankan dibanding 8GB?</div>
+          <div class="lp-faq-a">Karena software modern itu serakah RAM. Kalau lo buka VS Code, browser 20 tab buat riset stack overflow, emulator, dan Docker bersamaan, RAM 8GB bakal langsung sesak dan bikin laptop lemot karena sistem terpaksa swap memory ke SSD.</div>
+        </div>
+        <div class="lp-faq-item">
+          <div class="lp-faq-q">Apakah MacBook (macOS) oke buat anak informatika?</div>
+          <div class="lp-faq-a">Bagus banget terutama buat web development dan iOS dev. Tapi pastikan lo beli yang RAM-nya minimal 16GB (jangan ambil 8GB di 2026). Perhatikan juga kalau ada beberapa mata kuliah basis data jadul atau networking yang konfigurasinya lebih gampang di Windows atau Linux.</div>
+        </div>
+      </div>
+
+      <div class="lp-section-title">Kesimpulan</div>
+
+      <p>Pada akhirnya, laptop terbaik itu bukan yang paling mahal, tapi yang paling pas sama kebutuhan ngoding lo dan ramah di dompet lo. Jadikan laptop sebagai investasi jangka panjang belajar yang nyaman.</p>
+
+      <p>Inget, di dunia informatika, skill lo jauh lebih penting dibanding logo laptop di cover belakang. Laptop cuma alat bantu, yang bikin karir lo maju tetep konsistensi lo belajar, bikin project nyata, bangun portofolio, dan jam terbang ngoding lo secara langsung.</p>
+
+      <div class="lp-cta">
+        <h2>Mau Diskusi Seputar Laptop atau Tech?</h2>
+        <p>Yuk ngobrol bareng atau follow akun Instagram gue buat dapet tips pemrograman, tutorial asyik, dan update dunia developer digital!</p>
+        <a href="https://www.instagram.com/adityafakhrii/" target="_blank" rel="noopener noreferrer">Follow @adityafakhrii</a>
+      </div>
+    `,
+    date: "25 Mei 2026",
+    isoDate: "2026-05-25",
+    readTime: "12 min",
+    category: "Hardware",
+    author: "Aditya Fakhri Riansyah",
+    tags: ["Laptop Programming", "Mahasiswa Informatika", "Rekomendasi Laptop", "Specs", "Hardware", "2026"],
+    imageSrc: "/images/blog/laptop-programming-2026.png",
+    relatedPosts: ["prompt-engineering-guide-2026", "ti-vs-si-mahasiswa-2026"],
+  },
+  "ti-vs-si-mahasiswa-2026": {
+    title: "Teknik Informatika vs Sistem Informasi: Bedanya Apa? Jangan Sampai Salah Jurusan",
+    excerpt: "Kebingungan memilih antara Teknik Informatika dan Sistem Informasi? Simak analisis mendalam mata kuliah, prospek kerja, estimasi gaji, serta kampus terbaik 2026.",
+    content: `
+      <style>
+        .vs-hero { padding: 2.5rem 2rem; border-radius: 1.25rem; background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; }
+        .vs-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.5rem; margin: 0 0 0.75rem 0; }
+        .vs-hero p { color: hsl(var(--muted-foreground)); font-size: 1rem; line-height: 1.7; margin: 0; }
+        .vs-section-title { font-size: 1.25rem; font-weight: 700; margin: 2.5rem 0 1rem 0; color: hsl(var(--foreground)); border-bottom: 2px solid hsl(var(--border)); padding-bottom: 0.5rem; }
+        .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+        .vs-card { padding: 1.5rem; border-radius: 1rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+        .vs-card h3 { font-size: 1.1rem; font-weight: 700; margin: 0 0 0.75rem 0; color: hsl(var(--foreground)); }
+        .vs-card p { font-size: 0.9rem; line-height: 1.7; color: hsl(var(--muted-foreground)); margin: 0 0 1rem 0; }
+        .vs-card ul { margin: 0; padding-left: 1.25rem; }
+        .vs-card li { font-size: 0.88rem; line-height: 1.6; color: hsl(var(--muted-foreground)); margin-bottom: 0.35rem; }
+        .vs-spec-val { font-size: 0.85rem; font-weight: 600; color: hsl(var(--primary)); background: hsl(var(--primary) / 0.1); padding: 0.2rem 0.5rem; border-radius: 0.25rem; width: fit-content; margin-bottom: 1rem; }
+        .vs-table-wrap { overflow-x: auto; margin: 1.5rem 0; border-radius: 1rem; border: 1px solid hsl(var(--border)); }
+        .vs-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 600px; }
+        .vs-table thead { background: hsl(var(--muted)); }
+        .vs-table th { padding: 0.85rem 1rem; text-align: left; font-weight: 700; color: hsl(var(--foreground)); border-bottom: 1px solid hsl(var(--border)); }
+        .vs-table td { padding: 0.75rem 1rem; color: hsl(var(--muted-foreground)); border-bottom: 1px solid hsl(var(--border)); line-height: 1.6; }
+        .vs-table tr:last-child td { border-bottom: none; }
+        .vs-callout { padding: 1.5rem; border-radius: 1rem; border-left: 4px solid hsl(var(--primary)); background: hsl(var(--muted)); margin: 2rem 0; }
+        .vs-callout p { margin: 0; font-size: 0.95rem; line-height: 1.7; color: hsl(var(--foreground)); }
+        .vs-campus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
+        .vs-campus-card { padding: 1.25rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+        .vs-campus-card h4 { font-size: 0.95rem; font-weight: 700; color: hsl(var(--foreground)); margin: 0 0 0.5rem 0; }
+        .vs-campus-card p { font-size: 0.85rem; line-height: 1.6; color: hsl(var(--muted-foreground)); margin: 0; }
+        .vs-faq { display: flex; flex-direction: column; gap: 1rem; margin: 2rem 0; }
+        .vs-faq-item { padding: 1.25rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+        .vs-faq-q { font-weight: 700; font-size: 0.95rem; color: hsl(var(--foreground)); margin-bottom: 0.5rem; }
+        .vs-faq-a { font-size: 0.9rem; line-height: 1.6; color: hsl(var(--muted-foreground)); }
+        .vs-cta { margin-top: 3rem; padding: 2.5rem 2rem; border-radius: 1.25rem; background: hsl(var(--primary)); text-align: center; color: hsl(var(--primary-foreground)); }
+        .vs-cta h2 { color: hsl(var(--primary-foreground)) !important; margin-top: 0 !important; font-size: 1.5rem; }
+        .vs-cta p { color: hsl(var(--primary-foreground) / 0.8); margin-bottom: 1.25rem; font-size: 1rem; }
+        .vs-cta a { display: inline-block; padding: 0.75rem 2rem; border-radius: 9999px; background: hsl(var(--primary-foreground)); color: hsl(var(--primary)); font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+        .vs-cta a:hover { transform: scale(1.05); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+        @media (max-width: 768px) {
+          .vs-grid, .vs-campus-grid { grid-template-columns: 1fr; }
+          .vs-hero { padding: 1.75rem 1.25rem; }
+        }
+      </style>
+
+      <div class="vs-hero">
+        <h2>Dua Pintu Masuk Dunia Teknologi</h2>
+        <p>Banyak anak SMA yang mau masuk dunia IT bingung pas disuruh milih antara jurusan Teknik Informatika (TI) dan Sistem Informasi (SI). Dari luar, kedua jurusan ini keliatan mirip: sama-sama ngoding, sama-sama komputer, dan sama-sama kerja di dunia teknologi. Tapi pas masuk kuliah? Reality hits hard.</p>
+      </div>
+
+      <p>Memahami perbedaan fundamental kedua jurusan ini sangat krusial. Salah milih jurusan bukan cuma bisa bikin IPK lo jeblok karena gak cocok, tapi juga berpotensi bikin lo kehilangan arah karier selama bertahun-tahun setelah lulus kuliah.</p>
+
+      <div class="vs-section-title">Perbedaan Fundamental Secara Ringkas</div>
+
+      <p>Biar gampang diserap, perbedaan esensial dari kedua program studi ini bisa disederhanakan kayak gini:</p>
+
+      <div class="vs-grid">
+        <div class="vs-card">
+          <h3>Teknik Informatika (TI)</h3>
+          <div class="vs-spec-val">Fokus: Membangun Teknologi</div>
+          <p>Mempelajari rekayasa perangkat lunak secara mendalam, dari logika pemrograman dasar, desain algoritma yang efisien, rekayasa kecerdasan buatan (AI), jaringan komputer, hingga struktur sistem komputer internal.</p>
+          <ul>
+            <li>Intensitas pemrograman (coding) sangat tinggi.</li>
+            <li>Memerlukan fondasi matematika dan logika yang kuat.</li>
+            <li>Berorientasi pada pemecahan masalah teknis perangkat lunak.</li>
+          </ul>
+        </div>
+        <div class="vs-card">
+          <h3>Sistem Informasi (SI)</h3>
+          <div class="vs-spec-val">Fokus: Menggunakan & Mengintegrasikan Teknologi</div>
+          <p>Mempelajari bagaimana menjembatani kebutuhan bisnis dengan solusi teknologi informasi. Mahasiswa diajarkan untuk menganalisis proses bisnis perusahaan, mengelola database enterprise, dan memimpin manajemen proyek IT.</p>
+          <ul>
+            <li>Menggabungkan aspek teknis pemrograman dengan manajemen bisnis.</li>
+            <li>Menitikberatkan pada analisis sistem, interaksi pengguna, dan efisiensi alur bisnis.</li>
+            <li>Komunikasi interpersonal dan manajerial memiliki porsi besar.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="vs-section-title">Mata Kuliah Utama yang Bakal Lo Pelajari</div>
+
+      <p>Kurikulum kedua jurusan ini dirancang dengan komposisi materi yang berbeda nyata biar lulusannya punya keahlian yang spesifik:</p>
+
+      <div class="vs-grid">
+        <div class="vs-card">
+          <h3>Mata Kuliah Teknik Informatika</h3>
+          <p>Materi di jurusan TI berfokus pada kedalaman rekayasa teknis sistem komputer:</p>
+          <ul>
+            <li>Algoritma & Struktur Data</li>
+            <li>Pemrograman Web & Mobile</li>
+            <li>Sistem Operasi & Jaringan Komputer</li>
+            <li>Kecerdasan Buatan (AI) & Machine Learning</li>
+            <li>Basis Data & Keamanan Siber (Cybersecurity)</li>
+            <li>Matematika Diskrit, Kalkulus, dan Logika Informatika</li>
+          </ul>
+        </div>
+        <div class="vs-card">
+          <h3>Mata Kuliah Sistem Informasi</h3>
+          <p>Materi di jurusan SI berfokus pada jembatan teknologi dan manajemen organisasi:</p>
+          <ul>
+            <li>Analisis & Perancangan Sistem Informasi</li>
+            <li>Manajemen Proyek Teknologi Informasi</li>
+            <li>Business Intelligence & Data Analytics</li>
+            <li>Desain Antarmuka & Pengalaman Pengguna (UI/UX)</li>
+            <li>Enterprise Resource Planning (ERP)</li>
+            <li>Audit Sistem Informasi & E-Business</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="vs-callout">
+        <p><strong>Reality Check:</strong> Banyak anak masuk TI karena \"mau bikin game\", lalu kena mental breakdown pas ketemu kalkulus, matematika diskrit, dan logika informatika di semester awal. Pastikan lo emang suka solving problem pake logika matematika sebelum mutusin masuk TI.</p>
+      </div>
+
+      <div class="vs-section-title">Perbandingan Prospek Karier & Estimasi Gaji Awal</div>
+
+      <p>Kedua jurusan ini punya prospek kerja yang sangat luas di pasar industri modern dengan klasifikasi peran kayak gini:</p>
+
+      <div class="vs-table-wrap">
+        <table class="vs-table">
+          <thead>
+            <tr>
+              <th>Aspek Evaluasi</th>
+              <th>Teknik Informatika (TI)</th>
+              <th>Sistem Informasi (SI)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Role Populer di Industri</strong></td>
+              <td>Software Engineer, Frontend/Backend Developer, AI/Machine Learning Engineer, Cybersecurity Specialist, Cloud Architect, DevOps.</td>
+              <td>System Analyst, IT Consultant, Business Analyst, Product Manager, UI/UX Researcher, ERP Consultant.</td>
+            </tr>
+            <tr>
+              <td><strong>Estimasi Gaji Awal (Fresh Graduate)</strong></td>
+              <td>Rp5.000.000 – Rp12.000.000 (Bisa naik sangat cepat seiring portofolio teknis dan sertifikasi spesifik).</td>
+              <td>Rp5.000.000 – Rp10.000.000 (Role manajerial tech seperti Product Manager sering kali punya kenaikan eksponensial).</td>
+            </tr>
+            <tr>
+              <td><strong>Tantangan Utama</strong></td>
+              <td>Teknologi dan framework berubah sangat cepat; harus terus belajar mandiri biar gak ketinggalan.</td>
+              <td>Memerlukan soft skill komunikasi lintas tim dan keterampilan analisis proses bisnis yang baik.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="vs-section-title">Rekomendasi Universitas Terbaik di Indonesia</div>
+
+      <p>Kalau lo udah mantap sama pilihan lo, milih kampus dengan ekosistem akademik dan jaringan industri yang kuat bakal bantu karir lo melesat:</p>
+
+      <h3>Program Studi Teknik Informatika Terbaik</h3>
+      <div class="vs-campus-grid">
+        <div class="vs-campus-card">
+          <h4>Institut Teknologi Bandung (ITB)</h4>
+          <p>Kuat di AI, software engineering, riset teknologi tingkat tinggi, serta punya reputasi riset internasional yang kokoh. (<a href="https://itbox.id/blog/teknik-informatika-terbaik-di-indonesia" target="_blank" rel="noopener noreferrer">ITBOX</a>)</p>
+        </div>
+        <div class="vs-campus-card">
+          <h4>Universitas Indonesia (UI)</h4>
+          <p>Fasilkom UI unggul dalam jaringan kerja industri besar, riset data science, serta melahirkan banyak software engineer top. (<a href="https://www.uag.ac.id/populer/universitas-dengan-jurusan-ilmu-komputer-terbaik-di-indonesia" target="_blank" rel="noopener noreferrer">UAG</a>)</p>
+        </div>
+        <div class="vs-campus-card">
+          <h4>BINUS University</h4>
+          <p>Unggul dengan kurikulum pemrograman modern yang dekat dengan industri digital, sangat update, dan siap kerja korporasi tech. (<a href="https://binus.ac.id/malang/2024/02/10-universitas-jurusan-informatika-terbaik-di-indonesia-menurut-edurank/" target="_blank" rel="noopener noreferrer">BINUS</a>)</p>
+        </div>
+      </div>
+
+      <h3>Program Studi Sistem Informasi Terbaik</h3>
+      <div class="vs-campus-grid">
+        <div class="vs-campus-card">
+          <h4>Universitas Indonesia (UI)</h4>
+          <p>Menawarkan kurikulum balance antara bisnis korporat dengan analisis IT modern berstandar akreditasi internasional. (<a href="https://masuk-ptn.com/artikel/detail/kampus-di-indonesia-dengan-jurusan-sistem-informasi-terbaik-versi-qs-wur-2025" target="_blank" rel="noopener noreferrer">Masuk PTN</a>)</p>
+        </div>
+        <div class="vs-campus-card">
+          <h4>Institut Teknologi Sepuluh Nopember (ITS)</h4>
+          <p>Fokus kuat di arsitektur enterprise, optimalisasi proses bisnis, tata kelola data, dan pembentukan kepemimpinan digital IT. (<a href="https://www.bintangpelajar.com/ptn-sistem-informasi-terbaik-di-indonesia/" target="_blank" rel="noopener noreferrer">Bintang Pelajar</a>)</p>
+        </div>
+        <div class="vs-campus-card">
+          <h4>Telkom University</h4>
+          <p>Sangat kuat di bidang bisnis digital, enterprise system, transformasi digital, serta integrasi teknologi jaringan modern. (<a href="https://masuk-ptn.com/artikel/detail/kampus-di-indonesia-dengan-jurusan-sistem-informasi-terbaik-versi-qs-wur-2025" target="_blank" rel="noopener noreferrer">Masuk PTN</a>)</p>
+        </div>
+      </div>
+
+      <div class="vs-section-title">FAQ (Tanya Jawab Seputar Jurusan IT)</div>
+
+      <div class="vs-faq">
+        <div class="vs-faq-item">
+          <div class="vs-faq-q">Apakah di Sistem Informasi juga diajarkan coding?</div>
+          <div class="vs-faq-a">Ya, anak SI tetep dapet matkul pemrograman dasar. Tapi bedanya gak sedalam anak TI. SI lebih fokus pada implementasi dan bagaimana kode program tersebut bisa ngebantu operasional bisnis perusahaan berjalan lancar.</div>
+        </div>
+        <div class="vs-faq-item">
+          <div class="vs-faq-q">Lebih susah mana, TI atau SI?</div>
+          <div class="vs-faq-a">TI lebih berat secara teknis, logic coding, dan matematika. Sedangkan SI lebih berat di aspek analisis bisnis, manajemen project, komunikasi lintas divisi, serta penyusunan laporan solusi perusahaan. Jadi tantangannya beda!</div>
+        </div>
+        <div class="vs-faq-item">
+          <div class="vs-faq-q">Apakah lulusan Sistem Informasi bisa kerja jadi Programmer?</div>
+          <div class="vs-faq-a">Bisa banget. Industri tech modern gak cuma lihat ijazah atau nama jurusan lo, tapi lebih peduli sama skill nyata, portofolio project di GitHub, dan pengalaman coding lo secara langsung. Banyak kok anak SI jadi senior web dev.</div>
+        </div>
+      </div>
+
+      <div class="vs-section-title">Kesimpulan</div>
+
+      <p>Pilih Teknik Informatika kalau lo emang suka ngulik kode pemrograman, rekayasa logic, algoritma cerdas, dan lo punya passion kuat buat jadi engineer pembuat teknologi. Sebaliknya, pilih Sistem Informasi kalau lo suka teknologi tapi juga tertarik dengan sisi manajemen, strategi bisnis, analisis kebutuhan user, dan koordinasi project IT.</p>
+
+      <p>Tapi inget reality check terakhir: mau lo masuk TI atau SI, kalau cuma ngandelin tugas kampus, lo bakal kalah saing. Industri tech sekarang gak cuma peduli nama jurusan lo. Mereka lihat skill, portfolio project, jam terbang ngoding, soft skill komunikasi, dan cara lo solving problem. Jurusan cuma pintu masuk, karir lo ditentukan oleh seberapa serius lo berkembang setelah masuk.</p>
+
+      <div class="vs-cta">
+        <h2>Mau Konsultasi Karir Tech Lebih Jauh?</h2>
+        <p>Yuk ngobrol bareng gue atau ikuti akun Instagram gue buat dapet template prompt AI, career advice, tips pemrograman, dan info teknologi terkini!</p>
+        <a href="https://www.instagram.com/adityafakhrii/" target="_blank" rel="noopener noreferrer">Follow @adityafakhrii</a>
+      </div>
+    `,
+    date: "25 Mei 2026",
+    isoDate: "2026-05-25",
+    readTime: "10 min",
+    category: "Web Development",
+    author: "Aditya Fakhri Riansyah",
+    tags: ["Teknik Informatika", "Sistem Informasi", "Jurusan IT", "Specs", "Career", "2026"],
+    imageSrc: "/images/blog/ti-vs-si-2026.png",
+    relatedPosts: ["laptop-programming-mahasiswa-2026", "ai-vs-developer-2026"],
   }
 } as const
 
