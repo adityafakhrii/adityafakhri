@@ -82,13 +82,21 @@ export default function BlogPostPage({ params }: { params: Promise<{ id: string 
                     "@context": "https://schema.org",
                     "@type": "BlogPosting",
                     "headline": post.title || "Not Available",
+                    "description": post.excerpt || "Not Available",
                     "image": post.imageSrc ? [new URL(post.imageSrc, "https://adityafakhri.com").toString()] : undefined,
                     "datePublished": post.date || "Not Available",
+                    "dateModified": post.date || "Not Available",
+                    "mainEntityOfPage": `https://adityafakhri.com/blog/${id}`,
                     "author": [{
                       "@type": "Person",
                       "name": post.author || "Aditya Fakhri Riansyah",
                       "url": "https://adityafakhri.com"
-                    }]
+                    }],
+                    "publisher": {
+                      "@type": "Person",
+                      "name": "Aditya Fakhri Riansyah",
+                      "url": "https://adityafakhri.com"
+                    }
                   })
                 }}
               />

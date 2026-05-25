@@ -28,8 +28,16 @@ export default function Home() {
   ]
   const featuredProjectsShow = featuredProjects.slice(0, 6)
   const articles = Object.entries(blogs)
-    .map(([id, p]) => ({ id, title: p.title, excerpt: p.excerpt, date: p.date, readTime: p.readTime, imageSrc: p.imageSrc || "/placeholder.svg?height=200&width=400" }))
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .map(([id, p]) => ({
+      id,
+      title: p.title,
+      excerpt: p.excerpt,
+      date: p.date,
+      readTime: p.readTime,
+      imageSrc: p.imageSrc || "/placeholder.svg?height=200&width=400",
+      isoDate: p.isoDate || "2026-01-01",
+    }))
+    .sort((a, b) => b.isoDate.localeCompare(a.isoDate))
   const latestArticles = articles.slice(0, 4)
   const recentEvents = pastEvents.slice(0, 4)
   return (

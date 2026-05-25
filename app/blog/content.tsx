@@ -13,15 +13,18 @@ import Image from "next/image"
 import { TranslatedContent } from "@/components/translated-content"
 import blogs from "@/data/blog"
 
-const articles = Object.entries(blogs).map(([id, p]) => ({
-  id,
-  title: p.title,
-  excerpt: p.excerpt,
-  date: p.date,
-  readTime: p.readTime,
-  category: p.category,
-  imageSrc: p.imageSrc || "/placeholder.svg?height=200&width=400",
-}))
+const articles = Object.entries(blogs)
+  .map(([id, p]) => ({
+    id,
+    title: p.title,
+    excerpt: p.excerpt,
+    date: p.date,
+    readTime: p.readTime,
+    category: p.category,
+    imageSrc: p.imageSrc || "/placeholder.svg?height=200&width=400",
+    isoDate: p.isoDate || "2026-01-01",
+  }))
+  .sort((a, b) => b.isoDate.localeCompare(a.isoDate))
 
 import { useState } from "react"
 
