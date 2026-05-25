@@ -61,6 +61,52 @@ export const upcomingEvents: EventItem[] = [
 
 export const pastEvents: EventItem[] = [
   {
+    id: "demystifying-ai-bootcamp-sakarya-2026",
+    category: "Webinar",
+    tags: ["AI", "Career Development", "Prompt Engineering", "Productivity"],
+    imageSrc: "https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1779684156982-kmakyo.webp",
+    title: {
+      id: "Demystifying AI: Navigasi Teknologi Cerdas untuk Kesiapan Karir Masa Depan",
+      en: "Demystifying AI: Navigating Smart Technology for Future Career Readiness"
+    },
+    subtitle: {
+      id: "Bootcamp Sakarya Project x UPI x Youth in Action 2",
+      en: "Sakarya Project Bootcamp x UPI x Youth in Action 2"
+    },
+    date: "22 Mei 2026",
+    time: "19.30 WIB - Selesai",
+    location: "Live on Zoom Meeting",
+    description: {
+      id: "Webinar interaktif membahas dasar-dasar kecerdasan buatan (AI), meluruskan miskonsepsi publik, memberikan formula prompting praktis, serta menunjukkan bagaimana mengintegrasikan AI secara produktif dan etis untuk karir masa depan pemuda.",
+      en: "Interactive webinar discussing the fundamentals of artificial intelligence (AI), correcting public misconceptions, providing practical prompting formulas, and demonstrating how to integrate AI productively and ethically for the future careers of youth."
+    },
+    bullets: {
+      id: [
+        "Demystifying AI: Meluruskan miskonsepsi AI sebagai asisten penunjang karir",
+        "Mengenal ekosistem platform AI populer gratis (ChatGPT, Gemini, Claude, Perplexity)",
+        "Rumus praktis Prompting R-T-C (Role, Task, Context) untuk hasil yang akurat",
+        "Implementasi AI untuk riset loker, draf kepenulisan, dan portofolio pemula",
+        "Pentingnya verifikasi hasil AI untuk menjaga keaslian kreativitas"
+      ],
+      en: [
+        "Demystifying AI: Correcting misconceptions about AI as a career assistant",
+        "Introduction to popular free AI platforms (ChatGPT, Gemini, Claude, Perplexity)",
+        "Practical R-T-C (Role, Task, Context) Prompting formula for accurate results",
+        "Implementing AI for job research, writing drafts, and beginner portfolios",
+        "The importance of verifying AI outputs to preserve original creativity"
+      ]
+    },
+    links: [
+      { labelId: "Lihat Materi", labelEn: "View Materials", href: "https://docs.google.com/presentation/d/1nBfGNq9UO8d4RGZjJRYrt08m4FMU5O6540dT_PNRZf4/edit?usp=sharing" },
+      { labelId: "Tonton Rekaman", labelEn: "Watch Recording", href: "https://youtu.be/E3_JPdNp5UA?si=C30uWrLJw2IXTbnu" },
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://bit.ly/BoothcampSakarya" }
+    ],
+    organizer: {
+      id: "Diselenggarakan oleh: Sakarya Project x UPI x Youth in Action 2",
+      en: "Organized by: Sakarya Project x UPI x Youth in Action 2"
+    }
+  },
+  {
     id: "diklat-asn-dinsos-jabar-2026",
     category: "Training",
     tags: ["AI", "ASN", "Productivity", "Government", "Training"],
@@ -233,8 +279,8 @@ export const pastEvents: EventItem[] = [
       en: "From Idea to Industry: Web Development in the Age of AI"
     },
     subtitle: {
-      id: "TechTalk Web Development 2.0",
-      en: "TechTalk Web Development 2.0"
+      id: "GDGoC UIN Syarif Hidayatullah Jakarta",
+      en: "GDGoC UIN Syarif Hidayatullah Jakarta"
     },
     date: "11 April 2026",
     time: "09.00 - 12.00 WIB",
