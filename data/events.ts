@@ -17,10 +17,86 @@ export type EventItem = {
 }
 
 export const upcomingEvents: EventItem[] = [
-  //
+  {
+    id: "optima-ai-nurtanio-2026",
+    category: "Seminar & Workshop",
+    tags: ["AI", "Digital Business", "Digital Marketing", "Branding", "Workshop"],
+    imageSrc: "https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1779682354707-6u4isq.webp",
+    title: {
+      id: "OPTIMA AI: Pemanfaatan AI dalam Bisnis Digital",
+      en: "OPTIMA AI: Leveraging AI in Digital Business"
+    },
+    subtitle: {
+      id: "Himpunan Mahasiswa Manajemen Universitas Nurtanio Bandung",
+      en: "Management Student Association of Nurtanio University Bandung"
+    },
+    date: "30 Mei 2026",
+    time: "08.30 WIB - Selesai",
+    location: "Universitas Nurtanio Bandung",
+    description: {
+      id: "Seminar dan Workshop kolaborasi bersama Himpunan Mahasiswa Manajemen Universitas Nurtanio Bandung membahas strategi pintar pemanfaatan kecerdasan buatan (AI) untuk meningkatkan skala dan efisiensi bisnis digital.",
+      en: "Collaborative Seminar and Workshop with the Management Student Association of Nurtanio University Bandung discussing smart strategies in leveraging artificial intelligence (AI) to scale and optimize digital business."
+    },
+    bullets: {
+      id: [
+        "Strategi branding dan digital marketing di era modern",
+        "Praktik langsung pemanfaatan AI untuk operasional dan efisiensi bisnis",
+        "Membangun bisnis digital yang adaptif dan siap bersaing di masa depan"
+      ],
+      en: [
+        "Branding strategies and digital marketing in the modern era",
+        "Hands-on practice using AI for business operations and efficiency",
+        "Building an adaptive digital business ready to compete in the future"
+      ]
+    },
+    links: [
+      { labelId: "Daftar Sekarang", labelEn: "Register Now", href: "https://forms.gle/hHTSRgER5c9e5fXG8" }
+    ],
+    organizer: {
+      id: "Diselenggarakan oleh: Himpunan Mahasiswa Manajemen Universitas Nurtanio Bandung (Kabinet Intarmoni)",
+      en: "Organized by: Management Student Association of Nurtanio University Bandung (Intarmoni Cabinet)"
+    }
+  }
 ]
 
 export const pastEvents: EventItem[] = [
+  {
+    id: "diklat-asn-dinsos-jabar-2026",
+    category: "Training",
+    tags: ["AI", "ASN", "Productivity", "Government", "Training"],
+    imageSrc: "https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1779683574796-piv9lq.webp",
+    title: {
+      id: "Penerapan Artificial Intelligence Pada Pekerjaan Sehari-Hari bagi ASN",
+      en: "Implementation of Artificial Intelligence in Daily Work for Civil Servants (ASN)"
+    },
+    subtitle: {
+      id: "Dinas Sosial Provinsi Jawa Barat",
+      en: "Department of Social Affairs West Java Province"
+    },
+    date: "21 Mei 2026",
+    time: "08.00 - 14.20 WIB",
+    location: "Dinas Sosial Provinsi Jawa Barat",
+    description: {
+      id: "Pendidikan dan pelatihan internal bagi Aparatur Sipil Negara (ASN) di lingkungan Dinas Sosial Provinsi Jawa Barat mengenai pemanfaatan praktis teknologi Artificial Intelligence (AI) untuk mempercepat administrasi, pelayanan publik, dan efisiensi kerja sehari-hari.",
+      en: "Internal education and training for Civil Servants (ASN) within the West Java Provincial Social Services Department regarding the practical use of Artificial Intelligence (AI) technology to accelerate administration, public services, and daily work efficiency."
+    },
+    bullets: {
+      id: [
+        "Membuat Notulensi dan Sambutan Berbasis AI",
+        "Pengolahan dan Analisis Data Berbasis AI",
+        "Infografis dan Konten Publikasi Berbasis AI"
+      ],
+      en: [
+        "AI-Based Minutes and Welcome Speech Creation",
+        "AI-Based Data Processing and Analysis",
+        "AI-Based Infographics and Publication Content"
+      ]
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: Dinas Sosial Provinsi Jawa Barat",
+      en: "Organized by: West Java Provincial Social Services Department"
+    }
+  },
   {
     id: "seminar-webinar-nasional-ai-usb-2026",
     category: "Seminar & Webinar",
@@ -31,8 +107,8 @@ export const pastEvents: EventItem[] = [
       en: "Advancing Artificial Intelligence: Empowering Innovation in the Intelligent Era"
     },
     subtitle: {
-      id: "Seminar & Webinar Nasional",
-      en: "National Seminar & Webinar"
+      id: "HIMATIF Univ. Sangga Buana YPKP",
+      en: "HIMATIF University of Sangga Buana YPKP"
     },
     date: "13 Mei 2026",
     time: "09.00 - 12.00 WIB",
@@ -62,6 +138,51 @@ export const pastEvents: EventItem[] = [
     organizer: {
       id: "Diselenggarakan oleh: Universitas Sangga Buana YPKP Bandung",
       en: "Organized by: Sangga Buana University YPKP Bandung"
+    }
+  },
+  {
+    id: "build-with-trae-codepolitan-2026",
+    category: "Offline Event",
+    tags: ["AI", "Vibe Coding", "Trae", "CODEPOLITAN", "Productivity"],
+    imageSrc: "https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1779682076943-eg3khx.webp",
+    title: {
+      id: "Build Faster with AI: Experience the Vibe Coding Era",
+      en: "Build Faster with AI: Experience the Vibe Coding Era"
+    },
+    subtitle: {
+      id: "Trae x CODEPOLITAN",
+      en: "Trae x CODEPOLITAN"
+    },
+    date: "12 Mei 2026",
+    time: "15.00 - 17.00 WIB",
+    location: "Auditorium Bandung Creative Hub",
+    description: {
+      id: "Event offline kolaborasi CODEPOLITAN dengan Trae membahas era baru pengembangan aplikasi menggunakan AI (Vibe Coding). Menampilkan sesi hands-on build website super cepat bersama Aditya Fakhri dan Ahmad Oriza.",
+      en: "Offline event collaboration between CODEPOLITAN and Trae discussing the new era of application development using AI (Vibe Coding). Featuring a hands-on session to build websites super fast with Aditya Fakhri and Ahmad Oriza."
+    },
+    bullets: {
+      id: [
+        "Pengenalan Vibe Coding dan editor AI Trae",
+        "Eksplorasi fitur-fitur canggih Trae untuk coding super cepat",
+        "Live Demo & Hands-on: Membangun aplikasi dari nol dalam hitungan menit",
+        "Tips dan trik memaksimalkan AI asisten dalam workflow development harian"
+      ],
+      en: [
+        "Introduction to Vibe Coding and the Trae AI editor",
+        "Exploring Trae's advanced features for super fast coding",
+        "Live Demo & Hands-on: Building an application from scratch in minutes",
+        "Tips and tricks to maximize AI assistants in daily development workflow"
+      ]
+    },
+    links: [
+      { labelId: "Lihat Materi 1", labelEn: "View Materials 1", href: "https://docs.google.com/presentation/d/1q1agKrJhhxp6Fmmw5Yph54jbJAS0wOYhnntPdIZ72h4/edit?usp=sharing" },
+      { labelId: "Lihat Materi 2", labelEn: "View Materials 2", href: "https://docs.google.com/presentation/d/1u_5O1XhNqGz3jWP-LbB13dZegg7CTjbI1-eMmqTHErE/edit?usp=sharing" },
+      { labelId: "Lihat Dokumentasi", labelEn: "View Documentation", href: "https://drive.google.com/drive/folders/1MOm-HMayWBHh73XsXuW_OkiP0gnQ9d_0?usp=drive_link" },
+      { labelId: "Halaman Event", labelEn: "Event Page", href: "https://luma.com/9bsobj8p" }
+    ],
+    organizer: {
+      id: "Diselenggarakan oleh: CODEPOLITAN x Trae",
+      en: "Organized by: CODEPOLITAN x Trae"
     }
   },
   {
