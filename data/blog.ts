@@ -2514,6 +2514,260 @@ export default async function ProductsPage() {
     tags: ["Teknik Informatika", "Sistem Informasi", "Jurusan IT", "Specs", "Career", "2026"],
     imageSrc: "/images/blog/ti-vs-si-2026.png",
     relatedPosts: ["laptop-programming-mahasiswa-2026", "ai-vs-developer-2026"],
+  },
+  "website-terbaik-logika-pemrograman-pemula": {
+    title: "5 Website Terbaik untuk Melatih Logika Pemrograman bagi Pemula",
+    excerpt: "Banyak orang mengira belajar coding itu soal menghafal syntax, padahal logika problem solving jauh lebih penting. Berikut 5 website terbaik untuk melatih logika pemrograman kamu!",
+    content: `
+      <style>
+        .wl-hero { padding: 2.5rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--muted)/0.5) 100%); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; position: relative; overflow: hidden; }
+        .wl-hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 300px; height: 300px; background: radial-gradient(circle, hsl(var(--primary)/0.1) 0%, transparent 70%); pointer-events: none; }
+        .wl-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.6rem; font-weight: 800; margin: 0 0 0.75rem 0; letter-spacing: -0.02em; }
+        .wl-hero p { color: hsl(var(--muted-foreground)); font-size: 1rem; line-height: 1.7; margin: 0; }
+        .wl-section-title { font-size: 1.35rem; font-weight: 800; margin: 3rem 0 1.25rem 0; color: hsl(var(--foreground)); border-left: 4px solid hsl(var(--primary)); padding-left: 0.75rem; line-height: 1.2; }
+        .wl-intro-callout { padding: 1.5rem; border-radius: 1rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); box-shadow: 0 4px 12px rgba(0,0,0,0.02); margin: 1.5rem 0; line-height: 1.7; }
+        .wl-platform-list { display: flex; flex-direction: column; gap: 2rem; margin: 2rem 0; }
+        .wl-card { padding: 1.75rem; border-radius: 1.25rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; }
+        .wl-card::after { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: transparent; transition: background 0.3s; }
+        .wl-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.06); border-color: hsl(var(--primary)/0.2); }
+        .wl-card.codewars:hover::after { background: #b1361e; }
+        .wl-card.hackerrank:hover::after { background: #2ec866; }
+        .wl-card.leetcode:hover::after { background: #ffa116; }
+        .wl-card.codingame:hover::after { background: #f24e1e; }
+        .wl-card.exercism:hover::after { background: #0079c1; }
+        .wl-card-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem; }
+        .wl-card-title { display: flex; align-items: center; gap: 0.75rem; }
+        .wl-card-title h3 { font-size: 1.3rem; font-weight: 700; margin: 0 !important; color: hsl(var(--foreground)); }
+        .wl-card-icon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 0.5rem; font-size: 1.25rem; font-weight: 800; }
+        .wl-card.codewars .wl-card-icon { background: rgba(177, 54, 30, 0.1); color: #b1361e; }
+        .wl-card.hackerrank .wl-card-icon { background: rgba(46, 200, 102, 0.1); color: #2ec866; }
+        .wl-card.leetcode .wl-card-icon { background: rgba(255, 161, 22, 0.1); color: #ffa116; }
+        .wl-card.codingame .wl-card-icon { background: rgba(242, 78, 30, 0.1); color: #f24e1e; }
+        .wl-card.exercism .wl-card-icon { background: rgba(0, 121, 193, 0.1); color: #0079c1; }
+        .wl-card-link-badge { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.78rem; font-weight: 600; color: hsl(var(--muted-foreground)); background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); text-decoration: none !important; transition: all 0.2s; }
+        .wl-card-link-badge:hover { color: hsl(var(--foreground)); background: hsl(var(--border)); border-color: hsl(var(--muted-foreground)); }
+        .wl-card-desc { font-size: 0.95rem; line-height: 1.7; color: hsl(var(--muted-foreground)); margin-bottom: 1.25rem; }
+        .wl-suitability { background: hsl(var(--muted)/0.5); padding: 1.25rem; border-radius: 0.75rem; border: 1px solid hsl(var(--border)); }
+        .wl-suitability-title { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: hsl(var(--muted-foreground)); margin-bottom: 0.75rem; }
+        .wl-suitability-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; padding: 0 !important; margin: 0 !important; list-style: none !important; }
+        .wl-suitability-list li { font-size: 0.88rem !important; color: hsl(var(--foreground)) !important; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0 !important; }
+        .wl-suitability-list li::before { content: "✓"; font-weight: 900; display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 50%; font-size: 0.72rem; margin-right: 0.25rem; }
+        .wl-card.codewars .wl-suitability-list li::before { background: rgba(177, 54, 30, 0.1); color: #b1361e; }
+        .wl-card.hackerrank .wl-suitability-list li::before { background: rgba(46, 200, 102, 0.1); color: #2ec866; }
+        .wl-card.leetcode .wl-suitability-list li::before { background: rgba(255, 161, 22, 0.1); color: #ffa116; }
+        .wl-card.codingame .wl-suitability-list li::before { background: rgba(242, 78, 30, 0.1); color: #f24e1e; }
+        .wl-card.exercism .wl-suitability-list li::before { background: rgba(0, 121, 193, 0.1); color: #0079c1; }
+        .wl-roadmap { display: flex; flex-direction: column; gap: 1.5rem; margin: 2.5rem 0; position: relative; padding-left: 2rem; }
+        .wl-roadmap::before { content: ''; position: absolute; left: 0.6rem; top: 0.5rem; bottom: 0.5rem; width: 2px; background: linear-gradient(to bottom, hsl(var(--primary)/0.2), hsl(var(--primary))); }
+        .wl-roadmap-step { position: relative; padding: 1.25rem; border-radius: 1rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); box-shadow: 0 4px 12px rgba(0,0,0,0.01); }
+        .wl-roadmap-step::before { content: ''; position: absolute; left: -1.75rem; top: 1.6rem; width: 12px; height: 12px; border-radius: 50%; background: hsl(var(--primary)); border: 3px solid hsl(var(--background)); }
+        .wl-roadmap-step h4 { font-size: 1rem; font-weight: 700; color: hsl(var(--foreground)); margin: 0 0 0.35rem 0; }
+        .wl-roadmap-step p { font-size: 0.88rem; line-height: 1.6; color: hsl(var(--muted-foreground)); margin: 0; }
+        .wl-roadmap-step-badge { position: absolute; top: 1.25rem; right: 1.25rem; font-size: 0.72rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 0.25rem; background: hsl(var(--muted)); color: hsl(var(--muted-foreground)); border: 1px solid hsl(var(--border)); }
+        .wl-callout-footer { padding: 1.5rem; border-radius: 1rem; border-left: 4px solid hsl(var(--primary)); background: hsl(var(--muted)); margin: 2.5rem 0; }
+        .wl-callout-footer p { margin: 0; font-size: 0.95rem; line-height: 1.7; color: hsl(var(--foreground)); }
+        .wl-callout-footer strong { color: hsl(var(--foreground)); }
+        .wl-cta { margin-top: 3.5rem; padding: 3rem 2rem; border-radius: 1.5rem; background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.9) 100%); text-align: center; color: hsl(var(--primary-foreground)); position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .wl-cta::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%); pointer-events: none; }
+        .wl-cta h2 { color: hsl(var(--primary-foreground)) !important; margin-top: 0 !important; font-size: 1.75rem; font-weight: 800; margin-bottom: 0.75rem; }
+        .wl-cta p { color: hsl(var(--primary-foreground) / 0.8); margin-bottom: 1.5rem; font-size: 1.05rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .wl-cta a { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2.25rem; border-radius: 9999px; background: hsl(var(--primary-foreground)); color: hsl(var(--primary)); font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .wl-cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); filter: brightness(1.05); }
+        .wl-cta a svg { transition: transform 0.2s; }
+        .wl-cta a:hover svg { transform: rotate(10deg) scale(1.1); }
+        @media (max-width: 768px) { .wl-hero { padding: 1.75rem 1.25rem; } }
+      </style>
+
+      <div class="wl-hero">
+        <h2>Logic Over Syntax — Investasi Terbaik Seorang Developer</h2>
+        <p>Banyak pemula terjebak dalam tutorial loop dan mengira bisa coding sama dengan hafal syntax bahasa pemrograman. Padahal, masalah terbesarnya adalah problem solving: bagaimana menerjemahkan solusi di kepala kita menjadi instruksi logis yang bisa dimengerti komputer. 5 platform gratis ini bakal melatih computational thinking kamu dengan cara yang seru dan menantang!</p>
+      </div>
+
+      <div class="wl-intro-callout">
+        <p>Pernah gak sih kamu nonton puluhan tutorial bikin app, tapi pas buka VS Code kosong dan mau bikin dari nol, kamu langsung bingung mulai dari mana? <strong>Itulah tanda logika pemrogramannya belum matang.</strong> Syntax gampang dicari di Google atau AI, tapi kemampuan merancang langkah logis pemecahan masalah hanya bisa didapatkan melalui latihan konsisten.</p>
+      </div>
+
+      <p>Kabar baiknya, melatih logika pemrograman sekarang gak harus lewat materi kuliah teoretis yang ngebosenin. Saat ini, ada banyak website keren yang dirancang khusus untuk menguji logika, algoritma, dan problem solving kamu dengan gamifikasi, visualisasi interaktif, hingga feedback langsung dari komunitas. Berikut adalah 5 platform terbaik yang wajib kamu coba!</p>
+
+      <div class="wl-section-title">5 Platform Terbaik untuk Melatih Logika Programming</div>
+
+      <div class="wl-platform-list">
+        
+        <!-- Platform 1: Codewars -->
+        <div class="wl-card codewars">
+          <div class="wl-card-header">
+            <div class="wl-card-title">
+              <div class="wl-card-icon">⚔️</div>
+              <h3>1. Codewars</h3>
+            </div>
+            <a href="https://www.codewars.com" target="_blank" rel="noopener noreferrer" class="wl-card-link-badge">
+              <span>codewars.com</span> ↗
+            </a>
+          </div>
+          <p class="wl-card-desc">
+            Codewars menyajikan tantangan coding (disebut sebagai "kata") dengan tema seni bela diri. Kamu memulai sebagai pemula di level kyu paling rendah dan terus naik tingkat seiring keberhasilan memecahkan soal. Daya tarik utama platform ini adalah setelah berhasil submit kode, kamu bisa melihat solusi karya developer lain. Ini cara terbaik belajar menulis kode yang elegan dan efisien.
+          </p>
+          <div class="wl-suitability">
+            <div class="wl-suitability-title">Cocok untuk:</div>
+            <ul class="wl-suitability-list">
+              <li>Pemula hingga Menengah</li>
+              <li>Melatih algoritma dasar & modular</li>
+              <li>Belajar berbagai bahasa pemrograman</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Platform 2: HackerRank -->
+        <div class="wl-card hackerrank">
+          <div class="wl-card-header">
+            <div class="wl-card-title">
+              <div class="wl-card-icon">💚</div>
+              <h3>2. HackerRank</h3>
+            </div>
+            <a href="https://www.hackerrank.com" target="_blank" rel="noopener noreferrer" class="wl-card-link-badge">
+              <span>hackerrank.com</span> ↗
+            </a>
+          </div>
+          <p class="wl-card-desc">
+            HackerRank menyediakan latihan yang sangat terstruktur berdasarkan topik seperti algoritma, SQL, struktur data, matematika, hingga bahasa spesifik (Java, Python, dll). Keunggulan platform ini adalah reputasinya yang diakui secara global: banyak sekali perusahaan teknologi top yang menggunakan platform HackerRank untuk melakukan technical assessment dalam rekrutmen kerja developer.
+          </p>
+          <div class="wl-suitability">
+            <div class="wl-suitability-title">Cocok untuk:</div>
+            <ul class="wl-suitability-list">
+              <li>Persiapan interview kerja</li>
+              <li>Latihan algoritma & SQL</li>
+              <li>Belajar problem solving terstruktur</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Platform 3: LeetCode -->
+        <div class="wl-card leetcode">
+          <div class="wl-card-header">
+            <div class="wl-card-title">
+              <div class="wl-card-icon">👑</div>
+              <h3>3. LeetCode</h3>
+            </div>
+            <a href="https://leetcode.com" target="_blank" rel="noopener noreferrer" class="wl-card-link-badge">
+              <span>leetcode.com</span> ↗
+            </a>
+          </div>
+          <p class="wl-card-desc">
+            LeetCode merupakan 'gold standard' bagi software engineer yang ingin melamar kerja ke perusahaan Big Tech (FAANG). Platform ini memuat ribuan soal algoritma dengan tingkat kesulitan Easy, Medium, dan Hard yang sering sekali keluar persis dalam interview kerja teknis. LeetCode melatih kamu berpikir kritis tentang optimasi performa kode (time & space complexity).
+          </p>
+          <div class="wl-suitability">
+            <div class="wl-suitability-title">Cocok untuk:</div>
+            <ul class="wl-suitability-list">
+              <li>Persiapan technical interview</li>
+              <li>Belajar Struktur Data & Algoritma (DSA)</li>
+              <li>Meningkatkan computational thinking tingkat lanjut</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Platform 4: CodinGame -->
+        <div class="wl-card codingame">
+          <div class="wl-card-header">
+            <div class="wl-card-title">
+              <div class="wl-card-icon">🎮</div>
+              <h3>4. CodinGame</h3>
+            </div>
+            <a href="https://www.codingame.com" target="_blank" rel="noopener noreferrer" class="wl-card-link-badge">
+              <span>codingame.com</span> ↗
+            </a>
+          </div>
+          <p class="wl-card-desc">
+            Siapa bilang belajar coding harus membosankan? CodinGame mengubah latihan logika pemrograman menjadi game 2D/3D interaktif. Kamu akan menulis kode untuk mengontrol karakter game, menembak musuh, atau balapan pesawat terbang. Platform ini sangat ideal untuk pemula karena memberikan feedback visual langsung yang membantu memahami aliran logika.
+          </p>
+          <div class="wl-suitability">
+            <div class="wl-suitability-title">Cocok untuk:</div>
+            <ul class="wl-suitability-list">
+              <li>Pemula absolute</li>
+              <li>Belajar coding seru sambil bermain</li>
+              <li>Meningkatkan motivasi belajar pemrograman</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Platform 5: Exercism -->
+        <div class="wl-card exercism">
+          <div class="wl-card-header">
+            <div class="wl-card-title">
+              <div class="wl-card-icon">🚀</div>
+              <h3>5. Exercism</h3>
+            </div>
+            <a href="https://exercism.org" target="_blank" rel="noopener noreferrer" class="wl-card-link-badge">
+              <span>exercism.org</span> ↗
+            </a>
+          </div>
+          <p class="wl-card-desc">
+            Exercism menawarkan pengalaman unik dengan kurikulum belajar yang sangat rapi untuk 70+ bahasa pemrograman. Menariknya, Exercism memiliki opsi "Mentored Track" gratis, di mana kode buatan kamu akan direview langsung oleh mentor manusia secara cuma-cuma sebelum kamu lanjut ke babak berikutnya. Ini membantu kamu menulis kode yang bersih (clean code) dan sesuai best practices.
+          </p>
+          <div class="wl-suitability">
+            <div class="wl-suitability-title">Cocok untuk:</div>
+            <ul class="wl-suitability-list">
+              <li>Belajar secara bertahap & terstruktur</li>
+              <li>Mendapatkan feedback code review nyata</li>
+              <li>Mengembangkan best practices jangka panjang</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="wl-section-title">Roadmap Belajar: Mana yang Harus Dicoba Dulu?</div>
+
+      <p>Jika kamu benar-benar pemula yang baru belajar dasar pemrograman, jangan langsung loncat ke LeetCode karena berpotensi membuat kamu frustrasi dan malah menyerah. Ikutilah peta jalan terarah di bawah ini:</p>
+
+      <div class="wl-roadmap">
+        
+        <div class="wl-roadmap-step">
+          <span class="wl-roadmap-step-badge">Langkah 1</span>
+          <h4>CodinGame (Visual & Menyenangkan)</h4>
+          <p>Mulai dari sini untuk membangun motivasi dan memahami logika perulangan (loops) dan kondisi (if-else) melalui visual game yang menarik.</p>
+        </div>
+
+        <div class="wl-roadmap-step">
+          <span class="wl-roadmap-step-badge">Langkah 2</span>
+          <h4>Exercism (Belajar Terstruktur + Mentoring)</h4>
+          <p>Lanjutkan ke Exercism untuk mempelajari suatu bahasa pemrograman secara mendalam, dipandu dengan feedback review gratis dari developer senior.</p>
+        </div>
+
+        <div class="wl-roadmap-step">
+          <span class="wl-roadmap-step-badge">Langkah 3</span>
+          <h4>HackerRank / Codewars (Penguatan Algoritma)</h4>
+          <p>Latihlah pemecahan kasus algoritma murni di Codewars untuk melatih modular coding, dan HackerRank untuk pembiasaan kuis dan database SQL.</p>
+        </div>
+
+        <div class="wl-roadmap-step">
+          <span class="wl-roadmap-step-badge">Langkah 4</span>
+          <h4>LeetCode (Persiapan Kerja & Optimasi)</h4>
+          <p>Setelah logika dasar kamu sudah kuat, cobalah LeetCode. Fokus pada optimasi kode, struktur data (array, string, stacks, queue), dan problem-solving interview.</p>
+        </div>
+
+      </div>
+
+      <div class="wl-callout-footer">
+        <p><strong>Reality Check:</strong> Menjadi software engineer andal bukan soal seberapa banyak video tutorial yang kamu tonton dengan pasif, melainkan seberapa sering kamu melatih otak kamu memecahkan masalah. Syntax selalu bisa dicari di dokumentasi atau AI, tapi logika penyelesaian masalah hanya tumbuh melalui konsistensi latihan.</p>
+      </div>
+
+      <div class="wl-cta">
+        <h2>Ingin Tips & Insight Belajar Coding Setiap Hari?</h2>
+        <p>Saya rutin membagikan tips coding gratis, roadmap pemrograman terarah, tools AI terbaru, serta insight dunia kerja IT yang dikemas santai untuk pemula!</p>
+        <a href="https://www.instagram.com/adityafakhrii/" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:0.25rem;"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          Follow @adityafakhrii di Instagram
+        </a>
+      </div>
+    `,
+    date: "1 Jun 2026",
+    isoDate: "2026-06-01",
+    readTime: "8 min",
+    category: "Web Development",
+    author: "Aditya Fakhri Riansyah",
+    tags: ["Logika Pemrograman", "Belajar Coding", "Pemula", "Problem Solving", "Web Development", "Codewars", "HackerRank", "LeetCode", "CodinGame", "Exercism"],
+    imageSrc: "/images/blog/logika-pemrograman.png",
+    relatedPosts: ["laptop-programming-mahasiswa-2026", "ai-vs-developer-2026"],
   }
 } as const
 
