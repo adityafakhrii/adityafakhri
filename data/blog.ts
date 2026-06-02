@@ -2768,6 +2768,248 @@ export default async function ProductsPage() {
     tags: ["Logika Pemrograman", "Belajar Coding", "Pemula", "Problem Solving", "Web Development", "Codewars", "HackerRank", "LeetCode", "CodinGame", "Exercism"],
     imageSrc: "/images/blog/logika-pemrograman.png",
     relatedPosts: ["laptop-programming-mahasiswa-2026", "ai-vs-developer-2026"],
+  },
+  "ide-proyek-portfolio-fullstack-ai": {
+    title: "Bosan Bikin Todo-List? 3 Ide Proyek Fullstack Web Unik Berbasis AI untuk Bikin Portofolio Kamu Standout",
+    excerpt: "Portofolio Todo-List sudah terlalu umum dan membosankan. Berikut 3 ide proyek fullstack berbasis AI yang memecahkan masalah nyata dan langsung menarik perhatian recruiter!",
+    content: `
+      <style>
+        .ap-hero { padding: 2.5rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--muted)/0.3) 100%); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; position: relative; overflow: hidden; }
+        .ap-hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 300px; height: 300px; background: radial-gradient(circle, hsl(var(--primary)/0.08) 0%, transparent 70%); pointer-events: none; }
+        .ap-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.6rem; font-weight: 800; margin: 0 0 0.75rem 0; letter-spacing: -0.02em; }
+        .ap-hero p { color: hsl(var(--muted-foreground)); font-size: 1rem; line-height: 1.7; margin: 0; }
+        .ap-section-title { font-size: 1.35rem; font-weight: 800; margin: 3rem 0 1.25rem 0; color: hsl(var(--foreground)); border-left: 4px solid hsl(var(--primary)); padding-left: 0.75rem; line-height: 1.2; }
+        .ap-intro-box { padding: 1.5rem; border-radius: 1rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); box-shadow: 0 4px 12px rgba(0,0,0,0.01); margin: 1.5rem 0; line-height: 1.7; }
+        .ap-list { display: flex; flex-direction: column; gap: 2rem; margin: 2rem 0; }
+        .ap-card { padding: 2rem; border-radius: 1.25rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; }
+        .ap-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: transparent; transition: background 0.3s; }
+        .ap-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.06); border-color: hsl(var(--primary)/0.2); }
+        .ap-card.recipe:hover::before { background: #10b981; }
+        .ap-card.resume:hover::before { background: #3b82f6; }
+        .ap-card.reviewer:hover::before { background: #8b5cf6; }
+        
+        .ap-card-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem; }
+        .ap-card-title { display: flex; align-items: center; gap: 0.75rem; }
+        .ap-card-title h3 { font-size: 1.3rem; font-weight: 700; margin: 0 !important; color: hsl(var(--foreground)); }
+        .ap-card-icon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 0.5rem; font-size: 1.25rem; font-weight: 800; }
+        .ap-card.recipe .ap-card-icon { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+        .ap-card.resume .ap-card-icon { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+        .ap-card.reviewer .ap-card-icon { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+
+        .ap-badge { display: inline-flex; align-items: center; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+        .ap-card.recipe .ap-badge { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+        .ap-card.resume .ap-badge { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+        .ap-card.reviewer .ap-badge { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+
+        .ap-card-desc { font-size: 0.95rem; line-height: 1.7; color: hsl(var(--muted-foreground)); margin-bottom: 1.5rem; }
+        
+        .ap-detail-box { background: hsl(var(--muted)/0.5); padding: 1.25rem; border-radius: 0.75rem; border: 1px solid hsl(var(--border)); margin-bottom: 1.5rem; }
+        .ap-detail-title { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: hsl(var(--muted-foreground)); margin-bottom: 0.5rem; }
+        .ap-detail-text { font-size: 0.9rem; line-height: 1.6; color: hsl(var(--foreground)); margin: 0; }
+        
+        .ap-stack-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+        .ap-stack-tag { font-size: 0.75rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 0.25rem; background: hsl(var(--muted)); color: hsl(var(--muted-foreground)); border: 1px solid hsl(var(--border)); }
+        
+        .ap-impact-bar-container { display: flex; align-items: center; gap: 0.75rem; margin-top: 1rem; }
+        .ap-impact-label { font-size: 0.8rem; font-weight: 700; color: hsl(var(--foreground)); min-width: 120px; }
+        .ap-impact-bg { flex-grow: 1; height: 8px; border-radius: 9999px; background: hsl(var(--border)); overflow: hidden; }
+        .ap-impact-fill { height: 100%; border-radius: 9999px; }
+        .ap-card.recipe .ap-impact-fill { background: #10b981; width: 85%; }
+        .ap-card.resume .ap-impact-fill { background: #3b82f6; width: 95%; }
+        .ap-card.reviewer .ap-impact-fill { background: #8b5cf6; width: 90%; }
+        .ap-impact-score { font-size: 0.8rem; font-weight: 800; color: hsl(var(--foreground)); }
+
+        .ap-faq { display: flex; flex-direction: column; gap: 1rem; margin: 2.5rem 0; }
+        .ap-faq-item { padding: 1.25rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+        .ap-faq-q { font-weight: 700; font-size: 0.95rem; color: hsl(var(--foreground)); margin-bottom: 0.5rem; }
+        .ap-faq-a { font-size: 0.9rem; line-height: 1.6; color: hsl(var(--muted-foreground)); }
+
+        .ap-callout { padding: 1.5rem; border-radius: 1rem; border-left: 4px solid #3b82f6; background: hsl(var(--muted)); margin: 2rem 0; }
+        .ap-callout p { margin: 0; font-size: 0.95rem; line-height: 1.7; color: hsl(var(--foreground)); }
+
+        .ap-cta { margin-top: 3.5rem; padding: 3rem 2rem; border-radius: 1.5rem; background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.9) 100%); text-align: center; color: hsl(var(--primary-foreground)); position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .ap-cta::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%); pointer-events: none; }
+        .ap-cta h2 { color: hsl(var(--primary-foreground)) !important; margin-top: 0 !important; font-size: 1.75rem; font-weight: 800; margin-bottom: 0.75rem; }
+        .ap-cta p { color: hsl(var(--primary-foreground) / 0.8); margin-bottom: 1.5rem; font-size: 1.05rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .ap-cta a { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2.25rem; border-radius: 9999px; background: hsl(var(--primary-foreground)); color: hsl(var(--primary)); font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .ap-cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); filter: brightness(1.05); }
+        .ap-cta a svg { transition: transform 0.2s; }
+        .ap-cta a:hover svg { transform: rotate(10deg) scale(1.1); }
+        @media (max-width: 768px) { .ap-hero { padding: 1.75rem 1.25rem; } }
+      </style>
+
+      <div class="ap-hero">
+        <h2>Impression Over Cliché — Standout di Antara Ribuan Pelamar</h2>
+        <p>Mari kita reality check sejenak. Di era rekrutmen tech modern 2026, memiliki portofolio berisi Todo-List, aplikasi kalkulator, atau tiruan klon Netflix sederhana sudah tidak lagi membuat recruiter melirik. Mengapa? Karena ribuan pelamar lain juga memiliki portofolio yang sama persis hasil copy-paste dari video tutorial. Jika kamu ingin dilirik startup top, kamu wajib menunjukkan kemampuan mengintegrasikan kecerdasan buatan (AI) untuk menyelesaikan masalah nyata!</p>
+      </div>
+
+      <div class="ap-intro-box">
+        <p>Recruiter dan Lead Engineer tidak mencari orang yang sekadar bisa menulis kode HTML/CSS dasar. Mereka mencari developer yang <strong>paham alur produk, mampu mengintegrasikan API pihak ketiga (terutama LLM seperti Gemini/Claude), dan bisa memecahkan problem praktis.</strong> 3 ide proyek fullstack berbasis AI ini akan membuktikan bahwa kamu siap kerja di era modern!</p>
+      </div>
+
+      <p>Mengintegrasikan AI ke dalam aplikasi web kamu saat ini sangatlah mudah berkat SDK modern seperti Google Gen AI SDK atau Anthropic SDK. Kamu tidak harus menjadi Machine Learning Engineer yang paham matematika rumit. Cukup jadilah fullstack developer cerdas yang tahu bagaimana menyajikan solusi berbasis AI dengan user interface yang bersih and responsif. Ini dia 3 idenya!</p>
+
+      <div class="ap-section-title">3 Ide Proyek Fullstack Web Berbasis AI yang Wajib Kamu Bangun</div>
+
+      <div class="ap-list">
+        
+        <!-- Project 1: AI Smart Recipe Planner -->
+        <div class="ap-card recipe">
+          <div class="ap-card-header">
+            <div class="ap-card-title">
+              <div class="ap-card-icon">🍳</div>
+              <h3>1. SmartChef AI — Perencana Resep Berbasis Bahan Sisa Kulkas</h3>
+            </div>
+            <span class="ap-badge">Kesulitan: Medium</span>
+          </div>
+          <p class="ap-card-desc">
+            Aplikasi web yang membantu mengurangi food waste (limbah makanan). User cukup memasukkan daftar bahan makanan apa saja yang tersisa di dalam kulkas mereka (misal: "telur, nasi dingin, buncis setengah layu, kecap"). AI akan menganalisis bahan tersebut dan menggenerate resep masakan yang lezat, lengkap dengan takaran bumbu, instruksi memasak langkah-demi-langkah, serta analisis nutrisi makro secara real-time.
+          </p>
+          
+          <div class="ap-detail-box">
+            <div class="ap-detail-title">Teknologi Rekomendasi (Tech Stack):</div>
+            <div class="ap-stack-tags">
+              <span class="ap-stack-tag">Next.js (React)</span>
+              <span class="ap-stack-tag">Tailwind CSS</span>
+              <span class="ap-stack-tag">Gemini API / Claude API</span>
+              <span class="ap-stack-tag">Supabase (PostgreSQL)</span>
+            </div>
+          </div>
+          
+          <div class="ap-detail-box">
+            <div class="ap-detail-title">Nilai Jual di Portofolio (Mengapa Ini Standout):</div>
+            <p class="ap-detail-text">
+              Proyek ini membuktikan kamu mampu menangani <strong>unstructured user input</strong> dan menerjemahkannya menjadi <strong>structured JSON output</strong> menggunakan AI prompt engineering. Kamu juga bisa menambahkan fitur menyimpan resep favorit ke database (Supabase), mendownload PDF resep masakan, hingga integrasi API pemesanan grocery belanjaan jika bahan utama resep kurang.
+            </p>
+          </div>
+          
+          <div class="ap-impact-bar-container">
+            <span class="ap-impact-label">Recruiter Impact Score</span>
+            <div class="ap-impact-bg">
+              <div class="ap-impact-fill"></div>
+            </div>
+            <span class="ap-impact-score">8.5 / 10</span>
+          </div>
+        </div>
+
+        <!-- Project 2: AI Resume ATS Optimizer -->
+        <div class="ap-card resume">
+          <div class="ap-card-header">
+            <div class="ap-card-title">
+              <div class="ap-card-icon">📄</div>
+              <h3>2. OptiResume AI — Analisis & Penyunting Resume ATS Cerdas</h3>
+            </div>
+            <span class="ap-badge">Kesulitan: Hard</span>
+          </div>
+          <p class="ap-card-desc">
+            Aplikasi yang memecahkan masalah terbesar pencari kerja: lolos seleksi berkas ATS (Applicant Tracking System). User mengunggah file resume/CV mereka dalam format PDF, lalu menempelkan tautan/teks deskripsi pekerjaan (Job Description) yang ingin mereka lamar. AI akan mendeteksi keyword apa saja yang kurang pada resume pelamar, menilai skor kecocokan (Matching Score), dan memberikan saran penulisan ulang deskripsi kerja secara spesifik untuk meningkatkan peluang lolos.
+          </p>
+          
+          <div class="ap-detail-box">
+            <div class="ap-detail-title">Teknologi Rekomendasi (Tech Stack):</div>
+            <div class="ap-stack-tags">
+              <span class="ap-stack-tag">Next.js (App Router)</span>
+              <span class="ap-stack-tag">pdf-parse (PDF Text Extractor)</span>
+              <span class="ap-stack-tag">Gemini API (Structured Outputs)</span>
+              <span class="ap-stack-tag">Diff-Match-Patch (Visualisasi Perbandingan)</span>
+            </div>
+          </div>
+          
+          <div class="ap-detail-box">
+            <div class="ap-detail-title">Nilai Jual di Portofolio (Mengapa Ini Standout):</div>
+            <p class="ap-detail-text">
+              Proyek ini bernilai sangat tinggi karena menyelesaikan <strong>masalah bernilai ekonomi/karir yang nyata.</strong> Ini membuktikan kamu menguasai fitur backend kompleks seperti <strong>file upload handling, parsing PDF binary data, manipulasi string tingkat lanjut, serta visualisasi perbandingan (diff views)</strong> secara interaktif di sisi frontend.
+            </p>
+          </div>
+          
+          <div class="ap-impact-bar-container">
+            <span class="ap-impact-label">Recruiter Impact Score</span>
+            <div class="ap-impact-bg">
+              <div class="ap-impact-fill"></div>
+            </div>
+            <span class="ap-impact-score">9.5 / 10</span>
+          </div>
+        </div>
+
+        <!-- Project 3: AI Code Security Explainer & Reviewer -->
+        <div class="ap-card reviewer">
+          <div class="ap-card-header">
+            <div class="ap-card-title">
+              <div class="ap-card-icon">🛡️</div>
+              <h3>3. CodeShield AI — Detektor Keamanan & Asisten Review Kode</h3>
+            </div>
+            <span class="ap-badge">Kesulitan: Medium-Hard</span>
+          </div>
+          <p class="ap-card-desc">
+            Aplikasi web edukatif tempat developer menempelkan potongan kode (code snippet) mereka yang ditulis dalam berbagai bahasa pemrograman. AI akan memindai kode tersebut untuk mencari celah keamanan (seperti SQL Injection, XSS, Hardcoded API Key), memberikan visualisasi baris kode mana yang bermasalah, dan secara cerdas menulis ulang kode tersebut menjadi lebih aman dan efisien sesuai standar *clean code*.
+          </p>
+          
+          <div class="ap-detail-box">
+            <div class="ap-detail-title">Teknologi Rekomendasi (Tech Stack):</div>
+            <div class="ap-stack-tags">
+              <span class="ap-stack-tag">React / Vite</span>
+              <span class="ap-stack-tag">Monaco Editor (Code Editor Component)</span>
+              <span class="ap-stack-tag">Prism.js (Syntax Highlighting)</span>
+              <span class="ap-stack-tag">Claude 3.5 Sonnet / Gemini API</span>
+            </div>
+          </div>
+          
+          <div class="ap-detail-box">
+            <div class="ap-detail-title">Nilai Jual di Portofolio (Mengapa Ini Standout):</div>
+            <p class="ap-detail-text">
+              Membangun proyek pembantu sesama developer (developer tools) membuktikan bahwa kamu peduli pada kualitas penulisan kode dan standar industri. Integrasi dengan <strong>Monaco Editor (komponen editor di balik VS Code)</strong> membuktikan kamu mampu menangani *state* editor yang kompleks dan menyajikan performa rendering teks yang optimal.
+            </p>
+          </div>
+          
+          <div class="ap-impact-bar-container">
+            <span class="ap-impact-label">Recruiter Impact Score</span>
+            <div class="ap-impact-bg">
+              <div class="ap-impact-fill"></div>
+            </div>
+            <span class="ap-impact-score">9.0 / 10</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="ap-section-title">FAQ (Tanya Jawab Seputar Integrasi AI)</div>
+
+      <div class="ap-faq">
+        <div class="ap-faq-item">
+          <div class="ap-faq-q">Apakah membuat aplikasi web AI seperti ini berbayar dan mahal?</div>
+          <div class="ap-faq-a">Sama sekali tidak! Saat ini, Google menyediakan API Key Gemini secara gratis (dengan batasan rate limit yang sangat cukup untuk tahap development dan demo portofolio). Supabase dan Vercel juga memiliki tier gratis yang luar biasa luas, sehingga kamu bisa mendeploy seluruh aplikasi ini 100% tanpa keluar uang sepeser pun.</div>
+        </div>
+        <div class="ap-faq-item">
+          <div class="ap-faq-q">Saya baru belajar React, apakah proyek-proyek ini terlalu sulit bagi saya?</div>
+          <div class="ap-faq-a">Jangan khawatir! Mulailah secara bertahap. Proyek nomor 1 (SmartChef AI) adalah tempat terbaik untuk memulai karena alur logika data flow-nya cenderung sederhana. Cukup buat UI form sederhana, kirim input ke API, dan tampilkan hasilnya secara terstruktur. Seiring meningkatnya pemahaman state-management, kamu bisa menantang diri membangun proyek ATS Optimizer.</div>
+        </div>
+        <div class="ap-faq-item">
+          <div class="ap-faq-q">Bagaimana cara menyajikan proyek ini agar recruiter benar-benar terkesan?</div>
+          <div class="ap-faq-a">Kuncinya ada pada <strong>ReadMe GitHub</strong> dan <strong>Demo Live</strong>. Sediakan video demonstrasi singkat berdurasi 1 menit di file ReadMe kamu, jelaskan tantangan arsitektur yang kamu hadapi, tuliskan bagan alur data, dan pastikan tautan live demo kamu (misal di Vercel) dapat langsung diakses tanpa kendala.</div>
+        </div>
+      </div>
+
+      <div class="ap-callout">
+        <p><strong>Ingat:</strong> Recruiter senior memindai puluhan CV setiap hari. Portofolio berisi proyek kloningan yang pasif tidak lagi memicu rasa penasaran mereka. Sebaliknya, aplikasi interaktif yang menyelesaikan masalah nyata dengan sentuhan kecerdasan buatan akan langsung menempatkan kamu di barisan terdepan seleksi berkas!</p>
+      </div>
+
+      <div class="ap-cta">
+        <h2>Tertarik Belajar Coding Terarah & Tools AI Terbaru?</h2>
+        <p>Yuk ikuti akun Instagram saya buat dapet template prompt praktis, tutorial coding harian, update tools AI developer terpopuler, serta wawasan karir tech yang dikemas santai untuk pemula!</p>
+        <a href="https://www.instagram.com/adityafakhrii/" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:0.25rem;"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          Follow @adityafakhrii di Instagram
+        </a>
+      </div>
+    `,
+    date: "2 Jun 2026",
+    isoDate: "2026-06-02",
+    readTime: "10 min",
+    category: "Web Development",
+    author: "Aditya Fakhri Riansyah",
+    tags: ["Ide Proyek", "Portofolio", "Fullstack", "Web Development", "AI", "React", "Next.js", "Recruitment", "Career", "2026"],
+    imageSrc: "/images/blog/portfolio-ai-projects.png",
+    relatedPosts: ["website-terbaik-logika-pemrograman-pemula", "ai-vs-developer-2026"],
   }
 } as const
 
