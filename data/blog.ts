@@ -3010,6 +3010,467 @@ export default async function ProductsPage() {
     tags: ["Ide Proyek", "Portofolio", "Fullstack", "Web Development", "AI", "React", "Next.js", "Recruitment", "Career", "2026"],
     imageSrc: "/images/blog/portfolio-ai-projects.png",
     relatedPosts: ["website-terbaik-logika-pemrograman-pemula", "ai-vs-developer-2026"],
+  },
+  "roadmap-fullstack-developer-ai-2026": {
+    title: "Roadmap Fullstack Developer + AI 2026: Panduan Lengkap dari Nol Sampai Siap Kerja & Freelance",
+    excerpt: "Bingung mulai belajar programming di 2026? Ini roadmap fullstack modern + AI terlengkap — dari fundamental web dev, Node.js/Laravel, database, deployment, hingga RAG AI untuk portofolio siap kerja!",
+    content: `
+      <style>
+        .rm-hero { padding: 2.5rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--muted)/0.3) 100%); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; position: relative; overflow: hidden; }
+        .rm-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.6rem; font-weight: 800; margin: 0 0 0.75rem 0; letter-spacing: -0.02em; }
+        .rm-hero p { color: hsl(var(--muted-foreground)); font-size: 1rem; line-height: 1.7; margin: 0; }
+        .rm-section-title { font-size: 1.35rem; font-weight: 800; margin: 3rem 0 1.25rem 0; color: hsl(var(--foreground)); border-left: 4px solid hsl(var(--primary)); padding-left: 0.75rem; line-height: 1.2; }
+        .rm-intro-box { padding: 1.5rem; border-radius: 1rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); box-shadow: 0 4px 12px rgba(0,0,0,0.01); margin: 1.5rem 0; line-height: 1.7; }
+        
+        /* Timeline style for 7 Phases */
+        .rm-timeline { display: flex; flex-direction: column; gap: 2rem; margin: 2rem 0; position: relative; padding-left: 2.5rem; }
+        .rm-timeline::before { content: ''; position: absolute; left: 0.85rem; top: 0.5rem; bottom: 0.5rem; width: 2px; background: hsl(var(--border)); }
+        
+        .rm-phase-card { padding: 1.75rem; border-radius: 1.25rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); box-shadow: 0 4px 15px rgba(0,0,0,0.01); position: relative; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .rm-phase-card::before { content: ''; position: absolute; left: -2rem; top: 1.75rem; width: 14px; height: 14px; border-radius: 50%; background: hsl(var(--foreground)); border: 3px solid hsl(var(--background)); z-content: 10; }
+        .rm-phase-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.03); border-color: hsl(var(--primary)/0.2); }
+        
+        .rm-phase-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid hsl(var(--border)); }
+        .rm-phase-label { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: hsl(var(--muted-foreground)); }
+        .rm-phase-title { font-size: 1.2rem; font-weight: 800; color: hsl(var(--foreground)); margin: 0 !important; }
+        
+        .rm-details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1rem; }
+        @media (max-width: 768px) { .rm-details-grid { grid-template-columns: 1fr; } }
+        
+        .rm-sub-section { display: flex; flex-direction: column; gap: 0.5rem; }
+        .rm-sub-title { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: hsl(var(--muted-foreground)); }
+        .rm-sub-list { list-style: none !important; padding: 0 !important; margin: 0 !important; display: flex; flex-direction: column; gap: 0.35rem; }
+        .rm-sub-list li { font-size: 0.88rem !important; color: hsl(var(--foreground)) !important; margin-bottom: 0 !important; display: flex; align-items: center; gap: 0.5rem; }
+        .rm-sub-list li::before { content: '•'; color: hsl(var(--muted-foreground)); font-weight: bold; }
+        
+        .rm-resource-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+        .rm-resource-badge { display: inline-flex; align-items: center; justify-content: center; gap: 0.25rem; font-size: 0.72rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 9999px; background: hsl(var(--primary) / 0.08); color: hsl(var(--primary)); border: 1px solid hsl(var(--primary) / 0.15); text-decoration: none !important; transition: all 0.2s ease-in-out; cursor: pointer; }
+        .rm-resource-badge::after { content: '↗'; font-size: 0.65rem; transition: transform 0.2s ease-in-out; }
+        .rm-resource-badge:hover { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)) !important; border-color: hsl(var(--primary)); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .rm-resource-badge:hover::after { transform: translate(1px, -1px); }
+        
+        .rm-target-box { background: hsl(var(--muted)/0.4); padding: 1rem 1.25rem; border-radius: 0.75rem; border: 1px solid hsl(var(--border)); margin-top: 1.25rem; }
+        .rm-target-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: hsl(var(--foreground)); margin-bottom: 0.5rem; }
+        .rm-target-list { list-style: none !important; padding: 0 !important; margin: 0 !important; display: flex; flex-direction: column; gap: 0.35rem; }
+        .rm-target-list li { font-size: 0.85rem !important; color: hsl(var(--muted-foreground)) !important; margin-bottom: 0 !important; display: flex; align-items: center; gap: 0.5rem; }
+        .rm-target-list li::before { content: '☑'; color: hsl(var(--foreground)); font-size: 0.95rem; }
+
+        /* Path split for Laravel vs Node.js */
+        .rm-path-split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+        @media (max-width: 768px) { .rm-path-split { grid-template-columns: 1fr; } }
+        .rm-path-card { padding: 1.25rem; border-radius: 1rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+        .rm-path-card h4 { font-size: 1.05rem; font-weight: 700; color: hsl(var(--foreground)); margin: 0 0 0.5rem 0; display: flex; align-items: center; gap: 0.5rem; }
+        .rm-path-badge { font-size: 0.7rem; font-weight: 700; padding: 0.1rem 0.4rem; border-radius: 0.25rem; background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); }
+        .rm-path-card.laravel h4 { color: #ff2d20; }
+        .rm-path-card.nodejs h4 { color: #339933; }
+
+        /* Portfolio section style */
+        .rm-portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin: 2rem 0; }
+        .rm-portfolio-card { padding: 1.5rem; border-radius: 1rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); display: flex; flex-direction: column; gap: 0.75rem; }
+        .rm-portfolio-card h4 { font-size: 1rem; font-weight: 700; color: hsl(var(--foreground)); margin: 0; display: flex; align-items: center; justify-content: space-between; }
+        .rm-portfolio-tier { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.15rem 0.5rem; border-radius: 0.25rem; }
+        .rm-portfolio-card.beginner .rm-portfolio-tier { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+        .rm-portfolio-card.intermediate .rm-portfolio-tier { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+        .rm-portfolio-card.advanced .rm-portfolio-tier { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+        .rm-portfolio-list { list-style: none !important; padding: 0 !important; margin: 0 !important; display: flex; flex-direction: column; gap: 0.4rem; }
+        .rm-portfolio-list li { font-size: 0.88rem !important; color: hsl(var(--muted-foreground)) !important; margin-bottom: 0 !important; display: flex; align-items: center; gap: 0.5rem; }
+        .rm-portfolio-list li::before { content: '✦'; color: hsl(var(--foreground)); font-size: 0.75rem; }
+
+        /* Do and Don't Grid */
+        .rm-compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2.5rem 0; }
+        @media (max-width: 768px) { .rm-compare-grid { grid-template-columns: 1fr; } }
+        .rm-compare-card { padding: 1.75rem; border-radius: 1.25rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); }
+        .rm-compare-card.dont { border-top: 4px solid #ef4444; }
+        .rm-compare-card.do { border-top: 4px solid #10b981; }
+        .rm-compare-card h3 { font-size: 1.15rem; font-weight: 800; margin: 0 0 1rem 0 !important; color: hsl(var(--foreground)); }
+        .rm-compare-list { list-style: none !important; padding: 0 !important; margin: 0 !important; display: flex; flex-direction: column; gap: 0.75rem; }
+        .rm-compare-list li { font-size: 0.9rem !important; color: hsl(var(--muted-foreground)) !important; margin-bottom: 0 !important; display: flex; align-items: flex-start; gap: 0.5rem; line-height: 1.5; }
+        .rm-compare-list li::before { content: '•'; font-size: 1.25rem; line-height: 1; color: hsl(var(--muted-foreground)); flex-shrink: 0; }
+        .rm-compare-card.dont .rm-compare-list li::before { color: #ef4444; }
+        .rm-compare-card.do .rm-compare-list li::before { color: #10b981; }
+
+        .rm-cta { margin-top: 3.5rem; padding: 3rem 2rem; border-radius: 1.5rem; background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.9) 100%); text-align: center; color: hsl(var(--primary-foreground)); position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .rm-cta::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%); pointer-events: none; }
+        .rm-cta h2 { color: hsl(var(--primary-foreground)) !important; margin-top: 0 !important; font-size: 1.75rem; font-weight: 800; margin-bottom: 0.75rem; }
+        .rm-cta p { color: hsl(var(--primary-foreground) / 0.8); margin-bottom: 1.5rem; font-size: 1.05rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .rm-cta a { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2.25rem; border-radius: 9999px; background: hsl(var(--primary-foreground)); color: hsl(var(--primary)); font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .rm-cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); filter: brightness(1.05); }
+        .rm-cta a svg { transition: transform 0.2s; }
+        .rm-cta a:hover svg { transform: rotate(10deg) scale(1.1); }
+        @media (max-width: 768px) { .rm-hero { padding: 1.75rem 1.25rem; } }
+      </style>
+
+      <div class="rm-hero">
+        <h2>Navigasi Belajar Terarah di Tengah Banjir Informasi 2026</h2>
+        <p>Jika kamu baru mulai belajar programming di tahun 2026, kemungkinan besar kamu bingung karena informasi di internet terlalu banyak. Ada yang bilang belajar React. Ada yang bilang Laravel. Ada juga yang bilang AI akan menggantikan programmer sepenuhnya sehingga belajar coding sia-sia. Lalu sebenarnya harus mulai dari mana? Artikel ini akan membahas roadmap terstruktur yang saya rekomendasikan berdasarkan kebutuhan industri nyata dan pengalaman membimbing ribuan developer pemula agar siap kerja dan freelance!</p>
+      </div>
+
+      <div class="rm-intro-box">
+        <p>Tahun 2026 bukan tentang memilih antara menjadi Fullstack Developer murni atau beralih total ke AI. <strong>Developer yang paling dicari saat ini adalah mereka yang mampu menggabungkan keduanya.</strong> Di masa depan, perusahaan tidak membayar orang yang paling banyak menghafal syntax pemrograman, melainkan membayar orang yang bisa membangun solusi andal secara jauh lebih cepat menggunakan bantuan AI.</p>
+      </div>
+
+      <div class="rm-section-title">7 Fase Roadmap Belajar Fullstack + AI 2026</div>
+
+      <div class="rm-timeline">
+        
+        <!-- Fase 1 -->
+        <div class="rm-phase-card">
+          <div class="rm-phase-header">
+            <span class="rm-phase-label">Fase 1</span>
+            <h3 class="rm-phase-title">Fundamental Web Development</h3>
+          </div>
+          <p class="rm-phase-desc">Membangun fondasi utama. Jangan terburu-buru loncat ke framework Javascript modern sebelum kamu memahami cara kerja web browser secara mendasar.</p>
+          
+          <div class="rm-details-grid">
+            <div class="rm-sub-section">
+              <span class="rm-sub-title">1. HTML (Struktur)</span>
+              <ul class="rm-sub-list">
+                <li>Pelajari semantik tag, form input, SEO dasar.</li>
+              </ul>
+              <div class="rm-resource-badges">
+                <a href="https://www.freecodecamp.org" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">FreeCodeCamp</a>
+                <a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">MDN Docs</a>
+              </div>
+            </div>
+            
+            <div class="rm-sub-section">
+              <span class="rm-sub-title">2. CSS (Styling)</span>
+              <ul class="rm-sub-list">
+                <li>Fokus pada Flexbox, Grid Layout, dan Responsive Design.</li>
+              </ul>
+              <div class="rm-resource-badges">
+                <a href="https://css-tricks.com" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">CSS Tricks</a>
+                <a href="https://flexboxfroggy.com" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">Flexbox Froggy</a>
+              </div>
+            </div>
+
+            <div class="rm-sub-section" style="grid-column: span 2;">
+              <span class="rm-sub-title">3. JavaScript Dasar (Logic)</span>
+              <ul class="rm-sub-list">
+                <li>Pelajari Variable, Function, Looping, Array, Object, dan DOM Manipulation.</li>
+              </ul>
+              <div class="rm-resource-badges">
+                <a href="https://javascript.info" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">JavaScript.info</a>
+                <a href="https://eloquentjavascript.net" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">Eloquent JS</a>
+                <a href="https://www.codepolitan.com" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">CODEPOLITAN</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="rm-target-box">
+            <div class="rm-target-title">Target Milestone Proyek:</div>
+            <ul class="rm-target-list">
+              <li>Landing page responsif (HTML + CSS)</li>
+              <li>Aplikasi Todo App interaktif dengan local storage</li>
+              <li>Kalkulator fungsional & Notes App sederhana</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Fase 2 -->
+        <div class="rm-phase-card">
+          <div class="rm-phase-header">
+            <span class="rm-phase-label">Fase 2</span>
+            <h3 class="rm-phase-title">Version Control System (Git & GitHub)</h3>
+          </div>
+          <p class="rm-phase-desc">Kenapa penting? Karena hampir semua perusahaan teknologi menggunakan Git untuk kolaborasi tim. Tanpa Git, kamu tidak bisa bekerja sebagai developer profesional.</p>
+          
+          <div class="rm-details-grid">
+            <div class="rm-sub-section">
+              <span class="rm-sub-title">Pelajari:</span>
+              <ul class="rm-sub-list">
+                <li>Repository initialization, commit, push/pull.</li>
+                <li>Branching, Merge Conflict, Pull Request (PR).</li>
+              </ul>
+            </div>
+            <div class="rm-sub-section">
+              <span class="rm-sub-title">Resource Rekomendasi:</span>
+              <div class="rm-resource-badges">
+                <a href="https://guides.github.com/introduction/git-handbook/" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">Git Handbook</a>
+                <a href="https://learngitbranching.js.org" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">Learn Git Branching</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="rm-target-box">
+            <div class="rm-target-title">Target Milestone:</div>
+            <ul class="rm-target-list">
+              <li>Semua proyek latihan tersimpan rapi dan terpublikasi di profil GitHub pribadi kamu</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Fase 3 -->
+        <div class="rm-phase-card">
+          <div class="rm-phase-header">
+            <span class="rm-phase-label">Fase 3</span>
+            <h3 class="rm-phase-title">Frontend Modern (React & Next.js)</h3>
+          </div>
+          <p class="rm-phase-desc">Meningkatkan keahlian frontend untuk membangun Single Page Application (SPA) yang interaktif, cepat, dan berstandar industri modern.</p>
+          
+          <div class="rm-details-grid">
+            <div class="rm-sub-section">
+              <span class="rm-sub-title">1. React (Library)</span>
+              <ul class="rm-sub-list">
+                <li>Pelajari Component, State, Props, Hooks (useState, useEffect).</li>
+              </ul>
+              <div class="rm-resource-badges">
+                <a href="https://react.dev" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">React Docs</a>
+                <a href="https://scrimba.com/learn/learnreact" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">Scrimba React</a>
+              </div>
+            </div>
+            <div class="rm-sub-section">
+              <span class="rm-sub-title">2. Next.js (Meta-Framework)</span>
+              <ul class="rm-sub-list">
+                <li>Pelajari File-system Routing, Server Components, API Routes.</li>
+              </ul>
+              <div class="rm-resource-badges">
+                <a href="https://nextjs.org/docs" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">Next.js Docs</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="rm-target-box">
+            <div class="rm-target-title">Target Milestone Proyek:</div>
+            <ul class="rm-target-list">
+              <li>Dashboard admin statis responsif</li>
+              <li>Company Profile dengan animasi halus</li>
+              <li>Landing Page SaaS modern dengan optimalisasi SEO</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Fase 4 -->
+        <div class="rm-phase-card">
+          <div class="rm-phase-header">
+            <span class="rm-phase-label">Fase 4</span>
+            <h3 class="rm-phase-title">Backend Development</h3>
+          </div>
+          <p class="rm-phase-desc">Belajar membangun logika sisi server, manajemen otentikasi, dan melayani komunikasi data API. Pilih <strong>salah satu</strong> jalur di bawah ini sesuai kenyamanan belajar kamu:</p>
+          
+          <div class="rm-path-split">
+            <!-- Jalur Laravel -->
+            <div class="rm-path-card laravel">
+              <h4>Jalur Laravel <span class="rm-path-badge">PHP</span></h4>
+              <ul class="rm-sub-list">
+                <li>Pelajari pola MVC (Model-View-Controller).</li>
+                <li>Database Migration & ORM Eloquent.</li>
+                <li>Authentication & JWT/Sanctum REST API.</li>
+              </ul>
+              <div class="rm-resource-badges" style="margin-top: 0.5rem;">
+                <a href="https://laravel.com/docs" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">Laravel Docs</a>
+                <a href="https://laracasts.com" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">Laracasts</a>
+              </div>
+            </div>
+            
+            <!-- Jalur Node.js -->
+            <div class="rm-path-card nodejs">
+              <h4>Jalur Node.js <span class="rm-path-badge">JS / TS</span></h4>
+              <ul class="rm-sub-list">
+                <li>Pelajari runtime Node.js & Express.js.</li>
+                <li>Membangun middleware & routing backend.</li>
+                <li>Otentikasi dengan JWT & RESTful API.</li>
+              </ul>
+              <div class="rm-resource-badges" style="margin-top: 0.5rem;">
+                <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">NodeJS Docs</a>
+                <a href="https://www.youtube.com/@TraversyMedia" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">Traversy Media</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fase 5 -->
+        <div class="rm-phase-card">
+          <div class="rm-phase-header">
+            <span class="rm-phase-label">Fase 5</span>
+            <h3 class="rm-phase-title">Database Management</h3>
+          </div>
+          <p class="rm-phase-desc">Belajar menyimpan, memanipulasi, dan menghubungkan data relasional secara terstruktur menggunakan DBMS.</p>
+          
+          <div class="rm-details-grid">
+            <div class="rm-sub-section">
+              <span class="rm-sub-title">Pelajari:</span>
+              <ul class="rm-sub-list">
+                <li>Database MySQL / PostgreSQL.</li>
+                <li>Relasi Tabel (One-to-Many, Many-to-Many).</li>
+                <li>Query Dasar, JOIN, Indexing untuk optimasi kecepatan query.</li>
+              </ul>
+            </div>
+            <div class="rm-sub-section">
+              <span class="rm-sub-title">Resource Rekomendasi:</span>
+              <div class="rm-resource-badges">
+                <a href="https://sqlbolt.com" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">SQLBolt (Interactive)</a>
+                <a href="https://www.postgresqltutorial.com" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">PostgreSQL Tutorial</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fase 6 -->
+        <div class="rm-phase-card">
+          <div class="rm-phase-header">
+            <span class="rm-phase-label">Fase 6</span>
+            <h3 class="rm-phase-title">Deployment & DevOps Dasar</h3>
+          </div>
+          <p class="rm-phase-desc">Banyak pemula berhenti belajar di fase database. Padahal, aplikasi yang hanya berjalan di localhost (komputer lokal kamu) tidak memiliki nilai nyata di mata recruiter atau klien freelance.</p>
+          
+          <div class="rm-details-grid">
+            <div class="rm-sub-section">
+              <span class="rm-sub-title">Pelajari:</span>
+              <ul class="rm-sub-list">
+                <li>Cloud hosting Vercel (untuk frontend Next.js).</li>
+                <li>Railway / Render (untuk backend API).</li>
+                <li>Sewa VPS murah, Setup Linux Server, & Docker dasar.</li>
+              </ul>
+            </div>
+            <div class="rm-sub-section">
+              <span class="rm-sub-title">Resource Rekomendasi:</span>
+              <div class="rm-resource-badges">
+                <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">Vercel</a>
+                <a href="https://railway.app" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">Railway</a>
+                <a href="https://docs.docker.com" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">Docker Docs</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="rm-target-box">
+            <div class="rm-target-title">Target Milestone:</div>
+            <ul class="rm-target-list">
+              <li>Semua proyek buatan kamu dideploy online dan memiliki tautan demo live yang bisa diakses publik kapan saja</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Fase 7 -->
+        <div class="rm-phase-card">
+          <div class="rm-phase-header">
+            <span class="rm-phase-label">Fase 7</span>
+            <h3 class="rm-phase-title">AI Integration (Spesial 2026)</h3>
+          </div>
+          <p class="rm-phase-desc">Inilah fase krusial yang membedakan roadmap modern 2026 dengan roadmap kuno tahun-tahun sebelumnya. Kamu dituntut mampu melengkapi aplikasi web dengan fitur kecerdasan buatan terintegrasi.</p>
+          
+          <div class="rm-details-grid">
+            <div class="rm-sub-section">
+              <span class="rm-sub-title">1. Prompt Engineering & LLM APIs</span>
+              <ul class="rm-sub-list">
+                <li>Membuat prompt terstruktur (Context, Role, Task, Format).</li>
+                <li>Mengakses OpenAI API & Google Gemini API SDK.</li>
+              </ul>
+              <div class="rm-resource-badges">
+                <a href="https://ai.google.dev" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">Gemini Developer Docs</a>
+                <a href="https://platform.openai.com" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">OpenAI API Docs</a>
+              </div>
+            </div>
+            
+            <div class="rm-sub-section">
+              <span class="rm-sub-title">2. RAG Dasar (Retrieval-Augmented Gen)</span>
+              <ul class="rm-sub-list">
+                <li>Memahami konsep Embedding data teks.</li>
+                <li>Menyimpan embedding ke Vector Database (Supabase Vector).</li>
+              </ul>
+              <div class="rm-resource-badges">
+                <a href="https://supabase.com/docs/guides/ai" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">Supabase Vector Docs</a>
+                <a href="https://docs.pinecone.io/home" target="_blank" rel="noopener noreferrer" class="rm-resource-badge">Pinecone Tutorials</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="rm-target-box">
+            <div class="rm-target-title">Target Milestone Proyek AI:</div>
+            <ul class="rm-target-list">
+              <li>AI Chatbot Assistant / Smart Content Generator</li>
+              <li>Aplikasi Chat PDF / AI Knowledge Base interaktif</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="rm-section-title">Portofolio Project Roadmap Terarah</div>
+
+      <p>Biar portofolio kamu dinilai terstruktur dan menunjukkan jam terbang belajar yang nyata, bangunlah proyek portofolio dengan pengelompokan tingkat kesulitan berikut:</p>
+
+      <div class="rm-portfolio-grid">
+        
+        <div class="rm-portfolio-card beginner">
+          <h4>Junior / Beginner <span class="rm-portfolio-tier">Fase 1-2</span></h4>
+          <ul class="rm-portfolio-list">
+            <li>Todo App dengan Local Storage</li>
+            <li>Notes App minimalis responsif</li>
+            <li>Expense Tracker (Pencatat Keuangan)</li>
+          </ul>
+        </div>
+        
+        <div class="rm-portfolio-card intermediate">
+          <h4>Mid / Intermediate <span class="rm-portfolio-tier">Fase 3-5</span></h4>
+          <ul class="rm-portfolio-list">
+            <li>Sistem Kasir (Point of Sale)</li>
+            <li>Dashboard Manajemen Kampus</li>
+            <li>Sistem Reservasi Kamar Online</li>
+          </ul>
+        </div>
+        
+        <div class="rm-portfolio-card advanced">
+          <h4>Senior / Advanced <span class="rm-portfolio-tier">Fase 6-7</span></h4>
+          <ul class="rm-portfolio-list">
+            <li>SaaS Dashboard dengan analitik grafik</li>
+            <li>AI Chatbot Assistant berkonteks khusus</li>
+            <li>AI Document Analyzer (Chat PDF)</li>
+            <li>AI Proposal Generator otomatis</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="rm-section-title">Reality Check: Evaluasi Cara Belajar Kamu</div>
+
+      <div class="rm-compare-grid">
+        
+        <div class="rm-compare-card dont">
+          <h3>❌ Cara Belajar yang Salah</h3>
+          <ul class="rm-compare-list">
+            <li><strong>Nonton tutorial pasif secara maraton</strong> tanpa pernah mengetik atau mempraktikkan kodenya sendiri (*Tutorial Hell*).</li>
+            <li><strong>Gonta-ganti roadmap belajar setiap minggu</strong> hanya karena tergiur teknologi baru yang sedang viral di media sosial.</li>
+            <li><strong>Belajar 10 teknologi sekaligus</strong> dalam waktu bersamaan tanpa pernah menamatkan satu pun proyek aplikasi nyata.</li>
+            <li><strong>Terlalu fokus menghafal syntax</strong> coding alih-alih melatih computational thinking untuk problem solving kasus nyata.</li>
+          </ul>
+        </div>
+
+        <div class="rm-compare-card do">
+          <h3>✅ Cara Belajar yang Benar</h3>
+          <ul class="rm-compare-list">
+            <li><strong>Belajar secukupnya, langsung buat proyek.</strong> Tonton materi dasar, lalu luangkan 80% waktu belajar untuk praktik langsung.</li>
+            <li><strong>Upload semua progress ke GitHub.</strong> Tunjukkan jam terbang ngoding kamu melalui grafik kontribusi hijau di profil GitHub.</li>
+            <li><strong>Tulis pembelajaran di LinkedIn & Twitter.</strong> Ceritakan tantangan ngoding dan solusi yang berhasil kamu temukan.</li>
+            <li><strong>Mulai bangun personal branding.</strong> Bagikan tips belajar santai agar dilirik recruiter tanpa perlu lelah menyebar puluhan CV.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="rm-section-title">Kesimpulan</div>
+
+      <p>Menjadi developer di era kecerdasan buatan 2026 bukanlah tentang bersaing melawan AI, melainkan bersaing melawan developer lain yang mahir menggunakan AI. Manfaatkan bantuan kecerdasan buatan untuk mempercepat proses penulisan kode boilerplate kamu, tapi pertahankan rasa ingin tahu yang kuat untuk terus melatih logika pemecahan masalah.</p>
+
+      <p>Fokuslah menyelesaikan satu fase demi satu fase secara konsisten. Ingat, perjalanan karir programming yang luar biasa tidak dibangun dalam waktu semalam, melainkan melalui jam terbang latihan yang gigih dan berkelanjutan. Selamat belajar, dan semoga sukses memulai perjalanan karir impian kamu!</p>
+
+      <div class="rm-cta">
+        <h2>Mau Roadmap Belajar & Tips Karir Tech Setiap Hari?</h2>
+        <p>Yuk ikuti akun Instagram saya buat dapet template prompt AI siap pakai, info project roadmap terbaru, career advice IT, dan insight dunia kerja programmer!</p>
+        <a href="https://www.instagram.com/adityafakhrii/" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:0.25rem;"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          Follow @adityafakhrii di Instagram
+        </a>
+      </div>
+    `,
+    date: "2 Jun 2026",
+    isoDate: "2026-06-02",
+    readTime: "12 min",
+    category: "Web Development",
+    author: "Aditya Fakhri Riansyah",
+    tags: ["Roadmap", "Fullstack", "AI", "Web Development", "React", "Next.js", "Laravel", "Node.js", "Career", "2026", "Freelance"],
+    imageSrc: "/images/blog/roadmap-fullstack-2026.png",
+    relatedPosts: ["website-terbaik-logika-pemrograman-pemula", "ide-proyek-portfolio-fullstack-ai"],
   }
 } as const
 
