@@ -17,6 +17,10 @@ export type EventItem = {
 }
 
 export const upcomingEvents: EventItem[] = [
+  //
+]
+
+export const pastEvents: EventItem[] = [
   {
     id: "optima-ai-nurtanio-2026",
     category: "Seminar & Workshop",
@@ -56,10 +60,7 @@ export const upcomingEvents: EventItem[] = [
       id: "Diselenggarakan oleh: Himpunan Mahasiswa Manajemen Universitas Nurtanio Bandung (Kabinet Intarmoni)",
       en: "Organized by: Management Student Association of Nurtanio University Bandung (Intarmoni Cabinet)"
     }
-  }
-]
-
-export const pastEvents: EventItem[] = [
+  },
   {
     id: "demystifying-ai-bootcamp-sakarya-2026",
     category: "Webinar",
