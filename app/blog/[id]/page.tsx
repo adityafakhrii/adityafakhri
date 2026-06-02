@@ -46,7 +46,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ id: string 
   return (
     <TranslatedContent
       renderContent={({ t }) => {
-        const post = blogs[id as keyof typeof blogs]
+        const post = blogs[id as keyof typeof blogs] as any
 
         if (!post) {
           return (
@@ -83,9 +83,11 @@ export default function BlogPostPage({ params }: { params: Promise<{ id: string 
                     "@type": "BlogPosting",
                     "headline": post.title || "Not Available",
                     "description": post.excerpt || "Not Available",
-                    "image": post.imageSrc ? [new URL(post.imageSrc, "https://adityafakhri.com").toString()] : undefined,
-                    "datePublished": post.date || "Not Available",
-                    "dateModified": post.date || "Not Available",
+                    "image": post.imageSrc 
+                      ? [post.imageSrc.startsWith('http') ? post.imageSrc : `https://adityafakhri.com${post.imageSrc.startsWith('/') ? '' : '/'}${post.imageSrc}`] 
+                      : undefined,
+                    "datePublished": post.isoDate || post.date || "Not Available",
+                    "dateModified": post.isoDate || post.date || "Not Available",
                     "mainEntityOfPage": `https://adityafakhri.com/blog/${id}`,
                     "author": [{
                       "@type": "Person",
@@ -93,9 +95,13 @@ export default function BlogPostPage({ params }: { params: Promise<{ id: string 
                       "url": "https://adityafakhri.com"
                     }],
                     "publisher": {
-                      "@type": "Person",
+                      "@type": "Organization",
                       "name": "Aditya Fakhri Riansyah",
-                      "url": "https://adityafakhri.com"
+                      "url": "https://adityafakhri.com",
+                      "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://adityafakhri.com/aditya-fakhri.webp"
+                      }
                     }
                   })
                 }}
@@ -141,9 +147,9 @@ export default function BlogPostPage({ params }: { params: Promise<{ id: string 
               )}
             </ContentBlock>
 
-            <ContentBlock title={`${t('tags')}`} className="mt-8">
+             <ContentBlock title={`${t('tags')}`} className="mt-8">
               <div className="flex flex-wrap gap-2">
-                {(post.tags || []).map((tag) => (
+                {(post.tags || []).map((tag: string) => (
                   <Badge key={tag} variant="secondary" className="text-xs">
                     <Tag className="h-3 w-3 mr-1" />
                     {tag}
@@ -154,8 +160,8 @@ export default function BlogPostPage({ params }: { params: Promise<{ id: string 
 
             <ContentBlock title={`${t('relatedArticles')}`} className="mt-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {(post.relatedPosts || []).map((relatedPostId) => {
-                  const relatedPost = blogs[relatedPostId as keyof typeof blogs]
+                {(post.relatedPosts || []).map((relatedPostId: string) => {
+                  const relatedPost = blogs[relatedPostId as keyof typeof blogs] as any
                   if (!relatedPost) return null
                   return (
                     <Link key={relatedPostId} href={`/blog/${relatedPostId}`} className="block border rounded-lg overflow-hidden hover:shadow-sm transition">

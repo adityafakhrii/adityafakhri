@@ -17,24 +17,44 @@ export async function generateMetadata(
     }
 
     const previousImages = (await parent).openGraph?.images || []
+    
+    // Resolve absolute image URL
+    const getImageUrl = (src?: string) => {
+        if (!src) return undefined
+        if (src.startsWith('http')) return src
+        return `https://adityafakhri.com${src.startsWith('/') ? '' : '/'}${src}`
+    }
+    const resolvedImage = getImageUrl(post.imageSrc)
+    const imagesList = resolvedImage ? [resolvedImage] : previousImages
 
     return {
         title: post.title,
         description: post.excerpt || post.title,
         keywords: post.tags || [],
+        alternates: {
+            canonical: `https://adityafakhri.com/blog/${id}`,
+        },
+        robots: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+            "max-video-preview": -1,
+        },
         openGraph: {
             title: post.title,
             description: post.excerpt || post.title,
-            images: post.imageSrc ? [post.imageSrc] : previousImages,
+            url: `https://adityafakhri.com/blog/${id}`,
+            images: imagesList,
             type: "article",
-            publishedTime: post.date,
+            publishedTime: post.isoDate ? new Date(post.isoDate).toISOString() : undefined,
             authors: [post.author || "Aditya Fakhri Riansyah"],
         },
         twitter: {
             card: "summary_large_image",
             title: post.title,
             description: post.excerpt || post.title,
-            images: post.imageSrc ? [post.imageSrc] : [],
+            images: resolvedImage ? [resolvedImage] : [],
         }
     }
 }
