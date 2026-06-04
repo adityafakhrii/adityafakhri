@@ -12,6 +12,27 @@ export const metadata: Metadata = {
 }
 
 async function getFeedbackSubmissions() {
+  // 1. Try fetching from Google Sheet Webapp if configured
+  const sheetUrl = process.env.GOOGLE_SHEET_WEBAPP_URL
+  if (sheetUrl) {
+    try {
+      const res = await fetch(sheetUrl, {
+        next: { revalidate: 30 }, // Cache sheet responses for 30 seconds
+      })
+      if (res.ok) {
+        const data = await res.json()
+        if (Array.isArray(data)) {
+          return data
+        }
+      } else {
+        console.error("Google Sheets API returned non-OK status on GET:", res.status)
+      }
+    } catch (err) {
+      console.error("Failed to fetch feedback from Google Sheets:", err)
+    }
+  }
+
+  // 2. Fallback to local JSON file
   try {
     const filePath = path.join(process.cwd(), "data", "feedback-submissions.json")
     if (fs.existsSync(filePath)) {

@@ -86,6 +86,28 @@ export async function POST(req: NextRequest) {
       // This is expected in read-only production environments like Vercel Serverless
     }
 
+    // 1.5. Send to Google Sheets Web App if configured
+    const sheetUrl = process.env.GOOGLE_SHEET_WEBAPP_URL
+    let savedToSheet = false
+    if (sheetUrl) {
+      try {
+        const sheetRes = await fetch(sheetUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newEntry),
+        })
+        if (sheetRes.ok) {
+          savedToSheet = true
+        } else {
+          console.error("Google Sheets API returned non-OK status:", sheetRes.status, await sheetRes.text().catch(() => ""))
+        }
+      } catch (sheetError) {
+        console.error("Failed to post feedback to Google Sheets:", sheetError)
+      }
+    }
+
     // 2. Format HTML email
     const renderStars = (num: number) => "⭐".repeat(num)
     const html = `
@@ -158,6 +180,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ 
         success: true, 
         savedLocal, 
+        savedToSheet,
         message: "Submission received. Email not sent because provider is not configured." 
       })
     }
@@ -185,12 +208,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ 
         success: true, 
         savedLocal, 
+        savedToSheet,
         emailSent: false, 
         error: "Failed to send notification email" 
       })
     }
 
-    return NextResponse.json({ success: true, savedLocal, emailSent: true })
+    return NextResponse.json({ success: true, savedLocal, savedToSheet, emailSent: true })
   } catch (e) {
     console.error("Unexpected error in feedback API:", e)
     return NextResponse.json({ error: "Unexpected server error" }, { status: 500 })
