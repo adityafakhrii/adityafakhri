@@ -17,7 +17,7 @@ async function getFeedbackSubmissions() {
   if (sheetUrl) {
     try {
       const res = await fetch(sheetUrl, {
-        next: { revalidate: 30 }, // Cache sheet responses for 30 seconds
+        next: { revalidate: 15 }, // Cache sheet responses for 15 seconds
       })
       if (res.ok) {
         const data = await res.json()
