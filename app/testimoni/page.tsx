@@ -15,8 +15,10 @@ async function getFeedbackSubmissions() {
   try {
     const filePath = path.join(process.cwd(), "data", "feedback-submissions.json")
     if (fs.existsSync(filePath)) {
-      const content = fs.readFileSync(filePath, "utf-8")
-      return JSON.parse(content)
+      const content = fs.readFileSync(filePath, "utf-8").trim()
+      if (content) {
+        return JSON.parse(content)
+      }
     }
   } catch (err) {
     console.error("Failed to read feedback submissions:", err)

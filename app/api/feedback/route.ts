@@ -73,8 +73,10 @@ export async function POST(req: NextRequest) {
     try {
       let currentData = []
       if (fs.existsSync(filePath)) {
-        const fileContent = fs.readFileSync(filePath, "utf-8")
-        currentData = JSON.parse(fileContent)
+        const fileContent = fs.readFileSync(filePath, "utf-8").trim()
+        if (fileContent) {
+          currentData = JSON.parse(fileContent)
+        }
       }
       currentData.push(newEntry)
       fs.writeFileSync(filePath, JSON.stringify(currentData, null, 2), "utf-8")
