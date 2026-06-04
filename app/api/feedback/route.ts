@@ -9,10 +9,12 @@ const feedbackSchema = z.object({
   city: z.string().min(2),
   occupation: z.string().min(2),
   topic: z.string().min(2),
-  ratingContent: z.number().min(1).max(5),
-  ratingDelivery: z.number().min(1).max(5),
+  feedback: z.string().min(20),
+  ratingMastery: z.number().min(1).max(5),
+  ratingCommunication: z.number().min(1).max(5),
   ratingOverall: z.number().min(1).max(5),
   impression: z.string().optional(),
+  improvement: z.string().optional(),
 })
 
 const RATE_LIMIT_MAP = new Map<string, { count: number; expiresAt: number }>()
@@ -58,6 +60,7 @@ export async function POST(req: NextRequest) {
     }
 
     const feedbackData = parsed.data
+
     const newEntry = {
       id: `fb-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
       ...feedbackData,
@@ -108,22 +111,38 @@ export async function POST(req: NextRequest) {
             </tr>
             <tr style="border-bottom:1px solid #f3f4f6;">
               <td style="padding:10px 0; font-weight:600; color:#4b5563;">Topik/Event</td>
-              <td style="padding:10px 0; font-weight:500;">${escapeHtml(feedbackData.topic)}</td>
+              <td style="padding:10px 0;">${escapeHtml(feedbackData.topic)}</td>
             </tr>
           </tbody>
         </table>
 
         <div style="background-color:#f9fafb; padding:16px; border-radius:8px; border:1px solid #e5e7eb; margin-bottom:24px;">
           <h3 style="margin:0 0 12px; font-size:15px; color:#374151;">Evaluasi Sesi:</h3>
-          <p style="margin:6px 0;"><strong>Kualitas Konten:</strong> ${renderStars(feedbackData.ratingContent)} (${feedbackData.ratingContent}/5)</p>
-          <p style="margin:6px 0;"><strong>Penyampaian & Presentasi:</strong> ${renderStars(feedbackData.ratingDelivery)} (${feedbackData.ratingDelivery}/5)</p>
-          <p style="margin:6px 0; font-size:16px; color:#111827;"><strong>Rating Keseluruhan:</strong> ${renderStars(feedbackData.ratingOverall)} (${feedbackData.ratingOverall}/5)</p>
+          <p style="margin:4px 0;"><strong>Penguasaan Materi:</strong> ${renderStars(feedbackData.ratingMastery)} (${feedbackData.ratingMastery}/5)</p>
+          <p style="margin:4px 0;"><strong>Komunikasi/Interaksi:</strong> ${renderStars(feedbackData.ratingCommunication)} (${feedbackData.ratingCommunication}/5)</p>
+          <p style="margin:8px 0 0; font-size:16px; color:#111827; border-top:1px solid #e5e7eb; padding-top:8px;"><strong>Rating Keseluruhan Sesi:</strong> ${renderStars(feedbackData.ratingOverall)} (${feedbackData.ratingOverall}/5)</p>
         </div>
 
+        <div style="margin-top:20px; margin-bottom:20px;">
+          <h3 style="margin:0 0 8px; font-size:15px; color:#374151;">Feedback untuk Aditya:</h3>
+          <p style="margin:0; padding:12px; background-color:#fff; border-left:4px solid #10b981; font-style:italic; white-space:pre-wrap; border:1px solid #e5e7eb; border-left-width:4px;">
+            ${escapeHtml(feedbackData.feedback)}
+          </p>
+        </div>
+
+        ${feedbackData.improvement ? `
+        <div style="margin-top:20px; margin-bottom:20px;">
+          <h3 style="margin:0 0 8px; font-size:15px; color:#b91c1c;">Hal yang Perlu Ditingkatkan:</h3>
+          <p style="margin:0; padding:12px; background-color:#fff; border-left:4px solid #ef4444; font-style:italic; white-space:pre-wrap; border:1px solid #e5e7eb; border-left-width:4px;">
+            ${escapeHtml(feedbackData.improvement)}
+          </p>
+        </div>
+        ` : ""}
+
         <div style="margin-top:20px;">
-          <h3 style="margin:0 0 8px; font-size:15px; color:#374151;">Kesan & Pesan:</h3>
-          <p style="margin:0; padding:12px; background-color:#fff; border-left:4px solid #3b82f6; font-style:italic; white-space:pre-wrap; border-top:1px solid #f3f4f6; border-right:1px solid #f3f4f6; border-bottom:1px solid #f3f4f6;">
-            ${feedbackData.impression ? escapeHtml(feedbackData.impression) : "<em>Tidak memberikan kesan & pesan tertulis.</em>"}
+          <h3 style="margin:0 0 8px; font-size:15px; color:#374151;">Kesan & Pesan (Opsional):</h3>
+          <p style="margin:0; padding:12px; background-color:#fff; border-left:4px solid #3b82f6; font-style:italic; white-space:pre-wrap; border:1px solid #e5e7eb; border-left-width:4px;">
+            ${feedbackData.impression ? escapeHtml(feedbackData.impression) : "<em>Tidak diisi</em>"}
           </p>
         </div>
       </div>

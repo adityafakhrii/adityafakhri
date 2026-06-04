@@ -35,16 +35,20 @@ const getFormSchema = (t: any) => z.object({
     message: t('language') === 'id' ? "Pilih topik event." : "Select event topic.",
   }),
   customTopic: z.string().optional(),
-  ratingContent: z.number().min(1, {
-    message: t('language') === 'id' ? "Berikan rating kualitas materi." : "Please rate the material quality.",
+  feedback: z.string().min(20, {
+    message: t('language') === 'id' ? "Feedback minimal 20 karakter." : "Feedback must be at least 20 characters.",
+  }),
+  impression: z.string().optional(),
+  improvement: z.string().optional(),
+  ratingMastery: z.number().min(1, {
+    message: t('language') === 'id' ? "Berikan rating penguasaan materi." : "Please rate material mastery.",
   }).max(5),
-  ratingDelivery: z.number().min(1, {
-    message: t('language') === 'id' ? "Berikan rating penyampaian." : "Please rate the delivery.",
+  ratingCommunication: z.number().min(1, {
+    message: t('language') === 'id' ? "Berikan rating komunikasi/interaksi." : "Please rate communication/interaction.",
   }).max(5),
   ratingOverall: z.number().min(1, {
-    message: t('language') === 'id' ? "Berikan rating keseluruhan." : "Please provide an overall rating.",
+    message: t('language') === 'id' ? "Berikan rating keseluruhan." : "Please rate overall experience.",
   }).max(5),
-  impression: z.string().optional(),
 }).refine(data => {
   if (data.occupation === "Lainnya" && (!data.customOccupation || data.customOccupation.trim().length < 2)) {
     return false;
@@ -61,6 +65,14 @@ const getFormSchema = (t: any) => z.object({
 }, {
   message: t('language') === 'id' ? "Tuliskan nama/topik event kustom Anda." : "Please enter custom event name/topic.",
   path: ["customTopic"]
+}).refine(data => {
+  if (data.ratingOverall > 0 && data.ratingOverall <= 4 && (!data.improvement || data.improvement.trim().length < 20)) {
+    return false;
+  }
+  return true;
+}, {
+  message: t('language') === 'id' ? "Tuliskan apa yang perlu ditingkatkan (minimal 20 karakter)." : "Please enter what should be improved (at least 20 characters).",
+  path: ["improvement"]
 });
 
 interface StarRatingProps {
@@ -74,7 +86,9 @@ function StarRating({ value, onChange, label }: StarRatingProps) {
   
   return (
     <div className="flex flex-col gap-2">
-      <span className="text-sm font-medium text-foreground">{label}</span>
+      <span className="text-sm font-medium text-foreground">
+        {label} <span className="text-red-500">*</span>
+      </span>
       <div className="flex items-center gap-1.5">
         {[1, 2, 3, 4, 5].map((star) => {
           const isFilled = star <= (hoverValue !== null ? hoverValue : value)
@@ -126,15 +140,18 @@ export function FeedbackContent() {
       customOccupation: "",
       topic: "",
       customTopic: "",
-      ratingContent: 0,
-      ratingDelivery: 0,
-      ratingOverall: 0,
+      feedback: "",
       impression: "",
+      improvement: "",
+      ratingMastery: 0,
+      ratingCommunication: 0,
+      ratingOverall: 0,
     },
   })
 
   const selectedOccupation = form.watch("occupation")
   const selectedTopic = form.watch("topic")
+  const selectedOverallRating = form.watch("ratingOverall")
 
   async function onSubmit(values: z.infer<typeof schema>) {
     setIsSubmitting(true)
@@ -183,7 +200,6 @@ export function FeedbackContent() {
             <div className="mt-8 space-y-6 animate-fade-in">
               <ContentBlock>
                 <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-6 flex gap-3 items-start">
-                  <Sparkles className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                   <p className="text-sm leading-relaxed text-muted-foreground">
                     {t("feedbackCallout")}
                   </p>
@@ -202,7 +218,7 @@ export function FeedbackContent() {
                         name="name"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>{t("name")}</FormLabel>
+                            <FormLabel>{t("name")} <span className="text-red-500">*</span></FormLabel>
                             <FormControl>
                               <Input placeholder={t("feedbackNamePlaceholder")} {...field} />
                             </FormControl>
@@ -216,7 +232,7 @@ export function FeedbackContent() {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>{t("email")}</FormLabel>
+                            <FormLabel>{t("email")} <span className="text-red-500">*</span></FormLabel>
                             <FormControl>
                               <Input placeholder={t("feedbackEmailPlaceholder")} {...field} />
                             </FormControl>
@@ -233,7 +249,7 @@ export function FeedbackContent() {
                         name="city"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>{t("feedbackCityLabel")}</FormLabel>
+                            <FormLabel>{t("feedbackCityLabel")} <span className="text-red-500">*</span></FormLabel>
                             <FormControl>
                               <div className="relative">
                                 <MapPin className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
@@ -250,7 +266,7 @@ export function FeedbackContent() {
                         name="occupation"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>{t("feedbackOccupationLabel")}</FormLabel>
+                            <FormLabel>{t("feedbackOccupationLabel")} <span className="text-red-500">*</span></FormLabel>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                               <FormControl>
                                 <SelectTrigger>
@@ -279,7 +295,7 @@ export function FeedbackContent() {
                         name="customOccupation"
                         render={({ field }) => (
                           <FormItem className="animate-slide-down">
-                            <FormLabel>{t("feedbackCustomOccupationLabel")}</FormLabel>
+                            <FormLabel>{t("feedbackCustomOccupationLabel")} <span className="text-red-500">*</span></FormLabel>
                             <FormControl>
                               <div className="relative">
                                 <Briefcase className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
@@ -298,7 +314,7 @@ export function FeedbackContent() {
                       name="topic"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t("feedbackTopicLabel")}</FormLabel>
+                          <FormLabel>{t("feedbackTopicLabel")} <span className="text-red-500">*</span></FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
                               <SelectTrigger>
@@ -306,11 +322,10 @@ export function FeedbackContent() {
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
-                              <SelectItem value="Fullstack Web Development dengan AI">Fullstack Web Development dengan AI</SelectItem>
-                              <SelectItem value="AI untuk Developer">AI untuk Developer</SelectItem>
-                              <SelectItem value="Prompt Engineering untuk Developer">Prompt Engineering untuk Developer</SelectItem>
-                              <SelectItem value="Personal Branding untuk Developer">Personal Branding untuk Developer</SelectItem>
+                              <SelectItem value="Workshop Vibe Coding">Workshop Vibe Coding</SelectItem>
                               <SelectItem value="Mentoring Pemrograman">Mentoring Pemrograman</SelectItem>
+                              <SelectItem value="Webinar/Seminar AI">Webinar/Seminar AI</SelectItem>
+                              <SelectItem value="Workshop AI">Workshop AI</SelectItem>
                               <SelectItem value="Lainnya">{t("language") === 'id' ? "Lainnya (Masukkan manual)" : "Other (Manual entry)"}</SelectItem>
                             </SelectContent>
                           </Select>
@@ -326,7 +341,7 @@ export function FeedbackContent() {
                         name="customTopic"
                         render={({ field }) => (
                           <FormItem className="animate-slide-down">
-                            <FormLabel>{t("feedbackCustomTopicLabel")}</FormLabel>
+                            <FormLabel>{t("feedbackCustomTopicLabel")} <span className="text-red-500">*</span></FormLabel>
                             <FormControl>
                               <div className="relative">
                                 <BookOpen className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
@@ -339,20 +354,20 @@ export function FeedbackContent() {
                       />
                     )}
 
-                    <div className="border-t pt-5 mt-4 space-y-4">
+                    <div className="border-t pt-5 mt-4 space-y-5">
                       <h4 className="font-semibold text-sm text-foreground/70 uppercase tracking-wider mb-2">Evaluasi Sesi</h4>
 
                       {/* Ratings */}
                       <FormField
                         control={form.control}
-                        name="ratingContent"
+                        name="ratingMastery"
                         render={({ field }) => (
                           <FormItem>
                             <FormControl>
                               <StarRating
                                 value={field.value}
                                 onChange={field.onChange}
-                                label={t("feedbackContentRating")}
+                                label={t("feedbackRatingMastery")}
                               />
                             </FormControl>
                             <FormMessage />
@@ -362,14 +377,14 @@ export function FeedbackContent() {
 
                       <FormField
                         control={form.control}
-                        name="ratingDelivery"
+                        name="ratingCommunication"
                         render={({ field }) => (
                           <FormItem>
                             <FormControl>
                               <StarRating
                                 value={field.value}
                                 onChange={field.onChange}
-                                label={t("feedbackDeliveryRating")}
+                                label={t("feedbackRatingCommunication")}
                               />
                             </FormControl>
                             <FormMessage />
@@ -386,7 +401,66 @@ export function FeedbackContent() {
                               <StarRating
                                 value={field.value}
                                 onChange={field.onChange}
-                                label={t("feedbackOverallRating")}
+                                label={t("feedbackRatingOverall")}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      {/* Conditional Improvement Textarea */}
+                      {selectedOverallRating > 0 && selectedOverallRating <= 4 && (
+                        <FormField
+                          control={form.control}
+                          name="improvement"
+                          render={({ field }) => (
+                            <FormItem className="animate-slide-down border-t pt-4">
+                              <FormLabel>{t("feedbackImprovementLabel")} <span className="text-red-500">*</span></FormLabel>
+                              <FormControl>
+                                <Textarea
+                                  placeholder={t("feedbackImprovementPlaceholder")}
+                                  className="min-h-20 resize-y"
+                                  {...field}
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      )}
+
+                      {/* Feedback untuk Aditya */}
+                      <FormField
+                        control={form.control}
+                        name="feedback"
+                        render={({ field }) => (
+                          <FormItem className="border-t pt-4">
+                            <FormLabel>{t("feedbackTextLabel")} <span className="text-red-500">*</span></FormLabel>
+                            <FormControl>
+                              <Textarea
+                                placeholder={t("feedbackTextPlaceholder")}
+                                className="min-h-24 resize-y"
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      {/* Kesan & Pesan (Opsional) */}
+                      <FormField
+                        control={form.control}
+                        name="impression"
+                        render={({ field }) => (
+                          <FormItem className="">
+                            <FormLabel>{t("feedbackImpressionLabel")}</FormLabel>
+                            <FormControl>
+                              <Textarea
+                                placeholder={t("feedbackImpressionPlaceholder")}
+                                className="min-h-24 resize-y"
+                                {...field}
                               />
                             </FormControl>
                             <FormMessage />
@@ -394,25 +468,6 @@ export function FeedbackContent() {
                         )}
                       />
                     </div>
-
-                    {/* Kesan & Pesan */}
-                    <FormField
-                      control={form.control}
-                      name="impression"
-                      render={({ field }) => (
-                        <FormItem className="border-t pt-4">
-                          <FormLabel>{t("feedbackImpressionLabel")}</FormLabel>
-                          <FormControl>
-                            <Textarea
-                              placeholder={t("feedbackImpressionPlaceholder")}
-                              className="min-h-24 resize-y"
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
 
                     <Button type="submit" disabled={isSubmitting} className="w-full relative overflow-hidden group">
                       <span className="flex items-center justify-center gap-2">

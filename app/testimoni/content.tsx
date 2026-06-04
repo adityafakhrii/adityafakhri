@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/page-header"
 import { ContentBlock } from "@/components/content-block"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Star, MessageSquare, Quote, MapPin, Calendar, Sparkles } from "lucide-react"
+import { Star, MessageSquare, Quote, MapPin, Calendar } from "lucide-react"
 import { TranslatedContent } from "@/components/translated-content"
 import { useLanguage } from "@/contexts/language-context"
 import { format } from "date-fns"
@@ -17,10 +17,12 @@ interface FeedbackSubmission {
   city: string
   occupation: string
   topic: string
-  ratingContent: number
-  ratingDelivery: number
+  ratingMastery: number
+  ratingCommunication: number
   ratingOverall: number
+  feedback: string
   impression?: string
+  improvement?: string
   createdAt: string
 }
 
@@ -36,8 +38,8 @@ export function TestimoniContent({ initialSubmissions }: TestimoniContentProps) 
     .filter(
       (item) =>
         item.ratingOverall === 5 &&
-        item.impression &&
-        item.impression.trim().length > 0
+        item.feedback &&
+        item.feedback.trim().length > 0
     )
     .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
 
@@ -61,13 +63,6 @@ export function TestimoniContent({ initialSubmissions }: TestimoniContentProps) 
 
           <div className="mt-8 space-y-8">
             <ContentBlock>
-              <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-8 flex gap-3 items-start">
-                <Sparkles className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {t("testimoniCallout")}
-                </p>
-              </div>
-
               {testimonials.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {testimonials.map((item) => (
@@ -101,7 +96,7 @@ export function TestimoniContent({ initialSubmissions }: TestimoniContentProps) 
 
                         {/* Body Section: Content */}
                         <p className="text-foreground/90 text-sm leading-relaxed italic relative pl-4 border-l-2 border-primary/30 my-2 flex-grow">
-                          "{item.impression}"
+                          "{item.feedback}"
                         </p>
 
                         {/* Bottom Section: Author Details */}

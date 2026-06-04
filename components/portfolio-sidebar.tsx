@@ -22,7 +22,8 @@ import {
   DollarSign,
   Folder,
   UserCheck,
-  LinkIcon
+  LinkIcon,
+  Heart
 } from "lucide-react"
 import { useTheme } from "next-themes"
 import Link from "next/link"
@@ -153,6 +154,14 @@ export function PortfolioSidebar() {
                     <Link href="/blog">
                       <FileText className="mr-2 h-4 w-4" />
                       <span>{isClient ? t('blog') : 'Blog'}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild isActive={pathname === "/testimoni"}>
+                    <Link href="/testimoni">
+                      <Heart className="mr-2 h-4 w-4" />
+                      <span>{isClient ? t('testimoni') : 'Testimonials'}</span>
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
