@@ -1,0 +1,41 @@
+[
+  {
+    "id": "seed-1",
+    "name": "Rizky Pratama",
+    "email": "rizky.pratama@gmail.com",
+    "city": "Sukabumi",
+    "occupation": "Mahasiswa",
+    "topic": "Prompt Engineering untuk Developer",
+    "ratingContent": 5,
+    "ratingDelivery": 5,
+    "ratingOverall": 5,
+    "impression": "Materi Prompt Engineering-nya daging banget! Penjelasannya seru, santai, dan gampang dimengerti buat saya yang baru belajar AI. Ditunggu sesi selanjutnya Kak Adit!",
+    "createdAt": "2026-05-15T10:00:00.000Z"
+  },
+  {
+    "id": "seed-2",
+    "name": "Sarah Amalia",
+    "email": "sarah.amalia@dev.co",
+    "city": "Bandung",
+    "occupation": "Frontend Engineer",
+    "topic": "Fullstack Web Development dengan AI",
+    "ratingContent": 5,
+    "ratingDelivery": 5,
+    "ratingOverall": 5,
+    "impression": "Sesi pembawaannya asyik banget, tidak membosankan. Integrasi AI dengan Next.js yang dipraktikkan sangat relevan sama kerjaan harian saya. Terima kasih Mas Aditya!",
+    "createdAt": "2026-05-20T14:30:00.000Z"
+  },
+  {
+    "id": "seed-3",
+    "name": "Fajar Hidayat",
+    "email": "fajar.hidayat@gmail.com",
+    "city": "Jakarta",
+    "occupation": "UI/UX Designer",
+    "topic": "AI untuk Developer",
+    "ratingContent": 5,
+    "ratingDelivery": 5,
+    "ratingOverall": 5,
+    "impression": "Sangat membuka wawasan tentang cara kolaborasi designer dan developer memanfaatkan AI. Penjelasan Kak Adit sistematis dan mudah dipahami oleh non-programmer sekalipun.",
+    "createdAt": "2026-05-28T09:15:00.000Z"
+  }
+]
