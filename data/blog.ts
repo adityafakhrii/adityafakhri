@@ -3084,8 +3084,8 @@ export default async function ProductsPage() {
         .rm-compare-card.do { border-top: 4px solid #10b981; }
         .rm-compare-card h3 { font-size: 1.15rem; font-weight: 800; margin: 0 0 1rem 0 !important; color: hsl(var(--foreground)); }
         .rm-compare-list { list-style: none !important; padding: 0 !important; margin: 0 !important; display: flex; flex-direction: column; gap: 0.75rem; }
-        .rm-compare-list li { font-size: 0.9rem !important; color: hsl(var(--muted-foreground)) !important; margin-bottom: 0 !important; display: flex; align-items: flex-start; gap: 0.5rem; line-height: 1.5; }
-        .rm-compare-list li::before { content: '•'; font-size: 1.25rem; line-height: 1; color: hsl(var(--muted-foreground)); flex-shrink: 0; }
+        .rm-compare-list li { font-size: 0.9rem !important; color: hsl(var(--muted-foreground)) !important; margin-bottom: 0 !important; position: relative; padding-left: 1.25rem; line-height: 1.5; }
+        .rm-compare-list li::before { content: '•'; position: absolute; left: 0; top: -0.1rem; font-size: 1.25rem; line-height: 1; color: hsl(var(--muted-foreground)); }
         .rm-compare-card.dont .rm-compare-list li::before { color: #ef4444; }
         .rm-compare-card.do .rm-compare-list li::before { color: #10b981; }
 
@@ -3470,7 +3470,298 @@ export default async function ProductsPage() {
     author: "Aditya Fakhri Riansyah",
     tags: ["Roadmap", "Fullstack", "AI", "Web Development", "React", "Next.js", "Laravel", "Node.js", "Career", "2026", "Freelance"],
     imageSrc: "/images/blog/roadmap-fullstack-2026.png",
-    relatedPosts: ["website-terbaik-logika-pemrograman-pemula", "ide-proyek-portfolio-fullstack-ai"],
+    relatedPosts: ["website-terbaik-logika-pemrograman-pemula", "ide-proyek-portfolio-fullstack-ai", "website-belajar-programming-gratis"],
+  },
+  "website-belajar-programming-gratis": {
+    title: "5 Website Gratis Terbaik untuk Belajar Programming dari Nol Sampai Siap Kerja",
+    excerpt: "Bingung mulai belajar coding? Ini rekomendasi 5 website belajar programming gratis terbaik dengan kurikulum terstruktur dan proyek nyata untuk membangun portofolio kerjamu dari nol!",
+    content: `
+      <style>
+        .wb-hero { padding: 2.5rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--muted)/0.3) 100%); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; position: relative; overflow: hidden; }
+        .wb-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.6rem; font-weight: 800; margin: 0 0 0.75rem 0; letter-spacing: -0.02em; }
+        .wb-hero p { color: hsl(var(--muted-foreground)); font-size: 1rem; line-height: 1.7; margin: 0; }
+        .wb-intro-box { padding: 1.5rem; border-radius: 1rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); box-shadow: 0 4px 12px rgba(0,0,0,0.01); margin: 1.5rem 0; line-height: 1.7; }
+        .wb-section-title { font-size: 1.35rem; font-weight: 800; margin: 3rem 0 1.25rem 0; color: hsl(var(--foreground)); border-left: 4px solid hsl(var(--primary)); padding-left: 0.75rem; line-height: 1.2; }
+
+        /* Site Card Styles */
+        .wb-site-card { padding: 1.75rem; border-radius: 1.25rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); margin-bottom: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.01); position: relative; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .wb-site-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.03); border-color: hsl(var(--primary)/0.2); }
+        .wb-site-num { position: absolute; right: 1.75rem; top: 1.75rem; font-size: 2.5rem; font-weight: 900; color: hsl(var(--muted)/0.3); line-height: 1; }
+        .wb-site-header { margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid hsl(var(--border)); }
+        .wb-site-title { font-size: 1.3rem; font-weight: 800; color: hsl(var(--foreground)); margin: 0 0 0.5rem 0 !important; }
+
+        /* Link Button Style */
+        .wb-resource-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.25rem; font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 9999px; background: hsl(var(--primary) / 0.08); color: hsl(var(--primary)); border: 1px solid hsl(var(--primary) / 0.15); text-decoration: none !important; transition: all 0.2s ease-in-out; cursor: pointer; margin-top: 0.25rem; }
+        .wb-resource-btn::after { content: '↗'; font-size: 0.7rem; transition: transform 0.2s ease-in-out; }
+        .wb-resource-btn:hover { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)) !important; border-color: hsl(var(--primary)); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .wb-resource-btn:hover::after { transform: translate(1px, -1px); }
+
+        .wb-site-body { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.25rem; }
+        @media (max-width: 768px) { .wb-site-body { grid-template-columns: 1fr; gap: 1rem; } }
+
+        .wb-feature-title { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: hsl(var(--muted-foreground)); margin-bottom: 0.5rem; }
+        .wb-feature-list { list-style: none !important; padding: 0 !important; margin: 0 !important; display: flex; flex-direction: column; gap: 0.4rem; }
+        .wb-feature-list li { font-size: 0.88rem !important; color: hsl(var(--muted-foreground)) !important; margin-bottom: 0 !important; display: flex; align-items: center; gap: 0.5rem; }
+        .wb-feature-list li::before { content: '✓'; color: #10b981; font-weight: bold; font-size: 0.95rem; }
+
+        .wb-tags-container { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.25rem; }
+        .wb-tag { font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 0.25rem; background: hsl(var(--muted)); color: hsl(var(--muted-foreground)); border: 1px solid hsl(var(--border)); }
+
+        /* Compare Grid Styles */
+        .wb-compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2.5rem 0; }
+        @media (max-width: 768px) { .wb-compare-grid { grid-template-columns: 1fr; } }
+        .wb-compare-card { padding: 1.75rem; border-radius: 1.25rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); }
+        .wb-compare-card.dont { border-top: 4px solid #ef4444; }
+        .wb-compare-card.do { border-top: 4px solid #10b981; }
+        .wb-compare-card h3 { font-size: 1.15rem; font-weight: 800; margin: 0 0 1rem 0 !important; color: hsl(var(--foreground)); }
+        .wb-compare-list { list-style: none !important; padding: 0 !important; margin: 0 !important; display: flex; flex-direction: column; gap: 0.75rem; }
+        .wb-compare-list li { font-size: 0.9rem !important; color: hsl(var(--muted-foreground)) !important; margin-bottom: 0 !important; position: relative; padding-left: 1.25rem; line-height: 1.5; }
+        .wb-compare-list li::before { content: '•'; position: absolute; left: 0; top: -0.1rem; font-size: 1.25rem; line-height: 1; color: hsl(var(--muted-foreground)); }
+        .wb-compare-card.dont .wb-compare-list li::before { color: #ef4444; }
+        .wb-compare-card.do .wb-compare-list li::before { color: #10b981; }
+
+        /* Order List Styles */
+        .wb-order-list { counter-reset: wb-counter; list-style: none !important; padding: 0 !important; margin: 2rem 0 !important; display: flex; flex-direction: column; gap: 0.75rem; }
+        .wb-order-list li { counter-increment: wb-counter; padding: 1rem 1.25rem 1rem 3.5rem; position: relative; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; font-size: 0.9rem !important; line-height: 1.7; color: hsl(var(--muted-foreground)) !important; }
+        .wb-order-list li::before { content: counter(wb-counter); position: absolute; left: 1.25rem; top: 1rem; font-size: 0.85rem; font-weight: 800; color: hsl(var(--foreground)); background: hsl(var(--muted)); width: 1.5rem; height: 1.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid hsl(var(--border)); }
+        .wb-order-list li strong { color: hsl(var(--foreground)); }
+
+        /* CTA Panel */
+        .wb-cta { margin-top: 3.5rem; padding: 3rem 2rem; border-radius: 1.5rem; background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.9) 100%); text-align: center; color: hsl(var(--primary-foreground)); position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .wb-cta::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%); pointer-events: none; }
+        .wb-cta h2 { color: hsl(var(--primary-foreground)) !important; margin-top: 0 !important; font-size: 1.75rem; font-weight: 800; margin-bottom: 0.75rem; }
+        .wb-cta p { color: hsl(var(--primary-foreground) / 0.8); margin-bottom: 1.5rem; font-size: 1.05rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .wb-cta a { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2.25rem; border-radius: 9999px; background: hsl(var(--primary-foreground)); color: hsl(var(--primary)); font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .wb-cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); filter: brightness(1.05); }
+        .wb-cta a svg { transition: transform 0.2s; }
+        .wb-cta a:hover svg { transform: rotate(10deg) scale(1.1); }
+        @media (max-width: 768px) { .wb-hero { padding: 1.75rem 1.25rem; } }
+      </style>
+
+      <div class="wb-hero">
+        <h2>Catet! Ini 5 Web Buat Belajar Programming GRATIS!</h2>
+        <p>Belajar programming di era sekarang sebenarnya jauh lebih mudah dibanding beberapa tahun lalu. Masalahnya bukan karena kurang resource, tapi justru karena terlalu banyak pilihan. Akibatnya banyak pemula yang akhirnya bingung harus mulai dari mana. Artikel ini akan membahas 5 website gratis yang bisa menjadi tempat belajar programming dengan kualitas terbaik dari nol sampai siap kerja!</p>
+      </div>
+
+      <div class="wb-intro-box">
+        <p>Hari ini belajar dari YouTube, besok pindah to website lain, lusa ikut tutorial baru. Akhirnya sudah berbulan-bulan belajar, tapi belum pernah menyelesaikan satu project pun. Kalau kamu sedang berada di fase tersebut, kamu tidak sendirian. Kuncinya adalah memilih satu kurikulum terstruktur dan fokus menyelesaikannya secara konsisten.</p>
+      </div>
+
+      <div class="wb-section-title">5 Website Belajar Programming Gratis Terpopuler</div>
+
+      <!-- Card 1: FreeCodeCamp -->
+      <div class="wb-site-card">
+        <div class="wb-site-num">01</div>
+        <div class="wb-site-header">
+          <h3 class="wb-site-title">FreeCodeCamp</h3>
+          <a href="https://www.freecodecamp.org" target="_blank" rel="noopener noreferrer" class="wb-resource-btn">Kunjungi FreeCodeCamp</a>
+        </div>
+        <p>FreeCodeCamp adalah salah satu platform belajar programming gratis paling populer di dunia. Platform ini menyediakan kurikulum yang terstruktur mulai dari HTML, CSS, JavaScript, Frontend Development, Backend Development, hingga Data Analysis dan Machine Learning. Yang menarik, kamu tidak hanya belajar teori tetapi juga langsung mengerjakan project sebagai syarat kelulusan.</p>
+        
+        <div class="wb-site-body">
+          <div>
+            <div class="wb-feature-title">Kelebihan</div>
+            <ul class="wb-feature-list">
+              <li>Gratis selamanya</li>
+              <li>Kurikulum lengkap & terstruktur</li>
+              <li>Banyak project praktik langsung</li>
+              <li>Sertifikat kelulusan gratis</li>
+            </ul>
+          </div>
+          <div>
+            <div class="wb-feature-title">Cocok Untuk</div>
+            <div class="wb-tags-container">
+              <span class="wb-tag">Pemula</span>
+              <span class="wb-tag">Mahasiswa IT</span>
+              <span class="wb-tag">Calon Fullstack Developer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: W3Schools -->
+      <div class="wb-site-card">
+        <div class="wb-site-num">02</div>
+        <div class="wb-site-header">
+          <h3 class="wb-site-title">W3Schools</h3>
+          <a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer" class="wb-resource-btn">Kunjungi W3Schools</a>
+        </div>
+        <p>Kalau kamu baru pertama kali belajar coding, W3Schools adalah tempat yang sangat nyaman untuk memulai. Materinya disajikan secara singkat, mudah dipahami, dan langsung bisa dicoba melalui editor online yang tersedia. Banyak developer yang sampai hari ini masih menggunakan W3Schools sebagai referensi cepat.</p>
+        
+        <div class="wb-site-body">
+          <div>
+            <div class="wb-feature-title">Kelebihan</div>
+            <ul class="wb-feature-list">
+              <li>Sangat mudah dipahami pemula absolut</li>
+              <li>Bisa langsung praktik di browser tanpa install software</li>
+              <li>Materi referensi yang sangat lengkap</li>
+            </ul>
+          </div>
+          <div>
+            <div class="wb-feature-title">Cocok Untuk</div>
+            <div class="wb-tags-container">
+              <span class="wb-tag">Pemula Absolut</span>
+              <span class="wb-tag">Belajar HTML & CSS</span>
+              <span class="wb-tag">JavaScript Dasar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: The Odin Project -->
+      <div class="wb-site-card">
+        <div class="wb-site-num">03</div>
+        <div class="wb-site-header">
+          <h3 class="wb-site-title">The Odin Project</h3>
+          <a href="https://www.theodinproject.com" target="_blank" rel="noopener noreferrer" class="wb-resource-btn">Kunjungi The Odin Project</a>
+        </div>
+        <p>Jika tujuanmu adalah menjadi Fullstack Developer, maka The Odin Project wajib masuk daftar belajar. Platform ini memiliki roadmap yang sangat jelas dan fokus pada pembelajaran berbasis project. Kamu akan diajak membangun aplikasi nyata, menggunakan GitHub, dan memahami workflow yang digunakan developer profesional.</p>
+        
+        <div class="wb-site-body">
+          <div>
+            <div class="wb-feature-title">Kelebihan</div>
+            <ul class="wb-feature-list">
+              <li>Fokus pada proyek nyata standar industri</li>
+              <li>Roadmap karir yang sangat terstruktur</li>
+              <li>Mengajarkan workflow industri (Git, Command Line)</li>
+            </ul>
+          </div>
+          <div>
+            <div class="wb-feature-title">Cocok Untuk</div>
+            <div class="wb-tags-container">
+              <span class="wb-tag">Calon Fullstack Developer</span>
+              <span class="wb-tag">Mahasiswa Semester Akhir</span>
+              <span class="wb-tag">Fresh Graduate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Roadmap.sh -->
+      <div class="wb-site-card">
+        <div class="wb-site-num">04</div>
+        <div class="wb-site-header">
+          <h3 class="wb-site-title">Roadmap.sh</h3>
+          <a href="https://roadmap.sh" target="_blank" rel="noopener noreferrer" class="wb-resource-btn">Kunjungi Roadmap.sh</a>
+        </div>
+        <p>Roadmap.sh adalah platform panduan karir IT paling populer di dunia. Di sini kamu bisa melihat peta jalan (roadmap) belajar berbagai profesi teknologi mulai dari Frontend, Backend, Fullstack, DevOps, hingga AI Engineer. Sangat membantu agar belajarmu terarah dan tidak tersesat di tengah jalan.</p>
+        
+        <div class="wb-site-body">
+          <div>
+            <div class="wb-feature-title">Kelebihan</div>
+            <ul class="wb-feature-list">
+              <li>Peta jalan (roadmap) visual yang sangat detail</li>
+              <li>Materi panduan terlengkap dari berbagai bidang IT</li>
+              <li>Rekomendasi link referensi belajar berkualitas di tiap topik</li>
+            </ul>
+          </div>
+          <div>
+            <div class="wb-feature-title">Cocok Untuk</div>
+            <div class="wb-tags-container">
+              <span class="wb-tag">Penentu Arah Karir</span>
+              <span class="wb-tag">Semua Level Developer</span>
+              <span class="wb-tag">DevOps & AI Engineer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: Frontend Mentor -->
+      <div class="wb-site-card">
+        <div class="wb-site-num">05</div>
+        <div class="wb-site-header">
+          <h3 class="wb-site-title">Frontend Mentor</h3>
+          <a href="https://www.frontendmentor.io" target="_blank" rel="noopener noreferrer" class="wb-resource-btn">Kunjungi Frontend Mentor</a>
+        </div>
+        <p>Latihan bikin website dari desain nyata untuk membangun portfolio dan skill frontend. Frontend Mentor menyediakan aset desain profesional (Figma/PNG) yang harus kamu terjemahkan ke dalam kode HTML, CSS, dan JavaScript nyata. Sangat efektif untuk melatih ketajaman slicing desain ke kode.</p>
+        
+        <div class="wb-site-body">
+          <div>
+            <div class="wb-feature-title">Kelebihan</div>
+            <ul class="wb-feature-list">
+              <li>Latihan dengan aset desain standar industri</li>
+              <li>Umpan balik (review kode) yang interaktif dari komunitas</li>
+              <li>Tantangan praktis dari level pemula hingga lanjutan</li>
+            </ul>
+          </div>
+          <div>
+            <div class="wb-feature-title">Cocok Untuk</div>
+            <div class="wb-tags-container">
+              <span class="wb-tag">Calon Frontend Developer</span>
+              <span class="wb-tag">UI/UX Engineer</span>
+              <span class="wb-tag">Pengisi Portofolio Kerja</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wb-section-title">Kesalahan Umum Belajar Coding Bagi Pemula</div>
+
+      <p>Banyak orang berpikir mereka butuh lebih banyak tutorial. Padahal masalah sebenarnya adalah terlalu banyak menonton tutorial (*Tutorial Hell*) dan terlalu sedikit praktik membuat proyek. Hindari pola belajar yang tidak produktif dan beralihlah ke cara yang direkomendasikan industri:</p>
+
+      <div class="wb-compare-grid">
+        <div class="wb-compare-card dont">
+          <h3>❌ Jangan Lakukan Ini</h3>
+          <ul class="wb-compare-list">
+            <li><strong>Belajar dari 10 website sekaligus</strong> dalam waktu yang bersamaan sehingga tidak fokus.</li>
+            <li><strong>Menonton video tutorial secara pasif</strong> tanpa mengetik kode dan mempraktikkannya sendiri.</li>
+            <li><strong>Terus-menerus berganti roadmap belajar</strong> setiap minggu karena lapar mata teknologi baru.</li>
+            <li><strong>Takut membuat project sendiri</strong> dari nol hanya karena merasa belum siap atau belum hafal syntax.</li>
+          </ul>
+        </div>
+
+        <div class="wb-compare-card do">
+          <h3>✅ Sebaiknya Lakukan Ini</h3>
+          <ul class="wb-compare-list">
+            <li><strong>Pilih 1 platform belajar utama</strong> dan selesaikan seluruh materinya sampai tuntas.</li>
+            <li><strong>Ikuti kurikulumnya secara tertib</strong> dan kerjakan semua proyek latihan di dalamnya.</li>
+            <li><strong>Langsung praktikkan teori</strong> dengan memodifikasi kode latihan sesuai kreativitasmu.</li>
+            <li><strong>Upload project buatanmu ke GitHub</strong> sebagai bukti nyata portofolio kerjamu.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wb-intro-box">
+        <p>Ingat, <strong>perusahaan tidak membayar sertifikat kelulusanmu. Perusahaan membayar skill nyata, problem solving, dan hasil kerjamu.</strong> Jadi, prioritaskan membuat portofolio dibanding mengoleksi sertifikat.</p>
+      </div>
+
+      <div class="wb-section-title">Website Mana yang Harus Kamu Pilih? (Rekomendasi Urutan Belajar)</div>
+
+      <p>Kalau kamu benar-benar pemula yang memulai belajar dari nol absolut, saya sangat menyarankan untuk mengikuti urutan belajar berikut secara bertahap:</p>
+
+      <ol class="wb-order-list">
+        <li><strong>W3Schools</strong> — Pelajari dasar-dasar HTML, CSS, dan JavaScript secara interaktif agar terbiasa mengetik sintaks dasar.</li>
+        <li><strong>Roadmap.sh</strong> — Cari tahu peta panduan (roadmap) belajar profesi IT pilihanmu sebagai pemandu arah belajar jangka panjang.</li>
+        <li><strong>FreeCodeCamp</strong> — Selesaikan kurikulum sertifikasi dasar untuk menantang dirimu membuat proyek nyata pertama di browser.</li>
+        <li><strong>The Odin Project</strong> — Bangun workflow lokal yang nyata (Git, GitHub) dan buat proyek aplikasi web fullstack siap deploy.</li>
+        <li><strong>Frontend Mentor</strong> — Latihlah skill membelah aset desain profesional menjadi kode website nyata untuk portofolio siap kerja.</li>
+      </ol>
+
+      <p>Dengan mengikuti jalur terarah di atas, kamu dapat belajar dari dasar paling mendasar hingga siap membangun proyek portofolio bernilai tinggi yang siap dilirik recruiter industri.</p>
+
+      <div class="wb-section-title">Kesimpulan</div>
+
+      <p>Belajar programming tidak harus mahal dan tidak perlu mengeluarkan biaya jutaan rupiah untuk bootcamp jika kamu punya tekad mandiri yang kuat. Banyak sekali sumber daya pembelajaran gratis berkualitas dunia di luar sana yang siap membantumu menjadi developer profesional.</p>
+
+      <p>Yang paling penting bukanlah platform atau website mana yang kamu pilih untuk belajar, melainkan seberapa konsisten kamu meluangkan waktu untuk belajar dan mempraktikkannya secara nyata. Programmer yang sukses bukanlah mereka yang mengoleksi ratusan bookmark tutorial, melainkan mereka yang benar-benar membangun sesuatu dari ide mereka!</p>
+
+      <div class="wb-cta">
+        <h2>Mau Tips Belajar Coding & Info Karir Tech Setiap Hari?</h2>
+        <p>Yuk ikuti akun Instagram saya buat dapet info roadmap belajar terstruktur, rekomendasi AI tools terbaru, tips freelance, dan personal branding untuk programmer!</p>
+        <a href="https://www.instagram.com/adityafakhrii/" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:0.25rem;"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          Follow @adityafakhrii di Instagram
+        </a>
+      </div>
+    `,
+    date: "7 Jun 2026",
+    isoDate: "2026-06-07",
+    readTime: "8 min",
+    category: "Web Development",
+    author: "Aditya Fakhri Riansyah",
+    tags: ["Belajar Programming", "Website Gratis", "Coding", "Pemula", "FreeCodeCamp", "W3Schools", "The Odin Project", "Roadmap.sh", "Frontend Mentor", "2026"],
+    imageSrc: "/images/blog/website-belajar-coding-gratis.png",
+    relatedPosts: ["roadmap-fullstack-developer-ai-2026", "website-terbaik-logika-pemrograman-pemula"],
   }
 } as const
 
