@@ -31,17 +31,23 @@ const blogs = {
         .pe-example-header { padding: 0.75rem 1.25rem; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: hsl(var(--muted-foreground)); background: hsl(var(--muted)); border-bottom: 1px solid hsl(var(--border)); }
         .pe-example-bad, .pe-example-good { padding: 1rem 1.25rem; font-size: 0.88rem; line-height: 1.7; }
         .pe-example-bad { color: hsl(var(--muted-foreground)); border-bottom: 1px solid hsl(var(--border)); }
-        .pe-example-good { color: hsl(var(--foreground)); }
+        .pe-example-good { color: hsl(var(--foreground)); position: relative; padding-right: 4.5rem; }
         .pe-example-bad::before { content: 'Kurang Baik'; display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 0.1rem 0.5rem; border-radius: 0.25rem; background: hsl(var(--muted)); color: hsl(var(--muted-foreground)); border: 1px solid hsl(var(--border)); margin-right: 0.5rem; margin-bottom: 0.35rem; }
         .pe-example-good::before { content: 'Lebih Baik'; display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 0.1rem 0.5rem; border-radius: 0.25rem; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); margin-right: 0.5rem; margin-bottom: 0.35rem; }
         .pe-tip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
         .pe-tip-card { padding: 1.25rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); position: relative; }
         .pe-tip-card h4 { font-size: 0.95rem; font-weight: 700; margin: 0 0 0.35rem 0; color: hsl(var(--foreground)); }
         .pe-tip-card p { font-size: 0.85rem; line-height: 1.6; color: hsl(var(--muted-foreground)); margin: 0 0 2.5rem 0; }
-        .pe-copy-btn { position: absolute; bottom: 1rem; right: 1rem; display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.85rem; border-radius: 0.5rem; border: 1px solid hsl(var(--border)); background: hsl(var(--muted)); color: hsl(var(--muted-foreground)); font-size: 0.72rem; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: inherit; }
-        .pe-copy-btn:hover { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); border-color: hsl(var(--primary)); }
-        .pe-copy-btn svg { width: 12px; height: 12px; }
-        .pe-prompt-block { background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; padding: 1.25rem; font-size: 0.85rem; line-height: 1.8; color: hsl(var(--foreground)); font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace; white-space: pre-wrap; word-break: break-word; margin: 1rem 0; overflow-x: auto; }
+        .pe-copy-btn { position: absolute; bottom: 1rem; right: 1rem; display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.85rem; border-radius: 0.5rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); color: hsl(var(--muted-foreground)); font-size: 0.72rem; font-weight: 600; cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); font-family: inherit; z-index: 10; }
+        .pe-copy-btn:hover { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); border-color: hsl(var(--primary)); transform: scale(1.03); }
+        .pe-copy-btn:active { transform: scale(0.97); }
+        .pe-copy-btn svg { width: 12px; height: 12px; transition: transform 0.2s; }
+        .pe-copy-btn:hover svg { transform: rotate(5deg); }
+        .pe-copy-btn.copied { background: #10b981 !important; color: #ffffff !important; border-color: #10b981 !important; }
+        
+        .pe-prompt-block .pe-copy-btn, .pe-example-good .pe-copy-btn { top: 0.75rem; right: 0.75rem; bottom: auto; }
+
+        .pe-prompt-block { background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; padding: 1.25rem 4.5rem 1.25rem 1.25rem; font-size: 0.85rem; line-height: 1.8; color: hsl(var(--foreground)); font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace; white-space: pre-wrap; word-break: break-word; margin: 1rem 0; overflow-x: auto; position: relative; }
         .pe-prompt-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: hsl(var(--muted-foreground)); margin-bottom: 0.5rem; }
         .pe-callout { padding: 1.5rem; border-radius: 1rem; border-left: 4px solid hsl(var(--primary)); background: hsl(var(--muted)); margin: 2rem 0; }
         .pe-callout p { margin: 0; font-size: 0.95rem; line-height: 1.7; color: hsl(var(--foreground)); }
@@ -132,7 +138,7 @@ const blogs = {
       <div class="pe-example">
         <div class="pe-example-header">Contoh penerapan R-T-F</div>
         <div class="pe-example-bad">"buatin caption instagram"</div>
-        <div class="pe-example-good">"Lo adalah seorang social media strategist berpengalaman 5 tahun di industri F&B. Buatkan 5 caption Instagram untuk promo menu baru kedai kopi — nada casual, target anak muda Jakarta 18-25 tahun. Format: setiap caption max 150 karakter, include 3 hashtag relevan, dan 1 CTA."</div>
+        <div class="pe-example-good">Lo adalah seorang social media strategist berpengalaman 5 tahun di industri F&B. Buatkan 5 caption Instagram untuk promo menu baru kedai kopi — nada casual, target anak muda Jakarta 18-25 tahun. Format: setiap caption max 150 karakter, include 3 hashtag relevan, dan 1 CTA.<button class="pe-copy-btn" onclick="navigator.clipboard.writeText(&quot;Lo adalah seorang social media strategist berpengalaman 5 tahun di industri F&B. Buatkan 5 caption Instagram untuk promo menu baru kedai kopi — nada casual, target anak muda Jakarta 18-25 tahun. Format: setiap caption max 150 karakter, include 3 hashtag relevan, dan 1 CTA.&quot;);this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
       </div>
 
       <div class="pe-formula-box">
@@ -152,7 +158,7 @@ Adjustments: Fokus pada laptop budget 5-15 juta. Jangan rekomendasikan MacBook (
 
 Type of output: Artikel 1500 kata dengan heading, subheading, bullet points, dan kesimpulan.
 
-Extras: Tambahkan tabel perbandingan 5 laptop rekomendasi dengan kolom: nama, harga, prosesor, RAM, dan skor rating.</div>
+Extras: Tambahkan tabel perbandingan 5 laptop rekomendasi dengan kolom: nama, harga, prosesor, RAM, dan skor rating.<button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Character: Lo adalah content writer berpengalaman yang ahli nulis artikel SEO dalam bahasa Indonesia casual.\\n\\nRequest: Tulis artikel blog tentang &quot;cara memilih laptop untuk programming&quot; dengan target audience mahasiswa informatika.\\n\\nExamples: Gaya penulisan mirip Tech in Asia atau DailySocial — informatif tapi santai, ada opini personal.\\n\\nAdjustments: Fokus pada laptop budget 5-15 juta. Jangan rekomendasikan MacBook (di luar budget target). Gunakan bahasa lo-gue.\\n\\nType of output: Artikel 1500 kata dengan heading, subheading, bullet points, dan kesimpulan.\\n\\nExtras: Tambahkan tabel perbandingan 5 laptop rekomendasi dengan kolom: nama, harga, prosesor, RAM, dan skor rating.');this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
 
       <div class="pe-formula-box">
         <div class="pe-formula-label">Rumus #3 — T-A-G (Task + Action + Goal)</div>
@@ -163,7 +169,7 @@ Extras: Tambahkan tabel perbandingan 5 laptop rekomendasi dengan kolom: nama, ha
       <div class="pe-example">
         <div class="pe-example-header">Contoh penerapan T-A-G</div>
         <div class="pe-example-bad">"fix kode ini"</div>
-        <div class="pe-example-good">"Task: Ada bug di fungsi login — user selalu redirect ke halaman 404 setelah submit form. Action: Analisis kode di bawah, identifikasi root cause, dan berikan fix beserta penjelasan. Goal: User bisa login dan redirect ke dashboard tanpa error."</div>
+        <div class="pe-example-good">Task: Ada bug di fungsi login — user selalu redirect ke halaman 404 setelah submit form. Action: Analisis kode di bawah, identifikasi root cause, dan berikan fix beserta penjelasan. Goal: User bisa login dan redirect ke dashboard tanpa error.<button class="pe-copy-btn" onclick="navigator.clipboard.writeText(&quot;Task: Ada bug di fungsi login — user selalu redirect ke halaman 404 setelah submit form. Action: Analisis kode di bawah, identifikasi root cause, dan berikan fix beserta penjelasan. Goal: User bisa login dan redirect ke dashboard tanpa error.&quot;);this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
       </div>
 
       <div class="pe-formula-box">
@@ -177,7 +183,7 @@ Extras: Tambahkan tabel perbandingan 5 laptop rekomendasi dengan kolom: nama, ha
 
 After: Gue mau dapet 500 visitors per hari dengan conversion rate 3%, targetin revenue 20 juta/bulan dalam 3 bulan.
 
-Bridge: Buatkan strategi digital marketing lengkap yang mencakup SEO, social media, dan email marketing — dengan timeline mingguan dan KPI yang terukur.</div>
+Bridge: Buatkan strategi digital marketing lengkap yang mencakup SEO, social media, dan email marketing — dengan timeline mingguan dan KPI yang terukur.<button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Before: Toko online gue cuma dapet 50 visitors per hari dan conversion rate 0.5%. Revenue stuck di 2 juta/bulan.\\n\\nAfter: Gue mau dapet 500 visitors per hari dengan conversion rate 3%, targetin revenue 20 juta/bulan dalam 3 bulan.\\n\\nBridge: Buatkan strategi digital marketing lengkap yang mencakup SEO, social media, dan email marketing — dengan timeline mingguan dan KPI yang terukur.');this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
 
       <div class="pe-formula-box">
         <div class="pe-formula-label">Rumus #5 — R-I-S-E (Role + Input + Steps + Expectation)</div>
@@ -196,7 +202,7 @@ Steps:
 3. Berikan solusi spesifik untuk setiap masalah
 4. Tulis kode implementasi untuk top 3 solusi
 
-Expectation: Halaman produk loading di bawah 1 detik, skor Lighthouse minimal 90. Setiap solusi disertai penjelasan kenapa dan kode yang siap pakai.</div>
+Expectation: Halaman produk loading di bawah 1 detik, skor Lighthouse minimal 90. Setiap solusi disertai penjelasan kenapa dan kode yang siap pakai.<button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Role: Lo adalah senior full-stack developer yang expert di React dan Next.js.\\n\\nInput: Gue punya app e-commerce yang dibangun dengan Next.js 14 + Supabase. Saat ini halaman produk loading lambat (3.5 detik) dan skor Lighthouse cuma 45.\\n\\nSteps:\\n1. Analisis kemungkinan penyebab performa buruk\\n2. Prioritaskan masalah dari yg paling impactful\\n3. Berikan solusi spesifik untuk setiap masalah\\n4. Tulis kode implementasi untuk top 3 solusi\\n\\nExpectation: Halaman produk loading di bawah 1 detik, skor Lighthouse minimal 90. Setiap solusi disertai penjelasan kenapa dan kode yang siap pakai.');this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
 
       <div class="pe-section-title">7 Teknik Advanced Prompt Engineering</div>
 
@@ -207,19 +213,19 @@ Expectation: Halaman produk loading di bawah 1 detik, skor Lighthouse minimal 90
           <h3>1. Chain of Thought (CoT) Prompting</h3>
           <p>Minta AI untuk berpikir step-by-step sebelum memberi jawaban final. Teknik ini terbukti meningkatkan akurasi terutama untuk problem-solving dan reasoning.</p>
           <div class="pe-prompt-label">Contoh:</div>
-          <div class="pe-prompt-block">"Analisis apakah startup ini layak didanai. Pikirkan langkah demi langkah:
+          <div class="pe-prompt-block">Analisis apakah startup ini layak didanai. Pikirkan langkah demi langkah:
 1. Evaluasi market size dan growth potential
 2. Analisis competitive landscape
 3. Review business model dan unit economics
 4. Assess tim dan execution capability
-Baru setelah itu, berikan rekomendasi final beserta confidence score."</div>
+Baru setelah itu, berikan rekomendasi final beserta confidence score.<button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Analisis apakah startup ini layak didanai. Pikirkan langkah demi langkah:\\n1. Evaluasi market size dan growth potential\\n2. Analisis competitive landscape\\n3. Review business model dan unit economics\\n4. Assess tim dan execution capability\\nBaru setelah itu, berikan rekomendasi final beserta confidence score.');this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
         </div>
 
         <div class="pe-technique">
           <h3>2. Few-Shot Prompting</h3>
           <p>Kasih AI beberapa contoh input-output yang lo harapkan. AI akan mengenali pola dan mengikuti format yang lo tentukan.</p>
           <div class="pe-prompt-label">Contoh:</div>
-          <div class="pe-prompt-block">"Ubah kalimat formal menjadi casual bahasa anak muda Jakarta.
+          <div class="pe-prompt-block">Ubah kalimat formal menjadi casual bahasa anak muda Jakarta.
 
 Contoh 1:
 Formal: "Kami mengucapkan terima kasih atas dukungan Anda."
@@ -230,19 +236,19 @@ Formal: "Silakan hubungi kami untuk informasi lebih lanjut."
 Casual: "Ada yang mau ditanyain? DM aja langsung, santai."
 
 Formal: "Kami informasikan bahwa jadwal meeting telah diubah."
-Casual: ???"</div>
+Casual: ???<button class="pe-copy-btn" onclick="navigator.clipboard.writeText(&quot;Ubah kalimat formal menjadi casual bahasa anak muda Jakarta.\\n\\nContoh 1:\\nFormal: \\&quot;Kami mengucapkan terima kasih atas dukungan Anda.\\&quot;\\nCasual: \\&quot;Thanks banget buat support-nya, gengs!\\&quot;\\n\\nContoh 2:\\nFormal: \\&quot;Silakan hubungi kami untuk informasi lebih lanjut.\\&quot;\\nCasual: \\&quot;Ada yang mau ditanyain? DM aja langsung, santai.\\&quot;\\n\\nFormal: \\&quot;Kami informasikan bahwa jadwal meeting telah diubah.\\&quot;\\nCasual: ???&quot;);this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
         </div>
 
         <div class="pe-technique">
           <h3>3. Role Stacking</h3>
           <p>Bukan cuma satu role — kasih AI multiple roles atau perspectives untuk jawaban yang lebih komprehensif.</p>
           <div class="pe-prompt-label">Contoh:</div>
-          <div class="pe-prompt-block">"Evaluasi landing page ini dari 3 perspektif:
+          <div class="pe-prompt-block">Evaluasi landing page ini dari 3 perspektif:
 1. Sebagai UX designer: analisis user flow, clarity, dan friction points
 2. Sebagai copywriter: evaluasi headline, CTA, dan persuasive elements
 3. Sebagai growth marketer: cek conversion optimization dan A/B test opportunities
 
-Berikan skor 1-10 dari setiap perspektif dan 3 actionable improvements."</div>
+Berikan skor 1-10 dari setiap perspektif dan 3 actionable improvements.<button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Evaluasi landing page ini dari 3 perspektif:\\n1. Sebagai UX designer: analisis user flow, clarity, dan friction points\\n2. Sebagai copywriter: evaluasi headline, CTA, dan persuasive elements\\n3. Sebagai growth marketer: cek conversion optimization dan A/B test opportunities\\n\\nBerikan skor 1-10 dari setiap perspektif dan 3 actionable improvements.');this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
         </div>
 
         <div class="pe-technique">
@@ -255,28 +261,28 @@ Berikan skor 1-10 dari setiap perspektif dan 3 actionable improvements."</div>
 - Larangan: "Jangan pakai jargon teknis"
 - Scope: "Fokus hanya pada solusi yang bisa dilakukan tanpa budget"
 - Tone: "Nada profesional tapi approachable"
-- Audience: "Jelaskan seperti ke anak SMA kelas 10"</div>
+- Audience: "Jelaskan seperti ke anak SMA kelas 10"<button class="pe-copy-btn" onclick="navigator.clipboard.writeText('- Panjang: &quot;Jawab dalam maksimal 200 kata&quot;\\n- Format: &quot;Gunakan bullet points, bukan paragraf&quot;\\n- Bahasa: &quot;Pakai bahasa Indonesia casual, lo-gue&quot;\\n- Larangan: &quot;Jangan pakai jargon teknis&quot;\\n- Scope: &quot;Fokus hanya pada solusi yang bisa dilakukan tanpa budget&quot;\\n- Tone: &quot;Nada profesional tapi approachable&quot;\\n- Audience: &quot;Jelaskan seperti ke anak SMA kelas 10&quot;');this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
         </div>
 
         <div class="pe-technique">
           <h3>5. Self-Reflection Prompting</h3>
           <p>Minta AI untuk mengevaluasi dan memperbaiki output-nya sendiri. Ini bikin kualitas naik signifikan.</p>
           <div class="pe-prompt-label">Contoh:</div>
-          <div class="pe-prompt-block">"Tulis email follow-up ke klien yang belum bayar invoice.
+          <div class="pe-prompt-block">Tulis email follow-up ke klien yang belum bayar invoice.
 
 Setelah selesai, evaluasi email tersebut:
 - Apakah tone-nya terlalu agresif atau terlalu lembek?  
 - Ada nggak yang bisa bikin klien tersinggung?
 - Apakah CTA-nya jelas?
 
-Kalau ada yang kurang, revisi ulang dan berikan versi final."</div>
+Kalau ada yang kurang, revisi ulang dan berikan versi final.<button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Tulis email follow-up ke klien yang belum bayar invoice.\\n\\nSetelah selesai, evaluasi email tersebut:\\n- Apakah tone-nya terlalu agresif atau terlalu lembek?  \\n- Ada nggak yang bisa bikin klien tersinggung?\\n- Apakah CTA-nya jelas?\\n\\nKalau ada yang kurang, revisi ulang dan berikan versi final.');this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
         </div>
 
         <div class="pe-technique">
           <h3>6. Template Prompting</h3>
           <p>Kasih AI template output yang harus diikuti. Ini memastikan output selalu konsisten dan sesuai format yang lo butuhkan.</p>
           <div class="pe-prompt-label">Contoh:</div>
-          <div class="pe-prompt-block">"Review produk ini. Gunakan template berikut:
+          <div class="pe-prompt-block">Review produk ini. Gunakan template berikut:
 
 **Nama Produk:** [nama]
 **Rating:** [X/10]
@@ -288,7 +294,7 @@ Kalau ada yang kurang, revisi ulang dan berikan versi final."</div>
 - [point 1]
 - [point 2]
 **Cocok Untuk:** [target user]
-**Verdict:** [1 kalimat kesimpulan]"</div>
+**Verdict:** [1 kalimat kesimpulan]<button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Review produk ini. Gunakan template berikut:\\n\\n**Nama Produk:** [nama]\\n**Rating:** [X/10]\\n**Kelebihan:**\\n- [point 1]\\n- [point 2]\\n- [point 3]\\n**Kekurangan:**\\n- [point 1]\\n- [point 2]\\n**Cocok Untuk:** [target user]\\n**Verdict:** [1 kalimat kesimpulan]');this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
         </div>
 
         <div class="pe-technique">
@@ -301,7 +307,7 @@ Kalau ada yang kurang, revisi ulang dan berikan versi final."</div>
 Prompt 2: "Bagus. Sekarang expand section 3 tentang analisis fundamental. Tambahkan contoh saham Indonesia yang real."
 → Review lagi...
 
-Prompt 3: "Tambahin disclaimer dan risk warning di akhir. Juga perbaiki paragraf 2 — terlalu teknis buat pemula."</div>
+Prompt 3: "Tambahin disclaimer dan risk warning di akhir. Juga perbaiki paragraf 2 — terlalu teknis buat pemula."<button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Prompt 1: &quot;Tulis outline buat artikel tentang investasi saham buat pemula&quot;\\n→ Review outline, lalu...\\n\\nPrompt 2: &quot;Bagus. Sekarang expand section 3 tentang analisis fundamental. Tambahkan contoh saham Indonesia yang real.&quot;\\n→ Review lagi...\\n\\nPrompt 3: &quot;Tambahin disclaimer dan risk warning di akhir. Juga perbaiki paragraf 2 — terlalu teknis buat pemula.&quot;');this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
         </div>
       </div>
 
@@ -313,32 +319,32 @@ Prompt 3: "Tambahin disclaimer dan risk warning di akhir. Juga perbaiki paragraf
         <div class="pe-tip-card">
           <h4>Bikin Konten</h4>
           <p>"Tulis [jenis konten] tentang [topik] untuk [target audience]. Gunakan tone [formal/casual/fun]. Panjang [X] kata. Include [elemen khusus: CTA, data statistik, quotes, dll]."</p>
-          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Tulis [jenis konten] tentang [topik] untuk [target audience]. Gunakan tone [formal/casual/fun]. Panjang [X] kata. Include [elemen khusus: CTA, data statistik, quotes, dll].');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
+          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Tulis [jenis konten] tentang [topik] untuk [target audience]. Gunakan tone [formal/casual/fun]. Panjang [X] kata. Include [elemen khusus: CTA, data statistik, quotes, dll].');this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
         </div>
         <div class="pe-tip-card">
           <h4>Debug Kode</h4>
           <p>"Kode ini menghasilkan error [error message]. Stack: [tech stack]. Yang diharapkan: [expected behavior]. Yang terjadi: [actual behavior]. Tolong identifikasi bug dan berikan fix beserta penjelasan."</p>
-          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Kode ini menghasilkan error [error message]. Stack: [tech stack]. Yang diharapkan: [expected behavior]. Yang terjadi: [actual behavior]. Tolong identifikasi bug dan berikan fix beserta penjelasan.');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
+          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Kode ini menghasilkan error [error message]. Stack: [tech stack]. Yang diharapkan: [expected behavior]. Yang terjadi: [actual behavior]. Tolong identifikasi bug dan berikan fix beserta penjelasan.');this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
         </div>
         <div class="pe-tip-card">
           <h4>Analisis Data</h4>
           <p>"Analisis data [jenis data] berikut. Identifikasi [X] insight utama, trends, dan anomali. Presentasikan dalam format [tabel/bullet points/executive summary]. Fokus pada [metrik spesifik]."</p>
-          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Analisis data [jenis data] berikut. Identifikasi [X] insight utama, trends, dan anomali. Presentasikan dalam format [tabel/bullet points/executive summary]. Fokus pada [metrik spesifik].');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
+          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Analisis data [jenis data] berikut. Identifikasi [X] insight utama, trends, dan anomali. Presentasikan dalam format [tabel/bullet points/executive summary]. Fokus pada [metrik spesifik].');this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
         </div>
         <div class="pe-tip-card">
           <h4>Email Profesional</h4>
           <p>"Tulis email [tujuan: follow-up/proposal/complaint] ke [siapa] tentang [topik]. Tone [formal/semi-formal]. Max [X] paragraf. Include [data pendukung/deadline/CTA spesifik]."</p>
-          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Tulis email [tujuan: follow-up/proposal/complaint] ke [siapa] tentang [topik]. Tone [formal/semi-formal]. Max [X] paragraf. Include [data pendukung/deadline/CTA spesifik].');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
+          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Tulis email [tujuan: follow-up/proposal/complaint] ke [siapa] tentang [topik]. Tone [formal/semi-formal]. Max [X] paragraf. Include [data pendukung/deadline/CTA spesifik].');this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
         </div>
         <div class="pe-tip-card">
           <h4>Brainstorming</h4>
           <p>"Generate [X] ide untuk [topik/project]. Untuk setiap ide, jelaskan: konsep singkat, target market, estimasi effort (low/med/high), dan potential impact. Rank dari yang paling menjanjikan."</p>
-          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Generate [X] ide untuk [topik/project]. Untuk setiap ide, jelaskan: konsep singkat, target market, estimasi effort (low/med/high), dan potential impact. Rank dari yang paling menjanjikan.');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
+          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Generate [X] ide untuk [topik/project]. Untuk setiap ide, jelaskan: konsep singkat, target market, estimasi effort (low/med/high), dan potential impact. Rank dari yang paling menjanjikan.');this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
         </div>
         <div class="pe-tip-card">
           <h4>Belajar Konsep Baru</h4>
           <p>"Jelaskan [konsep] seperti mengajar [level: anak 10 tahun/mahasiswa/profesional]. Gunakan [X] analogi dari kehidupan sehari-hari. Berikan [X] contoh nyata. Di akhir, buat quiz singkat 3 pertanyaan."</p>
-          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Jelaskan [konsep] seperti mengajar [level: anak 10 tahun/mahasiswa/profesional]. Gunakan [X] analogi dari kehidupan sehari-hari. Berikan [X] contoh nyata. Di akhir, buat quiz singkat 3 pertanyaan.');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
+          <button class="pe-copy-btn" onclick="navigator.clipboard.writeText('Jelaskan [konsep] seperti mengajar [level: anak 10 tahun/mahasiswa/profesional]. Gunakan [X] analogi dari kehidupan sehari-hari. Berikan [X] contoh nyata. Di akhir, buat quiz singkat 3 pertanyaan.');this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
         </div>
       </div>
 
@@ -3991,7 +3997,448 @@ export default async function ProductsPage() {
     author: "Aditya Fakhri Riansyah",
     tags: ["Mindset", "Product Thinking", "MVP", "Vibe Coding", "AI Development", "Ide Startup", "Product Design", "2026"],
     imageSrc: "/images/blog/mindset-produk-ai.png",
-    relatedPosts: ["roadmap-fullstack-developer-ai-2026", "ide-proyek-portfolio-fullstack-ai"],
+    relatedPosts: ["roadmap-fullstack-developer-ai-2026", "ide-proyek-portfolio-fullstack-ai", "prompt-engineering-for-app-development"],
+  },
+  "prompt-engineering-for-app-development": {
+    title: "Prompt Engineering for App Development: Skill Paling Penting dalam Vibe Coding",
+    excerpt: "Banyak orang mengira membangun aplikasi dengan AI menghilangkan kebutuhan untuk berpikir. Padahal, prompt engineering adalah skill paling penting untuk mengubah ide menjadi produk secara terstruktur.",
+    content: `
+      <style>
+        .pa-hero { padding: 2.5rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--muted)/0.3) 100%); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; position: relative; overflow: hidden; }
+        .pa-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.6rem; font-weight: 800; margin: 0 0 0.75rem 0; letter-spacing: -0.02em; }
+        .pa-hero p { color: hsl(var(--muted-foreground)); font-size: 1rem; line-height: 1.7; margin: 0; }
+        
+        .pa-intro-box { padding: 1.5rem; border-radius: 1rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); box-shadow: 0 4px 12px rgba(0,0,0,0.01); margin: 1.5rem 0; line-height: 1.7; }
+        .pa-section-title { font-size: 1.35rem; font-weight: 800; margin: 3rem 0 1.25rem 0; color: hsl(var(--foreground)); border-left: 4px solid hsl(var(--primary)); padding-left: 0.75rem; line-height: 1.2; }
+        
+        .pa-quote-box { padding: 1.25rem 1.75rem; border-radius: 0.75rem; background: hsl(var(--muted)/0.5); border-left: 4px solid hsl(var(--primary)); font-style: italic; color: hsl(var(--foreground)); margin: 1.5rem 0; font-size: 1rem; line-height: 1.6; }
+        
+        .pa-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        @media (max-width: 768px) { .pa-grid-2 { grid-template-columns: 1fr; } }
+        .pa-card { padding: 1.5rem; border-radius: 1.25rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); }
+        .pa-card h4 { font-size: 1.05rem; font-weight: 800; margin: 0 0 0.75rem 0 !important; color: hsl(var(--foreground)); }
+        .pa-card p { font-size: 0.88rem; line-height: 1.6; color: hsl(var(--muted-foreground)); margin: 0; }
+        
+        /* Flowchart/Process Style */
+        .pa-process-flow { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin: 2rem auto; max-width: 400px; padding: 1.5rem; border-radius: 1rem; background: hsl(var(--muted)/0.3); border: 1px solid hsl(var(--border)); }
+        .pa-process-step { padding: 0.75rem 1.5rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); text-align: center; font-size: 0.9rem; font-weight: 700; color: hsl(var(--foreground)); width: 100%; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
+        .pa-process-arrow { font-size: 1.2rem; color: hsl(var(--muted-foreground)); line-height: 1; margin: 0.1rem 0; }
+
+        /* Formula Container */
+        .pa-formula-box { padding: 1.75rem; border-radius: 1.25rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); margin: 2rem 0; }
+        .pa-formula-title { font-size: 1.15rem; font-weight: 800; color: hsl(var(--foreground)); margin-bottom: 0.5rem; }
+        .pa-formula-desc { font-size: 0.88rem; line-height: 1.6; color: hsl(var(--muted-foreground)); margin-bottom: 1.25rem; }
+        
+        .pa-prompt-block { background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; padding: 1.25rem 4.5rem 1.25rem 1.25rem; font-size: 0.88rem; line-height: 1.8; color: hsl(var(--foreground)); font-family: 'SF Mono', 'Fira Code', monospace; white-space: pre-wrap; word-break: break-word; margin: 1rem 0; position: relative; }
+        .pa-prompt-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: hsl(var(--muted-foreground)); margin-bottom: 0.5rem; }
+
+        .pa-copy-btn { position: absolute; top: 0.75rem; right: 0.75rem; display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.85rem; border-radius: 0.5rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); color: hsl(var(--muted-foreground)); font-size: 0.72rem; font-weight: 600; cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); font-family: inherit; z-index: 10; }
+        .pa-copy-btn:hover { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); border-color: hsl(var(--primary)); transform: scale(1.03); }
+        .pa-copy-btn:active { transform: scale(0.97); }
+        .pa-copy-btn svg { width: 12px; height: 12px; transition: transform 0.2s; }
+        .pa-copy-btn:hover svg { transform: rotate(5deg); }
+        .pa-copy-btn.copied { background: #10b981 !important; color: #ffffff !important; border-color: #10b981 !important; }
+
+        .pa-list { list-style: none !important; padding: 0 !important; margin: 1.5rem 0 !important; display: flex; flex-direction: column; gap: 0.75rem; }
+        .pa-list li { font-size: 0.9rem !important; color: hsl(var(--muted-foreground)) !important; margin-bottom: 0 !important; position: relative; padding-left: 1.25rem; line-height: 1.5; }
+        .pa-list li::before { content: '•'; position: absolute; left: 0; top: -0.1rem; font-size: 1.25rem; line-height: 1; color: hsl(var(--primary)); }
+
+        .pa-list-num { counter-reset: pa-counter; list-style: none !important; padding: 0 !important; margin: 1.5rem 0 !important; display: flex; flex-direction: column; gap: 0.75rem; }
+        .pa-list-num li { counter-increment: pa-counter; padding: 1rem 1.25rem 1rem 3.5rem; position: relative; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; font-size: 0.9rem !important; line-height: 1.7; color: hsl(var(--muted-foreground)) !important; }
+        .pa-list-num li::before { content: counter(pa-counter); position: absolute; left: 1.25rem; top: 1rem; font-size: 0.85rem; font-weight: 800; color: hsl(var(--foreground)); background: hsl(var(--muted)); width: 1.5rem; height: 1.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid hsl(var(--border)); }
+        .pa-list-num li strong { color: hsl(var(--foreground)); }
+
+        /* Compare Grid (Do and Don't / Garbage In Garbage Out) */
+        .pa-compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2.5rem 0; }
+        @media (max-width: 768px) { .pa-compare-grid { grid-template-columns: 1fr; } }
+        .pa-compare-card { padding: 1.75rem; border-radius: 1.25rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); }
+        .pa-compare-card.dont { border-top: 4px solid #ef4444; }
+        .pa-compare-card.do { border-top: 4px solid #10b981; }
+        .pa-compare-card h3 { font-size: 1.15rem; font-weight: 800; margin: 0 0 1rem 0 !important; color: hsl(var(--foreground)); }
+        .pa-compare-list { list-style: none !important; padding: 0 !important; margin: 0 !important; display: flex; flex-direction: column; gap: 0.75rem; }
+        .pa-compare-list li { font-size: 0.9rem !important; color: hsl(var(--muted-foreground)) !important; margin-bottom: 0 !important; position: relative; padding-left: 1.25rem; line-height: 1.5; }
+        .pa-compare-list li::before { content: '•'; position: absolute; left: 0; top: -0.1rem; font-size: 1.25rem; line-height: 1; color: hsl(var(--muted-foreground)); }
+        .pa-compare-card.dont .pa-compare-list li::before { color: #ef4444; }
+        .pa-compare-card.do .pa-compare-list li::before { color: #10b981; }
+
+        .pa-cta { margin-top: 3.5rem; padding: 3rem 2rem; border-radius: 1.5rem; background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.9) 100%); text-align: center; color: hsl(var(--primary-foreground)); position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .pa-cta::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%); pointer-events: none; }
+        .pa-cta h2 { color: hsl(var(--primary-foreground)) !important; margin-top: 0 !important; font-size: 1.75rem; font-weight: 800; margin-bottom: 0.75rem; }
+        .pa-cta p { color: hsl(var(--primary-foreground) / 0.8); margin-bottom: 1.5rem; font-size: 1.05rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .pa-cta a { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2.25rem; border-radius: 9999px; background: hsl(var(--primary-foreground)); color: hsl(var(--primary)); font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .pa-cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); filter: brightness(1.05); }
+        .pa-cta a svg { transition: transform 0.2s; }
+        .pa-cta a:hover svg { transform: rotate(10deg) scale(1.1); }
+        @media (max-width: 768px) { .pa-hero { padding: 1.75rem 1.25rem; } }
+      </style>
+
+      <div class="pa-hero">
+        <h2>Prompt Engineering for App Development</h2>
+        <p>Skill Paling Penting dalam Vibe Coding — Bagaimana menyusun instruksi yang efektif, presisi, dan terarah agar AI mampu menghasilkan produk impian secara andal.</p>
+      </div>
+
+      <div class="pa-intro-box">
+        <p>Ketika mendengar istilah <strong>Artificial Intelligence (AI)</strong>, banyak orang langsung membayangkan sebuah teknologi ajaib yang bisa melakukan segalanya secara otomatis. Mereka membuka ChatGPT, Gemini, Claude, atau tools AI lainnya, lalu mengetik: <em>"Buatkan aplikasi kasir"</em>. Beberapa detik kemudian AI memberikan jawaban. Namun hasilnya tidak sesuai harapan. Fiturnya kurang lengkap. Strukturnya berantakan. UI-nya tidak sesuai. Akhirnya muncul kesimpulan: <strong>"AI-nya kurang pintar."</strong></p>
+      </div>
+
+      <p>Padahal sering kali masalahnya bukan pada AI. Masalahnya ada pada instruksi yang diberikan.</p>
+
+      <p>Bayangkan Anda sedang bekerja dengan seorang developer profesional. Lalu Anda hanya berkata: <em>"Tolong buat aplikasi."</em> Kemungkinan besar developer tersebut akan langsung bertanya:</p>
+
+      <ul class="pa-list">
+        <li><strong>Aplikasi apa?</strong></li>
+        <li><strong>Untuk siapa?</strong></li>
+        <li><strong>Tujuannya apa?</strong></li>
+        <li><strong>Masalah apa yang ingin diselesaikan?</strong></li>
+        <li><strong>Fiturnya apa?</strong></li>
+        <li><strong>Platformnya apa?</strong></li>
+      </ul>
+
+      <p>AI bekerja dengan cara yang tidak jauh berbeda. Semakin jelas instruksi yang diberikan, semakin baik hasil yang akan diperoleh. Inilah alasan mengapa <strong>Prompt Engineering</strong> menjadi salah satu skill paling penting dalam era AI, terutama dalam dunia <strong>Vibe Coding</strong>.</p>
+
+      <div class="pa-section-title">Apa Itu Prompt Engineering?</div>
+
+      <p><strong>Prompt Engineering</strong> adalah kemampuan menyusun instruksi yang efektif agar AI menghasilkan output yang sesuai dengan kebutuhan. Prompt bukan sekadar pertanyaan. Prompt adalah cara kita berkomunikasi dengan AI.</p>
+
+      <p style="margin-bottom: 0.5rem;">Dalam konteks pengembangan aplikasi, prompt digunakan untuk:</p>
+
+      <ul class="pa-list">
+        <li>Menentukan ide produk</li>
+        <li>Memvalidasi kebutuhan pengguna</li>
+        <li>Menyusun fitur aplikasi</li>
+        <li>Membuat user flow</li>
+        <li>Mendesain UI/UX</li>
+        <li>Membuat landing page</li>
+        <li>Menghasilkan kode</li>
+        <li>Melakukan debugging</li>
+        <li>Mengembangkan fitur baru</li>
+      </ul>
+
+      <div class="pa-quote-box">
+        "Prompt adalah bahasa yang digunakan untuk mengubah ide menjadi produk. Semakin baik prompt yang Anda buat, semakin baik pula output yang dihasilkan AI."
+      </div>
+
+      <div class="pa-section-title">Era Baru Pengembangan Aplikasi</div>
+
+      <p>Dulu, proses membangun aplikasi terlihat seperti ini:</p>
+
+      <div class="pa-process-flow" style="max-width: 500px;">
+        <div class="pa-process-step">Ide</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">Belajar Coding</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">Membuat Database</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">Membuat Backend</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">Membuat Frontend</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">Testing</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">Deploy</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">Launch</div>
+      </div>
+
+      <p>Seluruh proses bisa memakan waktu berbulan-bulan. Hari ini, proses tersebut mulai berubah secara revolusioner:</p>
+
+      <div class="pa-process-flow" style="max-width: 500px;">
+        <div class="pa-process-step">Ide</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">Prompt</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">AI</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">Prototype</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">Refinement</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">Launch</div>
+      </div>
+
+      <p>Perubahan ini sangat besar. Namun banyak orang salah memahami perubahan tersebut. Mereka berpikir bahwa coding sudah tidak penting lagi. Padahal yang berubah bukan kebutuhan berpikir. Yang berubah adalah cara mengeksekusinya. Dulu kita berbicara menggunakan bahasa pemrograman. Sekarang kita juga berbicara menggunakan bahasa manusia, dan AI menerjemahkannya menjadi solusi teknis.</p>
+
+      <div class="pa-section-title">Kenapa Prompt Engineering Penting Dalam Vibe Coding?</div>
+
+      <p>Dalam <strong>Vibe Coding</strong>, AI bukan sekadar alat bantu. AI adalah partner kerja kita. Namun, partner yang baik membutuhkan arahan yang jelas agar bisa bekerja maksimal. Mari kita lihat perbedaan nyata dari dua jenis prompt berikut:</p>
+
+      <div class="pa-compare-grid">
+        <div class="pa-compare-card dont">
+          <h3>❌ Prompt Pertama (Buruk)</h3>
+          <div class="pa-prompt-label">Input Prompt:</div>
+          <div class="pa-prompt-block">Buat aplikasi toko online.<button class="pa-copy-btn" onclick="navigator.clipboard.writeText(&quot;Buat aplikasi toko online.&quot;);this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
+          <p style="font-size: 0.85rem; line-height: 1.6; margin-top: 0.75rem;"><strong>Dampak:</strong> Prompt ini memaksa AI menebak-nebak apa yang Anda inginkan. Hasilnya sangat generik, tidak fungsional, dan sering kali tidak sesuai dengan apa yang ada di kepala Anda.</p>
+        </div>
+
+        <div class="pa-compare-card do">
+          <h3>✅ Prompt Kedua (Baik)</h3>
+          <div class="pa-prompt-label">Input Prompt:</div>
+          <div class="pa-prompt-block">Saya ingin membuat aplikasi toko online untuk menjual kopi premium lokal. Target pengguna adalah pekerja kantoran usia 25–40 tahun. Fitur utama yang dibutuhkan adalah katalog produk, keranjang belanja, checkout, dan dashboard admin sederhana. Buatkan user flow, struktur halaman, dan fitur MVP.<button class="pa-copy-btn" onclick="navigator.clipboard.writeText(&quot;Saya ingin membuat aplikasi toko online untuk menjual kopi premium lokal. Target pengguna adalah pekerja kantoran usia 25–40 tahun. Fitur utama yang dibutuhkan adalah katalog produk, keranjang belanja, checkout, dan dashboard admin sederhana. Buatkan user flow, struktur halaman, dan fitur MVP.&quot;);this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
+          <p style="font-size: 0.85rem; line-height: 1.6; margin-top: 0.75rem;"><strong>Dampak:</strong> Prompt ini memberikan konteks, target user, dan batasan yang sangat jelas. Hasil rancangan AI akan sangat matang, fungsional, dan siap untuk tahap refinement berikutnya.</p>
+        </div>
+      </div>
+
+      <p>Karena itu, dalam dunia Vibe Coding berlaku satu prinsip sederhana:</p>
+
+      <div class="pa-quote-box" style="border-left-color: #ef4444; background: hsl(var(--muted)/0.3);">
+        <strong>Garbage In, Garbage Out.</strong> Prompt yang buruk akan menghasilkan output yang buruk. Sebaliknya, prompt yang dirancang dengan baik akan menghasilkan output yang jauh lebih berkualitas dan presisi.
+      </div>
+
+      <div class="pa-section-title">Prompt Engineering Bukan Tentang Kata-Kata Sakti</div>
+
+      <p>Banyak orang mencari "prompt viral", "prompt rahasia", "prompt sakti", atau "prompt copy-paste". Padahal kenyataannya tidak ada prompt ajaib seperti itu. Prompt yang baik lahir dari pemahaman yang baik terhadap masalah dan tujuan proyek.</p>
+
+      <p>Jika Anda memahami produk yang ingin dibangun, biasanya Anda akan jauh lebih mudah membuat prompt yang efektif. Karena pada dasarnya <strong>Prompt Engineering bukan tentang AI. Prompt Engineering adalah tentang berpikir dengan jelas.</strong></p>
+
+      <div class="pa-section-title">Cara AI Memahami Instruksi</div>
+
+      <p>Secara sederhana, AI mencoba memahami beberapa komponen utama ketika membaca prompt kita. Pastikan Anda menyertakan 4 elemen ini:</p>
+
+      <ul class="pa-list-num">
+        <li>
+          <strong>Context (Konteks)</strong> — Apa yang sedang dibahas?
+          <br>Contoh: <em>AI Resume Builder</em>, <em>Laundry Management System</em>, <em>Online Store</em>, atau <em>AI Proposal Generator</em>. Semakin jelas konteksnya, semakin baik hasilnya.
+        </li>
+        <li>
+          <strong>Objective (Tujuan)</strong> — Apa tujuan yang ingin dicapai?
+          <br>Contoh: <em>Membantu freelancer membuat proposal</em>, <em>Membantu UMKM mencatat transaksi</em>, atau <em>Membantu mahasiswa membuat CV</em>. Tujuan yang jelas membuat AI lebih fokus.
+        </li>
+        <li>
+          <strong>Constraint (Batasan)</strong> — Apa batasannya?
+          <br>Contoh: <em>Mobile friendly</em>, <em>Minimalis</em>, <em>Untuk pemula</em>, atau <em>Maksimal 5 fitur utama</em>. Constraint membantu AI menghindari output yang terlalu luas dan tidak realistis.
+        </li>
+        <li>
+          <strong>Output (Format)</strong> — Apa hasil akhir yang Anda inginkan?
+          <br>Contoh: <em>Tabel</em>, <em>User Flow</em>, <em>Struktur Database</em>, <em>Wireframe</em>, atau <em>Landing Page</em>. Tanpa menentukan format output, AI akan memilih formatnya sendiri yang sering kali kurang sesuai dengan kebutuhan Anda.
+        </li>
+      </ul>
+
+      <div class="pa-section-title">Formula Prompt Engineering untuk App Development</div>
+
+      <p>Dalam merancang aplikasi, kita bisa menggunakan beberapa framework formula terstruktur berikut:</p>
+
+      <!-- Formula 1 -->
+      <div class="pa-formula-box">
+        <div class="pa-formula-title">Formula 1 — RTF (Role + Task + Format)</div>
+        <p class="pa-formula-desc">Framework paling sederhana dan sangat cocok untuk tugas-tugas yang terisolasi.</p>
+        <div class="pa-prompt-label">Contoh Penerapan Prompt:</div>
+        <div class="pa-prompt-block"><strong>Role:</strong> Senior Product Manager
+<strong>Task:</strong> Buat daftar fitur MVP untuk aplikasi laundry.
+<strong>Format:</strong> Tabel berisi fitur dan deskripsi singkat.<button class="pa-copy-btn" onclick="navigator.clipboard.writeText(&quot;Role: Senior Product Manager\\nTask: Buat daftar fitur MVP untuk aplikasi laundry.\\nFormat: Tabel berisi fitur dan deskripsi singkat.&quot;);this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
+        <p class="pa-formula-desc" style="margin-top: 0.5rem; margin-bottom: 0;"><em>Note: Framework ini sangat cocok untuk tugas-tugas terisolasi yang simpel.</em></p>
+      </div>
+
+      <!-- Formula 2 -->
+      <div class="pa-formula-box">
+        <div class="pa-formula-title">Formula 2 — RISE (Role + Input + Steps + Expectation)</div>
+        <p class="pa-formula-desc">Framework terstruktur yang sangat efektif saat Anda merancang aplikasi dari nol.</p>
+        <div class="pa-prompt-label">Contoh Penerapan Prompt:</div>
+        <div class="pa-prompt-block"><strong>Role:</strong> Senior SaaS Product Architect
+<strong>Input:</strong> AI Proposal Generator untuk freelancer.
+<strong>Steps:</strong>
+1. Analisis target user
+2. Tentukan fitur MVP
+3. Buat user flow
+4. Buat struktur halaman
+<strong>Expectation:</strong> Output dalam bentuk tabel yang mudah dipahami pemula.<button class="pa-copy-btn" onclick="navigator.clipboard.writeText(&quot;Role: Senior SaaS Product Architect\\nInput: AI Proposal Generator untuk freelancer.\\nSteps:\\n1. Analisis target user\\n2. Tentukan fitur MVP\\n3. Buat user flow\\n4. Buat struktur halaman\\nExpectation: Output dalam bentuk tabel yang mudah dipahami pemula.&quot;);this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
+        <p class="pa-formula-desc" style="margin-top: 0.5rem; margin-bottom: 0;"><em>Note: Sangat direkomendasikan ketika menyusun spesifikasi awal modul aplikasi baru.</em></p>
+      </div>
+
+      <!-- Formula 3 -->
+      <div class="pa-formula-box">
+        <div class="pa-formula-title">Formula 3 — CREATE</div>
+        <p class="pa-formula-desc">Framework komprehensif untuk proyek yang lebih detail dan kompleks (Landing Page, PRD, Dashboard SaaS).</p>
+        <div style="margin-left: 1rem; margin-bottom: 1.25rem;">
+          <ul class="pa-list" style="margin: 0.5rem 0 !important;">
+            <li><strong>Character</strong> — Peran AI yang diinginkan (contoh: Senior Copywriter)</li>
+            <li><strong>Request</strong> — Tugas utama yang diminta</li>
+            <li><strong>Examples</strong> — Contoh/referensi sebagai pembanding</li>
+            <li><strong>Adjustments</strong> — Penyesuaian khusus (constraints)</li>
+            <li><strong>Type of Output</strong> — Format output yang diinginkan</li>
+            <li><strong>Extras</strong> — Tambahan khusus (misal: gaya bahasa lo-gue)</li>
+          </ul>
+        </div>
+        <div class="pa-prompt-label">Contoh Penerapan Prompt:</div>
+        <div class="pa-prompt-block"><strong>Character:</strong> Senior Copywriter berpengalaman membuat SaaS landing page yang high-converting.
+<strong>Request:</strong> Buatkan struktur konten halaman utama untuk AI Proposal Generator.
+<strong>Examples:</strong> Gunakan gaya persuasif seperti landing page Stripe (minimalis tapi meyakinkan).
+<strong>Adjustments:</strong> Target audiens adalah freelancer pemula. Fokus pada kemudahan penggunaan dan hemat waktu. Jangan terlalu teknis.
+<strong>Type of Output:</strong> Struktur seksi per seksi (Hero, Features, Testimonials, FAQ) beserta teks headline dan copy-nya.
+<strong>Extras:</strong> Tuliskan dalam bahasa Indonesia casual yang ramah dan solutif.<button class="pa-copy-btn" onclick="navigator.clipboard.writeText(&quot;Character: Senior Copywriter berpengalaman membuat SaaS landing page yang high-converting.\\nRequest: Buatkan struktur konten halaman utama untuk AI Proposal Generator.\\nExamples: Gunakan gaya persuasif seperti landing page Stripe (minimalis tapi meyakinkan).\\nAdjustments: Target audiens adalah freelancer pemula. Fokus pada kemudahan penggunaan dan hemat waktu. Jangan terlalu teknis.\\nType of Output: Struktur seksi per seksi (Hero, Features, Testimonials, FAQ) beserta teks headline dan copy-nya.\\nExtras: Tuliskan dalam bahasa Indonesia casual yang ramah dan solutif.&quot;);this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
+      </div>
+
+      <div class="pa-section-title">Teknik Prompt Engineering yang Wajib Dikuasai</div>
+
+      <p>Framework saja tidak cukup. Kita juga perlu memahami beberapa teknik prompting taktis yang sering digunakan oleh builder profesional:</p>
+
+      <ul class="pa-list-num">
+        <li>
+          <strong>Role Prompting</strong>
+          <br>Memberikan peran tertentu kepada AI untuk memfokuskan perspektif jawabannya.
+          <br>Contoh: <em>"Bertindak sebagai Senior Product Manager"</em> atau <em>"Bertindak sebagai UI/UX Designer berpengalaman"</em>.
+        </li>
+        <li>
+          <strong>Chain of Thought (CoT)</strong>
+          <br>Meminta AI untuk berpikir secara terstruktur langkah demi langkah sebelum menyajikan jawaban final agar tingkat akurasi pemecahan masalahnya jauh lebih tinggi.
+          <br>Contoh: <em>"Analisis masalah terlebih dahulu, kemudian tentukan solusi, lalu buat fitur MVP-nya secara bertahap."</em>
+        </li>
+        <li>
+          <strong>Few-Shot Prompting</strong>
+          <br>Memberikan contoh format input dan output nyata agar AI dapat langsung meniru pola yang Anda inginkan tanpa banyak menebak.
+          <br>Contoh: memberikan format menu dashboard lama agar AI menyusun menu dashboard baru dengan format data yang persis sama.
+        </li>
+        <li>
+          <strong>Constraint Prompting</strong>
+          <br>Memberikan batasan parameter yang jelas agar output tetap berada di koridor yang tepat dan tidak melebar ke mana-mana.
+          <br>Contoh: <em>"Maksimal 5 fitur utama"</em>, <em>"Mobile friendly"</em>, <em>"Cocok untuk pemula"</em>, atau <em>"Tidak menggunakan library eksternal"</em>.
+        </li>
+        <li>
+          <strong>Iterative Prompting</strong>
+          <br>Teknik paling penting dalam Vibe Coding. Jangan berharap prompt pertama Anda langsung menghasilkan aplikasi yang sempurna. Proses koding yang benar dengan AI adalah sebuah siklus percakapan interaktif:
+          <div class="pa-process-flow" style="max-width: 300px; margin: 1.5rem auto;">
+            <div class="pa-process-step">Tulis Prompt</div>
+            <div class="pa-process-arrow">↓</div>
+            <div class="pa-process-step">AI Output</div>
+            <div class="pa-process-arrow">↓</div>
+            <div class="pa-process-step">Review & Test</div>
+            <div class="pa-process-arrow">↓</div>
+            <div class="pa-process-step">Refinement (Revisi)</div>
+            <div class="pa-process-arrow">↓</div>
+            <div class="pa-process-step">Output Baru (Final)</div>
+          </div>
+          Setiap builder profesional bekerja dengan cara iteratif seperti ini.
+        </li>
+      </ul>
+
+      <div class="pa-section-title">Prompt Engineering untuk Setiap Tahap Pengembangan Produk</div>
+
+      <p>Dalam proses membangun aplikasi dari nol sampai rilis, Anda akan menggunakan prompt pada setiap langkah pengembangannya:</p>
+
+      <div style="display: flex; flex-direction: column; gap: 1.25rem; margin: 2rem 0;">
+        <div class="pa-card">
+          <h4 style="display: flex; align-items: center; gap: 0.5rem;"><span style="display: inline-flex; align-items: center; justify-content: center; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); width: 1.75rem; height: 1.75rem; border-radius: 50%; font-size: 0.8rem; font-weight: 800;">1</span> Product Discovery</h4>
+          <p style="margin-bottom: 0.75rem;">Menganalisis ide awal dan memvalidasi model bisnis serta target pasar.</p>
+          <div class="pa-prompt-label">Contoh Prompt:</div>
+          <div class="pa-prompt-block">Analisis ide aplikasi berikut dan tentukan target user, masalah utama, serta value proposition-nya secara mendetail: [deskripsi ide]<button class="pa-copy-btn" onclick="navigator.clipboard.writeText(&quot;Analisis ide aplikasi berikut dan tentukan target user, masalah utama, serta value proposition-nya secara mendetail: [deskripsi ide]&quot;);this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
+        </div>
+
+        <div class="pa-card">
+          <h4 style="display: flex; align-items: center; gap: 0.5rem;"><span style="display: inline-flex; align-items: center; justify-content: center; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); width: 1.75rem; height: 1.75rem; border-radius: 50%; font-size: 0.8rem; font-weight: 800;">2</span> MVP Planning</h4>
+          <p style="margin-bottom: 0.75rem;">Menyaring ide besar agar fokus pada fitur utama yang paling berdampak.</p>
+          <div class="pa-prompt-label">Contoh Prompt:</div>
+          <div class="pa-prompt-block">Buatkan daftar fitur MVP yang wajib dimiliki oleh aplikasi ini agar target user bisa langsung merasakan manfaat utamanya tanpa fitur tambahan yang rumit.<button class="pa-copy-btn" onclick="navigator.clipboard.writeText(&quot;Buatkan daftar fitur MVP yang wajib dimiliki oleh aplikasi ini agar target user bisa langsung merasakan manfaat utamanya tanpa fitur tambahan yang rumit.&quot;);this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
+        </div>
+
+        <div class="pa-card">
+          <h4 style="display: flex; align-items: center; gap: 0.5rem;"><span style="display: inline-flex; align-items: center; justify-content: center; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); width: 1.75rem; height: 1.75rem; border-radius: 50%; font-size: 0.8rem; font-weight: 800;">3</span> User Flow</h4>
+          <p style="margin-bottom: 0.75rem;">Merancang langkah-langkah perjalanan pengguna di dalam aplikasi.</p>
+          <div class="pa-prompt-label">Contoh Prompt:</div>
+          <div class="pa-prompt-block">Buatkan langkah-langkah user flow dari proses pertama kali user melakukan pendaftaran (sign up) hingga transaksi checkout berhasil diselesaikan.<button class="pa-copy-btn" onclick="navigator.clipboard.writeText(&quot;Buatkan langkah-langkah user flow dari proses pertama kali user melakukan pendaftaran (sign up) hingga transaksi checkout berhasil diselesaikan.&quot;);this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
+        </div>
+
+        <div class="pa-card">
+          <h4 style="display: flex; align-items: center; gap: 0.5rem;"><span style="display: inline-flex; align-items: center; justify-content: center; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); width: 1.75rem; height: 1.75rem; border-radius: 50%; font-size: 0.8rem; font-weight: 800;">4</span> UI/UX Design</h4>
+          <p style="margin-bottom: 0.75rem;">Memetakan letak layout, komponen, dan navigasi halaman.</p>
+          <div class="pa-prompt-label">Contoh Prompt:</div>
+          <div class="pa-prompt-block">Buat struktur layout dashboard SaaS modern untuk AI Proposal Generator. Jelaskan letak menu navigasi, kartu metrik, dan tabel proyek.<button class="pa-copy-btn" onclick="navigator.clipboard.writeText(&quot;Buat struktur layout dashboard SaaS modern untuk AI Proposal Generator. Jelaskan letak menu navigasi, kartu metrik, dan tabel proyek.&quot;);this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
+        </div>
+
+        <div class="pa-card">
+          <h4 style="display: flex; align-items: center; gap: 0.5rem;"><span style="display: inline-flex; align-items: center; justify-content: center; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); width: 1.75rem; height: 1.75rem; border-radius: 50%; font-size: 0.8rem; font-weight: 800;">5</span> Database Design</h4>
+          <p style="margin-bottom: 0.75rem;">Merancang struktur penyimpanan data yang efisien dan terelasi.</p>
+          <div class="pa-prompt-label">Contoh Prompt:</div>
+          <div class="pa-prompt-block">Buatkan rancangan skema tabel database SQL beserta relasinya untuk menyimpan data user, proposal, dan riwayat pembayaran.<button class="pa-copy-btn" onclick="navigator.clipboard.writeText(&quot;Buatkan rancangan skema tabel database SQL beserta relasinya untuk menyimpan data user, proposal, dan riwayat pembayaran.&quot;);this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
+        </div>
+
+        <div class="pa-card">
+          <h4 style="display: flex; align-items: center; gap: 0.5rem;"><span style="display: inline-flex; align-items: center; justify-content: center; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); width: 1.75rem; height: 1.75rem; border-radius: 50%; font-size: 0.8rem; font-weight: 800;">6</span> Coding Assistance</h4>
+          <p style="margin-bottom: 0.75rem;">Meminta AI menuliskan kode fungsi atau komponen visual spesifik.</p>
+          <div class="pa-prompt-label">Contoh Prompt:</div>
+          <div class="pa-prompt-block">Buatkan implementasi fungsi otentikasi login menggunakan Supabase Authentication di framework Next.js 14 App Router.<button class="pa-copy-btn" onclick="navigator.clipboard.writeText(&quot;Buatkan implementasi fungsi otentikasi login menggunakan Supabase Authentication di framework Next.js 14 App Router.&quot;);this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
+        </div>
+
+        <div class="pa-card">
+          <h4 style="display: flex; align-items: center; gap: 0.5rem;"><span style="display: inline-flex; align-items: center; justify-content: center; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); width: 1.75rem; height: 1.75rem; border-radius: 50%; font-size: 0.8rem; font-weight: 800;">7</span> Debugging</h4>
+          <p style="margin-bottom: 0.75rem;">Mencari penyebab error dan menuliskan kode perbaikannya.</p>
+          <div class="pa-prompt-label">Contoh Prompt:</div>
+          <div class="pa-prompt-block">Analisis baris kode berikut, jelaskan mengapa memicu error 'Hydration failed' di Next.js, dan berikan perbaikan kodenya: [kode]<button class="pa-copy-btn" onclick="navigator.clipboard.writeText(&quot;Analisis baris kode berikut, jelaskan mengapa memicu error 'Hydration failed' di Next.js, dan berikan perbaikan kodenya: [kode]&quot;);this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
+        </div>
+      </div>
+
+      <div class="pa-section-title">Kesalahan Umum yang Harus Dihindari</div>
+
+      <p>Bagi pemula, hindarilah 5 kesalahan umum prompting berikut agar proses belajar Vibe Coding Anda berjalan mulus:</p>
+
+      <ul class="pa-list">
+        <li><strong>Prompt Terlalu Umum:</strong> Mengetik instruksi pendek tanpa batasan jelas seperti <em>"Buat aplikasi toko online"</em>.</li>
+        <li><strong>Tidak Menentukan Target User:</strong> Membuat AI buta terhadap tipe audiens aplikasi, sehingga alur navigasi bisa menjadi tidak sesuai sasaran.</li>
+        <li><strong>Tidak Menentukan Format Output:</strong> AI akan memilih formatnya sendiri secara acak yang sering kali tidak ramah untuk langsung di-copy ke codebase.</li>
+        <li><strong>Terlalu Banyak Request Sekaligus:</strong> Meminta AI membuat dashboard, sistem pembayaran, modul AI, newsletter, affiliate, dan analitik dalam satu prompt sekaligus. AI akan kewalahan dan performa logikanya akan menurun drastis.</li>
+        <li><strong>Mengulang Dari Nol:</strong> Menulis instruksi <em>"buat ulang kodenya"</em> saat mendeteksi bug kecil. Lebih baik berikan pesan error konsol secara spesifik dan arahkan AI melakukan perbaikan terfokus (refactoring).</li>
+      </ul>
+
+      <div class="pa-section-title">Workflow Prompt Engineering dalam Vibe Coding</div>
+
+      <p>Ingatlah bahwa prompt bukanlah aktivitas sekali pakai. Ini adalah alur komunikasi yang berjalan terus-menerus selama proses pembuatan produk:</p>
+
+      <div class="pa-process-flow" style="max-width: 500px;">
+        <div class="pa-process-step">1. Tentukan Ide Awal</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">2. Rancang Prompt Terstruktur</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">3. AI Menghasilkan Output (Kode/UI)</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">4. Review Hasil & Uji Coba Keandalan</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">5. Refinement (Koreksi Bug & Penajaman Detail)</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">6. Integrasi & Build Product</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">7. Uji Coba Kinerja (Testing)</div>
+        <div class="pa-process-arrow">↓</div>
+        <div class="pa-process-step">8. Optimasi / Pengembangan Berkelanjutan (Improve)</div>
+      </div>
+
+      <div class="pa-section-title">Apa yang Akan Kita Lakukan Pada Sesi Kedua?</div>
+
+      <p>Pada sesi kedua nanti, Anda akan menggunakan ide orisinal yang telah dirancang pada sesi pertama. Kita akan mulai menyusun:</p>
+
+      <ul class="pa-list">
+        <li>Prompt Product Discovery</li>
+        <li>Prompt Fitur MVP</li>
+        <li>Prompt User Flow</li>
+        <li>Prompt UI/UX Layout</li>
+        <li>Prompt Landing Page Copywriting</li>
+        <li>Prompt Pengembangan Fitur Utama Produk</li>
+      </ul>
+
+      <p>Output konkret dari sesi kedua ini akan menjadi fondasi utama (blueprint) yang sangat berharga ketika kita mulai membangun halaman web (landing page) pada sesi ketiga berikutnya.</p>
+
+      <div class="pa-section-title">Penutup</div>
+
+      <p>Banyak orang berpikir bahwa masa depan dunia software development sepenuhnya dikuasai oleh mesin AI. Sebenarnya tidak demikian. Masa depan industri ini ada di tangan <strong>manusia yang mampu berkomunikasi dengan AI secara efektif dan terarah</strong>.</p>
+
+      <p>Teknologi dan model AI akan terus berganti dan semakin pintar, tetapi kemampuan memahami akar masalah, menyusun instruksi yang logis, serta membimbing AI melahirkan solusi akan selalu menjadi skill berharga yang tidak akan pernah tergantikan.</p>
+
+      <p>Kualitas aplikasi yang Anda bangun dengan AI sangat ditentukan oleh kualitas komunikasi dan prompt yang Anda berikan kepada AI. Selamat melatih teknik koding modernmu!</p>
+
+      <div class="pa-cta">
+        <h2>Mau Template Prompt & Update Tips Vibe Coding Tiap Minggu?</h2>
+        <p>Yuk ikuti akun Instagram saya untuk mendapatkan rekomendasi template prompt AI, tutorial web dev premium, serta tips membangun portofolio berstandar industri!</p>
+        <a href="https://www.instagram.com/adityafakhrii/" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:0.25rem;"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          Follow @adityafakhrii di Instagram
+        </a>
+      </div>
+    `,
+    date: "9 Jun 2026",
+    isoDate: "2026-06-09",
+    readTime: "12 min",
+    category: "Product Development",
+    author: "Aditya Fakhri Riansyah",
+    tags: ["Prompt Engineering", "Vibe Coding", "AI Development", "SaaS Development", "App Development", "Productivity", "2026"],
+    imageSrc: "/images/blog/prompt-engineering-app-dev.png",
+    relatedPosts: ["roadmap-fullstack-developer-ai-2026", "mindset-idea-structuring-produk-ai"],
   }
 } as const
 
