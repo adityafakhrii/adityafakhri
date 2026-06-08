@@ -128,7 +128,7 @@ export default function Home() {
                     height={60}
                     sizes="120px"
                     loading="lazy"
-                    className="max-h-12 w-auto"
+                    className="max-w-[140px] max-h-12 object-contain"
                   />
                 </div>
               ))}
