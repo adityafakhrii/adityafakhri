@@ -4439,6 +4439,264 @@ export default async function ProductsPage() {
     tags: ["Prompt Engineering", "Vibe Coding", "AI Development", "SaaS Development", "App Development", "Productivity", "2026"],
     imageSrc: "/images/blog/prompt-engineering-app-dev.png",
     relatedPosts: ["roadmap-fullstack-developer-ai-2026", "mindset-idea-structuring-produk-ai"],
+  },
+
+  "roadmap-remote-job-client-luar-negeri": {
+    title: "Roadmap Mendapatkan Remote Job & Client Luar Negeri untuk Programmer",
+    excerpt: "Panduan lengkap langkah demi langkah untuk programmer Indonesia agar bisa mendapatkan remote job atau client luar negeri dan digaji dalam USD.",
+    content: `
+      <style>
+        .rj-hero { padding: 2.5rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--muted)/0.3) 100%); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; position: relative; overflow: hidden; }
+        .rj-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.6rem; font-weight: 800; margin: 0 0 0.75rem 0; letter-spacing: -0.02em; }
+        .rj-hero p { color: hsl(var(--muted-foreground)); font-size: 1rem; line-height: 1.7; margin: 0; }
+        
+        .rj-intro-box { padding: 1.5rem; border-radius: 1rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); box-shadow: 0 4px 12px rgba(0,0,0,0.01); margin: 1.5rem 0; line-height: 1.7; }
+        .rj-section-title { font-size: 1.35rem; font-weight: 800; margin: 3rem 0 1.25rem 0; color: hsl(var(--foreground)); border-left: 4px solid hsl(var(--primary)); padding-left: 0.75rem; line-height: 1.2; }
+        
+        .rj-quote-box { padding: 1.25rem 1.75rem; border-radius: 0.75rem; background: hsl(var(--muted)/0.5); border-left: 4px solid hsl(var(--primary)); font-style: italic; color: hsl(var(--foreground)); margin: 1.5rem 0; font-size: 1rem; line-height: 1.6; }
+        
+        .rj-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .rj-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; margin: 2rem 0; }
+        @media (max-width: 768px) { 
+          .rj-grid-2, .rj-grid-3 { grid-template-columns: 1fr; } 
+        }
+        
+        .rj-card { padding: 1.5rem; border-radius: 1.25rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); transition: all 0.2s ease; }
+        .rj-card:hover { transform: translateY(-2px); border-color: hsl(var(--primary)/0.5); }
+        .rj-card h4 { font-size: 1.05rem; font-weight: 800; margin: 0 0 0.5rem 0 !important; color: hsl(var(--foreground)); }
+        .rj-card p { font-size: 0.88rem; line-height: 1.6; color: hsl(var(--muted-foreground)); margin: 0; }
+        
+        .rj-badge-container { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0; }
+        .rj-badge { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.6rem 1.25rem; border-radius: 9999px; background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); color: hsl(var(--foreground)); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; }
+        .rj-badge:hover { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); border-color: hsl(var(--primary)); transform: translateY(-2px) scale(1.03); }
+        .rj-badge svg { transition: transform 0.2s ease; }
+        .rj-badge:hover svg { transform: translate(1px, -1px); }
+        
+        .rj-prompt-block { background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; padding: 1.25rem 4.5rem 1.25rem 1.25rem; font-size: 0.88rem; line-height: 1.8; color: hsl(var(--foreground)); font-family: 'SF Mono', 'Fira Code', monospace; white-space: pre-wrap; word-break: break-word; margin: 1rem 0; position: relative; }
+        .rj-prompt-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: hsl(var(--muted-foreground)); margin-bottom: 0.5rem; }
+
+        .rj-copy-btn { position: absolute; top: 0.75rem; right: 0.75rem; display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.85rem; border-radius: 0.5rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); color: hsl(var(--muted-foreground)); font-size: 0.72rem; font-weight: 600; cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); font-family: inherit; z-index: 10; }
+        .rj-copy-btn:hover { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); border-color: hsl(var(--primary)); transform: scale(1.03); }
+        .rj-copy-btn:active { transform: scale(0.97); }
+        .rj-copy-btn svg { width: 12px; height: 12px; transition: transform 0.2s; }
+        .rj-copy-btn:hover svg { transform: rotate(5deg); }
+        .rj-copy-btn.copied { background: #10b981 !important; color: #ffffff !important; border-color: #10b981 !important; }
+
+        .rj-list { list-style: none !important; padding: 0 !important; margin: 1.5rem 0 !important; display: flex; flex-direction: column; gap: 0.75rem; }
+        .rj-list li { font-size: 0.9rem !important; color: hsl(var(--muted-foreground)) !important; margin-bottom: 0 !important; position: relative; padding-left: 1.25rem; line-height: 1.5; }
+        .rj-list li::before { content: '•'; position: absolute; left: 0; top: -0.1rem; font-size: 1.25rem; line-height: 1; color: hsl(var(--primary)); }
+
+        .rj-list-num { counter-reset: rj-counter; list-style: none !important; padding: 0 !important; margin: 1.5rem 0 !important; display: flex; flex-direction: column; gap: 1rem; }
+        .rj-list-num li { counter-increment: rj-counter; padding: 1.25rem 1.5rem 1.25rem 3.5rem; position: relative; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; font-size: 0.9rem !important; line-height: 1.7; color: hsl(var(--muted-foreground)) !important; }
+        .rj-list-num li::before { content: counter(rj-counter); position: absolute; left: 1.25rem; top: 1.25rem; font-size: 0.85rem; font-weight: 800; color: hsl(var(--foreground)); background: hsl(var(--muted)); width: 1.5rem; height: 1.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid hsl(var(--border)); }
+        .rj-list-num li strong { color: hsl(var(--foreground)); }
+
+        .rj-action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 2rem 0; }
+        @media (max-width: 768px) { .rj-action-grid { grid-template-columns: 1fr; } }
+        .rj-action-card { padding: 1.5rem; border-radius: 1rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); border-left: 4px solid hsl(var(--primary)); }
+        .rj-action-card h4 { font-size: 1rem; font-weight: 800; margin: 0 0 0.75rem 0 !important; color: hsl(var(--foreground)); }
+        .rj-action-card ul { list-style: none !important; padding: 0 !important; margin: 0 !important; display: flex; flex-direction: column; gap: 0.5rem; }
+        .rj-action-card ul li { font-size: 0.85rem !important; color: hsl(var(--muted-foreground)) !important; margin-bottom: 0 !important; position: relative; padding-left: 1rem; }
+        .rj-action-card ul li::before { content: '✓'; position: absolute; left: 0; color: #10b981; font-weight: bold; }
+
+        .rj-cta { margin-top: 3.5rem; padding: 3rem 2rem; border-radius: 1.5rem; background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.9) 100%); text-align: center; color: hsl(var(--primary-foreground)); position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .rj-cta::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%); pointer-events: none; }
+        .rj-cta h2 { color: hsl(var(--primary-foreground)) !important; margin-top: 0 !important; font-size: 1.75rem; font-weight: 800; margin-bottom: 0.75rem; }
+        .rj-cta p { color: hsl(var(--primary-foreground) / 0.8); margin-bottom: 1.5rem; font-size: 1.05rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .rj-cta a { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2.25rem; border-radius: 9999px; background: hsl(var(--primary-foreground)); color: hsl(var(--primary)); font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .rj-cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); filter: brightness(1.05); }
+        .rj-cta a svg { transition: transform 0.2s; }
+        .rj-cta a:hover svg { transform: rotate(10deg) scale(1.1); }
+      </style>
+      
+      <div class="rj-hero">
+        <h2>Roadmap Mendapatkan Remote Job & Client Luar Negeri untuk Programmer</h2>
+        <p>Kalau dollar naik, banyak programmer langsung ngomong: "Enak ya kalau dibayar USD." Masalahnya... Banyak yang berhenti sampai di situ. Padahal pertanyaan yang lebih penting adalah: Gimana caranya supaya skill kita bisa dijual ke pasar global?</p>
+      </div>
+
+      <div class="rj-intro-box">
+        <p>Kenyataannya, programmer yang dibayar dalam USD bukan selalu yang paling pintar. Sering kali mereka adalah orang yang memiliki portofolio jelas, terlihat di internet (visibility), bisa menunjukkan hasil kerja nyata, dan tahu cara memasarkan skill mereka di pasar global. Jika Anda ingin mulai mendapatkan remote job atau client luar negeri, berikut roadmap lengkap yang saya rekomendasikan.</p>
+      </div>
+
+      <div class="rj-section-title">Tahap 1 — Kuasai Satu Skill Dulu</div>
+
+      <p>Kesalahan terbesar pemula adalah mencoba belajar semuanya sekaligus: Frontend, Backend, AI, Mobile, DevOps, dan Cybersecurity secara bersamaan. Akhirnya, tidak ada yang benar-benar dikuasai secara mendalam. Pilihlah satu jalur terlebih dahulu untuk menjadi pondasi utama Anda:</p>
+
+      <div class="rj-grid-3">
+        <div class="rj-card">
+          <h4>Frontend Dev</h4>
+          <p>Fokus menguasai HTML, CSS, JavaScript, serta framework modern seperti React atau Next.js untuk antarmuka web.</p>
+        </div>
+        <div class="rj-card">
+          <h4>Backend Dev</h4>
+          <p>Fokus menguasai bahasa server seperti Node.js atau PHP (Laravel), pengelolaan Database, serta pembuatan API.</p>
+        </div>
+        <div class="rj-card">
+          <h4>AI Developer</h4>
+          <p>Fokus pada Prompt Engineering, integrasi AI API, implementasi RAG (Retrieval-Augmented Generation), dan Alur Otomasi.</p>
+        </div>
+      </div>
+
+      <div class="rj-quote-box">
+        Targetnya sederhana: "Bisa membuat project utuh sendiri tanpa harus mengikuti tutorial langkah demi langkah."
+      </div>
+
+      <div class="rj-section-title">Tahap 2 — Bangun Portfolio Nyata</div>
+
+      <p>Client luar negeri tidak membeli sertifikat kursus online Anda. Client membeli bukti kerja nyata yang fungsional. Pastikan Anda memiliki portofolio minimal sebagai berikut:</p>
+
+      <ul class="rj-list">
+        <li><strong>3 Project CRUD Sederhana:</strong> Misalnya aplikasi Todo List, Sistem Kasir (Point of Sales), atau Manajemen Inventori.</li>
+        <li><strong>1 Project Fullstack Kompleks:</strong> Misalnya Booking System, Learning Management System (LMS), atau E-Commerce lengkap dengan transaksi.</li>
+        <li><strong>1 Project Pemecah Masalah Nyata:</strong> Ini yang paling krusial — buat aplikasi yang menyelesaikan masalah riil di sekitar Anda atau industri spesifik.</li>
+      </ul>
+
+      <div class="rj-section-title">Tahap 3 — Upload Semua ke GitHub</div>
+
+      <p>GitHub adalah CV utama bagi seorang programmer di era modern. Ketika recruiter atau client luar negeri melihat profil GitHub yang kosong, kepercayaan mereka (trust) akan langsung menurun drastis. Pastikan:</p>
+
+      <ul class="rj-list">
+        <li>Struktur repository bersih dan rapi.</li>
+        <li>Dokumentasi README jelas dan informatif.</li>
+        <li>Terdapat screenshot atau video demo berdurasi singkat.</li>
+        <li>Cantumkan link live demo aplikasi yang bisa langsung diuji coba.</li>
+      </ul>
+
+      <div class="rj-section-title">Tahap 4 — Publish Project Online (Deploy)</div>
+
+      <p>Jangan biarkan aplikasi Anda hanya berjalan di localhost komputer Anda sendiri. Client ingin melihat hasilnya secara langsung, bukan mendengar cerita pembuatannya. Deploy project Anda ke platform cloud gratis atau terjangkau:</p>
+
+      <div class="rj-grid-3">
+        <div class="rj-card">
+          <h4>Vercel / Netlify</h4>
+          <p>Sangat cocok untuk deploy project frontend statis atau aplikasi berbasis Next.js/React secara instan.</p>
+        </div>
+        <div class="rj-card">
+          <h4>Railway / Render</h4>
+          <p>Sangat praktis untuk menaruh aplikasi backend (Node.js, PHP, Python) dan database server online.</p>
+        </div>
+        <div class="rj-card">
+          <h4>VPS / Cloud Provider</h4>
+          <p>Sangat ideal untuk deployment skala produksi menggunakan Docker atau konfigurasi server mandiri.</p>
+        </div>
+      </div>
+
+      <div class="rj-section-title">Tahap 5 — Bangun Personal Branding</div>
+
+      <p>Ini adalah bagian yang paling sering diremehkan oleh programmer. Padahal, konsisten membuat konten di media sosial atau blog pribadi dapat membuka banyak pintu peluang kerja jarak jauh, webinar, mentoring, hingga proyek kolaborasi global secara inbound.</p>
+
+      <p>Mulailah membagikan progress belajar harian Anda, project baru yang sedang dibangun, tips-tips programming unik, insight seputar teknologi AI terbaru, atau pengalaman mengatasi bug rumit. Tidak perlu menunggu viral, yang terpenting adalah konsistensi dan visibilitas Anda di internet.</p>
+
+      <div class="rj-section-title">Tahap 6 — Mulai Cari Client Global</div>
+
+      <p>Gunakan platform tepercaya di bawah ini untuk mulai menawarkan jasa coding Anda ke kancah internasional:</p>
+
+      <div class="rj-badge-container">
+        <a href="https://upwork.com" target="_blank" rel="noopener noreferrer" class="rj-badge">Upwork<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-left:0.15rem;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+        <a href="https://freelancer.com" target="_blank" rel="noopener noreferrer" class="rj-badge">Freelancer<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-left:0.15rem;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+        <a href="https://fiverr.com" target="_blank" rel="noopener noreferrer" class="rj-badge">Fiverr<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-left:0.15rem;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+        <a href="https://contra.com" target="_blank" rel="noopener noreferrer" class="rj-badge">Contra<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-left:0.15rem;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+        <a href="https://toptal.com" target="_blank" rel="noopener noreferrer" class="rj-badge">Toptal<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-left:0.15rem;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      </div>
+
+      <p>Jangan langsung menargetkan proyek bernilai ribuan dollar di awal. Fokuslah pada penyelesaian pekerjaan kecil terlebih dahulu untuk mendapatkan <strong>bintang 5 dan testimonial pertama Anda</strong>. Rating awal ini akan menjadi batu loncatan terbesar Anda.</p>
+
+      <div class="rj-prompt-label">Template Proposal Upwork Singkat & Efektif (Bisa Di-copy):</div>
+      <div class="rj-prompt-block">Hi [Client Name],
+
+I saw your project request for [project requirement]. I have built a similar project recently (you can check it here: [portfolio link]).
+
+I can get this done for you in [timeframe]. Let me know if we can chat briefly to align on the details.
+
+Best,
+[Your Name]<button class="rj-copy-btn" onclick="navigator.clipboard.writeText(&quot;Hi [Client Name],\\\\n\\\\nI saw your project request for [project requirement]. I have built a similar project recently (you can check it here: [portfolio link]).\\\\n\\\\nI can get this done for you in [timeframe]. Let me know if we can chat briefly to align on the details.\\\\n\\\\nBest,\\\\n[Your Name]&quot;);this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
+
+      <div class="rj-section-title">Tahap 7 — Optimalkan LinkedIn</div>
+
+      <p>Banyak sekali tawaran remote job penuh waktu (full-time remote) yang datang secara langsung melalui inbox LinkedIn. Pastikan profil LinkedIn Anda dioptimalkan dengan baik:</p>
+
+      <ul class="rj-list">
+        <li>Gunakan foto profil yang profesional dengan pencahayaan yang baik.</li>
+        <li>Tulis headline profil yang jelas, ringkas, dan memuat kata kunci keahlian utama Anda.</li>
+      </ul>
+
+      <div class="rj-prompt-label">Contoh Headline LinkedIn (Bisa Di-copy):</div>
+      <div class="rj-prompt-block">Fullstack Developer | Laravel | Next.js | AI Integration<button class="rj-copy-btn" onclick="navigator.clipboard.writeText(&quot;Fullstack Developer | Laravel | Next.js | AI Integration&quot;);this.classList.add('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;20 6 9 17 4 12&quot;/></svg>Copied!';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;13&quot; height=&quot;13&quot; rx=&quot;2&quot;/><path d=&quot;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&quot;/></svg>Copy';},2000)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button></div>
+
+      <div class="rj-section-title">Tahap 8 — Belajar Bahasa Inggris Praktis</div>
+
+      <p>Anda tidak harus memiliki skor TOEFL/IELTS yang tinggi atau pelafalan yang sempurna. Namun, minimal Anda harus mampu:</p>
+
+      <ul class="rj-list">
+        <li>Membaca dokumentasi teknis dalam bahasa Inggris dengan baik.</li>
+        <li>Menulis pesan teks/chat secara jelas dan sopan saat berkomunikasi dengan client.</li>
+        <li>Melakukan percakapan video call/meeting sederhana untuk menyelaraskan kebutuhan proyek.</li>
+      </ul>
+
+      <p>Ingat, mayoritas peluang kerja global menggunakan bahasa Inggris sebagai bahasa pengantar utama.</p>
+
+      <div class="rj-section-title">Tahap 9 — Naikkan Value, Bukan Jam Kerja</div>
+
+      <p>Banyak programmer berpikir bahwa jalan satu-satunya menaikkan pendapatan adalah dengan bekerja lebih lama. Padahal, client global membayar berdasarkan hasil dan nilai solusi yang Anda berikan, bukan berdasarkan jam kerja yang dihabiskan.</p>
+
+      <p>Manfaatkan tools berbasis AI, otomatisasi alur kerja, dan workflow pengembangan modern agar pekerjaan yang biasanya memakan waktu 10 jam dapat diselesaikan secara presisi dalam 2 jam. Dengan begitu, Anda memiliki kapasitas untuk mengambil proyek lain atau menikmati waktu luang Anda.</p>
+
+      <div class="rj-section-title">Rencana Aksi 30 Hari (Action Plan)</div>
+
+      <p>Mulai dari langkah kecil secara konsisten. Berikut rencana aksi mingguan yang bisa Anda jalankan:</p>
+
+      <div class="rj-action-grid">
+        <div class="rj-action-card">
+          <h4>Minggu 1: Focus & Build</h4>
+          <ul>
+            <li>Tentukan satu spesialisasi utama Anda.</li>
+            <li>Rancang dan mulai coding 1 project portofolio mandiri.</li>
+          </ul>
+        </div>
+        <div class="rj-action-card">
+          <h4>Minggu 2: GitHub & Deploy</h4>
+          <ul>
+            <li>Upload seluruh kode program project Anda ke GitHub.</li>
+            <li>Deploy project tersebut agar online dan bisa diakses demo-nya.</li>
+          </ul>
+        </div>
+        <div class="rj-action-card">
+          <h4>Minggu 3: Brand & Visibility</h4>
+          <ul>
+            <li>Optimalkan foto, headline, dan detail profil LinkedIn Anda.</li>
+            <li>Mulai bagikan konten atau progress project Anda ke media sosial.</li>
+          </ul>
+        </div>
+        <div class="rj-action-card">
+          <h4>Minggu 4: Apply & Pitch</h4>
+          <ul>
+            <li>Buat akun Upwork/Fiverr/Contra yang profesional.</li>
+            <li>Kirim 5 proposal penawaran proyek pertama Anda secara terarah.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rj-section-title">Kesimpulan</div>
+
+      <p>Peluang global tidak pernah menghampiri programmer yang paling diam di kamarnya. Peluang tersebut datang kepada mereka yang terlihat, aktif menunjukkan bukti kerjanya, dan berani mengambil langkah pertama. Memulai kerja dengan client luar negeri pertama Anda akan jauh lebih bernilai dibanding membaca ratusan tutorial tanpa pernah mempraktikkannya sama sekali!</p>
+
+      <div class="rj-cta">
+        <h2>Mau Info Belajar & Career Hacks Dunia IT Tiap Hari?</h2>
+        <p>Yuk ikuti Instagram saya untuk mendapatkan update project roadmap terbaru, tips prompts AI engineering, strategi freelancing, serta panduan praktis membangun personal branding IT!</p>
+        <a href="https://www.instagram.com/adityafakhrii/" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:0.25rem;"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          Follow @adityafakhrii di Instagram
+        </a>
+      </div>
+    `,
+    date: "9 Jun 2026",
+    isoDate: "2026-06-09",
+    readTime: "9 min",
+    category: "Career",
+    author: "Aditya Fakhri Riansyah",
+    tags: ["Remote Job", "Freelance", "GitHub", "LinkedIn", "Upwork", "Career Development", "2026"],
+    imageSrc: "/images/blog/roadmap-remote-job.png",
+    relatedPosts: ["roadmap-fullstack-developer-ai-2026", "cuan-dari-ai-2026", "prompt-engineering-for-app-development"],
   }
 } as const
 
