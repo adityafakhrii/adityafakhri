@@ -1,5 +1,15 @@
 export const translations = {
   id: {
+    k_a5da2440: "Nama kota/kabupaten minimal 2 karakter.",
+    k_5cc0e1f5: "Pilih pekerjaan Anda.",
+    k_2e0c9768: "Pilih topik event.",
+    k_80a05fef: "Feedback minimal 20 karakter.",
+    k_3bbb81ce: "Berikan rating penguasaan materi.",
+    k_57e7addb: "Berikan rating komunikasi/interaksi.",
+    k_27fdf9cf: "Berikan rating keseluruhan.",
+    k_b830ce5f: "Tuliskan pekerjaan kustom Anda.",
+    k_e7537e6b: "Tuliskan nama/topik event kustom Anda.",
+    k_2a679d1b: "Tuliskan apa yang perlu ditingkatkan (minimal 20 karakter).",
     k_674103c8: "Memiliki passion dalam membangun solusi digital yang berdampak dan membuat pengetahuan teknologi dapat diakses oleh semua orang. Terampil dalam pengembangan web full-stack dengan JavaScript & Laravel dengan pola pikir pemecahan masalah yang kuat.",
     k_6db9f60a: "Selain mengembangkan aplikasi, saya juga aktif sebagai mentor dan content creator di bidang teknologi. Saya percaya bahwa berbagi pengetahuan adalah cara terbaik untuk terus belajar dan berkembang.",
     k_eef22c21: "Selalu terbuka untuk berkolaborasi, berbagi pengetahuan, atau sekadar minum kopi dan mengobrol tentang teknologi! Jangan ragu untuk terhubung di adityafakhri03@gmail.com.",
@@ -472,6 +482,16 @@ export const translations = {
   },
 
   en: {
+    k_a5da2440: "City/Regency must be at least 2 characters.",
+    k_5cc0e1f5: "Select your occupation.",
+    k_2e0c9768: "Select event topic.",
+    k_80a05fef: "Feedback must be at least 20 characters.",
+    k_3bbb81ce: "Please rate material mastery.",
+    k_57e7addb: "Please rate communication/interaction.",
+    k_27fdf9cf: "Please rate overall experience.",
+    k_b830ce5f: "Please enter your custom occupation.",
+    k_e7537e6b: "Please enter custom event name/topic.",
+    k_2a679d1b: "Please enter what should be improved (at least 20 characters).",
     k_674103c8: "Passionate about building impactful digital solutions and making technology knowledge accessible to everyone. Skilled in full-stack web development with JavaScript & Laravel with strong problem-solving mindset.",
     k_6db9f60a: "Besides developing applications, I'm also active as a mentor and content creator in the technology field. I believe that sharing knowledge is the best way to keep learning and growing.",
     k_eef22c21: "Always open to collaborate, share knowledge, or just have coffee and chat about technology! Don't hesitate to connect at adityafakhri03@gmail.com.",

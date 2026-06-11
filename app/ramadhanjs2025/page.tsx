@@ -83,7 +83,7 @@ export default function RamadhanJSPage() {
             <CardContent>
               <div className="text-4xl font-bold text-primary drop-shadow-sm">{totalDonation}</div>
               <p className="text-xs text-muted-foreground mt-2">
-                Untuk perlengkapan mesjid dan pengajian anak-anak Rumah Pencinta Qur'an Birrul Walidain.
+                {"Untuk perlengkapan mesjid dan pengajian anak-anak Rumah Pencinta Qur'an Birrul Walidain."}
               </p>
             </CardContent>
           </Card>
@@ -160,7 +160,7 @@ export default function RamadhanJSPage() {
           <Card className="bg-primary/5 border-primary/20">
             <CardContent className="pt-6 text-center">
               <p className="text-lg italic text-muted-foreground">
-                "Jazakumullah khairan katsiran. Semoga Allah membalas kebaikan kalian dengan pahala yang berlipat ganda, memberkahi rezeki, dan menjadikan donasi ini sebagai amal jariyah yang tak terputus. Aamiin."
+                &ldquo;Jazakumullah khairan katsiran. Semoga Allah membalas kebaikan kalian dengan pahala yang berlipat ganda, memberkahi rezeki, dan menjadikan donasi ini sebagai amal jariyah yang tak terputus. Aamiin.&rdquo;
               </p>
             </CardContent>
           </Card>

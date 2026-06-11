@@ -21,6 +21,7 @@ import { Button } from "@/components/ui/button"
 import { buttonVariants } from "@/components/ui/button"
 import { TranslatedContent } from "@/components/translated-content"
 import { pastEvents, upcomingEvents } from "@/data/events"
+import { getLocalized } from "@/lib/utils"
 
 // Re-exporting to force refresh
 export function SpeakingContent() {
@@ -48,7 +49,7 @@ export function SpeakingContent() {
                                                         <div className="relative h-48 md:h-auto overflow-hidden rounded-t-lg md:rounded-l-lg md:rounded-tr-none">
                                                             <Image
                                                                 src={item.imageSrc}
-                                                                alt={t('language') === 'id' ? item.title.id : item.title.en}
+                                                                alt={getLocalized(item.title, t('language'))}
                                                                 fill
                                                                 sizes="100vw"
                                                                 suppressHydrationWarning
@@ -56,7 +57,7 @@ export function SpeakingContent() {
                                                                 className={`${item.imageClassName ?? "object-contain"} cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
                                                                 onClick={() => setSelectedImage({
                                                                     src: item.imageSrc,
-                                                                    alt: t('language') === 'id' ? item.title.id : item.title.en
+                                                                    alt: getLocalized(item.title, t('language'))
                                                                 })}
                                                             />
                                                         </div>
@@ -68,11 +69,11 @@ export function SpeakingContent() {
                                                                 ))}
                                                             </div>
                                                             <h3 className="font-medium text-xl">
-                                                                {t('language') === 'id' ? item.title.id : item.title.en}
+                                                                {getLocalized(item.title, t('language'))}
                                                             </h3>
                                                             {item.subtitle && (
                                                                 <h4 className="text-lg text-muted-foreground">
-                                                                    {t('language') === 'id' ? item.subtitle.id : item.subtitle.en}
+                                                                    {getLocalized(item.subtitle, t('language'))}
                                                                 </h4>
                                                             )}
                                                             <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-2 text-sm text-muted-foreground">
@@ -98,16 +99,16 @@ export function SpeakingContent() {
                                                             {item.description && (
                                                                 item.bullets ? (
                                                                     <div className="mt-4 text-sm">
-                                                                        {t('language') === 'id' ? item.description.id : item.description.en}
+                                                                        {getLocalized(item.description, t('language'))}
                                                                         <ul className="list-disc list-inside mt-1">
-                                                                            {(t('language') === 'id' ? item.bullets.id : item.bullets.en).map((b, i) => (
+                                                                            {getLocalized(item.bullets, t('language')).map((b, i) => (
                                                                                 <li key={i}>{b}</li>
                                                                             ))}
                                                                         </ul>
                                                                     </div>
                                                                 ) : (
                                                                     <p className="mt-4 text-sm">
-                                                                        {t('language') === 'id' ? item.description.id : item.description.en}
+                                                                        {getLocalized(item.description, t('language'))}
                                                                     </p>
                                                                 )
                                                             )}
@@ -134,7 +135,7 @@ export function SpeakingContent() {
                                                             )}
                                                             {item.organizer && (
                                                                 <div className="mt-4 text-sm text-muted-foreground">
-                                                                    {t('language') === 'id' ? item.organizer.id : item.organizer.en}
+                                                                    {getLocalized(item.organizer, t('language'))}
                                                                 </div>
                                                             )}
                                                         </div>
@@ -165,7 +166,7 @@ export function SpeakingContent() {
                                                     <div className="relative h-48 md:h-auto overflow-hidden rounded-t-lg md:rounded-l-lg md:rounded-tr-none">
                                                         <Image
                                                             src={item.imageSrc}
-                                                            alt={t('language') === 'id' ? item.title.id : item.title.en}
+                                                            alt={getLocalized(item.title, t('language'))}
                                                             fill
                                                             sizes="100vw"
                                                             suppressHydrationWarning
@@ -173,7 +174,7 @@ export function SpeakingContent() {
                                                             className={`${item.imageClassName ?? "object-contain"} cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
                                                             onClick={() => setSelectedImage({
                                                                 src: item.imageSrc,
-                                                                alt: t('language') === 'id' ? item.title.id : item.title.en
+                                                                alt: getLocalized(item.title, t('language'))
                                                             })}
                                                         />
                                                     </div>
@@ -185,11 +186,11 @@ export function SpeakingContent() {
                                                             ))}
                                                         </div>
                                                         <h3 className="font-medium text-xl">
-                                                            {t('language') === 'id' ? item.title.id : item.title.en}
+                                                            {getLocalized(item.title, t('language'))}
                                                         </h3>
                                                         {item.subtitle && (
                                                             <h4 className="text-lg text-muted-foreground">
-                                                                {t('language') === 'id' ? item.subtitle.id : item.subtitle.en}
+                                                                {getLocalized(item.subtitle, t('language'))}
                                                             </h4>
                                                         )}
                                                         <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-2 text-sm text-muted-foreground">
@@ -215,22 +216,22 @@ export function SpeakingContent() {
                                                         {item.description && (
                                                             item.bullets ? (
                                                                 <div className="mt-4 text-sm">
-                                                                    {t('language') === 'id' ? item.description.id : item.description.en}
+                                                                    {getLocalized(item.description, t('language'))}
                                                                     <ul className="list-disc list-inside mt-1">
-                                                                        {(t('language') === 'id' ? item.bullets.id : item.bullets.en).map((b, i) => (
+                                                                        {getLocalized(item.bullets, t('language')).map((b, i) => (
                                                                             <li key={i}>{b}</li>
                                                                         ))}
                                                                     </ul>
                                                                 </div>
                                                             ) : (
                                                                 <p className="mt-4 text-sm">
-                                                                    {t('language') === 'id' ? item.description.id : item.description.en}
+                                                                    {getLocalized(item.description, t('language'))}
                                                                 </p>
                                                             )
                                                         )}
                                                         {item.links && item.links.length > 0 && (
                                                             <div className="mt-4">
-                                                                <div className="flex flex-wrap gap-2" suppressHydrationWarning>
+                                                                    <div className="flex flex-wrap gap-2" suppressHydrationWarning>
                                                                     {item.links.map((link) => (
                                                                         <Link
                                                                             key={link.href}
@@ -251,7 +252,7 @@ export function SpeakingContent() {
                                                         )}
                                                         {item.organizer && (
                                                             <div className="mt-4 text-sm text-muted-foreground">
-                                                                {t('language') === 'id' ? item.organizer.id : item.organizer.en}
+                                                                {getLocalized(item.organizer, t('language'))}
                                                             </div>
                                                         )}
                                                     </div>
@@ -384,3 +385,4 @@ export function SpeakingContent() {
         </>
     )
 }
+

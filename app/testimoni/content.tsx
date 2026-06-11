@@ -96,7 +96,7 @@ export function TestimoniContent({ initialSubmissions }: TestimoniContentProps) 
 
                         {/* Body Section: Content */}
                         <p className="text-foreground/90 text-sm leading-relaxed italic relative pl-4 border-l-2 border-primary/30 my-2 flex-grow">
-                          "{item.feedback}"
+                          &ldquo;{item.feedback}&rdquo;
                         </p>
 
                         {/* Bottom Section: Author Details */}

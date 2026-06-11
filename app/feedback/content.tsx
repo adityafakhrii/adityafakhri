@@ -25,29 +25,29 @@ const getFormSchema = (t: any) => z.object({
     message: t('k_e267e2be'),
   }),
   city: z.string().min(2, {
-    message: t('language') === 'id' ? "Nama kota/kabupaten minimal 2 karakter." : "City/Regency must be at least 2 characters.",
+    message: t('k_a5da2440'),
   }),
   occupation: z.string().min(1, {
-    message: t('language') === 'id' ? "Pilih pekerjaan Anda." : "Select your occupation.",
+    message: t('k_5cc0e1f5'),
   }),
   customOccupation: z.string().optional(),
   topic: z.string().min(1, {
-    message: t('language') === 'id' ? "Pilih topik event." : "Select event topic.",
+    message: t('k_2e0c9768'),
   }),
   customTopic: z.string().optional(),
   feedback: z.string().min(20, {
-    message: t('language') === 'id' ? "Feedback minimal 20 karakter." : "Feedback must be at least 20 characters.",
+    message: t('k_80a05fef'),
   }),
   impression: z.string().optional(),
   improvement: z.string().optional(),
   ratingMastery: z.number().min(1, {
-    message: t('language') === 'id' ? "Berikan rating penguasaan materi." : "Please rate material mastery.",
+    message: t('k_3bbb81ce'),
   }).max(5),
   ratingCommunication: z.number().min(1, {
-    message: t('language') === 'id' ? "Berikan rating komunikasi/interaksi." : "Please rate communication/interaction.",
+    message: t('k_57e7addb'),
   }).max(5),
   ratingOverall: z.number().min(1, {
-    message: t('language') === 'id' ? "Berikan rating keseluruhan." : "Please rate overall experience.",
+    message: t('k_27fdf9cf'),
   }).max(5),
 }).refine(data => {
   if (data.occupation === "Lainnya" && (!data.customOccupation || data.customOccupation.trim().length < 2)) {
@@ -55,7 +55,7 @@ const getFormSchema = (t: any) => z.object({
   }
   return true;
 }, {
-  message: t('language') === 'id' ? "Tuliskan pekerjaan kustom Anda." : "Please enter your custom occupation.",
+  message: t('k_b830ce5f'),
   path: ["customOccupation"]
 }).refine(data => {
   if (data.topic === "Lainnya" && (!data.customTopic || data.customTopic.trim().length < 2)) {
@@ -63,7 +63,7 @@ const getFormSchema = (t: any) => z.object({
   }
   return true;
 }, {
-  message: t('language') === 'id' ? "Tuliskan nama/topik event kustom Anda." : "Please enter custom event name/topic.",
+  message: t('k_e7537e6b'),
   path: ["customTopic"]
 }).refine(data => {
   if (data.ratingOverall > 0 && data.ratingOverall <= 4 && (!data.improvement || data.improvement.trim().length < 20)) {
@@ -71,7 +71,7 @@ const getFormSchema = (t: any) => z.object({
   }
   return true;
 }, {
-  message: t('language') === 'id' ? "Tuliskan apa yang perlu ditingkatkan (minimal 20 karakter)." : "Please enter what should be improved (at least 20 characters).",
+  message: t('k_2a679d1b'),
   path: ["improvement"]
 });
 

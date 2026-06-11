@@ -10,6 +10,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { pastEvents } from "@/data/events"
 import { TranslatedContent } from "@/components/translated-content"
+import { getLocalized } from "@/lib/utils"
 
 export function ServicesContent() {
   return (
@@ -831,10 +832,10 @@ export function ServicesContent() {
                     <Card key={event.id} className="hover:border-primary/50 transition-all duration-200 overflow-hidden group">
                       <CardContent className="p-0 h-full">
                         <div className="flex flex-row h-full">
-                           <div className="relative w-24 md:w-28 flex-shrink-0 bg-muted">
+                            <div className="relative w-24 md:w-28 flex-shrink-0 bg-muted">
                               <Image 
                                 src={event.imageSrc} 
-                                alt={t('language') === 'id' ? event.title.id : event.title.en}
+                                alt={getLocalized(event.title, t('language'))}
                                 fill
                                 className={`object-cover ${event.imageClassName || ''}`}
                               />
@@ -844,7 +845,7 @@ export function ServicesContent() {
                               <div className="mb-2">
                                 <Badge variant="secondary" className="mb-1 text-[10px] px-1.5 py-0 h-5">{event.category}</Badge>
                                 <h4 className="font-bold line-clamp-2 text-xs md:text-sm leading-tight group-hover:text-primary transition-colors">
-                                  {t('language') === 'id' ? event.title.id : event.title.en}
+                                  {getLocalized(event.title, t('language'))}
                                 </h4>
                               </div>
                               <div className="space-y-1 text-[10px] md:text-xs text-muted-foreground">

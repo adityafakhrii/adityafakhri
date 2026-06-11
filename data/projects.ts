@@ -1,11 +1,12 @@
-export type TranslatableString = { id: string; en: string } | string;
+import { getLocalized, type Translatable } from "@/lib/utils";
+
+export type TranslatableString = Translatable<string>;
 export type TranslatableChallenge = { challenge: TranslatableString; solution: TranslatableString };
 
 export function getLocalizedData(data: TranslatableString | undefined, lang: string): string {
-  if (!data) return "";
-  if (typeof data === "string") return data;
-  return data[lang as "id" | "en"] || data.id;
+  return getLocalized(data, lang);
 }
+
 
 export type ProjectItem = {
   title: string

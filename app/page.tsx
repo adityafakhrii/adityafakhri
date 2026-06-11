@@ -12,6 +12,7 @@ import { TranslatedContent } from "@/components/translated-content"
 import projects from "@/data/projects"
 import blogs from "@/data/blog"
 import { pastEvents } from "@/data/events"
+import { getLocalized } from "@/lib/utils"
 
 export default function Home() {
   const pick = (id: keyof typeof projects) => {
@@ -231,10 +232,10 @@ export default function Home() {
               {recentEvents.map((item) => (
                 <Card key={item.id} className="overflow-hidden h-full transition-all duration-200 hover:shadow-md">
                   <div className="relative h-48 w-full overflow-hidden">
-                    <Image src={item.imageSrc} alt={t('language') === 'id' ? item.title.id : item.title.en} fill sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw" loading="lazy" className="object-cover" />
+                    <Image src={item.imageSrc} alt={getLocalized(item.title, t('language'))} fill sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw" loading="lazy" className="object-cover" />
                   </div>
                   <CardContent className="p-4">
-                    <h3 className="font-medium text-lg line-clamp-2">{t('language') === 'id' ? item.title.id : item.title.en}</h3>
+                    <h3 className="font-medium text-lg line-clamp-2">{getLocalized(item.title, t('language'))}</h3>
                     <p className="text-sm text-muted-foreground mt-2">{(item.time ? item.time + " • " : "") + item.date} • {item.location}</p>
                     <div className="mt-4">
                       <Button variant="outline" size="sm" asChild>
