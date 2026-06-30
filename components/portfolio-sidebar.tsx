@@ -79,7 +79,7 @@ export function PortfolioSidebar() {
         <SidebarHeader className="border-b pb-4">
           <div className="flex flex-col items-center space-y-2 px-2 pt-4">
             <Avatar className="h-20 w-20">
-              <AvatarImage src="/foto-adit.webp" alt="Aditya Fakhri Riansyah" />
+              <AvatarImage src="https://www.gambaryuk.com/1782794297222-ug4f6z.webp" alt="Aditya Fakhri Riansyah" />
               <AvatarFallback>AFR</AvatarFallback>
             </Avatar>
             <div className="text-center">
