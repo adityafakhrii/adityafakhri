@@ -14,33 +14,34 @@ import blogs from "@/data/blog"
 import { pastEvents } from "@/data/events"
 import { getLocalized } from "@/lib/utils"
 
+const pick = (id: keyof typeof projects) => {
+  const p = projects[id]
+  return { id, title: p.title, description: p.description || "", imageSrc: p.imageSrc || "/placeholder.svg", tags: p.tags || [] }
+}
+const featuredProjects = [
+  pick("gambaryuk"),
+  pick("invoiceyuk"),
+  pick("siacta"),
+  pick("ruangai-prompt-hub"),
+  pick("proquoteai"),
+  pick("restoranku"),
+]
+const featuredProjectsShow = featuredProjects.slice(0, 6)
+const articles = Object.entries(blogs)
+  .map(([id, p]) => ({
+    id,
+    title: p.title,
+    excerpt: p.excerpt,
+    date: p.date,
+    readTime: p.readTime,
+    imageSrc: p.imageSrc || "/placeholder.svg?height=200&width=400",
+    isoDate: p.isoDate || "2026-01-01",
+  }))
+  .sort((a, b) => b.isoDate.localeCompare(a.isoDate))
+const latestArticles = articles.slice(0, 4)
+const recentEvents = pastEvents.slice(0, 4)
+
 export default function Home() {
-  const pick = (id: keyof typeof projects) => {
-    const p = projects[id]
-    return { id, title: p.title, description: p.description || "", imageSrc: p.imageSrc || "/placeholder.svg", tags: p.tags || [] }
-  }
-  const featuredProjects = [
-    pick("gambaryuk"),
-    pick("invoiceyuk"),
-    pick("siacta"),
-    pick("ruangai-prompt-hub"),
-    pick("proquoteai"),
-    pick("restoranku"),
-  ]
-  const featuredProjectsShow = featuredProjects.slice(0, 6)
-  const articles = Object.entries(blogs)
-    .map(([id, p]) => ({
-      id,
-      title: p.title,
-      excerpt: p.excerpt,
-      date: p.date,
-      readTime: p.readTime,
-      imageSrc: p.imageSrc || "/placeholder.svg?height=200&width=400",
-      isoDate: p.isoDate || "2026-01-01",
-    }))
-    .sort((a, b) => b.isoDate.localeCompare(a.isoDate))
-  const latestArticles = articles.slice(0, 4)
-  const recentEvents = pastEvents.slice(0, 4)
   return (
     <TranslatedContent
       renderContent={({ t }) => (

@@ -12,9 +12,10 @@ import { TranslatedContent } from "@/components/translated-content"
 import { BlogShareButton } from "@/components/blog-share-buttons"
 import blogs from "@/data/blog"
 
+const normalize = (s: string) => decodeURIComponent(s).trim().toLowerCase().replace(/[\s_]+/g, "-").replace(/-+/g, "-")
+
 export default function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = React.use(params)
-  const normalize = (s: string) => decodeURIComponent(s).trim().toLowerCase().replace(/[\s_]+/g, "-").replace(/-+/g, "-")
   const normId = normalize(resolvedParams.id)
   const entry = Object.entries(blogs).find(([key]) => normalize(key) === normId)
   const id = entry ? entry[0] : resolvedParams.id

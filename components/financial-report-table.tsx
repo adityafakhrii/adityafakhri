@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { 
   Table, 
   TableBody, 
@@ -65,22 +65,24 @@ type SortConfig = {
 export function FinancialReportTable() {
   const [sortConfig, setSortConfig] = useState<SortConfig>(null)
 
-  const sortedData = [...financialData].sort((a, b) => {
-    if (!sortConfig) return 0
-    
-    const { key, direction } = sortConfig
-    
-    if (a[key] === null) return 1
-    if (b[key] === null) return -1
-    
-    if (a[key]! < b[key]!) {
-      return direction === "asc" ? -1 : 1
-    }
-    if (a[key]! > b[key]!) {
-      return direction === "asc" ? 1 : -1
-    }
-    return 0
-  })
+  const sortedData = useMemo(() => {
+    return [...financialData].sort((a, b) => {
+      if (!sortConfig) return 0
+      
+      const { key, direction } = sortConfig
+      
+      if (a[key] === null) return 1
+      if (b[key] === null) return -1
+      
+      if (a[key]! < b[key]!) {
+        return direction === "asc" ? -1 : 1
+      }
+      if (a[key]! > b[key]!) {
+        return direction === "asc" ? 1 : -1
+      }
+      return 0
+    })
+  }, [sortConfig])
 
   const requestSort = (key: keyof FinancialItem) => {
     let direction: "asc" | "desc" = "asc"

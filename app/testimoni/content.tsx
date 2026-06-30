@@ -1,5 +1,6 @@
 "use client"
 
+import { useMemo } from "react"
 import { PageHeader } from "@/components/page-header"
 import { ContentBlock } from "@/components/content-block"
 import { Card, CardContent } from "@/components/ui/card"
@@ -34,14 +35,16 @@ export function TestimoniContent({ initialSubmissions }: TestimoniContentProps) 
   const { language } = useLanguage()
 
   // Filter 5-star reviews with text feedback, sorted by newest first
-  const testimonials = (initialSubmissions || [])
-    .filter(
-      (item) =>
-        item.ratingOverall === 5 &&
-        item.feedback &&
-        item.feedback.trim().length > 0
-    )
-    .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+  const testimonials = useMemo(() => {
+    return (initialSubmissions || [])
+      .filter(
+        (item) =>
+          item.ratingOverall === 5 &&
+          item.feedback &&
+          item.feedback.trim().length > 0
+      )
+      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+  }, [initialSubmissions])
 
   // Formatting Date helper
   const formatDateStr = (dateIso: string) => {

@@ -26,6 +26,8 @@ const articles = Object.entries(blogs)
   }))
   .sort((a, b) => b.isoDate.localeCompare(a.isoDate))
 
+const categories = Array.from(new Set(articles.map((a) => a.category).filter(Boolean))).sort() as string[]
+
 import { useState } from "react"
 
 export function BlogContent() {
@@ -55,7 +57,7 @@ export function BlogContent() {
           <Tabs defaultValue="all">
             <TabsList className="mb-6 flex-wrap h-auto gap-1">
               <TabsTrigger value="all">{t('all')}</TabsTrigger>
-              {Array.from(new Set(articles.map((a) => a.category))).filter(Boolean).sort().map((category) => (
+              {categories.map((category) => (
                 <TabsTrigger key={category} value={category}>{category}</TabsTrigger>
               ))}
             </TabsList>
@@ -99,7 +101,7 @@ export function BlogContent() {
               </div>
             </TabsContent>
 
-            {Array.from(new Set(articles.map((a) => a.category))).filter(Boolean).sort().map((category) => (
+            {categories.map((category) => (
               <TabsContent key={category} value={category} className="mt-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {articles
