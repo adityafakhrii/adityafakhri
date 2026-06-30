@@ -122,6 +122,19 @@ export default function RootLayout({
             }),
           }}
         />
+        <script
+          type="speculationrules"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              prerender: [
+                {
+                  where: { href_matches: "/*" },
+                  eagerness: "moderate",
+                },
+              ],
+            }),
+          }}
+        />
       </head>
       <body className={inter.className}>
         <LanguageProvider>
