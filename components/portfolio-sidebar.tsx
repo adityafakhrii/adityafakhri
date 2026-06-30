@@ -68,10 +68,10 @@ export function PortfolioSidebar() {
 
   return (
     <>
-      {isMobile && (
-        <div className="fixed top-4 left-4 z-50">
-          <SidebarTrigger>
-            <Menu className="h-5 w-5" />
+      {isClient && isMobile && (
+        <div className="fixed top-[calc(1rem+env(safe-area-inset-top))] left-[calc(1rem+env(safe-area-inset-left))] z-50">
+          <SidebarTrigger variant="outline" className="h-11 w-11 bg-background shadow-sm">
+            <Menu className="h-6 w-6" />
           </SidebarTrigger>
         </div>
       )}
