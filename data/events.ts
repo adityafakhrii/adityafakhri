@@ -22,6 +22,46 @@ export const upcomingEvents: EventItem[] = [
 
 export const pastEvents: EventItem[] = [
   {
+    id: "airena-belajar-unisba-2026",
+    category: "Seminar & Workshop",
+    tags: ["AI", "Gemini", "Workshop", "Video Editing", "Education"],
+    imageSrc: "https://www.gambaryuk.com/1783414661178-glh9bd.webp",
+    title: {
+      id: "Airena Belajar: Ngulik AI bersama Para Expert",
+      en: "Airena Belajar: Exploring AI with Experts"
+    },
+    subtitle: {
+      id: "IM3 with Google Gemini",
+      en: "IM3 with Google Gemini"
+    },
+    date: "02 Juli 2026",
+    time: "09.00 - 12.00 WIB",
+    location: "Auditorium Lt. 8 Dekanat UNISBA",
+    description: {
+      id: "Sesi edukasi interaktif kolaborasi IM3 dan Google Gemini di Universitas Islam Bandung (UNISBA) untuk membahas pemanfaatan ekosistem AI Gemini dalam produktivitas mahasiswa, pengenalan AI Campus Hack, serta praktik langsung membuat video kreatif menggunakan AI.",
+      en: "An interactive educational session in collaboration with IM3 and Google Gemini at Bandung Islamic University (UNISBA) to discuss the utilization of the Gemini AI ecosystem for student productivity, introduction to AI Campus Hack, and hands-on creative video creation using AI."
+    },
+    bullets: {
+      id: [
+        "AI Campus Hack dengan Gemini",
+        "Membuat gambar dengan Nano Banana",
+        "Praktek membuat video dengan Gemini"
+      ],
+      en: [
+        "AI Campus Hack with Gemini",
+        "Making Images with Nano Banana",
+        "Hands-on video creation with Gemini"
+      ]
+    },
+    links: [
+      { labelId: "Pendaftaran", labelEn: "Registration", href: "https://bit.ly/AirenaBelajar-Unisba" }
+    ],
+    organizer: {
+      id: "Diselenggarakan oleh: IM3 dan Google Gemini",
+      en: "Organized by: IM3 and Google Gemini"
+    }
+  },
+  {
     id: "optima-ai-nurtanio-2026",
     category: "Seminar & Workshop",
     tags: ["AI", "Digital Business", "Digital Marketing", "Branding", "Workshop"],

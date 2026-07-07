@@ -22,6 +22,7 @@ const nextConfig = {
       { protocol: "https", hostname: "codingstudio.id" },
       { protocol: "https", hostname: "static.tiptip.id" },
       { protocol: "https", hostname: "cdn-web-2.ruangguru.com" },
+      { protocol: "https", hostname: "www.gambaryuk.com" },
     ],
   },
   experimental: {
