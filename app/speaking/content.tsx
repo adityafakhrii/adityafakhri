@@ -66,6 +66,16 @@ export function SpeakingContent() {
         }
     };
 
+    const scrollToEvent = (id: string) => {
+        setActiveFilter("all");
+        setTimeout(() => {
+            const element = document.getElementById(`event-card-${id}`);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        }, 100);
+    };
+
     return (
         <>
             <TranslatedContent
@@ -105,7 +115,11 @@ export function SpeakingContent() {
                                         .sort((a, b) => featuredIds.indexOf(a.id) - featuredIds.indexOf(b.id));
 
                                     return featured.map((item) => (
-                                        <Card key={`featured-${item.id}`} className="overflow-hidden flex flex-col justify-between border border-amber-500/20 bg-gradient-to-b from-amber-500/5 to-transparent hover:border-amber-500/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                                        <Card 
+                                            key={`featured-${item.id}`} 
+                                            onClick={() => scrollToEvent(item.id)}
+                                            className="overflow-hidden flex flex-col justify-between border border-amber-500/20 bg-gradient-to-b from-amber-500/5 to-transparent hover:border-amber-500/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                                        >
                                             <div>
                                                 <div className="relative h-44 w-full overflow-hidden bg-muted">
                                                     <Image
@@ -114,11 +128,7 @@ export function SpeakingContent() {
                                                         fill
                                                         sizes="(max-width: 768px) 100vw, 33vw"
                                                         suppressHydrationWarning
-                                                        className={`${item.imageClassName ?? "object-cover"} cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
-                                                        onClick={() => setSelectedImage({
-                                                            src: item.imageSrc,
-                                                            alt: getLocalized(item.title, t('language'))
-                                                        })}
+                                                        className={`${item.imageClassName ?? "object-cover"} hover:scale-105 transition-transform duration-300 ease-in-out`}
                                                     />
                                                 </div>
                                                 <div className="p-5">
@@ -156,6 +166,7 @@ export function SpeakingContent() {
                                                                 key={link.href}
                                                                 href={link.href}
                                                                 target="_blank"
+                                                                onClick={(e) => e.stopPropagation()}
                                                                 className={buttonVariants({
                                                                     variant: "outline",
                                                                     size: "sm",
@@ -347,7 +358,7 @@ export function SpeakingContent() {
                                             <div className="space-y-6">
                                                 {filteredPastEvents.length > 0 ? (
                                                     filteredPastEvents.map((item) => (
-                                                        <Card key={item.id}>
+                                                        <Card key={item.id} id={`event-card-${item.id}`} className="scroll-mt-24">
                                                             <CardContent className="p-0">
                                                                 <div className="grid grid-cols-1 md:grid-cols-3">
                                                                     <div className="relative h-48 md:h-auto overflow-hidden rounded-t-lg md:rounded-l-lg md:rounded-tr-none">
