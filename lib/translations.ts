@@ -338,6 +338,9 @@ export const translations = {
     filterAll: "Semua",
     filterCompany: "Perusahaan & Instansi",
     filterCampus: "Kampus & Sekolah",
+    featuredEvents: "Event Pilihan",
+    featuredEventsDesc: "Tiga sesi speaking paling bergengsi dan berdampak dalam portofolio saya",
+    viewAllEvents: "Lihat Semua Event",
 
     // Footer
     indonesian: "Indonesia",
@@ -823,6 +826,9 @@ export const translations = {
     filterAll: "All",
     filterCompany: "Company & Corporate",
     filterCampus: "Campus & Schools",
+    featuredEvents: "Featured Events",
+    featuredEventsDesc: "Three of the most prestigious and impactful speaking sessions in my portfolio",
+    viewAllEvents: "View All Events",
 
     // Footer
     indonesian: "Indonesia",

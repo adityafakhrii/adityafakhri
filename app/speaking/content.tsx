@@ -59,6 +59,13 @@ export function SpeakingContent() {
     const [selectedImage, setSelectedImage] = useState<{ src: string, alt: string } | null>(null)
     const [activeFilter, setActiveFilter] = useState<"all" | "company" | "campus">("all")
 
+    const scrollToAllEvents = () => {
+        const element = document.getElementById("all-events-section");
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <>
             <TranslatedContent
@@ -66,7 +73,113 @@ export function SpeakingContent() {
                     <div className="container max-w-5xl py-8 px-4 md:px-8">
                         <PageHeader title={t('speakingTitle')} description={t('speakingDescription')} />
 
-                        <div className="mt-8 space-y-8">
+                        {/* Featured Events Section */}
+                        <div className="mt-8 mb-12">
+                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+                                <div>
+                                    <h2 className="text-2xl font-bold tracking-tight">
+                                        {t('featuredEvents')}
+                                    </h2>
+                                    <p className="text-muted-foreground mt-1 text-sm">
+                                        {t('featuredEventsDesc')}
+                                    </p>
+                                </div>
+                                <Button
+                                    onClick={scrollToAllEvents}
+                                    className="sm:self-end bg-foreground text-background hover:bg-foreground/90 text-sm font-semibold transition-all duration-300"
+                                >
+                                    {t('viewAllEvents')}
+                                </Button>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                {(() => {
+                                    const featuredIds = [
+                                        "airena-belajar-unisba-2026",
+                                        "build-with-ai-pustekinfo-dpr-2026",
+                                        "workshop-pertamina-patra-niaga-2026"
+                                    ];
+
+                                    const featured = pastEvents
+                                        .filter(event => featuredIds.includes(event.id))
+                                        .sort((a, b) => featuredIds.indexOf(a.id) - featuredIds.indexOf(b.id));
+
+                                    return featured.map((item) => (
+                                        <Card key={`featured-${item.id}`} className="overflow-hidden flex flex-col justify-between border border-amber-500/20 bg-gradient-to-b from-amber-500/5 to-transparent hover:border-amber-500/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                                            <div>
+                                                <div className="relative h-44 w-full overflow-hidden bg-muted">
+                                                    <Image
+                                                        src={item.imageSrc}
+                                                        alt={getLocalized(item.title, t('language'))}
+                                                        fill
+                                                        sizes="(max-width: 768px) 100vw, 33vw"
+                                                        suppressHydrationWarning
+                                                        className={`${item.imageClassName ?? "object-cover"} cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
+                                                        onClick={() => setSelectedImage({
+                                                            src: item.imageSrc,
+                                                            alt: getLocalized(item.title, t('language'))
+                                                        })}
+                                                    />
+                                                </div>
+                                                <div className="p-5">
+                                                    <div className="flex items-center gap-2 mb-2" suppressHydrationWarning>
+                                                        <Badge className="bg-amber-500/10 text-amber-600 hover:bg-amber-500/20 border-amber-500/30 font-semibold dark:text-amber-400 text-xs">
+                                                            Featured
+                                                        </Badge>
+                                                        <Badge variant="outline" className="text-xs">{item.category}</Badge>
+                                                    </div>
+                                                    <h3 className="font-semibold text-lg leading-snug">
+                                                        {getLocalized(item.title, t('language'))}
+                                                    </h3>
+                                                    {item.subtitle && (
+                                                        <h4 className="text-sm font-medium text-amber-600 dark:text-amber-400 mt-1">
+                                                            {getLocalized(item.subtitle, t('language'))}
+                                                        </h4>
+                                                    )}
+                                                    <div className="flex flex-col gap-1.5 mt-3 text-xs text-muted-foreground">
+                                                        <div className="flex items-center">
+                                                            <Calendar className="h-3.5 w-3.5 mr-1.5 shrink-0" />
+                                                            {item.date}
+                                                        </div>
+                                                        <div className="flex items-center">
+                                                            <MapPin className="h-3.5 w-3.5 mr-1.5 shrink-0" />
+                                                            <span>{item.location}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="p-5 pt-0 mt-auto">
+                                                {item.links && item.links.length > 0 ? (
+                                                    <div className="flex flex-col gap-2" suppressHydrationWarning>
+                                                        {item.links.slice(0, 2).map((link) => (
+                                                            <Link
+                                                                key={link.href}
+                                                                href={link.href}
+                                                                target="_blank"
+                                                                className={buttonVariants({
+                                                                    variant: "outline",
+                                                                    size: "sm",
+                                                                    className: "w-full justify-between text-xs whitespace-normal border-amber-500/20 hover:bg-amber-500/5",
+                                                                })}
+                                                            >
+                                                                {t('language') === 'id' ? link.labelId : link.labelEn}
+                                                                <ExternalLink className="h-3 w-3 shrink-0" />
+                                                            </Link>
+                                                        ))}
+                                                    </div>
+                                                ) : (
+                                                    <div className="text-xs text-muted-foreground italic text-center py-2 border border-dashed rounded-md bg-muted/50">
+                                                        {t('language') === 'id' ? 'Dokumentasi internal' : 'Internal documentation'}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </Card>
+                                    ));
+                                })()}
+                            </div>
+                        </div>
+
+                        <div id="all-events-section" className="mt-8 space-y-8 scroll-mt-20">
                             <ContentBlock title={t('upcomingEvents')}>
                                 <p className="text-lg mb-4">
                                     {t('k_5d852ced')
