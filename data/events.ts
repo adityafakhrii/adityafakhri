@@ -62,6 +62,45 @@ export const pastEvents: EventItem[] = [
     }
   },
   {
+    id: "build-with-ai-pustekinfo-dpr-2026",
+    category: "Workshop",
+    tags: ["AI", "Vibe Coding", "Programming", "Web Development", "Internal Workshop"],
+    imageSrc: "https://www.gambaryuk.com/1783415423040-qslqq7.webp",
+    title: {
+      id: "Build with AI: Real World Vibe Coding",
+      en: "Build with AI: Real World Vibe Coding"
+    },
+    subtitle: {
+      id: "DPR RI - PUSTEKINFO",
+      en: "DPR RI - PUSTEKINFO"
+    },
+    date: "05 Juni 2026",
+    time: "09.00 - 17.00 WIB",
+    location: "Ramada by Wyndham Serpong Hotel",
+    description: {
+      id: "Workshop internal bagi karyawan PUSTEKINFO di bawah Sekretariat Jenderal DPR RI mengenai implementasi AI dalam alur kerja pengembangan perangkat lunak (Vibe Coding) untuk mempercepat pembangunan situs web dan aplikasi secara efisien.",
+      en: "Internal workshop for PUSTEKINFO employees under the Secretariat General of the DPR RI regarding the implementation of AI in software development workflows (Vibe Coding) to accelerate web and application building efficiently."
+    },
+    bullets: {
+      id: [
+        "Vibe Coding Programmer Setup (Setup + First Prompt + Workflow Config)",
+        "Build a Personal Website — End to End (Full Build with Vibe Coding)",
+        "Build a POS System — Point of Sale (Full Product Build · Production MVP)",
+        "AI Tools Stack Comparison Preview (Overview + What's Next)"
+      ],
+      en: [
+        "Vibe Coding Programmer Setup (Setup + First Prompt + Workflow Config)",
+        "Build a Personal Website — End to End (Full Build with Vibe Coding)",
+        "Build a POS System — Point of Sale (Full Product Build · Production MVP)",
+        "AI Tools Stack Comparison Preview (Overview + What's Next)"
+      ]
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: PUSTEKINFO Sekretariat Jenderal DPR RI",
+      en: "Organized by: PUSTEKINFO Secretariat General of the DPR RI"
+    }
+  },
+  {
     id: "optima-ai-nurtanio-2026",
     category: "Seminar & Workshop",
     tags: ["AI", "Digital Business", "Digital Marketing", "Branding", "Workshop"],
