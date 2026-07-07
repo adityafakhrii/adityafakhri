@@ -335,6 +335,9 @@ export const translations = {
     upcomingEvents: "Event Mendatang",
     pastEvents: "Event Sebelumnya",
     topicsISpeak: "Topik yang Saya Bicarakan",
+    filterAll: "Semua",
+    filterCompany: "Perusahaan & Instansi",
+    filterCampus: "Kampus & Sekolah",
 
     // Footer
     indonesian: "Indonesia",
@@ -817,6 +820,9 @@ export const translations = {
     upcomingEvents: "Upcoming Events",
     pastEvents: "Past Events",
     topicsISpeak: "Topics I Speak About",
+    filterAll: "All",
+    filterCompany: "Company & Corporate",
+    filterCampus: "Campus & Schools",
 
     // Footer
     indonesian: "Indonesia",

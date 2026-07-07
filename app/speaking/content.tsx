@@ -23,9 +23,41 @@ import { TranslatedContent } from "@/components/translated-content"
 import { pastEvents, upcomingEvents } from "@/data/events"
 import { getLocalized } from "@/lib/utils"
 
+const isCampusEvent = (event: typeof pastEvents[0]): boolean => {
+    const campusKeywords = [
+        'univ', 'university', 'universitas', 'himpunan', 'mahasiswa', 'student', 'students', 'gdsc', 'gdgoc', 'kampus', 
+        'school', 'sekolah', 'upi', 'itb', 'ugm', 'unpak', 'uho', 'unpas', 
+        'unpad', 'unsyiah', 'undip', 'unnes', 'uns', 'its', 'unair', 'ub', 
+        'himatif', 'hmtf', 'hima', 'academic', 'college', 'politeknik', 'polban',
+        'sangga buana', 'nurtanio', 'telekomunikasi', 'telkom', 'smkn', 'smk', 'sma', 'ambassador', 'widyatama', 'himakom', 'polines',
+        'universitas indonesia'
+    ];
+
+    const textToSearch = [
+        event.category,
+        ...(event.tags || []),
+        event.title.id,
+        event.title.en,
+        event.subtitle?.id || '',
+        event.subtitle?.en || '',
+        event.location,
+        event.organizer?.id || '',
+        event.organizer?.en || ''
+    ].join(' ').toLowerCase();
+
+    const words = textToSearch.split(/[^a-zA-Z0-9-]/);
+    return campusKeywords.some(keyword => {
+        if (keyword.includes(' ')) {
+            return textToSearch.includes(keyword);
+        }
+        return words.includes(keyword);
+    });
+};
+
 // Re-exporting to force refresh
 export function SpeakingContent() {
     const [selectedImage, setSelectedImage] = useState<{ src: string, alt: string } | null>(null)
+    const [activeFilter, setActiveFilter] = useState<"all" | "company" | "campus">("all")
 
     return (
         <>
@@ -154,113 +186,163 @@ export function SpeakingContent() {
 
                             <ContentBlock title={t('pastEvents')}>
                                 <p className="text-lg mb-6">
-                                    {t('k_57047ae1')
-                                    }
+                                    {t('k_57047ae1')}
                                 </p>
 
-                                <div className="space-y-6">
-                                    {pastEvents.map((item) => (
-                                        <Card key={item.id}>
-                                            <CardContent className="p-0">
-                                                <div className="grid grid-cols-1 md:grid-cols-3">
-                                                    <div className="relative h-48 md:h-auto overflow-hidden rounded-t-lg md:rounded-l-lg md:rounded-tr-none">
-                                                        <Image
-                                                            src={item.imageSrc}
-                                                            alt={getLocalized(item.title, t('language'))}
-                                                            fill
-                                                            sizes="100vw"
-                                                            suppressHydrationWarning
-                                                            priority={item.priority}
-                                                            className={`${item.imageClassName ?? "object-contain"} cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
-                                                            onClick={() => setSelectedImage({
-                                                                src: item.imageSrc,
-                                                                alt: getLocalized(item.title, t('language'))
-                                                            })}
-                                                        />
-                                                    </div>
-                                                    <div className="md:col-span-2 p-6">
-                                                        <div className="flex flex-wrap gap-2 mb-2" suppressHydrationWarning>
-                                                            <Badge>{item.category}</Badge>
-                                                            {item.tags.map((tag) => (
-                                                                <Badge key={tag} variant="outline">{tag}</Badge>
-                                                            ))}
-                                                        </div>
-                                                        <h3 className="font-medium text-xl">
-                                                            {getLocalized(item.title, t('language'))}
-                                                        </h3>
-                                                        {item.subtitle && (
-                                                            <h4 className="text-lg text-muted-foreground">
-                                                                {getLocalized(item.subtitle, t('language'))}
-                                                            </h4>
-                                                        )}
-                                                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-2 text-sm text-muted-foreground">
-                                                            <div className="flex items-center">
-                                                                <Calendar className="h-4 w-4 mr-1" />
-                                                                {item.date}
-                                                            </div>
-                                                            {item.time && (
-                                                                <>
-                                                                    <div className="hidden sm:block">•</div>
-                                                                    <div className="flex items-center">
-                                                                        <Clock className="h-4 w-4 mr-1" />
-                                                                        {item.time}
-                                                                    </div>
-                                                                </>
-                                                            )}
-                                                            <div className="hidden sm:block">•</div>
-                                                            <div className="flex items-center">
-                                                                <MapPin className="h-4 w-4 mr-1" />
-                                                                {item.location}
-                                                            </div>
-                                                        </div>
-                                                        {item.description && (
-                                                            item.bullets ? (
-                                                                <div className="mt-4 text-sm">
-                                                                    {getLocalized(item.description, t('language'))}
-                                                                    <ul className="list-disc list-inside mt-1">
-                                                                        {getLocalized(item.bullets, t('language')).map((b, i) => (
-                                                                            <li key={i}>{b}</li>
-                                                                        ))}
-                                                                    </ul>
-                                                                </div>
-                                                            ) : (
-                                                                <p className="mt-4 text-sm">
-                                                                    {getLocalized(item.description, t('language'))}
-                                                                </p>
-                                                            )
-                                                        )}
-                                                        {item.links && item.links.length > 0 && (
-                                                            <div className="mt-4">
-                                                                    <div className="flex flex-wrap gap-2" suppressHydrationWarning>
-                                                                    {item.links.map((link) => (
-                                                                        <Link
-                                                                            key={link.href}
-                                                                            href={link.href}
-                                                                            target="_blank"
-                                                                            className={buttonVariants({
-                                                                                variant: "outline",
-                                                                                size: "sm",
-                                                                                className: "w-full sm:w-auto whitespace-normal",
+                                {(() => {
+                                    const filters = [
+                                        { value: "all" as const, label: t('filterAll'), count: pastEvents.length },
+                                        { value: "company" as const, label: t('filterCompany'), count: pastEvents.filter(e => !isCampusEvent(e)).length },
+                                        { value: "campus" as const, label: t('filterCampus'), count: pastEvents.filter(e => isCampusEvent(e)).length },
+                                    ];
+
+                                    const filteredPastEvents = pastEvents.filter(event => {
+                                        if (activeFilter === "all") return true;
+                                        const isCampus = isCampusEvent(event);
+                                        if (activeFilter === "campus") return isCampus;
+                                        return !isCampus;
+                                    });
+
+                                    return (
+                                        <>
+                                            <div className="flex flex-wrap gap-2 mb-6" suppressHydrationWarning>
+                                                {filters.map((filter) => {
+                                                    const isActive = activeFilter === filter.value;
+                                                    return (
+                                                        <button
+                                                            key={filter.value}
+                                                            onClick={() => setActiveFilter(filter.value)}
+                                                            className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
+                                                                isActive
+                                                                    ? "bg-primary text-primary-foreground shadow-md scale-105"
+                                                                    : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
+                                                            }`}
+                                                        >
+                                                            {filter.label}
+                                                            <span className={`inline-flex items-center justify-center px-2 py-0.5 text-xs rounded-full ${
+                                                                isActive
+                                                                    ? "bg-primary-foreground/20 text-primary-foreground"
+                                                                    : "bg-foreground/10 text-muted-foreground"
+                                                            }`}>
+                                                                {filter.count}
+                                                            </span>
+                                                        </button>
+                                                    );
+                                                })}
+                                            </div>
+
+                                            <div className="space-y-6">
+                                                {filteredPastEvents.length > 0 ? (
+                                                    filteredPastEvents.map((item) => (
+                                                        <Card key={item.id}>
+                                                            <CardContent className="p-0">
+                                                                <div className="grid grid-cols-1 md:grid-cols-3">
+                                                                    <div className="relative h-48 md:h-auto overflow-hidden rounded-t-lg md:rounded-l-lg md:rounded-tr-none">
+                                                                        <Image
+                                                                            src={item.imageSrc}
+                                                                            alt={getLocalized(item.title, t('language'))}
+                                                                            fill
+                                                                            sizes="100vw"
+                                                                            suppressHydrationWarning
+                                                                            priority={item.priority}
+                                                                            className={`${item.imageClassName ?? "object-contain"} cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
+                                                                            onClick={() => setSelectedImage({
+                                                                                src: item.imageSrc,
+                                                                                alt: getLocalized(item.title, t('language'))
                                                                             })}
-                                                                        >
-                                                                            {t('language') === 'id' ? link.labelId : link.labelEn}
-                                                                            <ExternalLink className="ml-2 h-3 w-3" />
-                                                                        </Link>
-                                                                    ))}
+                                                                        />
+                                                                    </div>
+                                                                    <div className="md:col-span-2 p-6">
+                                                                        <div className="flex flex-wrap gap-2 mb-2" suppressHydrationWarning>
+                                                                            <Badge>{item.category}</Badge>
+                                                                            {item.tags.map((tag) => (
+                                                                                <Badge key={tag} variant="outline">{tag}</Badge>
+                                                                            ))}
+                                                                        </div>
+                                                                        <h3 className="font-medium text-xl">
+                                                                            {getLocalized(item.title, t('language'))}
+                                                                        </h3>
+                                                                        {item.subtitle && (
+                                                                            <h4 className="text-lg text-muted-foreground">
+                                                                                {getLocalized(item.subtitle, t('language'))}
+                                                                            </h4>
+                                                                        )}
+                                                                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-2 text-sm text-muted-foreground">
+                                                                            <div className="flex items-center">
+                                                                                <Calendar className="h-4 w-4 mr-1" />
+                                                                                {item.date}
+                                                                            </div>
+                                                                            {item.time && (
+                                                                                <>
+                                                                                    <div className="hidden sm:block">•</div>
+                                                                                    <div className="flex items-center">
+                                                                                        <Clock className="h-4 w-4 mr-1" />
+                                                                                        {item.time}
+                                                                                    </div>
+                                                                                </>
+                                                                            )}
+                                                                            <div className="hidden sm:block">•</div>
+                                                                            <div className="flex items-center">
+                                                                                <MapPin className="h-4 w-4 mr-1" />
+                                                                                {item.location}
+                                                                            </div>
+                                                                        </div>
+                                                                        {item.description && (
+                                                                            item.bullets ? (
+                                                                                <div className="mt-4 text-sm">
+                                                                                    {getLocalized(item.description, t('language'))}
+                                                                                    <ul className="list-disc list-inside mt-1">
+                                                                                        {getLocalized(item.bullets, t('language')).map((b, i) => (
+                                                                                            <li key={i}>{b}</li>
+                                                                                        ))}
+                                                                                    </ul>
+                                                                                </div>
+                                                                            ) : (
+                                                                                <p className="mt-4 text-sm">
+                                                                                    {getLocalized(item.description, t('language'))}
+                                                                                </p>
+                                                                            )
+                                                                        )}
+                                                                        {item.links && item.links.length > 0 && (
+                                                                            <div className="mt-4">
+                                                                                <div className="flex flex-wrap gap-2" suppressHydrationWarning>
+                                                                                    {item.links.map((link) => (
+                                                                                        <Link
+                                                                                            key={link.href}
+                                                                                            href={link.href}
+                                                                                            target="_blank"
+                                                                                            className={buttonVariants({
+                                                                                                variant: "outline",
+                                                                                                size: "sm",
+                                                                                                className: "w-full sm:w-auto whitespace-normal",
+                                                                                            })}
+                                                                                        >
+                                                                                            {t('language') === 'id' ? link.labelId : link.labelEn}
+                                                                                            <ExternalLink className="ml-2 h-3 w-3" />
+                                                                                        </Link>
+                                                                                    ))}
+                                                                                </div>
+                                                                            </div>
+                                                                        )}
+                                                                        {item.organizer && (
+                                                                            <div className="mt-4 text-sm text-muted-foreground">
+                                                                                {getLocalized(item.organizer, t('language'))}
+                                                                            </div>
+                                                                        )}
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        )}
-                                                        {item.organizer && (
-                                                            <div className="mt-4 text-sm text-muted-foreground">
-                                                                {getLocalized(item.organizer, t('language'))}
-                                                            </div>
-                                                        )}
+                                                            </CardContent>
+                                                        </Card>
+                                                    ))
+                                                ) : (
+                                                    <div className="border rounded-lg p-6 text-center text-muted-foreground">
+                                                        {t('language') === 'id' ? 'Tidak ada event ditemukan' : 'No events found'}
                                                     </div>
-                                                </div>
-                                            </CardContent>
-                                        </Card>
-                                    ))}
-                                </div>
+                                                )}
+                                            </div>
+                                        </>
+                                    );
+                                })()}
                             </ContentBlock>
 
                             <ContentBlock title={t('topicsISpeak')}>
