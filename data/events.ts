@@ -557,8 +557,8 @@ export const pastEvents: EventItem[] = [
       en: "Vibe Coding 101: Building AI-Based Applications With Antigravity",
     },
     subtitle: {
-      id: "Workshop RuangAI by CODEPOLITAN",
-      en: "RuangAI Workshop by CODEPOLITAN",
+      id: "RuangAI by CODEPOLITAN",
+      en: "RuangAI by CODEPOLITAN",
     },
     date: "04 Maret 2026",
     time: "10.00 - 12.00 WIB",
@@ -656,8 +656,8 @@ export const pastEvents: EventItem[] = [
       en: "Production-Ready Image Tools With Vibe Coding: Resize, Compress, Convert"
     },
     subtitle: {
-      id: "RuangAI Live Session - Pertemuan 20",
-      en: "RuangAI Live Session - Session 20"
+      id: "RuangAI by CODEPOLITAN",
+      en: "RuangAI by CODEPOLITAN"
     },
     date: "05 Februari 2026",
     time: "10.00 - 11.30 WIB",
@@ -797,8 +797,8 @@ export const pastEvents: EventItem[] = [
       en: "Build Automated SME Finance Assistant via WhatsApp Using AI",
     },
     subtitle: {
-      id: "Workshop RuangAI",
-      en: "RuangAI Workshop",
+      id: "RuangAI by CODEPOLITAN",
+      en: "RuangAI by CODEPOLITAN",
     },
     date: "07 Desember 2025",
     time: "10.00 - 13.00 WIB",
@@ -933,8 +933,8 @@ export const pastEvents: EventItem[] = [
       en: "Learn Web UI/UX With Figma \"DPR RI Web Re-Design\"",
     },
     subtitle: {
-      id: "Webinar KelasFullstack",
-      en: "KelasFullstack Webinar",
+      id: "KelasFullstack by CODEPOLITAN",
+      en: "KelasFullstack by CODEPOLITAN",
     },
     date: "20 September 2025",
     time: "19.00 - 21.00 WIB",
@@ -1160,8 +1160,8 @@ export const pastEvents: EventItem[] = [
       en: "Building Pro Product Landing Page with AI Assist Coding",
     },
     subtitle: {
-      id: "Live Class KelasFullstack",
-      en: "KelasFullstack Live Class",
+      id: "KelasFullstack by CODEPOLITAN",
+      en: "KelasFullstack by CODEPOLITAN",
     },
     date: "03 Juli 2025",
     time: "15.00 WIB - Selesai",
@@ -1240,7 +1240,7 @@ export const pastEvents: EventItem[] = [
       id: "Styling Website Dengan Tailwind dari Nol",
       en: "Styling Websites With Tailwind from Scratch",
     },
-    subtitle: { id: "Kelas Fullstack Live Class", en: "Fullstack Live Class" },
+    subtitle: { id: "KelasFullstack by CODEPOLITAN", en: "KelasFullstack by CODEPOLITAN" },
     date: "16 Mei 2025",
     time: "15.00 - 17.00 WIB",
     location: "Live on Zoom",
@@ -1288,8 +1288,8 @@ export const pastEvents: EventItem[] = [
       en: "AI Driven Webcraft: Transform Your Ideas into Websites",
     },
     subtitle: {
-      id: "AI Webcrafting: Dari Ide ke Website dalam Hitungan Menit",
-      en: "AI Webcrafting: From Ideas to Websites in Minutes",
+      id: "AICO Community",
+      en: "AICO Community",
     },
     date: "25 April 2025",
     time: "19.00-20.00 WIB",
@@ -1314,8 +1314,8 @@ export const pastEvents: EventItem[] = [
       en: "More Than Just Code: Build a Powerful Personal Brand as a Developer",
     },
     subtitle: {
-      id: "Membangun Personal Brand yang Kuat sebagai Developer",
-      en: "Building a Strong Personal Brand as a Developer",
+      id: "Belajar Sambil Beramal Season 5 - GDG Bandung",
+      en: "Belajar Sambil Beramal Season 5 - GDG Bandung",
     },
     date: "20 Maret 2025",
     time: "15.00 - 16.00 WIB",
@@ -1524,8 +1524,8 @@ export const pastEvents: EventItem[] = [
       en: "GLOW#240 – Softskills to Achieve Software Engineer Career in AI Era",
     },
     subtitle: {
-      id: "Pengembangan Softskill untuk Software Engineer Modern",
-      en: "Softskill Development for Modern Software Engineers",
+      id: "Gamelab Indonesia Online Webinar",
+      en: "Gamelab Indonesia Online Webinar",
     },
     date: "14 Juni 2024",
     time: "15.30 - 16.30 WIB",
