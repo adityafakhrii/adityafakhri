@@ -17,7 +17,51 @@ export type EventItem = {
 }
 
 export const upcomingEvents: EventItem[] = [
-  //
+  {
+    id: "coding-lebih-cepat-inixindo-2026",
+    category: "Webinar",
+    tags: ["AI", "Software Development", "Prompt Engineering", "Productivity"],
+    imageSrc: "https://www.gambaryuk.com/1784019787797-ljnddj.webp",
+    priority: true,
+    title: {
+      id: "Coding Lebih Cepat, Kerja Lebih Cerdas: Menjadi Developer Masa Depan dengan AI",
+      en: "Coding Faster, Working Smarter: Becoming a Developer of the Future with AI"
+    },
+    subtitle: {
+      id: "Inixindo Jogja & eduparx",
+      en: "Inixindo Jogja & eduparx"
+    },
+    date: "23 Juli 2026",
+    time: "14.00 WIB",
+    location: "Online",
+    description: {
+      id: "Webinar kolaborasi Inixindo Jogja dan eduparx untuk membantu developer coding lebih cepat dan bekerja lebih cerdas menggunakan AI. Pelajari tren terbaru AI, teknik prompt engineering, dan best practice peningkatan produktivitas kerja.",
+      en: "A collaborative webinar by Inixindo Jogja and eduparx to help developers code faster and work smarter using AI. Learn the latest AI trends, prompt engineering techniques, and best practices for increasing work productivity."
+    },
+    bullets: {
+      id: [
+        "Tren AI dalam Software Development",
+        "AI untuk Coding, Debugging & Dokumentasi",
+        "Prompt Engineering untuk Developer",
+        "Best Practice Penggunaan AI",
+        "Meningkatkan Produktivitas & Kualitas Kode"
+      ],
+      en: [
+        "AI Trends in Software Development",
+        "AI for Coding, Debugging & Documentation",
+        "Prompt Engineering for Developers",
+        "Best Practices in Using AI",
+        "Improving Productivity & Code Quality"
+      ]
+    },
+    links: [
+      { labelId: "Daftar Sekarang", labelEn: "Register Now", href: "https://eduparx.id/home/events" }
+    ],
+    organizer: {
+      id: "Diselenggarakan oleh: Inixindo Jogja & eduparx",
+      en: "Organized by: Inixindo Jogja & eduparx"
+    }
+  }
 ]
 
 export const pastEvents: EventItem[] = [
