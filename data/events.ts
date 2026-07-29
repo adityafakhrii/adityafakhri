@@ -17,6 +17,10 @@ export type EventItem = {
 }
 
 export const upcomingEvents: EventItem[] = [
+  //
+]
+
+export const pastEvents: EventItem[] = [
   {
     id: "coding-lebih-cepat-inixindo-2026",
     category: "Webinar",
@@ -61,10 +65,7 @@ export const upcomingEvents: EventItem[] = [
       id: "Diselenggarakan oleh: Inixindo Jogja & eduparx",
       en: "Organized by: Inixindo Jogja & eduparx"
     }
-  }
-]
-
-export const pastEvents: EventItem[] = [
+  },
   {
     id: "airena-belajar-unisba-2026",
     category: "Seminar & Workshop",
