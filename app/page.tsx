@@ -10,7 +10,7 @@ import dynamic from "next/dynamic"
 const ProjectCard = dynamic(() => import("@/components/project-card").then(m => m.ProjectCard))
 import { TranslatedContent } from "@/components/translated-content"
 import projects from "@/data/projects"
-import blogs from "@/data/blog"
+import blogIndex from "@/data/blog-index"
 import { pastEvents } from "@/data/events"
 import { getLocalized } from "@/lib/utils"
 
@@ -27,17 +27,15 @@ const featuredProjects = [
   pick("restoranku"),
 ]
 const featuredProjectsShow = featuredProjects.slice(0, 6)
-const articles = Object.entries(blogs)
-  .map(([id, p]) => ({
-    id,
-    title: p.title,
-    excerpt: p.excerpt,
-    date: p.date,
-    readTime: p.readTime,
-    imageSrc: p.imageSrc || "/placeholder.svg?height=200&width=400",
-    isoDate: p.isoDate || "2026-01-01",
-  }))
-  .sort((a, b) => b.isoDate.localeCompare(a.isoDate))
+const articles = blogIndex.map((p) => ({
+  id: p.id,
+  title: p.title,
+  excerpt: p.excerpt,
+  date: p.date,
+  readTime: p.readTime,
+  imageSrc: p.imageSrc || "/placeholder.svg?height=200&width=400",
+  isoDate: p.isoDate || "2026-01-01",
+}))
 const latestArticles = articles.slice(0, 4)
 const recentEvents = pastEvents.slice(0, 4)
 

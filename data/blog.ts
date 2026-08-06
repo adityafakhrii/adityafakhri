@@ -6,9 +6,9 @@ export type BlogPost = {
   readTime: string
   category: string
   author?: string
-  tags: string[]
+  tags: readonly string[] | string[]
   imageSrc?: string
-  relatedPosts?: string[]
+  relatedPosts?: readonly string[] | string[]
   isoDate?: string
 }
 
