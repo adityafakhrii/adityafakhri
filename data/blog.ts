@@ -14,6 +14,121 @@ export type BlogPost = {
 
 const blogs = {
 
+  "dari-tukang-ngetik-jadi-mandor-ai-2026": {
+    title: "Bukan Lagi Tukang Ngetik Kode: Kenapa Developer di 2026 Harus Jadi 'Mandor' AI?",
+    excerpt: "Cara kerja software engineer telah bergeser drastis di 2026. Bukan lagi seberapa cepat kamu ngetik sintaks, melainkan seberapa jago kamu mengarahkan, mengawasi, dan mereview hasil kerja AI Agents.",
+    content: `
+      <style>
+        .ai-hero { padding: 2.5rem 2rem; border-radius: 1.25rem; background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; }
+        .ai-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.5rem; margin: 0 0 0.75rem 0; }
+        .ai-hero p { color: hsl(var(--muted-foreground)); font-size: 1rem; line-height: 1.7; margin: 0; }
+        .ai-section-title { font-size: 1.25rem; font-weight: 700; margin: 2.5rem 0 1rem 0; color: hsl(var(--foreground)); }
+        .ai-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+        .ai-card { padding: 1.5rem; border-radius: 1rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+        .ai-card h4 { font-size: 1rem; font-weight: 700; margin: 0 0 0.5rem 0; color: hsl(var(--foreground)); }
+        .ai-card p { font-size: 0.88rem; line-height: 1.6; color: hsl(var(--muted-foreground)); margin: 0; }
+        .ai-callout { padding: 1.5rem; border-radius: 1rem; border-left: 4px solid hsl(var(--primary)); background: hsl(var(--muted)); margin: 2rem 0; }
+        .ai-callout p { margin: 0; font-size: 0.95rem; line-height: 1.7; color: hsl(var(--foreground)); }
+        .ai-table-wrap { overflow-x: auto; margin: 1.5rem 0; border-radius: 1rem; border: 1px solid hsl(var(--border)); }
+        .ai-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+        .ai-table thead { background: hsl(var(--muted)); }
+        .ai-table th { padding: 0.85rem 1rem; text-align: left; font-weight: 700; color: hsl(var(--foreground)); border-bottom: 1px solid hsl(var(--border)); }
+        .ai-table td { padding: 0.75rem 1rem; color: hsl(var(--muted-foreground)); border-bottom: 1px solid hsl(var(--border)); line-height: 1.6; }
+        .ai-table tr:last-child td { border-bottom: none; }
+        @media (max-width: 768px) {
+          .ai-card-grid { grid-template-columns: 1fr; }
+          .ai-hero { padding: 1.75rem 1.25rem; }
+        }
+      </style>
+
+      <div class="ai-hero">
+        <h2>Pergeseran Peran Programmer di 2026</h2>
+        <p>Kalau 3–4 tahun lalu standar kehebatan programmer diukur dari seberapa hafal dia dengan sintaks kompleks dan struktur algoritma manual, hari ini aturan mainnya sudah berubah total. Di era <strong>AI Agent</strong> saat ini, peran utama developer bukan lagi menjadi "tukang ngetik kode", melainkan menjadi <strong>"Mandor Proyek"</strong> yang mengarahkan dan mereview kerjaan AI.</p>
+      </div>
+
+      <p>Pernah nggak kamu merasa bingung kenapa sekarang orang-orang bisa rilis aplikasi fullstack hanya dalam hitungan jam? Jawabannya bukan karena mereka ngetik 10x lebih cepat. Jawabannya adalah: <strong>mereka tidak mengetiknya sendiri.</strong></p>
+
+      <p>Tools seperti Cursor, Antigravity, Windsurf, hingga Claude Code telah berevolusi dari sekadar <em>autocomplete</em> (penyelesai baris kode) menjadi <strong>Autonomous AI Agents</strong>. AI ini bisa bikin fitur, refactor struktur folder, sampai benerin bug secara mandiri di banyak file sekaligus.</p>
+
+      <div class="ai-section-title">Beda "Tukang Ngetik" vs "Mandor AI"</div>
+
+      <p>Untuk bertahan dan makin bersinar di industri software house maupun tech startup saat ini, kamu perlu paham perbedaan dua pola pikir ini:</p>
+
+      <div class="ai-table-wrap">
+        <table class="ai-table">
+          <thead>
+            <tr>
+              <th>Aspek Perhatian</th>
+              <th>Pola Pikir "Tukang Ngetik" (Lama)</th>
+              <th>Pola Pikir "Mandor AI" (Era 2026)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Fokus Utama</strong></td>
+              <td>Menghafal sintaks, tanda kurung, & fungsi bawaan.</td>
+              <td>Mendesain arsitektur aplikasi & alur logika bisnis.</td>
+            </tr>
+            <tr>
+              <td><strong>Alokasi Waktu</strong></td>
+              <td>80% ngetik kode boilerplate, 20% mikir solusi.</td>
+              <td>20% memberi arahan/prompt, 80% mereview & uji keamanan.</td>
+            </tr>
+            <tr>
+              <td><strong>Penanganan Bug</strong></td>
+              <td>Gonta-ganti line manual selama berjam-jam.</td>
+              <td>Memberikan error log yang jelas ke AI Agent untuk auto-fix.</td>
+            </tr>
+            <tr>
+              <td><strong>Standard Kualitas</strong></td>
+              <td>"Yang penting aplikasi jalan di lokal."</td>
+              <td>"Kode aman dari XSS/SQLi, scalable, & gampang di-maintain."</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ai-section-title">3 Skill Wajib Kalau Mau Jadi "Mandor AI" yang Handal</div>
+
+      <div class="ai-card-grid">
+        <div class="ai-card">
+          <h4>1. Context Engineering</h4>
+          <p>Bukan cuma asal ngasih prompt 'bikin halaman login'. Mandor yang pinter akan ngasih dokumen spesifikasi arsitektur (.md), aturan linters, dan skema database biar AI ngerjain tanpa halusinasi.</p>
+        </div>
+        <div class="ai-card">
+          <h4>2. Code Auditing & Security Review</h4>
+          <p>AI itu cepat, tapi kadang ceroboh. Skill memvalidasi apakah kode AI punya celah keamanan (OWASP Top 10) atau memory leak adalah benteng pertahanan utama seorang Senior Dev.</p>
+        </div>
+        <div class="ai-card">
+          <h4>3. High-Level System Architecture</h4>
+          <p>Paham bagaimana microservices, API Gateway, caching, dan relasi database terhubung. AI akan eksekusi detailnya, tapi kamu yang memegang cetak birunya (blueprints).</p>
+        </div>
+        <div class="ai-card">
+          <h4>4. Clear Problem Communication</h4>
+          <p>Mampu merumuskan masalah teknis yang rumit menjadi instruksi langkah demi langkah yang logis bagi AI Agents maupun tim manusia.</p>
+        </div>
+      </div>
+
+      <div class="ai-callout">
+        <p><strong>Pesan Penting:</strong> Apakah belajar dasar coding dasar (HTML, CSS, JS, SQL) masih penting di 2026? <strong>SANGAT PENTING!</strong> Gimana kamu mau jadi 'mandor' yang bisa mereview hasil kerjaan anak buah kalau kamu sendiri nggak paham pondasi kodenya?</p>
+      </div>
+
+      <div class="ai-section-title">Kesimpulan: Jangan Takut Tergantikan, Pahami Role Baru Lo!</div>
+
+      <p>AI tidak menggantikan developer. Developer yang paham cara menjadi <strong>Mandor AI</strong> lah yang akan menggantikan developer yang bertahan dengan cara ngetik manual konvensional.</p>
+
+      <p>Mulai sekarang, ubah cara pandangmu: saat kamu buka IDE, kamu adalah Manajer Proyek. Pimpin AI Agent-mu, pastikan arsitekturnya benar, dan kirimkan produk digital yang berdampak nyata!</p>
+    `,
+    date: "6 Agu 2026",
+    isoDate: "2026-08-06",
+    readTime: "6 min",
+    category: "AI & Career",
+    author: "Aditya Fakhri Riansyah",
+    tags: ["AI Agent", "Developer Career", "Vibe Coding", "Productivity", "2026", "Software Engineering"],
+    imageSrc: "/images/blog/mandor-ai-real-dev.png",
+    relatedPosts: ["prompt-engineering-guide-2026", "cara-naikin-value-dev", "productivity-paradox-ai-code"],
+  },
+
   "prompt-engineering-guide-2026": {
     title: "Rahasia Prompt Engineering 2026: Rumus, Teknik, dan Template yang Bikin AI Nurut Sama Lo",
     excerpt: "Panduan lengkap prompt engineering — dari rumus dasar sampai teknik advanced. Pelajari cara bikin prompt yang presisi biar output AI 10x lebih bagus. Cocok buat pemula maupun profesional.",
