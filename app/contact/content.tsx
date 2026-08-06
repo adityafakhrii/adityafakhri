@@ -10,7 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 import { Mail, Phone, MapPin, Send, ArrowUpRight } from "lucide-react"
-import { useState, useMemo } from "react"
+import { useState, useMemo, useRef } from "react"
 import { useToast } from "@/hooks/use-toast"
 import { TranslatedContent } from "@/components/translated-content"
 import { useLanguage } from "@/contexts/language-context"
@@ -53,7 +53,7 @@ export function ContactContent() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values),
+        body: JSON.stringify({ ...values, _hp: honeypotRef.current?.value || '' }),
       })
 
       if (!res.ok) {
@@ -75,6 +75,8 @@ export function ContactContent() {
       setIsSubmitting(false)
     }
   }
+
+  const honeypotRef = useRef<HTMLInputElement>(null)
 
   return (
     <TranslatedContent
@@ -144,6 +146,12 @@ export function ContactContent() {
                         </FormItem>
                       )}
                     />
+
+                    {/* Honeypot anti-spam — hidden from real users, bots fill it */}
+                    <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', top: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }}>
+                      <label htmlFor="_hp_contact">Leave this empty</label>
+                      <input id="_hp_contact" name="_hp" type="text" tabIndex={-1} autoComplete="off" ref={honeypotRef} />
+                    </div>
 
                     <Button type="submit" disabled={isSubmitting} className="w-full sm:w-auto">
                       {isSubmitting ? (

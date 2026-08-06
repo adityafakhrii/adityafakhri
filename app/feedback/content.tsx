@@ -11,7 +11,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 import { Send, Star, Linkedin, Instagram, Twitter, CheckCircle2, MapPin, Briefcase, Sparkles, BookOpen } from "lucide-react"
-import { useState, useMemo } from "react"
+import { useState, useMemo, useRef } from "react"
 import { useToast } from "@/hooks/use-toast"
 import { TranslatedContent } from "@/components/translated-content"
 import { useLanguage } from "@/contexts/language-context"
@@ -127,6 +127,7 @@ export function FeedbackContent() {
   const [isSuccess, setIsSuccess] = useState(false)
   const { toast } = useToast()
   const { t } = useLanguage()
+  const honeypotRef = useRef<HTMLInputElement>(null)
 
   const schema = useMemo(() => getFormSchema(t), [t])
 
@@ -165,7 +166,7 @@ export function FeedbackContent() {
       const res = await fetch("/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, _hp: honeypotRef.current?.value || '' }),
       })
 
       if (!res.ok) {
@@ -467,6 +468,12 @@ export function FeedbackContent() {
                           </FormItem>
                         )}
                       />
+                    </div>
+
+                    {/* Honeypot anti-spam — hidden from real users, bots fill it */}
+                    <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', top: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }}>
+                      <label htmlFor="_hp_feedback">Leave this empty</label>
+                      <input id="_hp_feedback" name="_hp" type="text" tabIndex={-1} autoComplete="off" ref={honeypotRef} />
                     </div>
 
                     <Button type="submit" disabled={isSubmitting} className="w-full relative overflow-hidden group">

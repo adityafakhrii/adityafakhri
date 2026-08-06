@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import * as z from "zod"
-import fs from "fs"
-import path from "path"
+import { applyRateLimit, validateOrigin, checkHoneypot, escapeHtml } from "@/lib/api-utils"
 
 const feedbackSchema = z.object({
   name: z.string().min(2),
@@ -15,78 +14,49 @@ const feedbackSchema = z.object({
   ratingOverall: z.number().min(1).max(5),
   impression: z.string().optional(),
   improvement: z.string().optional(),
+  _hp: z.string().optional(), // Honeypot field — must be empty for real users
 })
-
-const RATE_LIMIT_MAP = new Map<string, { count: number; expiresAt: number }>()
-const MAX_REQUESTS_PER_MINUTE = 5
-const RATE_LIMIT_WINDOW = 60 * 1000 // 1 minute
-
-function cleanupRateLimitMap() {
-  const now = Date.now()
-  for (const [ip, data] of RATE_LIMIT_MAP.entries()) {
-    if (data.expiresAt < now) {
-      RATE_LIMIT_MAP.delete(ip)
-    }
-  }
-}
 
 export async function POST(req: NextRequest) {
   try {
-    // Rate Limiting
-    const ip = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "unknown"
-    if (ip !== "unknown") {
-      cleanupRateLimitMap()
-      const now = Date.now()
-      const limitData = RATE_LIMIT_MAP.get(ip)
+    // 1. CSRF / Origin validation
+    const originError = validateOrigin(req)
+    if (originError) return originError
 
-      if (limitData && limitData.expiresAt > now) {
-        if (limitData.count >= MAX_REQUESTS_PER_MINUTE) {
-          return NextResponse.json(
-            { error: "Too many requests. Please try again later." },
-            { status: 429 }
-          )
-        }
-        limitData.count += 1
-      } else {
-        RATE_LIMIT_MAP.set(ip, { count: 1, expiresAt: now + RATE_LIMIT_WINDOW })
-      }
-    }
+    // 2. Rate Limiting
+    const rateLimitError = applyRateLimit(req, 5, 60_000)
+    if (rateLimitError) return rateLimitError
 
-    // Validate Payload
+    // 3. Parse & Validate Payload
     const json = await req.json()
     const parsed = feedbackSchema.safeParse(json)
     if (!parsed.success) {
       return NextResponse.json({ error: "Invalid payload", details: parsed.error.format() }, { status: 400 })
     }
 
+    // 4. Honeypot check — bots fill hidden fields
+    const honeypotError = checkHoneypot(json)
+    if (honeypotError) return honeypotError
+
     const feedbackData = parsed.data
 
     const newEntry = {
       id: `fb-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-      ...feedbackData,
+      name: feedbackData.name,
+      email: feedbackData.email,
+      city: feedbackData.city,
+      occupation: feedbackData.occupation,
+      topic: feedbackData.topic,
+      feedback: feedbackData.feedback,
+      ratingMastery: feedbackData.ratingMastery,
+      ratingCommunication: feedbackData.ratingCommunication,
+      ratingOverall: feedbackData.ratingOverall,
+      impression: feedbackData.impression,
+      improvement: feedbackData.improvement,
       createdAt: new Date().toISOString(),
     }
 
-    // 1. Try appending to local JSON file
-    const filePath = path.join(process.cwd(), "data", "feedback-submissions.json")
-    let savedLocal = false
-    try {
-      let currentData = []
-      if (fs.existsSync(filePath)) {
-        const fileContent = fs.readFileSync(filePath, "utf-8").trim()
-        if (fileContent) {
-          currentData = JSON.parse(fileContent)
-        }
-      }
-      currentData.push(newEntry)
-      fs.writeFileSync(filePath, JSON.stringify(currentData, null, 2), "utf-8")
-      savedLocal = true
-    } catch (fsError) {
-      console.error("Failed to write to local feedback JSON file:", fsError)
-      // This is expected in read-only production environments like Vercel Serverless
-    }
-
-    // 1.5. Send to Google Sheets Web App if configured
+    // 5. Send to Google Sheets Web App if configured
     const sheetUrl = process.env.GOOGLE_SHEET_WEBAPP_URL
     let savedToSheet = false
     if (sheetUrl) {
@@ -108,7 +78,7 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // 2. Format HTML email
+    // 6. Format HTML email
     const renderStars = (num: number) => "⭐".repeat(num)
     const html = `
       <div style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; padding:20px; color:#1f2937;">
@@ -172,14 +142,13 @@ export async function POST(req: NextRequest) {
       </div>
     `
 
-    // 3. Send Email via Resend
+    // 7. Send Email via Resend
     const apiKey = process.env.RESEND_API_KEY
     const contactEmail = process.env.CONTACT_EMAIL || "adityafakhri03@gmail.com"
 
     if (!apiKey || !contactEmail) {
       return NextResponse.json({ 
         success: true, 
-        savedLocal, 
         savedToSheet,
         message: "Submission received. Email not sent because provider is not configured." 
       })
@@ -207,25 +176,15 @@ export async function POST(req: NextRequest) {
       console.error("Resend API error:", errText)
       return NextResponse.json({ 
         success: true, 
-        savedLocal, 
         savedToSheet,
         emailSent: false, 
         error: "Failed to send notification email" 
       })
     }
 
-    return NextResponse.json({ success: true, savedLocal, savedToSheet, emailSent: true })
+    return NextResponse.json({ success: true, savedToSheet, emailSent: true })
   } catch (e) {
     console.error("Unexpected error in feedback API:", e)
     return NextResponse.json({ error: "Unexpected server error" }, { status: 500 })
   }
-}
-
-function escapeHtml(str: string) {
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;")
 }
