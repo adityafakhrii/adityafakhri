@@ -55,7 +55,7 @@ export function ServicesContent() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">170K</Badge>
+                        <Badge className="text-lg font-semibold">200K</Badge>
                       </div>
 
                       <div className="flex justify-between items-start">
@@ -68,7 +68,7 @@ export function ServicesContent() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">200K</Badge>
+                        <Badge className="text-lg font-semibold">230K</Badge>
                       </div>
                     </div>
                   </CardContent>
@@ -91,7 +91,7 @@ export function ServicesContent() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">250K</Badge>
+                        <Badge className="text-lg font-semibold">300K</Badge>
                       </div>
 
                       <div className="flex justify-between items-start">
@@ -104,7 +104,7 @@ export function ServicesContent() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">350K</Badge>
+                        <Badge className="text-lg font-semibold">400K</Badge>
                       </div>
 
                       <div className="flex justify-between items-start">
@@ -117,7 +117,7 @@ export function ServicesContent() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">270K</Badge>
+                        <Badge className="text-lg font-semibold">320K</Badge>
                       </div>
 
                       <div className="flex justify-between items-start">
@@ -130,7 +130,7 @@ export function ServicesContent() {
                             </p>
                           </div>
                         </div>
-                        <Badge className="text-lg font-semibold">380K</Badge>
+                        <Badge className="text-lg font-semibold">430K</Badge>
                       </div>
                     </div>
                   </CardContent>
@@ -154,7 +154,7 @@ export function ServicesContent() {
                               </p>
                             </div>
                           </div>
-                          <Badge className="text-lg font-semibold">400K</Badge>
+                          <Badge className="text-lg font-semibold">500K</Badge>
                         </div>
 
                         <div className="flex justify-between items-start">
@@ -167,7 +167,7 @@ export function ServicesContent() {
                               </p>
                             </div>
                           </div>
-                          <Badge className="text-lg font-semibold">430K</Badge>
+                          <Badge className="text-lg font-semibold">530K</Badge>
                         </div>
 
                         <div className="flex justify-between items-start">
@@ -195,7 +195,7 @@ export function ServicesContent() {
                               </p>
                             </div>
                           </div>
-                          <Badge className="text-lg font-semibold">650K</Badge>
+                          <Badge className="text-lg font-semibold">750K</Badge>
                         </div>
 
                         <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
@@ -250,11 +250,11 @@ export function ServicesContent() {
                   </div>
                   <CardContent className="p-6">
                     <div className="text-center">
-                      <span className="text-sm text-muted-foreground line-through mr-2">580K</span>
+                      <span className="text-sm text-muted-foreground line-through mr-2">660K</span>
                     </div>
                     <div className="text-center mb-4">
-                      <span className="text-3xl font-bold">349K</span>
-                      <p className="text-sm text-primary font-medium italic">Hemat 231k</p>
+                      <span className="text-3xl font-bold">499K</span>
+                      <p className="text-sm text-primary font-medium italic">Hemat 161k</p>
                     </div>
                     <ul className="space-y-2 mb-6">
                       <li className="flex items-start">
@@ -275,7 +275,7 @@ export function ServicesContent() {
                       </li>
                     </ul>
                     <Button className="w-full" asChild>
-                      <Link href="https://wa.me/62895808860080" target="_blank">Hubungi via WhatsApp</Link>
+                      <Link href="https://wa.me/62895808860080?text=Halo%20Aditya%2C%20saya%20tertarik%20untuk%20pesan%20Paket%20Lite%20(Rp%20499K).%20Bisa%20bantu%20informasi%20lebih%20lanjut%3F" target="_blank">Hubungi via WhatsApp</Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -287,11 +287,11 @@ export function ServicesContent() {
                   </div>
                   <CardContent className="p-6">
                     <div className="text-center">
-                      <span className="text-sm text-muted-foreground line-through mr-2">980K</span>
+                      <span className="text-sm text-muted-foreground line-through mr-2">1.160K</span>
                     </div>
                     <div className="text-center mb-4">
-                      <span className="text-3xl font-bold">599K</span>
-                      <p className="text-sm text-primary font-medium italic">Hemat 381k</p>
+                      <span className="text-3xl font-bold">699K</span>
+                      <p className="text-sm text-primary font-medium italic">Hemat 461k</p>
                     </div>
                     <ul className="space-y-2 mb-6">
                       <li className="flex items-start">
@@ -320,7 +320,7 @@ export function ServicesContent() {
                       </li>
                     </ul>
                     <Button className="w-full" asChild>
-                      <Link href="https://wa.me/62895808860080" target="_blank">Hubungi via WhatsApp</Link>
+                      <Link href="https://wa.me/62895808860080?text=Halo%20Aditya%2C%20saya%20tertarik%20untuk%20pesan%20Paket%20Growth%20(Rp%20699K).%20Bisa%20bantu%20informasi%20lebih%20lanjut%3F" target="_blank">Hubungi via WhatsApp</Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -332,11 +332,11 @@ export function ServicesContent() {
                   </div>
                   <CardContent className="p-6">
                     <div className="text-center">
-                      <span className="text-sm text-muted-foreground line-through mr-2">1.600K</span>
+                      <span className="text-sm text-muted-foreground line-through mr-2">1.840K</span>
                     </div>
                     <div className="text-center mb-4">
-                      <span className="text-3xl font-bold">849K</span>
-                      <p className="text-sm text-primary font-medium italic">Hemat 751k</p>
+                      <span className="text-3xl font-bold">999K</span>
+                      <p className="text-sm text-primary font-medium italic">Hemat 841k</p>
                     </div>
                     <ul className="space-y-2 mb-6">
                       <li className="flex items-start">
@@ -369,7 +369,7 @@ export function ServicesContent() {
                       </li>
                     </ul>
                     <Button className="w-full" asChild>
-                      <Link href="https://wa.me/62895808860080" target="_blank">Hubungi via WhatsApp</Link>
+                      <Link href="https://wa.me/62895808860080?text=Halo%20Aditya%2C%20saya%20tertarik%20untuk%20pesan%20Paket%20Premium%20(Rp%20999K).%20Bisa%20bantu%20informasi%20lebih%20lanjut%3F" target="_blank">Hubungi via WhatsApp</Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -826,39 +826,39 @@ export function ServicesContent() {
                     </Link>
                   </Button>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {pastEvents.slice(0, 3).map((event) => (
                     <Card key={event.id} className="hover:border-primary/50 transition-all duration-200 overflow-hidden group">
                       <CardContent className="p-0 h-full">
                         <div className="flex flex-row h-full">
-                            <div className="relative w-24 md:w-28 flex-shrink-0 bg-muted">
-                              <Image 
-                                src={event.imageSrc} 
-                                alt={getLocalized(event.title, t('language'))}
-                                fill
-                                className={`object-cover ${event.imageClassName || ''}`}
-                              />
-                           </div>
-                           
-                           <div className="flex-1 p-3 flex flex-col justify-center min-w-0">
-                              <div className="mb-2">
-                                <Badge variant="secondary" className="mb-1 text-[10px] px-1.5 py-0 h-5">{event.category}</Badge>
-                                <h4 className="font-bold line-clamp-2 text-xs md:text-sm leading-tight group-hover:text-primary transition-colors">
-                                  {getLocalized(event.title, t('language'))}
-                                </h4>
+                          <div className="relative w-24 md:w-28 flex-shrink-0 bg-muted">
+                            <Image
+                              src={event.imageSrc}
+                              alt={getLocalized(event.title, t('language'))}
+                              fill
+                              className={`object-cover ${event.imageClassName || ''}`}
+                            />
+                          </div>
+
+                          <div className="flex-1 p-3 flex flex-col justify-center min-w-0">
+                            <div className="mb-2">
+                              <Badge variant="secondary" className="mb-1 text-[10px] px-1.5 py-0 h-5">{event.category}</Badge>
+                              <h4 className="font-bold line-clamp-2 text-xs md:text-sm leading-tight group-hover:text-primary transition-colors">
+                                {getLocalized(event.title, t('language'))}
+                              </h4>
+                            </div>
+                            <div className="space-y-1 text-[10px] md:text-xs text-muted-foreground">
+                              <div className="flex items-center gap-1.5">
+                                <Calendar className="h-3 w-3 flex-shrink-0" />
+                                <span>{event.date}</span>
                               </div>
-                              <div className="space-y-1 text-[10px] md:text-xs text-muted-foreground">
-                                <div className="flex items-center gap-1.5">
-                                  <Calendar className="h-3 w-3 flex-shrink-0" />
-                                  <span>{event.date}</span>
-                                </div>
-                                <div className="flex items-center gap-1.5">
-                                  <MapPin className="h-3 w-3 flex-shrink-0" />
-                                  <span className="truncate">{event.location}</span>
-                                </div>
+                              <div className="flex items-center gap-1.5">
+                                <MapPin className="h-3 w-3 flex-shrink-0" />
+                                <span className="truncate">{event.location}</span>
                               </div>
-                           </div>
+                            </div>
+                          </div>
                         </div>
                       </CardContent>
                     </Card>
