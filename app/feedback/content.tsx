@@ -19,35 +19,35 @@ import Link from "next/link"
 
 const getFormSchema = (t: any) => z.object({
   name: z.string().min(2, {
-    message: t('k_69ce0f50'),
+    message: t('formNameMin'),
   }),
   email: z.string().email({
-    message: t('k_e267e2be'),
+    message: t('formEmailInvalid'),
   }),
   city: z.string().min(2, {
-    message: t('k_a5da2440'),
+    message: t('formCityMin'),
   }),
   occupation: z.string().min(1, {
-    message: t('k_5cc0e1f5'),
+    message: t('formOccupationRequired'),
   }),
   customOccupation: z.string().optional(),
   topic: z.string().min(1, {
-    message: t('k_2e0c9768'),
+    message: t('formTopicRequired'),
   }),
   customTopic: z.string().optional(),
   feedback: z.string().min(20, {
-    message: t('k_80a05fef'),
+    message: t('formFeedbackMin'),
   }),
   impression: z.string().optional(),
   improvement: z.string().optional(),
   ratingMastery: z.number().min(1, {
-    message: t('k_3bbb81ce'),
+    message: t('formRatingMasteryRequired'),
   }).max(5),
   ratingCommunication: z.number().min(1, {
-    message: t('k_57e7addb'),
+    message: t('formRatingCommRequired'),
   }).max(5),
   ratingOverall: z.number().min(1, {
-    message: t('k_27fdf9cf'),
+    message: t('formRatingOverallRequired'),
   }).max(5),
 }).refine(data => {
   if (data.occupation === "Lainnya" && (!data.customOccupation || data.customOccupation.trim().length < 2)) {
@@ -55,7 +55,7 @@ const getFormSchema = (t: any) => z.object({
   }
   return true;
 }, {
-  message: t('k_b830ce5f'),
+  message: t('formCustomOccupationMin'),
   path: ["customOccupation"]
 }).refine(data => {
   if (data.topic === "Lainnya" && (!data.customTopic || data.customTopic.trim().length < 2)) {
@@ -63,7 +63,7 @@ const getFormSchema = (t: any) => z.object({
   }
   return true;
 }, {
-  message: t('k_e7537e6b'),
+  message: t('formCustomTopicMin'),
   path: ["customTopic"]
 }).refine(data => {
   if (data.ratingOverall > 0 && data.ratingOverall <= 4 && (!data.improvement || data.improvement.trim().length < 20)) {
@@ -71,7 +71,7 @@ const getFormSchema = (t: any) => z.object({
   }
   return true;
 }, {
-  message: t('k_2a679d1b'),
+  message: t('formImprovementMin'),
   path: ["improvement"]
 });
 

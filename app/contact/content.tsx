@@ -17,16 +17,16 @@ import { useLanguage } from "@/contexts/language-context"
 
 const getFormSchema = (t: any) => z.object({
   name: z.string().min(2, {
-    message: t('k_69ce0f50'),
+    message: t('formNameMin'),
   }),
   email: z.string().email({
-    message: t('k_e267e2be'),
+    message: t('formEmailInvalid'),
   }),
   subject: z.string().min(5, {
-    message: t('k_26099181'),
+    message: t('formSubjectMin'),
   }),
   message: z.string().min(10, {
-    message: t('k_b91ea332'),
+    message: t('formMessageMin'),
   }),
 })
 
