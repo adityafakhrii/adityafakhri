@@ -1,11 +1,15 @@
 "use client"
 
+import { useState, useMemo } from "react"
 import { PageHeader } from "@/components/page-header"
 import { ProjectCard } from "@/components/project-card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ContentBlock } from "@/components/content-block"
 import { Badge } from "@/components/ui/badge"
-  import { TranslatedContent } from "@/components/translated-content"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { Search, X, Code2, Sparkles } from "lucide-react"
+import { TranslatedContent } from "@/components/translated-content"
 import projects from "@/data/projects"
 
 const normalizeCategory = (c?: string) => {
@@ -16,10 +20,10 @@ const normalizeCategory = (c?: string) => {
   return "web"
 }
 
-const isDone = (s: (typeof featuredProjects)[number]["status"]) =>
+const isDone = (s: string) =>
   s === "Completed" || s === "Production"
 
-const getStatusStyle = (s: (typeof featuredProjects)[number]["status"]) => {
+const getStatusStyle = (s: string) => {
   switch (s) {
     case "Completed":
     case "Production":
@@ -38,7 +42,7 @@ const pick = (id: keyof typeof projects) => {
   return {
     id,
     title: p.title,
-    description: p.description || "",
+    description: typeof p.description === "object" ? p.description.id : p.description || "",
     imageSrc: p.imageSrc || "/placeholder.svg",
     tags: p.tags || [],
     category: normalizeCategory(p.category),
@@ -97,51 +101,132 @@ const recentProjects = allRecentProjects.filter(
 
 const allProjects = [...featuredProjects, ...recentProjects]
 
+const popularTechTags = ["Laravel", "React", "Next.js", "AI", "JavaScript", "Tailwind", "MySQL"]
+
 export function ProjectsContent() {
+  const [searchQuery, setSearchQuery] = useState("")
+  const [selectedTag, setSelectedTag] = useState<string | null>(null)
+
+  const filteredRecentProjects = useMemo(() => {
+    return recentProjects.filter((project) => {
+      const matchesSearch =
+        searchQuery.trim() === "" ||
+        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        project.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+
+      const matchesTag =
+        !selectedTag || project.tags.some((tag) => tag.toLowerCase() === selectedTag.toLowerCase())
+
+      return matchesSearch && matchesTag
+    })
+  }, [searchQuery, selectedTag])
+
   return (
     <TranslatedContent
       renderContent={({ t }) => (
         <div className="container max-w-5xl py-8 px-4 md:px-8">
           <PageHeader title={t('projectsTitle')} description={t('projectsDescription')} />
 
-          {/* Featured Projects Section */}
-          <ContentBlock title={t('featuredProjectsTitle')} className="mt-8">
-            <p className="text-muted-foreground mb-6">
-              {t('k_f116207b')
-              }
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {featuredProjects.map((project) => (
-                <div key={project.id} className="relative">
-                  <ProjectCard
-                    title={project.title}
-                    description={project.description}
-                    imageSrc={project.imageSrc}
-                    tags={project.tags}
-                    href={`/projects/${project.id}`}
-                  />
-                  <div className="absolute top-4 right-4 flex gap-2">
-                    <Badge variant="default" className="bg-yellow-500 text-yellow-50 dark:bg-yellow-600">
-                      {t('k_15422d54')}
-                    </Badge>
-                    <Badge variant="outline" className="text-xs bg-muted text-muted-foreground border-border">
-                      {project.year}
-                    </Badge>
-                  </div>
-                </div>
-              ))}
+          {/* Search & Tag Filter Bar */}
+          <div className="mt-8 space-y-4 bg-card border rounded-xl p-4 shadow-sm">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <div className="relative flex-1">
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                <Input
+                  placeholder="Cari proyek (judul, deskripsi, teknologi)..."
+                  className="pl-9 pr-8"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery("")}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
+              {(searchQuery || selectedTag) && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    setSearchQuery("")
+                    setSelectedTag(null)
+                  }}
+                  className="text-xs text-muted-foreground"
+                >
+                  Reset Filter
+                </Button>
+              )}
             </div>
-          </ContentBlock>
 
-          {/* Recent Projects Section */}
-          <ContentBlock title={t('recentProjectsTitle')} className="mt-12">
+            {/* Popular Tech Filter Pills */}
+            <div className="flex flex-wrap items-center gap-2 pt-2 border-t text-xs">
+              <span className="text-muted-foreground font-medium flex items-center gap-1">
+                <Code2 className="h-3.5 w-3.5 text-primary" /> Filter Tag:
+              </span>
+              {popularTechTags.map((tag) => {
+                const isActive = selectedTag?.toLowerCase() === tag.toLowerCase()
+                return (
+                  <button
+                    key={tag}
+                    onClick={() => setSelectedTag(isActive ? null : tag)}
+                    className={`px-2.5 py-1 rounded-full text-xs font-medium transition-all ${
+                      isActive
+                        ? "bg-primary text-primary-foreground shadow-xs scale-105"
+                        : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
+                    }`}
+                  >
+                    {tag}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+
+          {/* Featured Projects Section */}
+          {!searchQuery && !selectedTag && (
+            <ContentBlock title={t('featuredProjectsTitle')} className="mt-8">
+              <p className="text-muted-foreground mb-6">
+                {t('k_f116207b')}
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {featuredProjects.map((project) => (
+                  <div key={project.id} className="relative group transition-all duration-300 hover:translate-y-[-2px]">
+                    <ProjectCard
+                      title={project.title}
+                      description={project.description}
+                      imageSrc={project.imageSrc}
+                      tags={project.tags}
+                      href={`/projects/${project.id}`}
+                    />
+                    <div className="absolute top-4 right-4 flex gap-2">
+                      <Badge variant="default" className="bg-yellow-500 text-yellow-50 dark:bg-yellow-600">
+                        {t('k_15422d54')}
+                      </Badge>
+                      <Badge variant="outline" className="text-xs bg-muted text-muted-foreground border-border">
+                        {project.year}
+                      </Badge>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </ContentBlock>
+          )}
+
+          {/* Recent Projects Section with Filters */}
+          <ContentBlock title={searchQuery || selectedTag ? "Hasil Pencarian Proyek" : t('recentProjectsTitle')} className="mt-12">
             <p className="text-muted-foreground mb-6">
-              {t('k_254a3128')
-              }
+              {searchQuery || selectedTag
+                ? `Menampilkan ${filteredRecentProjects.length} proyek yang cocok.`
+                : t('k_254a3128')}
             </p>
             
             <Tabs defaultValue="all" className="mt-6">
-              <TabsList className="mb-6">
+              <TabsList className="mb-6 flex-wrap h-auto gap-1">
                 <TabsTrigger value="all">{t('all')}</TabsTrigger>
                 <TabsTrigger value="web">{t('web')}</TabsTrigger>
                 <TabsTrigger value="mobile">{t('mobile')}</TabsTrigger>
@@ -150,34 +235,25 @@ export function ProjectsContent() {
               </TabsList>
 
               <TabsContent value="all" className="mt-0">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {recentProjects.map((project) => (
-                    <div key={project.id} className="relative">
-                      <ProjectCard
-                        title={project.title}
-                        description={project.description}
-                        imageSrc={project.imageSrc}
-                        tags={project.tags}
-                        href={`/projects/${project.id}`}
-                      />
-                      <div className="absolute top-4 right-4 flex gap-2">
-                        {(() => { const s = getStatusStyle(project.status); return (
-                          <Badge variant={s.variant} className={s.className}>
-                            {project.status}
-                          </Badge>
-                        )})()}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </TabsContent>
-
-              <TabsContent value="web" className="mt-0">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {recentProjects
-                    .filter((project) => project.category === "web")
-                    .map((project) => (
-                      <div key={project.id} className="relative">
+                {filteredRecentProjects.length === 0 ? (
+                  <div className="text-center py-12 border rounded-xl bg-card">
+                    <p className="text-muted-foreground text-sm">Tidak ada proyek yang sesuai dengan pencarian Anda.</p>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        setSearchQuery("")
+                        setSelectedTag(null)
+                      }}
+                      className="mt-4"
+                    >
+                      Lihat Semua Proyek
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {filteredRecentProjects.map((project) => (
+                      <div key={project.id} className="relative group transition-all duration-300 hover:translate-y-[-2px]">
                         <ProjectCard
                           title={project.title}
                           description={project.description}
@@ -185,7 +261,33 @@ export function ProjectsContent() {
                           tags={project.tags}
                           href={`/projects/${project.id}`}
                         />
-                      <div className="absolute top-4 right-4">
+                        <div className="absolute top-4 right-4 flex gap-2">
+                          {(() => { const s = getStatusStyle(project.status); return (
+                            <Badge variant={s.variant} className={s.className}>
+                              {project.status}
+                            </Badge>
+                          )})()}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </TabsContent>
+
+              <TabsContent value="web" className="mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredRecentProjects
+                    .filter((project) => project.category === "web")
+                    .map((project) => (
+                      <div key={project.id} className="relative group transition-all duration-300 hover:translate-y-[-2px]">
+                        <ProjectCard
+                          title={project.title}
+                          description={project.description}
+                          imageSrc={project.imageSrc}
+                          tags={project.tags}
+                          href={`/projects/${project.id}`}
+                        />
+                        <div className="absolute top-4 right-4">
                           {(() => { const s = getStatusStyle(project.status); return (
                             <Badge variant={s.variant} className={s.className}>
                               {project.status}
@@ -199,10 +301,10 @@ export function ProjectsContent() {
 
               <TabsContent value="mobile" className="mt-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {recentProjects
+                  {filteredRecentProjects
                     .filter((project) => project.category === "mobile")
                     .map((project) => (
-                      <div key={project.id} className="relative">
+                      <div key={project.id} className="relative group transition-all duration-300 hover:translate-y-[-2px]">
                         <ProjectCard
                           title={project.title}
                           description={project.description}
@@ -224,10 +326,10 @@ export function ProjectsContent() {
 
               <TabsContent value="design" className="mt-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {recentProjects
+                  {filteredRecentProjects
                     .filter((project) => project.category === "design")
                     .map((project) => (
-                      <div key={project.id} className="relative">
+                      <div key={project.id} className="relative group transition-all duration-300 hover:translate-y-[-2px]">
                         <ProjectCard
                           title={project.title}
                           description={project.description}
@@ -249,10 +351,10 @@ export function ProjectsContent() {
 
               <TabsContent value="completed" className="mt-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {recentProjects
+                  {filteredRecentProjects
                     .filter((project) => project.status === "Completed")
                     .map((project) => (
-                      <div key={project.id} className="relative">
+                      <div key={project.id} className="relative group transition-all duration-300 hover:translate-y-[-2px]">
                         <ProjectCard
                           title={project.title}
                           description={project.description}
@@ -275,23 +377,23 @@ export function ProjectsContent() {
           {/* Project Statistics */}
           <ContentBlock title={t('projectStats')} className="mt-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="text-center p-4 border rounded-lg">
+              <div className="text-center p-4 border rounded-lg hover:border-primary/50 transition-colors">
                 <div className="text-2xl font-bold text-primary">{allProjects.length}</div>
                 <div className="text-sm text-muted-foreground">{t('totalProjects')}</div>
               </div>
-              <div className="text-center p-4 border rounded-lg">
+              <div className="text-center p-4 border rounded-lg hover:border-green-500/50 transition-colors">
                 <div className="text-2xl font-bold text-green-600">
                   {allProjects.filter(p => p.status === "Completed" || p.status === "Production").length}
                 </div>
                 <div className="text-sm text-muted-foreground">{t('completedProjects')}</div>
               </div>
-              <div className="text-center p-4 border rounded-lg">
+              <div className="text-center p-4 border rounded-lg hover:border-blue-500/50 transition-colors">
                 <div className="text-2xl font-bold text-blue-600">
                   {allProjects.filter(p => !isDone(p.status)).length}
                 </div>
                 <div className="text-sm text-muted-foreground">{t('inDevelopment')}</div>
               </div>
-              <div className="text-center p-4 border rounded-lg">
+              <div className="text-center p-4 border rounded-lg hover:border-orange-500/50 transition-colors">
                 <div className="text-2xl font-bold text-orange-600">
                   {allProjects.filter(p => p.category === "web").length}
                 </div>
@@ -308,8 +410,7 @@ export function ProjectsContent() {
                   1. {t('k_4355113b')}
                 </h3>
                 <p className="mt-2">
-                  {t('k_5c8f49fb')
-                  }
+                  {t('k_5c8f49fb')}
                 </p>
               </div>
 
@@ -319,8 +420,7 @@ export function ProjectsContent() {
                   2. {t('k_d479dd5e')}
                 </h3>
                 <p className="mt-2">
-                  {t('k_e9870b65')
-                  }
+                  {t('k_e9870b65')}
                 </p>
               </div>
 
@@ -330,8 +430,7 @@ export function ProjectsContent() {
                   3. {t('k_330f49df')}
                 </h3>
                 <p className="mt-2">
-                  {t('k_140ba032')
-                  }
+                  {t('k_140ba032')}
                 </p>
               </div>
 
@@ -341,8 +440,7 @@ export function ProjectsContent() {
                   4. {t('k_7daf3ac3')}
                 </h3>
                 <p className="mt-2">
-                  {t('k_d96a7294')
-                  }
+                  {t('k_d96a7294')}
                 </p>
               </div>
 
@@ -352,8 +450,7 @@ export function ProjectsContent() {
                   5. {t('k_e1292d09')}
                 </h3>
                 <p className="mt-2">
-                  {t('k_7e2ed9ea')
-                  }
+                  {t('k_7e2ed9ea')}
                 </p>
               </div>
             </div>

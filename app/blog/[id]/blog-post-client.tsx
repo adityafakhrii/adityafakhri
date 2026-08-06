@@ -27,6 +27,20 @@ interface BlogPostClientProps {
 
 export function BlogPostClient({ id, post, relatedPosts }: BlogPostClientProps) {
   const contentRef = useRef<HTMLDivElement>(null)
+  const [scrollProgress, setScrollProgress] = React.useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight
+      if (totalHeight > 0) {
+        const currentProgress = (window.scrollY / totalHeight) * 100
+        setScrollProgress(Math.min(100, Math.max(0, currentProgress)))
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   useEffect(() => {
     const container = contentRef.current
@@ -75,6 +89,13 @@ export function BlogPostClient({ id, post, relatedPosts }: BlogPostClientProps) 
 
         return (
           <div className="container max-w-5xl py-8 px-4 md:px-8">
+            {/* Reading Progress Indicator Bar */}
+            <div
+              className="fixed top-0 left-0 h-1 bg-primary z-50 transition-all duration-150 shadow-sm"
+              style={{ width: `${scrollProgress}%` }}
+              aria-label="Reading progress"
+            />
+
             <Button asChild variant="ghost" className="mb-6">
               <Link href="/blog">
                 <ArrowLeft className="h-4 w-4 mr-2" />
