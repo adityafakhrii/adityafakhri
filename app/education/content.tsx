@@ -140,13 +140,13 @@ export function EducationContent() {
                     </ul>
                   </div>
                 </div>
-                
+
                 {/* Other education entries with similar translation pattern */}
                 {/* ... */}
               </div>
             </ContentBlock>
 
-            <ContentBlock title={t('certifications')}>
+            {/* <ContentBlock title={t('certifications')}>
               <div className="space-y-4">
                 <div className="p-4 border rounded-lg">
                   <h3 className="font-medium">AWS Certified Developer - Associate</h3>
@@ -185,7 +185,7 @@ export function EducationContent() {
                   </div>
                 </div>
               </div>
-            </ContentBlock>
+            </ContentBlock> */}
 
             <ContentBlock title={t('continuousLearning')}>
               <p className="mb-4">
