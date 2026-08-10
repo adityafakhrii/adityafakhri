@@ -103,9 +103,24 @@ const allProjects = [...featuredProjects, ...recentProjects]
 
 const popularTechTags = ["Laravel", "React", "Next.js", "AI", "JavaScript", "Tailwind", "MySQL"]
 
+import { GridSkeletonGrid } from "@/components/skeleton-card"
+
 export function ProjectsContent() {
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleSearchChange = (val: string) => {
+    setIsLoading(true)
+    setSearchQuery(val)
+    setTimeout(() => setIsLoading(false), 250)
+  }
+
+  const handleTagChange = (tag: string | null) => {
+    setIsLoading(true)
+    setSelectedTag(tag)
+    setTimeout(() => setIsLoading(false), 250)
+  }
 
   const filteredRecentProjects = useMemo(() => {
     return recentProjects.filter((project) => {
@@ -137,11 +152,11 @@ export function ProjectsContent() {
                   placeholder="Cari proyek (judul, deskripsi, teknologi)..."
                   className="pl-9 pr-8"
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e) => handleSearchChange(e.target.value)}
                 />
                 {searchQuery && (
                   <button
-                    onClick={() => setSearchQuery("")}
+                    onClick={() => handleSearchChange("")}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                   >
                     <X className="h-4 w-4" />
@@ -153,8 +168,8 @@ export function ProjectsContent() {
                   variant="ghost"
                   size="sm"
                   onClick={() => {
-                    setSearchQuery("")
-                    setSelectedTag(null)
+                    handleSearchChange("")
+                    handleTagChange(null)
                   }}
                   className="text-xs text-muted-foreground"
                 >
@@ -173,7 +188,7 @@ export function ProjectsContent() {
                 return (
                   <button
                     key={tag}
-                    onClick={() => setSelectedTag(isActive ? null : tag)}
+                    onClick={() => handleTagChange(isActive ? null : tag)}
                     className={`px-2.5 py-1 rounded-full text-xs font-medium transition-all ${
                       isActive
                         ? "bg-primary text-primary-foreground shadow-xs scale-105"
@@ -235,7 +250,9 @@ export function ProjectsContent() {
               </TabsList>
 
               <TabsContent value="all" className="mt-0">
-                {filteredRecentProjects.length === 0 ? (
+                {isLoading ? (
+                  <GridSkeletonGrid count={6} type="project" />
+                ) : filteredRecentProjects.length === 0 ? (
                   <div className="text-center py-12 border rounded-xl bg-card">
                     <p className="text-muted-foreground text-sm">Tidak ada proyek yang sesuai dengan pencarian Anda.</p>
                     <Button

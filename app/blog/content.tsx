@@ -22,9 +22,17 @@ const articles = blogIndex.map((p) => ({
 const categories = Array.from(new Set(articles.map((a) => a.category).filter(Boolean))).sort() as string[]
 
 import { useState } from "react"
+import { GridSkeletonGrid } from "@/components/skeleton-card"
 
 export function BlogContent() {
   const [searchQuery, setSearchQuery] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleSearchChange = (val: string) => {
+    setIsLoading(true)
+    setSearchQuery(val)
+    setTimeout(() => setIsLoading(false), 200)
+  }
 
   return (
     <TranslatedContent
@@ -39,7 +47,7 @@ export function BlogContent() {
                 placeholder={t('searchArticles')}
                 className="pl-10"
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e) => handleSearchChange(e.target.value)}
               />
             </div>
             <Button>{t('search')}</Button>
@@ -56,7 +64,10 @@ export function BlogContent() {
             </TabsList>
 
             <TabsContent value="all" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {isLoading ? (
+                <GridSkeletonGrid count={4} type="blog" />
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {articles.filter((article) =>
                   article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                   article.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
@@ -92,6 +103,7 @@ export function BlogContent() {
                   </Link>
                 ))}
               </div>
+              )}
             </TabsContent>
 
             {categories.map((category) => (
