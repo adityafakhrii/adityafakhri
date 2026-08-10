@@ -14,6 +14,80 @@ export type BlogPost = {
 
 const blogs = {
 
+  "bukan-cuma-jago-ngoding-4-soft-skills-mahal-developer-2026": {
+    title: "Bukan Cuma Jago Ngoding! 4 Soft Skills 'Mahal' yang Bikin Programmer Dibayar Tinggi di Era AI",
+    excerpt: "Saat AI bisa mengenerate kode dalam hitungan detik, kemampuan ngetik sintaks semata tak lagi cukup. Temukan 4 soft skill paling dicari rekruter yang bikin gaji dan value kamu melonjak drastis.",
+    content: `
+      <style>
+        .career-hero { padding: 2.5rem 2rem; border-radius: 1.25rem; background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; }
+        .career-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.5rem; margin: 0 0 0.75rem 0; }
+        .career-hero p { color: hsl(var(--muted-foreground)); font-size: 1rem; line-height: 1.7; margin: 0; }
+        .career-section-title { font-size: 1.25rem; font-weight: 700; margin: 2.5rem 0 1rem 0; color: hsl(var(--foreground)); }
+        .career-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+        .career-card { padding: 1.5rem; border-radius: 1rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+        .career-card h4 { font-size: 1.05rem; font-weight: 700; margin: 0 0 0.5rem 0; color: hsl(var(--foreground)); }
+        .career-card p { font-size: 0.88rem; line-height: 1.6; color: hsl(var(--muted-foreground)); margin: 0; }
+        .career-callout { padding: 1.5rem; border-radius: 1rem; border-left: 4px solid hsl(var(--primary)); background: hsl(var(--muted)); margin: 2rem 0; }
+        .career-callout p { margin: 0; font-size: 0.95rem; line-height: 1.7; color: hsl(var(--foreground)); }
+        @media (max-width: 768px) {
+          .career-grid { grid-template-columns: 1fr; }
+          .career-hero { padding: 1.75rem 1.25rem; }
+        }
+      </style>
+
+      <div class="career-hero">
+        <h2>Dilema Developer di Era Serba Otomatis</h2>
+        <p>Di tahun 2026, menulis 100 baris kode boilerplate React atau Laravel bukan lagi pencapaian spektakuler. Dengan sekali perintah prompt ke AI Assistant, kode bisa tercipta dalam 5 detik. Lantas, <strong>apa yang membuat seorang developer tetap dihargai mahal oleh perusahaan dan klien?</strong> Jawabannya terletak pada kekuatan <em>Soft Skills & Judgment</em>.</p>
+      </div>
+
+      <p>Banyak programmer pemula terjebak fokus 100% pada sintaks baru, namun melupakan aspek interaksi manusia dan kepemimpinan sistem. Padahal, rekruter dan Tech Lead saat ini mencari engineer yang tidak hanya sekadar "ngetik", melainkan mampu menjadi pemecah masalah bisnis nyata.</p>
+
+      <div class="career-section-title">4 Soft Skill 'Mahal' yang Bikin Kamu Dihargai Tinggi</div>
+
+      <div class="career-grid">
+        <div class="career-card">
+          <h4>1. Technical Communication & Bridge Building</h4>
+          <p>Mampu menjelaskan konsep teknis yang rumit (seperti API architecture, database trade-off, atau security) kepada stakeholders non-teknis (Product Manager, Designer, & Klien) dalam bahasa yang sederhana dan actionable.</p>
+        </div>
+        <div class="career-card">
+          <h4>2. Problem Decomposition (Problem Solving)</h4>
+          <p>Kemampuan memecah masalah bisnis raksasa menjadi modul-modul kecil yang logis sebelum mengeksekusinya bersama tim maupun mengarahkannya ke AI Tools.</p>
+        </div>
+        <div class="career-card">
+          <h4>3. Product Sense & User Empathy</h4>
+          <p>Tidak hanya peduli bahwa kodenya berjalan <code>status 200 OK</code>, tetapi paham apakah fitur tersebut benar-benar menyelesaikan masalah pengguna dan mudah digunakan.</p>
+        </div>
+        <div class="career-card">
+          <h4>4. Orchestration & Judgment (Mental Checkpoint)</h4>
+          <p>Kemampuan mereview kode hasil generate AI dengan tajam, mendeteksi potensi celah keamanan (security gap), serta mengambil keputusan arsitektur jangka panjang yang tepat.</p>
+        </div>
+      </div>
+
+      <div class="career-callout">
+        <p><strong>💡 Kata Kunci Karir 2026:</strong> AI memang bisa menulis sintaks, tetapi AI tidak bisa menggantikan empati pengguna, negosiasi tim, dan intuisi arsitektural manusia. Developer yang menguasai 4 skill ini akan selalu dicari dengan gaji di atas rata-rata industri.</p>
+      </div>
+
+      <div class="career-section-title">Langkah Praktis Mengasah Soft Skill Hari Ini</div>
+      <ul>
+        <li><strong>Rutin Presentasi Sederhana:</strong> Coba jelaskan fitur yang baru kamu buat ke teman non-tech dalam kurun 2 menit.</li>
+        <li><strong>Terlibat dalam Code Review:</strong> Jangan cuma nunggu direview, tapi belajarlah mereview kode orang lain dengan memberikan masukan konstruktif.</li>
+        <li><strong>Pahami Bisnis Aplikasi Kamu:</strong> Tanyakan pada dirimu: "Kenapa fitur ini dibuat?" dan "Berapa banyak dampak pengguna yang terbantu?"</li>
+      </ul>
+    `,
+    date: "10 Agu 2026",
+    readTime: "5 min",
+    category: "Career",
+    author: "Aditya Fakhri Riansyah",
+    tags: ["Career", "Developer", "Soft Skills", "AI", "Productivity"],
+    imageSrc: "/images/blog/soft-skills-developer-2026.png",
+    relatedPosts: [
+      "dari-tukang-ngetik-jadi-mandor-ai-2026",
+      "cara-meningkatkan-value-sebagai-developer-di-era-ai",
+      "roadmap-mendapatkan-remote-job-client-luar-negeri-programmer"
+    ],
+    isoDate: "2026-08-10T16:50:00.000Z"
+  },
+
   "dari-tukang-ngetik-jadi-mandor-ai-2026": {
     title: "Bukan Lagi Tukang Ngetik Kode: Kenapa Developer di 2026 Harus Jadi 'Mandor' AI?",
     excerpt: "Cara kerja software engineer telah bergeser drastis di 2026. Bukan lagi seberapa cepat kamu ngetik sintaks, melainkan seberapa jago kamu mengarahkan, mengawasi, dan mereview hasil kerja AI Agents.",
