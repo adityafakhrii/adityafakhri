@@ -83,7 +83,7 @@ interface StarRatingProps {
 
 function StarRating({ value, onChange, label }: StarRatingProps) {
   const [hoverValue, setHoverValue] = useState<number | null>(null)
-  
+
   return (
     <div className="flex flex-col gap-2">
       <span className="text-sm font-medium text-foreground">
@@ -103,11 +103,10 @@ function StarRating({ value, onChange, label }: StarRatingProps) {
               aria-label={`Rate ${star} out of 5`}
             >
               <Star
-                className={`h-7 w-7 transition-all duration-200 ${
-                  isFilled
+                className={`h-7 w-7 transition-all duration-200 ${isFilled
                     ? "text-yellow-400 fill-yellow-400 filter drop-shadow-[0_0_4px_rgba(250,204,21,0.5)] scale-110"
                     : "text-muted-foreground/40 hover:text-yellow-300"
-                }`}
+                  }`}
               />
             </button>
           )
@@ -323,6 +322,7 @@ export function FeedbackContent() {
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
+                              <SelectItem value="Vibe Coding Bootcamp">Vibe Coding Bootcamp</SelectItem>
                               <SelectItem value="Workshop Vibe Coding">Workshop Vibe Coding</SelectItem>
                               <SelectItem value="Mentoring Pemrograman">Mentoring Pemrograman</SelectItem>
                               <SelectItem value="Webinar/Seminar AI">Webinar/Seminar AI</SelectItem>
@@ -500,11 +500,11 @@ export function FeedbackContent() {
                   <div className="h-16 w-16 bg-green-100 dark:bg-green-950/50 rounded-full flex items-center justify-center text-green-600 dark:text-green-400 mb-4 animate-bounce">
                     <CheckCircle2 className="h-10 w-10" />
                   </div>
-                  
+
                   <h3 className="text-2xl font-bold tracking-tight mb-2 text-foreground">
                     {t("feedbackSuccessTitle")}
                   </h3>
-                  
+
                   <p className="text-muted-foreground text-sm max-w-md mb-8 leading-relaxed">
                     {t("feedbackSuccessDesc")}
                   </p>

@@ -61,22 +61,22 @@ export function TestimoniContent({ initialSubmissions }: TestimoniContentProps) 
   return (
     <TranslatedContent
       renderContent={({ t }) => (
-        <div className="container max-w-5xl py-8 px-4 md:px-8 animate-fade-in">
+        <div className="container max-w-6xl py-8 px-4 md:px-8 animate-fade-in">
           <PageHeader title={t("testimoniTitle")} description={t("testimoniDescription")} />
 
           <div className="mt-8 space-y-8">
             <ContentBlock>
               {testimonials.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {testimonials.map((item) => (
                     <Card
                       key={item.id}
                       className="border border-border/80 hover:border-primary/40 hover:shadow-md transition-all duration-300 relative overflow-hidden flex flex-col justify-between group"
                     >
-                      <CardContent className="p-6 flex flex-col justify-between h-full space-y-4">
+                      <CardContent className="p-5 sm:p-6 flex flex-col justify-between h-full space-y-4">
                         {/* Quote icon watermark */}
                         <div className="absolute right-4 top-4 text-muted-foreground/10 pointer-events-none group-hover:text-primary/10 transition-colors duration-300">
-                          <Quote className="h-16 w-16 rotate-180" />
+                          <Quote className="h-14 w-14 rotate-180" />
                         </div>
 
                         {/* Top Section: Stars and Topic */}
@@ -85,44 +85,44 @@ export function TestimoniContent({ initialSubmissions }: TestimoniContentProps) 
                             {[1, 2, 3, 4, 5].map((star) => (
                               <Star
                                 key={star}
-                                className="h-4.5 w-4.5 text-yellow-400 fill-yellow-400 filter drop-shadow-[0_0_2px_rgba(250,204,21,0.4)]"
+                                className="h-4 w-4 text-yellow-400 fill-yellow-400 filter drop-shadow-[0_0_2px_rgba(250,204,21,0.4)]"
                               />
                             ))}
                           </div>
                           
                           <div className="inline-block">
-                            <Badge variant="outline" className="text-xs bg-muted/50 border-muted text-muted-foreground font-normal">
+                            <Badge variant="outline" className="text-[11px] bg-muted/50 border-muted text-muted-foreground font-normal">
                               {item.topic}
                             </Badge>
                           </div>
                         </div>
 
                         {/* Body Section: Content */}
-                        <p className="text-foreground/90 text-sm leading-relaxed italic relative pl-4 border-l-2 border-primary/30 my-2 flex-grow">
+                        <p className="text-foreground/90 text-sm leading-relaxed italic relative pl-3.5 border-l-2 border-primary/30 my-2 flex-grow">
                           &ldquo;{item.feedback}&rdquo;
                         </p>
 
                         {/* Bottom Section: Author Details */}
-                        <div className="border-t pt-4 mt-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-muted-foreground">
+                        <div className="border-t pt-3.5 mt-2 flex flex-col gap-2.5 text-xs text-muted-foreground">
                           <div>
-                            <h4 className="font-bold text-foreground text-sm group-hover:text-primary transition-colors">
+                            <h4 className="font-bold text-foreground text-sm group-hover:text-primary transition-colors line-clamp-1">
                               {item.name}
                             </h4>
-                            <p className="mt-0.5 font-medium">
+                            <p className="mt-0.5 font-medium text-[11px] line-clamp-1">
                               {item.occupation}
                             </p>
                           </div>
 
-                          <div className="flex flex-col gap-1 items-start sm:items-end text-[10px]">
-                            {item.city && (
-                              <div className="flex items-center gap-1">
-                                <MapPin className="h-3 w-3 text-muted-foreground/60" />
-                                <span>{item.city}</span>
+                          <div className="flex items-center justify-between gap-2 text-[10px] text-muted-foreground/75 pt-1.5 border-t border-border/40">
+                            {item.city ? (
+                              <div className="flex items-center gap-1 truncate">
+                                <MapPin className="h-3 w-3 shrink-0 text-muted-foreground/60" />
+                                <span className="truncate">{item.city}</span>
                               </div>
-                            )}
+                            ) : <div />}
                             {item.createdAt && (
-                              <div className="flex items-center gap-1">
-                                <Calendar className="h-3 w-3 text-muted-foreground/60" />
+                              <div className="flex items-center gap-1 shrink-0">
+                                <Calendar className="h-3 w-3 shrink-0 text-muted-foreground/60" />
                                 <span>{formatDateStr(item.createdAt)}</span>
                               </div>
                             )}
