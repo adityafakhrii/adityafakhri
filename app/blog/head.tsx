@@ -1,7 +1,7 @@
 export default function Head() {
-  const baseUrl = "https://adityafakhri.com"
-  const title = "Blog"
-  const description = "Artikel dan tutorial tentang pengembangan web, AI, dan teknologi"
+  const baseUrl = "https://adityafakhri.id"
+  const title = "Blog & Artikel | Aditya Fakhri Riansyah"
+  const description = "Artikel dan tutorial tentang pengembangan web modern, AI, dan teknologi"
   const url = `${baseUrl}/blog`
 
   return (
@@ -13,7 +13,7 @@ export default function Head() {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
     </>

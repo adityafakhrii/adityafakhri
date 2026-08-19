@@ -7,8 +7,29 @@ export const dynamic = "force-dynamic"
 export const revalidate = 0
 
 export const metadata: Metadata = {
-  title: "Testimoni",
-  description: "Ulasan jujur dan kesan dari para peserta seminar, workshop, dan kelas mentoring bersama Aditya Fakhri Riansyah.",
+  title: "Testimoni & Ulasan Peserta | Aditya Fakhri Riansyah",
+  description: "Ulasan jujur, kesan, dan testimoni dari para peserta seminar, workshop IT, dan kelas private mentoring bersama Aditya Fakhri Riansyah.",
+  keywords: [
+    "Testimoni Aditya Fakhri",
+    "Review Mentoring Coding",
+    "Ulasan Speaker IT",
+    "Feedback Workshop AI"
+  ],
+  alternates: {
+    canonical: "https://adityafakhri.id/testimoni",
+  },
+  openGraph: {
+    title: "Testimoni & Ulasan Peserta | Aditya Fakhri Riansyah",
+    description: "Ulasan jujur dan kesan dari para peserta seminar, workshop, dan kelas mentoring bersama Aditya Fakhri Riansyah.",
+    url: "https://adityafakhri.id/testimoni",
+    images: ["/foto-adit.webp"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Testimoni & Ulasan Peserta | Aditya Fakhri Riansyah",
+    description: "Ulasan jujur dan testimoni dari para peserta workshop dan mentoring bersama Aditya Fakhri Riansyah.",
+    images: ["/foto-adit.webp"],
+  },
 }
 
 async function getFeedbackSubmissions() {

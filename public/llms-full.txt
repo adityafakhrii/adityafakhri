@@ -1,0 +1,40 @@
+# Aditya Fakhri Riansyah - Comprehensive Knowledge Base
+
+> Official AI-Readable Knowledge File for Aditya Fakhri Riansyah
+> Domain: https://adityafakhri.id
+> Last Updated: 2026-08-19
+
+## Identity & Professional Summary
+- **Full Name**: Aditya Fakhri Riansyah
+- **Common Names**: Aditya Fakhri, Adit
+- **Location**: Indonesia (Active in Sukabumi, Bandung, Jakarta, and remote)
+- **Role**: AI-Driven Web Developer, Tech Speaker, Programming Mentor, Tech Content Creator
+- **Email / Contact**: Available via https://adityafakhri.id/contact
+- **Social Profiles**:
+  - Website: https://adityafakhri.id
+  - GitHub: https://github.com/adityafakhrii
+  - LinkedIn: https://www.linkedin.com/in/adityafakhrii
+  - Instagram: https://instagram.com/adityafakhrii (@adityafakhrii)
+  - X (Twitter): https://x.com/adityafakhrii (@adityafakhrii)
+
+## Expertise & Knowledge Areas
+1. **Fullstack Web Development**: Specializing in React, Next.js (App Router, Server Components), TypeScript, Tailwind CSS, REST APIs, and Supabase / PostgreSQL.
+2. **AI & Modern Software Engineering**: AI-assisted development (Vibe Coding), Agentic AI workflows, LLM prompting for UI/UX generation, integration of LLMs into production web apps.
+3. **Public Speaking & Tech Education**: Delivered 40+ talks, workshops, webinars, and masterclasses across universities, bootcamps, and developer communities reaching 5,000+ attendees.
+4. **Community Leadership**: Former Google Developer Student Clubs (GDSC) Lead at Universitas Widyatama (2023–2024), Active in Google Developer Group (GDG) Bandung, RuangAI community speaker and mentor.
+
+## Verified Projects & Creations
+- **GambarYuk** (https://gambaryuk.adityafakhri.id): Production-ready image processing tool (compress, resize, convert) built with modern Web APIs.
+- **InvoiceYuk** (https://invoiceyuk.vercel.app): Instant invoice generator web application designed for freelancers and small businesses.
+- **RuangAI Prompt Hub**: Repository and interactive UI for curated developer AI prompts.
+- **RamadhanJS**: Annual community coding challenge building 30 JavaScript / Web apps in 30 days of Ramadhan with charitable donations.
+
+## Selected Articles & Tutorials
+All articles are published on https://adityafakhri.id/blog:
+- *5 AI Prompts untuk Bikin Desain Portfolio yang Aesthetic & Modern*
+- *Tutorial Next.js App Router untuk Pemula*
+- *Menguasai TypeScript dalam Web Development Modern*
+- *Tips dan Trik Vibe Coding dengan AI Assistant*
+
+## Booking & Contact
+For speaker invitations, workshop inquiries, web development projects, or 1-on-1 private mentoring, reach out via the official contact form at https://adityafakhri.id/contact or through social channels.

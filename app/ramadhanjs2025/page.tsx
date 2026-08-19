@@ -17,8 +17,17 @@ import { RamadhanGallery } from "@/components/ramadhan-gallery"
 import { FinancialReportTable } from "@/components/financial-report-table"
 
 export const metadata: Metadata = {
-  title: "RamadhanJS Challenge 2025",
-  description: "Recap dan Dokumentasi RamadhanJS Challenge 2025 x Belajar Sambil Beramal",
+  title: "RamadhanJS Challenge 2025 — Belajar Sambil Beramal | Aditya Fakhri Riansyah",
+  description: "Recap dan Dokumentasi RamadhanJS Challenge 2025 x Belajar Sambil Beramal bersama Aditya Fakhri Riansyah.",
+  alternates: {
+    canonical: "https://adityafakhri.id/ramadhanjs2025",
+  },
+  openGraph: {
+    title: "RamadhanJS Challenge 2025 — Belajar Sambil Beramal",
+    description: "Recap dan Dokumentasi RamadhanJS Challenge 2025 x Belajar Sambil Beramal bersama Aditya Fakhri Riansyah.",
+    url: "https://adityafakhri.id/ramadhanjs2025",
+    images: ["/foto-adit.webp"],
+  },
 }
 
 export default function RamadhanJSPage() {

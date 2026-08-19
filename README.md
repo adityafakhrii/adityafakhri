@@ -125,7 +125,7 @@ Proyek ini dilindungi di bawah **MIT License** — bebas untuk digunakan, dimodi
 
 ## 🤝 Kontak & Media Sosial
 
-- **Website**: [adityafakhri.com](https://adityafakhri.com)
+- **Website**: [adityafakhri.id](https://adityafakhri.id)
 - **Instagram**: [@adityafakhrii](https://www.instagram.com/adityafakhrii/)
 - **GitHub**: [@adityafakhrii](https://github.com/adityafakhrii)
 - **LinkedIn**: [Aditya Fakhri Riansyah](https://www.linkedin.com/in/adityafakhrii/)

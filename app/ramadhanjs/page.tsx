@@ -3,8 +3,17 @@ import { Moon, Star } from "lucide-react"
 import { RamadhanProjects } from "@/components/ramadhan-projects"
 
 export const metadata: Metadata = {
-    title: "RamadhanJS 30 Days Projects",
-    description: "30 Hari 30 Aplikasi JavaScript Spesial Ramadhan",
+    title: "RamadhanJS — 30 Days 30 JavaScript Projects | Aditya Fakhri Riansyah",
+    description: "30 Hari 30 Aplikasi JavaScript Spesial Ramadhan bersama Aditya Fakhri Riansyah. Belajar dan berkreasi setiap hari.",
+    alternates: {
+        canonical: "https://adityafakhri.id/ramadhanjs",
+    },
+    openGraph: {
+        title: "RamadhanJS — 30 Days 30 JavaScript Projects",
+        description: "30 Hari 30 Aplikasi JavaScript Spesial Ramadhan bersama Aditya Fakhri Riansyah.",
+        url: "https://adityafakhri.id/ramadhanjs",
+        images: ["/foto-adit.webp"],
+    },
 }
 
 export default function RamadhanJSHome() {

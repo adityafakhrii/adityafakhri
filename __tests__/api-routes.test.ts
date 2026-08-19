@@ -10,7 +10,7 @@ describe("API Routes Integration Tests", () => {
     it("should return 400 for invalid payload", async () => {
       const req = new NextRequest("http://localhost:3000/api/contact", {
         method: "POST",
-        headers: { origin: "https://adityafakhri.com" },
+        headers: { origin: "https://adityafakhri.id" },
         body: JSON.stringify({ name: "A" }), // Name too short
       })
       const res = await contactPOST(req)
@@ -22,7 +22,7 @@ describe("API Routes Integration Tests", () => {
     it("should intercept bot submissions via honeypot field (_hp)", async () => {
       const req = new NextRequest("http://localhost:3000/api/contact", {
         method: "POST",
-        headers: { origin: "https://adityafakhri.com" },
+        headers: { origin: "https://adityafakhri.id" },
         body: JSON.stringify({
           name: "Spam Bot",
           email: "bot@spam.com",
@@ -43,7 +43,7 @@ describe("API Routes Integration Tests", () => {
     it("should return 400 for invalid feedback payload", async () => {
       const req = new NextRequest("http://localhost:3000/api/feedback", {
         method: "POST",
-        headers: { origin: "https://adityafakhri.com" },
+        headers: { origin: "https://adityafakhri.id" },
         body: JSON.stringify({ name: "Aditya" }), // Missing required fields
       })
       const res = await feedbackPOST(req)
@@ -55,7 +55,7 @@ describe("API Routes Integration Tests", () => {
     it("should intercept bot feedback submissions via honeypot", async () => {
       const req = new NextRequest("http://localhost:3000/api/feedback", {
         method: "POST",
-        headers: { origin: "https://adityafakhri.com" },
+        headers: { origin: "https://adityafakhri.id" },
         body: JSON.stringify({
           name: "Bot User",
           email: "bot@spam.com",

@@ -50,7 +50,7 @@ describe("api-utils", () => {
 
     it("should reject requests with invalid origin in production mode", async () => {
       ;(process.env as any).NODE_ENV = "production"
-      const req = new NextRequest("https://adityafakhri.com/api/contact", {
+      const req = new NextRequest("https://adityafakhri.id/api/contact", {
         headers: { origin: "https://evil-site.com" },
       })
       const result = validateOrigin(req)
@@ -58,10 +58,10 @@ describe("api-utils", () => {
       expect(result?.status).toBe(403)
     })
 
-    it("should allow requests from adityafakhri.com in production mode", () => {
+    it("should allow requests from adityafakhri.id in production mode", () => {
       ;(process.env as any).NODE_ENV = "production"
-      const req = new NextRequest("https://adityafakhri.com/api/contact", {
-        headers: { origin: "https://adityafakhri.com" },
+      const req = new NextRequest("https://adityafakhri.id/api/contact", {
+        headers: { origin: "https://adityafakhri.id" },
       })
       expect(validateOrigin(req)).toBeNull()
     })

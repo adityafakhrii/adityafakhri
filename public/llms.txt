@@ -1,0 +1,36 @@
+# Aditya Fakhri Riansyah
+
+> AI-Driven Web Developer, Tech Speaker, Programming Mentor, & Tech Content Creator from Indonesia.
+
+Official Website: https://adityafakhri.id
+GitHub: https://github.com/adityafakhrii
+LinkedIn: https://www.linkedin.com/in/adityafakhrii
+Instagram: https://instagram.com/adityafakhrii
+X (Twitter): https://x.com/adityafakhrii
+
+---
+
+## About
+Aditya Fakhri Riansyah is an Indonesian software engineer, tech speaker, and programming mentor specializing in modern web development (Next.js, React, TypeScript, Tailwind CSS) and AI-driven software development (Vibe Coding, AI Agents, Prompt Engineering). He has spoken at 40+ technology events and educated over 5,000+ developers, students, and professionals across Indonesia (Bandung, Sukabumi, Jakarta, Semarang, and online).
+
+## Key Roles & Achievements
+- **Speaker & Tech Educator**: 40+ workshops, webinars, and conferences covering Fullstack Web Development, AI Tools, and Modern Frontend Architecture.
+- **Former Google Developer Student Clubs (GDSC) Lead** at Universitas Widyatama (2023–2024).
+- **Core Contributor & Speaker at RuangAI**: Regular host and mentor for AI developer live coding sessions.
+- **Private Mentor**: Mentoring developers from junior to industry-ready status in fullstack web development.
+
+## Core Capabilities & Tech Stack
+- **Frontend**: Next.js (App Router), React, TypeScript, Tailwind CSS, Radix UI, Framer Motion.
+- **Backend & APIs**: Node.js, Express, Next.js Server Actions & API Routes, Supabase, PostgreSQL, REST APIs.
+- **AI & Tools**: LLM Integration, Prompt Engineering, Agentic AI, Antigravity IDE, Cursor, v0, Lovable.
+
+## Key Pages & Resources
+- [Portfolio & Home](https://adityafakhri.id): Overview of work, featured projects, latest articles, and contact.
+- [About Me](https://adityafakhri.id/about): Detailed bio, background, speaking statistics, and career milestones.
+- [Projects](https://adityafakhri.id/projects): Collection of web applications, AI utilities, and open source tools.
+- [Blog & Articles](https://adityafakhri.id/blog): Practical tutorials, engineering insights, and AI prompt engineering guides.
+- [Speaking & Workshops](https://adityafakhri.id/speaking): History of talks, slide decks, and booking information.
+- [Private Mentoring](https://adityafakhri.id/mentoring): 1-on-1 coding mentorship programs.
+- [Services](https://adityafakhri.id/services): Consulting, speaking engagements, and tech collaborations.
+- [Testimonials](https://adityafakhri.id/testimoni): Real feedback from workshop attendees and mentees.
+- [Contact](https://adityafakhri.id/contact): Get in touch for speaker invitations, projects, or collaborations.

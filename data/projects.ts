@@ -1076,7 +1076,7 @@ const projects = {
     status: "Production",
     year: "2026",
     role: { id: "Full-Stack Developer", en: "Full-Stack Developer" },
-    liveUrl: "https://gambaryuk.adityafakhri.com/",
+    liveUrl: "https://gambaryuk.adityafakhri.id/",
     repoUrl: "https://github.com/adityafakhrii/gambaryuk",
     technologies: {
       Frontend: ["Next.js", "TypeScript", "Tailwind CSS"],

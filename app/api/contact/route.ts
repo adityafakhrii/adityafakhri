@@ -70,7 +70,7 @@ export async function POST(req: NextRequest) {
     const payload = {
       from: "Portfolio Contact <onboarding@resend.dev>",
       to: [contactEmail],
-      subject: `[adityafakhri.com] ${subject}`,
+      subject: `[adityafakhri.id] ${subject}`,
       html,
       reply_to: email,
     }

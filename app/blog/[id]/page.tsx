@@ -27,36 +27,63 @@ export async function generateMetadata({
     }
   }
 
-  const baseUrl = "https://adityafakhri.com"
+  const baseUrl = "https://adityafakhri.id"
   const url = `${baseUrl}/blog/${id}`
-  const image = post.imageSrc
+  const imageUrl = post.imageSrc
     ? post.imageSrc.startsWith("http")
       ? post.imageSrc
       : `${baseUrl}${post.imageSrc.startsWith("/") ? "" : "/"}${post.imageSrc}`
-    : undefined
+    : `${baseUrl}/foto-adit.webp`
+
+  const imageType = imageUrl.endsWith(".webp")
+    ? "image/webp"
+    : imageUrl.endsWith(".png")
+    ? "image/png"
+    : "image/jpeg"
 
   return {
     title: post.title,
     description: post.excerpt,
     keywords: Array.from(post.tags || []),
-    authors: [{ name: post.author || "Aditya Fakhri Riansyah" }],
+    authors: [{ name: post.author || "Aditya Fakhri Riansyah", url: baseUrl }],
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       url,
+      siteName: "Aditya Fakhri Riansyah",
+      locale: "id_ID",
       type: "article",
       publishedTime: post.isoDate || post.date,
       authors: [post.author || "Aditya Fakhri Riansyah"],
-      images: image ? [{ url: image }] : undefined,
+      tags: post.tags ? Array.from(post.tags) : undefined,
+      images: [
+        {
+          url: imageUrl,
+          secureUrl: imageUrl,
+          width: 1200,
+          height: 630,
+          type: imageType,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
-      images: image ? [image] : undefined,
-    },
-    alternates: {
-      canonical: url,
+      creator: "@adityafakhrii",
+      site: "@adityafakhrii",
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
   }
 }
@@ -87,6 +114,8 @@ export default async function BlogPostPage({
         .filter((rel: { id: string; title: string; excerpt: string; category: string } | null): rel is NonNullable<typeof rel> => rel !== null)
     : []
 
+  const baseUrl = "https://adityafakhri.id"
+
   const schemaData = post
     ? {
         "@context": "https://schema.org",
@@ -97,28 +126,28 @@ export default async function BlogPostPage({
           ? [
               post.imageSrc.startsWith("http")
                 ? post.imageSrc
-                : `https://adityafakhri.com${
+                : `https://adityafakhri.id${
                     post.imageSrc.startsWith("/") ? "" : "/"
                   }${post.imageSrc}`,
             ]
           : undefined,
         datePublished: post.isoDate || post.date || "Not Available",
         dateModified: post.isoDate || post.date || "Not Available",
-        mainEntityOfPage: `https://adityafakhri.com/blog/${id}`,
+        mainEntityOfPage: `https://adityafakhri.id/blog/${id}`,
         author: [
           {
             "@type": "Person",
             "name": post.author || "Aditya Fakhri Riansyah",
-            "url": "https://adityafakhri.com",
+            "url": "https://adityafakhri.id",
           },
         ],
         publisher: {
-          "@type": "Organization",
+          "@type": "Person",
           "name": "Aditya Fakhri Riansyah",
-          "url": "https://adityafakhri.com",
+          "url": "https://adityafakhri.id",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://adityafakhri.com/aditya-fakhri.webp",
+            "url": "https://adityafakhri.id/foto-adit.webp",
           },
         },
       }

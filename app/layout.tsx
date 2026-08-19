@@ -14,56 +14,69 @@ import { ScrollToTop } from "@/components/scroll-to-top"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://adityafakhri.com"),
+  metadataBase: new URL("https://adityafakhri.id"),
   title: {
-    default: "Aditya Fakhri Riansyah | AI-Driven Web Developer",
+    default: "Aditya Fakhri Riansyah | AI Web Developer, IT Speaker & Mentor Indonesia",
     template: "%s | Aditya Fakhri Riansyah",
   },
   description:
-    "Portfolio Aditya Fakhri Riansyah — Web Developer berbasis AI, Mentor Pemrograman, Pembicara IT (Speaker), dan Tech Content Creator.",
-  generator: "v0.dev",
+    "Portfolio resmi Aditya Fakhri Riansyah — AI-Driven Web Developer, Tech Speaker di 40+ event IT, Mentor Pemrograman, dan Tech Content Creator di Sukabumi, Bandung, dan Indonesia.",
+  generator: "Next.js",
+  applicationName: "Aditya Fakhri Portfolio",
+  referrer: "origin-when-cross-origin",
   keywords: [
-    "Web Developer",
-    "Next.js",
-    "React",
-    "AI",
-    "Mentor Pemrograman",
-    "Portfolio Teknologi",
-    "Pengembangan Web",
-    "Pembicara AI",
-    "IT Speaker Indonesia",
+    "Aditya Fakhri",
+    "Aditya Fakhri Riansyah",
+    "Aditya Fakhri Web Developer",
+    "AI Web Developer Indonesia",
+    "Pembicara IT Indonesia",
+    "Tech Speaker Bandung",
+    "Pembicara AI Sukabumi",
     "Speaker Web Developer",
-    "Narasumber Teknologi",
-    "Fullstack Developer",
-    "Pembicara IT Bandung",
-    "Pembicara IT Sukabumi"
+    "Mentor Pemrograman Sukabumi",
+    "Fullstack Developer Indonesia",
+    "Next.js Developer Indonesia",
+    "React Developer",
+    "Narasumber Workshop AI",
+    "RuangAI",
+    "GDSC Widyatama",
+    "GDG Bandung"
   ],
-  authors: [{ name: "Aditya Fakhri Riansyah", url: "https://adityafakhri.com" }],
+  authors: [{ name: "Aditya Fakhri Riansyah", url: "https://adityafakhri.id" }],
+  creator: "Aditya Fakhri Riansyah",
+  publisher: "Aditya Fakhri Riansyah",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   alternates: {
-    canonical: "https://adityafakhri.com",
+    canonical: "https://adityafakhri.id",
   },
   openGraph: {
     type: "website",
-    url: "https://adityafakhri.com",
-    title: "Aditya Fakhri Riansyah | AI-Driven Web Developer",
+    url: "https://adityafakhri.id",
+    title: "Aditya Fakhri Riansyah | AI Web Developer, IT Speaker & Mentor Indonesia",
     description:
-      "Portfolio Aditya Fakhri Riansyah — Web Developer berbasis AI, Mentor, dan Tech Content Creator.",
-    siteName: "Aditya Fakhri",
+      "Portfolio resmi Aditya Fakhri Riansyah — AI-Driven Web Developer, Tech Speaker di 40+ event IT, Mentor Pemrograman, dan Tech Content Creator.",
+    siteName: "Aditya Fakhri Riansyah",
     images: [
       {
         url: "/foto-adit.webp",
         width: 1200,
         height: 630,
-        alt: "Aditya Fakhri Riansyah",
+        alt: "Aditya Fakhri Riansyah - AI Web Developer & Tech Speaker",
       },
     ],
     locale: "id_ID",
+    alternateLocale: ["en_US"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aditya Fakhri Riansyah | AI-Driven Web Developer",
+    title: "Aditya Fakhri Riansyah | AI Web Developer & Tech Speaker",
     description:
-      "Portfolio Aditya Fakhri Riansyah — Web Developer berbasis AI, Mentor, dan Tech Content Creator.",
+      "Portfolio resmi Aditya Fakhri Riansyah — AI-Driven Web Developer, Tech Speaker di 40+ event IT, Mentor Pemrograman, dan Tech Content Creator.",
+    creator: "@adityafakhrii",
     images: ["/foto-adit.webp"],
   },
   robots: {
@@ -85,41 +98,86 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://adityafakhri.id/#person",
+      name: "Aditya Fakhri Riansyah",
+      alternateName: ["Aditya Fakhri", "Adit"],
+      url: "https://adityafakhri.id",
+      image: "https://adityafakhri.id/foto-adit.webp",
+      jobTitle: [
+        "AI Web Developer",
+        "Tech Speaker",
+        "Programming Mentor",
+        "Content Creator"
+      ],
+      description: "AI-Driven Web Developer, Pembicara IT di 40+ event, Mentor Pemrograman, dan Tech Content Creator asal Indonesia.",
+      knowsAbout: [
+        "Artificial Intelligence",
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Fullstack Web Development",
+        "AI Engineering",
+        "Vibe Coding",
+        "Public Speaking",
+        "Mentoring"
+      ],
+      sameAs: [
+        "https://github.com/adityafakhrii",
+        "https://www.linkedin.com/in/adityafakhrii",
+        "https://www.instagram.com/adityafakhrii",
+        "https://x.com/adityafakhrii",
+        "https://www.tiktok.com/@adityafakhrii",
+        "https://www.youtube.com/@adityafakhrii"
+      ],
+      alumniOf: {
+        "@type": "EducationalOrganization",
+        name: "Universitas Widyatama",
+        url: "https://www.widyatama.ac.id"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://adityafakhri.id/#website",
+      url: "https://adityafakhri.id",
+      name: "Aditya Fakhri Riansyah - Official Website",
+      description: "Portfolio & Blog resmi Aditya Fakhri Riansyah — Web Developer berbasis AI, Pembicara IT, dan Mentor Pemrograman.",
+      publisher: {
+        "@id": "https://adityafakhri.id/#person"
+      },
+      inLanguage: ["id", "en"]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SiteNavigationElement",
+      name: ["Tentang", "Proyek", "Blog", "Speaking", "Mentoring", "Layanan", "Skills", "Kontak"],
+      url: [
+        "https://adityafakhri.id/about",
+        "https://adityafakhri.id/projects",
+        "https://adityafakhri.id/blog",
+        "https://adityafakhri.id/speaking",
+        "https://adityafakhri.id/mentoring",
+        "https://adityafakhri.id/services",
+        "https://adityafakhri.id/skills",
+        "https://adityafakhri.id/contact"
+      ]
+    }
+  ]
+
   return (
     <html lang="id" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/adit.ico" />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Aditya Fakhri Riansyah",
-              url: "https://adityafakhri.com",
-              jobTitle: "Web Developer",
-              sameAs: [
-                "https://github.com/adityafakhrii",
-                "https://www.linkedin.com/in/adityafakhrii",
-                "https://x.com/adityafakhrii",
-              ],
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              url: "https://adityafakhri.com",
-              name: "Aditya Fakhri Riansyah",
-              potentialAction: {
-                "@type": "SearchAction",
-                target: "https://adityafakhri.com/search?q={search_term_string}",
-                "query-input": "required name=search_term_string",
-              },
-            }),
+            __html: JSON.stringify(structuredData),
           }}
         />
         <script

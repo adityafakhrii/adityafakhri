@@ -79,7 +79,7 @@ const blogs = {
     category: "Career",
     author: "Aditya Fakhri Riansyah",
     tags: ["Career", "Developer", "Soft Skills", "AI", "Productivity"],
-    imageSrc: "/images/blog/soft-skills-developer-2026.png",
+    imageSrc: "/images/blog/soft-skills-developer-2026.webp",
     relatedPosts: [
       "dari-tukang-ngetik-jadi-mandor-ai-2026",
       "cara-meningkatkan-value-sebagai-developer-di-era-ai",
@@ -199,7 +199,7 @@ const blogs = {
     category: "AI & Career",
     author: "Aditya Fakhri Riansyah",
     tags: ["AI Agent", "Developer Career", "Vibe Coding", "Productivity", "2026", "Software Engineering"],
-    imageSrc: "/images/blog/mandor-ai-real-dev.png",
+    imageSrc: "/images/blog/mandor-ai-real-dev.webp",
     relatedPosts: ["prompt-engineering-guide-2026", "cara-naikin-value-dev", "productivity-paradox-ai-code"],
   },
 
@@ -2488,7 +2488,7 @@ export default async function ProductsPage() {
     category: "Hardware",
     author: "Aditya Fakhri Riansyah",
     tags: ["Laptop Programming", "Mahasiswa Informatika", "Rekomendasi Laptop", "Specs", "Hardware", "2026"],
-    imageSrc: "/images/blog/laptop-programming-2026.png",
+    imageSrc: "/images/blog/laptop-programming-2026.webp",
     relatedPosts: ["prompt-engineering-guide-2026", "ti-vs-si-mahasiswa-2026"],
   },
   "ti-vs-si-mahasiswa-2026": {
@@ -2707,7 +2707,7 @@ export default async function ProductsPage() {
     category: "Web Development",
     author: "Aditya Fakhri Riansyah",
     tags: ["Teknik Informatika", "Sistem Informasi", "Jurusan IT", "Specs", "Career", "2026"],
-    imageSrc: "/images/blog/ti-vs-si-2026.png",
+    imageSrc: "/images/blog/ti-vs-si-2026.webp",
     relatedPosts: ["laptop-programming-mahasiswa-2026", "ai-vs-developer-2026"],
   },
   "website-terbaik-logika-pemrograman-pemula": {
@@ -2961,7 +2961,7 @@ export default async function ProductsPage() {
     category: "Web Development",
     author: "Aditya Fakhri Riansyah",
     tags: ["Logika Pemrograman", "Belajar Coding", "Pemula", "Problem Solving", "Web Development", "Codewars", "HackerRank", "LeetCode", "CodinGame", "Exercism"],
-    imageSrc: "/images/blog/logika-pemrograman.png",
+    imageSrc: "/images/blog/logika-pemrograman.webp",
     relatedPosts: ["laptop-programming-mahasiswa-2026", "ai-vs-developer-2026"],
   },
   "ide-proyek-portfolio-fullstack-ai": {
@@ -3203,7 +3203,7 @@ export default async function ProductsPage() {
     category: "Web Development",
     author: "Aditya Fakhri Riansyah",
     tags: ["Ide Proyek", "Portofolio", "Fullstack", "Web Development", "AI", "React", "Next.js", "Recruitment", "Career", "2026"],
-    imageSrc: "/images/blog/portfolio-ai-projects.png",
+    imageSrc: "/images/blog/portfolio-ai-projects.webp",
     relatedPosts: ["website-terbaik-logika-pemrograman-pemula", "ai-vs-developer-2026"],
   },
   "roadmap-fullstack-developer-ai-2026": {
@@ -3664,7 +3664,7 @@ export default async function ProductsPage() {
     category: "Web Development",
     author: "Aditya Fakhri Riansyah",
     tags: ["Roadmap", "Fullstack", "AI", "Web Development", "React", "Next.js", "Laravel", "Node.js", "Career", "2026", "Freelance"],
-    imageSrc: "/images/blog/roadmap-fullstack-2026.png",
+    imageSrc: "/images/blog/roadmap-fullstack-2026.webp",
     relatedPosts: ["website-terbaik-logika-pemrograman-pemula", "ide-proyek-portfolio-fullstack-ai", "website-belajar-programming-gratis"],
   },
   "website-belajar-programming-gratis": {
@@ -3955,7 +3955,7 @@ export default async function ProductsPage() {
     category: "Web Development",
     author: "Aditya Fakhri Riansyah",
     tags: ["Belajar Programming", "Website Gratis", "Coding", "Pemula", "FreeCodeCamp", "W3Schools", "The Odin Project", "Roadmap.sh", "Frontend Mentor", "2026"],
-    imageSrc: "/images/blog/website-belajar-coding-gratis.png",
+    imageSrc: "/images/blog/website-belajar-coding-gratis.webp",
     relatedPosts: ["roadmap-fullstack-developer-ai-2026", "website-terbaik-logika-pemrograman-pemula", "mindset-idea-structuring-produk-ai"],
   },
   "mindset-idea-structuring-produk-ai": {
@@ -4185,7 +4185,7 @@ export default async function ProductsPage() {
     category: "Product Development",
     author: "Aditya Fakhri Riansyah",
     tags: ["Mindset", "Product Thinking", "MVP", "Vibe Coding", "AI Development", "Ide Startup", "Product Design", "2026"],
-    imageSrc: "/images/blog/mindset-produk-ai.png",
+    imageSrc: "/images/blog/mindset-produk-ai.webp",
     relatedPosts: ["roadmap-fullstack-developer-ai-2026", "ide-proyek-portfolio-fullstack-ai", "prompt-engineering-for-app-development"],
   },
   "prompt-engineering-for-app-development": {
@@ -4626,7 +4626,7 @@ export default async function ProductsPage() {
     category: "Product Development",
     author: "Aditya Fakhri Riansyah",
     tags: ["Prompt Engineering", "Vibe Coding", "AI Development", "SaaS Development", "App Development", "Productivity", "2026"],
-    imageSrc: "/images/blog/prompt-engineering-app-dev.png",
+    imageSrc: "/images/blog/prompt-engineering-app-dev.webp",
     relatedPosts: ["roadmap-fullstack-developer-ai-2026", "mindset-idea-structuring-produk-ai"],
   },
 
@@ -4884,7 +4884,7 @@ Best,
     category: "Career",
     author: "Aditya Fakhri Riansyah",
     tags: ["Remote Job", "Freelance", "GitHub", "LinkedIn", "Upwork", "Career Development", "2026"],
-    imageSrc: "/images/blog/roadmap-remote-job.png",
+    imageSrc: "/images/blog/roadmap-remote-job.webp",
     relatedPosts: ["roadmap-fullstack-developer-ai-2026", "cuan-dari-ai-2026", "prompt-engineering-for-app-development"],
   },
 
@@ -5021,7 +5021,7 @@ It solves [Problem] for [Target User]. Check out the live demo here: [Link]
     category: "Career",
     author: "Aditya Fakhri Riansyah",
     tags: ["Value Developer", "AI Productivity", "Vibe Coding", "Career Hacks", "IT Career", "2026"],
-    imageSrc: "/images/blog/cara-naikin-value-dev-v2.png",
+    imageSrc: "/images/blog/cara-naikin-value-dev-v2.webp",
     relatedPosts: ["roadmap-remote-job-client-luar-negeri", "mindset-idea-structuring-produk-ai", "prompt-engineering-for-app-development"],
   },
 
@@ -5158,7 +5158,7 @@ It solves [Problem] for [Target User]. Check out the live demo here: [Link]
     category: "Productivity",
     author: "Aditya Fakhri Riansyah",
     tags: ["AI Coding", "Productivity Paradox", "Vibe Coding", "DORA Metrics", "Code Quality", "2026"],
-    imageSrc: "/images/blog/productivity-paradox-ai-code.png",
+    imageSrc: "/images/blog/productivity-paradox-ai-code.webp",
     relatedPosts: ["cara-naikin-value-dev", "roadmap-remote-job-client-luar-negeri", "prompt-engineering-for-app-development"],
   }
 } as const

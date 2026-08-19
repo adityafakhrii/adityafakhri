@@ -48,6 +48,8 @@ export function applyRateLimit(
 
 // ─── Origin / Referer Validation (CSRF-like) ──────────────────
 const ALLOWED_ORIGINS = [
+  "https://adityafakhri.id",
+  "https://www.adityafakhri.id",
   "https://adityafakhri.com",
   "https://www.adityafakhri.com",
 ]

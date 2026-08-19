@@ -84,7 +84,7 @@ interface BlogShareButtonProps {
 export function BlogShareButton({ title, blogId, lang }: BlogShareButtonProps) {
     const [copied, setCopied] = React.useState(false)
     const [open, setOpen] = React.useState(false)
-    const blogUrl = `https://adityafakhri.com/blog/${blogId}`
+    const blogUrl = `https://adityafakhri.id/blog/${blogId}`
 
     const handleCopy = async () => {
         try {

@@ -157,7 +157,7 @@ export async function POST(req: NextRequest) {
     const payload = {
       from: "Portfolio Feedback <onboarding@resend.dev>",
       to: [contactEmail],
-      subject: `[adityafakhri.com] Feedback Baru: ${feedbackData.topic} (${feedbackData.ratingOverall}/5 ⭐)`,
+      subject: `[adityafakhri.id] Feedback Baru: ${feedbackData.topic} (${feedbackData.ratingOverall}/5 ⭐)`,
       html,
       reply_to: feedbackData.email,
     }
