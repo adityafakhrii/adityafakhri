@@ -499,6 +499,13 @@ export const translations = {
     testimoniDescription: "Ulasan jujur dan kesan dari para peserta seminar, workshop, dan kelas mentoring bersama Aditya.",
     testimoniCallout: "Halaman ini menampilkan feedback dengan rating bintang 5 yang dikirim langsung oleh para peserta sesi sharing dan mentoring.",
     testimoniEmpty: "Belum ada testimoni yang masuk.",
+    testimoniReadMore: "Lihat selengkapnya",
+    testimoniShowLess: "Tutup",
+    testimoniLoadingMore: "Memuat ulasan lainnya...",
+    testimoniLoadMoreBtn: "Muat Lebih Banyak",
+    testimoniShowingCount: "Menampilkan",
+    testimoniOfTotal: "dari total",
+    testimoniAllLoaded: "Semua ulasan bintang 5 telah ditampilkan.",
   },
 
   en: {
@@ -1001,6 +1008,13 @@ export const translations = {
     testimoniDescription: "Honest reviews and thoughts from participants of seminars, workshops, and mentoring classes with Aditya.",
     testimoniCallout: "This page showcases 5-star rating feedback submitted directly by sharing session and mentoring participants.",
     testimoniEmpty: "No 5-star testimonials available yet.",
+    testimoniReadMore: "Read more",
+    testimoniShowLess: "Show less",
+    testimoniLoadingMore: "Loading more reviews...",
+    testimoniLoadMoreBtn: "Load More",
+    testimoniShowingCount: "Showing",
+    testimoniOfTotal: "of total",
+    testimoniAllLoaded: "All 5-star reviews have been loaded.",
   }
 }
 
