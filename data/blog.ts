@@ -39,6 +39,12 @@ const blogs = {
           .agent-card-grid { grid-template-columns: 1fr; }
           .agent-hero { padding: 1.75rem 1.25rem; }
         }
+
+        .agent-cta { margin-top: 3.5rem; padding: 2.5rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.85) 100%); text-align: center; color: hsl(var(--primary-foreground)); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .agent-cta h2 { color: hsl(var(--primary-foreground)) !important; font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 800; }
+        .agent-cta p { color: hsl(var(--primary-foreground)/0.9); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; }
+        .agent-cta a { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: hsl(var(--background)); color: hsl(var(--foreground)); font-weight: 700; padding: 0.85rem 1.75rem; border-radius: 9999px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; font-size: 0.9rem; }
+        .agent-cta a:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
       </style>
 
       <div class="agent-hero">
@@ -134,6 +140,15 @@ const blogs = {
       </ol>
 
       <p>Selamat tinggal era tanya-jawab chatbot yang melelahkan. Selamat datang di era di mana kamu tidak lagi ngoding sendirian, melainkan memimpin sebuah tim kecerdasan buatan otonom untuk membangun karya-karya hebat.</p>
+
+      <div class="agent-cta">
+        <h2>Mau Eksplorasi AI & Agentic Workflows Lebih Jauh?</h2>
+        <p>Ikuti akun Instagram saya untuk tutorial AI coding praktis, update teknologi 2026, bedah prompt engineering, dan live sharing gratis!</p>
+        <a href="https://www.instagram.com/adityafakhrii/" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          Follow @adityafakhrii di Instagram
+        </a>
+      </div>
     `,
     date: "26 Agu 2026",
     readTime: "6 min",
@@ -168,6 +183,12 @@ const blogs = {
           .career-grid { grid-template-columns: 1fr; }
           .career-hero { padding: 1.75rem 1.25rem; }
         }
+
+        .career-cta { margin-top: 3.5rem; padding: 2.5rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.85) 100%); text-align: center; color: hsl(var(--primary-foreground)); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .career-cta h2 { color: hsl(var(--primary-foreground)) !important; font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 800; }
+        .career-cta p { color: hsl(var(--primary-foreground)/0.9); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; }
+        .career-cta a { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: hsl(var(--background)); color: hsl(var(--foreground)); font-weight: 700; padding: 0.85rem 1.75rem; border-radius: 9999px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; font-size: 0.9rem; }
+        .career-cta a:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
       </style>
 
       <div class="career-hero">
@@ -208,6 +229,15 @@ const blogs = {
         <li><strong>Terlibat dalam Code Review:</strong> Jangan cuma nunggu direview, tapi belajarlah mereview kode orang lain dengan memberikan masukan konstruktif.</li>
         <li><strong>Pahami Bisnis Aplikasi Kamu:</strong> Tanyakan pada dirimu: "Kenapa fitur ini dibuat?" dan "Berapa banyak dampak pengguna yang terbantu?"</li>
       </ul>
+
+      <div class="career-cta">
+        <h2>Mau Tips Karir & Soft Skills Developer Tiap Minggu?</h2>
+        <p>Follow Instagram saya untuk mendapatkan insight seputar dunia kerja IT, tips negosiasi gaji, dan cara membangun personal branding sebagai developer!</p>
+        <a href="https://www.instagram.com/adityafakhrii/" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          Follow @adityafakhrii di Instagram
+        </a>
+      </div>
     `,
     date: "10 Agu 2026",
     readTime: "5 min",
@@ -248,6 +278,12 @@ const blogs = {
           .ai-card-grid { grid-template-columns: 1fr; }
           .ai-hero { padding: 1.75rem 1.25rem; }
         }
+
+        .ai-cta { margin-top: 3.5rem; padding: 2.5rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.85) 100%); text-align: center; color: hsl(var(--primary-foreground)); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .ai-cta h2 { color: hsl(var(--primary-foreground)) !important; font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 800; }
+        .ai-cta p { color: hsl(var(--primary-foreground)/0.9); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; }
+        .ai-cta a { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: hsl(var(--background)); color: hsl(var(--foreground)); font-weight: 700; padding: 0.85rem 1.75rem; border-radius: 9999px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; font-size: 0.9rem; }
+        .ai-cta a:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
       </style>
 
       <div class="ai-hero">
@@ -327,6 +363,15 @@ const blogs = {
       <p>AI tidak menggantikan developer. Developer yang paham cara menjadi <strong>Mandor AI</strong> lah yang akan menggantikan developer yang bertahan dengan cara ngetik manual konvensional.</p>
 
       <p>Mulai sekarang, ubah cara pandangmu: saat kamu buka IDE, kamu adalah Manajer Proyek. Pimpin AI Agent-mu, pastikan arsitekturnya benar, dan kirimkan produk digital yang berdampak nyata!</p>
+
+      <div class="ai-cta">
+        <h2>Mau Belajar Jadi 'Mandor' AI yang Handal?</h2>
+        <p>Yuk follow Instagram saya untuk tips koding berbasis AI, bedah tools produktivitas terbaru, dan sharing seputar karir tech di era kecerdasan buatan!</p>
+        <a href="https://www.instagram.com/adityafakhrii/" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          Follow @adityafakhrii di Instagram
+        </a>
+      </div>
     `,
     date: "6 Agu 2026",
     isoDate: "2026-08-06",
