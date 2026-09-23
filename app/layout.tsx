@@ -174,6 +174,13 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/adit.ico" />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
+        <link
+          rel="preload"
+          as="image"
+          href="/aditya-fakhri.webp"
+          type="image/webp"
+          fetchPriority="high"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -196,9 +203,9 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <LanguageProvider>
-          <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange={false}>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange={true}>
             <SidebarProvider>
-              <div className="flex min-h-screen">
+              <div className="flex min-h-screen w-full">
                 <PortfolioSidebar />
                 <main className="flex-1 min-w-0 overflow-y-auto overflow-x-hidden mx-auto">{children}</main>
               </div>
