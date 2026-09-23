@@ -78,7 +78,7 @@ export default function Home() {
                     src="/aditya-fakhri.webp"
                     alt="Aditya Fakhri Riansyah"
                     fill
-                    sizes="(max-width: 768px) 50vw, 256px"
+                    sizes="256px"
                     priority
                     className="object-cover scale-125 translate-y-4"
                   />

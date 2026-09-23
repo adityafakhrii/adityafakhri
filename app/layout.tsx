@@ -174,13 +174,6 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/adit.ico" />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
-        <link
-          rel="preload"
-          as="image"
-          href="/aditya-fakhri.webp"
-          type="image/webp"
-          fetchPriority="high"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
