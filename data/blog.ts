@@ -12,7 +12,162 @@ export type BlogPost = {
   isoDate?: string
 }
 
-const blogs = {
+const blogs: Record<string, BlogPost> = {
+
+  "era-adaptive-reasoning-agentic-ai-2026": {
+    title: "Era Baru Adaptive Reasoning & Test-Time Compute: Mengapa AI Sekarang 'Berpikir' Sebelum Menjawab dan Dampaknya bagi Developer",
+    excerpt: "Lompatan terbesar AI di tahun 2026 bukan lagi sekadar memperbesar ukuran model, melainkan kemampuan berpikir mendalam (test-time reasoning) dan alokasi komputasi adaptif. Mengapa paradigma ini merevolusi cara kerja developer dari sekadar prompt engineering menjadi arsitek sistem mandiri? Simak ulasan mendalamnya di sini!",
+    content: `
+      <style>
+        .agent-hero { padding: 2.5rem 2rem; border-radius: 1.25rem; background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; }
+        .agent-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.5rem; margin: 0 0 0.75rem 0; font-weight: 800; letter-spacing: -0.02em; }
+        .agent-hero p { color: hsl(var(--muted-foreground)); font-size: 1rem; line-height: 1.7; margin: 0; }
+        .agent-section-title { font-size: 1.3rem; font-weight: 700; margin: 2.5rem 0 1rem 0; color: hsl(var(--foreground)); }
+        .agent-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0; }
+        .agent-card { padding: 1.5rem; border-radius: 1rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); display: flex; flex-direction: column; justify-content: space-between; }
+        .agent-card h4 { font-size: 1.05rem; font-weight: 700; margin: 0 0 0.5rem 0; color: hsl(var(--foreground)); }
+        .agent-card p { font-size: 0.9rem; line-height: 1.6; color: hsl(var(--muted-foreground)); margin: 0; }
+        .agent-callout { padding: 1.5rem; border-radius: 1rem; border-left: 4px solid hsl(var(--primary)); background: hsl(var(--muted)); margin: 2rem 0; }
+        .agent-callout p { margin: 0; font-size: 0.95rem; line-height: 1.7; color: hsl(var(--foreground)); }
+        .agent-table-wrap { overflow-x: auto; margin: 1.5rem 0; border-radius: 1rem; border: 1px solid hsl(var(--border)); }
+        .agent-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        .agent-table thead { background: hsl(var(--muted)); }
+        .agent-table th { padding: 0.9rem 1.1rem; text-align: left; font-weight: 700; color: hsl(var(--foreground)); border-bottom: 1px solid hsl(var(--border)); }
+        .agent-table td { padding: 0.85rem 1.1rem; color: hsl(var(--muted-foreground)); border-bottom: 1px solid hsl(var(--border)); line-height: 1.6; }
+        .agent-table tr:last-child td { border-bottom: none; }
+        @media (max-width: 768px) {
+          .agent-card-grid { grid-template-columns: 1fr; }
+          .agent-hero { padding: 1.75rem 1.25rem; }
+        }
+
+        .agent-cta { margin-top: 3.5rem; padding: 2.5rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.85) 100%); text-align: center; color: hsl(var(--primary-foreground)); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .agent-cta h2 { color: hsl(var(--primary-foreground)) !important; font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 800; }
+        .agent-cta p { color: hsl(var(--primary-foreground)/0.9); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; }
+        .agent-cta a { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: hsl(var(--background)); color: hsl(var(--foreground)); font-weight: 700; padding: 0.85rem 1.75rem; border-radius: 9999px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; font-size: 0.9rem; }
+        .agent-cta a:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+      </style>
+
+      <div class="agent-hero">
+        <h2>Pergeseran Epik: Dari Sekadar Menjawab Cepat Menuju Berpikir Mendalam</h2>
+        <p>Jika tahun 2023–2024 adalah era di mana kita terkagum-kagum pada kecepatan AI merangkum teks dalam hitungan milidetik, maka tahun 2026 adalah era di mana kecerdasan buatan benar-benar <strong>berpikir, menguji asumsi, dan memvalidasi logikanya sendiri</strong> sebelum memberikan jawaban akhir. Inilah revolusi <strong>Test-Time Compute</strong> dan <strong>Adaptive Reasoning</strong>.</p>
+      </div>
+
+      <p>Bagi para software engineer, praktisi IT, dan digital creator, perubahan ini bukan sekadar pembaruan teknis di atas kertas. Ini mengubah secara fundamental bagaimana kita membangun aplikasi, berinteraksi dengan AI tools, hingga merancang alur kerja rekayasa perangkat lunak (<em>software engineering workflows</em>). Mengapa tren ini sedang begitu ramai diperbincangkan di industri global? Mari kita kupas tuntas!</p>
+
+      <div class="agent-section-title">1. Apa Sebenarnya Test-Time Compute & Adaptive Reasoning?</div>
+
+      <p>Selama bertahun-tahun, hukum peningkatan performa AI didorong oleh <em>Pre-training Compute Scaling</em>: semakin banyak data dan kartu grafis yang dipakai untuk melatih model, semakin pintar model tersebut. Namun, industri menemui batas efisiensi energi dan ketersediaan data teks berkualitas tinggi.</p>
+
+      <p>Solusi terobosan yang kini mendominasi tahun 2026 adalah <strong>Test-Time Compute Scaling</strong> (komputasi saat inferensi):</p>
+
+      <div class="agent-card-grid">
+        <div class="agent-card">
+          <h4>Chain-of-Thought Tersembunyi</h4>
+          <p>Alih-alih langsung menyemburkan token jawaban, model memproduksi ratusan hingga ribuan token penalaran internal (<em>thinking tokens</em>) untuk memecah masalah rumit menjadi langkah-langkah logika diskrit.</p>
+        </div>
+        <div class="agent-card">
+          <h4>Self-Correction & Backtracking</h4>
+          <p>Jika model mendeteksi bahwa alur pemikirannya menuju kebuntuan atau kesalahan logika, ia dapat mundur (<em>backtrack</em>), mengeksplorasi cabang solusi alternatif, dan memverifikasi kembali hasilnya.</p>
+        </div>
+        <div class="agent-card">
+          <h4>Adaptive Thinking Budget</h4>
+          <p>Model tidak lagi boros membuang komputasi untuk pertanyaan sepele. Tugas sederhana (seperti penulisan fungsi regex dasar) dijawab instan, sementara audit arsitektur database kompleks diberikan waktu berpikir puluhan detik.</p>
+        </div>
+        <div class="agent-card">
+          <h4>Penurunan Drastis Halusinasi Kode</h4>
+          <p>Dengan memverifikasi sintaks dan skenario kasus batas (<em>edge cases</em>) sebelum merespons, tingkat kegagalan dan halusinasi pada tugas coding turun hingga di bawah 5%.</p>
+        </div>
+      </div>
+
+      <div class="agent-section-title">2. Mengapa Ini Mengubah Total Permainan Developer?</div>
+
+      <p>Banyak developer yang pernah frustrasi dengan AI generasi lama karena jawaban yang terkesan meyakinkan namun menghasilkan bug tersembunyi ketika dieksekusi di server produksi. Dengan <em>Adaptive Reasoning</em>, ada tiga lompatan nyata yang langsung kita rasakan saat coding:</p>
+
+      <div class="agent-callout">
+        <p><strong>⚡ Dari "Vibe Coding" Menuju "Deterministic Engineering":</strong> Jika dulu kita sering melakukan <em>trial-and-error</em> prompt berulang kali, model penalaran modern mampu membaca puluhan berkas dependensi, mensimulasikan eksekusi kode di memori penalarannya, dan mengembalikan refactoring yang langsung lulus unit test dalam satu kali percobaan.</p>
+      </div>
+
+      <ul>
+        <li><strong>Multi-Step Bug Hunting:</strong> AI mampu menganalisis <em>stack trace</em> yang rumit, menelusuri data flow lintas controller, middleware, dan query database untuk menemukan akar masalah yang tersembunyi.</li>
+        <li><strong>Arsitektur Berbasis Keamanan (Security-First):</strong> Model secara otomatis mengidentifikasi potensi SQL Injection, broken access control, atau kebocoran memori sebelum developer sempat menulis commit.</li>
+        <li><strong>Penyusunan Rencana Kerja (Task Planning):</strong> Dalam ekosistem agentic, model reasoning bertindak sebagai <em>Lead Architect</em> yang merinci backlog proyek menjadi subtugas kecil yang dapat dieksekusi oleh agen pekerja spesialis.</li>
+      </ul>
+
+      <div class="agent-section-title">Perbandingan: AI Generatif Tradisional vs. Adaptive Reasoning Models</div>
+
+      <div class="agent-table-wrap">
+        <table class="agent-table">
+          <thead>
+            <tr>
+              <th>Dimensi</th>
+              <th>Generative AI Tradisional (2023–2024)</th>
+              <th>Adaptive Reasoning AI (2026)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mekanisme Respons</strong></td>
+              <td>Prediksi probabilitas kata berikutnya secara instan (sekali lewat).</td>
+              <td>Proses eksplorasi berantai dengan verifikasi mandiri sebelum menjawab.</td>
+            </tr>
+            <tr>
+              <td><strong>Alokasi Komputasi</strong></td>
+              <td>Tetap sama untuk semua pertanyaan, baik mudah maupun sulit.</td>
+              <td>Dinamis (<em>Adaptive Budget</em>)—menyesuaikan dengan tingkat kerumitan logika.</td>
+            </tr>
+            <tr>
+              <td><strong>Penanganan Masalah Rumit</strong></td>
+              <td>Rentan halusinasi dan terjebak pada asumsi yang salah sejak awal.</td>
+              <td>Mampu melakukan <em>backtracking</em> dan mencoba hipotesis baru jika salah.</td>
+            </tr>
+            <tr>
+              <td><strong>Peran Manusia</strong></td>
+              <td>Melakukan prompt engineering panjang dan manual debugging berulang.</td>
+              <td>Menentukan batasan sistem (<em>governance</em>), spesifikasi produk, dan validasi bisnis.</td>
+            </tr>
+            <tr>
+              <td><strong>Kesesuaian Kode</strong></td>
+              <td>Seringkali hanya snippet generik tanpa konteks arsitektur penuh.</td>
+              <td>Kode modular, konsisten dengan konvensi proyek, dan siap produksi.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="agent-section-title">3. Sikap dan Keterampilan yang Harus Kita Miliki Sekarang</div>
+
+      <p>Ketika kecerdasan komputasi menjadi semakin otonom dan mampu bernalar secara mandiri, nilai seorang software engineer tidak lagi diukur dari seberapa cepat ia mengetik sintaks atau menghafal library. Nilai tertinggi berpindah pada <strong>kemampuan problem-framing, arsitektur sistem, dan orkestrasi alat</strong>:</p>
+
+      <ol>
+        <li><strong>Kuasai Seni Spesifikasi yang Jelas (Context Grounding):</strong> Semakin jelas batasan, tipe data, dan use-case bisnis yang Anda berikan, semakin dahsyat model penalaran bekerja mencari solusi optimal.</li>
+        <li><strong>Pahami Fondasi Ilmu Komputer:</strong> Ketika AI mengusulkan algoritma kompleks atau struktur caching terdistribusi, Anda tetap harus memiliki intuisi teknis untuk mengevaluasi trade-off performa vs kompleksitasnya.</li>
+        <li><strong>Integrasikan dengan Ekosistem Tools (MCP):</strong> Pasangkan model reasoning dengan protokol terbuka seperti <em>Model Context Protocol (MCP)</em> agar AI dapat membaca database lokal, terminal, dan cloud environment Anda secara aman.</li>
+      </ol>
+
+      <p>Kecerdasan buatan bukan lagi sekadar autocomplete kode pintar di editor kita, melainkan mitra berpikir yang memiliki kemampuan analisa mendalam. Memahami dan mengadopsi teknologi <em>Adaptive Reasoning</em> hari ini adalah investasi terbaik agar karier kita terus melesat di era rekayasa digital masa depan.</p>
+
+      <div class="agent-cta">
+        <h2>Ingin Update AI Praktis & Wawasan Tech Terkini?</h2>
+        <p>Ikuti akun Instagram saya untuk pembahasan harian seputar Agentic AI, teknik prompting modern, tips fullstack development, dan sharing materi teknologi gratis!</p>
+        <a href="https://www.instagram.com/adityafakhrii/" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          Follow @adityafakhrii di Instagram
+        </a>
+      </div>
+    `,
+    date: "03 Okt 2026",
+    readTime: "7 min",
+    category: "AI & Technology",
+    author: "Aditya Fakhri Riansyah",
+    tags: ["Artificial Intelligence", "Adaptive Reasoning", "Test-Time Compute", "Agentic AI", "Software Engineering", "Tech Trends 2026", "Vibe Coding"],
+    imageSrc: "/images/blog/era-adaptive-reasoning-agentic-ai-2026.webp",
+    relatedPosts: [
+      "rekap-update-ai-september-2026",
+      "selamat-tinggal-chatbot-era-agentic-ai-2026",
+      "dari-tukang-ngetik-jadi-mandor-ai-2026"
+    ],
+    isoDate: "2026-10-03T05:00:00.000Z",
+  },
 
   "rekap-update-ai-september-2026": {
     title: "Rekap Update AI September 2026: Ledakan Agentic AI, Standar Baru MCP, & Rilis Model Generasi Anyar",
@@ -52,7 +207,7 @@ const blogs = {
         <p>Jika awal tahun 2025 diwarnai oleh eksperimen liar developer mencoba berbagai prototype coding assistant, bulan September 2026 membuktikan bahwa kita telah memasuki fase <strong>Industrialisasi Agentic AI</strong>. Model tidak lagi sekadar menjawab prompt, melainkan mengontrol browser, menyusun rencana proyek bertahap, dan mengeksekusi deployment ke edge cloud secara mandiri.</p>
       </div>
 
-      <p>Perkembangan AI bulan ini bergerak begitu masif di berbagai lini. Tidak hanya perlombaan kecerdasan model dasar (*foundation models*), tetapi juga kematangan infrastruktur penghubung seperti <strong>Model Context Protocol (MCP)</strong> dan arsitektur multi-agent di skala enterprise. Mari kita bedah rangkuman perkembangan terpentingnya!</p>
+      <p>Perkembangan AI bulan ini bergerak begitu masif di berbagai lini. Tidak hanya perlombaan kecerdasan model dasar (<em>foundation models</em>), tetapi juga kematangan infrastruktur penghubung seperti <strong>Model Context Protocol (MCP)</strong> dan arsitektur multi-agent di skala enterprise. Mari kita bedah rangkuman perkembangan terpentingnya!</p>
 
       <div class="agent-section-title">1. Revolusi Model Context Protocol (MCP): Menjadi Standar Terbuka Industri</div>
 
@@ -79,7 +234,7 @@ const blogs = {
 
       <div class="agent-section-title">2. Perang Model AI Generasi Baru: Lebih Pintar, Lebih Hemat, Lebih Cepat</div>
 
-      <p>Bulan September 2026 menjadi salah satu bulan paling sibuk dalam sejarah rilis model AI frontier. Fokus persaingan bergeser dari sekadar jumlah parameter raksasa menjadi <strong>efisiensi komputasi dan penalaran mendalam (*deep reasoning*)</strong>:</p>
+      <p>Bulan September 2026 menjadi salah satu bulan paling sibuk dalam sejarah rilis model AI frontier. Fokus persaingan bergeser dari sekadar jumlah parameter raksasa menjadi <strong>efisiensi komputasi dan penalaran mendalam (<em>deep reasoning</em>)</strong>:</p>
 
       <ul>
         <li><strong>GPT-6 Astra (OpenAI):</strong> Menghadirkan lompatan besar pada benchmark coding profesional dan penalaran logika multi-disiplin dengan kemampuan self-verification yang memangkas tingkat halusinasi hingga 80%.</li>
@@ -281,7 +436,7 @@ const blogs = {
       <ul>
         <li><strong>Lead Architect Agent:</strong> Menganalisis requirements, menyusun rancangan arsitektur, dan membagi tugas.</li>
         <li><strong>Frontend & Backend Sub-Agents:</strong> Menulis kode komponen UI dan API endpoint secara paralel.</li>
-        <li><strong>QA & Security Sub-Agent:</strong> Menjalankan pengujian otomatis, mencari celah keamanan (*vulnerability*), dan memastikan performa optimal.</li>
+        <li><strong>QA & Security Sub-Agent:</strong> Menjalankan pengujian otomatis, mencari celah keamanan (<em>vulnerability</em>), dan memastikan performa optimal.</li>
       </ul>
 
       <div class="agent-callout">
@@ -3473,7 +3628,7 @@ export default async function ProductsPage() {
             <span class="ap-badge">Kesulitan: Medium-Hard</span>
           </div>
           <p class="ap-card-desc">
-            Aplikasi web edukatif tempat developer menempelkan potongan kode (code snippet) mereka yang ditulis dalam berbagai bahasa pemrograman. AI akan memindai kode tersebut untuk mencari celah keamanan (seperti SQL Injection, XSS, Hardcoded API Key), memberikan visualisasi baris kode mana yang bermasalah, dan secara cerdas menulis ulang kode tersebut menjadi lebih aman dan efisien sesuai standar *clean code*.
+            Aplikasi web edukatif tempat developer menempelkan potongan kode (code snippet) mereka yang ditulis dalam berbagai bahasa pemrograman. AI akan memindai kode tersebut untuk mencari celah keamanan (seperti SQL Injection, XSS, Hardcoded API Key), memberikan visualisasi baris kode mana yang bermasalah, dan secara cerdas menulis ulang kode tersebut menjadi lebih aman dan efisien sesuai standar <em>clean code</em>.
           </p>
           
           <div class="ap-detail-box">
@@ -3489,7 +3644,7 @@ export default async function ProductsPage() {
           <div class="ap-detail-box">
             <div class="ap-detail-title">Nilai Jual di Portofolio (Mengapa Ini Standout):</div>
             <p class="ap-detail-text">
-              Membangun proyek pembantu sesama developer (developer tools) membuktikan bahwa kamu peduli pada kualitas penulisan kode dan standar industri. Integrasi dengan <strong>Monaco Editor (komponen editor di balik VS Code)</strong> membuktikan kamu mampu menangani *state* editor yang kompleks dan menyajikan performa rendering teks yang optimal.
+              Membangun proyek pembantu sesama developer (developer tools) membuktikan bahwa kamu peduli pada kualitas penulisan kode dan standar industri. Integrasi dengan <strong>Monaco Editor (komponen editor di balik VS Code)</strong> membuktikan kamu mampu menangani <em>state</em> editor yang kompleks dan menyajikan performa rendering teks yang optimal.
             </p>
           </div>
           
