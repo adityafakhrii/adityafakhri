@@ -1,8 +1,10 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ChevronRight, Code, Lightbulb, Mic, Sparkles, ExternalLink, SquareCode } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { ChevronRight, ChevronDown, ChevronUp, Code, Lightbulb, Mic, Sparkles, ExternalLink, SquareCode } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { ContentBlock } from "@/components/content-block"
@@ -40,6 +42,8 @@ const latestArticles = articles.slice(0, 4)
 const recentEvents = pastEvents.slice(0, 4)
 
 export default function Home() {
+  const [showAllPartners, setShowAllPartners] = useState(false)
+
   return (
     <TranslatedContent
       renderContent={({ t }) => (
@@ -94,44 +98,130 @@ export default function Home() {
           </ContentBlock>
 
           <ContentBlock title={t('collaboration')} className="mt-12">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
-              {[
-                { name: "Google", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/3840px-Google_2015_logo.svg.png" },
-                { name: "CodePolitan", src: "https://mustopa28121992.github.io/projectt/img/press-codepolitan--md5--c6cd986bfb1be889708b672e982814e0.png" },
-                { name: "Dinas Sosial Provinsi Jawa Barat", src: "https://www.gambaryuk.com/1787219984482-x5a5jo.webp" },
-                { name: "PUSTEKINFO DPR RI", src: "https://www.gambaryuk.com/1787220103483-6q7iye.webp" },
-                { name: "Dicoding", src: "https://landing-page-dicoding.vercel.app/img/dicoding-header-logo.png" },
-                { name: "Logitech", src: "https://upload.wikimedia.org/wikipedia/commons/1/17/Logitech_logo.svg" },
-                { name: "IDCamp", src: "/idcamp.webp" },
-                { name: "Qwords", src: "https://events.wordpress.org/jakarta/2024/web-challenge/files/2024/01/logo-qwords.webp" },
-                { name: "Gamelab Indonesia", src: "https://www.gamelab.id/img/logo-gamelab/display/Logo_GameLab_Landscape1.png?v=3.10?v=3.1" },
-                { name: "IDWebhost", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_e-YU5wXFZcD_zgP7ejG2-OR7D-OnXqBaA&s" },
-                { name: "Dunia Coding", src: "https://apiku-v1.duniacoding.id/logo/logo-big.png" },
-                { name: "Algobash", src: "https://www.algobash.com/wp-content/uploads/2024/03/algo-black.png" },
-                { name: "Merdeka Siber", src: "https://merdekasiber.com/logo.png" },
-                { name: "Progate", src: "https://prog-8.com/assets/landing/primary_logo-4d1810538e410b4c6af84210420099ca1772e8cb39013fad8532e499bcdb136e.svg" },
-                { name: "Staditek", src: "https://www.staditek.id/wp-content/uploads/2022/06/StadiTek-logo.png" },
-                { name: "Coding Studio", src: "https://codingstudio.id/wp-content/uploads/2020/06/LOGO-MASTERFILE.png" },
-                { name: "AICO Community", src: "https://static.tiptip.id/user/header-image/2a8b2eae-a4c4-42db-aad8-73771364c107.png" },
-                { name: "Devcode AI", src: "/devcode.webp" },
-                { name: "Schoters by Ruangguru", src: "https://cdn-web-2.ruangguru.com/landing-pages/assets/8a6fd960-7456-42b5-97d6-fc4a4c245f9a.png" },
-                { name: "Innovate Edutech", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg6KyS6WrO3v-QpI1PAKxNwVT4bt01-yiNIA&s" },
-                // { name: "Studpal", src: "https://media.cakeresume.com/image/upload/v1672292026/z3rqxffqfwsmi0ifsqvn.png" },
+            <div className="relative">
+              <div
+                className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 overflow-hidden transition-all duration-500 ease-in-out ${
+                  showAllPartners ? "max-h-[2000px]" : "max-h-[190px] sm:max-h-[200px]"
+                }`}
+              >
+                {[
+                  { name: "Google", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/3840px-Google_2015_logo.svg.png" },
+                  { name: "CodePolitan", src: "https://mustopa28121992.github.io/projectt/img/press-codepolitan--md5--c6cd986bfb1be889708b672e982814e0.png" },
+                  { name: "Dinas Sosial Provinsi Jawa Barat", src: "https://www.gambaryuk.com/1787219984482-x5a5jo.webp" },
+                  { name: "PUSTEKINFO DPR RI", src: "https://www.gambaryuk.com/1787220103483-6q7iye.webp" },
+                  { name: "Dicoding", src: "https://landing-page-dicoding.vercel.app/img/dicoding-header-logo.png" },
+                  { name: "Logitech", src: "https://upload.wikimedia.org/wikipedia/commons/1/17/Logitech_logo.svg" },
+                  { name: "IDCamp", src: "/idcamp.webp" },
+                  { name: "Qwords", src: "https://events.wordpress.org/jakarta/2024/web-challenge/files/2024/01/logo-qwords.webp" },
+                  { name: "Gamelab Indonesia", src: "https://www.gamelab.id/img/logo-gamelab/display/Logo_GameLab_Landscape1.png?v=3.10?v=3.1" },
+                  { name: "IDWebhost", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_e-YU5wXFZcD_zgP7ejG2-OR7D-OnXqBaA&s" },
+                  { name: "Dunia Coding", src: "https://apiku-v1.duniacoding.id/logo/logo-big.png" },
+                  { name: "Algobash", src: "https://www.algobash.com/wp-content/uploads/2024/03/algo-black.png" },
+                  { name: "Merdeka Siber", src: "https://merdekasiber.com/logo.png" },
+                  { name: "Progate", src: "https://prog-8.com/assets/landing/primary_logo-4d1810538e410b4c6af84210420099ca1772e8cb39013fad8532e499bcdb136e.svg" },
+                  { name: "Staditek", src: "https://www.staditek.id/wp-content/uploads/2022/06/StadiTek-logo.png" },
+                  { name: "Coding Studio", src: "https://codingstudio.id/wp-content/uploads/2020/06/LOGO-MASTERFILE.png" },
+                  { name: "AICO Community", src: "https://static.tiptip.id/user/header-image/2a8b2eae-a4c4-42db-aad8-73771364c107.png" },
+                  { name: "Devcode AI", src: "/devcode.webp" },
+                  { name: "Schoters by Ruangguru", src: "https://cdn-web-2.ruangguru.com/landing-pages/assets/8a6fd960-7456-42b5-97d6-fc4a4c245f9a.png" },
+                  { name: "Innovate Edutech", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg6KyS6WrO3v-QpI1PAKxNwVT4bt01-yiNIA&s" },
+                  // { name: "Studpal", src: "https://media.cakeresume.com/image/upload/v1672292026/z3rqxffqfwsmi0ifsqvn.png" },
+                ].map((company, i) => (
+                  <div key={i} className="flex items-center justify-center p-4 bg-muted rounded-lg h-24">
+                    <Image
+                      src={company.src}
+                      alt={"Logo " + company.name + " - Partner Aditya Fakhri"}
+                      width={120}
+                      height={60}
+                      sizes="120px"
+                      loading="lazy"
+                      className="max-w-[140px] max-h-12 object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
 
-
-              ].map((company, i) => (
-                <div key={i} className="flex items-center justify-center p-4 bg-muted rounded-lg h-24">
-                  <Image
-                    src={company.src}
-                    alt={"Logo " + company.name + " - Partner Aditya Fakhri"}
-                    width={120}
-                    height={60}
-                    sizes="120px"
-                    loading="lazy"
-                    className="max-w-[140px] max-h-12 object-contain"
-                  />
+              {!showAllPartners && (
+                <div className="absolute inset-x-0 bottom-0 h-20 sm:h-24 bg-gradient-to-t from-background via-background/40 to-transparent flex items-end justify-center pointer-events-none pb-1">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => setShowAllPartners(true)}
+                    className="pointer-events-auto rounded-full shadow-md bg-background/95 hover:bg-background border-border hover:border-foreground/30 font-medium text-xs sm:text-sm px-6 py-2 transition-all duration-300 hover:scale-105 flex items-center gap-1.5"
+                  >
+                    <span>{t('viewAllPartners')}</span>
+                    <ChevronDown className="h-4 w-4" />
+                  </Button>
                 </div>
+              )}
+
+              {showAllPartners && (
+                <div className="mt-6 flex justify-center">
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    onClick={() => setShowAllPartners(false)}
+                    className="rounded-full text-muted-foreground hover:text-foreground font-medium text-xs sm:text-sm px-5 py-2 transition-all flex items-center gap-1.5 hover:bg-muted"
+                  >
+                    <span>{t('showLessPartners')}</span>
+                    <ChevronUp className="h-4 w-4" />
+                  </Button>
+                </div>
+              )}
+            </div>
+          </ContentBlock>
+
+          <ContentBlock title={t('speakerEventsTitle')} className="mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {recentEvents.map((item) => (
+                <Card key={item.id} className="overflow-hidden h-full flex flex-col justify-between transition-all duration-200 hover:shadow-md">
+                  <div>
+                    <div className="relative h-48 w-full overflow-hidden">
+                      <Image src={item.imageSrc} alt={getLocalized(item.title, t('language'))} fill sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw" loading="lazy" className="object-cover" />
+                    </div>
+                    <CardContent className="p-5">
+                      <div className="flex flex-wrap items-center gap-2 mb-2.5">
+                        {item.subtitle && (
+                          <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/25 text-xs font-semibold px-2.5 py-0.5">
+                            {getLocalized(item.subtitle, t('language'))}
+                          </Badge>
+                        )}
+                        <Badge variant="outline" className="text-xs font-normal text-muted-foreground">
+                          {item.category}
+                        </Badge>
+                      </div>
+                      <h3 className="font-semibold text-lg line-clamp-2 leading-snug">
+                        {getLocalized(item.title, t('language'))}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-muted-foreground mt-2">
+                        {(item.time ? item.time + " • " : "") + item.date} • {item.location}
+                      </p>
+                    </CardContent>
+                  </div>
+                  <div className="px-5 pb-5 pt-0">
+                    <Button variant="outline" size="sm" asChild>
+                      <Link href="/speaking">{t('learnMore')}</Link>
+                    </Button>
+                  </div>
+                </Card>
               ))}
+            </div>
+            <div className="mt-8 text-center">
+              <Button 
+                size="lg"
+                className="rounded-full shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 px-6 py-2.5 font-semibold bg-primary text-primary-foreground hover:bg-primary/90 group"
+                asChild
+              >
+                <Link href="/speaking" className="flex items-center gap-2">
+                  <span>
+                    {t('language') === 'id' ? "Lihat Semua Event" : "View All Events"}
+                  </span>
+                  <span className="inline-flex items-center justify-center px-2.5 py-0.5 text-xs font-bold rounded-full bg-primary-foreground/20 text-primary-foreground">
+                    {pastEvents.length}
+                  </span>
+                  <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
+              </Button>
             </div>
           </ContentBlock>
 
@@ -144,9 +234,9 @@ export default function Home() {
                       <Code className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-medium">{t('frontendDev')}</h3>
+                      <h3 className="font-medium">{t('fullstackDev')}</h3>
                       <p className="text-sm text-muted-foreground mt-1">
-                        React, Next.js, Tailwind CSS, Bootstrap, HTML/CSS
+                        {t('fullstackDevDesc')}
                       </p>
                     </div>
                   </div>
@@ -157,12 +247,12 @@ export default function Home() {
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     <div className="bg-primary/10 p-2 rounded-md">
-                      <SquareCode className="h-5 w-5 text-primary" />
+                      <Sparkles className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-medium">{t('backendDev')}</h3>
+                      <h3 className="font-medium">{t('aiUtilization')}</h3>
                       <p className="text-sm text-muted-foreground mt-1">
-                        PHP, Laravel, JavaScript, MySQL
+                        {t('aiUtilizationDesc')}
                       </p>
                     </div>
                   </div>
@@ -178,7 +268,7 @@ export default function Home() {
                     <div>
                       <h3 className="font-medium">{t('mentoring')}</h3>
                       <p className="text-sm text-muted-foreground mt-1">
-                        Bimbingan teknis, Pengembangan karier, Code reviews, dan Workshop interaktif
+                        {t('mentoringDesc')}
                       </p>
                     </div>
                   </div>
@@ -194,7 +284,7 @@ export default function Home() {
                     <div>
                       <h3 className="font-medium">{t('contentCreation')}</h3>
                       <p className="text-sm text-muted-foreground mt-1">
-                        Artikel teknis, Tutorial, Konten media sosial teknologi/pemrograman
+                        {t('contentCreationDesc')}
                       </p>
                     </div>
                   </div>
@@ -204,7 +294,7 @@ export default function Home() {
           </ContentBlock>
 
           <ContentBlock title={t('featuredProjects')} className="mt-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
               {featuredProjectsShow.map((project) => (
                 <ProjectCard
                   key={project.id}
@@ -219,35 +309,6 @@ export default function Home() {
             <div className="mt-6 text-center">
               <Button variant="outline" asChild>
                 <Link href="/projects">
-                  {t('viewAll')}
-                  <ExternalLink className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </ContentBlock>
-
-          <ContentBlock title={t('pastEvents')} className="mt-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {recentEvents.map((item) => (
-                <Card key={item.id} className="overflow-hidden h-full transition-all duration-200 hover:shadow-md">
-                  <div className="relative h-48 w-full overflow-hidden">
-                    <Image src={item.imageSrc} alt={getLocalized(item.title, t('language'))} fill sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw" loading="lazy" className="object-cover" />
-                  </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-medium text-lg line-clamp-2">{getLocalized(item.title, t('language'))}</h3>
-                    <p className="text-sm text-muted-foreground mt-2">{(item.time ? item.time + " • " : "") + item.date} • {item.location}</p>
-                    <div className="mt-4">
-                      <Button variant="outline" size="sm" asChild>
-                        <Link href="/speaking">{t('learnMore')}</Link>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            <div className="mt-6 text-center">
-              <Button variant="outline" asChild>
-                <Link href="/speaking">
                   {t('viewAll')}
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </Link>

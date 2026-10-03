@@ -41,7 +41,7 @@ const projects = {
     description: { id: "Aplikasi web komprehensif untuk mengelola operasi keuangan dan kepatuhan pajak dengan fitur lengkap untuk bisnis.", en: "A comprehensive web application to manage financial operations and tax compliance with complete features for businesses." },
     fullDescription: { id: "SIACTA adalah sistem informasi akuntansi dan pajak terpadu yang dirancang untuk membantu bisnis mengelola operasi keuangan mereka dengan lebih efisien. Sistem ini mengintegrasikan berbagai aspek akuntansi, mulai dari pencatatan transaksi hingga pelaporan pajak, dalam satu platform yang user-friendly dan powerful.", en: "SIACTA is an integrated accounting and tax information system designed to help businesses manage their financial operations more efficiently. This system integrates various accounting aspects, from transaction recording to tax reporting, in a single user-friendly and powerful platform." },
     imageSrc: "/placeholder.svg?height=400&width=800",
-    tags: ["Laravel", "JavaScript", "MySQL", "Bootstrap", "Accounting", "Tax Management"],
+    tags: ["Laravel", "JavaScript", "MySQL", "Bootstrap", "Accounting"],
     category: "Web Application",
     status: "Production",
     year: "2024",
@@ -67,17 +67,17 @@ const projects = {
       { id: "Notifikasi deadline pajak dan pembayaran", en: "Tax deadline and payment notifications" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Kompleksitas regulasi perpajakan Indonesia yang sering berubah", en: "The complexity of frequently changing Indonesian tax regulations" }, 
-        solution: { id: "Mengimplementasikan sistem konfigurasi yang fleksibel dan mudah diupdate sesuai perubahan regulasi terbaru", en: "Implementing a flexible and easily updatable configuration system according to the latest regulatory changes" } 
+      {
+        challenge: { id: "Kompleksitas regulasi perpajakan Indonesia yang sering berubah", en: "The complexity of frequently changing Indonesian tax regulations" },
+        solution: { id: "Mengimplementasikan sistem konfigurasi yang fleksibel dan mudah diupdate sesuai perubahan regulasi terbaru", en: "Implementing a flexible and easily updatable configuration system according to the latest regulatory changes" }
       },
-      { 
-        challenge: { id: "Integrasi dengan sistem akuntansi existing client", en: "Integration with the client's existing accounting system" }, 
-        solution: { id: "Membangun API yang robust dan sistem import/export data yang kompatibel dengan berbagai format", en: "Building a robust API and a data import/export system compatible with various formats" } 
+      {
+        challenge: { id: "Integrasi dengan sistem akuntansi existing client", en: "Integration with the client's existing accounting system" },
+        solution: { id: "Membangun API yang robust dan sistem import/export data yang kompatibel dengan berbagai format", en: "Building a robust API and a data import/export system compatible with various formats" }
       },
-      { 
-        challenge: { id: "Keamanan data keuangan yang sensitif", en: "Security of sensitive financial data" }, 
-        solution: { id: "Implementasi enkripsi end-to-end, audit logging, dan sistem backup multi-layer", en: "Implementation of end-to-end encryption, audit logging, and a multi-layer backup system" } 
+      {
+        challenge: { id: "Keamanan data keuangan yang sensitif", en: "Security of sensitive financial data" },
+        solution: { id: "Implementasi enkripsi end-to-end, audit logging, dan sistem backup multi-layer", en: "Implementation of end-to-end encryption, audit logging, and a multi-layer backup system" }
       },
     ],
     outcomes: [
@@ -133,17 +133,17 @@ const projects = {
       { id: "Riwayat pemeriksaan dan tracking kondisi", en: "Examination history and condition tracking" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Dataset terbatas dan tidak seimbang", en: "Limited and imbalanced dataset" }, 
-        solution: { id: "Data augmentation dan transfer learning", en: "Data augmentation and transfer learning" } 
+      {
+        challenge: { id: "Dataset terbatas dan tidak seimbang", en: "Limited and imbalanced dataset" },
+        solution: { id: "Data augmentation dan transfer learning", en: "Data augmentation and transfer learning" }
       },
-      { 
-        challenge: { id: "Optimasi model untuk mobile", en: "Model optimization for mobile" }, 
-        solution: { id: "TensorFlow Lite dan quantization", en: "TensorFlow Lite and quantization" } 
+      {
+        challenge: { id: "Optimasi model untuk mobile", en: "Model optimization for mobile" },
+        solution: { id: "TensorFlow Lite dan quantization", en: "TensorFlow Lite and quantization" }
       },
-      { 
-        challenge: { id: "Variasi pencahayaan foto", en: "Photo lighting variations" }, 
-        solution: { id: "Image preprocessing dan panduan pengambilan foto", en: "Image preprocessing and photo capture guidelines" } 
+      {
+        challenge: { id: "Variasi pencahayaan foto", en: "Photo lighting variations" },
+        solution: { id: "Image preprocessing dan panduan pengambilan foto", en: "Image preprocessing and photo capture guidelines" }
       },
     ],
     outcomes: [
@@ -198,13 +198,13 @@ const projects = {
       { id: "Approval workflow untuk tim", en: "Team approval workflow" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Model rekomendasi harga yang akurat", en: "Accurate price recommendation model" }, 
-        solution: { id: "Kalibrasi berdasarkan historical data dan feedback loop", en: "Calibration based on historical data and feedback loops" } 
+      {
+        challenge: { id: "Model rekomendasi harga yang akurat", en: "Accurate price recommendation model" },
+        solution: { id: "Kalibrasi berdasarkan historical data dan feedback loop", en: "Calibration based on historical data and feedback loops" }
       },
-      { 
-        challenge: { id: "Standarisasi format lintas industri", en: "Format standardization across industries" }, 
-        solution: { id: "Template modular dan konfigurasi kategori produk", en: "Modular templates and product category configurations" } 
+      {
+        challenge: { id: "Standarisasi format lintas industri", en: "Format standardization across industries" },
+        solution: { id: "Template modular dan konfigurasi kategori produk", en: "Modular templates and product category configurations" }
       },
     ],
     outcomes: [
@@ -256,13 +256,13 @@ const projects = {
       { id: "Export laporan patungan", en: "Export payment reports" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Rekonsiliasi pembayaran multi-metode", en: "Multi-method payment reconciliation" }, 
-        solution: { id: "Webhook dan status tracking terstandarisasi", en: "Standardized webhooks and status tracking" } 
+      {
+        challenge: { id: "Rekonsiliasi pembayaran multi-metode", en: "Multi-method payment reconciliation" },
+        solution: { id: "Webhook dan status tracking terstandarisasi", en: "Standardized webhooks and status tracking" }
       },
-      { 
-        challenge: { id: "Transparansi kontribusi", en: "Contribution transparency" }, 
-        solution: { id: "Laporan real-time dan audit trail", en: "Real-time reporting and audit trails" } 
+      {
+        challenge: { id: "Transparansi kontribusi", en: "Contribution transparency" },
+        solution: { id: "Laporan real-time dan audit trail", en: "Real-time reporting and audit trails" }
       },
     ],
     outcomes: [
@@ -293,7 +293,7 @@ const projects = {
     description: { id: "Pemesanan via QR code, pembayaran QRIS (Midtrans), dan analytics komprehensif.", en: "QR code ordering, QRIS (Midtrans) payments, and comprehensive analytics." },
     fullDescription: { id: "Restoranku mengintegrasikan QR untuk pemesanan, Midtrans untuk pembayaran digital, dan dashboard analytics real-time.", en: "Restoranku integrates QR for ordering, Midtrans for digital payments, and real-time analytics dashboards." },
     imageSrc: "/placeholder.svg?height=400&width=800",
-    tags: ["Laravel", "JavaScript", "MySQL", "Bootstrap", "Midtrans", "QR Code", "Payment Gateway"],
+    tags: ["Laravel", "JavaScript", "MySQL", "Bootstrap", "Payment Gateway"],
     category: "Web Application",
     status: "Production",
     year: "2025",
@@ -314,13 +314,13 @@ const projects = {
       { id: "Notifikasi pesanan kitchen & customer", en: "Kitchen & customer order notifications" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Integrasi payment multi-metode", en: "Multi-method payment integration" }, 
-        solution: { id: "Midtrans SDK + webhook untuk status real-time", en: "Midtrans SDK + webhooks for real-time status" } 
+      {
+        challenge: { id: "Integrasi payment multi-metode", en: "Multi-method payment integration" },
+        solution: { id: "Midtrans SDK + webhook untuk status real-time", en: "Midtrans SDK + webhooks for real-time status" }
       },
-      { 
-        challenge: { id: "Sinkronisasi pesanan real-time", en: "Real-time order synchronization" }, 
-        solution: { id: "WebSocket & notification system", en: "WebSockets & notification systems" } 
+      {
+        challenge: { id: "Sinkronisasi pesanan real-time", en: "Real-time order synchronization" },
+        solution: { id: "WebSocket & notification system", en: "WebSockets & notification systems" }
       },
     ],
     outcomes: [
@@ -384,13 +384,13 @@ const projects = {
       { id: "... dan proyek lainnya", en: "... and other projects" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Menjaga konsistensi coding setiap hari selama Ramadhan", en: "Maintaining coding consistency every day during Ramadan" }, 
-        solution: { id: "Bangun boilerplate Vite-React-TS + Tailwind di hari 0, siapkan issue template & GitHub Actions biar tinggal code-push-deploy", en: "Built Vite-React-TS + Tailwind boilerplate on day 0, prepared issue templates & GitHub Actions for easy code-push-deploy" } 
+      {
+        challenge: { id: "Menjaga konsistensi coding setiap hari selama Ramadhan", en: "Maintaining coding consistency every day during Ramadan" },
+        solution: { id: "Bangun boilerplate Vite-React-TS + Tailwind di hari 0, siapkan issue template & GitHub Actions biar tinggal code-push-deploy", en: "Built Vite-React-TS + Tailwind boilerplate on day 0, prepared issue templates & GitHub Actions for easy code-push-deploy" }
       },
-      { 
-        challenge: { id: "Menghadirkan ide fitur yang tetap relevan & spiritual", en: "Coming up with relevant & spiritual feature ideas" }, 
-        solution: { id: "Kumpulkan pain-point Ramadhan dari grup WhatsApp & Twitter, prioritaskan tools yang sehari-hari dipakai (countdown, tasbih, jadwal)", en: "Gathered Ramadan pain-points from WhatsApp groups & Twitter, prioritized daily-use tools (countdown, tasbih, schedule)" } 
+      {
+        challenge: { id: "Menghadirkan ide fitur yang tetap relevan & spiritual", en: "Coming up with relevant & spiritual feature ideas" },
+        solution: { id: "Kumpulkan pain-point Ramadhan dari grup WhatsApp & Twitter, prioritaskan tools yang sehari-hari dipakai (countdown, tasbih, jadwal)", en: "Gathered Ramadan pain-points from WhatsApp groups & Twitter, prioritized daily-use tools (countdown, tasbih, schedule)" }
       },
     ],
     outcomes: [
@@ -441,9 +441,9 @@ const projects = {
       { id: "Testimonial carousel & FAQ", en: "Testimonial carousel & FAQs" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Kecepatan loading & SEO", en: "Loading speed & SEO" }, 
-        solution: { id: "Code splitting, image optimization, dan meta lengkap", en: "Code splitting, image optimization, and complete meta tags" } 
+      {
+        challenge: { id: "Kecepatan loading & SEO", en: "Loading speed & SEO" },
+        solution: { id: "Code splitting, image optimization, dan meta lengkap", en: "Code splitting, image optimization, and complete meta tags" }
       },
     ],
     outcomes: [
@@ -489,13 +489,13 @@ const projects = {
       { id: "Export ke Excel/PDF", en: "Export to Excel/PDF" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Peserta dengan latar belakang beragam", en: "Participants with diverse backgrounds" }, 
-        solution: { id: "Materi bertahap dan contoh nyata CRUD yang sederhana", en: "Gradual material and simple real-world CRUD examples" } 
+      {
+        challenge: { id: "Peserta dengan latar belakang beragam", en: "Participants with diverse backgrounds" },
+        solution: { id: "Materi bertahap dan contoh nyata CRUD yang sederhana", en: "Gradual material and simple real-world CRUD examples" }
       },
-      { 
-        challenge: { id: "Setup environment berbeda-beda", en: "Different environment setups" }, 
-        solution: { id: "Panduan instalasi lengkap dan troubleshooting umum", en: "Complete installation guide and common troubleshooting" } 
+      {
+        challenge: { id: "Setup environment berbeda-beda", en: "Different environment setups" },
+        solution: { id: "Panduan instalasi lengkap dan troubleshooting umum", en: "Complete installation guide and common troubleshooting" }
       }
     ],
     outcomes: [
@@ -541,13 +541,13 @@ const projects = {
       { id: "Testimoni pengunjung", en: "Visitor testimonials" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Optimasi gambar untuk koneksi lambat", en: "Image optimization for slow connections" }, 
-        solution: { id: "Compress gambar dan lazy loading galeri", en: "Image compression and lazy loading for the gallery" } 
+      {
+        challenge: { id: "Optimasi gambar untuk koneksi lambat", en: "Image optimization for slow connections" },
+        solution: { id: "Compress gambar dan lazy loading galeri", en: "Image compression and lazy loading for the gallery" }
       },
-      { 
-        challenge: { id: "Informasi destinasi yang sering berubah", en: "Frequently changing destination information" }, 
-        solution: { id: "Struktur konten modular mudah diupdate", en: "Modular content structure for easy updates" } 
+      {
+        challenge: { id: "Informasi destinasi yang sering berubah", en: "Frequently changing destination information" },
+        solution: { id: "Struktur konten modular mudah diupdate", en: "Modular content structure for easy updates" }
       }
     ],
     outcomes: [
@@ -593,13 +593,13 @@ const projects = {
       { id: "Dashboard perangkat desa", en: "Village apparatus dashboard" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Migrasi data kependudukan dari sistem lama", en: "Population data migration from legacy system" }, 
-        solution: { id: "ETL dengan validasi dan audit trail", en: "ETL with validation and audit trails" } 
+      {
+        challenge: { id: "Migrasi data kependudukan dari sistem lama", en: "Population data migration from legacy system" },
+        solution: { id: "ETL dengan validasi dan audit trail", en: "ETL with validation and audit trails" }
       },
-      { 
-        challenge: { id: "Adopsi teknologi oleh perangkat desa", en: "Technology adoption by village officials" }, 
-        solution: { id: "Pelatihan dan UI sederhana berbasis kebutuhan", en: "Training and simple needs-based UI" } 
+      {
+        challenge: { id: "Adopsi teknologi oleh perangkat desa", en: "Technology adoption by village officials" },
+        solution: { id: "Pelatihan dan UI sederhana berbasis kebutuhan", en: "Training and simple needs-based UI" }
       }
     ],
     outcomes: [
@@ -643,13 +643,13 @@ const projects = {
       { id: "Multiple themes", en: "Multiple themes" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Performa animasi pada perangkat low-end", en: "Animation performance on low-end devices" }, 
-        solution: { id: "Canvas rendering ringan dan pengurangan kompleksitas efek", en: "Lightweight canvas rendering and reduced effect complexity" } 
+      {
+        challenge: { id: "Performa animasi pada perangkat low-end", en: "Animation performance on low-end devices" },
+        solution: { id: "Canvas rendering ringan dan pengurangan kompleksitas efek", en: "Lightweight canvas rendering and reduced effect complexity" }
       },
-      { 
-        challenge: { id: "Sinkronisasi waktu lintas zona", en: "Time synchronization across timezones" }, 
-        solution: { id: "Menggunakan Intl API dan normalisasi timezone", en: "Utilizing the Intl API and timezone normalization" } 
+      {
+        challenge: { id: "Sinkronisasi waktu lintas zona", en: "Time synchronization across timezones" },
+        solution: { id: "Menggunakan Intl API dan normalisasi timezone", en: "Utilizing the Intl API and timezone normalization" }
       }
     ],
     outcomes: [
@@ -694,13 +694,13 @@ const projects = {
       { id: "Order management untuk admin", en: "Order management for administrators" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Integrasi pembayaran dan checkout", en: "Payment and checkout integration" }, 
-        solution: { id: "API gateway Stripe/PayPal dengan validasi server-side", en: "Stripe/PayPal API gateways with server-side validation" } 
+      {
+        challenge: { id: "Integrasi pembayaran dan checkout", en: "Payment and checkout integration" },
+        solution: { id: "API gateway Stripe/PayPal dengan validasi server-side", en: "Stripe/PayPal API gateways with server-side validation" }
       },
-      { 
-        challenge: { id: "Persistensi cart lintas sesi", en: "Cross-session cart persistence" }, 
-        solution: { id: "State management dengan storage fallback dan hydrasi", en: "State management with storage fallbacks and hydration" } 
+      {
+        challenge: { id: "Persistensi cart lintas sesi", en: "Cross-session cart persistence" },
+        solution: { id: "State management dengan storage fallback dan hydrasi", en: "State management with storage fallbacks and hydration" }
       }
     ],
     outcomes: [
@@ -749,13 +749,13 @@ const projects = {
       { id: "User profiles, reactions, dan comments", en: "User profiles, reactions, and comments" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Privasi lokasi pengguna", en: "User location privacy" }, 
-        solution: { id: "Izin granular dan kontrol sharing per cerita", en: "Granular permissions and per-story sharing controls" } 
+      {
+        challenge: { id: "Privasi lokasi pengguna", en: "User location privacy" },
+        solution: { id: "Izin granular dan kontrol sharing per cerita", en: "Granular permissions and per-story sharing controls" }
       },
-      { 
-        challenge: { id: "Kinerja upload gambar", en: "Image upload performance" }, 
-        solution: { id: "Compress di client dan upload resumable", en: "Client-side compression and resumable uploads" } 
+      {
+        challenge: { id: "Kinerja upload gambar", en: "Image upload performance" },
+        solution: { id: "Compress di client dan upload resumable", en: "Client-side compression and resumable uploads" }
       }
     ],
     outcomes: [
@@ -803,13 +803,13 @@ const projects = {
       { id: "Order history & receipts", en: "Order history & receipts" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Rekonsiliasi status pesanan dan pembayaran", en: "Order status and payment reconciliation" }, 
-        solution: { id: "Webhook status dan audit trail transaksi", en: "Status webhooks and transaction audit trails" } 
+      {
+        challenge: { id: "Rekonsiliasi status pesanan dan pembayaran", en: "Order status and payment reconciliation" },
+        solution: { id: "Webhook status dan audit trail transaksi", en: "Status webhooks and transaction audit trails" }
       },
-      { 
-        challenge: { id: "Notifikasi real-time multi-perangkat", en: "Real-time multi-device notifications" }, 
-        solution: { id: "Channel notifikasi terpusat dengan fallback", en: "Centralized notification channels with fallbacks" } 
+      {
+        challenge: { id: "Notifikasi real-time multi-perangkat", en: "Real-time multi-device notifications" },
+        solution: { id: "Channel notifikasi terpusat dengan fallback", en: "Centralized notification channels with fallbacks" }
       }
     ],
     outcomes: [
@@ -857,13 +857,13 @@ const projects = {
       { id: "Prescription interface & drug database", en: "Prescription interface & drug database" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Kompleksitas workflow medis", en: "Complexity of medical workflows" }, 
-        solution: { id: "User flow terstruktur dan komponen reusable", en: "Structured user flows and reusable components" } 
+      {
+        challenge: { id: "Kompleksitas workflow medis", en: "Complexity of medical workflows" },
+        solution: { id: "User flow terstruktur dan komponen reusable", en: "Structured user flows and reusable components" }
       },
-      { 
-        challenge: { id: "Aksesibilitas untuk tenaga medis", en: "Accessibility for medical staff" }, 
-        solution: { id: "Kontras tinggi, navigasi keyboard, dan komponen teruji", en: "High contrast, keyboard navigation, and tested components" } 
+      {
+        challenge: { id: "Aksesibilitas untuk tenaga medis", en: "Accessibility for medical staff" },
+        solution: { id: "Kontras tinggi, navigasi keyboard, dan komponen teruji", en: "High contrast, keyboard navigation, and tested components" }
       }
     ],
     outcomes: [
@@ -911,13 +911,13 @@ const projects = {
       { id: "Buku interaktif dengan elemen multimedia", en: "Interactive books with multimedia elements" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Aksesibilitas lintas perangkat", en: "Cross-device accessibility" }, 
-        solution: { id: "Pedoman WCAG dan pengujian dengan screen reader", en: "WCAG guidelines and screen reader testing" } 
+      {
+        challenge: { id: "Aksesibilitas lintas perangkat", en: "Cross-device accessibility" },
+        solution: { id: "Pedoman WCAG dan pengujian dengan screen reader", en: "WCAG guidelines and screen reader testing" }
       },
-      { 
-        challenge: { id: "Konsistensi desain skala besar", en: "Large-scale design consistency" }, 
-        solution: { id: "Design system terpusat dan token desain", en: "Centralized design system and design tokens" } 
+      {
+        challenge: { id: "Konsistensi desain skala besar", en: "Large-scale design consistency" },
+        solution: { id: "Design system terpusat dan token desain", en: "Centralized design system and design tokens" }
       }
     ],
     outcomes: [
@@ -971,13 +971,13 @@ const projects = {
       { id: "Form kontak dan konsultasi", en: "Contact and consultation form" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Performa halaman kaya animasi", en: "Performance of an animation-rich page" }, 
-        solution: { id: "Optimasi animasi dan code-splitting komponen berat", en: "Animation optimization and code-splitting for heavy components" } 
+      {
+        challenge: { id: "Performa halaman kaya animasi", en: "Performance of an animation-rich page" },
+        solution: { id: "Optimasi animasi dan code-splitting komponen berat", en: "Animation optimization and code-splitting for heavy components" }
       },
-      { 
-        challenge: { id: "SEO untuk jasa berbasis layanan", en: "SEO for service-based offerings" }, 
-        solution: { id: "Schema markup dan konten terstruktur", en: "Schema markup and structured content" } 
+      {
+        challenge: { id: "SEO untuk jasa berbasis layanan", en: "SEO for service-based offerings" },
+        solution: { id: "Schema markup dan konten terstruktur", en: "Schema markup and structured content" }
       }
     ],
     outcomes: [
@@ -1033,13 +1033,13 @@ const projects = {
       { id: "Update konten secara berkala", en: "Regular content updates" },
     ],
     challenges: [
-      { 
-        challenge: { id: "Menyusun materi yang ramah pemula", en: "Arranging beginner-friendly material" }, 
-        solution: { id: "Progressive learning path dan contoh kode langkah demi langkah", en: "Progressive learning path and step-by-step code examples" } 
+      {
+        challenge: { id: "Menyusun materi yang ramah pemula", en: "Arranging beginner-friendly material" },
+        solution: { id: "Progressive learning path dan contoh kode langkah demi langkah", en: "Progressive learning path and step-by-step code examples" }
       },
-      { 
-        challenge: { id: "Menjaga konten tetap relevan", en: "Keeping content relevant" }, 
-        solution: { id: "Update berkala mengikuti rilis Laravel terbaru", en: "Regular updates following the latest Laravel releases" } 
+      {
+        challenge: { id: "Menjaga konten tetap relevan", en: "Keeping content relevant" },
+        solution: { id: "Update berkala mengikuti rilis Laravel terbaru", en: "Regular updates following the latest Laravel releases" }
       }
     ],
     outcomes: [

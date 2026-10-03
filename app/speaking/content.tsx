@@ -30,7 +30,7 @@ const isCampusEvent = (event: typeof pastEvents[0]): boolean => {
         'unpad', 'unsyiah', 'undip', 'unnes', 'uns', 'its', 'unair', 'ub', 
         'himatif', 'hmtf', 'hima', 'academic', 'college', 'politeknik', 'polban',
         'sangga buana', 'nurtanio', 'telekomunikasi', 'telkom', 'smkn', 'smk', 'sma', 'ambassador', 'widyatama', 'himakom', 'polines',
-        'universitas indonesia'
+        'universitas indonesia', 'ubsi', 'bsi'
     ];
 
     const textToSearch = [
@@ -102,9 +102,10 @@ export function SpeakingContent() {
                                 </Button>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {(() => {
                                     const featuredIds = [
+                                        "express-yourself-gensi-indosat-ubsi-2026",
                                         "airena-belajar-unisba-2026",
                                         "build-with-ai-pustekinfo-dpr-2026",
                                         "workshop-pertamina-patra-niaga-2026"
@@ -121,12 +122,12 @@ export function SpeakingContent() {
                                             className="overflow-hidden flex flex-col justify-between border border-amber-500/20 bg-gradient-to-b from-amber-500/5 to-transparent hover:border-amber-500/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-pointer"
                                         >
                                             <div>
-                                                <div className="relative h-44 w-full overflow-hidden bg-muted">
+                                                <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-muted">
                                                     <Image
                                                         src={item.imageSrc}
                                                         alt={getLocalized(item.title, t('language'))}
                                                         fill
-                                                        sizes="(max-width: 768px) 100vw, 33vw"
+                                                        sizes="(max-width: 768px) 100vw, 50vw"
                                                         suppressHydrationWarning
                                                         className={`${item.imageClassName ?? "object-cover"} hover:scale-105 transition-transform duration-300 ease-in-out`}
                                                     />
