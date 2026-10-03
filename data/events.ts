@@ -22,6 +22,49 @@ export const upcomingEvents: EventItem[] = [
 
 export const pastEvents: EventItem[] = [
   {
+    id: "express-yourself-gensi-indosat-ubsi-2026",
+    category: "Seminar & Workshop",
+    tags: ["AI", "Generative AI", "Visual Creation", "Indosat", "Responsible AI"],
+    imageSrc: "https://www.gambaryuk.com/1791007206181-fdjbn2.webp",
+    priority: true,
+    title: {
+      id: "Express Yourself, Buat Karya yang #LebihBaik",
+      en: "Express Yourself, Create Works That Are #LebihBaik"
+    },
+    subtitle: {
+      id: "Indosat 5G x Tribun Jabar",
+      en: "Indosat 5G x Tribun Jabar"
+    },
+    date: "30 September 2026",
+    time: "09.00 - 12.00 WIB",
+    location: "Aula UBSI Sukabumi",
+    description: {
+      id: "Seminar dan workshop interaktif kolaborasi GENsi (GenerasiTerkoneksi) bersama Indosat 5G di Aula UBSI Sukabumi. Membahas eksplorasi ide kreatif menjadi karya visual berbasis AI serta pentingnya integritas, orisinalitas, dan pemanfaatan kecerdasan buatan secara bertanggung jawab (Responsible AI).",
+      en: "Interactive seminar and workshop in collaboration with GENsi (GenerasiTerkoneksi) and Indosat 5G at UBSI Sukabumi Hall. Discussing transforming creative ideas into visual works using AI as well as highlighting the importance of originality and Responsible AI."
+    },
+    bullets: {
+      id: [
+        "\"From Idea to Visual Creation\": Eksplorasi ide menjadi karya visual menggunakan AI bersama Aditya Fakhri Riansyah (AI & Fullstack Trainer at EduTech Company)",
+        "\"Originality & Responsible AI\": Menjaga orisinalitas dan etika pemanfaatan kecerdasan buatan bersama Arief Permadi (Dosen Universitas Muhammadiyah Bandung)",
+        "Pemanfaatan konektivitas dan ekosistem digital Indosat 5G untuk kreator muda",
+        "Sesi sharing interaktif dan tips membuat karya yang berdampak positif"
+      ],
+      en: [
+        "\"From Idea to Visual Creation\": Transforming ideas into visual works using AI with Aditya Fakhri Riansyah (AI & Fullstack Trainer at EduTech Company)",
+        "\"Originality & Responsible AI\": Preserving originality and ethical use of AI with Arief Permadi (Lecturer at Muhammadiyah University Bandung)",
+        "Leveraging Indosat 5G digital connectivity and ecosystem for young creators",
+        "Interactive sharing session and tips for creating impactful positive works"
+      ]
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: GENsi & Indosat 5G (Didukung oleh: TribunJabar.id, Universitas BSI, DICO)",
+      en: "Organized by: GENsi & Indosat 5G (Supported by: TribunJabar.id, UBSI University, DICO)"
+    },
+    links: [
+      { labelId: "Slide Presentasi", labelEn: "Presentation Slides", href: "https://docs.google.com/presentation/d/1xbs7p1b98GYSC20UqFswjp9fs3rtsODAu6NKgIWGTyA/edit?usp=sharing" }
+    ]
+  },
+  {
     id: "coding-lebih-cepat-inixindo-2026",
     category: "Webinar",
     tags: ["AI", "Software Development", "Prompt Engineering", "Productivity"],

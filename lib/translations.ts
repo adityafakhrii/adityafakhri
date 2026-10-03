@@ -353,7 +353,7 @@ export const translations = {
     filterCompany: "Perusahaan & Instansi",
     filterCampus: "Kampus & Sekolah",
     featuredEvents: "Event Pilihan",
-    featuredEventsDesc: "Tiga sesi speaking paling bergengsi dan berdampak dalam portofolio saya",
+    featuredEventsDesc: "Sesi-sesi speaking pilihan paling bergengsi dan berdampak dalam portofolio saya",
     viewAllEvents: "Lihat Semua Event",
 
     // Footer
@@ -506,6 +506,33 @@ export const translations = {
     testimoniShowingCount: "Menampilkan",
     testimoniOfTotal: "dari total",
     testimoniAllLoaded: "Semua ulasan bintang 5 telah ditampilkan.",
+
+    // Game Zone Page
+    gameTitle: "Game Zone",
+    gameDescription: "Istirahat sejenak! Mainkan Tetris level 1 dengan balok warna-warni langsung di browser.",
+    gameScore: "Skor",
+    gameLines: "Baris",
+    gameLevel: "Level",
+    gameNext: "Berikutnya",
+    gameBest: "Rekor",
+    gameStart: "Mulai",
+    gamePause: "Pause",
+    gameResume: "Lanjut",
+    gameRestart: "Ulangi",
+    gamePaused: "Paused",
+    gameReady: "Siap main?",
+    gameGameOver: "Game Over",
+    gameGameOverDesc: "Tekan Ulangi untuk mencoba lagi.",
+    gamePressStart: "Tekan Mulai untuk bermain",
+    gameNewBest: "Rekor baru!",
+    gameControls: "Kontrol",
+    gameMoveLeft: "Geser kiri",
+    gameMoveRight: "Geser kanan",
+    gameSoftDrop: "Turun pelan",
+    gameRotate: "Putar",
+    gameHardDrop: "Jatuh cepat",
+    gameKeyboardHint: "Pakai tombol panah, atau tombol di layar pada perangkat sentuh.",
+    gameLevelNote: "Mode santai — level 1 saja, kecepatan tetap dan tidak menantang.",
   },
 
   en: {
@@ -862,7 +889,7 @@ export const translations = {
     filterCompany: "Company & Corporate",
     filterCampus: "Campus & Schools",
     featuredEvents: "Featured Events",
-    featuredEventsDesc: "Three of the most prestigious and impactful speaking sessions in my portfolio",
+    featuredEventsDesc: "Selected prestigious and impactful speaking sessions in my portfolio",
     viewAllEvents: "View All Events",
 
     // Footer
@@ -1015,6 +1042,33 @@ export const translations = {
     testimoniShowingCount: "Showing",
     testimoniOfTotal: "of total",
     testimoniAllLoaded: "All 5-star reviews have been loaded.",
+
+    // Game Zone Page
+    gameTitle: "Game Zone",
+    gameDescription: "Take a quick break! Play a colorful level 1 Tetris game right in your browser.",
+    gameScore: "Score",
+    gameLines: "Lines",
+    gameLevel: "Level",
+    gameNext: "Next",
+    gameBest: "Best",
+    gameStart: "Start",
+    gamePause: "Pause",
+    gameResume: "Resume",
+    gameRestart: "Restart",
+    gamePaused: "Paused",
+    gameReady: "Ready to play?",
+    gameGameOver: "Game Over",
+    gameGameOverDesc: "Press Restart to try again.",
+    gamePressStart: "Press Start to play",
+    gameNewBest: "New best score!",
+    gameControls: "Controls",
+    gameMoveLeft: "Move left",
+    gameMoveRight: "Move right",
+    gameSoftDrop: "Soft drop",
+    gameRotate: "Rotate",
+    gameHardDrop: "Hard drop",
+    gameKeyboardHint: "Use the arrow keys, or the on-screen buttons on touch devices.",
+    gameLevelNote: "Chill mode — level 1 only, fixed speed and never gets harder.",
   }
 }
 
