@@ -39,7 +39,7 @@ const articles = blogIndex.map((p) => ({
   isoDate: p.isoDate || "2026-01-01",
 }))
 const latestArticles = articles.slice(0, 4)
-const recentEvents = pastEvents.slice(0, 4)
+const recentEvents = pastEvents.slice(0, 6)
 
 export default function Home() {
   const [showAllPartners, setShowAllPartners] = useState(false)
@@ -172,7 +172,7 @@ export default function Home() {
           </ContentBlock>
 
           <ContentBlock title={t('speakerEventsTitle')} className="mt-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {recentEvents.map((item) => (
                 <Card key={item.id} className="overflow-hidden h-full flex flex-col justify-between transition-all duration-200 hover:shadow-md">
                   <div>

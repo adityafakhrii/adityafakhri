@@ -102,12 +102,14 @@ export function SpeakingContent() {
                                 </Button>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {(() => {
                                     const featuredIds = [
+                                        "express-yourself-gensi-indosat-jgu-depok-2026",
                                         "express-yourself-gensi-indosat-ubsi-2026",
                                         "airena-belajar-unisba-2026",
                                         "build-with-ai-pustekinfo-dpr-2026",
+                                        "diklat-asn-dinsos-jabar-2026",
                                         "workshop-pertamina-patra-niaga-2026"
                                     ];
 
@@ -127,7 +129,7 @@ export function SpeakingContent() {
                                                         src={item.imageSrc}
                                                         alt={getLocalized(item.title, t('language'))}
                                                         fill
-                                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                                         suppressHydrationWarning
                                                         className={`${item.imageClassName ?? "object-cover"} hover:scale-105 transition-transform duration-300 ease-in-out`}
                                                     />

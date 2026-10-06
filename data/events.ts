@@ -22,6 +22,46 @@ export const upcomingEvents: EventItem[] = [
 
 export const pastEvents: EventItem[] = [
   {
+    id: "express-yourself-gensi-indosat-jgu-depok-2026",
+    category: "Seminar & Workshop",
+    tags: ["AI", "Generative AI", "Visual Creation", "Indosat", "Creative AI"],
+    imageSrc: "https://www.gambaryuk.com/1791261700243-5265ir.webp",
+    priority: true,
+    title: {
+      id: "Express Yourself, Buat Karya yang #LebihBaik",
+      en: "Express Yourself, Create Works That Are #LebihBaik"
+    },
+    subtitle: {
+      id: "Indosat 5G x Tribun Jabar",
+      en: "Indosat 5G x Tribun Jabar"
+    },
+    date: "5 Oktober 2026",
+    time: "09.00 - 12.00 WIB",
+    location: "Jakarta Global University, Depok",
+    description: {
+      id: "Seminar dan workshop interaktif kolaborasi GENsi (GenerasiTerkoneksi) bersama Indosat 5G di Kampus Jakarta Global University (JGU) Depok. Membahas eksplorasi ide kreatif menjadi karya visual berbasis AI serta teknik kurasi estetika dan creative editing untuk menghasilkan karya berdampak positif.",
+      en: "Interactive seminar and workshop in collaboration with GENsi (GenerasiTerkoneksi) and Indosat 5G at Jakarta Global University (JGU) Campus Depok. Discussing turning creative ideas into visual works using AI as well as aesthetic curation and creative editing techniques to produce impactful positive works."
+    },
+    bullets: {
+      id: [
+        "\"From Idea to Visual Creation\": Eksplorasi ide menjadi karya visual menggunakan AI bersama Aditya Fakhri Riansyah (AI & Fullstack Trainer at EduTech Company)",
+        "\"Creative Judgement & Editing\": Kurasi visual, prompt refinement, dan pengeditan kreatif bersama Adela Mutiara Sani (Mentor AI @ Codepolitan)",
+        "Pemanfaatan konektivitas dan ekosistem digital Indosat 5G untuk kreator muda",
+        "Sesi sharing interaktif dan demonstrasi pembuatan karya visual dengan AI"
+      ],
+      en: [
+        "\"From Idea to Visual Creation\": Transforming ideas into visual works using AI with Aditya Fakhri Riansyah (AI & Fullstack Trainer at EduTech Company)",
+        "\"Creative Judgement & Editing\": Visual curation, prompt refinement, and creative editing with Adela Mutiara Sani (Mentor AI @ Codepolitan)",
+        "Leveraging Indosat 5G digital connectivity and ecosystem for young creators",
+        "Interactive sharing session and visual creation demonstration using AI"
+      ]
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: GENsi & Indosat 5G (Didukung oleh: TribunJabar.id, Jakarta Global University)",
+      en: "Organized by: GENsi & Indosat 5G (Supported by: TribunJabar.id, Jakarta Global University)"
+    }
+  },
+  {
     id: "express-yourself-gensi-indosat-ubsi-2026",
     category: "Seminar & Workshop",
     tags: ["AI", "Generative AI", "Visual Creation", "Indosat", "Responsible AI"],
@@ -37,7 +77,7 @@ export const pastEvents: EventItem[] = [
     },
     date: "30 September 2026",
     time: "09.00 - 12.00 WIB",
-    location: "Aula UBSI Sukabumi",
+    location: "Universitas BSI, Sukabumi",
     description: {
       id: "Seminar dan workshop interaktif kolaborasi GENsi (GenerasiTerkoneksi) bersama Indosat 5G di Aula UBSI Sukabumi. Membahas eksplorasi ide kreatif menjadi karya visual berbasis AI serta pentingnya integritas, orisinalitas, dan pemanfaatan kecerdasan buatan secara bertanggung jawab (Responsible AI).",
       en: "Interactive seminar and workshop in collaboration with GENsi (GenerasiTerkoneksi) and Indosat 5G at UBSI Sukabumi Hall. Discussing transforming creative ideas into visual works using AI as well as highlighting the importance of originality and Responsible AI."
@@ -124,7 +164,7 @@ export const pastEvents: EventItem[] = [
     },
     date: "02 Juli 2026",
     time: "09.00 - 12.00 WIB",
-    location: "Auditorium Lt. 8 Dekanat UNISBA",
+    location: "Universitas Islam Bandung",
     description: {
       id: "Sesi edukasi interaktif kolaborasi IM3 dan Google Gemini di Universitas Islam Bandung (UNISBA) untuk membahas pemanfaatan ekosistem AI Gemini dalam produktivitas mahasiswa, pengenalan AI Campus Hack, serta praktik langsung membuat video kreatif menggunakan AI.",
       en: "An interactive educational session in collaboration with IM3 and Google Gemini at Bandung Islamic University (UNISBA) to discuss the utilization of the Gemini AI ecosystem for student productivity, introduction to AI Campus Hack, and hands-on creative video creation using AI."
@@ -279,6 +319,7 @@ export const pastEvents: EventItem[] = [
     category: "Training",
     tags: ["AI", "ASN", "Productivity", "Government", "Training"],
     imageSrc: "https://ltdwpaciulpophywcuam.supabase.co/storage/v1/object/public/shared-images/1779683574796-piv9lq.webp",
+    priority: true,
     title: {
       id: "Penerapan Artificial Intelligence Pada Pekerjaan Sehari-Hari bagi ASN",
       en: "Implementation of Artificial Intelligence in Daily Work for Civil Servants (ASN)"
