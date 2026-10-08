@@ -325,10 +325,13 @@ export const translations = {
     // Links page
     linksPageTitle: "Links",
     linksPageDescription: "Rekomendasi produk IT pilihan gue",
+    linksPageBooksSection: "Rekomendasi Buku IT",
     linksPageBook: "Buku",
     linksPageBookSIDesc: "Rekomendasi buku untuk memahami dasar-dasar Sistem Informasi",
     linksPageMLDesc: "Rekomendasi produk untuk belajar Machine Learning",
+    linksPageCodingAIDesc: "Panduan praktis belajar coding dan membangun aplikasi dibantu AI untuk pemula",
     linksPageMore: "Link lainnya segera hadir",
+    viewProduct: "Lihat Produk",
 
     // Blog page
     blogTitle: "Blog",
@@ -870,10 +873,13 @@ export const translations = {
     // Links page
     linksPageTitle: "Links",
     linksPageDescription: "My curated IT product recommendations",
+    linksPageBooksSection: "IT Book Recommendations",
     linksPageBook: "Book",
     linksPageBookSIDesc: "Recommended book to understand the fundamentals of Information Systems",
     linksPageMLDesc: "Recommended product for learning Machine Learning",
+    linksPageCodingAIDesc: "Practical guide to learning coding and building applications with AI for beginners",
     linksPageMore: "More links coming soon",
+    viewProduct: "View Product",
 
     // Blog page
     blogTitle: "Blog",
