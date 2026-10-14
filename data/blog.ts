@@ -14,6 +14,486 @@ export type BlogPost = {
 
 const blogs: Record<string, BlogPost> = {
 
+  "5-website-vibe-coder-inspirasi-ui-komponen": {
+    title: "5 Website Berguna buat Vibe Coder: Cari Inspirasi UI sampai Komponen Siap Pakai",
+    excerpt: "Vibe coding bikin kita bisa membangun aplikasi dengan bantuan AI coding tools. Simak 5 website terbaik mulai dari Jiro Build, Kage, The Component Gallery, 21st.dev, hingga VibePrompts untuk inspirasi desain dan prompt UI.",
+    content: `
+      <style>
+        .vc-hero { padding: 2.5rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--muted)/0.4) 100%); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; position: relative; overflow: hidden; }
+        .vc-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.55rem; margin: 0 0 0.75rem 0; font-weight: 800; letter-spacing: -0.02em; }
+        .vc-hero p { color: hsl(var(--foreground)) !important; font-size: 1.05rem; line-height: 1.75; margin: 0; }
+        .vc-section-title { font-size: 1.35rem; font-weight: 800; margin: 3rem 0 1.25rem 0; color: hsl(var(--foreground)) !important; border-left: 4px solid hsl(var(--primary)); padding-left: 0.85rem; line-height: 1.2; }
+        .vc-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.75rem 0; }
+        .vc-tool-card { padding: 1.75rem; border-radius: 1rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); display: flex; flex-direction: column; justify-content: space-between; transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; margin-bottom: 2rem; position: relative; }
+        .vc-tool-card:hover { border-color: hsl(var(--primary)/0.6); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+        .vc-tool-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+        .vc-tool-title { font-size: 1.35rem; font-weight: 800; color: hsl(var(--foreground)) !important; margin: 0; }
+        .vc-tool-badge { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.3rem 0.75rem; border-radius: 9999px; background: hsl(var(--primary)/0.12); color: hsl(var(--primary)); }
+        .vc-tool-desc { font-size: 1.02rem; line-height: 1.8; color: hsl(var(--foreground)) !important; margin: 0 0 1.25rem 0; }
+        .vc-feature-box { background: hsl(var(--muted)/0.7); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; padding: 1.25rem; margin-bottom: 1.25rem; }
+        .vc-feature-title { font-size: 0.92rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: hsl(var(--foreground)) !important; margin-bottom: 0.65rem; }
+        .vc-feature-list { list-style: none; padding: 0; margin: 0; }
+        .vc-feature-list li { font-size: 0.98rem; line-height: 1.7; color: hsl(var(--foreground)) !important; margin-bottom: 0.45rem; position: relative; padding-left: 1.4rem; }
+        .vc-feature-list li::before { content: ""; position: absolute; left: 0; top: 0.45rem; width: 0.6rem; height: 0.32rem; border-left: 2.5px solid #10B981; border-bottom: 2.5px solid #10B981; transform: rotate(-45deg); }
+        .vc-notice { font-size: 0.92rem; line-height: 1.7; color: hsl(var(--foreground)) !important; background: hsl(var(--muted)); padding: 0.85rem 1.15rem; border-radius: 0.6rem; border-left: 3px solid hsl(var(--primary)); margin-bottom: 1.25rem; }
+        .vc-btn-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-top: auto; }
+        .vc-link-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)) !important; font-size: 0.88rem; font-weight: 700; padding: 0.7rem 1.35rem; border-radius: 0.5rem; text-decoration: none; transition: opacity 0.2s, transform 0.2s; }
+        .vc-link-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+        .vc-callout { padding: 1.5rem; border-radius: 1rem; border-left: 4px solid hsl(var(--primary)); background: hsl(var(--muted)); margin: 2rem 0; }
+        .vc-callout p { margin: 0; font-size: 1rem; line-height: 1.75; color: hsl(var(--foreground)) !important; }
+        .vc-table-wrap { overflow-x: auto; margin: 2rem 0; border-radius: 1rem; border: 1px solid hsl(var(--border)); }
+        .vc-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; text-align: left; }
+        .vc-table thead { background: hsl(var(--muted)); }
+        .vc-table th { padding: 1rem 1.15rem; font-weight: 700; color: hsl(var(--foreground)) !important; border-bottom: 1px solid hsl(var(--border)); white-space: nowrap; }
+        .vc-table td { padding: 1rem 1.15rem; color: hsl(var(--foreground)) !important; border-bottom: 1px solid hsl(var(--border)); line-height: 1.65; }
+        .vc-table tr:last-child td { border-bottom: none; }
+        .vc-step-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1.75rem 0; }
+        .vc-step-card { padding: 1.25rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+        .vc-step-num { display: inline-block; width: 28px; height: 28px; line-height: 28px; text-align: center; border-radius: 9999px; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); font-size: 0.82rem; font-weight: 800; margin-bottom: 0.75rem; }
+        .vc-step-card h4 { font-size: 1.05rem; font-weight: 700; margin: 0 0 0.35rem 0; color: hsl(var(--foreground)) !important; }
+        .vc-step-card p { font-size: 0.92rem; line-height: 1.7; color: hsl(var(--foreground)) !important; margin: 0; }
+        .prompt-portfolio-prompt-wrapper { margin: 1.5rem 0 2rem 0; }
+        .prompt-portfolio-prompt-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+        .prompt-portfolio-prompt-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: hsl(var(--primary)); }
+        .prompt-portfolio-copy-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.85rem; border-radius: 0.5rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); color: hsl(var(--foreground)); font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .prompt-portfolio-copy-btn:hover { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); border-color: hsl(var(--primary)); }
+        .prompt-portfolio-copy-btn.copied { background: #22C55E; color: #fff; border-color: #22C55E; }
+        .prompt-portfolio-prompt { position: relative; background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; padding: 1.25rem; font-size: 0.9rem; line-height: 1.75; color: hsl(var(--foreground)) !important; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; white-space: pre-wrap; word-break: break-word; }
+        .vc-faq-wrap { display: flex; flex-direction: column; gap: 1rem; margin: 1.75rem 0; }
+        .vc-faq-item { padding: 1.25rem 1.5rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+        .vc-faq-q { font-size: 1.05rem; font-weight: 700; color: hsl(var(--foreground)) !important; margin: 0 0 0.5rem 0; }
+        .vc-faq-a { font-size: 0.98rem; line-height: 1.75; color: hsl(var(--foreground)) !important; margin: 0; }
+        .vc-cta { margin-top: 3.5rem; padding: 2.5rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.85) 100%); text-align: center; color: hsl(var(--primary-foreground)); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .vc-cta h2 { color: hsl(var(--primary-foreground)) !important; font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 800; }
+        .vc-cta p { color: hsl(var(--primary-foreground)/0.9); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; }
+        .vc-cta a { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: hsl(var(--background)); color: hsl(var(--foreground)) !important; font-weight: 700; padding: 0.85rem 1.75rem; border-radius: 9999px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; font-size: 0.9rem; }
+        .vc-cta a:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        @media (max-width: 768px) {
+          .vc-card-grid { grid-template-columns: 1fr; }
+          .vc-hero { padding: 1.75rem 1.25rem; }
+          .vc-step-grid { grid-template-columns: 1fr; }
+        }
+      </style>
+
+      <div class="vc-hero">
+        <h2>Punya AI Saja Belum Cukup: Rahasia Tampilan UI Menarik di Era Vibe Coding</h2>
+        <p><strong>Vibe Coding</strong> memungkinkan siapa saja membangun aplikasi web fungsional dalam hitungan jam hanya lewat instruksi teks. Namun, tantangan terbesarnya bukan lagi pada logika kode, melainkan <em>desain antarmuka (UI)</em> yang sering kali terlihat kaku, generik, atau tidak konsisten. Inilah kurasi 5 website referensi terbaik yang wajib masuk bookmark setiap AI developer.</p>
+      </div>
+
+      <p>Fenomena <strong>Vibe Coding</strong> mengubah cara kita menciptakan perangkat lunak. Cukup dengan AI coding tools seperti Cursor, Claude Code, Windsurf, Bolt, v0, atau Antigravity, prototipe aplikasi bisa terwujud secepat kilat. Namun, ada satu dinding tebal yang sering dihadapi para <em>vibe coder</em>:</p>
+
+      <div class="vc-callout">
+        <p><strong style="display:inline-flex;align-items:center;gap:0.45rem;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> Dilema Utama Vibe Coder:</strong> AI hanya sebaik konteks dan referensi yang kita berikan. Jika instruksi kita hanya sebatas <em>"Buatkan dashboard SaaS yang modern dan bersih"</em>, AI cenderung menghasilkan tata letak seragam berulang (sering disebut <em>AI Slop UI</em>). Untuk menghasilkan visual kelas dunia, kita memerlukan referensi layout konkret, desain sistem nyata, dan panduan prompt visual yang presisi.</p>
+      </div>
+
+      <p>Untungnya, kini telah lahir ekosistem web khusus yang dirancang mendampingi proses Vibe Coding. Mulai dari library template, konverter URL menjadi prompt desain, katalog design system dunia nyata, hingga registry komponen React siap pasang dengan integrasi MCP (Model Context Protocol).</p>
+
+      <p>Berikut ulasan mendalam lima website esensial yang layak menjadi senjata utama di workflow Vibe Coding kamu.</p>
+
+      <div class="vc-section-title">1. Jiro Build — Referensi Desain dan Prompt untuk AI</div>
+
+      <div class="vc-tool-card">
+        <div>
+          <div class="vc-tool-header">
+            <div>
+              <h3 class="vc-tool-title">Jiro Build</h3>
+              <a href="https://jiro.build/" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem; font-weight: 600; color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px;">jiro.build ↗</a>
+            </div>
+            <span class="vc-tool-badge">Template & Prompt Library</span>
+          </div>
+
+          <p class="vc-tool-desc">
+            <strong>Jiro Build</strong> merupakan perpustakaan desain dan prompt yang dirancang secara spesifik untuk memandu proses Vibe Coding. Platform ini mengumpulkan berbagai template halaman dan komponen UI modern yang siap dijadikan rujukan visual saat kamu menginstruksikan AI coding assistant.
+          </p>
+
+          <p class="vc-tool-desc">
+            Di Jiro Build, kamu bisa mengeksplorasi koleksi desain untuk beragam use case digital: mulai dari landing page produk SaaS, personal portfolio, marketplace e-commerce, hingga dashboard analitik yang kompleks. Setiap contoh tidak hanya memperlihatkan tangkapan layar antarmuka, tetapi juga menyertakan blueprint layout, palet warna, dan deskripsi prompt yang bisa langsung kamu salin ke editor AI.
+          </p>
+
+          <div class="vc-feature-box">
+            <div class="vc-feature-title">Paling Cocok Untuk:</div>
+            <ul class="vc-feature-list">
+              <li>Mencari inspirasi landing page produk SaaS & portfolio dengan standar desain 2026.</li>
+              <li>Menentukan mood visual, font pairing, dan skema warna sebelum baris kode pertama ditulis.</li>
+              <li>Mengambil prompt desain terstruktur sebagai fondasi awal prompt engineering pada AI tool.</li>
+            </ul>
+          </div>
+
+          <div class="vc-notice">
+            <strong style="display:inline-flex;align-items:center;gap:0.35rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> Info Akses & Model:</strong> Jiro Build menyediakan kombinasi template gratis dan resource premium. Pastikan mengecek lisensi serta detail penggunaan aset sebelum menerapkannya di aplikasi skala komersial.
+          </div>
+        </div>
+
+        <div class="vc-btn-row">
+          <a href="https://jiro.build/" target="_blank" rel="noopener noreferrer" class="vc-link-btn">
+            Kunjungi Jiro Build
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="vc-section-title">2. Kage — Ubah Referensi Website Menjadi Prompt Terstruktur</div>
+
+      <div class="vc-tool-card">
+        <div>
+          <div class="vc-tool-header">
+            <div>
+              <h3 class="vc-tool-title">Kage Design</h3>
+              <a href="https://kage.design/" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem; font-weight: 600; color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px;">kage.design ↗</a>
+            </div>
+            <span class="vc-tool-badge">Reverse-Engineering & MCP</span>
+          </div>
+
+          <p class="vc-tool-desc">
+            <strong>Kage</strong> adalah platform kurasi desain yang mengumpulkan inspirasi dari produk digital dan website kelas dunia yang benar-benar beroperasi di internet. Keunggulan utama Kage terletak pada fitur analisis desain otomatis yang mampu menerjemahkan antarmuka visual menjadi instruksi prompt teknis untuk AI coding agent.
+          </p>
+
+          <p class="vc-tool-desc">
+            Kamu dapat memfilter ribuan referensi berdasarkan parameter mendalam: jenis layout halaman, jenis elemen mikro (seperti badge, filter bar, modal), sektor industri (Fintech, Developer Tools, Health, Edtech), spektrum warna, hingga stack teknologi yang digunakan website tersebut.
+          </p>
+
+          <p class="vc-tool-desc">
+            Sebagai contoh, ketika kamu ingin membangun dashboard SaaS bernuansa dark-mode minimalis, Kage menyajikan breakdown hirarki spasi, kontras tipografi, dan prompt panduan yang mengajarkan AI kamu cara meniru <em>rasa</em> desain tersebut tanpa menyalin mentah-mentah aset milik brand lain.
+          </p>
+
+          <div class="vc-feature-box">
+            <div class="vc-feature-title">Paling Cocok Untuk:</div>
+            <ul class="vc-feature-list">
+              <li>Mendapatkan referensi desain dari produk digital nyata (bukan sekadar konsep Dribbble yang mustahil di-code).</li>
+              <li>Mempelajari hierarki visual, micro-interactions, dan pembagian grid yang proporsional.</li>
+              <li>Menghubungkan AI coding agent via integrasi MCP (Model Context Protocol) untuk menarik konteks desain otomatis.</li>
+            </ul>
+          </div>
+
+          <div class="vc-notice">
+            <strong style="display:inline-flex;align-items:center;gap:0.35rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg> Catatan Etika & Keamanan Desain:</strong> Jadikan Kage sebagai sarana dekonstruksi layout dan inspirasi pola interaksi. Hindari menjiplak logo, identitas visual, ilustrasi unik, atau konten hak cipta dari produk yang kamu jadikan referensi.
+          </div>
+        </div>
+
+        <div class="vc-btn-row">
+          <a href="https://kage.design/" target="_blank" rel="noopener noreferrer" class="vc-link-btn">
+            Kunjungi Kage Design
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="vc-section-title">3. The Component Gallery — Ensiklopedia Design System Nyata</div>
+
+      <div class="vc-tool-card">
+        <div>
+          <div class="vc-tool-header">
+            <div>
+              <h3 class="vc-tool-title">The Component Gallery</h3>
+              <a href="https://component.gallery/" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem; font-weight: 600; color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px;">component.gallery ↗</a>
+            </div>
+            <span class="vc-tool-badge">Design Systems & A11y</span>
+          </div>
+
+          <p class="vc-tool-desc">
+            Jika kamu ingin aplikasi buatanmu memiliki konsistensi tingkat enterprise, <strong>The Component Gallery</strong> adalah referensi mutlak. Situs ini merupakan katalog komprehensif yang mengindeks komponen antarmuka dari puluhan design system ternama di dunia, seperti GitHub Primer, Atlassian Design System, Shopify Polaris, IBM Carbon, hingga US Web Design System.
+          </p>
+
+          <p class="vc-tool-desc">
+            Berbeda dengan platform yang berorientasi pada prompt AI semata, The Component Gallery fokus mengedukasi bagaimana komponen UI riil dibangun: tata nama props, varian state (hover, active, disabled, focus-visible), standarisasi aria label, hingga pertimbangan aksesibilitas (WCAG).
+          </p>
+
+          <div class="vc-feature-box">
+            <div class="vc-feature-title">Paling Cocok Untuk:</div>
+            <ul class="vc-feature-list">
+              <li>Mempelajari pola struktur komponen UI yang sudah teruji melayani jutaan pengguna aktif.</li>
+              <li>Mencari referensi arsitektur design system sebelum memulai proyek skala menengah ke atas.</li>
+              <li>Menentukan spesifikasi perilaku komponen (misal keyboard navigation) sebelum meminta AI menuliskannya.</li>
+            </ul>
+          </div>
+
+          <div class="vc-notice">
+            <strong style="display:inline-flex;align-items:center;gap:0.35rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Catatan Lisensi:</strong> The Component Gallery adalah katalog kurasi. Aksesibilitas kode sumber, lisensi penggunaan (MIT, Apache, atau Proprietary), serta tata cara instalasi tunduk pada design system masing-masing perusahaan yang ditautkan.
+          </div>
+        </div>
+
+        <div class="vc-btn-row">
+          <a href="https://component.gallery/" target="_blank" rel="noopener noreferrer" class="vc-link-btn">
+            Kunjungi The Component Gallery
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="vc-section-title">4. 21st.dev — Komponen UI Modern Siap Pakai untuk AI Coding</div>
+
+      <div class="vc-tool-card">
+        <div>
+          <div class="vc-tool-header">
+            <div>
+              <h3 class="vc-tool-title">21st.dev</h3>
+              <a href="https://21st.dev/" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem; font-weight: 600; color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px;">21st.dev ↗</a>
+            </div>
+            <span class="vc-tool-badge">React, Tailwind & shadcn/ui</span>
+          </div>
+
+          <p class="vc-tool-desc">
+            Sering dijuluki sebagai <em>"NPM-nya UI Developer Modern"</em>, <strong>21st.dev</strong> menyediakan katalog raksasa komponen React yang kompatibel penuh dengan ekosistem Tailwind CSS dan <code>shadcn/ui</code>. Komponen yang disediakan bukan sekadar tombol polos, melainkan elemen interaktif berkualitas tinggi yang dipercantik dengan efek animasi Framer Motion, glassmorphism, dan bento grid modern.
+          </p>
+
+          <p class="vc-tool-desc">
+            Kamu bisa mencari komponen spesifik seperti animated hero sections, dynamic pricing tables, interactive command palettes (cmd+k), bento grids, glowing cards, hingga testimonial sliders. Yang paling disukai para vibe coder: 21st.dev menyediakan tombol <em>Copy Prompt</em> dan integrasi CLI / MCP, sehingga AI agent seperti Cursor atau Claude Code bisa menarik komponen langsung ke codebase kamu dalam hitungan detik.
+          </p>
+
+          <div class="vc-feature-box">
+            <div class="vc-feature-title">Paling Cocok Untuk:</div>
+            <ul class="vc-feature-list">
+              <li>Mempercepat pembangunan antarmuka frontend tanpa harus mendesain animasi dari nol.</li>
+              <li>Mendapatkan komponen React & Tailwind dengan styling mutakhir ala website Silicon Valley.</li>
+              <li>Memberikan kode komponen konkret dan dependensi siap pakai kepada AI agent.</li>
+            </ul>
+          </div>
+
+          <div class="vc-notice">
+            <strong style="display:inline-flex;align-items:center;gap:0.35rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg> Model Harga:</strong> Eksplorasi katalog dan penyalinan komponen reguler dapat diakses secara cuma-cuma. Tersedia opsi Pro untuk akses fitur tambahan tanpa batas, integrasi privat, serta generasi variasi UI berbasis AI.
+          </div>
+        </div>
+
+        <div class="vc-btn-row">
+          <a href="https://21st.dev/" target="_blank" rel="noopener noreferrer" class="vc-link-btn">
+            Kunjungi 21st.dev
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="vc-section-title">5. VibePrompts — Koleksi Prompt Layout UI Teruji untuk AI</div>
+
+      <div class="vc-tool-card">
+        <div>
+          <div class="vc-tool-header">
+            <div>
+              <h3 class="vc-tool-title">VibePrompts</h3>
+              <a href="https://vibeprompts.dev/" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem; font-weight: 600; color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px;">vibeprompts.dev ↗</a>
+            </div>
+            <span class="vc-tool-badge">Prompt Layout Engineering</span>
+          </div>
+
+          <p class="vc-tool-desc">
+            Kelemahan terbesar saat melakukan prompting UI adalah ketidakjelasan struktur hierarki. <strong>VibePrompts</strong> hadir menyelesaikan problem ini dengan menyediakan kurasi prompt layout siap pakai yang telah dioptimasi khusus untuk model LLM (Claude 3.7 Sonnet, GPT-4o, Gemini 2.0 / 2.5 Flash, DeepSeek-V3).
+          </p>
+
+          <p class="vc-tool-desc">
+            Koleksi VibePrompts merangkum berbagai blok arsitektur esensial: Auth Modal (Login/Register dengan OAuth), Hero Section bertingkat, Feature Comparison Matrix, Dashboard Stats Grid, Interactive Timeline, hingga Footer multi-kolom. Daripada menulis prompt spekulatif, kamu tinggal menyalin formula prompt berbobot yang mendikte struktur flexbox, grid, breakpoints, dan token warna secara terperinci.
+          </p>
+
+          <div class="vc-feature-box">
+            <div class="vc-feature-title">Paling Cocok Untuk:</div>
+            <ul class="vc-feature-list">
+              <li>Mencari instruksi prompt detail berdasarkan jenis komponen halaman yang ingin dibangun.</li>
+              <li>Mendefinisikan wireframe tata letak yang presisi sebelum AI mulai memproduksi kode.</li>
+              <li>Mencegah halusinasi AI terkait ukuran padding, margin, dan perilaku responsive breakpoints.</li>
+            </ul>
+          </div>
+
+          <div class="vc-notice">
+            <strong style="display:inline-flex;align-items:center;gap:0.35rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg> Tips Verifikasi:</strong> Prompt dari VibePrompts memberikan lompatan besar dalam hal struktur. Kendati demikian, luangkan waktu untuk memverifikasi responsivitas di viewport smartphone dan mengecek kontras warna bagi kenyamanan mata pengguna.
+          </div>
+        </div>
+
+        <div class="vc-btn-row">
+          <a href="https://vibeprompts.dev/" target="_blank" rel="noopener noreferrer" class="vc-link-btn">
+            Kunjungi VibePrompts
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="vc-section-title">Matriks Perbandingan 5 Website untuk Vibe Coder</div>
+
+      <p>Agar memudahkan kamu memilih tool yang paling tepat untuk fase project kamu saat ini, simak tabel perbandingan fitur berikut:</p>
+
+      <div class="vc-table-wrap">
+        <table class="vc-table">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Fokus Utama</th>
+              <th>Format Output</th>
+              <th>Dukungan AI / MCP</th>
+              <th>Model Akses</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Jiro Build</strong></td>
+              <td>Inspirasi template landing page & SaaS</td>
+              <td>Visual Layout & Design Prompt</td>
+              <td>Prompt Copy-Paste</td>
+              <td>Freemium</td>
+            </tr>
+            <tr>
+              <td><strong>Kage Design</strong></td>
+              <td>Analisis website live & dekonstruksi desain</td>
+              <td>Prompt Deskriptif & Pola UI</td>
+              <td>Ada (Integrasi MCP Agent)</td>
+              <td>Freemium</td>
+            </tr>
+            <tr>
+              <td><strong>The Component Gallery</strong></td>
+              <td>Katalog design system industri enterprise</td>
+              <td>Pola Dokumentasi & Best Practices</td>
+              <td>Referensi Arsitektur</td>
+              <td>100% Gratis (Katalog Terbuka)</td>
+            </tr>
+            <tr>
+              <td><strong>21st.dev</strong></td>
+              <td>Komponen React, Tailwind & shadcn/ui siap pakai</td>
+              <td>Kode Komponen JSX/TSX & Preview</td>
+              <td>Ada (CLI + Integrasi MCP)</td>
+              <td>Freemium (Free tier generous)</td>
+            </tr>
+            <tr>
+              <td><strong>VibePrompts</strong></td>
+              <td>Formula prompt terstruktur per jenis komponen</td>
+              <td>Instruksi Prompt Siap Salin</td>
+              <td>Didesain khusus untuk AI Prompt</td>
+              <td>Gratis / Komunitas</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="vc-section-title">Workflow Praktis: Menggabungkan 5 Website dalam 1 Siklus Proyek</div>
+
+      <p>Kekuatan sejati bukan memilih salah satu, melainkan <strong>merangkai kelima website ini ke dalam satu alur kerja terpadu</strong> saat kamu membangun fitur atau aplikasi baru:</p>
+
+      <div class="vc-step-grid">
+        <div class="vc-step-card">
+          <span class="vc-step-num">1</span>
+          <h4>Ide & Moodboard</h4>
+          <p>Buka <strong>Jiro Build</strong> dan <strong>Kage</strong> untuk menentukan arah gaya visual, layout umum, dan palet warna produk yang ingin dibuat.</p>
+        </div>
+        <div class="vc-step-card">
+          <span class="vc-step-num">2</span>
+          <h4>Standarisasi Desain</h4>
+          <p>Cek <strong>The Component Gallery</strong> untuk memastikan nama props, hierarki interaksi, dan status aksesibilitas komponen sudah sesuai standar industri.</p>
+        </div>
+        <div class="vc-step-card">
+          <span class="vc-step-num">3</span>
+          <h4>Prompting Struktur</h4>
+          <p>Ambil template instruksi dari <strong>VibePrompts</strong> untuk mendikte tata letak grid dan flexbox ke AI coding tool kamu dengan presisi.</p>
+        </div>
+        <div class="vc-step-card">
+          <span class="vc-step-num">4</span>
+          <h4>Perakitan & Finishing</h4>
+          <p>Cari komponen interaktif micro-animations di <strong>21st.dev</strong>, lalu pasang menggunakan CLI atau integrasi MCP ke codebase proyekmu.</p>
+        </div>
+      </div>
+
+      <div class="vc-section-title">Contoh Prompt UI Berkualitas Tinggi untuk Vibe Coding</div>
+
+      <p>Berikut adalah template prompt teruji yang memadukan prinsip dari kelima resource di atas. Kamu bisa menyalin dan memodifikasinya ke Cursor, Windsurf, Claude Code, atau AI editor andalanmu:</p>
+
+      <div class="prompt-portfolio-prompt-wrapper">
+        <div class="prompt-portfolio-prompt-header">
+          <span class="prompt-portfolio-prompt-tag">Template Prompt UI Vibe Coding</span>
+          <button class="prompt-portfolio-copy-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:4px;"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>Copy Prompt</button>
+        </div>
+        <div class="prompt-portfolio-prompt">Bertindaklah sebagai Senior Frontend Engineer dan UI/UX Designer.
+Saya ingin membuat halaman landing page modern berbasis Next.js App Router, Tailwind CSS, dan shadcn/ui.
+
+Spesifikasi Desain & Komponen:
+1. Desain Bergaya Bento Grid: Susun fitur utama dalam modular card dengan rasio proporsional, border tipis bergradasi (hsl(var(--border))), dan background card bertingkat (dark mode slate/zinc).
+2. Hero Section:
+   - Badge pill di bagian atas: "Update 2026: AI Autonomous Workflow" dengan border halus dan aksen dot indicator.
+   - Headline H1 tegas (tracking-tight, leading-tight) dengan highlight teks gradasi.
+   - Subtitle deskriptif maksimal 2 baris (muted-foreground, font-medium).
+   - Dua CTA button: tombol utama solid (primary with hover shadow) dan tombol sekunder outline (dengan icon ArrowRight).
+3. Aksesibilitas & Responsivitas:
+   - Gunakan container queries atau mobile-first Tailwind breakpoints (sm, md, lg).
+   - Pastikan semantic HTML (&lt;header&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;footer&gt;).
+   - Sertakan ARIA attributes yang sesuai untuk elemen interaktif.
+4. Kode Bersih & Modular: Pisahkan setiap bagian menjadi sub-komponen terisolasi dalam folder components/landing/.
+
+Tolong buatkan kode TypeScript lengkap untuk komponen Hero Section terlebih dahulu dengan kode yang siap di-run.</div>
+      </div>
+
+      <div class="vc-section-title">FAQ: Pertanyaan yang Sering Diajukan Seputar Vibe Coding & UI</div>
+
+      <div class="vc-faq-wrap">
+        <div class="vc-faq-item">
+          <h4 class="vc-faq-q">Apakah Vibe Coder tetap perlu memahami prinsip dasar UI/UX?</h4>
+          <p class="vc-faq-a">
+            <strong>Sangat perlu.</strong> AI memang dapat menulis sintaks CSS dan Tailwind secara instan, namun AI tidak memiliki kepekaan rasa (taste) untuk menilai apakah spasi terasa sesak, kontras teks cukup terbaca oleh lansia, atau alur navigasi terasa membingungkan. Pemahaman dasar tentang visual hierarchy, typography, dan whitespace akan membuat output Vibe Coding kamu 10x lebih memukau dibanding pemula yang hanya asal prompt.
+          </p>
+        </div>
+
+        <div class="vc-faq-item">
+          <h4 class="vc-faq-q">Apa bedanya Vibe Coding dengan platform No-Code?</h4>
+          <p class="vc-faq-a">
+            Platform No-Code (seperti Webflow atau Bubble) mengunci kamu ke dalam ekosistem tertutup mereka dengan keterbatasan ekspor kode dan biaya bulanan yang mengikat. Sebaliknya, <strong>Vibe Coding</strong> menghasilkan kode sumber asli (Clean React, Next.js, TypeScript) yang 100% milikmu, dapat di-hosting di mana saja (seperti EdgeOne, Vercel, VPS), dan mudah dihubungkan ke backend atau database kustom.
+          </p>
+        </div>
+
+        <div class="vc-faq-item">
+          <h4 class="vc-faq-q">Bagaimana cara memanfaatkan MCP (Model Context Protocol) untuk urusan UI?</h4>
+          <p class="vc-faq-a">
+            Dengan MCP, AI coding agent di editor kamu dapat langsung berdialog dengan server eksternal (misalnya server dokumentasi komponen 21st.dev atau repo internal). AI dapat langsung men-search katalog, membaca dokumentasi komponen, dan memasang file yang dibutuhkan tanpa mengharuskan kamu berpindah tab dan melakukan copy-paste manual.
+          </p>
+        </div>
+
+        <div class="vc-faq-item">
+          <h4 class="vc-faq-q">Apakah aman menggunakan komponen dari katalog publik untuk proyek komersial?</h4>
+          <p class="vc-faq-a">
+            Sebagian besar registry seperti 21st.dev dan implementasi berbasis shadcn/ui berada di bawah lisensi terbuka (MIT License), yang mengizinkan pemakaian komersial tanpa royalti. Namun, untuk katalog design system enterprise seperti The Component Gallery, kamu disarankan mempelajari pola dan arsitekturnya daripada mengkloning trademark atau identitas visual brand terkait.
+          </p>
+        </div>
+      </div>
+
+      <div class="vc-section-title">Kesimpulan: AI Mempercepat Kode, Manusia Mengarahkan Rasa</div>
+
+      <p>Kelima website di atas membuktikan bahwa era <strong>Vibe Coding</strong> telah memasuki fase matang. Kita tidak lagi bekerja dalam ruang hampa hanya berbekal kotak chat kosong:</p>
+
+      <ul>
+        <li><strong>Jiro Build:</strong> Menghadirkan template dan titik awal visual yang elegan.</li>
+        <li><strong>Kage:</strong> Membedah anatomi produk digital nyata menjadi prompt yang dipahami AI.</li>
+        <li><strong>The Component Gallery:</strong> Menjaga konsistensi, aksesibilitas, dan standar arsitektur kelas enterprise.</li>
+        <li><strong>21st.dev:</strong> Mempercepat implementasi lewat blok komponen React modern siap pakai.</li>
+        <li><strong>VibePrompts:</strong> Mengunci formula prompt agar AI tidak melenceng dari spesifikasi layout.</li>
+      </ul>
+
+      <p>Kunci sukses membangun aplikasi di era modern bukan sekadar menemukan prompt sakti, melainkan <strong>kelihaian mengorkestrasi referensi tersebut menjadi solusi nyata yang bermanfaat bagi pengguna</strong>. AI bisa menulis ribuan baris kode dalam sekejap, tetapi visi produk, empati pengalaman pengguna, dan standar kualitas akhir tetap berada di tanganmu sebagai kreator.</p>
+
+      <p>Simpan kelima website ini ke bookmark browser kamu, dan selamat bereksplorasi di proyek Vibe Coding berikutnya!</p>
+
+      <div class="vc-cta">
+        <h2>Suka Eksplorasi Vibe Coding, AI Tools & Modern Web?</h2>
+        <p>Ikuti akun Instagram saya untuk mendapatkan tutorial praktis, tips prompt engineering, bedah tools AI mingguan, dan insight seputar software engineering di era kecerdasan buatan!</p>
+        <a href="https://www.instagram.com/adityafakhrii/" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          Follow @adityafakhrii di Instagram
+        </a>
+      </div>
+    `,
+    date: "14 Okt 2026",
+    readTime: "7 min",
+    category: "AI & Technology",
+    author: "Aditya Fakhri Riansyah",
+    tags: [
+      "Vibe Coding",
+      "AI Coding Tools",
+      "UI Design",
+      "Prompt Engineering",
+      "shadcn/ui",
+      "React",
+      "Frontend",
+      "Design System"
+    ],
+    imageSrc: "/images/blog/5-website-vibe-coder-ui-komponen.webp",
+    relatedPosts: [
+      "personal-branding-developer-era-ai-2026",
+      "era-adaptive-reasoning-agentic-ai-2026",
+      "selamat-tinggal-chatbot-era-agentic-ai-2026"
+    ],
+    isoDate: "2026-10-14T08:00:00.000Z",
+  },
+
   "personal-branding-developer-era-ai-2026": {
     title: "Personal Branding untuk Developer di Era AI: Mengapa 'Bisa Ngoding Doang' Nggak Lagi Cukup dan Cara Bangunnya dari Nol",
     excerpt: "Di tengah maraknya AI yang bisa men-generate kode dalam hitungan detik, kemampuan teknis semata tak lagi menjamin karier Anda aman. Pelajari mengapa Personal Branding berbasis Proof of Work adalah asuransi karier terbaik bagi developer, serta roadmap praktis membangunnya tanpa harus jadi influencer cringe.",
