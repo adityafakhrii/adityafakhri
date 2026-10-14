@@ -98,12 +98,14 @@ export function BlogContent() {
           </div>
 
           <Tabs defaultValue="all">
-            <TabsList className="mb-6 flex-wrap h-auto gap-1">
-              <TabsTrigger value="all">{t('all')}</TabsTrigger>
-              {categories.map((category) => (
-                <TabsTrigger key={category} value={category}>{category}</TabsTrigger>
-              ))}
-            </TabsList>
+            <div className="overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 mb-6 pb-1">
+              <TabsList className="inline-flex h-auto w-auto items-center justify-start rounded-lg bg-muted p-1 text-muted-foreground gap-1">
+                <TabsTrigger value="all" className="whitespace-nowrap px-3 py-1.5 text-xs sm:text-sm font-medium">{t('all')}</TabsTrigger>
+                {categories.map((category) => (
+                  <TabsTrigger key={category} value={category} className="whitespace-nowrap px-3 py-1.5 text-xs sm:text-sm font-medium">{category}</TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
 
             <TabsContent value="all" className="mt-0">
               {isLoading ? (

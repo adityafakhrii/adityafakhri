@@ -88,7 +88,7 @@ export function BlogPostClient({ id, post, relatedPosts }: BlogPostClientProps) 
         }
 
         return (
-          <div className="container max-w-5xl py-8 px-4 md:px-8">
+          <div className="container max-w-5xl py-5 sm:py-8 px-4 md:px-8">
             {/* Reading Progress Indicator Bar */}
             <div
               className="fixed top-0 left-0 h-1 bg-primary z-50 transition-all duration-150 shadow-sm"
@@ -96,7 +96,7 @@ export function BlogPostClient({ id, post, relatedPosts }: BlogPostClientProps) 
               aria-label="Reading progress"
             />
 
-            <Button asChild variant="ghost" className="mb-6">
+            <Button asChild variant="ghost" size="sm" className="mb-4 sm:mb-6 -ml-2 text-muted-foreground hover:text-foreground">
               <Link href="/blog">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 {t("k_0557fa92")}
@@ -104,11 +104,11 @@ export function BlogPostClient({ id, post, relatedPosts }: BlogPostClientProps) 
             </Button>
 
             <article
-              className="mb-8"
+              className="mb-6 sm:mb-8"
               itemScope
               itemType="https://schema.org/Article"
             >
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
                 <Badge>{post.category || t("notAvailable")}</Badge>
                 <BlogShareButton
                   title={post.title}
@@ -116,33 +116,34 @@ export function BlogPostClient({ id, post, relatedPosts }: BlogPostClientProps) 
                   lang={t("language")}
                 />
               </div>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-[1.3] tracking-tight mb-5 break-words">
+              <h1 className="text-xl sm:text-3xl md:text-4xl font-extrabold leading-snug sm:leading-[1.3] tracking-tight mb-3 sm:mb-5 break-words">
                 {post.title || t("notAvailable")}
               </h1>
-              <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm text-muted-foreground">
                 <div className="flex items-center">
-                  <User className="h-4 w-4 mr-1" />
+                  <User className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1" />
                   {post.author || t("notAvailable")}
                 </div>
                 <div className="flex items-center">
-                  <Calendar className="h-4 w-4 mr-1" />
+                  <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1" />
                   {post.date || t("notAvailable")}
                 </div>
                 <div className="flex items-center">
-                  <Clock className="h-4 w-4 mr-1" />
+                  <Clock className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1" />
                   {post.readTime || t("notAvailable")}
                 </div>
               </div>
             </article>
 
             {post.imageSrc && (
-              <div className="rounded-lg overflow-hidden border mb-8">
+              <div className="rounded-xl overflow-hidden border mb-6 sm:mb-8 shadow-sm">
                 <Image
                   src={post.imageSrc}
                   alt={post.title}
                   width={1200}
                   height={500}
-                  className="object-cover w-full h-[300px] md:h-[400px]"
+                  priority
+                  className="object-cover w-full h-[200px] sm:h-[300px] md:h-[400px]"
                 />
               </div>
             )}

@@ -19,16 +19,17 @@ const blogs: Record<string, BlogPost> = {
     excerpt: "Vibe coding bikin kita bisa membangun aplikasi dengan bantuan AI coding tools. Simak 5 website terbaik mulai dari Jiro Build, Kage, The Component Gallery, 21st.dev, hingga VibePrompts untuk inspirasi desain dan prompt UI.",
     content: `
       <style>
-        .vc-hero { padding: 2.5rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--muted)/0.4) 100%); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; position: relative; overflow: hidden; }
-        .vc-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.55rem; margin: 0 0 0.75rem 0; font-weight: 800; letter-spacing: -0.02em; }
+        .vc-hero { padding: 2.25rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--muted)/0.4) 100%); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; position: relative; overflow: hidden; }
+        .vc-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.55rem; margin: 0 0 0.75rem 0; font-weight: 800; letter-spacing: -0.02em; line-height: 1.3; }
         .vc-hero p { color: hsl(var(--foreground)) !important; font-size: 1.05rem; line-height: 1.75; margin: 0; }
-        .vc-section-title { font-size: 1.35rem; font-weight: 800; margin: 3rem 0 1.25rem 0; color: hsl(var(--foreground)) !important; border-left: 4px solid hsl(var(--primary)); padding-left: 0.85rem; line-height: 1.2; }
+        .vc-section-title { font-size: 1.35rem; font-weight: 800; margin: 3rem 0 1.25rem 0; color: hsl(var(--foreground)) !important; border-left: 4px solid hsl(var(--primary)); padding-left: 0.85rem; line-height: 1.25; }
         .vc-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.75rem 0; }
         .vc-tool-card { padding: 1.75rem; border-radius: 1rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); display: flex; flex-direction: column; justify-content: space-between; transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; margin-bottom: 2rem; position: relative; }
         .vc-tool-card:hover { border-color: hsl(var(--primary)/0.6); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-        .vc-tool-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
-        .vc-tool-title { font-size: 1.35rem; font-weight: 800; color: hsl(var(--foreground)) !important; margin: 0; }
-        .vc-tool-badge { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.3rem 0.75rem; border-radius: 9999px; background: hsl(var(--primary)/0.12); color: hsl(var(--primary)); }
+        .vc-tool-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+        .vc-tool-title { font-size: 1.35rem; font-weight: 800; color: hsl(var(--foreground)) !important; margin: 0; line-height: 1.25; }
+        .vc-tool-url { font-size: 0.88rem; font-weight: 600; color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px; display: inline-block; margin-top: 0.25rem; }
+        .vc-tool-badge { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.3rem 0.7rem; border-radius: 9999px; background: hsl(var(--primary)/0.12); color: hsl(var(--primary)); }
         .vc-tool-desc { font-size: 1.02rem; line-height: 1.8; color: hsl(var(--foreground)) !important; margin: 0 0 1.25rem 0; }
         .vc-feature-box { background: hsl(var(--muted)/0.7); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; padding: 1.25rem; margin-bottom: 1.25rem; }
         .vc-feature-title { font-size: 0.92rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: hsl(var(--foreground)) !important; margin-bottom: 0.65rem; }
@@ -41,7 +42,7 @@ const blogs: Record<string, BlogPost> = {
         .vc-link-btn:hover { opacity: 0.9; transform: translateY(-1px); }
         .vc-callout { padding: 1.5rem; border-radius: 1rem; border-left: 4px solid hsl(var(--primary)); background: hsl(var(--muted)); margin: 2rem 0; }
         .vc-callout p { margin: 0; font-size: 1rem; line-height: 1.75; color: hsl(var(--foreground)) !important; }
-        .vc-table-wrap { overflow-x: auto; margin: 2rem 0; border-radius: 1rem; border: 1px solid hsl(var(--border)); }
+        .vc-table-wrap { overflow-x: auto; margin: 2rem 0; border-radius: 1rem; border: 1px solid hsl(var(--border)); -webkit-overflow-scrolling: touch; }
         .vc-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; text-align: left; }
         .vc-table thead { background: hsl(var(--muted)); }
         .vc-table th { padding: 1rem 1.15rem; font-weight: 700; color: hsl(var(--foreground)) !important; border-bottom: 1px solid hsl(var(--border)); white-space: nowrap; }
@@ -68,10 +69,36 @@ const blogs: Record<string, BlogPost> = {
         .vc-cta p { color: hsl(var(--primary-foreground)/0.9); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; }
         .vc-cta a { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: hsl(var(--background)); color: hsl(var(--foreground)) !important; font-weight: 700; padding: 0.85rem 1.75rem; border-radius: 9999px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; font-size: 0.9rem; }
         .vc-cta a:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        @media (max-width: 768px) {
-          .vc-card-grid { grid-template-columns: 1fr; }
-          .vc-hero { padding: 1.75rem 1.25rem; }
-          .vc-step-grid { grid-template-columns: 1fr; }
+        @media (max-width: 640px) {
+          .vc-hero { padding: 1.25rem 1rem !important; border-radius: 0.85rem !important; margin-bottom: 1.5rem !important; }
+          .vc-hero h2 { font-size: 1.18rem !important; line-height: 1.35 !important; margin-bottom: 0.5rem !important; }
+          .vc-hero p { font-size: 0.93rem !important; line-height: 1.65 !important; }
+          .vc-section-title { font-size: 1.15rem !important; margin: 2rem 0 0.85rem 0 !important; padding-left: 0.65rem !important; }
+          .vc-card-grid { grid-template-columns: 1fr; gap: 1rem; }
+          .vc-tool-card { padding: 1.15rem 1rem !important; margin-bottom: 1.5rem !important; border-radius: 0.85rem !important; }
+          .vc-tool-header { flex-direction: column !important; align-items: flex-start !important; gap: 0.5rem !important; margin-bottom: 1rem !important; }
+          .vc-tool-title { font-size: 1.2rem !important; }
+          .vc-tool-badge { font-size: 0.7rem !important; padding: 0.22rem 0.55rem !important; }
+          .vc-tool-desc { font-size: 0.93rem !important; line-height: 1.68 !important; margin-bottom: 1rem !important; }
+          .vc-feature-box { padding: 0.95rem 0.9rem !important; margin-bottom: 1rem !important; border-radius: 0.65rem !important; }
+          .vc-feature-title { font-size: 0.82rem !important; margin-bottom: 0.45rem !important; }
+          .vc-feature-list li { font-size: 0.88rem !important; line-height: 1.6 !important; margin-bottom: 0.4rem !important; padding-left: 1.2rem !important; }
+          .vc-notice { font-size: 0.85rem !important; line-height: 1.6 !important; padding: 0.75rem 0.85rem !important; margin-bottom: 1rem !important; border-radius: 0.55rem !important; }
+          .vc-btn-row { width: 100% !important; margin-top: 0.5rem !important; }
+          .vc-link-btn { width: 100% !important; justify-content: center !important; padding: 0.75rem 1rem !important; font-size: 0.88rem !important; }
+          .vc-callout { padding: 1.1rem 0.95rem !important; margin: 1.5rem 0 !important; border-radius: 0.75rem !important; }
+          .vc-callout p { font-size: 0.92rem !important; line-height: 1.65 !important; }
+          .vc-table th, .vc-table td { padding: 0.75rem 0.85rem !important; font-size: 0.85rem !important; }
+          .vc-step-grid { grid-template-columns: 1fr; gap: 0.85rem; }
+          .vc-step-card { padding: 1rem !important; border-radius: 0.65rem !important; }
+          .prompt-portfolio-prompt { padding: 0.85rem !important; font-size: 0.78rem !important; line-height: 1.6 !important; }
+          .prompt-portfolio-copy-btn { font-size: 0.72rem !important; padding: 0.35rem 0.7rem !important; }
+          .vc-cta { padding: 1.6rem 1.15rem !important; margin-top: 2.25rem !important; border-radius: 0.85rem !important; }
+          .vc-cta h2 { font-size: 1.25rem !important; }
+          .vc-cta a { width: 100% !important; }
+          .vc-faq-item { padding: 1rem 1.15rem !important; }
+          .vc-faq-q { font-size: 0.98rem !important; }
+          .vc-faq-a { font-size: 0.9rem !important; line-height: 1.65 !important; }
         }
       </style>
 
@@ -97,7 +124,7 @@ const blogs: Record<string, BlogPost> = {
           <div class="vc-tool-header">
             <div>
               <h3 class="vc-tool-title">Jiro Build</h3>
-              <a href="https://jiro.build/" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem; font-weight: 600; color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px;">jiro.build ↗</a>
+              <a href="https://jiro.build/" target="_blank" rel="noopener noreferrer" class="vc-tool-url">jiro.build ↗</a>
             </div>
             <span class="vc-tool-badge">Template & Prompt Library</span>
           </div>
@@ -139,7 +166,7 @@ const blogs: Record<string, BlogPost> = {
           <div class="vc-tool-header">
             <div>
               <h3 class="vc-tool-title">Kage Design</h3>
-              <a href="https://kage.design/" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem; font-weight: 600; color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px;">kage.design ↗</a>
+              <a href="https://kage.design/" target="_blank" rel="noopener noreferrer" class="vc-tool-url">kage.design ↗</a>
             </div>
             <span class="vc-tool-badge">Reverse-Engineering & MCP</span>
           </div>
@@ -185,7 +212,7 @@ const blogs: Record<string, BlogPost> = {
           <div class="vc-tool-header">
             <div>
               <h3 class="vc-tool-title">The Component Gallery</h3>
-              <a href="https://component.gallery/" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem; font-weight: 600; color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px;">component.gallery ↗</a>
+              <a href="https://component.gallery/" target="_blank" rel="noopener noreferrer" class="vc-tool-url">component.gallery ↗</a>
             </div>
             <span class="vc-tool-badge">Design Systems & A11y</span>
           </div>
@@ -227,7 +254,7 @@ const blogs: Record<string, BlogPost> = {
           <div class="vc-tool-header">
             <div>
               <h3 class="vc-tool-title">21st.dev</h3>
-              <a href="https://21st.dev/" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem; font-weight: 600; color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px;">21st.dev ↗</a>
+              <a href="https://21st.dev/" target="_blank" rel="noopener noreferrer" class="vc-tool-url">21st.dev ↗</a>
             </div>
             <span class="vc-tool-badge">React, Tailwind & shadcn/ui</span>
           </div>
@@ -269,7 +296,7 @@ const blogs: Record<string, BlogPost> = {
           <div class="vc-tool-header">
             <div>
               <h3 class="vc-tool-title">VibePrompts</h3>
-              <a href="https://vibeprompts.dev/" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem; font-weight: 600; color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px;">vibeprompts.dev ↗</a>
+              <a href="https://vibeprompts.dev/" target="_blank" rel="noopener noreferrer" class="vc-tool-url">vibeprompts.dev ↗</a>
             </div>
             <span class="vc-tool-badge">Prompt Layout Engineering</span>
           </div>
