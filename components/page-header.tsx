@@ -18,9 +18,9 @@ export function PageHeader({ title, description, className, translate = false }:
   const displayDescription = translate && typeof description === 'string' ? t(description as TranslationKey) : description
   
   return (
-    <div className={cn("space-y-2 px-5 sm:px-0", className)}>
-      <h1 className="text-3xl font-bold tracking-tight" suppressHydrationWarning>{displayTitle}</h1>
-      {displayDescription && <p className="text-lg text-muted-foreground" suppressHydrationWarning>{displayDescription}</p>}
+    <div className={cn("space-y-1.5 sm:space-y-2", className)}>
+      <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground" suppressHydrationWarning>{displayTitle}</h1>
+      {displayDescription && <p className="text-sm sm:text-base text-muted-foreground leading-relaxed" suppressHydrationWarning>{displayDescription}</p>}
     </div>
   )
 }

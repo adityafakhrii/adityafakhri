@@ -54,26 +54,27 @@ export default function Home() {
               <div className="flex-1 space-y-6">
                 <h1 className="text-4xl md:text-5xl font-bold tracking-tight">{t('heroTitle')}</h1>
                 <p className="text-xl text-muted-foreground">{t('heroSubtitle')}</p>
-                <div className="flex flex-wrap gap-3">
-                  <Button asChild size="lg">
-                    <Link href="/contact">
+                <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                  <Button asChild size="lg" className="w-full sm:w-auto">
+                    <Link href="/contact" className="justify-center">
                       {t('contactMe')}
                       <ChevronRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <Link href="/projects">
-                      {t('viewProjects')}
-                      <ChevronRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <Link href="/speaking">
-                      {t('viewEvents')}
-                      <ChevronRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-
+                  <div className="grid grid-cols-2 gap-3 w-full sm:flex sm:w-auto">
+                    <Button asChild variant="outline" size="lg" className="w-full sm:w-auto px-3 sm:px-8 text-xs sm:text-sm">
+                      <Link href="/projects" className="justify-center">
+                        <span className="truncate">{t('viewProjects')}</span>
+                        <ChevronRight className="ml-1.5 h-4 w-4 shrink-0" />
+                      </Link>
+                    </Button>
+                    <Button asChild variant="outline" size="lg" className="w-full sm:w-auto px-3 sm:px-8 text-xs sm:text-sm">
+                      <Link href="/speaking" className="justify-center">
+                        <span className="truncate">{t('viewEvents')}</span>
+                        <ChevronRight className="ml-1.5 h-4 w-4 shrink-0" />
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
               <div className="w-full md:w-1/3 flex justify-center">

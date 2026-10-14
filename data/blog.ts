@@ -19,60 +19,65 @@ const blogs: Record<string, BlogPost> = {
     excerpt: "Vibe coding bikin kita bisa membangun aplikasi dengan bantuan AI coding tools. Simak 5 website terbaik mulai dari Jiro Build, Kage, The Component Gallery, 21st.dev, hingga VibePrompts untuk inspirasi desain dan prompt UI.",
     content: `
       <style>
-        .vc-hero { padding: 2.25rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--muted)/0.4) 100%); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; position: relative; overflow: hidden; }
+        .vc-hero { padding: 2.25rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--card)) 100%); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); box-sizing: border-box; max-width: 100%; }
+        .vc-hero-badge { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.25rem 0.65rem; border-radius: 9999px; background: hsl(var(--primary)/0.12); color: hsl(var(--primary)); margin-bottom: 0.85rem; }
         .vc-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.55rem; margin: 0 0 0.75rem 0; font-weight: 800; letter-spacing: -0.02em; line-height: 1.3; }
         .vc-hero p { color: hsl(var(--foreground)) !important; font-size: 1.05rem; line-height: 1.75; margin: 0; }
         .vc-section-title { font-size: 1.35rem; font-weight: 800; margin: 3rem 0 1.25rem 0; color: hsl(var(--foreground)) !important; border-left: 4px solid hsl(var(--primary)); padding-left: 0.85rem; line-height: 1.25; }
         .vc-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.75rem 0; }
-        .vc-tool-card { padding: 1.75rem; border-radius: 1rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); display: flex; flex-direction: column; justify-content: space-between; transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; margin-bottom: 2rem; position: relative; }
+        .vc-tool-card { padding: 1.75rem; border-radius: 1rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); display: flex; flex-direction: column; justify-content: space-between; transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; margin-bottom: 2rem; position: relative; box-sizing: border-box; max-width: 100%; }
         .vc-tool-card:hover { border-color: hsl(var(--primary)/0.6); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
         .vc-tool-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+        .vc-tool-num { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 6px; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); font-size: 0.75rem; font-weight: 800; shrink: 0; }
         .vc-tool-title { font-size: 1.35rem; font-weight: 800; color: hsl(var(--foreground)) !important; margin: 0; line-height: 1.25; }
-        .vc-tool-url { font-size: 0.88rem; font-weight: 600; color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px; display: inline-block; margin-top: 0.25rem; }
-        .vc-tool-badge { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.3rem 0.7rem; border-radius: 9999px; background: hsl(var(--primary)/0.12); color: hsl(var(--primary)); }
+        .vc-tool-url { font-size: 0.88rem; font-weight: 600; color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px; display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.25rem; }
+        .vc-tool-badge { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.3rem 0.7rem; border-radius: 9999px; background: hsl(var(--primary)/0.12); color: hsl(var(--primary)); }
         .vc-tool-desc { font-size: 1.02rem; line-height: 1.8; color: hsl(var(--foreground)) !important; margin: 0 0 1.25rem 0; }
-        .vc-feature-box { background: hsl(var(--muted)/0.7); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; padding: 1.25rem; margin-bottom: 1.25rem; }
+        .vc-feature-box { background: hsl(var(--muted)/0.7); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; padding: 1.25rem; margin-bottom: 1.25rem; box-sizing: border-box; max-width: 100%; }
         .vc-feature-title { font-size: 0.92rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: hsl(var(--foreground)) !important; margin-bottom: 0.65rem; }
         .vc-feature-list { list-style: none; padding: 0; margin: 0; }
         .vc-feature-list li { font-size: 0.98rem; line-height: 1.7; color: hsl(var(--foreground)) !important; margin-bottom: 0.45rem; position: relative; padding-left: 1.4rem; }
         .vc-feature-list li::before { content: ""; position: absolute; left: 0; top: 0.45rem; width: 0.6rem; height: 0.32rem; border-left: 2.5px solid #10B981; border-bottom: 2.5px solid #10B981; transform: rotate(-45deg); }
-        .vc-notice { font-size: 0.92rem; line-height: 1.7; color: hsl(var(--foreground)) !important; background: hsl(var(--muted)); padding: 0.85rem 1.15rem; border-radius: 0.6rem; border-left: 3px solid hsl(var(--primary)); margin-bottom: 1.25rem; }
+        .vc-notice { font-size: 0.92rem; line-height: 1.7; color: hsl(var(--foreground)) !important; background: hsl(var(--muted)); padding: 0.85rem 1.15rem; border-radius: 0.6rem; border-left: 3px solid hsl(var(--primary)); margin-bottom: 1.25rem; box-sizing: border-box; max-width: 100%; }
         .vc-btn-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-top: auto; }
-        .vc-link-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)) !important; font-size: 0.88rem; font-weight: 700; padding: 0.7rem 1.35rem; border-radius: 0.5rem; text-decoration: none; transition: opacity 0.2s, transform 0.2s; }
-        .vc-link-btn:hover { opacity: 0.9; transform: translateY(-1px); }
-        .vc-callout { padding: 1.5rem; border-radius: 1rem; border-left: 4px solid hsl(var(--primary)); background: hsl(var(--muted)); margin: 2rem 0; }
+        .vc-link-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)) !important; font-size: 0.88rem; font-weight: 700; padding: 0.7rem 1.35rem; border-radius: 0.6rem; text-decoration: none; transition: opacity 0.2s, transform 0.15s; min-height: 44px; box-sizing: border-box; }
+        .vc-link-btn:active { transform: scale(0.98); }
+        .vc-link-btn:hover { opacity: 0.9; }
+        .vc-callout { padding: 1.5rem; border-radius: 1rem; border-left: 4px solid hsl(var(--primary)); background: hsl(var(--muted)); margin: 2rem 0; box-sizing: border-box; max-width: 100%; }
         .vc-callout p { margin: 0; font-size: 1rem; line-height: 1.75; color: hsl(var(--foreground)) !important; }
-        .vc-table-wrap { overflow-x: auto; margin: 2rem 0; border-radius: 1rem; border: 1px solid hsl(var(--border)); -webkit-overflow-scrolling: touch; }
-        .vc-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; text-align: left; }
+        .vc-table-hint { display: none; align-items: center; gap: 0.4rem; font-size: 0.78rem; font-weight: 600; color: hsl(var(--primary)); background: hsl(var(--primary)/0.08); padding: 0.35rem 0.75rem; border-radius: 9999px; margin-bottom: 0.65rem; width: fit-content; }
+        .vc-table-wrap { width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; display: block; margin: 1.5rem 0 2rem 0; border-radius: 1rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); box-shadow: 0 2px 8px rgba(0,0,0,0.03); box-sizing: border-box; }
+        .vc-table { min-width: 580px; width: 100%; border-collapse: collapse; font-size: 0.92rem; text-align: left; }
         .vc-table thead { background: hsl(var(--muted)); }
         .vc-table th { padding: 1rem 1.15rem; font-weight: 700; color: hsl(var(--foreground)) !important; border-bottom: 1px solid hsl(var(--border)); white-space: nowrap; }
         .vc-table td { padding: 1rem 1.15rem; color: hsl(var(--foreground)) !important; border-bottom: 1px solid hsl(var(--border)); line-height: 1.65; }
         .vc-table tr:last-child td { border-bottom: none; }
         .vc-step-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1.75rem 0; }
-        .vc-step-card { padding: 1.25rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+        .vc-step-card { padding: 1.25rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); box-sizing: border-box; max-width: 100%; }
         .vc-step-num { display: inline-block; width: 28px; height: 28px; line-height: 28px; text-align: center; border-radius: 9999px; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); font-size: 0.82rem; font-weight: 800; margin-bottom: 0.75rem; }
         .vc-step-card h4 { font-size: 1.05rem; font-weight: 700; margin: 0 0 0.35rem 0; color: hsl(var(--foreground)) !important; }
         .vc-step-card p { font-size: 0.92rem; line-height: 1.7; color: hsl(var(--foreground)) !important; margin: 0; }
-        .prompt-portfolio-prompt-wrapper { margin: 1.5rem 0 2rem 0; }
-        .prompt-portfolio-prompt-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
-        .prompt-portfolio-prompt-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: hsl(var(--primary)); }
-        .prompt-portfolio-copy-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.85rem; border-radius: 0.5rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); color: hsl(var(--foreground)); font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .prompt-portfolio-prompt-wrapper { margin: 1.5rem 0 2rem 0; border-radius: 0.85rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); overflow: hidden; box-sizing: border-box; max-width: 100%; }
+        .prompt-portfolio-prompt-header { display: flex; justify-content: space-between; align-items: center; padding: 0.65rem 1rem; background: hsl(var(--muted)/0.7); border-bottom: 1px solid hsl(var(--border)); }
+        .prompt-portfolio-prompt-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: hsl(var(--primary)); }
+        .prompt-portfolio-copy-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.75rem; border-radius: 0.5rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); color: hsl(var(--foreground)); font-size: 0.75rem; font-weight: 600; cursor: pointer; transition: all 0.15s; min-height: 32px; }
         .prompt-portfolio-copy-btn:hover { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); border-color: hsl(var(--primary)); }
         .prompt-portfolio-copy-btn.copied { background: #22C55E; color: #fff; border-color: #22C55E; }
-        .prompt-portfolio-prompt { position: relative; background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; padding: 1.25rem; font-size: 0.9rem; line-height: 1.75; color: hsl(var(--foreground)) !important; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; white-space: pre-wrap; word-break: break-word; }
+        .prompt-portfolio-prompt { position: relative; background: hsl(var(--muted)/0.3); padding: 1.15rem; font-size: 0.88rem; line-height: 1.7; color: hsl(var(--foreground)) !important; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; white-space: pre-wrap; word-break: break-word; overflow-wrap: anywhere; overflow-x: auto; max-width: 100%; box-sizing: border-box; margin: 0; }
         .vc-faq-wrap { display: flex; flex-direction: column; gap: 1rem; margin: 1.75rem 0; }
-        .vc-faq-item { padding: 1.25rem 1.5rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+        .vc-faq-item { padding: 1.25rem 1.5rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); box-sizing: border-box; max-width: 100%; }
         .vc-faq-q { font-size: 1.05rem; font-weight: 700; color: hsl(var(--foreground)) !important; margin: 0 0 0.5rem 0; }
         .vc-faq-a { font-size: 0.98rem; line-height: 1.75; color: hsl(var(--foreground)) !important; margin: 0; }
-        .vc-cta { margin-top: 3.5rem; padding: 2.5rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.85) 100%); text-align: center; color: hsl(var(--primary-foreground)); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .vc-cta { margin-top: 3.5rem; padding: 2.5rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.85) 100%); text-align: center; color: hsl(var(--primary-foreground)); box-shadow: 0 10px 30px rgba(0,0,0,0.1); box-sizing: border-box; max-width: 100%; }
         .vc-cta h2 { color: hsl(var(--primary-foreground)) !important; font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 800; }
         .vc-cta p { color: hsl(var(--primary-foreground)/0.9); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; }
-        .vc-cta a { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: hsl(var(--background)); color: hsl(var(--foreground)) !important; font-weight: 700; padding: 0.85rem 1.75rem; border-radius: 9999px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; font-size: 0.9rem; }
+        .vc-cta a { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: hsl(var(--background)); color: hsl(var(--foreground)) !important; font-weight: 700; padding: 0.85rem 1.75rem; border-radius: 9999px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; font-size: 0.9rem; min-height: 44px; }
         .vc-cta a:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
         @media (max-width: 640px) {
           .vc-hero { padding: 1.25rem 1rem !important; border-radius: 0.85rem !important; margin-bottom: 1.5rem !important; }
-          .vc-hero h2 { font-size: 1.18rem !important; line-height: 1.35 !important; margin-bottom: 0.5rem !important; }
-          .vc-hero p { font-size: 0.93rem !important; line-height: 1.65 !important; }
+          .vc-hero-badge { font-size: 0.7rem !important; padding: 0.2rem 0.55rem !important; margin-bottom: 0.6rem !important; }
+          .vc-hero h2 { font-size: 1.2rem !important; line-height: 1.35 !important; margin-bottom: 0.5rem !important; }
+          .vc-hero p { font-size: 0.94rem !important; line-height: 1.68 !important; }
           .vc-section-title { font-size: 1.15rem !important; margin: 2rem 0 0.85rem 0 !important; padding-left: 0.65rem !important; }
           .vc-card-grid { grid-template-columns: 1fr; gap: 1rem; }
           .vc-tool-card { padding: 1.15rem 1rem !important; margin-bottom: 1.5rem !important; border-radius: 0.85rem !important; }
@@ -85,10 +90,12 @@ const blogs: Record<string, BlogPost> = {
           .vc-feature-list li { font-size: 0.88rem !important; line-height: 1.6 !important; margin-bottom: 0.4rem !important; padding-left: 1.2rem !important; }
           .vc-notice { font-size: 0.85rem !important; line-height: 1.6 !important; padding: 0.75rem 0.85rem !important; margin-bottom: 1rem !important; border-radius: 0.55rem !important; }
           .vc-btn-row { width: 100% !important; margin-top: 0.5rem !important; }
-          .vc-link-btn { width: 100% !important; justify-content: center !important; padding: 0.75rem 1rem !important; font-size: 0.88rem !important; }
+          .vc-link-btn { width: 100% !important; justify-content: center !important; padding: 0.75rem 1rem !important; font-size: 0.9rem !important; }
           .vc-callout { padding: 1.1rem 0.95rem !important; margin: 1.5rem 0 !important; border-radius: 0.75rem !important; }
           .vc-callout p { font-size: 0.92rem !important; line-height: 1.65 !important; }
-          .vc-table th, .vc-table td { padding: 0.75rem 0.85rem !important; font-size: 0.85rem !important; }
+          .vc-table-hint { display: inline-flex !important; }
+          .vc-table-wrap { margin: 1rem 0 1.5rem 0 !important; border-radius: 0.75rem !important; }
+          .vc-table th, .vc-table td { padding: 0.75rem 0.85rem !important; font-size: 0.84rem !important; }
           .vc-step-grid { grid-template-columns: 1fr; gap: 0.85rem; }
           .vc-step-card { padding: 1rem !important; border-radius: 0.65rem !important; }
           .prompt-portfolio-prompt { padding: 0.85rem !important; font-size: 0.78rem !important; line-height: 1.6 !important; }
@@ -103,6 +110,10 @@ const blogs: Record<string, BlogPost> = {
       </style>
 
       <div class="vc-hero">
+        <div class="vc-hero-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          Quick Take / Intisari
+        </div>
         <h2>Punya AI Saja Belum Cukup: Rahasia Tampilan UI Menarik di Era Vibe Coding</h2>
         <p><strong>Vibe Coding</strong> memungkinkan siapa saja membangun aplikasi web fungsional dalam hitungan jam hanya lewat instruksi teks. Namun, tantangan terbesarnya bukan lagi pada logika kode, melainkan <em>desain antarmuka (UI)</em> yang sering kali terlihat kaku, generik, atau tidak konsisten. Inilah kurasi 5 website referensi terbaik yang wajib masuk bookmark setiap AI developer.</p>
       </div>
@@ -123,8 +134,14 @@ const blogs: Record<string, BlogPost> = {
         <div>
           <div class="vc-tool-header">
             <div>
-              <h3 class="vc-tool-title">Jiro Build</h3>
-              <a href="https://jiro.build/" target="_blank" rel="noopener noreferrer" class="vc-tool-url">jiro.build ↗</a>
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.25rem;">
+                <span class="vc-tool-num">#1</span>
+                <h3 class="vc-tool-title">Jiro Build</h3>
+              </div>
+              <a href="https://jiro.build/" target="_blank" rel="noopener noreferrer" class="vc-tool-url">
+                jiro.build
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
             </div>
             <span class="vc-tool-badge">Template & Prompt Library</span>
           </div>
@@ -165,8 +182,14 @@ const blogs: Record<string, BlogPost> = {
         <div>
           <div class="vc-tool-header">
             <div>
-              <h3 class="vc-tool-title">Kage Design</h3>
-              <a href="https://kage.design/" target="_blank" rel="noopener noreferrer" class="vc-tool-url">kage.design ↗</a>
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.25rem;">
+                <span class="vc-tool-num">#2</span>
+                <h3 class="vc-tool-title">Kage Design</h3>
+              </div>
+              <a href="https://kage.design/" target="_blank" rel="noopener noreferrer" class="vc-tool-url">
+                kage.design
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
             </div>
             <span class="vc-tool-badge">Reverse-Engineering & MCP</span>
           </div>
@@ -211,8 +234,14 @@ const blogs: Record<string, BlogPost> = {
         <div>
           <div class="vc-tool-header">
             <div>
-              <h3 class="vc-tool-title">The Component Gallery</h3>
-              <a href="https://component.gallery/" target="_blank" rel="noopener noreferrer" class="vc-tool-url">component.gallery ↗</a>
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.25rem;">
+                <span class="vc-tool-num">#3</span>
+                <h3 class="vc-tool-title">The Component Gallery</h3>
+              </div>
+              <a href="https://component.gallery/" target="_blank" rel="noopener noreferrer" class="vc-tool-url">
+                component.gallery
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
             </div>
             <span class="vc-tool-badge">Design Systems & A11y</span>
           </div>
@@ -253,8 +282,14 @@ const blogs: Record<string, BlogPost> = {
         <div>
           <div class="vc-tool-header">
             <div>
-              <h3 class="vc-tool-title">21st.dev</h3>
-              <a href="https://21st.dev/" target="_blank" rel="noopener noreferrer" class="vc-tool-url">21st.dev ↗</a>
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.25rem;">
+                <span class="vc-tool-num">#4</span>
+                <h3 class="vc-tool-title">21st.dev</h3>
+              </div>
+              <a href="https://21st.dev/" target="_blank" rel="noopener noreferrer" class="vc-tool-url">
+                21st.dev
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
             </div>
             <span class="vc-tool-badge">React, Tailwind & shadcn/ui</span>
           </div>
@@ -295,8 +330,14 @@ const blogs: Record<string, BlogPost> = {
         <div>
           <div class="vc-tool-header">
             <div>
-              <h3 class="vc-tool-title">VibePrompts</h3>
-              <a href="https://vibeprompts.dev/" target="_blank" rel="noopener noreferrer" class="vc-tool-url">vibeprompts.dev ↗</a>
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.25rem;">
+                <span class="vc-tool-num">#5</span>
+                <h3 class="vc-tool-title">VibePrompts</h3>
+              </div>
+              <a href="https://vibeprompts.dev/" target="_blank" rel="noopener noreferrer" class="vc-tool-url">
+                vibeprompts.dev
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
             </div>
             <span class="vc-tool-badge">Prompt Layout Engineering</span>
           </div>
@@ -335,6 +376,10 @@ const blogs: Record<string, BlogPost> = {
 
       <p>Agar memudahkan kamu memilih tool yang paling tepat untuk fase project kamu saat ini, simak tabel perbandingan fitur berikut:</p>
 
+      <div class="vc-table-hint">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        Geser tabel ke samping untuk info lengkap
+      </div>
       <div class="vc-table-wrap">
         <table class="vc-table">
           <thead>

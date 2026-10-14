@@ -198,9 +198,9 @@ export default function RootLayout({
         <LanguageProvider>
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange={true}>
             <SidebarProvider>
-              <div className="flex min-h-screen w-full">
+              <div className="flex flex-col md:flex-row min-h-screen w-full max-w-full overflow-x-hidden">
                 <PortfolioSidebar />
-                <main className="flex-1 min-w-0 overflow-y-auto overflow-x-hidden mx-auto">{children}</main>
+                <main className="flex-1 min-w-0 max-w-full w-full overflow-y-auto overflow-x-hidden">{children}</main>
               </div>
             </SidebarProvider>
           </ThemeProvider>

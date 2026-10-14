@@ -69,42 +69,55 @@ export function BlogContent() {
   return (
     <TranslatedContent
       renderContent={({ t }) => (
-        <div className="container max-w-5xl py-8 px-4 md:px-8">
+        <div className="container max-w-5xl py-6 sm:py-8 px-4 md:px-8 w-full max-w-full overflow-x-hidden">
           <PageHeader title={t('blogTitle')} description={t('blogDescription')} />
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-8 mb-6">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 mb-6">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
                 placeholder={t('searchArticles')}
-                className="pl-10 pr-9"
+                className="pl-10 pr-9 h-10 rounded-xl bg-muted/40 border-border/70 focus-visible:bg-background"
                 value={searchQuery}
                 onChange={(e) => handleSearchChange(e.target.value)}
               />
               {searchQuery && (
                 <button
                   onClick={() => handleSearchChange("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground p-1"
                 >
                   <X className="h-4 w-4" />
                 </button>
               )}
             </div>
             {searchQuery && (
-              <Button variant="outline" onClick={() => handleSearchChange("")}>
+              <Button variant="outline" className="rounded-xl h-10" onClick={() => handleSearchChange("")}>
                 Reset
               </Button>
             )}
           </div>
 
-          <Tabs defaultValue="all">
-            <div className="overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 mb-6 pb-1">
-              <TabsList className="inline-flex h-auto w-auto items-center justify-start rounded-lg bg-muted p-1 text-muted-foreground gap-1">
-                <TabsTrigger value="all" className="whitespace-nowrap px-3 py-1.5 text-xs sm:text-sm font-medium">{t('all')}</TabsTrigger>
-                {categories.map((category) => (
-                  <TabsTrigger key={category} value={category} className="whitespace-nowrap px-3 py-1.5 text-xs sm:text-sm font-medium">{category}</TabsTrigger>
-                ))}
-              </TabsList>
+          <Tabs defaultValue="all" className="w-full max-w-full">
+            <div className="relative w-full max-w-full mb-6">
+              <div className="overflow-x-auto no-scrollbar w-full max-w-full pb-1">
+                <TabsList className="inline-flex h-auto w-auto items-center justify-start rounded-full bg-muted/80 p-1 text-muted-foreground gap-1 border border-border/60">
+                  <TabsTrigger
+                    value="all"
+                    className="whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-xs"
+                  >
+                    {t('all')}
+                  </TabsTrigger>
+                  {categories.map((category) => (
+                    <TabsTrigger
+                      key={category}
+                      value={category}
+                      className="whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-xs"
+                    >
+                      {category}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </div>
             </div>
 
             <TabsContent value="all" className="mt-0">
@@ -113,26 +126,26 @@ export function BlogContent() {
               ) : getFilteredArticles().length === 0 ? (
                 renderEmptyState()
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                   {getFilteredArticles().map((article) => (
                     <Link key={article.id} href={`/blog/${article.id}`} className="block group">
-                      <Card className="overflow-hidden h-full transition-all duration-200 hover:shadow-md border hover:border-primary/40 group-hover:translate-y-[-2px]">
-                        <div className="relative h-48 w-full overflow-hidden">
+                      <Card className="overflow-hidden h-full rounded-2xl transition-all duration-200 hover:shadow-md border border-border/80 hover:border-primary/40 group-hover:translate-y-[-2px] active:scale-[0.99]">
+                        <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted">
                           <Image
                             src={article.imageSrc || "/placeholder.svg"}
                             alt={article.title}
                             fill
                             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                             loading="lazy"
-                            className="object-cover transition-transform duration-200 group-hover:scale-105"
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
                           />
                         </div>
-                        <CardContent className="p-4">
-                          <Badge className="mb-2 bg-primary text-primary-foreground font-medium">{article.category}</Badge>
-                          <h3 className="font-semibold text-lg line-clamp-2 group-hover:text-primary transition-colors">{article.title}</h3>
-                          <p className="text-sm text-muted-foreground mt-2 line-clamp-2 leading-relaxed">{article.excerpt}</p>
+                        <CardContent className="p-4 sm:p-5">
+                          <Badge className="mb-2 bg-primary/10 text-primary hover:bg-primary/15 font-semibold text-xs tracking-wide px-2.5 py-0.5">{article.category}</Badge>
+                          <h3 className="font-bold text-base sm:text-lg line-clamp-2 group-hover:text-primary transition-colors leading-snug">{article.title}</h3>
+                          <p className="text-xs sm:text-sm text-muted-foreground mt-2 line-clamp-2 leading-relaxed">{article.excerpt}</p>
                         </CardContent>
-                        <CardFooter className="p-4 pt-0 flex items-center text-sm text-muted-foreground">
+                        <CardFooter className="p-4 sm:p-5 pt-0 flex items-center text-xs text-muted-foreground">
                           <div className="flex items-center">
                             <Calendar className="h-3.5 w-3.5 mr-1" />
                             {article.date}
@@ -156,26 +169,26 @@ export function BlogContent() {
                 ) : getFilteredArticles(category).length === 0 ? (
                   renderEmptyState()
                 ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                     {getFilteredArticles(category).map((article) => (
                       <Link key={article.id} href={`/blog/${article.id}`} className="block group">
-                        <Card className="overflow-hidden h-full transition-all duration-200 hover:shadow-md border hover:border-primary/40 group-hover:translate-y-[-2px]">
-                          <div className="relative h-48 w-full overflow-hidden">
+                        <Card className="overflow-hidden h-full rounded-2xl transition-all duration-200 hover:shadow-md border border-border/80 hover:border-primary/40 group-hover:translate-y-[-2px] active:scale-[0.99]">
+                          <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted">
                             <Image
                               src={article.imageSrc || "/placeholder.svg"}
                               alt={article.title}
                               fill
                               sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                               loading="lazy"
-                              className="object-cover transition-transform duration-200 group-hover:scale-105"
+                              className="object-cover transition-transform duration-300 group-hover:scale-105"
                             />
                           </div>
-                          <CardContent className="p-4">
-                            <Badge className="mb-2 bg-primary text-primary-foreground font-medium">{article.category}</Badge>
-                            <h3 className="font-semibold text-lg line-clamp-2 group-hover:text-primary transition-colors">{article.title}</h3>
-                            <p className="text-sm text-muted-foreground mt-2 line-clamp-2 leading-relaxed">{article.excerpt}</p>
+                          <CardContent className="p-4 sm:p-5">
+                            <Badge className="mb-2 bg-primary/10 text-primary hover:bg-primary/15 font-semibold text-xs tracking-wide px-2.5 py-0.5">{article.category}</Badge>
+                            <h3 className="font-bold text-base sm:text-lg line-clamp-2 group-hover:text-primary transition-colors leading-snug">{article.title}</h3>
+                            <p className="text-xs sm:text-sm text-muted-foreground mt-2 line-clamp-2 leading-relaxed">{article.excerpt}</p>
                           </CardContent>
-                          <CardFooter className="p-4 pt-0 flex items-center text-sm text-muted-foreground">
+                          <CardFooter className="p-4 sm:p-5 pt-0 flex items-center text-xs text-muted-foreground">
                             <div className="flex items-center">
                               <Calendar className="h-3.5 w-3.5 mr-1" />
                               {article.date}

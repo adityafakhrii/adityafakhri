@@ -68,12 +68,29 @@ export function PortfolioSidebar() {
 
   return (
     <>
-      {isClient && isMobile && (
-        <div className="fixed top-[calc(1rem+env(safe-area-inset-top))] left-[calc(1rem+env(safe-area-inset-left))] z-50">
-          <SidebarTrigger variant="outline" className="h-11 w-11 bg-background shadow-sm">
-            <Menu className="h-6 w-6" />
-          </SidebarTrigger>
-        </div>
+      {isClient && (
+        <header className="sticky top-0 z-40 flex h-14 w-full shrink-0 items-center justify-between border-b bg-background/90 px-4 backdrop-blur-md md:hidden">
+          <div className="flex items-center gap-3">
+            <SidebarTrigger variant="outline" className="h-9 w-9 bg-background shadow-none border">
+              <Menu className="h-5 w-5" />
+            </SidebarTrigger>
+            <span className="font-bold text-sm tracking-tight text-foreground line-clamp-1">
+              {isClient ? t('heroTitle') : 'Aditya Fakhri'}
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <LanguageSwitcher />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-9 w-9 text-muted-foreground hover:text-foreground"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+            >
+              {resolvedTheme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            </Button>
+          </div>
+        </header>
       )}
       <Sidebar>
         <SidebarHeader className="border-b pb-4">

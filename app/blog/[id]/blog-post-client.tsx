@@ -88,55 +88,58 @@ export function BlogPostClient({ id, post, relatedPosts }: BlogPostClientProps) 
         }
 
         return (
-          <div className="container max-w-5xl py-5 sm:py-8 px-4 md:px-8">
+          <div className="container max-w-5xl py-4 sm:py-8 px-4 md:px-8 w-full max-w-full overflow-x-hidden">
             {/* Reading Progress Indicator Bar */}
             <div
-              className="fixed top-0 left-0 h-1 bg-primary z-50 transition-all duration-150 shadow-sm"
+              className="fixed top-0 left-0 h-[2.5px] bg-gradient-to-r from-primary to-primary/80 z-50 transition-all duration-150 shadow-sm"
               style={{ width: `${scrollProgress}%` }}
               aria-label="Reading progress"
             />
 
-            <Button asChild variant="ghost" size="sm" className="mb-4 sm:mb-6 -ml-2 text-muted-foreground hover:text-foreground">
-              <Link href="/blog">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                {t("k_0557fa92")}
+            <div className="mb-4 sm:mb-6">
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-muted-foreground hover:text-foreground transition-all py-1.5 px-3.5 rounded-full bg-muted/80 hover:bg-muted border border-border shadow-xs active:scale-[0.98]"
+              >
+                <ArrowLeft className="h-3.5 w-3.5" />
+                <span>{t("k_0557fa92")}</span>
               </Link>
-            </Button>
+            </div>
 
             <article
-              className="mb-6 sm:mb-8"
+              className="mb-6 sm:mb-8 w-full max-w-full overflow-hidden"
               itemScope
               itemType="https://schema.org/Article"
             >
-              <div className="flex items-center justify-between mb-3 sm:mb-4">
-                <Badge>{post.category || t("notAvailable")}</Badge>
+              <div className="flex items-center justify-between mb-3 sm:mb-4 gap-2">
+                <Badge className="font-semibold text-xs tracking-wide px-2.5 py-0.5">{post.category || t("notAvailable")}</Badge>
                 <BlogShareButton
                   title={post.title}
                   blogId={id}
                   lang={t("language")}
                 />
               </div>
-              <h1 className="text-xl sm:text-3xl md:text-4xl font-extrabold leading-snug sm:leading-[1.3] tracking-tight mb-3 sm:mb-5 break-words">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight sm:leading-[1.25] tracking-tight mb-3 sm:mb-5 text-foreground break-words">
                 {post.title || t("notAvailable")}
               </h1>
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm text-muted-foreground">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm text-muted-foreground pt-2 border-t border-border/50">
                 <div className="flex items-center">
-                  <User className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1" />
-                  {post.author || t("notAvailable")}
+                  <User className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 text-primary" />
+                  <span className="font-medium text-foreground">{post.author || t("notAvailable")}</span>
                 </div>
                 <div className="flex items-center">
-                  <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1" />
+                  <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 text-muted-foreground" />
                   {post.date || t("notAvailable")}
                 </div>
                 <div className="flex items-center">
-                  <Clock className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1" />
+                  <Clock className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 text-muted-foreground" />
                   {post.readTime || t("notAvailable")}
                 </div>
               </div>
             </article>
 
             {post.imageSrc && (
-              <div className="rounded-xl overflow-hidden border mb-6 sm:mb-8 shadow-sm">
+              <div className="rounded-2xl overflow-hidden border mb-6 sm:mb-8 shadow-sm w-full max-w-full bg-muted">
                 <Image
                   src={post.imageSrc}
                   alt={post.title}
@@ -148,11 +151,11 @@ export function BlogPostClient({ id, post, relatedPosts }: BlogPostClientProps) 
               </div>
             )}
 
-            <ContentBlock>
+            <ContentBlock className="w-full max-w-full overflow-hidden">
               {post.content ? (
                 <div
                   ref={contentRef}
-                  className="prose prose-lg max-w-none"
+                  className="prose prose-lg max-w-none w-full max-w-full overflow-x-hidden text-[16px] sm:text-[17px] leading-[1.8]"
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />
               ) : (
