@@ -88,7 +88,7 @@ export function BlogPostClient({ id, post, relatedPosts }: BlogPostClientProps) 
         }
 
         return (
-          <div className="container max-w-5xl py-4 sm:py-8 px-4 md:px-8 w-full max-w-full overflow-x-hidden">
+          <div className="container max-w-5xl py-8 px-4 md:px-8">
             {/* Reading Progress Indicator Bar */}
             <div
               className="fixed top-0 left-0 h-[2.5px] bg-gradient-to-r from-primary to-primary/80 z-50 transition-all duration-150 shadow-sm"

@@ -69,7 +69,7 @@ export function BlogContent() {
   return (
     <TranslatedContent
       renderContent={({ t }) => (
-        <div className="container max-w-5xl py-6 sm:py-8 px-4 md:px-8 w-full max-w-full overflow-x-hidden">
+        <div className="container max-w-5xl py-8 px-4 md:px-8">
           <PageHeader title={t('blogTitle')} description={t('blogDescription')} />
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 mb-6">
@@ -122,35 +122,37 @@ export function BlogContent() {
 
             <TabsContent value="all" className="mt-0">
               {isLoading ? (
-                <GridSkeletonGrid count={4} type="blog" />
+                <GridSkeletonGrid count={6} type="blog" />
               ) : getFilteredArticles().length === 0 ? (
                 renderEmptyState()
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
                   {getFilteredArticles().map((article) => (
                     <Link key={article.id} href={`/blog/${article.id}`} className="block group">
-                      <Card className="overflow-hidden h-full rounded-2xl transition-all duration-200 hover:shadow-md border border-border/80 hover:border-primary/40 group-hover:translate-y-[-2px] active:scale-[0.99]">
-                        <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted">
-                          <Image
-                            src={article.imageSrc || "/placeholder.svg"}
-                            alt={article.title}
-                            fill
-                            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                            loading="lazy"
-                            className="object-cover transition-transform duration-300 group-hover:scale-105"
-                          />
+                      <Card className="overflow-hidden h-full rounded-2xl transition-all duration-200 hover:shadow-md border border-border/80 hover:border-primary/40 group-hover:translate-y-[-2px] active:scale-[0.99] flex flex-col justify-between">
+                        <div>
+                          <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted">
+                            <Image
+                              src={article.imageSrc || "/placeholder.svg"}
+                              alt={article.title}
+                              fill
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              loading="lazy"
+                              className="object-cover transition-transform duration-300 group-hover:scale-105"
+                            />
+                          </div>
+                          <CardContent className="p-4 sm:p-5">
+                            <Badge className="mb-2 bg-primary/10 text-primary hover:bg-primary/15 font-semibold text-xs tracking-wide px-2.5 py-0.5">{article.category}</Badge>
+                            <h3 className="font-bold text-base line-clamp-2 group-hover:text-primary transition-colors leading-snug">{article.title}</h3>
+                            <p className="text-xs sm:text-sm text-muted-foreground mt-2 line-clamp-2 leading-relaxed">{article.excerpt}</p>
+                          </CardContent>
                         </div>
-                        <CardContent className="p-4 sm:p-5">
-                          <Badge className="mb-2 bg-primary/10 text-primary hover:bg-primary/15 font-semibold text-xs tracking-wide px-2.5 py-0.5">{article.category}</Badge>
-                          <h3 className="font-bold text-base sm:text-lg line-clamp-2 group-hover:text-primary transition-colors leading-snug">{article.title}</h3>
-                          <p className="text-xs sm:text-sm text-muted-foreground mt-2 line-clamp-2 leading-relaxed">{article.excerpt}</p>
-                        </CardContent>
-                        <CardFooter className="p-4 sm:p-5 pt-0 flex items-center text-xs text-muted-foreground">
+                        <CardFooter className="p-4 sm:p-5 pt-0 flex items-center justify-between text-xs text-muted-foreground">
                           <div className="flex items-center">
                             <Calendar className="h-3.5 w-3.5 mr-1" />
                             {article.date}
                           </div>
-                          <div className="flex items-center ml-4">
+                          <div className="flex items-center">
                             <Clock className="h-3.5 w-3.5 mr-1" />
                             {article.readTime}
                           </div>
@@ -165,35 +167,37 @@ export function BlogContent() {
             {categories.map((category) => (
               <TabsContent key={category} value={category} className="mt-0">
                 {isLoading ? (
-                  <GridSkeletonGrid count={2} type="blog" />
+                  <GridSkeletonGrid count={3} type="blog" />
                 ) : getFilteredArticles(category).length === 0 ? (
                   renderEmptyState()
                 ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
                     {getFilteredArticles(category).map((article) => (
                       <Link key={article.id} href={`/blog/${article.id}`} className="block group">
-                        <Card className="overflow-hidden h-full rounded-2xl transition-all duration-200 hover:shadow-md border border-border/80 hover:border-primary/40 group-hover:translate-y-[-2px] active:scale-[0.99]">
-                          <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted">
-                            <Image
-                              src={article.imageSrc || "/placeholder.svg"}
-                              alt={article.title}
-                              fill
-                              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                              loading="lazy"
-                              className="object-cover transition-transform duration-300 group-hover:scale-105"
-                            />
+                        <Card className="overflow-hidden h-full rounded-2xl transition-all duration-200 hover:shadow-md border border-border/80 hover:border-primary/40 group-hover:translate-y-[-2px] active:scale-[0.99] flex flex-col justify-between">
+                          <div>
+                            <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted">
+                              <Image
+                                src={article.imageSrc || "/placeholder.svg"}
+                                alt={article.title}
+                                fill
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                loading="lazy"
+                                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                              />
+                            </div>
+                            <CardContent className="p-4 sm:p-5">
+                              <Badge className="mb-2 bg-primary/10 text-primary hover:bg-primary/15 font-semibold text-xs tracking-wide px-2.5 py-0.5">{article.category}</Badge>
+                              <h3 className="font-bold text-base line-clamp-2 group-hover:text-primary transition-colors leading-snug">{article.title}</h3>
+                              <p className="text-xs sm:text-sm text-muted-foreground mt-2 line-clamp-2 leading-relaxed">{article.excerpt}</p>
+                            </CardContent>
                           </div>
-                          <CardContent className="p-4 sm:p-5">
-                            <Badge className="mb-2 bg-primary/10 text-primary hover:bg-primary/15 font-semibold text-xs tracking-wide px-2.5 py-0.5">{article.category}</Badge>
-                            <h3 className="font-bold text-base sm:text-lg line-clamp-2 group-hover:text-primary transition-colors leading-snug">{article.title}</h3>
-                            <p className="text-xs sm:text-sm text-muted-foreground mt-2 line-clamp-2 leading-relaxed">{article.excerpt}</p>
-                          </CardContent>
-                          <CardFooter className="p-4 sm:p-5 pt-0 flex items-center text-xs text-muted-foreground">
+                          <CardFooter className="p-4 sm:p-5 pt-0 flex items-center justify-between text-xs text-muted-foreground">
                             <div className="flex items-center">
                               <Calendar className="h-3.5 w-3.5 mr-1" />
                               {article.date}
                             </div>
-                            <div className="flex items-center ml-4">
+                            <div className="flex items-center">
                               <Clock className="h-3.5 w-3.5 mr-1" />
                               {article.readTime}
                             </div>
