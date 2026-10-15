@@ -254,6 +254,14 @@ export const translations = {
     speakerEventsTitle: "Pembicara di Berbagai Event",
     featuredProjects: "Proyek Unggulan",
     latestBlog: "Blog Terbaru",
+    statProjects: "15+",
+    statProjectsLabel: "Solusi Web & AI",
+    statEducated: "7.000+",
+    statEducatedLabel: "Peserta Ter-edukasi",
+    statEvents: "40+",
+    statEventsLabel: "Event & Workshop Tech",
+    statRole: "10K+",
+    statRoleLabel: "Followers Instagram",
 
     // Skills
     frontendDev: "Front-End Development",
@@ -802,6 +810,14 @@ export const translations = {
     speakerEventsTitle: "Speaker at Various Events",
     featuredProjects: "Featured Projects",
     latestBlog: "Latest Blog",
+    statProjects: "15+",
+    statProjectsLabel: "Web & AI Solutions Built",
+    statEducated: "7,000+",
+    statEducatedLabel: "People Educated",
+    statEvents: "40+",
+    statEventsLabel: "Tech Events & Sessions",
+    statRole: "10K+",
+    statRoleLabel: "Instagram Followers",
 
     // Skills
     frontendDev: "Front-End Development",

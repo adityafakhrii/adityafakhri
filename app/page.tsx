@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ChevronRight, ChevronDown, ChevronUp, Code, Lightbulb, Mic, Sparkles, ExternalLink, SquareCode } from "lucide-react"
+import { ChevronRight, ChevronDown, ChevronUp, Code, Lightbulb, Mic, Sparkles, ExternalLink, SquareCode, Users, Calendar, Award, Code2, Instagram } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { ContentBlock } from "@/components/content-block"
@@ -76,14 +76,81 @@ export default function Home() {
                     </Button>
                   </div>
                 </div>
+
+                {/* Quick Minimalist Statistics Separated by Lines */}
+                <div className="pt-1 sm:pt-2">
+                  <div className="grid grid-cols-2 sm:grid-cols-4">
+                    <Link
+                      href="/projects"
+                      className="group px-3 py-2.5 sm:py-1 flex flex-col items-center text-center justify-center border-r border-b sm:border-b-0 border-border/60 transition-colors hover:opacity-80"
+                    >
+                      <div className="h-7 w-7 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-1 shrink-0 group-hover:scale-110 transition-transform">
+                        <Code2 className="h-3.5 w-3.5" />
+                      </div>
+                      <div className="text-base sm:text-lg font-extrabold text-foreground group-hover:text-primary transition-colors tracking-tight">
+                        {t('statProjects')}
+                      </div>
+                      <div className="text-[11px] sm:text-xs text-muted-foreground font-medium leading-snug">
+                        {t('statProjectsLabel')}
+                      </div>
+                    </Link>
+
+                    <Link
+                      href="/speaking"
+                      className="group px-3 py-2.5 sm:py-1 flex flex-col items-center text-center justify-center border-b sm:border-b-0 sm:border-r border-border/60 transition-colors hover:opacity-80"
+                    >
+                      <div className="h-7 w-7 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-1 shrink-0 group-hover:scale-110 transition-transform">
+                        <Users className="h-3.5 w-3.5" />
+                      </div>
+                      <div className="text-base sm:text-lg font-extrabold text-foreground group-hover:text-primary transition-colors tracking-tight">
+                        {t('statEducated')}
+                      </div>
+                      <div className="text-[11px] sm:text-xs text-muted-foreground font-medium leading-snug">
+                        {t('statEducatedLabel')}
+                      </div>
+                    </Link>
+
+                    <Link
+                      href="/speaking"
+                      className="group px-3 py-2.5 sm:py-1 flex flex-col items-center text-center justify-center border-r sm:border-r border-border/60 transition-colors hover:opacity-80"
+                    >
+                      <div className="h-7 w-7 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-1 shrink-0 group-hover:scale-110 transition-transform">
+                        <Calendar className="h-3.5 w-3.5" />
+                      </div>
+                      <div className="text-base sm:text-lg font-extrabold text-foreground group-hover:text-primary transition-colors tracking-tight">
+                        {t('statEvents')}
+                      </div>
+                      <div className="text-[11px] sm:text-xs text-muted-foreground font-medium leading-snug">
+                        {t('statEventsLabel')}
+                      </div>
+                    </Link>
+
+                    <a
+                      href="https://www.instagram.com/adityafakhrii/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group px-3 py-2.5 sm:py-1 flex flex-col items-center text-center justify-center transition-colors hover:opacity-80"
+                    >
+                      <div className="h-7 w-7 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-1 shrink-0 group-hover:scale-110 transition-transform">
+                        <Instagram className="h-3.5 w-3.5" />
+                      </div>
+                      <div className="text-base sm:text-lg font-extrabold text-foreground group-hover:text-primary transition-colors tracking-tight">
+                        {t('statRole')}
+                      </div>
+                      <div className="text-[11px] sm:text-xs text-muted-foreground font-medium leading-snug">
+                        {t('statRoleLabel')}
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
               <div className="w-full md:w-1/3 flex justify-center">
-                <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-primary/10">
+                <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-primary/10 shadow-sm shrink-0">
                   <Image
                     src="/aditya-fakhri.webp"
                     alt="Aditya Fakhri Riansyah"
                     fill
-                    sizes="256px"
+                    sizes="(max-width: 768px) 224px, 288px"
                     priority
                     className="object-cover scale-125 translate-y-4"
                   />

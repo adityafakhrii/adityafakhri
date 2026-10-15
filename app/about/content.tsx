@@ -27,7 +27,7 @@ export function AboutContent() {
                   <Mic className="h-3.5 w-3.5" /> Pembicara Pemrograman, Coding, IT & AI
                 </div>
                 <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
-                  Menginspirasi Lebih dari <span className="text-primary">5.000+ Peserta</span> di <span className="text-primary">40+ Event Technology</span>
+                  Menginspirasi Lebih dari <span className="text-primary">7.000+ Peserta</span> di <span className="text-primary">40+ Event Technology</span>
                 </h2>
                 <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                   Aktif membagikan wawasan seputar <strong className="text-foreground font-semibold">Pemrograman (Web Development), Artificial Intelligence (AI), Prompt & Context Engineering, serta Karir Software Engineer</strong>. Berbasis di <strong className="text-foreground font-semibold">Sukabumi & Bandung</strong>, dan siap mengisi seminar, workshop, webinar, maupun tech conference secara nasional.
@@ -61,7 +61,7 @@ export function AboutContent() {
               <div className="h-9 w-9 sm:h-10 sm:w-10 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-1.5 shrink-0">
                 <Users className="h-4 w-4 sm:h-5 sm:w-5" />
               </div>
-              <div className="text-xl sm:text-2xl md:text-3xl font-extrabold text-foreground tracking-tight truncate w-full">5.000+</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-extrabold text-foreground tracking-tight truncate w-full">7.000+</div>
               <div className="text-[11px] sm:text-xs text-muted-foreground font-medium line-clamp-2">Peserta Ter-edukasi</div>
             </div>
             <div className="p-4 sm:p-5 border rounded-xl bg-card text-center space-y-1 hover:border-primary/50 transition-colors flex flex-col items-center justify-center overflow-hidden">
