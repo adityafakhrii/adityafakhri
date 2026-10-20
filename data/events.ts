@@ -1801,4 +1801,45 @@ export const pastEvents: EventItem[] = [
       en: "Organized by: Dinotis",
     },
   },
+  {
+    id: "shield-up-from-cyber-attack-techconnect-2022",
+    category: "AMA Session",
+    tags: ["Cyber Security", "Web Security", "Cyber Attack", "Web Developer", "Telegram"],
+    imageSrc: "https://www.gambaryuk.com/1792483523603-lzrylz.webp",
+    title: {
+      id: "Shield Up from Cyber Attack",
+      en: "Shield Up from Cyber Attack",
+    },
+    subtitle: {
+      id: "ASK ME ANYTHING (AMA) with Techconnect",
+      en: "ASK ME ANYTHING (AMA) with Techconnect",
+    },
+    date: "16 September 2022",
+    time: "16.00 - 17.00 WIB",
+    location: "Telegram",
+    description: {
+      id: "Sesi Ask Me Anything (AMA) di Telegram bersama Techconnect. Membahas fundamental kesiapan dan perlindungan sistem web dari ancaman cyber attack, celah keamanan umum, serta langkah praktis bagi web developer untuk memproteksi aplikasi.",
+      en: "Ask Me Anything (AMA) session on Telegram with Techconnect. Discussing web system security fundamentals against cyber attack threats, common vulnerabilities, and practical steps for web developers to shield applications.",
+    },
+    bullets: {
+      id: [
+        "Pengenalan ragam jenis cyber attack yang kerap mengancam sistem digital",
+        "Langkah preventif dan best practices keamanan dasar untuk web developer",
+        "Strategi proteksi data dan penanganan insiden keamanan web",
+        "Sesi tanya jawab terbuka (Ask Me Anything) seputar keamanan siber dan web development",
+      ],
+      en: [
+        "Overview of common cyber attack types threatening digital systems",
+        "Preventive measures and basic security best practices for web developers",
+        "Data protection strategies and handling web security incidents",
+        "Open Ask Me Anything (AMA) Q&A session regarding cybersecurity and web development",
+      ],
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: Techconnect",
+      en: "Organized by: Techconnect",
+    },
+    links: [],
+  },
 ]
+
