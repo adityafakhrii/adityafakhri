@@ -14,6 +14,7 @@ import {
     Clock,
     Search,
     X,
+    Filter,
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -96,38 +97,48 @@ export function LinksContent() {
                             description={t('linksPageDescription')}
                         />
 
-                        {/* MOBILE ONLY: Single-line Search Bar + Category Dropdown (Clean, zero clutter) */}
-                        <div className="mt-6 flex sm:hidden items-center gap-2" suppressHydrationWarning>
-                            {/* Search input with live filter */}
+                        {/* Search & Category Filter Bar (Unified for Mobile & Desktop) */}
+                        <div className="mt-7 flex items-center gap-2.5 sm:gap-3 max-w-xl" suppressHydrationWarning>
+                            {/* Real-time search input */}
                             <div className="relative flex-1">
-                                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                                <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
                                 <input
                                     type="text"
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
                                     placeholder={t('linksPageSearchPlaceholder')}
                                     suppressHydrationWarning
-                                    className="w-full h-10 pl-9 pr-8 rounded-xl bg-muted/40 border border-border/70 text-xs placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
+                                    className="w-full h-10 sm:h-11 pl-9 sm:pl-10 pr-8 sm:pr-9 rounded-xl bg-muted/40 border border-border/70 text-xs sm:text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
                                 />
                                 {searchQuery && (
                                     <button
                                         type="button"
                                         onClick={() => setSearchQuery("")}
                                         aria-label="Clear search"
-                                        className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-muted-foreground hover:text-foreground"
+                                        className="absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2 p-1 text-muted-foreground hover:text-foreground"
                                     >
-                                        <X className="h-3.5 w-3.5" />
+                                        <X className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                                     </button>
                                 )}
                             </div>
 
-                            {/* Dropdown Kategori on Mobile */}
+                            {/* Category Dropdown Select */}
                             <div className="shrink-0">
                                 <Select value={selectedCategoryId} onValueChange={setSelectedCategoryId}>
-                                    <SelectTrigger className="w-[125px] h-10 px-3 rounded-xl bg-muted/40 border-border/70 text-xs font-medium">
-                                        <SelectValue placeholder={t('linksPageAllCategories')} />
+                                    <SelectTrigger className="min-w-[135px] sm:min-w-[195px] h-10 sm:h-11 px-3 sm:px-3.5 rounded-xl bg-background hover:bg-muted/40 border border-border/80 hover:border-primary/60 text-xs sm:text-sm font-medium transition-all shadow-xs gap-2">
+                                        <div className="flex items-center gap-2 truncate">
+                                            <div className="p-1 rounded-md bg-primary/10 text-primary shrink-0">
+                                                <Filter className="h-3.5 w-3.5" />
+                                            </div>
+                                            <div className="truncate flex items-center text-xs sm:text-sm font-medium">
+                                                <span className="hidden sm:inline text-muted-foreground mr-1 shrink-0 font-normal">
+                                                    {lang === 'en' ? 'Category:' : 'Kategori:'}
+                                                </span>
+                                                <SelectValue placeholder={t('linksPageAllCategories')} />
+                                            </div>
+                                        </div>
                                     </SelectTrigger>
-                                    <SelectContent align="end" className="rounded-xl">
+                                    <SelectContent align="end" className="rounded-xl min-w-[180px]">
                                         <SelectItem value="all">
                                             {t('linksPageAllCategories')} ({totalProductsCount})
                                         </SelectItem>
@@ -138,90 +149,6 @@ export function LinksContent() {
                                         ))}
                                     </SelectContent>
                                 </Select>
-                            </div>
-                        </div>
-
-                        {/* DESKTOP ONLY: Category Pills + Search Bar on the Right */}
-                        <div className="mt-8 hidden sm:flex items-center justify-between gap-4" suppressHydrationWarning>
-                            {/* Category Filter Pills */}
-                            <div className="flex flex-wrap items-center gap-2 flex-1">
-                                <button
-                                    type="button"
-                                    onClick={() => setSelectedCategoryId("all")}
-                                    className={cn(
-                                        "inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-medium transition-all duration-200 shrink-0",
-                                        selectedCategoryId === "all"
-                                            ? "bg-primary text-primary-foreground shadow-sm"
-                                            : "bg-muted/60 hover:bg-muted text-muted-foreground hover:text-foreground border border-border/60"
-                                    )}
-                                >
-                                    <Layers className="h-4 w-4" />
-                                    <span>{t('linksPageAllCategories')}</span>
-                                    <span className={cn(
-                                        "px-1.5 py-0.2 rounded-full text-[11px] font-semibold",
-                                        selectedCategoryId === "all"
-                                            ? "bg-primary-foreground/20 text-primary-foreground"
-                                            : "bg-muted-foreground/15 text-muted-foreground"
-                                    )} suppressHydrationWarning>
-                                        {totalProductsCount}
-                                    </span>
-                                </button>
-
-                                {linkCategories.map((cat) => {
-                                    const IconComponent = categoryIconMap[cat.icon] || Sparkles
-                                    const isSelected = selectedCategoryId === cat.id
-                                    const count = cat.items.length
-
-                                    return (
-                                        <button
-                                            key={cat.id}
-                                            type="button"
-                                            onClick={() => setSelectedCategoryId(cat.id)}
-                                            className={cn(
-                                                "inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-medium transition-all duration-200 shrink-0",
-                                                isSelected
-                                                    ? "bg-primary text-primary-foreground shadow-sm"
-                                                    : "bg-muted/60 hover:bg-muted text-muted-foreground hover:text-foreground border border-border/60"
-                                            )}
-                                        >
-                                            <IconComponent className="h-4 w-4" />
-                                            <span suppressHydrationWarning>{cat.name[lang]}</span>
-                                            {count > 0 && (
-                                                <span className={cn(
-                                                    "px-1.5 py-0.2 rounded-full text-[11px] font-semibold",
-                                                    isSelected
-                                                        ? "bg-primary-foreground/20 text-primary-foreground"
-                                                        : "bg-muted-foreground/15 text-muted-foreground"
-                                                )} suppressHydrationWarning>
-                                                    {count}
-                                                </span>
-                                            )}
-                                        </button>
-                                    )
-                                })}
-                            </div>
-
-                            {/* Search bar on Desktop */}
-                            <div className="relative w-64 shrink-0">
-                                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
-                                <input
-                                    type="text"
-                                    value={searchQuery}
-                                    onChange={(e) => setSearchQuery(e.target.value)}
-                                    placeholder={t('linksPageSearchPlaceholder')}
-                                    suppressHydrationWarning
-                                    className="w-full h-10 pl-9 pr-8 rounded-xl bg-muted/40 border border-border/70 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
-                                />
-                                {searchQuery && (
-                                    <button
-                                        type="button"
-                                        onClick={() => setSearchQuery("")}
-                                        aria-label="Clear search"
-                                        className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-muted-foreground hover:text-foreground"
-                                    >
-                                        <X className="h-3.5 w-3.5" />
-                                    </button>
-                                )}
                             </div>
                         </div>
 
