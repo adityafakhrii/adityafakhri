@@ -2,14 +2,14 @@ import type { Metadata } from "next"
 import { LinksContent } from "./content"
 
 export const metadata: Metadata = {
-  title: "Link Penting & Profil Media Sosial | Aditya Fakhri Riansyah",
-  description: "Kumpulan link penting, media sosial, portfolio, repository, dan kanal komunikasi Aditya Fakhri Riansyah.",
+  title: "Rekomendasi Produk & Link Pilihan | Aditya Fakhri Riansyah",
+  description: "Kumpulan link rekomendasi produk pilihan Aditya Fakhri Riansyah: buku IT, jersey, setup kerja, setup content creator, dan rekomendasi produk bermanfaat lainnya.",
   alternates: {
     canonical: "https://adityafakhri.id/links",
   },
   openGraph: {
-    title: "Link Penting & Profil Media Sosial | Aditya Fakhri Riansyah",
-    description: "Kumpulan link penting, media sosial, dan portfolio Aditya Fakhri Riansyah.",
+    title: "Rekomendasi Produk & Link Pilihan | Aditya Fakhri Riansyah",
+    description: "Kumpulan link rekomendasi produk pilihan: buku IT, jersey, setup kerja, setup content creator, dan lainnya.",
     url: "https://adityafakhri.id/links",
     siteName: "Aditya Fakhri Riansyah",
     locale: "id_ID",
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Link Penting & Profil Media Sosial | Aditya Fakhri Riansyah",
-    description: "Kumpulan link penting, media sosial, dan portfolio Aditya Fakhri Riansyah.",
+    title: "Rekomendasi Produk & Link Pilihan | Aditya Fakhri Riansyah",
+    description: "Kumpulan link rekomendasi produk pilihan: buku IT, jersey, setup kerja, setup content creator, dan lainnya.",
     images: ["/foto-adit.webp"],
     creator: "@adityafakhrii",
   },

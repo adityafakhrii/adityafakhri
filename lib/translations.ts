@@ -332,13 +332,18 @@ export const translations = {
 
     // Links page
     linksPageTitle: "Links",
-    linksPageDescription: "Rekomendasi produk IT pilihan gue",
+    linksPageDescription: "Rekomendasi produk pilihan gue",
+    linksPageAllCategories: "Semua",
+    linksPageMore: "Link dan rekomendasi produk lainnya segera hadir",
+    linksPageEmptyCategory: "Produk rekomendasi untuk kategori ini sedang dikurasi dan akan segera hadir.",
+    linksPageAffiliateNotice: "Beberapa link di atas merupakan link affiliate Shopee. Berbelanja melalui link ini ikut mendukung gue tanpa biaya tambahan.",
+    linksPageTotalProducts: "Produk",
+    linksPageComingSoon: "Segera Hadir",
     linksPageBooksSection: "Rekomendasi Buku IT",
     linksPageBook: "Buku",
     linksPageBookSIDesc: "Rekomendasi buku untuk memahami dasar-dasar Sistem Informasi",
     linksPageMLDesc: "Rekomendasi produk untuk belajar Machine Learning",
     linksPageCodingAIDesc: "Panduan praktis belajar coding dan membangun aplikasi dibantu AI untuk pemula",
-    linksPageMore: "Link lainnya segera hadir",
     viewProduct: "Lihat Produk",
 
     // Blog page
@@ -888,13 +893,18 @@ export const translations = {
 
     // Links page
     linksPageTitle: "Links",
-    linksPageDescription: "My curated IT product recommendations",
+    linksPageDescription: "My curated product recommendations",
+    linksPageAllCategories: "All",
+    linksPageMore: "More links and curated product recommendations coming soon",
+    linksPageEmptyCategory: "Curated recommendations for this category are being prepared and will be available soon.",
+    linksPageAffiliateNotice: "Some links above are Shopee affiliate links. Purchasing through these links helps support me at no extra cost to you.",
+    linksPageTotalProducts: "Products",
+    linksPageComingSoon: "Coming Soon",
     linksPageBooksSection: "IT Book Recommendations",
     linksPageBook: "Book",
     linksPageBookSIDesc: "Recommended book to understand the fundamentals of Information Systems",
     linksPageMLDesc: "Recommended product for learning Machine Learning",
     linksPageCodingAIDesc: "Practical guide to learning coding and building applications with AI for beginners",
-    linksPageMore: "More links coming soon",
     viewProduct: "View Product",
 
     // Blog page
