@@ -271,20 +271,12 @@ export function LinksContent() {
                                                     className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                                                 />
                                                 
-                                                {/* Floating Badges */}
+                                                {/* Floating Category Badge */}
                                                 <div className="absolute top-2 left-2 z-10 flex flex-wrap gap-1">
                                                     <span className="text-[10px] sm:text-xs font-medium px-2 py-0.5 rounded-md bg-background/85 text-foreground backdrop-blur-md border border-border/60 shadow-xs">
                                                         {item.categoryName[lang]}
                                                     </span>
                                                 </div>
-
-                                                {item.badge && (
-                                                    <div className="absolute top-2 right-2 z-10">
-                                                        <span className="text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-md bg-emerald-500 text-white shadow-xs">
-                                                            {item.badge[lang]}
-                                                        </span>
-                                                    </div>
-                                                )}
                                             </div>
 
                                             {/* Product Details */}
