@@ -12,6 +12,7 @@ export interface LinkItem {
   categoryId: string
   categoryName: TranslatableText
   badge?: TranslatableText
+  createdAt: string
 }
 
 export type CategoryIconType = "BookOpen" | "Shirt" | "Monitor" | "Video" | "Sparkles"
@@ -60,6 +61,7 @@ export const linkCategories: LinkCategory[] = [
           id: "Terbaru",
           en: "New",
         },
+        createdAt: "2026-10-25T00:00:00Z",
       },
       {
         id: "pengantar-si",
@@ -75,6 +77,7 @@ export const linkCategories: LinkCategory[] = [
           id: "Buku",
           en: "Book",
         },
+        createdAt: "2026-10-10T00:00:00Z",
       },
       {
         id: "machine-learning",
@@ -90,6 +93,7 @@ export const linkCategories: LinkCategory[] = [
           id: "Buku",
           en: "Book",
         },
+        createdAt: "2026-09-01T00:00:00Z",
       },
     ],
   },
@@ -110,25 +114,6 @@ export const linkCategories: LinkCategory[] = [
     icon: "Shirt",
     items: [
       {
-        id: "chelsea-home-2026-27",
-        title: "Chelsea Home 2026/27 Original",
-        description: {
-          id: "Jersey Chelsea Home 2026/27 Original resmi untuk koleksi dan kenyamanan mendukung The Blues",
-          en: "Official Chelsea Home 2026/27 Original jersey for your collection and cheering for The Blues",
-        },
-        url: "https://s.shopee.co.id/6q1xJGlHIm",
-        imageSrc: "https://www.gambaryuk.com/1793591576881-ql2m3l.webp",
-        categoryId: "jersey",
-        categoryName: {
-          id: "Jersey",
-          en: "Jersey",
-        },
-        badge: {
-          id: "Original",
-          en: "Original",
-        },
-      },
-      {
         id: "chelsea-away-2026-27",
         title: "Chelsea Away 2026/27 Original",
         description: {
@@ -146,6 +131,27 @@ export const linkCategories: LinkCategory[] = [
           id: "Original",
           en: "Original",
         },
+        createdAt: "2026-11-02T11:05:00Z",
+      },
+      {
+        id: "chelsea-home-2026-27",
+        title: "Chelsea Home 2026/27 Original",
+        description: {
+          id: "Jersey Chelsea Home 2026/27 Original resmi untuk koleksi dan kenyamanan mendukung The Blues",
+          en: "Official Chelsea Home 2026/27 Original jersey for your collection and cheering for The Blues",
+        },
+        url: "https://s.shopee.co.id/6q1xJGlHIm",
+        imageSrc: "https://www.gambaryuk.com/1793591576881-ql2m3l.webp",
+        categoryId: "jersey",
+        categoryName: {
+          id: "Jersey",
+          en: "Jersey",
+        },
+        badge: {
+          id: "Original",
+          en: "Original",
+        },
+        createdAt: "2026-11-02T10:50:00Z",
       },
     ],
   },
@@ -153,7 +159,7 @@ export const linkCategories: LinkCategory[] = [
     id: "setup-kerja",
     name: {
       id: "Setup Kerja",
-      en: "Workspace Setup",
+      en: "Workspace",
     },
     sectionTitle: {
       id: "Rekomendasi Setup Kerja",
@@ -169,8 +175,8 @@ export const linkCategories: LinkCategory[] = [
   {
     id: "setup-content-creator",
     name: {
-      id: "Setup Content Creator",
-      en: "Content Creator Setup",
+      id: "Content Creator",
+      en: "Content Creator",
     },
     sectionTitle: {
       id: "Rekomendasi Setup Content Creator",
@@ -201,4 +207,3 @@ export const linkCategories: LinkCategory[] = [
     items: [],
   },
 ]
-
