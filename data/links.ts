@@ -128,6 +128,25 @@ export const linkCategories: LinkCategory[] = [
           en: "Original",
         },
       },
+      {
+        id: "chelsea-away-2026-27",
+        title: "Chelsea Away 2026/27 Original",
+        description: {
+          id: "Jersey Chelsea Away 2026/27 Original resmi dengan desain modern elegan untuk penggemar The Blues",
+          en: "Official Chelsea Away 2026/27 Original jersey with a sleek modern design for The Blues fans",
+        },
+        url: "https://s.shopee.co.id/9zyz5wxK5S",
+        imageSrc: "https://www.gambaryuk.com/1793592089097-x6bhhi.webp",
+        categoryId: "jersey",
+        categoryName: {
+          id: "Jersey",
+          en: "Jersey",
+        },
+        badge: {
+          id: "Original",
+          en: "Original",
+        },
+      },
     ],
   },
   {
@@ -167,8 +186,8 @@ export const linkCategories: LinkCategory[] = [
   {
     id: "rekomendasi-produk-lainnya",
     name: {
-      id: "Rekomendasi Produk Lainnya",
-      en: "Other Recommendations",
+      id: "Lainnya",
+      en: "Other",
     },
     sectionTitle: {
       id: "Rekomendasi Produk Lainnya",
