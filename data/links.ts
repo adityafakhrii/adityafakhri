@@ -114,26 +114,6 @@ export const linkCategories: LinkCategory[] = [
     icon: "Shirt",
     items: [
       {
-        id: "chelsea-away-2026-27",
-        title: "Chelsea Away 2026/27 Original",
-        description: {
-          id: "Jersey Chelsea Away 2026/27 Original resmi dengan desain modern elegan untuk penggemar The Blues",
-          en: "Official Chelsea Away 2026/27 Original jersey with a sleek modern design for The Blues fans",
-        },
-        url: "https://s.shopee.co.id/9zyz5wxK5S",
-        imageSrc: "https://www.gambaryuk.com/1793592089097-x6bhhi.webp",
-        categoryId: "jersey",
-        categoryName: {
-          id: "Jersey",
-          en: "Jersey",
-        },
-        badge: {
-          id: "Original",
-          en: "Original",
-        },
-        createdAt: "2026-11-02T11:05:00Z",
-      },
-      {
         id: "chelsea-home-2026-27",
         title: "Chelsea Home 2026/27 Original",
         description: {
@@ -151,7 +131,27 @@ export const linkCategories: LinkCategory[] = [
           id: "Original",
           en: "Original",
         },
-        createdAt: "2026-11-02T10:50:00Z",
+        createdAt: "2026-11-02T13:00:00Z",
+      },
+      {
+        id: "chelsea-away-2026-27",
+        title: "Chelsea Away 2026/27 Original",
+        description: {
+          id: "Jersey Chelsea Away 2026/27 Original resmi dengan desain modern elegan untuk penggemar The Blues",
+          en: "Official Chelsea Away 2026/27 Original jersey with a sleek modern design for The Blues fans",
+        },
+        url: "https://s.shopee.co.id/9zyz5wxK5S",
+        imageSrc: "https://www.gambaryuk.com/1793592089097-x6bhhi.webp",
+        categoryId: "jersey",
+        categoryName: {
+          id: "Jersey",
+          en: "Jersey",
+        },
+        badge: {
+          id: "Original",
+          en: "Original",
+        },
+        createdAt: "2026-11-02T12:59:00Z",
       },
     ],
   },
@@ -170,7 +170,68 @@ export const linkCategories: LinkCategory[] = [
       en: "Curated workspace gear and accessories for daily work productivity",
     },
     icon: "Monitor",
-    items: [],
+    items: [
+      {
+        id: "monitor-viewsonic-24-100hz",
+        title: 'Monitor ViewSonic 24" 100Hz VA2432-H-W',
+        description: {
+          id: "Monitor 24 inci IPS 100Hz dengan bezel tipis dan visual jernih untuk kenyamanan kerja harian",
+          en: "24-inch IPS 100Hz monitor with slim bezels and crisp visuals for daily work comfort",
+        },
+        url: "https://s.shopee.co.id/9pfYw5ttJt",
+        imageSrc: "https://www.gambaryuk.com/1793594383109-420iey.webp",
+        categoryId: "setup-kerja",
+        categoryName: {
+          id: "Setup Kerja",
+          en: "Workspace",
+        },
+        badge: {
+          id: "100Hz IPS",
+          en: "100Hz IPS",
+        },
+        createdAt: "2026-11-02T11:45:00Z",
+      },
+      {
+        id: "mouse-logitech-mx-anywhere-3s",
+        title: "Mouse Logitech MX Anywhere 3S",
+        description: {
+          id: "Mouse wireless compact premium dengan sensor presisi tinggi dan klik senyap untuk mobilitas kerja",
+          en: "Premium compact wireless mouse with high precision sensor and quiet clicks for work on the go",
+        },
+        url: "https://s.shopee.co.id/9pfYvrgIWX",
+        imageSrc: "https://www.gambaryuk.com/1793594384635-9t0k8d.webp",
+        categoryId: "setup-kerja",
+        categoryName: {
+          id: "Setup Kerja",
+          en: "Workspace",
+        },
+        badge: {
+          id: "Wireless",
+          en: "Wireless",
+        },
+        createdAt: "2026-11-02T11:44:00Z",
+      },
+      {
+        id: "keyboard-fantech-maxfit-air-mk9165",
+        title: "Keyboard Mechanical Fantech Maxfit Air MK9165",
+        description: {
+          id: "Keyboard mechanical wireless ergonomic dengan feel mengetik nyaman untuk produktivitas kerja",
+          en: "Ergonomic wireless mechanical keyboard with satisfying typing feel for work productivity",
+        },
+        url: "https://s.shopee.co.id/2LZXzvLl16",
+        imageSrc: "https://www.gambaryuk.com/1793594384981-8zhgqx.webp",
+        categoryId: "setup-kerja",
+        categoryName: {
+          id: "Setup Kerja",
+          en: "Workspace",
+        },
+        badge: {
+          id: "Wireless",
+          en: "Wireless",
+        },
+        createdAt: "2026-11-02T11:43:00Z",
+      },
+    ],
   },
   {
     id: "setup-content-creator",
