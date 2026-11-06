@@ -3473,6 +3473,15 @@ The first screen should focus on the hero section with a strong headline, short 
         <div class="ai-builder-card">
           <div class="ai-builder-number">1</div>
           <div class="ai-builder-body">
+            <h3>Forgelo – Conversational AI Website Builder</h3>
+            <p class="ai-builder-desc">Bikin website lengkap cukup dengan ngobrol/prompting. Deskripsiin bisnis lo, websitenya langsung jadi dan bisa terus direvisi lewat chat.</p>
+            <a class="ai-builder-btn" href="https://forgelo.com" target="_blank" rel="noopener noreferrer">forgelo.com <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ai-builder-card">
+          <div class="ai-builder-number">2</div>
+          <div class="ai-builder-body">
             <h3>Readdy – AI Website Builder Instan</h3>
             <p class="ai-builder-desc">Tinggal tulis mau bikin apa, websitenya langsung jadi. Cocok buat lo yang mau launch cepet tanpa ribet ngoding.</p>
             <a class="ai-builder-btn" href="https://readdy.ai" target="_blank" rel="noopener noreferrer">readdy.ai <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
@@ -3480,7 +3489,7 @@ The first screen should focus on the hero section with a strong headline, short 
         </div>
 
         <div class="ai-builder-card">
-          <div class="ai-builder-number">2</div>
+          <div class="ai-builder-number">3</div>
           <div class="ai-builder-body">
             <h3>HeroUI Chat – Prompt ke React App</h3>
             <p class="ai-builder-desc">Screenshot + prompt → langsung jadi React app. Buat lo yang capek slicing manual dari Figma.</p>
@@ -3489,7 +3498,7 @@ The first screen should focus on the hero section with a strong headline, short 
         </div>
 
         <div class="ai-builder-card">
-          <div class="ai-builder-number">3</div>
+          <div class="ai-builder-number">4</div>
           <div class="ai-builder-body">
             <h3>Co.dev – Text to App Builder</h3>
             <p class="ai-builder-desc">Cuma jelasin ide lo, aplikasinya langsung ke-generate. Startup mode ON tanpa tim dev gede.</p>
@@ -3498,7 +3507,7 @@ The first screen should focus on the hero section with a strong headline, short 
         </div>
 
         <div class="ai-builder-card">
-          <div class="ai-builder-number">4</div>
+          <div class="ai-builder-number">5</div>
           <div class="ai-builder-body">
             <h3>Chariot AI – Website Tanpa Coding</h3>
             <p class="ai-builder-desc">Deskripsiin visi lo, AI-nya bangunin websitenya. Cepet, responsif, tinggal publish.</p>
@@ -3507,7 +3516,7 @@ The first screen should focus on the hero section with a strong headline, short 
         </div>
 
         <div class="ai-builder-card">
-          <div class="ai-builder-number">5</div>
+          <div class="ai-builder-number">6</div>
           <div class="ai-builder-body">
             <h3>Frontly – No Code Business App</h3>
             <p class="ai-builder-desc">Bikin internal tools & app bisnis dalam menit. Tanpa 1 baris code pun.</p>
@@ -3516,7 +3525,7 @@ The first screen should focus on the hero section with a strong headline, short 
         </div>
 
         <div class="ai-builder-card">
-          <div class="ai-builder-number">6</div>
+          <div class="ai-builder-number">7</div>
           <div class="ai-builder-body">
             <h3>Greta – App + Growth Stack Builder</h3>
             <p class="ai-builder-desc">Nggak cuma bikin app, tapi sekalian growth tools-nya. Analytics, email, automation — satu paket.</p>
@@ -3525,7 +3534,7 @@ The first screen should focus on the hero section with a strong headline, short 
         </div>
 
         <div class="ai-builder-card">
-          <div class="ai-builder-number">7</div>
+          <div class="ai-builder-number">8</div>
           <div class="ai-builder-body">
             <h3>Rork – AI Mobile App Builder</h3>
             <p class="ai-builder-desc">React Native app langsung jadi. iOS & Android sekali jalan.</p>
@@ -3534,7 +3543,7 @@ The first screen should focus on the hero section with a strong headline, short 
         </div>
 
         <div class="ai-builder-card">
-          <div class="ai-builder-number">8</div>
+          <div class="ai-builder-number">9</div>
           <div class="ai-builder-body">
             <h3>Create.xyz – Words to Website</h3>
             <p class="ai-builder-desc">Ngetik ide → langsung jadi website atau tools. Cepet banget buat prototyping.</p>
@@ -3543,7 +3552,7 @@ The first screen should focus on the hero section with a strong headline, short 
         </div>
 
         <div class="ai-builder-card">
-          <div class="ai-builder-number">9</div>
+          <div class="ai-builder-number">10</div>
           <div class="ai-builder-body">
             <h3>A0.dev – React Native Builder</h3>
             <p class="ai-builder-desc">Masukin ide, dapet full React Native app. Development time dipangkas brutal.</p>
@@ -3552,7 +3561,7 @@ The first screen should focus on the hero section with a strong headline, short 
         </div>
 
         <div class="ai-builder-card">
-          <div class="ai-builder-number">10</div>
+          <div class="ai-builder-number">11</div>
           <div class="ai-builder-body">
             <h3>Contra Portfolio – AI Portfolio Builder</h3>
             <p class="ai-builder-desc">Freelancer wajib tahu ini. Portfolio jadi dalam menit, bisa langsung dapet klien.</p>
@@ -3561,7 +3570,7 @@ The first screen should focus on the hero section with a strong headline, short 
         </div>
 
         <div class="ai-builder-card">
-          <div class="ai-builder-number">11</div>
+          <div class="ai-builder-number">12</div>
           <div class="ai-builder-body">
             <h3>Tempo Labs – AI React Builder</h3>
             <p class="ai-builder-desc">Buat lo yang main React dan mau lebih sat-set. Frontend presisi + AI assist dalam satu tempat.</p>
@@ -3570,7 +3579,7 @@ The first screen should focus on the hero section with a strong headline, short 
         </div>
 
         <div class="ai-builder-card">
-          <div class="ai-builder-number">12</div>
+          <div class="ai-builder-number">13</div>
           <div class="ai-builder-body">
             <h3>Stunning – AI Landing Page</h3>
             <p class="ai-builder-desc">Landing page jadi dalam hitungan menit. Cocok buat validate ide atau jualan cepet.</p>
@@ -3579,20 +3588,11 @@ The first screen should focus on the hero section with a strong headline, short 
         </div>
 
         <div class="ai-builder-card">
-          <div class="ai-builder-number">13</div>
+          <div class="ai-builder-number">14</div>
           <div class="ai-builder-body">
             <h3>Base44 – Full-Stack Web App Builder</h3>
             <p class="ai-builder-desc">Bikin web app lengkap sama database bawaan. Tanpa setup backend ribet.</p>
             <a class="ai-builder-btn" href="https://base44.com" target="_blank" rel="noopener noreferrer">base44.com <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
-          </div>
-        </div>
-
-        <div class="ai-builder-card">
-          <div class="ai-builder-number">14</div>
-          <div class="ai-builder-body">
-            <h3>Dora AI – Interactive Website Builder</h3>
-            <p class="ai-builder-desc">Website interaktif & animatif tanpa coding. Design yang beda dari template biasa.</p>
-            <a class="ai-builder-btn" href="https://dora.run/ai" target="_blank" rel="noopener noreferrer">dora.run/ai <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
           </div>
         </div>
 
