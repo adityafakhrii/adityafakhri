@@ -22,9 +22,52 @@ export const upcomingEvents: EventItem[] = [
 
 export const pastEvents: EventItem[] = [
   {
+    id: "mx-fest-2026-ctrl-shift-ai-beyond-mastery-bandung",
+    category: "Seminar & Workshop",
+    tags: ["AI", "Logitech", "MX Fest 2026", "UI/UX", "Product Design"],
+    imageSrc: "https://www.gambaryuk.com/1793949704772-p94x9o.webp",
+    priority: true,
+    title: {
+      id: "MX FEST 2026: Ctrl + Shift + AI | Beyond Mastery",
+      en: "MX FEST 2026: Ctrl + Shift + AI | Beyond Mastery"
+    },
+    subtitle: {
+      id: "MXperience Club x Logitech Indonesia",
+      en: "MXperience Club x Logitech Indonesia"
+    },
+    date: "31 Oktober 2026",
+    time: "10.00 WIB",
+    location: "BEC, Bandung",
+    description: {
+      id: "Event akbar MX FEST 2026 bertajuk 'Ctrl + Shift + AI | Beyond Mastery' yang diselenggarakan oleh MXperience Club bersama Logitech Indonesia di BEC, Bandung. Menghadirkan sesi inspiratif dan diskusi mendalam seputar adaptasi dan shifting pekerjaan di era AI.",
+      en: "Premier tech festival MX FEST 2026 themed 'Ctrl + Shift + AI | Beyond Mastery' hosted by MXperience Club and Logitech Indonesia at BEC, Bandung. Featuring inspiring discussions on job shifting and adaptations in the AI era."
+    },
+    bullets: {
+      id: [
+        "Membahas shifting dan transformasi lanskap pekerjaan di era AI dari berbagai sudut pandang: creative, coders, dan designer.",
+        "Sharing strategi adaptasi, optimalisasi alur kerja digital, dan masa depan industri teknologi bersama para praktisi ternama."
+      ],
+      en: [
+        "Discussing the shifting and transformation of the job landscape in the AI era from multiple perspectives: creatives, coders, and designers.",
+        "Sharing adaptation strategies, digital workflow optimization, and the future of the tech industry with prominent practitioners."
+      ]
+    },
+    organizer: {
+      id: "Diselenggarakan oleh: MXperience Club (Didukung oleh: Logitech Indonesia)",
+      en: "Organized by: MXperience Club (Supported by: Logitech Indonesia)"
+    },
+    links: [
+      {
+        labelId: "Link Pendaftaran / Info",
+        labelEn: "Registration / Info Link",
+        href: "https://bit.ly/MXFest26BDG"
+      }
+    ]
+  },
+  {
     id: "express-yourself-gensi-indosat-jgu-depok-2026",
     category: "Seminar & Workshop",
-    tags: ["AI", "Generative AI", "Visual Creation", "Indosat", "Creative AI"],
+    tags: ["AI", "Generative AI", "Visual Creation", "Creative AI"],
     imageSrc: "https://www.gambaryuk.com/1791261700243-5265ir.webp",
     priority: true,
     title: {
@@ -64,7 +107,7 @@ export const pastEvents: EventItem[] = [
   {
     id: "express-yourself-gensi-indosat-ubsi-2026",
     category: "Seminar & Workshop",
-    tags: ["AI", "Generative AI", "Visual Creation", "Indosat", "Responsible AI"],
+    tags: ["AI", "Generative AI", "Visual Creation", "Responsible AI"],
     imageSrc: "https://www.gambaryuk.com/1791007206181-fdjbn2.webp",
     priority: true,
     title: {
