@@ -29,10 +29,12 @@ export async function generateMetadata({
 
   const baseUrl = "https://adityafakhri.id"
   const url = `${baseUrl}/blog/${id}`
-  const imageUrl = post.imageSrc
-    ? post.imageSrc.startsWith("http")
-      ? post.imageSrc
-      : `${baseUrl}${post.imageSrc.startsWith("/") ? "" : "/"}${post.imageSrc}`
+  // Prefer a dedicated 1200x630 share image, then the cover, then the default photo
+  const shareSrc = post.ogImage || post.imageSrc
+  const imageUrl = shareSrc
+    ? shareSrc.startsWith("http")
+      ? shareSrc
+      : `${baseUrl}${shareSrc.startsWith("/") ? "" : "/"}${shareSrc}`
     : `${baseUrl}/foto-adit.webp`
 
   const imageType = imageUrl.endsWith(".webp")

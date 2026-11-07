@@ -8,11 +8,439 @@ export type BlogPost = {
   author?: string
   tags: readonly string[] | string[]
   imageSrc?: string
+  /** Optional 1200x630 JPG/PNG used for social share previews (falls back to imageSrc). */
+  ogImage?: string
   relatedPosts?: readonly string[] | string[]
   isoDate?: string
 }
 
 const blogs: Record<string, BlogPost> = {
+
+  "ide-judul-skripsi-informatika-ai": {
+    title: "Skripsi Informatika Bertema AI: 10 Ide Judul yang Realistis Dikerjain",
+    excerpt: "Pengen skripsi bertema AI tapi takut kegedean dan nggak kelar? Ini 10 ide judul skripsi Informatika bertema AI yang realistis buat mahasiswa S1, lengkap dengan dataset, metode, tech stack, tingkat kesulitan, dan tips biar lolos sidang.",
+    content: `
+      <style>
+        .sk-hero { padding: 2.25rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--card)) 100%); border: 1px solid hsl(var(--border)); margin-bottom: 2.5rem; box-sizing: border-box; max-width: 100%; }
+        .sk-hero-badge { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.28rem 0.7rem; border-radius: 9999px; background: hsl(var(--primary)/0.12); color: hsl(var(--primary)); margin-bottom: 0.85rem; }
+        .sk-hero h2 { color: hsl(var(--foreground)) !important; font-size: 1.55rem; margin: 0 0 0.75rem 0 !important; font-weight: 800; letter-spacing: -0.02em; line-height: 1.35; }
+        .sk-hero p { color: hsl(var(--foreground)) !important; font-size: 1.02rem; line-height: 1.75; margin: 0; }
+        .sk-section-title { font-size: 1.35rem; font-weight: 800; margin: 3rem 0 1.25rem 0; color: hsl(var(--foreground)) !important; border-left: 4px solid hsl(var(--primary)); padding-left: 0.85rem; line-height: 1.25; }
+        .sk-callout { padding: 1.5rem; border-radius: 1rem; border-left: 4px solid hsl(var(--primary)); background: hsl(var(--muted)); margin: 2rem 0; box-sizing: border-box; max-width: 100%; }
+        .sk-callout p { margin: 0; font-size: 1rem; line-height: 1.75; color: hsl(var(--foreground)) !important; }
+        .sk-criteria-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.75rem 0; }
+        .sk-criteria-card { padding: 1.25rem 1.4rem; border-radius: 0.85rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); box-sizing: border-box; max-width: 100%; }
+        .sk-criteria-card h4 { font-size: 1.02rem; font-weight: 700; margin: 0 0 0.4rem 0 !important; color: hsl(var(--foreground)) !important; }
+        .sk-criteria-card p { font-size: 0.93rem; line-height: 1.65; color: hsl(var(--muted-foreground)) !important; margin: 0; }
+        .sk-idea-card { padding: 1.75rem; border-radius: 1rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); margin-bottom: 1.75rem; box-sizing: border-box; max-width: 100%; transition: border-color 0.2s ease, transform 0.2s ease; }
+        .sk-idea-card:hover { border-color: hsl(var(--primary)/0.6); transform: translateY(-2px); }
+        .sk-idea-header { display: flex; align-items: flex-start; gap: 0.85rem; margin-bottom: 1rem; }
+        .sk-idea-num { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 34px; border-radius: 8px; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); font-size: 0.9rem; font-weight: 800; flex-shrink: 0; }
+        .sk-idea-title { font-size: 1.15rem; font-weight: 800; color: hsl(var(--foreground)) !important; margin: 0 !important; line-height: 1.4 !important; }
+        .sk-idea-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1rem 0; }
+        .sk-tag { font-size: 0.75rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 9999px; background: hsl(var(--muted)); color: hsl(var(--foreground)); border: 1px solid hsl(var(--border)); }
+        .sk-tag-easy { background: rgba(16,185,129,0.12); color: #059669; border-color: rgba(16,185,129,0.35); }
+        .sk-tag-mid { background: rgba(245,158,11,0.12); color: #B45309; border-color: rgba(245,158,11,0.35); }
+        .sk-tag-hard { background: rgba(239,68,68,0.12); color: #DC2626; border-color: rgba(239,68,68,0.35); }
+        .sk-idea-card p { font-size: 0.98rem; line-height: 1.75; color: hsl(var(--foreground)) !important; margin: 0 0 0.85rem 0; }
+        .sk-detail-box { background: hsl(var(--muted)/0.7); border: 1px solid hsl(var(--border)); border-radius: 0.75rem; padding: 1.1rem 1.25rem; margin: 0.5rem 0 1rem 0; }
+        .sk-detail-box ul { list-style: none; padding: 0; margin: 0; }
+        .sk-detail-box li { font-size: 0.94rem; line-height: 1.7; color: hsl(var(--foreground)) !important; margin-bottom: 0.4rem; }
+        .sk-detail-box li:last-child { margin-bottom: 0; }
+        .sk-tip { font-size: 0.93rem; line-height: 1.65; color: hsl(var(--foreground)) !important; padding: 0.85rem 1rem; border-radius: 0.65rem; border: 1px dashed hsl(var(--border)); background: hsl(var(--background)); }
+        .sk-table-wrap { width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.5rem 0 2rem 0; border-radius: 1rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); box-sizing: border-box; }
+        .sk-table { min-width: 640px; width: 100%; border-collapse: collapse; font-size: 0.92rem; text-align: left; }
+        .sk-table thead { background: hsl(var(--muted)); }
+        .sk-table th { padding: 0.9rem 1.1rem; font-weight: 700; color: hsl(var(--foreground)) !important; border-bottom: 1px solid hsl(var(--border)); white-space: nowrap; }
+        .sk-table td { padding: 0.9rem 1.1rem; color: hsl(var(--foreground)) !important; border-bottom: 1px solid hsl(var(--border)); line-height: 1.6; vertical-align: top; }
+        .sk-table tr:last-child td { border-bottom: none; }
+        .sk-anti-card { padding: 1.2rem 1.4rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-left: 4px solid #EF4444; margin-bottom: 1rem; }
+        .sk-anti-card h4 { font-size: 1.02rem; font-weight: 700; margin: 0 0 0.4rem 0 !important; color: hsl(var(--foreground)) !important; }
+        .sk-anti-card p { font-size: 0.95rem; line-height: 1.7; color: hsl(var(--foreground)) !important; margin: 0; }
+        .sk-faq-item { padding: 1.2rem 1.4rem; border-radius: 0.75rem; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); margin-bottom: 1rem; }
+        .sk-faq-q { font-size: 1.02rem; font-weight: 700; color: hsl(var(--foreground)) !important; margin: 0 0 0.45rem 0; }
+        .sk-faq-a { font-size: 0.96rem; line-height: 1.75; color: hsl(var(--foreground)) !important; margin: 0; }
+        .sk-cta { margin-top: 3.5rem; padding: 2.5rem 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.85) 100%); text-align: center; color: hsl(var(--primary-foreground)); box-shadow: 0 10px 30px rgba(0,0,0,0.1); box-sizing: border-box; max-width: 100%; }
+        .sk-cta h2 { color: hsl(var(--primary-foreground)) !important; font-size: 1.5rem; margin: 0 0 0.5rem 0 !important; font-weight: 800; }
+        .sk-cta p { color: hsl(var(--primary-foreground)/0.9); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; }
+        .sk-cta a { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: hsl(var(--background)); color: hsl(var(--foreground)) !important; font-weight: 700; padding: 0.85rem 1.75rem; border-radius: 9999px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; font-size: 0.9rem; min-height: 44px; }
+        .sk-cta a:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .sk-icon { width: 1.05em; height: 1.05em; display: inline-block; vertical-align: -0.17em; margin-right: 0.4rem; flex-shrink: 0; }
+        .sk-hero-badge .sk-icon { margin-right: 0; }
+        .sk-criteria-card h4 .sk-icon, .sk-tip .sk-icon { color: hsl(var(--primary)); }
+        .sk-tip-warn .sk-icon { color: #D97706; }
+        .sk-anti-card h4 .sk-icon { color: #EF4444; }
+        .sk-callout .sk-icon { color: hsl(var(--primary)); }
+        @media (max-width: 768px) {
+          .sk-criteria-grid { grid-template-columns: 1fr; }
+          .sk-hero { padding: 1.75rem 1.25rem; }
+          .sk-idea-card { padding: 1.35rem 1.15rem; }
+          .sk-cta { padding: 2rem 1.25rem; }
+        }
+      </style>
+
+      <div class="sk-hero">
+        <span class="sk-hero-badge"><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>Buat Mahasiswa Tingkat Akhir</span>
+        <h2>Skripsi AI Itu Keren, Tapi yang Paling Keren Tetap Skripsi yang Kelar</h2>
+        <p>Banyak mahasiswa Informatika pengen skripsi bertema AI, tapi ujung-ujungnya kejebak judul yang kegedean: "membangun AI seperti ChatGPT", "deteksi semua penyakit dari foto", atau topik yang datasetnya bahkan nggak ada. Di artikel ini gue rangkum <strong>10 ide judul skripsi bertema AI yang realistis dikerjain mahasiswa S1</strong> dalam 1–2 semester, lengkap sama dataset, metode, tech stack, dan tips biar aman pas sidang.</p>
+      </div>
+
+      <p>Sebagai mentor yang sering ngobrol sama mahasiswa tingkat akhir, gue liat pola yang sama terus berulang: semangat di awal, judul ambisius, terus mentok di bulan ketiga karena datanya susah, GPU nggak ada, atau dosen pembimbing minta revisi besar-besaran. Padahal skripsi itu bukan ajang bikin startup unicorn. <strong>Skripsi yang baik itu jelas masalahnya, jelas metodenya, dan bisa diukur hasilnya.</strong></p>
+
+      <div class="sk-section-title">1. Ciri Judul Skripsi AI yang Realistis</div>
+
+      <p>Sebelum masuk ke daftar ide, pahami dulu 4 filter ini. Kalau judul lo lolos keempatnya, peluang skripsi kelar tepat waktu jauh lebih besar.</p>
+
+      <div class="sk-criteria-grid">
+        <div class="sk-criteria-card">
+          <h4><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>Datasetnya Ada &amp; Bisa Diakses</h4>
+          <p>Dataset publik (Kaggle, Hugging Face, IndoNLU) atau data yang bisa lo kumpulin sendiri secara legal. Jangan andalkan data instansi yang izinnya belum pasti.</p>
+        </div>
+        <div class="sk-criteria-card">
+          <h4><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z"/><path d="M20.054 15.987H3.946"/></svg>Bisa Jalan di Hardware Biasa</h4>
+          <p>Cukup laptop + Google Colab/Kaggle Notebook gratis. Hindari judul yang butuh training model dari nol dengan GPU mahal.</p>
+        </div>
+        <div class="sk-criteria-card">
+          <h4><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>Hasilnya Bisa Diukur</h4>
+          <p>Ada metrik jelas: akurasi, precision, recall, F1-score, mAP, ROUGE, atau hasil uji pengguna. Dosen penguji suka angka, bukan klaim "sistem sudah bagus".</p>
+        </div>
+        <div class="sk-criteria-card">
+          <h4><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>Ruang Lingkupnya Sempit</h4>
+          <p>Satu objek, satu domain, satu bahasa. "Deteksi penyakit daun padi" jauh lebih realistis daripada "deteksi semua penyakit tanaman".</p>
+        </div>
+      </div>
+
+      <div class="sk-callout">
+        <p><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg><strong>Prinsip penting:</strong> Kebaruan (novelty) skripsi S1 nggak harus berupa algoritma baru. Cukup <em>penerapan metode yang sudah terbukti</em> ke <em>studi kasus baru</em> (misalnya data lokal Indonesia), atau <em>perbandingan beberapa metode</em> di satu kasus yang sama. Itu udah sah dan diterima di kebanyakan kampus.</p>
+      </div>
+
+      <div class="sk-section-title">2. 10 Ide Judul Skripsi Informatika Bertema AI</div>
+
+      <p>Setiap ide di bawah gue kasih contoh judul formal yang bisa lo adaptasi, ditambah gambaran dataset, metode, dan tingkat kesulitannya.</p>
+
+      <div class="sk-idea-card">
+        <div class="sk-idea-header">
+          <span class="sk-idea-num">1</span>
+          <h3 class="sk-idea-title">Analisis Sentimen Ulasan Aplikasi di Google Play Store Menggunakan IndoBERT</h3>
+        </div>
+        <div class="sk-idea-tags">
+          <span class="sk-tag">NLP</span>
+          <span class="sk-tag">Text Classification</span>
+          <span class="sk-tag sk-tag-easy">Level: Pemula–Menengah</span>
+        </div>
+        <p>Topik klasik yang tetap aman karena datanya melimpah dan gampang dikumpulin. Biar nggak pasaran, pilih aplikasi spesifik (misalnya aplikasi layanan publik, e-wallet, atau aplikasi kampus) dan bandingkan model tradisional dengan model transformer.</p>
+        <div class="sk-detail-box">
+          <ul>
+            <li><strong>Dataset:</strong> Scraping ulasan Play Store pakai library google-play-scraper (Python), lalu labeling positif/negatif/netral.</li>
+            <li><strong>Metode:</strong> Baseline TF-IDF + Naive Bayes/SVM, dibandingkan dengan fine-tuning IndoBERT.</li>
+            <li><strong>Tech Stack:</strong> Python, scikit-learn, Hugging Face Transformers, Google Colab.</li>
+            <li><strong>Metrik:</strong> Accuracy, Precision, Recall, F1-score, Confusion Matrix.</li>
+          </ul>
+        </div>
+        <div class="sk-tip"><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><strong>Nilai plus:</strong> Tambahin analisis aspek (Aspect-Based Sentiment), misalnya sentimen terhadap fitur "login", "pembayaran", dan "UI". Hasilnya jadi lebih berguna buat pengembang aplikasi.</div>
+      </div>
+
+      <div class="sk-idea-card">
+        <div class="sk-idea-header">
+          <span class="sk-idea-num">2</span>
+          <h3 class="sk-idea-title">Klasifikasi Penyakit Daun Padi Berbasis Citra Menggunakan CNN MobileNetV2 pada Aplikasi Mobile</h3>
+        </div>
+        <div class="sk-idea-tags">
+          <span class="sk-tag">Computer Vision</span>
+          <span class="sk-tag">Transfer Learning</span>
+          <span class="sk-tag sk-tag-easy">Level: Pemula–Menengah</span>
+        </div>
+        <p>Nyambung sama masalah nyata di Indonesia dan hasilnya bisa didemoin langsung pakai kamera HP. Lo bisa ganti objeknya jadi daun cabai, tomat, jagung, atau komoditas lokal di daerah lo.</p>
+        <div class="sk-detail-box">
+          <ul>
+            <li><strong>Dataset:</strong> Dataset penyakit daun padi publik di Kaggle, atau foto sendiri dari sawah sekitar (lebih bernilai karena data lokal).</li>
+            <li><strong>Metode:</strong> Transfer learning MobileNetV2/EfficientNet + data augmentation.</li>
+            <li><strong>Tech Stack:</strong> TensorFlow/Keras, konversi ke TensorFlow Lite, Flutter atau Kotlin untuk aplikasi.</li>
+            <li><strong>Metrik:</strong> Accuracy, F1-score per kelas, serta waktu inferensi di perangkat.</li>
+          </ul>
+        </div>
+        <div class="sk-tip"><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><strong>Nilai plus:</strong> Uji model dengan foto lapangan asli (bukan cuma foto dataset yang rapi). Bahas perbedaan performanya di bab pembahasan, penguji biasanya suka analisis jujur kayak gini.</div>
+      </div>
+
+      <div class="sk-idea-card">
+        <div class="sk-idea-header">
+          <span class="sk-idea-num">3</span>
+          <h3 class="sk-idea-title">Chatbot Layanan Informasi Akademik Berbasis Retrieval-Augmented Generation (RAG)</h3>
+        </div>
+        <div class="sk-idea-tags">
+          <span class="sk-tag">LLM</span>
+          <span class="sk-tag">RAG</span>
+          <span class="sk-tag sk-tag-mid">Level: Menengah</span>
+        </div>
+        <p>Ini topik yang lagi relevan banget di 2026. Chatbot menjawab pertanyaan mahasiswa (jadwal, syarat sidang, prosedur cuti) berdasarkan dokumen resmi kampus, bukan ngarang. Fokus skripsinya ada di <em>kualitas retrieval</em> dan <em>ketepatan jawaban</em>, bukan bikin LLM dari nol.</p>
+        <div class="sk-detail-box">
+          <ul>
+            <li><strong>Dataset:</strong> Buku pedoman akademik, SOP, dan FAQ kampus (PDF), ditambah daftar pertanyaan uji yang lo susun bareng jawabannya.</li>
+            <li><strong>Metode:</strong> Chunking dokumen, embedding, vector search, lalu generasi jawaban pakai LLM via API atau model open-source.</li>
+            <li><strong>Tech Stack:</strong> Python/Node.js, LangChain atau LlamaIndex, vector database (Chroma, pgvector), Next.js untuk antarmuka.</li>
+            <li><strong>Metrik:</strong> Akurasi jawaban dari daftar pertanyaan uji, retrieval hit rate, dan uji usabilitas (SUS) ke mahasiswa.</li>
+          </ul>
+        </div>
+        <div class="sk-tip"><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><strong>Nilai plus:</strong> Bandingkan beberapa strategi chunking atau beberapa model embedding. Ini bikin skripsi lo punya sisi eksperimen, bukan cuma "bikin aplikasi".</div>
+      </div>
+
+      <div class="sk-idea-card">
+        <div class="sk-idea-header">
+          <span class="sk-idea-num">4</span>
+          <h3 class="sk-idea-title">Perbandingan Metode TF-IDF + SVM dan IndoBERT untuk Deteksi Berita Hoaks Berbahasa Indonesia</h3>
+        </div>
+        <div class="sk-idea-tags">
+          <span class="sk-tag">NLP</span>
+          <span class="sk-tag">Comparative Study</span>
+          <span class="sk-tag sk-tag-mid">Level: Menengah</span>
+        </div>
+        <p>Judul perbandingan itu "aman" karena kontribusinya jelas: lo menjawab metode mana yang lebih cocok untuk kasus tertentu, lengkap dengan trade-off akurasi vs kecepatan.</p>
+        <div class="sk-detail-box">
+          <ul>
+            <li><strong>Dataset:</strong> Dataset berita hoaks vs valid berbahasa Indonesia yang tersedia di Kaggle/GitHub (misalnya dari arsip cek fakta), ditambah berita valid dari portal berita resmi.</li>
+            <li><strong>Metode:</strong> Preprocessing teks Indonesia (stemming dengan Sastrawi), TF-IDF + SVM vs fine-tuning IndoBERT.</li>
+            <li><strong>Tech Stack:</strong> Python, scikit-learn, Transformers, Streamlit untuk demo.</li>
+            <li><strong>Metrik:</strong> F1-score, waktu training, waktu inferensi.</li>
+          </ul>
+        </div>
+        <div class="sk-tip"><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><strong>Nilai plus:</strong> Pastikan dataset seimbang (balanced) atau jelaskan cara lo menangani data yang timpang. Ini pertanyaan favorit penguji.</div>
+      </div>
+
+      <div class="sk-idea-card">
+        <div class="sk-idea-header">
+          <span class="sk-idea-num">5</span>
+          <h3 class="sk-idea-title">Prediksi Kelulusan Tepat Waktu Mahasiswa Menggunakan XGBoost dengan Interpretasi SHAP</h3>
+        </div>
+        <div class="sk-idea-tags">
+          <span class="sk-tag">Machine Learning</span>
+          <span class="sk-tag">Explainable AI</span>
+          <span class="sk-tag sk-tag-easy">Level: Pemula–Menengah</span>
+        </div>
+        <p>Data tabular jauh lebih ringan dibanding gambar atau teks. Bagian SHAP bikin skripsinya naik kelas karena lo nggak cuma memprediksi, tapi juga menjelaskan <em>faktor apa yang paling berpengaruh</em> (IPK semester awal, jumlah SKS, kehadiran, dan sebagainya).</p>
+        <div class="sk-detail-box">
+          <ul>
+            <li><strong>Dataset:</strong> Data akademik anonim dari kampus (wajib izin resmi), atau dataset publik student performance/dropout di Kaggle/UCI sebagai alternatif.</li>
+            <li><strong>Metode:</strong> Perbandingan Logistic Regression, Random Forest, dan XGBoost + SMOTE untuk data tidak seimbang + SHAP.</li>
+            <li><strong>Tech Stack:</strong> Python, pandas, scikit-learn, xgboost, shap, dashboard dengan Streamlit.</li>
+            <li><strong>Metrik:</strong> ROC-AUC, F1-score, dan visualisasi feature importance.</li>
+          </ul>
+        </div>
+        <div class="sk-tip sk-tip-warn"><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg><strong>Perhatian:</strong> Urus izin data dari awal. Kalau sampai bulan kedua izin belum keluar, langsung pindah ke dataset publik biar timeline nggak molor.</div>
+      </div>
+
+      <div class="sk-idea-card">
+        <div class="sk-idea-header">
+          <span class="sk-idea-num">6</span>
+          <h3 class="sk-idea-title">Sistem Penghitung dan Klasifikasi Kendaraan dari Rekaman CCTV Menggunakan YOLO</h3>
+        </div>
+        <div class="sk-idea-tags">
+          <span class="sk-tag">Computer Vision</span>
+          <span class="sk-tag">Object Detection</span>
+          <span class="sk-tag sk-tag-mid">Level: Menengah</span>
+        </div>
+        <p>Hasil visualnya keren pas didemoin: video jalanan dengan bounding box dan counter kendaraan yang jalan real-time. Fokusnya bisa ke motor, mobil, bus, dan truk di ruas jalan tertentu.</p>
+        <div class="sk-detail-box">
+          <ul>
+            <li><strong>Dataset:</strong> Rekaman jalan yang lo ambil sendiri atau video lalu lintas publik, dianotasi pakai Roboflow atau CVAT.</li>
+            <li><strong>Metode:</strong> Fine-tuning YOLO (Ultralytics) + object tracking (ByteTrack/DeepSORT) untuk menghitung kendaraan yang melewati garis virtual.</li>
+            <li><strong>Tech Stack:</strong> Python, Ultralytics, OpenCV, Google Colab untuk training.</li>
+            <li><strong>Metrik:</strong> mAP@0.5, precision, recall, serta akurasi hitungan dibanding hitungan manual.</li>
+          </ul>
+        </div>
+        <div class="sk-tip"><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><strong>Nilai plus:</strong> Uji di beberapa kondisi (siang, malam, hujan). Motor yang padat dan saling tumpang tindih itu tantangan khas Indonesia yang menarik dibahas.</div>
+      </div>
+
+      <div class="sk-idea-card">
+        <div class="sk-idea-header">
+          <span class="sk-idea-num">7</span>
+          <h3 class="sk-idea-title">Pengenalan Abjad Bahasa Isyarat Indonesia (BISINDO) Berbasis MediaPipe Hand Landmark dan LSTM</h3>
+        </div>
+        <div class="sk-idea-tags">
+          <span class="sk-tag">Computer Vision</span>
+          <span class="sk-tag">Social Impact</span>
+          <span class="sk-tag sk-tag-mid">Level: Menengah</span>
+        </div>
+        <p>Topik dengan dampak sosial yang jelas, dan tekniknya ringan karena lo nggak memproses gambar mentah, cuma koordinat titik tangan dari MediaPipe. Batasi ruang lingkupnya ke abjad atau sekitar 10–20 kata dasar.</p>
+        <div class="sk-detail-box">
+          <ul>
+            <li><strong>Dataset:</strong> Rekam sendiri gerakan isyarat dari beberapa orang (makin variatif makin bagus), atau gabung dengan dataset BISINDO publik yang tersedia.</li>
+            <li><strong>Metode:</strong> Ekstraksi hand landmark dengan MediaPipe, lalu klasifikasi dengan LSTM (untuk gerakan) atau MLP/Random Forest (untuk pose statis).</li>
+            <li><strong>Tech Stack:</strong> Python, MediaPipe, TensorFlow, OpenCV; bisa dibawa ke web pakai TensorFlow.js.</li>
+            <li><strong>Metrik:</strong> Accuracy per huruf/kata dan uji real-time dengan pengguna.</li>
+          </ul>
+        </div>
+        <div class="sk-tip"><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><strong>Nilai plus:</strong> Libatkan komunitas Tuli atau guru SLB untuk validasi. Selain menambah kualitas data, ini jadi cerita kuat di bab pendahuluan.</div>
+      </div>
+
+      <div class="sk-idea-card">
+        <div class="sk-idea-header">
+          <span class="sk-idea-num">8</span>
+          <h3 class="sk-idea-title">Sistem Rekomendasi Produk UMKM Menggunakan Metode Hybrid Filtering</h3>
+        </div>
+        <div class="sk-idea-tags">
+          <span class="sk-tag">Recommender System</span>
+          <span class="sk-tag">Web App</span>
+          <span class="sk-tag sk-tag-easy">Level: Pemula–Menengah</span>
+        </div>
+        <p>Cocok buat lo yang lebih kuat di web development tapi tetap pengen ada unsur AI. Bisa kerja sama dengan UMKM lokal atau toko online kecil, jadi hasilnya langsung kepakai.</p>
+        <div class="sk-detail-box">
+          <ul>
+            <li><strong>Dataset:</strong> Riwayat transaksi/rating dari mitra UMKM, atau dataset e-commerce publik di Kaggle sebagai simulasi.</li>
+            <li><strong>Metode:</strong> Content-Based Filtering (kemiripan deskripsi produk) + Collaborative Filtering (pola pembeli), lalu digabung jadi hybrid.</li>
+            <li><strong>Tech Stack:</strong> Python (scikit-learn/Surprise) untuk model, FastAPI sebagai API, Next.js untuk frontend.</li>
+            <li><strong>Metrik:</strong> Precision@K, Recall@K, RMSE, dan cold-start handling.</li>
+          </ul>
+        </div>
+        <div class="sk-tip"><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><strong>Nilai plus:</strong> Bahas masalah <em>cold start</em> (produk atau user baru yang belum punya riwayat) dan gimana pendekatan hybrid ngatasinnya.</div>
+      </div>
+
+      <div class="sk-idea-card">
+        <div class="sk-idea-header">
+          <span class="sk-idea-num">9</span>
+          <h3 class="sk-idea-title">Peringkasan Otomatis Artikel Berita Berbahasa Indonesia Menggunakan Model IndoT5</h3>
+        </div>
+        <div class="sk-idea-tags">
+          <span class="sk-tag">NLP</span>
+          <span class="sk-tag">Text Summarization</span>
+          <span class="sk-tag sk-tag-mid">Level: Menengah</span>
+        </div>
+        <p>Berguna buat dunia nyata (orang males baca berita panjang), dan ada dataset benchmark yang sudah mapan untuk Bahasa Indonesia. Lo bisa membandingkan pendekatan ekstraktif (memilih kalimat penting) dengan abstraktif (menulis ulang ringkasan).</p>
+        <div class="sk-detail-box">
+          <ul>
+            <li><strong>Dataset:</strong> Dataset ringkasan berita Bahasa Indonesia seperti Liputan6 atau IndoSum.</li>
+            <li><strong>Metode:</strong> Baseline ekstraktif (TextRank) vs fine-tuning model abstraktif berbasis T5 versi Indonesia.</li>
+            <li><strong>Tech Stack:</strong> Python, Hugging Face Transformers, Google Colab/Kaggle GPU.</li>
+            <li><strong>Metrik:</strong> ROUGE-1, ROUGE-2, ROUGE-L, ditambah penilaian manual keterbacaan.</li>
+          </ul>
+        </div>
+        <div class="sk-tip"><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><strong>Nilai plus:</strong> Tunjukkan contoh kasus ringkasan yang salah fakta (halusinasi) dan analisis penyebabnya. Ini bikin pembahasan lo matang.</div>
+      </div>
+
+      <div class="sk-idea-card">
+        <div class="sk-idea-header">
+          <span class="sk-idea-num">10</span>
+          <h3 class="sk-idea-title">Evaluasi Kebenaran dan Kualitas Kode Hasil Large Language Model pada Soal Pemrograman Berbahasa Indonesia</h3>
+        </div>
+        <div class="sk-idea-tags">
+          <span class="sk-tag">LLM Evaluation</span>
+          <span class="sk-tag">Software Engineering</span>
+          <span class="sk-tag sk-tag-hard">Level: Menengah–Lanjut</span>
+        </div>
+        <p>Ini judul yang paling "zaman sekarang". Lo nggak bikin model, tapi menguji seberapa bagus AI coding assistant menyelesaikan soal pemrograman yang ditulis dalam Bahasa Indonesia. Kontribusinya jelas: benchmark kecil berbahasa Indonesia yang masih jarang ada.</p>
+        <div class="sk-detail-box">
+          <ul>
+            <li><strong>Dataset:</strong> Kumpulan 50–100 soal pemrograman (misalnya soal praktikum algoritma) yang lo terjemahkan/susun sendiri, lengkap dengan unit test.</li>
+            <li><strong>Metode:</strong> Menguji beberapa LLM dengan beberapa gaya prompt (zero-shot vs few-shot), lalu menjalankan unit test secara otomatis.</li>
+            <li><strong>Tech Stack:</strong> Python, API beberapa LLM, framework pengujian seperti pytest, tools static analysis (pylint) untuk kualitas kode.</li>
+            <li><strong>Metrik:</strong> pass@1, jumlah test yang lolos, skor kualitas kode, dan perbandingan prompt Bahasa Indonesia vs Inggris.</li>
+          </ul>
+        </div>
+        <div class="sk-tip sk-tip-warn"><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg><strong>Perhatian:</strong> Catat versi model dan tanggal pengujian dengan rapi, karena model AI cepat berubah. Ini penting biar hasil penelitian lo bisa direplikasi.</div>
+      </div>
+
+      <div class="sk-section-title">3. Ringkasan: Pilih yang Paling Cocok Buat Lo</div>
+
+      <div class="sk-table-wrap">
+        <table class="sk-table">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Topik</th>
+              <th>Bidang</th>
+              <th>Level</th>
+              <th>Cocok Buat Lo yang...</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Sentimen Ulasan Play Store</td><td>NLP</td><td>Pemula–Menengah</td><td>Mau aman dan data gampang didapat</td></tr>
+            <tr><td>2</td><td>Penyakit Daun Padi</td><td>Computer Vision</td><td>Pemula–Menengah</td><td>Suka bikin aplikasi mobile</td></tr>
+            <tr><td>3</td><td>Chatbot Akademik RAG</td><td>LLM</td><td>Menengah</td><td>Pengen topik yang lagi tren</td></tr>
+            <tr><td>4</td><td>Deteksi Hoaks</td><td>NLP</td><td>Menengah</td><td>Suka eksperimen perbandingan metode</td></tr>
+            <tr><td>5</td><td>Prediksi Kelulusan</td><td>Machine Learning</td><td>Pemula–Menengah</td><td>Lebih nyaman dengan data tabel</td></tr>
+            <tr><td>6</td><td>Hitung Kendaraan CCTV</td><td>Computer Vision</td><td>Menengah</td><td>Pengen demo yang visual dan wow</td></tr>
+            <tr><td>7</td><td>Bahasa Isyarat BISINDO</td><td>Computer Vision</td><td>Menengah</td><td>Pengen skripsi berdampak sosial</td></tr>
+            <tr><td>8</td><td>Rekomendasi Produk UMKM</td><td>Recommender</td><td>Pemula–Menengah</td><td>Kuat di web development</td></tr>
+            <tr><td>9</td><td>Ringkasan Berita</td><td>NLP</td><td>Menengah</td><td>Tertarik model generatif</td></tr>
+            <tr><td>10</td><td>Evaluasi Kode LLM</td><td>LLM / SE</td><td>Menengah–Lanjut</td><td>Mau lanjut S2 atau riset</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sk-section-title">4. Kesalahan yang Bikin Skripsi AI Molor</div>
+
+      <div class="sk-anti-card">
+        <h4><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>Judul Ditentukan Sebelum Cek Dataset</h4>
+        <p>Selalu cari dan download datasetnya dulu, baru ajukan judul. Kalau datanya cuma 50 sampel atau labelnya berantakan, lebih baik ganti topik sekarang daripada nyesel di bulan keempat.</p>
+      </div>
+      <div class="sk-anti-card">
+        <h4><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>Fokus ke Aplikasi, Lupa Eksperimen</h4>
+        <p>UI yang cantik itu bonus. Yang dinilai di skripsi AI adalah desain eksperimen: pembagian data train/test, perbandingan metode, dan analisis hasil. Jangan habisin 80% waktu buat bikin tampilan.</p>
+      </div>
+      <div class="sk-anti-card">
+        <h4><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>Copy-Paste Kode AI Tanpa Paham</h4>
+        <p>Pakai AI buat bantu ngoding itu sah, tapi lo wajib paham tiap bagian. Dosen penguji hampir pasti nanya "kenapa pakai learning rate segini?" atau "kenapa pilih arsitektur ini?". Jawaban "soalnya dikasih AI" itu fatal.</p>
+      </div>
+      <div class="sk-anti-card">
+        <h4><svg class="sk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>Akurasi 99% Tanpa Curiga</h4>
+        <p>Akurasi yang terlalu sempurna sering jadi tanda data leakage (data test ikut kepakai waktu training) atau dataset yang terlalu gampang. Cek ulang sebelum bangga, karena penguji yang jeli pasti nyadar.</p>
+      </div>
+
+      <div class="sk-section-title">5. FAQ Seputar Skripsi AI</div>
+
+      <div class="sk-faq-item">
+        <p class="sk-faq-q">Harus punya laptop dengan GPU nggak buat skripsi AI?</p>
+        <p class="sk-faq-a">Nggak wajib. Google Colab dan Kaggle Notebook nyediain GPU gratis dengan batas pemakaian yang cukup buat fine-tuning model ukuran kecil–menengah. Laptop cukup buat nulis kode dan menjalankan aplikasi demo. Kalau lagi cari laptop, cek juga <a href="/blog/laptop-programming-mahasiswa-2026">panduan laptop programming buat mahasiswa</a>.</p>
+      </div>
+      <div class="sk-faq-item">
+        <p class="sk-faq-q">Boleh nggak pakai model pre-trained, atau harus bikin model sendiri?</p>
+        <p class="sk-faq-a">Boleh banget. Transfer learning dan fine-tuning model pre-trained adalah praktik standar di industri maupun riset. Yang penting lo jelasin alasan pemilihan model, proses fine-tuning, dan hasil evaluasinya.</p>
+      </div>
+      <div class="sk-faq-item">
+        <p class="sk-faq-q">Berapa lama idealnya skripsi AI dikerjain?</p>
+        <p class="sk-faq-a">Kalau ruang lingkupnya pas, 4–6 bulan itu realistis: 1 bulan studi literatur dan pengumpulan data, 2 bulan eksperimen, 1 bulan bikin demo/aplikasi, dan 1–2 bulan nulis serta revisi.</p>
+      </div>
+      <div class="sk-faq-item">
+        <p class="sk-faq-q">Gue anak Sistem Informasi, bisa ambil topik ini juga?</p>
+        <p class="sk-faq-a">Bisa, tinggal geser fokusnya ke sisi penerapan dan dampak bisnis, misalnya ide nomor 5 (prediksi kelulusan) atau nomor 8 (rekomendasi UMKM). Kalau masih bingung bedanya, baca juga <a href="/blog/ti-vs-si-mahasiswa-2026">perbedaan Teknik Informatika dan Sistem Informasi</a>.</p>
+      </div>
+
+      <div class="sk-section-title">Kesimpulan: Skripsi yang Selesai Lebih Baik dari Skripsi yang Sempurna</div>
+
+      <p>Skripsi bertema AI itu investasi bagus, karena selain buat lulus, hasilnya bisa langsung jadi portofolio yang dilirik recruiter. Kuncinya ada di <strong>ruang lingkup yang sempit, dataset yang jelas, dan metrik yang terukur</strong>. Pilih satu ide dari daftar di atas, sesuaikan sama minat dan data yang bisa lo akses, lalu diskusiin sama dosen pembimbing sedini mungkin.</p>
+
+      <p>Setelah skripsi kelar, jangan cuma disimpan di repositori kampus. Rapikan kodenya di GitHub, tulis ringkasan hasilnya, dan masukin ke portofolio. Butuh inspirasi lain? Cek <a href="/blog/ide-proyek-portfolio-fullstack-ai">ide proyek fullstack berbasis AI untuk portofolio</a>.</p>
+
+      <div class="sk-cta">
+        <h2>Masih Bingung Nentuin Judul Skripsi?</h2>
+        <p>Follow Instagram gue buat dapet insight seputar AI, web development, karier tech, dan tips buat mahasiswa IT. Boleh juga DM buat diskusi ide skripsi lo!</p>
+        <a href="https://www.instagram.com/adityafakhrii/" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          Follow @adityafakhrii di Instagram
+        </a>
+      </div>
+    `,
+    date: "07 Nov 2026",
+    readTime: "9 min",
+    category: "AI & Career",
+    author: "Aditya Fakhri Riansyah",
+    tags: [
+      "Skripsi",
+      "Mahasiswa Informatika",
+      "Artificial Intelligence",
+      "Machine Learning",
+      "NLP",
+      "Computer Vision",
+      "Tugas Akhir"
+    ],
+    imageSrc: "/images/blog/skripsi-informatika-ai.webp",
+    ogImage: "/images/blog/og/skripsi-informatika-ai.jpg",
+    relatedPosts: [
+      "ti-vs-si-mahasiswa-2026",
+      "laptop-programming-mahasiswa-2026",
+      "ide-proyek-portfolio-fullstack-ai"
+    ],
+    isoDate: "2026-11-07T08:00:00.000Z",
+  },
 
   "kumpulan-ai-tools-workflow-developer": {
     title: "Kumpulan AI Tools Terbaik untuk Developer dan Contoh Workflow Praktis dari Ideasi hingga Deploy",
