@@ -11,24 +11,10 @@ import { ContentBlock } from "@/components/content-block"
 import dynamic from "next/dynamic"
 const ProjectCard = dynamic(() => import("@/components/project-card").then(m => m.ProjectCard))
 import { TranslatedContent } from "@/components/translated-content"
-import projects from "@/data/projects"
+import { featuredProjectsShow, recentEventsShow, totalPastEventsCount } from "@/data/featured-home"
 import blogIndex from "@/data/blog-index"
-import { pastEvents } from "@/data/events"
 import { getLocalized } from "@/lib/utils"
 
-const pick = (id: keyof typeof projects) => {
-  const p = projects[id]
-  return { id, title: p.title, description: p.description || "", imageSrc: p.imageSrc || "/placeholder.svg", tags: p.tags || [] }
-}
-const featuredProjects = [
-  pick("gambaryuk"),
-  pick("invoiceyuk"),
-  pick("siacta"),
-  pick("ruangai-prompt-hub"),
-  pick("proquoteai"),
-  pick("restoranku"),
-]
-const featuredProjectsShow = featuredProjects.slice(0, 6)
 const articles = blogIndex.map((p) => ({
   id: p.id,
   title: p.title,
@@ -39,7 +25,7 @@ const articles = blogIndex.map((p) => ({
   isoDate: p.isoDate || "2026-01-01",
 }))
 const latestArticles = articles.slice(0, 4)
-const recentEvents = pastEvents.slice(0, 6)
+const recentEvents = recentEventsShow
 
 export default function Home() {
   const [showAllPartners, setShowAllPartners] = useState(false)
@@ -152,6 +138,8 @@ export default function Home() {
                     fill
                     sizes="(max-width: 768px) 224px, 288px"
                     priority
+                    fetchPriority="high"
+                    unoptimized
                     className="object-cover scale-125 translate-y-4"
                   />
                 </div>
@@ -285,7 +273,7 @@ export default function Home() {
                     {t('language') === 'id' ? "Lihat Semua Event" : "View All Events"}
                   </span>
                   <span className="inline-flex items-center justify-center px-2.5 py-0.5 text-xs font-bold rounded-full bg-primary-foreground/20 text-primary-foreground">
-                    {pastEvents.length}
+                    {totalPastEventsCount}
                   </span>
                   <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
