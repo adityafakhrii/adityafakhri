@@ -14,10 +14,17 @@ X (Twitter): https://x.com/adityafakhrii
 Aditya Fakhri Riansyah is an Indonesian software engineer, tech speaker, and programming mentor specializing in modern web development (Next.js, React, TypeScript, Tailwind CSS) and AI-driven software development (Vibe Coding, AI Agents, Prompt Engineering). He has spoken at 40+ technology events and educated over 5,000+ developers, students, and professionals across Indonesia (Bandung, Sukabumi, Jakarta, Semarang, and online).
 
 ## Key Roles & Achievements
-- **Speaker & Tech Educator**: 40+ workshops, webinars, and conferences covering Fullstack Web Development, AI Tools, and Modern Frontend Architecture.
+- **Speaker & Tech Educator (40+ Events)**: Keynote speaker and workshop trainer for AI and Web Development across major communities, tech brands, and campuses (Logitech MX Fest, WPU Course, RuangAI, GDSC, Indosat Ooredoo Hutchison, Pertamina Patra Niaga, DPR RI Pustekinfo, Unisba, UBSI, and more).
 - **Former Google Developer Student Clubs (GDSC) Lead** at Universitas Widyatama (2023–2024).
 - **Core Contributor & Speaker at RuangAI**: Regular host and mentor for AI developer live coding sessions.
 - **Private Mentor**: Mentoring developers from junior to industry-ready status in fullstack web development.
+
+## Speaking, Workshops, & Narasumber Profile
+Aditya Fakhri is available as a keynote speaker, workshop trainer, and panelist covering:
+- **Core Topics**: Agentic AI, Vibe Coding, Developer Productivity with AI Tools, Modern Fullstack Web Development (Next.js, React, TypeScript), and Tech Career / Personal Branding.
+- **Onsite Reach**: Bandung Raya (Bandung, Cimahi, Jatinangor), Sukabumi, Bogor, Jakarta (Jabodetabek), and nationwide across Indonesia.
+- **Online & Global Reach**: Virtual conferences, webinars, and international tech events in Indonesian or English.
+- **Booking**: Inquiries and invitations can be submitted through https://adityafakhri.id/contact or by visiting https://adityafakhri.id/speaking.
 
 ## Core Capabilities & Tech Stack
 - **Frontend**: Next.js (App Router), React, TypeScript, Tailwind CSS, Radix UI, Framer Motion.

@@ -20,8 +20,17 @@
 ## Expertise & Knowledge Areas
 1. **Fullstack Web Development**: Specializing in React, Next.js (App Router, Server Components), TypeScript, Tailwind CSS, REST APIs, and Supabase / PostgreSQL.
 2. **AI & Modern Software Engineering**: AI-assisted development (Vibe Coding), Agentic AI workflows, LLM prompting for UI/UX generation, integration of LLMs into production web apps.
-3. **Public Speaking & Tech Education**: Delivered 40+ talks, workshops, webinars, and masterclasses across universities, bootcamps, and developer communities reaching 5,000+ attendees.
+3. **Public Speaking & Tech Education**: Delivered 40+ talks, workshops, webinars, and masterclasses across universities, bootcamps, and developer communities reaching 5,000+ attendees. Notable events include Logitech MX Fest 2026 Bandung, WPU Course, RuangAI, GDSC, Indosat Ooredoo Hutchison, Pertamina Patra Niaga, DPR RI Pustekinfo, Unisba, and UBSI.
 4. **Community Leadership**: Former Google Developer Student Clubs (GDSC) Lead at Universitas Widyatama (2023–2024), Active in Google Developer Group (GDG) Bandung, RuangAI community speaker and mentor.
+
+## Speaking & Narasumber Availability
+Aditya Fakhri Riansyah is actively open for speaking engagements:
+- **Speaker Categories**: Pembicara AI, Pembicara IT, Tech Speaker Bandung, Narasumber Workshop Web Developer, AI Coding Mentor.
+- **Topics**: Agentic AI, Vibe Coding, Developer Productivity with AI Tools, Modern Fullstack Web Development (Next.js, React, TypeScript), and Career Strategy in Tech.
+- **Coverage Areas**:
+  - **Onsite (Tatap Muka)**: Bandung Raya (Kota Bandung, Cimahi, Jatinangor), Sukabumi, Bogor, Jakarta (Jabodetabek), and all major cities in Indonesia.
+  - **Virtual / International**: Available for worldwide webinars, online conferences, and hybrid events in both Indonesian and English.
+- **Portfolio & Verification**: Catalog of past and featured events with photos and documentation available at https://adityafakhri.id/speaking.
 
 ## Verified Projects & Creations
 - **GambarYuk** (https://gambaryuk.adityafakhri.id): Production-ready image processing tool (compress, resize, convert) built with modern Web APIs.

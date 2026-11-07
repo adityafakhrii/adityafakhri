@@ -373,7 +373,7 @@ export const translations = {
 
     // Speaking page
     speakingTitle: "IT Speaker & Mentoring",
-    speakingDescription: "Portofolio sesi berbicara sebagai Pembicara AI, Mentor Web Developer, dan Narasumber IT di berbagai workshop dan konferensi teknologi, khususnya di Bandung dan Sukabumi.",
+    speakingDescription: "Portofolio sesi berbicara sebagai Pembicara AI, IT Speaker, dan Mentor Web Developer di 40+ event seminar dan workshop teknologi. Terbuka untuk sesi tatap muka (onsite) di Bandung, Cimahi, Sukabumi, seluruh Indonesia, serta webinar virtual internasional.",
     upcomingEvents: "Event Mendatang",
     pastEvents: "Event Sebelumnya",
     topicsISpeak: "Topik yang Saya Bicarakan",
@@ -937,7 +937,7 @@ export const translations = {
 
     // Speaking page
     speakingTitle: "IT Speaker & Mentoring",
-    speakingDescription: "Portfolio of speaking engagements as an AI Speaker, Web Developer Mentor, and IT Resource Person at various tech workshops and conferences, especially in Bandung and Sukabumi.",
+    speakingDescription: "Portfolio of speaking engagements as an AI Speaker, IT Speaker, and Web Developer Mentor across 40+ events. Available for onsite sessions in Bandung, Cimahi, Sukabumi, nationwide across Indonesia, and global virtual webinars.",
     upcomingEvents: "Upcoming Events",
     pastEvents: "Past Events",
     topicsISpeak: "Topics I Speak About",

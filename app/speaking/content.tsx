@@ -14,7 +14,7 @@ import { PageHeader } from "@/components/page-header"
 import { ContentBlock } from "@/components/content-block"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { Calendar, MapPin, ExternalLink, Clock, X } from "lucide-react"
+import { Calendar, MapPin, ExternalLink, Clock, X, Globe, Sparkles } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -82,6 +82,57 @@ export function SpeakingContent() {
                 renderContent={({ t }) => (
                     <div className="container max-w-5xl py-8 px-4 md:px-8">
                         <PageHeader title={t('speakingTitle')} description={t('speakingDescription')} />
+
+                        {/* Speaker Highlights & Availability Strip */}
+                        <div className="mt-6 mb-10 p-4 sm:p-5 rounded-2xl border border-border/70 bg-muted/40 backdrop-blur-sm grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+                            <div className="flex items-start gap-3">
+                                <div className="p-2 rounded-xl bg-primary/10 text-primary shrink-0">
+                                    <MapPin className="h-4 w-4" />
+                                </div>
+                                <div>
+                                    <h3 className="font-semibold text-foreground text-xs uppercase tracking-wider mb-0.5">
+                                        {t('language') === 'id' ? 'Area Onsite' : 'Onsite Reach'}
+                                    </h3>
+                                    <p className="text-muted-foreground text-xs leading-relaxed">
+                                        {t('language') === 'id' 
+                                            ? 'Bandung Raya (Kota & Cimahi), Sukabumi, Jabodetabek & Seluruh Indonesia'
+                                            : 'Greater Bandung & Cimahi, Sukabumi, Jakarta & nationwide across Indonesia'}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-3">
+                                <div className="p-2 rounded-xl bg-primary/10 text-primary shrink-0">
+                                    <Globe className="h-4 w-4" />
+                                </div>
+                                <div>
+                                    <h3 className="font-semibold text-foreground text-xs uppercase tracking-wider mb-0.5">
+                                        {t('language') === 'id' ? 'Online & Global' : 'Virtual & Worldwide'}
+                                    </h3>
+                                    <p className="text-muted-foreground text-xs leading-relaxed">
+                                        {t('language') === 'id'
+                                            ? 'Tersedia untuk webinar internasional & remote conference (ID / EN)'
+                                            : 'Available for international webinars & virtual conferences (ID & EN)'}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-3">
+                                <div className="p-2 rounded-xl bg-primary/10 text-primary shrink-0">
+                                    <Sparkles className="h-4 w-4" />
+                                </div>
+                                <div>
+                                    <h3 className="font-semibold text-foreground text-xs uppercase tracking-wider mb-0.5">
+                                        {t('language') === 'id' ? 'Fokus Topik' : 'Core Topics'}
+                                    </h3>
+                                    <p className="text-muted-foreground text-xs leading-relaxed">
+                                        {t('language') === 'id'
+                                            ? 'Agentic AI & Vibe Coding, Fullstack Next.js/React, Tech Career'
+                                            : 'Agentic AI & Vibe Coding, Fullstack Next.js/React, Tech Career'}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
                         {/* Featured Events Section */}
                         <div className="mt-8 mb-12">
